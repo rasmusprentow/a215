@@ -1,0 +1,20 @@
+\section{Proof of Magic Constant}
+\label{sec:proofOfMagicConstant}
+A hyper cube \cite{Heinz10} is a term that covers both the Magic Square and the Magic Cube. In theory the numbers of dimensions of a hyper cube can be any positive integer, the illustration of a hyper cube of any dimension higher than 3 has to be an absraction. It is still posible to compute the magic constant of a hyper cube of en dimension $d$ of the order $n$ using the function in equation \ref{align:magicConstantD}:
+
+\begin{align}
+\label{align:magicConstantD}
+	M \left( n,d \right) = \frac{n^d \cdot \left( n+1 \right)}{2}
+\end{align}
+
+The proof of this function resembles that of the function for 2 dimensions -- which is the magic Square(See section \ref{sec:magicSquare}).
+
+First of all a hyper cube of $d$ dimensions and the order $n$, contains the integers from 1 through $n^d$.
+
+The magic constant of the given hyper cube can be obtain by calculating the sum of any line of numbers (be that a row, column, pilar or any other line that is appropriate for the given dimension). This sum can than be multiplied by $n^{d-1}$ which is the same as adding all the numbers in the hyper cube together, since you add one dimension's magic constant's together every time $n$ is multiplied. Therefore we can write:
+
+\begin{align}
+	n^{d-1} \cdot M \left( n \right) = \sum ^{n^d}_{i = 1} i = 1 + \cdots + n^d \\
+	n^{d-1} \cdot M \left( n \right) = \frac{n^d \cdot \left( n^d + 1 \right)}{2} \\
+	M \left( n \right) = \frac{n \cdot \left( n^d + 1 \right)}{2}
+\end{align}

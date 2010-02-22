@@ -1,0 +1,88 @@
+\documentclass{book}
+
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{dk-bib}
+\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, colorlinks=true, breaklinks=true, backref=true, pdfborder={0 0 0 0}]{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{fancyhdr}
+\usepackage[dvips]{graphicx}
+%\usepackage[Lenny]{fncychap}
+%\usepackage[Sonny]{fncychap}
+%\usepackage[Glenn]{fncychap}
+%\usepackage[Conny]{fncychap}
+%\usepackage[Rejne]{fncychap}
+\usepackage{lastpage}
+%\usepackage{xparse}
+
+%% BEGIN BLAME RASMUS
+\usepackage{xifthen}% provides \isempty test
+
+%% END BLAME RAMSUS
+
+
+%\graphicspath{/input/pics/}
+\newcommand{\picturepath}[1]{input/pics/}
+%% Tilf¯j nedenst\aa{}ende linje i din sandkasse.
+%% \renewcommand{\picturepath}[1]{../Rapport/input/pics/}
+
+
+%\pagestyle{fancy}
+
+\setcitestyle{numbers}
+\bibliographystyle{plainnat}
+
+\setcounter{tocdepth}{1}
+
+\linespread{1}
+
+%\setlength{\marginparwidth}{10pt}
+%\setlength{\textwidth}{400pt}
+%\setlength{\textheight}{620pt}
+%\setlength{\voffset}{0pt}
+%\setlength{\hoffset}{0pt}
+%\setlength{\topmargin}{0pt}
+%\setlength{\headsep}{10pt}
+%\setlength{\oddsidemargin}{50pt}
+%\setlength{\evensidemargin}{10pt}
+
+
+
+\input{functions/caseControl}
+%% WORD LIST
+%% This is where we define words. 
+%% The last parameter should be blank as standard, but you can add i,b,u. 
+\newcommand{\john}[1]{\caseControl{j}{ohn}{#1}{}}
+\newcommand{\michael}[1]{\caseControl{M}{ikael}{#1}{}}
+\newcommand{\rubik}[1]{\caseControl{R}{ubik's cube}{#1}{}}
+\newcommand{\facet}[1]{\caseControl{f}{acet}{#1}{}}
+\newcommand{\facelet}[1]{\caseControl{f}{acelett}{#1}{}}
+\newcommand{\cube}[1]{\caseControl{c}{ube}{#1}{}}
+\newcommand{\cuber}[1]{\caseControl{c}{uber}{#1}{}}
+\newcommand{\face}[1]{\caseControl{f}{ace}{#1}{}}
+\newcommand{\twist}[1]{\caseControl{t}{wist}{#1}{}}
+\newcommand{\turn}[1]{\caseControl{t}{urn}{#1}{}}
+\newcommand{\rotate}[1]{\caseControl{r}{otate}{#1}{}}
+\newcommand{\erno}[1]{\caseControl{E}{rn\"{o} Rubik}{#1}{}}
+\newcommand{\mpuzzle}[1]{\caseControl{M}{agic Puzzle}{#1}{}}
+\newcommand{\msquare}[1]{\caseControl{M}{agic Square}{#1}{}}
+\newcommand{\mcube}[1]{\caseControl{M}{agic Cube}{#1}{}}
+%COMMANDS:
+%Used to determine the highlight of the first word in the terminology
+\newcommand{\myTermHigh}[1]{\textbf{#1}: }
+
+%Use this for caption text
+\newcommand{\myCaption}[1]{\textit{\footnotesize #1} }
+
+%Bruges til skillekolonner og r\ae{}kker . Definerer tykkelsen. 
+\newcommand{\vrules}{{\vrule width 0.6pt}}
+\newcommand{\hrules}{{\hrule height 1.2pt}}
+
+%Commands for getting eg. ``st'' lifted in 1st
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+\newcommand{\ths}[0]{\superscript{th}}
+\newcommand{\st}[0]{\superscript{st}}
+\newcommand{\nd}[0]{\superscript{nd}}
+\newcommand{\rd}[0]{\superscript{rd}}

@@ -1,0 +1,77 @@
+
+% c = first letter capital
+% cap = all capital
+% i = italic
+% b = bold
+% ci = first letter cap and all italic.
+ \newcommand{\theWord}{some}
+\newcommand{\caseControl}[4]{%
+  \ifthenelse{\equal{#3}{c}}%
+    {\renewcommand{\theWord}{\MakeUppercase{#1}#2}}% if #1 true
+    {}% if #1 false
+     \ifthenelse{\equal{#3}{ci}}%
+    {\renewcommand{\theWord}{\textit{\MakeUppercase{#1}#2}}}% if #1 true
+    {}% if #1 false
+      \ifthenelse{\equal{#3}{ic}}%
+    {\renewcommand{\theWord}{\textit{\MakeUppercase{#1}#2}}}% if #1 true
+    {}% if #1 false
+      \ifthenelse{\equal{#3}{i}}%
+    {\renewcommand{\theWord}{\textit{#1#2}}}% if #1 true
+    {}% if #1 false
+     \ifthenelse{\equal{#3}{cap}}%
+    {\renewcommand{\theWord}{\MakeUppercase{#1#2}}}% if #1 true
+    {}% if #1 false
+       \ifthenelse{\isempty{#3}}%
+    {\renewcommand{\theWord}{#1#2}}% if #1 true
+    {}% if #1 false 
+    \ifthenelse{\equal{\theWord}{some}}%
+    {\renewcommand{\theWord}{#1#2}}% if #1 true
+    {}% if #1 false 
+        \ifthenelse{\equal{#4}{i}}%
+    {\textit{\theWord}}% if #1 true
+    {}% if #1 false 
+	    \ifthenelse{\equal{#4}{b}}%
+    {\textbf{\theWord}}% if #1 true
+    {}% if #1 false 
+        \ifthenelse{\equal{#4}{u}}%
+    {{\theWord}}% if #1 true
+    {}% if #1 false 
+       \ifthenelse{\isempty{#4}}%
+    {\theWord}% if #1 true
+    {}% if #1 false    
+    \renewcommand{\theWord}{some}%
+  }
+
+
+
+
+\newcommand{\myMonth}{Some}
+\newcommand{\myDate}[3]{%
+\ifthenelse{\equal{#2}{1}}%
+{\renewcommand{\myMonth}{January}}{}%
+\ifthenelse{\equal{#2}{2}}%
+{\renewcommand{\myMonth}{February}}{}%
+\ifthenelse{\equal{#2}{3}}%
+{\renewcommand{\myMonth}{Marts}}{}%
+\ifthenelse{\equal{#2}{4}}%
+{\renewcommand{\myMonth}{April}}{}%
+\ifthenelse{\equal{#2}{5}}%
+{\renewcommand{\myMonth}{May}}{}%
+\ifthenelse{\equal{#2}{6}}%
+{\renewcommand{\myMonth}{June}}{}%
+\ifthenelse{\equal{#2}{7}}%
+{\renewcommand{\myMonth}{July}}{}%
+\ifthenelse{\equal{#2}{8}}%
+{\renewcommand{\myMonth}{August}}{}%
+\ifthenelse{\equal{#2}{9}}%
+{\renewcommand{\myMonth}{September}}{}%
+\ifthenelse{\equal{#2}{10}}%    
+{\renewcommand{\myMonth}{October}}{}%
+\ifthenelse{\equal{#2}{11}}%
+{\renewcommand{\myMonth}{November}}{}%
+\ifthenelse{\equal{#2}{12}}%
+{\renewcommand{\myMonth}{December}}{}%
+\ifthenelse{\isempty{#1}}%
+{\myMonth{} #3}%
+{\myMonth{} #1, #3}}
+
