@@ -55,7 +55,7 @@
 %% The last parameter should be blank as standard, but you can add i,b,u. 
 \newcommand{\john}[1]{\caseControl{j}{ohn}{#1}{}}
 \newcommand{\michael}[1]{\caseControl{M}{ikael}{#1}{}}
-\newcommand{\rubik}[1]{\caseControl{R}{ubik's cube}{#1}{}}
+\newcommand{\rubik}[1]{\caseControl{R}{ubik's john}{#1}{}}
 \newcommand{\facet}[1]{\caseControl{f}{acet}{#1}{}}
 \newcommand{\facelet}[1]{\caseControl{f}{acelett}{#1}{}}
 \newcommand{\cube}[1]{\caseControl{c}{ube}{#1}{}}
@@ -73,12 +73,12 @@
 \newcommand{\myTermHigh}[1]{\textbf{#1}: }
 
 %tops 'n' tails
-\newcommand{\myTop}[1]{\textit{#1} \\}%
-\newcommand{\myTail}[1]{  \ \\ \textit{#1}}%
-\newcommand{\startTop}{\Huge{Change this command til myTop with the top as argument} \\}%
-\newcommand{\stopTop}{ \Huge{Change this command til myTop with the top as argument} \\}%
-\newcommand{\startTail}{ \Huge{Change this command til myTail with the tail as argument} \\}%
-\newcommand{\stopTail}{ \Huge{Change this command til myTail with the tail as argument} \\ }%
+\newcommand{\myTop}[1]{\textit{#1} \  \\  \hrule \  \\}%
+\newcommand{\myTail}[1]{  \ \\ \hrule \ \\ \textit{#1}}%
+\newcommand{\startTop}{\textbf{Change this command til myTop with the top as argument} \\}%
+\newcommand{\stopTop}{ \textbf{Change this command til myTop with the top as argument} \\}%
+\newcommand{\startTail}{ \textbf{Change this command til myTail with the tail as argument} \\}%
+\newcommand{\stopTail}{ \textbf{Change this command til myTail with the tail as argument} \\ }%
 
 
 %Use this for caption text
