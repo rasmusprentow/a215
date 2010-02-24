@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aiden(2006)]{aiden06}
+Hardeep Aiden.
+\newblock Anything but square: from magic squares to sudoku.
+\newblock WWW, March 2006.
+\newblock URL \url{http://plus.maths.org/issue38/features/aiden/}.
+\newblock Last viewed: 16/2.
+
+\bibitem[arthors(2010{\natexlab{a}})]{speedcubing.dk}
+Forum;~Various arthors.
+\newblock Speedcubing.dk - alt om speedcubing i danmark.
+\newblock WWW, February 2010{\natexlab{a}}.
+\newblock URL \url{http://speedcubing.dk/}.
+\newblock Last viewed: 16/2.
+
+\bibitem[arthors(2010{\natexlab{b}})]{speedsolving.com}
+Forum;~Various arthors.
+\newblock Speedsolving.com - all puzzles. all the time : Speedsolving the
+  rubik's cube.
+\newblock WWW, February 2010{\natexlab{b}}.
+\newblock URL \url{http://www.speedsolving.com/}.
+\newblock Last viewed: 16/2.
+
+\bibitem[Larsen(1981)]{Larsen81}
+Mogens~Esrom Larsen.
+\newblock \emph{Rubiks terning}.
+\newblock Nyt Nordisk Forlag Arnold Busck, 1981.
+
+\bibitem[Lee(2008)]{jasminLee08}
+Jasmin Lee.
+\newblock Beginner solution to the rubik's cube.
+\newblock PDF and WWW, July 2008.
+\newblock URL \url{http://peter.stillhq.com/jasmine/rubikscubesolution.html}.
+\newblock Last viewed: 16/2.
+
+\bibitem[Scherphuis(2010)]{jaapsch}
+Jaap Scherphuis.
+\newblock Jaap's puzzle page.
+\newblock WWW, 2010.
+\newblock URL \url{http://www.jaapsch.net/puzzles/}.
+\newblock Last viewed: 16/2.
+
+\bibitem[Singmaster(1998)]{Singmaster98}
+David Singmaster.
+\newblock The unreasonable utility of recreational mathematics.
+\newblock WWW, December 1998.
+\newblock URL \url{http://www.eldar.org/~problemi/singmast/ecmutil.html}.
+\newblock Last viewed: 15/2.
+
+\bibitem[Trigg(1978)]{Trigg78}
+Charles~W. Trigg.
+\newblock What is recreational mathematics?
+\newblock \emph{Mathematics Magazine}, 51:\penalty0 18 -- 21, Januar 1978.
+\newblock URL \url{http://www.jstor.org/stable/2689642?seq=1\&cookieSet=1}.
+
+\bibitem[van Bruchem et~al.(2010{\natexlab{a}})van Bruchem, Mao, and
+  Akimoto]{wca}
+Ron van Bruchem, Tyson Mao, and Masayuki Akimoto.
+\newblock World cube association.
+\newblock WWW, February 2010{\natexlab{a}}.
+\newblock URL \url{http://www.worldcubeassociation.org/}.
+\newblock Last viewed: 16/2.
+
+\bibitem[van Bruchem et~al.(2010{\natexlab{b}})van Bruchem, Mao, and
+  Akimoto]{wca/competitions}
+Ron van Bruchem, Tyson Mao, and Masayuki Akimoto.
+\newblock World cube association - official results.
+\newblock WWW, February 2010{\natexlab{b}}.
+\newblock URL \url{http://www.worldcubeassociation.org/competitions}.
+\newblock Last viewed: 16/2.
+
+\end{thebibliography}
