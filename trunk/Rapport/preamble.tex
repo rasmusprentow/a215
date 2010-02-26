@@ -3,9 +3,9 @@
 \usepackage[english]{babel}
 \usepackage{natbib}
 \usepackage{dk-bib}
-\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, colorlinks=true, breaklinks=true, backref=true, pdfborder={0 0 0 0}]{hyperref}
+\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, colorlinks=true, breaklinks=true, backref=section, pdfborder={0 0 0 0}]{hyperref}
 \usepackage[latin1]{inputenc}
-\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{fancyhdr}
 \usepackage[dvips]{graphicx}
 %\usepackage[Lenny]{fncychap}
@@ -80,3 +80,7 @@
 \newcommand{\st}[0]{\superscript{st}}
 \newcommand{\nd}[0]{\superscript{nd}}
 \newcommand{\rd}[0]{\superscript{rd}}
+
+
+%% Defining Theorem
+\theoremstyle{definition} \newtheorem{theorem}{Theorem}
