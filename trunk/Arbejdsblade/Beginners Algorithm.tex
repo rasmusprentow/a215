@@ -6,8 +6,17 @@
 ((Move some of the introduction down here?))
 
 \subsection{Step 1 - getting the cross}
-The first step of the beginner's algorithm is to get a cross on any face. Getting a cross on a face means to align the facelets next to the center facelet, so that all of the aligned facelets are of the same color. ((REMEMBER THE EDGES OF FL))
+The first step of the beginner's algorithm is to get a cross on any face. Getting a cross on a face means to align the facelets next to the center facelet, so that all of the aligned facelets are of the same color, while at the same time the used edge pieces have the same color of the center facelets on each of the two faces on which they are.
 
 ((INSERT PICTURE OF A CROSS))
 
-%need my cube :(
+The face on which the cross is being assembled is set to be the top face. An edge piece that consists of the same colors as the center piece of the top face and the center piece of the front face is placed in the bottom of the front face. With two twists of the front face the edge piece is positioned correctly in the cross. If the edge piece is oriented correctly the cube is turned (noted x) and the process is repeated until the cross is assembled. However if the piece is oriented in the wrong way the following algorithm will change it's orientation without ruining any part of the cross that may already be assembled:
+
+F' U L' U'
+
+or
+
+F U' R U
+
+\subsection{Step 2 - completing the first layer}
+When the cross is completed the next step is to position the corner pieces of the first layer correctly. 
