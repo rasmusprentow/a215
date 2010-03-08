@@ -1,7 +1,61 @@
 \chapter{Problem Analysis}
-Since 1977, when the \rubik{} was initially released for sale, the \rubik{} has frustrated, inspired and entertained many people. This 3x3x3 cube has so many possible settings that the solution can not just be guessed out of sheer luck and since 1982 people has been competing each other in solving the \rubik{} fastest or by the least number of twist. Because of these competitions, it has been interesting for the competitors to find algorithms for solving the \rubik{} in the least number of twists. The development of these algorithms is an ongoing process which has given the latest theory in 2008, that states that an algorithm which can solve the \rubik{} in 22 twists, no matter which setting the \rubik{} starts in, is possible to create. No such algorithm has been created so far \cite{rokicki09}.
+Since 1977, when the \rubik{} was initially released for sale, the \rubik{} has frustrated, inspired and entertained many people. This 3x3x3 cube has so many possible settings that the solution can not just be guessed out of sheer luck. Because of this a community around solving the \rubik{} has emerged. The community is divided into two parts both concerning efficient solving -- one efficient time-wise and the other efficient twist-wise e.g. solving in the least amount of time and solving in the least amount of twists. 
+
+\section{Speed-wise efficiency}
+The part concerning speed-wise efficiency, often referred to as speedcubing is the largest part of the community and the majority of the competitions held by the World Cube Association\footnote{WCA is the official organization for Rubik's Cube related competitions.} (WCA)\cite{wca} revolve around speedcubing.
+
+The first official competition was held in 1982 in Hungary and is regarded as the first World championship. Since 2002 there have been held annual world championships and plenty other events concerning speedcubing. 
+
+
+\section{Twist-wise efficiency}
+This part of the community is much smaller than the speedsolving part. The majority of the research in the twist-wise efficient area is published as scientific articles explaining the algorithms. Even though competitions with the goal of the least amount of twists to solve the cube are held, many of the twist-wise efficient algorithms are not useful for human solving. These algorithms rely on computer power to look through a large amount of possibilities, which is not a viable option for a human competitor. 
+
+The ultimate goal for the twist-wise efficiency community is to find the God's algorithm, which is the algorithm that solves the cube in the absolutely least amount of twists from any given position. A part of finding the God's algorithm is to find the amount of moves need to perform it. This is referred to as the lower boundary for amount of twists needed to solve the \rubik{} from any given position. The lowest proven boundary was published by Thomas Rockikki in 2009. He sat the boundary to 22. (cite needed)
+
+An algorithm 
+
+
+
+ 
+is divided into two major parts; a speedcubing and a reduced twist solving community. The two communities are in fact  
+
+
+ and since 1982 people has been competing each other in solving the \rubik{} fastest or by the least number of twist. 
+
+
+Because of these competitions, it has been interesting for the competitors to find algorithms for solving the \rubik{} in the least number of twists. The development of these algorithms is an ongoing process which has given the latest theory in 2008, that states that an algorithm which can solve the \rubik{} in 22 twists, no matter which setting the \rubik{} starts in, is possible to create. No such algorithm has been created so far \cite{rokicki09}.
 
 It could be interesting to study the implementation of the solving algorithms in a computer program. The efficiency of these algorithms with respect to the time of calculation and the number of twists is an interesting focus point.
+
+
+%\documentclass{report}\begin{document}
+\chapter{Community}
+\myTop{In this chapter the community concerning the original \rubik{} and other similar puzzles will be presented and described briefly. This chapter will include a description of the online and offline community and the competitions in which members of the community partake. The community is an important and interesting topic because it is the primary place where solving strategies and algorithms are produced, presented and discussed. 
+}
+
+The \rubik{} community consists of both a real life community handling competitions and events and an online community where \cuber{}s can find the real life competitions, improve their skills and talk to each other. The majority of the community is focused on the speedcubing aspect. In this chapter both the online and offline community will be discussed. Note that the two sides of the community often interfere.
+
+\section{The Online Community}
+In the world of the \rubik{} there is a large online community. The community consist of everything from forums and guides to competitions and bragging. \cuber{c}s, as they often refer to them selves as, have a place that is the online community to express and compare their abilities, experiences and skills with each other. 
+\subsection{Forums}
+Forums give the \cuber{}s a place for sharing their knowledge and experience\cite{speedsolving.com}\cite{speedcubing.dk}\cite{wca}. Forums or specific \rubik{} sites allow visitors to find information concerning the \rubik{}. The main focus of these forums is on how to solve the \rubik{} or similar puzzles in the least amount of time. Forums are often split into several divisions. A division could e.g. concern the hardware used and maintenance techniques for making the \rubik{} spin with greater ease giving the \cuber{} a slightly better solving time.
+A major part is reserved for the theory and the algorithms used to solve the \rubik{} -- most of which strive for an efficient solve both with respect to time and number of \twist{}s.
+
+Another part of the community is focused on competitions of various kinds. The offline competitions are held in cooperation with the World Cube Association(WCA) \cite{wca}, which are further discussed in section \ref{sec:wca}. Beside the WCA-competitions some forums hold weekly online competitions where the forum members can upload and compare their solve times for the \rubik{} or similar puzzles. 
+
+Other than the forums the online community offers a wide variety of sites containing guides, solutions and algorithms for solving the \rubik{}. The majority of the \rubik{} sites contain the beginner's guide\cite{jasminLee08} whose target group is the beginners who may recently have gotten their first cube and want to learn how to solve it. 
+
+\section{Competitions}
+\label{sec:wca}
+Speed cubing competitions are held on a regular basis\cite{wca/competitions}. These competitions have different disciplines for various puzzles related to the original 3x3x3 \rubik{}. All the official competitions are held in cooperation with the World Cube Association (WCA). The WCA governs the official regulations on speed cubing and holds annual world and regional championships. The first World championship in speed cubing was held in 1982 in Budapest, Hungary. WCA governs the official rankings and records for solving the Rubik's cube. In total WCA keeps regulation, ranking and records for 19 different types of competitions. All 19 competitions include puzzles which are related to or based on the original \rubik{}. 
+
+
+
+
+\myTail{In this chapter the community in regards to the \rubik{} has been described. It has been stated that the community consists of both an online and an offline aspects. In general the strategies and theories are produced and discussed online and they are for one thing put to use in competitions where the right solving method is crucial in order to finish in a competitive time.
+}
+%\end{document}
+
 
 \section{Problem Statement}
 How has it been proven that it is possible to solve the \rubik{} in 22 steps when no such algorithm has been made?
