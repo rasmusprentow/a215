@@ -1,36 +1,44 @@
-\documentclass{book}
+\documentclass{report}
 
 \usepackage[english]{babel}
-\usepackage{natbib}
-\usepackage{dk-bib}
-\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, pdfborder={0 0 0 0}, colorlinks=true, breaklinks=true, backref=section]{hyperref}
 \usepackage[latin1]{inputenc}
+\usepackage[numbers]{natbib}
+
+%\usepackage{en-bib}  % anyone who knows this?
+
+\usepackage{verbatim} %% For Comment enviroment
+\usepackage{lastpage}  % gives lastpage commando
+
+
+%% Make links work
+\usepackage[pdfborder={0 0 0 0},backref=section]{hyperref}
+%\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, pdfborder={0 0 0 0}, colorlinks=true, breaklinks=true, backref=section]{hyperref}
+
+
+% Math Paths
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+%% For header
 \usepackage{fancyhdr}
+
+%%% something? useful? hopefully!
 \usepackage[dvips]{graphicx}
+
 %\usepackage[Lenny]{fncychap}
 %\usepackage[Sonny]{fncychap}
 %\usepackage[Glenn]{fncychap}
 %\usepackage[Conny]{fncychap}
 %\usepackage[Rejne]{fncychap}
-\usepackage{lastpage}
 %\usepackage{xparse}
 
-%% BEGIN BLAME RASMUS
-\usepackage{xifthen}% provides \isempty test
 
-%% END BLAME RAMSUS
+\usepackage{xifthen}% provides \isempty test and ifthen else 
 
 
-%\graphicspath{/input/pics/}
-\newcommand{\picturepath}[1]{input/pics/}
-%% Tilf¯j nedenst\aa{}ende linje i din sandkasse.
-%% \renewcommand{\picturepath}[1]{../Rapport/input/pics/}
 
 
-%\pagestyle{fancy}
 
-\setcitestyle{numbers}
+%\setcitestyle{numbers}
 \bibliographystyle{plainnat}
 
 \setcounter{tocdepth}{1}
@@ -54,6 +62,8 @@
 \input{functions/wordList}
 
 %COMMANDS:
+
+\newcommand{\picturepath}[1]{input/pics/}
 %Used to determine the highlight of the first word in the terminology
 \newcommand{\myTermHigh}[1]{\textbf{#1}: }
 
