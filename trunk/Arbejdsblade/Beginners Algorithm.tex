@@ -1,17 +1,19 @@
 \chapter{The Beginner's Algorithm}
 \label{beginner}
-\myTop{((Something about getting a human perspective, Introduction - divided into several algorithms and steps. i.e. cross FL F2L etc.))}
+\myTop{((Something about getting a human perspective (need to remember the least as possible), Introduction - divided into several algorithms and steps. i.e. cross FL F2L etc.))}
 
 \Section{((Move headline down here?))}
 
 ((Move some of the introduction down here?))
+
+((something about only keeping the assembled pieces and not caring about the position or orientation of the steps to come.))
 
 \subsection{Step 1 - getting the cross}
 The first step of the beginner's algorithm is to get a cross on any face. Getting a cross on a face means to align the facelets next to the center facelet, so that all of the aligned facelets are of the same color, while at the same time the used edge pieces have the same color of the center facelets on each of the two faces on which they are.
 
 ((INSERT PICTURE OF A CROSS))
 
-The face on which the cross is being assembled is set to be the top face. An edge piece that consists of the same colors as the center piece of the top face and the center piece of the front face is placed in the bottom of the front face. With two twists of the front face the edge piece is positioned correctly in the cross. If the edge piece is oriented correctly the cube is turned (noted x) and the process is repeated until the cross is assembled. However if the piece is oriented in the wrong way the following algorithm will change it's orientation without ruining any part of the cross that may already be assembled:
+The face on which the cross is being assembled is set to be the top face. An edge piece that consists of the same colors as the center piece of the top face and the center piece of the front face is placed in the bottom of the front face. With two twists of the front face the edge piece is positioned correctly in the cross. If the edge piece is oriented correctly the cube is turned (noted y) and the process is repeated until the cross is assembled. However if the piece is oriented in the wrong way the following algorithm will change it's orientation without ruining any part of the cross that may already be assembled:
 
 F' U L' U'
 
@@ -34,4 +36,21 @@ If the correct algorithm is used the maximum number of repetitions is three. If 
 ((INSERT PICTURE OF FIRST LAYER))
 
 \subsection{Step 3 - completing the second layer}
-The purpose of this step is to position the four edges belonging to the second layer.
+The purpose of this step is to position the four edges belonging to the second layer correctly. The algorithms used in this step either swaps the top edge piece of the front face with the left or right edge piece. That is why the edge piece that needs to be moved down to the second layer must be positioned at the top of the face that is next to the face of one of the edges colors, where the second color is the same as the front face's color. There is however a difference in which of the two faces is used as the front face, because if the wrong face is used as front face the piece will only be positioned correctly but not oriented correctly. That facelet of the edge towards the front face must be of the same color as the front face. If the edge piece is to be swapped with the right edge piece of the front face the following algorithm is used:
+
+U R U' R' U' F' U F
+
+If the piece is to be swapped with the left edge piece of the front face the following algorithm is used:
+
+U' L' U L U F U' F'
+
+If none of the edge pieces who belong to the second layer are in the third layer and the first two layers is still not completed. This occurs if the edges are all in the second layer but not positioned or oriented correctly. One of the algorithms can be used to swap an edge piece from the third layer with one of the edges in the second layer which is not positioned or oriented correctly. Now the edge piece belonging to the second layer can be moved to it's correct position.
+
+((PICTURE?))
+
+\subsection{Step 4 - getting the last layer cross}
+Solving the last layer is divided into four steps. The order of these steps can be different and still yield the same result. We start out by getting the cross in the last layer, which is the same as the cross on the first layer. The algorithm used is however different. The only algorithm used in this step is the following:
+
+F R U R' U' F'
+
+Besides remembering the algorithm it is also important to know how the cube should be oriented.
