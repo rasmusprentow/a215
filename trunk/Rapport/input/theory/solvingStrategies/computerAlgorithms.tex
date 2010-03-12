@@ -1,2 +1,27 @@
 \section{Computer Algorithms}
+\label{sec:computerAlgorithms}
+In this section two algorithms, Kociemba's Two Phase and Rokicki's Set Solver, will be presented. These algorithms requires a large amount of memory and speed in order to solve a given scrambled \rubik{} in a reasonable amount of time. Therefore we categorize these algorithms as computer algorithm because no human would be able to use them efficiently.
+
+First of all there is a few additions to the terminology which will be used in this section. The following expressions are hereby added to the terminology:
+\begin{itemize}
+\item S : 18 standard twist
+\item s : Specific position
+\item |s| : Length from start till s
+\item H : Positions obtained by A
+\item A : twist u, u', u2 ,f2, r2, b2 ,l2, d, d'
+\item G : All positions. 
+\item r(s) : The relabeling of position s
+\item S^{n} : Set best\aa{}ende af maks n antal moves i S.
+\item S* : Alle kombinationer af twister
+\item d(s) : Diameter, shortest |s|
+\item R : set of r(G)
+\item M : 48 color permutation turn and mirror
+
+\item a (kociemba) : En position i G
+\item b (kociemba) : Path from a to h S*
+\item c (kociemba) : Path from h to e (abc = e) A*
+\item d (kociembe) : distance for search
+\item d2 (kociemba) : Table lookup of distance b from a position.
+
+\end{itemize}
 	\input{input/theory/solvingStrategies/computerAlgorithms/kociemba}
