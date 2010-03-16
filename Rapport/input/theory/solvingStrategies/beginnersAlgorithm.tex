@@ -70,19 +70,19 @@ If the complete cross are in two faces on each opposite of the cube. The cube mu
 If none of the orientations above are possible the algorithm will make it possible.
 
 \subsection{Step 5 - completing the last layer}
-The purpose of this step is to position the corners on the right position and with the right orientation. Firstly the corners must be positioned correctly. To do so there are two algorithms to remember. One for rotating three corners clockwise and one for rotating them counter-clockwise:
+The purpose of this step is to position and orient the corners correctly. Firstly the corners must be positioned correctly. To do so there are two move sequences to remember -- one for rotating three corners clockwise and one for rotating them counter-clockwise. It is however only necessary to remember one of them and repeat that one until the corners are positioned correctly, if the number of twists is unimportant to the solver.
 
 U R U' L' U R' U' L
-This algorithm will rotate the corners counter-clockwise.
+This move sequence will rotate the corners counter-clockwise.
 
 U' L' U R U' L U R'
-This algorithm will rotate the corners clockwise.
+This move sequence will rotate the corners clockwise.
 
 The orientation is again important to position the corners. If one of the corners already is positioned correctly. That corner is chosen not to be moved. 
 
-If the three other corners need to be moved counter-clockwise. The correct corner is positioned as the front right corner. The algorithm will then position the corners correctly.
+If the three other corners need to be moved counter-clockwise. The correct corner is positioned as the front right corner. The move sequence will then position the corners correctly.
 
-If the three other corners need to be moved clockwise. The correct corner is positioned as the front left corner. The algorithm will then position the corners correctly.
+If the three other corners need to be moved clockwise. The correct corner is positioned as the front left corner. The move sequence will then position the corners correctly.
 
 If there is not any correct corner. One of the two algorithms above done once will make a correct positioned corner.
 
@@ -90,4 +90,4 @@ To orient the corners correctly the algorithm from orienting the corners in the 
 
 R' D' R D
 
-But in this step when one corner is completed. Instead of turning the whole cube to the next corner, the cube is locked on one face. Then when going to solve the next corner the upper layer is twisted until the incorrect corner is positioned at the front right corner of the cube.
+But in this step when one corner is completed. Instead of turning the whole cube to the next corner, the cube is locked on one face. Then when going to solve the next corner the upper layer is twisted until the incorrect corner is positioned at the front right corner of the cube and the move sequence is repeated.
