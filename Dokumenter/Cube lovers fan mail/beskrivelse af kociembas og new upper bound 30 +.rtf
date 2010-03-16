@@ -1,0 +1,1779 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf250
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red28\green83\blue170;\red40\green96\blue22;}
+{\info
+{\author Rasmus Prentow}}\paperw11900\paperh16840\margl1440\margr1440\vieww11900\viewh13600\viewkind1
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs24 \cf0 From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Wed Apr 29 04:37:32 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA07345; Wed, 29 Apr 92 04:37:32 EDT\
+Received: from beirut.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA13934; Wed, 29 Apr 92 01:37:26 PDT\
+Date: Wed, 29 Apr 92 01:37:26 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9204290837.AA13934@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9204290837.AA13934@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: an upper bound on god's number\
+\
+in an earlier message, i promised to pass along any information\
+i obtained about progress on the upper bound for the length of\
+god's algorithm. \'a0i've received a copy of the article "rubik's\
+cube in 42 moves" by hans kloosterman, which i summarize below.\
+\
+first here are some caveats:\
+\
+* i haven't verified this algorithm.\
+* throughout, `move' refers to any turn of a single face.\
+\'a0i don't know what bound is achieved in the quarter-turn metric.\
+* it may be the case that this algorithm has been improved.\
+\'a0please let me (and cube-lovers) know if you have more information.\
+\
+\
+"rubik's cube in 42 moves" \'a0by \'a0hans kloosterman\
+\
+the algorithm used here is a slight variant of thistlethwaite's\
+algorithm. \'a0we work through a chain of subgroups:\
+\
+G_0 = < F, B, L, R, U, D > \'a0\'a0( full group )\
+\
+G_1 = < F2, B2, L, R, U, D >\
+\
+G_2 = < F2, B2, L2, R2, U, D >\
+\
+G_3 = subgroup of G_2 in which all U-cubies are in the U face\
+\'a0\'a0\'a0\'a0\'a0(thus all D-cubies are in the D face and all U-D slice\
+\'a0\'a0\'a0\'a0\'a0cubies are in the U-D slice)\
+\
+G_4 = \{ 1 \}.\
+\
+there are four stages: \'a0stage i reduces our pattern from G_\{i-1\} to G_i.\
+\
+the indices of the subgroups are:\
+\
+( G_0 : G_1 ) = 2048 = 2^11\
+( G_1 : G_2 ) = 1082565 = 3^9 * 5 * 11\
+( G_2 : G_3 ) = 4900 = 2^2 * 5^2 * 7^2\
+( G_3 : G_4 ) = 3981310 = 2^14 * 3^5\
+\
+the maximum number of moves in the stages are 7, 10, 8 and 18\
+respectively, for a maximum total of 43 moves. \'a0however, in\
+the worst-case scenario of stages 3 and 4, it was checked that\
+no position actually required 26 moves; i.e. we can arrange a\
+cancellation between the two stages. \'a0thus stages 3 and 4\
+together require 25 moves at most, which gives the final\
+figure of 42 moves.\
+\
+it seems to me that a lot of work was done on an algorithm\
+for restoring the "magic domino" (the 2x3x3 puzzle), and\
+these results were applied to stages 3 and 4.\
+\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:tjj@lemma.helsinki.fi"}}{\fldrslt \cf2 \ul \ulc2 tjj@lemma.helsinki.fi}} \'a0Wed Apr 29 05:39:47 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:tjj@lemma.helsinki.fi"}}{\fldrslt \cf2 \ul \ulc2 tjj@lemma.helsinki.fi}}>\
+Received: from funet.fi by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA08033; Wed, 29 Apr 92 05:39:47 EDT\
+Received: from lemma.Helsinki.FI by funet.fi with SMTP (PP) \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0id <{\field{\*\fldinst{HYPERLINK "mailto:07580-0@funet.fi"}}{\fldrslt \cf2 \ul \ulc2 07580-0@funet.fi}}>; Wed, 29 Apr 1992 12:38:37 +0300\
+Received: by lemma.helsinki.fi (5.57/Ultrix3.0-C) id AA20924;\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Wed, 29 Apr 92 12:38:45 +0300\
+Date: Wed, 29 Apr 92 12:38:45 +0300\
+From: {\field{\*\fldinst{HYPERLINK "mailto:tjj@lemma.helsinki.fi"}}{\fldrslt \cf2 \ul \ulc2 tjj@lemma.helsinki.fi}} (Timo Jokitalo)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9204290938.AA20924@lemma.helsinki.fi"}}{\fldrslt \cf2 \ul \ulc2 9204290938.AA20924@lemma.helsinki.fi}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Re: an upper bound on god's number\
+\
+Do you have the article by Hans Kloosterman in emailable form? If not,\
+where could I obtain a copy?\
+\
+	Timo\
+	{\field{\*\fldinst{HYPERLINK "mailto:tjj@rolf.helsinki.fi"}}{\fldrslt \cf2 \ul \ulc2 tjj@rolf.helsinki.fi}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May \'a03 21:43:51 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA13983; Sun, 3 May 92 21:43:51 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA25853 (5.65b/2.10/CWI-Amsterdam); Mon, 4 May 1992 03:43:48 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA00557 (5.65b/2.10/CWI-Amsterdam); Mon, 4 May 1992 03:43:47 +0200\
+Date: Mon, 4 May 1992 03:43:47 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205040143.AA00557.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205040143.AA00557.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Are we approaching God's algorithm?\
+\
+Because it might interest the readers and to be ahead of Peter Beck:\
+Saturday I received CFF (Cubism For Fun) # 28.\
+It has an interesting article by Herbert Kociemba from Darmstadt, who\
+describes his program to solve Rubik's Cube. \'a0He states that he has not\
+yet encountered a configuration that required more than 21 moves. \'a0A short\
+description follows:\
+\
+Basicly the program consists of two stages, based on the groups:\
+G0:	[U,D,R,L,F,B]\
+G1:	[U,D,R^2,L^2,F^2,B^2]\
+G2:	I\
+The stages are from G0 to G1 and next from G1 to G2. \'a0Note that the first\
+stage is the combination of the first two stages of Thistlethwaite, and\
+the last stages combine his last two stages.\
+\
+His first stage can loosely be described as working in a three dimensional\
+coordinate system where the coordinates are resp. twist, flip and permutation.\
+He searches his way until the coordinate [0,0,0] is reached. \'a0Most important\
+here is that he is able to find multiple ways. \'a0The second stage is similar,\
+although he is not very clear here.\
+\
+He uses lookup tables, but does not tell us how large his lookup tables\
+are. \'a0But his program runs on 1 MByte Atari ST. \'a0The heart is coded in\
+a few lines of 68k assembly, the remainder in GFA Basic. \'a0As far as I\
+know GFA Basic it can be interpreted, but also compiled. \'a0He does also\
+use tree pruning.\
+\
+What he does is find successive solutions in stage 1 and fit solutions\
+from stage 2. \'a0Letting the system run longer generally finds shorter\
+solutions.\
+\
+His claims are on average less than 14 turns in stage 1, on average less\
+than 10 turns in stage 2. \'a0But according to his article this is not completely\
+deterministic, so there is no proven upperbound. \'a0Perhaps a proof can be\
+found; I do not know. \'a0In practice he finds an upperbound of 21 moves, which\
+is indeed far better than other algorithms do obtain.\
+\
+To take this in perspective here Thistlethwaites results from Singmaster's book:\
+Stage		1	2	3	4\
+Proven		7	13	15	17\
+Anticipated	7	12	14?	17\
+Best Possible	7	10?	13?	15?\
+(Are there configurations that require the maxima proven for Thistlethwaites\
+algorithm?)\
+\
+Apparently the combination of stages largely reduces the number of turns\
+required.\
+\
+In CFF 25 there was an article by Hans Kloosterman which did already improve\
+on the number of moves. \'a0His stages 1 and 2 are identical to Thistlethwaites,\
+he has a third stage that combines the 3rd and 4th stages of Thistlethwaite.\
+He reports a proven maximum for his three stages of 7, 10 and 25 moves, so\
+slightly better than Thistlethwaites conjectured best figures.\
+\
+Kociemba's algorithm appears however to be a big leap forward, although there\
+are no proofs yet. \'a0One example:\
+\
+In 1981 Christoph Bandelow wrote a book where he offered a prize for the\
+shortest sequence of moves that would flip every edge cuby and twists\
+every corner cuby. \'a0The deadline was September 1, 1982; at that time the\
+prize was offered for a 23 move manoeuvre. \'a0As Christoph writes:\
+	All solutions presented after the main deadline and shorter than\
+	all solutions submitted before were also proised a prize. \'a0Using\
+	his very ingeneous new search program Herbert Kociemba, Darmstadt,\
+	Germany now found:\
+		DF^2U'(B^2R^2)^2LB'D'FD^2FB^2UF'LRU^2F'\
+	for 20 moves.\
+Kociemba himself writes about this:\
+	Our first solution had 12 moves in stage 1 and 14 moves in stage 2.\
+	In progress solutions 12+13, 12+12 and 12+11 were found. \'a0However,\
+	as soon as we introduced manoeuvres of 13 moves in stage 1, we found\
+	successively 9, 8 and at last 7 moves for stage 2. \'a0The program was\
+	stopped after treating about 3000 solutions.\
+He further states that the first solution in general takes 95 seconds, but\
+successive solutions take much shorter, and in general he finds one of less\
+than 22 moves in a few hours on his 8 MHz Atari.\
+\
+What is clear is that one does not need the minimal solution in one stage\
+to get the minimal overall total.\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Mon May \'a04 23:38:05 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA16784; Mon, 4 May 92 23:38:05 EDT\
+Received: from phnom-penh.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA06009; Mon, 4 May 92 20:37:54 PDT\
+Date: Mon, 4 May 92 20:37:54 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205050337.AA06009@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205050337.AA06009@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Re: \'a0Are we approaching God's algorithm?\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:dseal@armltd.co.uk"}}{\fldrslt \cf2 \ul \ulc2 dseal@armltd.co.uk}}\
+\
+<{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}> writes:\
+\pard\pardeftab720\ql\qnatural
+\cf2 Because it might interest the readers and to be ahead of Peter Beck:\
+Saturday I received CFF (Cubism For Fun) # 28.\
+It has an interesting article by Herbert Kociemba from Darmstadt, who\
+describes his program to solve Rubik's Cube. \'a0He states that he has not\
+yet encountered a configuration that required more than 21 moves. \'a0A short\
+description follows:\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+it would be nice to know how many patterns he has tested.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Basicly the program consists of two stages, based on the groups:\
+G0:	[U,D,R,L,F,B]\
+G1:	[U,D,R^2,L^2,F^2,B^2]\
+G2:	I\
+The stages are from G0 to G1 and next from G1 to G2. \'a0Note that the first\
+stage is the combination of the first two stages of Thistlethwaite, and\
+the last stages combine his last two stages.\
+\
+His first stage can loosely be described as working in a three dimensional\
+coordinate system where the coordinates are resp. twist, flip and permutation.\
+He searches his way until the coordinate [0,0,0] is reached. \'a0Most important\
+here is that he is able to find multiple ways. \'a0The second stage is similar,\
+although he is not very clear here.\
+\
+He uses lookup tables, but does not tell us how large his lookup tables\
+are. \'a0But his program runs on 1 MByte Atari ST. \'a0The heart is coded in\
+a few lines of 68k assembly, the remainder in GFA Basic. \'a0As far as I\
+know GFA Basic it can be interpreted, but also compiled. \'a0He does also\
+use tree pruning.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+does he describe his method of "tree pruning"? \'a0this would seem to\
+be the "intelligent" part of the program, i.e. recognizing when to\
+abandon a given approach. \'a0if anyone has any insight on the tree\
+pruning, please let me know.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 What he does is find successive solutions in stage 1 and fit solutions\
+from stage 2. \'a0Letting the system run longer generally finds shorter\
+solutions.\
+\
+His claims are on average less than 14 turns in stage 1, on average less\
+than 10 turns in stage 2. \'a0But according to his article this is not completely\
+deterministic, so there is no proven upperbound. \'a0Perhaps a proof can be\
+found; I do not know. \'a0In practice he finds an upperbound of 21 moves, which\
+is indeed far better than other algorithms do obtain.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+it's not likely that this will lead to a proof of an effective upper\
+bound. \'a0perhaps he can shave a few moves off the 42 obtained by\
+kloosterman, but i wouldn't expect him to prove an upper bound\
+anywhere near 21. \'a0probably the best bet for this would be to\
+exhaustively calculate the diameter of the group \'a0G_1 \'a0(with the\
+given generators) and the diameter of the coset space \'a0G_0 / G_1.\
+their respective sizes are: \'a019508428800 \'a0and \'a02217093120, \'a0both of\
+which are out of my league.\
+\
+i'm not belittling kociemba's program; it's a very impressive feat!\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 To take this in perspective here Thistlethwaites results from Singmaster's book:\
+Stage		1	2	3	4\
+Proven		7	13	15	17\
+Anticipated	7	12	14?	17\
+Best Possible	7	10?	13?	15?\
+(Are there configurations that require the maxima proven for Thistlethwaites\
+algorithm?)\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+now look what happens when people use TABs! \'a0:-\} \'a0(the "Proven" line\
+should be shifted to the left.)\
+\
+i believe that the diameters of the respective coset spaces are exactly\
+those numbers listed in the "Best Possible" line. \'a0can anyone confirm\
+this? \'a0i've finally written a few programs, and those are the diameters\
+i get. \'a0i'm surprised that thistlethwaite didn't just do an exhaustive\
+search on these coset spaces. \'a0perhaps it's just a matter of not having\
+the technology when he did his work (~12 years ago).\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Kociemba's algorithm appears however to be a big leap forward, although there\
+are no proofs yet. \'a0One example:\
+\
+In 1981 Christoph Bandelow wrote a book where he offered a prize for the\
+shortest sequence of moves that would flip every edge cuby and twists\
+every corner cuby. \'a0The deadline was September 1, 1982; at that time the\
+prize was offered for a 23 move manoeuvre. \'a0As Christoph writes:\
+	All solutions presented after the main deadline and shorter than\
+	all solutions submitted before were also proised a prize. \'a0Using\
+	his very ingeneous new search program Herbert Kociemba, Darmstadt,\
+	Germany now found:\
+		DF^2U'(B^2R^2)^2LB'D'FD^2FB^2UF'LRU^2F'\
+	for 20 moves.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+very nice. \'a0now how about "superflip," and also "supertwist?" \'a0these\
+are also reasonable candidates for antipodes of "START." \'a0i know the\
+following manuever for "supertwist" (22 face / 30 quarter turns):\
+U F' U' (L R2 F2 B')^4 \'a0U F U'\
+(obtained by conjugating a manuever singmaster attributes to thistlethwaite)\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Kociemba himself writes about this:\
+	Our first solution had 12 moves in stage 1 and 14 moves in stage 2.\
+	In progress solutions 12+13, 12+12 and 12+11 were found. \'a0However,\
+	as soon as we introduced manoeuvres of 13 moves in stage 1, we found\
+	successively 9, 8 and at last 7 moves for stage 2. \'a0The program was\
+	stopped after treating about 3000 solutions.\
+He further states that the first solution in general takes 95 seconds, but\
+successive solutions take much shorter, and in general he finds one of less\
+than 22 moves in a few hours on his 8 MHz Atari.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+it would also be nice to know how long this first solution usually is.\
+\
+from the figures i have (111207592 "different" sequences of 7 or fewer\
+twists and 167024 "different" sequences of 6 or fewer twists WITHIN G_1)\
+it's clear that exhaustive search is too cumbersome. \'a0thus i reiterate\
+both my statement that the "tree pruning" algorithm is the essential\
+part of this program, and my desire to know more about it (i.e. for\
+implementation purposes.)\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+\pard\pardeftab720\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\cf0 \
+thanks for the info!\
+\
+mike \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Tue May \'a05 03:58:28 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA19673; Tue, 5 May 92 03:58:28 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA01995 (5.65b/2.10/CWI-Amsterdam); Tue, 5 May 1992 09:57:54 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA01813 (5.65b/2.10/CWI-Amsterdam); Tue, 5 May 1992 09:57:53 +0200\
+Date: Tue, 5 May 1992 09:57:53 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205050757.AA01813.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205050757.AA01813.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Re: \'a0Are we approaching God's algorithm?\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:dseal@armltd.co.uk"}}{\fldrslt \cf2 \ul \ulc2 dseal@armltd.co.uk}}\
+\
+\pard\pardeftab720\ql\qnatural
+\cf3 It has an interesting article by Herbert Kociemba from Darmstadt, who\
+describes his program to solve Rubik's Cube. \'a0He states that he has not\
+yet encountered a configuration that required more than 21 moves. \'a0A short\
+description follows:\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+\cf2 it would be nice to know how many patterns he has tested.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+He does not say how many, but his article gives nine patterns that have been\
+published earlier in CFF for which he finds shorter answers. \'a0Also more are\
+promised for future issues.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf3 His first stage can loosely be described as working in a three dimensional\
+coordinate system where the coordinates are resp. twist, flip and permutation.\
+He searches his way until the coordinate [0,0,0] is reached.\
+\pard\pardeftab720\ql\qnatural
+\cf0 ...\
+\pard\pardeftab720\ql\qnatural
+\cf3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0He does also\
+use tree pruning.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+\cf2 does he describe his method of "tree pruning"? \'a0this would seem to\
+be the "intelligent" part of the program, i.e. recognizing when to\
+abandon a given approach. \'a0if anyone has any insight on the tree\
+pruning, please let me know.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+I can give some information. \'a0What he does do is calculate in advance through\
+the three axis of his space the minimal number of moves needed to get at\
+[0,0,0]. \'a0This is used for tree pruning. \'a0It obviously will not prune\
+everything (e.g. if you are at point [x,y,z] it may very well be that [x,?,?]\
+for other points requires less moves, and similar across the y and z\
+direction), but he tells that his pruning is very effective. \'a0I do not know\
+how he prunes in the second case, because he does not completely describes\
+the coordinates of his second space, but I presume pruning is done in a\
+similar way.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 it's not likely that this will lead to a proof of an effective upper\
+bound. \'a0perhaps he can shave a few moves off the 42 obtained by\
+kloosterman, but i wouldn't expect him to prove an upper bound\
+anywhere near 21.\
+\pard\pardeftab720\ql\qnatural
+\cf0 I think so too. \'a0Moreover, it is difficult to take in account what he\
+found, namely that a minimal solution in the first stage does not guarantee\
+a minimal overall solution.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 i believe that the diameters of the respective coset spaces are exactly\
+those numbers listed in the "Best Possible" line. \'a0can anyone confirm\
+this? \'a0i've finally written a few programs, and those are the diameters\
+i get. \'a0i'm surprised that thistlethwaite didn't just do an exhaustive\
+search on these coset spaces. \'a0perhaps it's just a matter of not having\
+the technology when he did his work (~12 years ago).\
+\pard\pardeftab720\ql\qnatural
+\cf0 Well, apparently Thistlethwaite did not know that those were the diameters,\
+otherwise I have no explanation for the question marks as they appear in\
+Singmaster.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0now how about "superflip," and also "supertwist?"\
+\pard\pardeftab720\ql\qnatural
+\cf0 I will try to contact him to see what he has to say about those.\
+\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Fri May \'a08 17:58:59 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA26323; Fri, 8 May 92 17:58:59 EDT\
+Received: from digel.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA21236; Fri, 8 May 92 14:58:49 PDT\
+Date: Fri, 8 May 92 14:58:49 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205082158.AA21236@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205082158.AA21236@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Re: \'a0Are we approaching God's algorithm?\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:dseal@armltd.co.uk"}}{\fldrslt \cf2 \ul \ulc2 dseal@armltd.co.uk}}\
+\
+\pard\pardeftab720\ql\qnatural
+\cf3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0now how about "superflip," and also "supertwist?"\
+\pard\pardeftab720\ql\qnatural
+\cf2 I will try to contact him to see what he has to say about those.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+of course, these aren't exactly the patterns to test. \'a0apply your\
+favorite quarter turn to either of these patterns, and you're\
+one move closer to START.\
+\
+how do i know that we're one move closer to start? \'a0the patterns\
+"superflip," "supertwist" and "superfliptwist" each have the\
+following three properties:\
+\
+1. the group of symmetries of the pattern acts transitively on the\
+\'a0\'a0set of "oriented" faces of the cube.\
+2. the pattern commutes with the square of each face turn.\
+3. the pattern is NOT in the subgroup generated by the squares of\
+\'a0\'a0face turns.\
+\
+now suppose that a pattern with the above properties requires\
+N \'a0face turns to return to START. \'a0let \'a0A B C \'a0be a minimal sequence\
+of face turns to solve this pattern, where \'a0A, B, \'a0and \'a0C \'a0are\
+subsequences such that: \'a0A \'a0consists only of squares of face turns,\
+B \'a0is a quarter turn of some face and \'a0C \'a0is the rest of the sequence.\
+we can dissect the sequence into these three parts from hypothesis 3.\
+from hypothesis 2, the sequences \'a0A B C \'a0and \'a0B C A \'a0have the same\
+effect. \'a0finally, from hypothesis 1, the quarter twist \'a0B \'a0may as well\
+be our favorite quarter twist.\
+\
+see the hoey-saxe message on "symmetry and local maxima," for a good\
+discussion of this idea. \'a0(in the archives, cube-mail-1, 14 dec 1980)\
+\
+my apologies if this is obvious to everyone.\
+\
+on the other hand, the kociemba algorithm isn't completely symmetric.\
+thus it may be wise for him to test 2 patterns: "super----" followed\
+by \'a0U, \'a0and "super----" followed by \'a0R. \'a0the tradeoff is testing 2\
+patterns for being 1 move closer. \'a0i'd say this is probably a good trade.\
+\
+now to correct something misleading i posted earlier:\
+\
+) i believe that the diameters of the respective coset spaces are exactly\
+) those numbers listed in the "Best Possible" line. \'a0can anyone confirm\
+) this? \'a0i've finally written a few programs, and those are the diameters\
+) i get. \'a0i'm surprised that thistlethwaite didn't just do an exhaustive\
+) search on these coset spaces. \'a0perhaps it's just a matter of not having\
+) the technology when he did his work (~12 years ago).\
+\
+oops! \'a0i don't mean to say "diameter" here! \'a0these are coset spaces, so\
+there's no reason to suppose that (the group of automorphisms of the)\
+graph is vertex transitive. \'a0what my programs calculated was the maximal\
+distance from the identity coset in each of these spaces. \'a0(i am told\
+that the graph theory term is the "eccentricity" of the given vertex.)\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sat May \'a09 20:43:35 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA27274; Sat, 9 May 92 20:43:35 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA15515 (5.65b/2.10/CWI-Amsterdam); Sun, 10 May 1992 02:43:33 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA00802 (5.65b/2.10/CWI-Amsterdam); Sun, 10 May 1992 02:43:31 +0200\
+Date: Sun, 10 May 1992 02:43:31 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205100043.AA00802.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205100043.AA00802.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: More on the Cube (2x2x2 in this case).\
+\
+Singmaster states that the diameter of the group for the 2x2x2 cube is not\
+known. \'a0I do not know whether it has been calculated in the mean time, so\
+I just did calculate it. \'a0The number of elements in the group is\
+3,674,160. \'a0(Fix one corner, the others allow every permutation and one\
+third of all possible twists.) \'a0The diameter is 11 if we do allow half-turns,\
+it is 14 if we do not allow half-turns. \'a0The distribution is:\
+If we allow half-turns:\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 with \'a00 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 with \'a01 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a054 with \'a02 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0321 with \'a03 moves\
+\'a0\'a0\'a0\'a0\'a01847 with \'a04 moves\
+\'a0\'a0\'a0\'a0\'a09992 with \'a05 moves\
+\'a0\'a0\'a0\'a050136 with \'a06 moves\
+\'a0\'a0\'a0227536 with \'a07 moves\
+\'a0\'a0\'a0870072 with \'a08 moves\
+\'a0\'a01887748 with \'a09 moves\
+\'a0\'a0\'a0623800 with 10 moves\
+\'a0\'a0\'a0\'a0\'a02644 with 11 moves\
+If we do not allow half-turns:\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 with \'a00 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 with \'a01 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a027 with \'a02 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0120 with \'a03 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0534 with \'a04 moves\
+\'a0\'a0\'a0\'a0\'a02256 with \'a05 moves\
+\'a0\'a0\'a0\'a0\'a08969 with \'a06 moves\
+\'a0\'a0\'a0\'a033058 with \'a07 moves\
+\'a0\'a0\'a0114149 with \'a08 moves\
+\'a0\'a0\'a0360508 with \'a09 moves\
+\'a0\'a0\'a0930588 with 10 moves\
+\'a0\'a01350852 with 11 moves\
+\'a0\'a0\'a0782536 with 12 moves\
+\'a0\'a0\'a0\'a090280 with 13 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0276 with 14 moves\
+In the first case heuristics give a diameter of at least 9. \'a0We see that the\
+majority of the configuration is within distance 9 from start. \'a0So it appears\
+that heuristics get close to the real value.\
+We see also that in both cases there is more than one diametrally opposite\
+configuration. \'a0Next I will find out which those are (and if they have\
+something in common).\
+\
+BTW, calculation did not take very long, only a few (<3) minutes on an FPS\
+(i.e. \'a0an extremely fast SPARC). \'a0But as the calculations are memory bound\
+rather than compute bound, the speed of the processor is not so very important.\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Mon May 11 20:31:30 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA17723; Mon, 11 May 92 20:31:30 EDT\
+Received: from jacobi.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA22739; Mon, 11 May 92 17:31:10 PDT\
+Date: Mon, 11 May 92 17:31:10 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205120031.AA22739@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205120031.AA22739@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Re: \'a0More on the Cube (2x2x2 in this case).\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Singmaster states that the diameter of the group for the 2x2x2 cube is not\
+known.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+in his "cubic circular," issue(s) 5/6 (pages 26, 27) he gives some info\
+about this, although it is (at least) third hand information, and therefore\
+not necessarily reliable.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 I just did calculate it.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \'a0...\
+\pard\pardeftab720\ql\qnatural
+\cf2 If we allow half-turns:\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 with \'a00 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 with \'a01 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a054 with \'a02 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0321 with \'a03 moves\
+\'a0\'a0\'a0\'a0\'a01847 with \'a04 moves\
+\'a0\'a0\'a0\'a0\'a09992 with \'a05 moves\
+\'a0\'a0\'a0\'a050136 with \'a06 moves\
+\'a0\'a0\'a0227536 with \'a07 moves\
+\'a0\'a0\'a0870072 with \'a08 moves\
+\'a0\'a01887748 with \'a09 moves\
+\'a0\'a0\'a0623800 with 10 moves\
+\'a0\'a0\'a0\'a0\'a02644 with 11 moves\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+he gives the same figures, so they are probably correct.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 If we do not allow half-turns:\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 with \'a00 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 with \'a01 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a027 with \'a02 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0120 with \'a03 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0534 with \'a04 moves\
+\'a0\'a0\'a0\'a0\'a02256 with \'a05 moves\
+\'a0\'a0\'a0\'a0\'a08969 with \'a06 moves\
+\'a0\'a0\'a0\'a033058 with \'a07 moves\
+\'a0\'a0\'a0114149 with \'a08 moves\
+\'a0\'a0\'a0360508 with \'a09 moves\
+\'a0\'a0\'a0930588 with 10 moves\
+\'a0\'a01350852 with 11 moves\
+\'a0\'a0\'a0782536 with 12 moves\
+\'a0\'a0\'a0\'a090280 with 13 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0276 with 14 moves\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+he does not give these, but he does mention that the diameter is 14.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 BTW, calculation did not take very long, only a few (<3) minutes on an FPS\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+singmaster says that the calculation took "over 51 hours of computer time"!\
+ouch! \'a0this was 10 years ago, though. \'a0(what's 51 hours / 3 minutes ?)\
+\
+the "unix news item" from which singmaster apparently got his info was\
+included in a cube-lovers message. \'a0it's in the archives, cube-mail-3,\
+sept 15, 1981 in a message from "ISAACS at SRI-KL".\
+\
+dik's results show that the corners of the 3x3x3 can be "solved" (i.e.\
+positioned correctly with respect to one another) in 11 face (respectively\
+14 quarter) turns. \'a0it would be nice to know if they can be solved with\
+respect to the centers within 11 face (respectively 14 quarter) turns.\
+this seems likely.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:hoey@aic.nrl.navy.mil"}}{\fldrslt \cf2 \ul \ulc2 hoey@aic.nrl.navy.mil}} \'a0Tue May 12 11:03:38 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:hoey@aic.nrl.navy.mil"}}{\fldrslt \cf2 \ul \ulc2 hoey@aic.nrl.navy.mil}}>\
+Received: from Sun0.AIC.NRL.Navy.Mil by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA05297; Tue, 12 May 92 11:03:38 EDT\
+Received: by Sun0.AIC.NRL.Navy.Mil (4.1/SMI-4.0)\
+	id AA04073; Tue, 12 May 92 11:03:34 EDT\
+\
+\
+Date: Tue, 12 May 92 11:03:34 EDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:hoey@aic.nrl.navy.mil"}}{\fldrslt \cf2 \ul \ulc2 hoey@aic.nrl.navy.mil}} (Dan Hoey)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205121503.AA04073@Sun0.AIC.NRL.Navy.Mil"}}{\fldrslt \cf2 \ul \ulc2 9205121503.AA04073@Sun0.AIC.NRL.Navy.Mil}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Cube-Lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 Cube-Lovers@life.ai.mit.edu}}\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Subject: Diameter of the 2^3 cube and the 3^3 corners\
+\
+I sent the results of a quarter-turn analysis of these puzzles to\
+Cube-Lovers in several messages during August, 1984. \'a0I modified a\
+program written by Karl Dahlke to get these results. \'a0I counted both\
+positions and local maxima at every distance up to the diameter of 14\
+quarter-turns. \'a0In case you don't have the archives handy, here are\
+the results:\
+\
+\'a0Quarter \'a0\'a0\'a0\'a0\'a0\'a0\'a02^3 Puzzle \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Corners of 3^3 Puzzle\
+\'a0\'a0Turns \'a0\'a0Positions \'a0Local Maxima \'a0\'a0Positions \'a0Local Maxima\
+____________________________________________________________\
+\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00\
+\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a012 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00\
+_____2___________27________0______________114___________0___\
+\'a0\'a0\'a0\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0120 \'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0924 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00\
+\'a0\'a0\'a0\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0534 \'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06539 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00\
+_____5_________2256________0____________39528___________0___\
+\'a0\'a0\'a0\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08969 \'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0199926 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0114\
+\'a0\'a0\'a0\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a033058 \'a0\'a0\'a0\'a0\'a0\'a016 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0806136 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0600\
+_____8_______114149_______53__________2761740_______17916___\
+\'a0\'a0\'a0\'a09 \'a0\'a0\'a0\'a0\'a0\'a0360508 \'a0\'a0\'a0\'a0\'a0260 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08656152 \'a0\'a0\'a0\'a0\'a0\'a010200\
+\'a0\'a0\'a010 \'a0\'a0\'a0\'a0\'a0\'a0930588 \'a0\'a0\'a0\'a01460 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a022334112 \'a0\'a0\'a0\'a0\'a0\'a035040\
+____11______1350852____34088_________32420448______818112___\
+\'a0\'a0\'a012 \'a0\'a0\'a0\'a0\'a0\'a0782536 \'a0\'a0402260 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a018780864 \'a0\'a0\'a0\'a09654240\
+\'a0\'a0\'a013 \'a0\'a0\'a0\'a0\'a0\'a0\'a090280 \'a0\'a0\'a088636 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02166720 \'a0\'a0\'a0\'a02127264\
+____14__________276______276_____________6624________6624___\
+\
+The first column agrees with Dik Winter's findings. \'a0As Michael Reid\
+surmised, the diameters of the two groups are the same.\
+\
+My hazy recollection is that the 2^3 program ran for a few minutes on\
+a Vax 750, while the corners program took a couple of hours.\
+\
+Dan Hoey\
+\pard\pardeftab720\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "mailto:Hoey@AIC.NRL.Navy.Mil"}}{\fldrslt \cf2 \ul \ulc2 Hoey@AIC.NRL.Navy.Mil}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Tue May 12 17:47:25 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA21137; Tue, 12 May 92 17:47:25 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA19167 (5.65b/2.10/CWI-Amsterdam); Tue, 12 May 1992 23:46:12 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA06553 (5.65b/2.10/CWI-Amsterdam); Tue, 12 May 1992 23:46:11 +0200\
+Date: Tue, 12 May 1992 23:46:11 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205122146.AA06553.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205122146.AA06553.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Cube-Lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 Cube-Lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:hoey@aic.nrl.navy.mil"}}{\fldrslt \cf2 \ul \ulc2 hoey@aic.nrl.navy.mil}}\
+Subject: Re: \'a0Diameter of the 2^3 cube and the 3^3 corners\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 I sent the results of a quarter-turn analysis of these puzzles to\
+Cube-Lovers in several messages during August, 1984.\
+\pard\pardeftab720\ql\qnatural
+\cf0 I must have somewhere a printed stack of cube-lovers mailings, but I never\
+came around to read them all. \'a0Also, my reference to Singmaster was his\
+notes. \'a0The latest page of the latest printing states that the 2x2x2 case\
+was still unsolved, I never have seen his additional notes.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0I counted both\
+positions and local maxima at every distance up to the diameter of 14\
+quarter-turns.\
+\pard\pardeftab720\ql\qnatural
+\cf0 After Mike Reid's question I modified my program to do the counting on the\
+corners of the 3^3. \'a0The biggest change was that it is now able to handle\
+that case in memory on this 32 MByte machine. \'a0I did not count local maxima\
+(although that could be done). \'a0The quarter turn case is identical to Dan\
+Hoey's results. \'a0If we count half turns as a single move I get the following\
+results:\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 with \'a00 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a018 with \'a01 moves\
+\'a0\'a0\'a0\'a0\'a0\'a0243 with \'a02 moves\
+\'a0\'a0\'a0\'a0\'a02874 with \'a03 moves\
+\'a0\'a0\'a0\'a028000 with \'a04 moves\
+\'a0\'a0\'a0205416 with \'a05 moves\
+\'a0\'a01168516 with \'a06 moves\
+\'a0\'a05402628 with \'a07 moves\
+\'a020776176 with \'a08 moves\
+\'a045391616 with \'a09 moves\
+\'a015139616 with 10 moves\
+\'a0\'a0\'a0\'a064736 with 11 moves\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 The first column agrees with Dik Winter's findings. \'a0As Michael Reid\
+surmised, the diameters of the two groups are the same.\
+\pard\pardeftab720\ql\qnatural
+\cf0 Also here the diameter is the same.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 My hazy recollection is that the 2^3 program ran for a few minutes on\
+a Vax 750, while the corners program took a couple of hours.\
+\pard\pardeftab720\ql\qnatural
+\cf0 My calculation took slightly less than half an hour. \'a0The differences in\
+timings we see are (I think) mostly due to memory constraints on older\
+machines. \'a0So we see a difference between Memory bound and I/O bound.\
+I could go to disk for storage of (intermediate) results, but even than the\
+edges can not be handled. \'a0(980*10^9 configurations so my program would\
+require 245 GBytes of storage. \'a0I think methods can be found to reduce this by\
+a factor of 30-40, but it is still much too large to handle, and in that case\
+you probably get the diameter only.)\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Thu May 14 19:44:27 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA00837; Thu, 14 May 92 19:44:27 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA08254 (5.65b/2.10/CWI-Amsterdam); Fri, 15 May 1992 01:44:25 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA13499 (5.65b/2.10/CWI-Amsterdam); Fri, 15 May 1992 01:44:24 +0200\
+Date: Fri, 15 May 1992 01:44:24 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205142344.AA13499.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205142344.AA13499.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Kociemba's algorithm\
+\
+I am now trying to implement Kociemba's algorithm. \'a0The initialization parts\
+are done. \'a0To recap, it is a two stage algorithm. \'a0The first stage tries to\
+get to the subgroup generated by [R^2,L^2,F^2,B^2,U,D], the second stages\
+comes back to start.\
+\
+The first stage uses a three dimensional coordinate system: twistyness,\
+flippancy and choosyness (where are the 4 middle slice edge cubies?).\
+The second stage uses (I think) also a three dimensional coordinate system,\
+all permutations: corner cubies, edge cubies not on the middle slice, slice\
+cubies. \'a0I found the maximal distance along each coordinate as follows:\
+\
+stage 1:\
+twistyness:	6\
+flippancy:	7\
+choosyness:	4\
+This seems not in contradiction with his 10 moves or less on average.\
+\
+stage 2:\
+corners:	13\
+edges:		8\
+slice edges:	4\
+I think this contradicts his 14 moves or less, there are configurations\
+that require at least 13 moves to get the corners correct. \'a0I would be\
+surprised if only one more move is needed to get everything correct.\
+\
+*But* some of his best moves use a sub-optimal solution for stage 1!\
+Now if that could be quantified...\
+\
+Next step is implementing the searching algorithms.\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sat May 16 21:14:18 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA03345; Sat, 16 May 92 21:14:18 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA14373 (5.65b/2.10/CWI-Amsterdam); Sun, 17 May 1992 03:14:15 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA20529 (5.65b/2.10/CWI-Amsterdam); Sun, 17 May 1992 03:14:14 +0200\
+Date: Sun, 17 May 1992 03:14:14 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205170114.AA20529.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205170114.AA20529.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Kociemba's algorithm\
+\
+I have implemented it based on his description. \'a0I am not yet completely\
+satisfied, but can give some results. \'a0Both are the best I found after a\
+run of about 30 minutes. \'a0(The numbers are first the number of moves to\
+get at [F^2,R^2,B^2,L^2,U,D], second the numbr of moves to complete.)\
+\
+Superflip:\
+(11+10=21): F B R U^2 B^2 U' D' R^2 B' R L U F^2 L^2 D^2 B^2 D' F^2 D L^2 D\
+\
+Supertwist:\
+(7+9=16): F R^2 L^2 U^2 D^2 F^2 B' R^2 U F^2 B^2 R^2 L^2 U^2 D' L^2\
+\
+So clearly the supertwist is not even close to the opposite of start!\
+\
+Currently the program needs still a bit of hand-tuning. \'a0I am looking how\
+I can improve that.\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May 17 18:49:53 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA17456; Sun, 17 May 92 18:49:53 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA29764 (5.65b/2.10/CWI-Amsterdam); Mon, 18 May 1992 00:49:49 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA22984 (5.65b/2.10/CWI-Amsterdam); Mon, 18 May 1992 00:49:48 +0200\
+Date: Mon, 18 May 1992 00:49:48 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205172249.AA22984.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205172249.AA22984.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Kociemba's algorithm\
+\
+I have made my program a bit faster. \'a0While previously the best I found for\
+superflip was a 21 move solution (even after 10 hours computation time,\
+actually the solution was found after about 30 minutes), I have now a 20\
+move solution, found after only 15 minutes:\
+\
+Superflip:\
+(13+7=20): F B U^2 R F^2 R^2 B^2 U' D F U^2 R' L' U B^2 D R^2 U B^2 U\
+\
+Some more information. \'a0First a short recap. \'a0Phase1 brings the cube in\
+the group generated by [F^2,R^2,B^2,L^2,U,D], phase2 brings him back\
+to start. \'a0Phase 1 searches in the space generated by the three (orthogonal)\
+coordinates:\
+Twist (2187 entries), flip (2048 entries) and slice-edge-cube placing (495\
+entries).\
+Phase 2 searches in the space generated by the three (non-orthogonal)\
+coordinates:\
+Permutations of corner cubes (40320 entries), permutations of edge cubes\
+not in the middle slice (40320 entries) and permutations of the middle\
+slice edge cubes (24 entries).\
+\
+While Kociemba originally did tree pruning based on the minimal number of\
+moves needed along single coordinates, I now use pairs of coordinates\
+(except that in phase 2 the 40320*40320 pair is not used of course).\
+This is part of the speed-up. \'a0(Another part is that I do now disallow\
+successive moves of a single face, three or more consecutive moves of\
+opposite faces, and a move of an opposite face if the current face moved\
+is B, L or D.)\
+\
+Program details: the program starts with phase1 allowing for succesively\
+1, 2 etc. until a maximal number of moves. \'a0As soon as phase1 hits a\
+solution phase2 is called, again with a maximum number of moves starting\
+at 1. \'a0This means that if the program runs long enough it will ultimately\
+find the shortest solutions (phase 1 might just solve it!). \'a0But that wil\
+take a long time (of course). \'a0For the superflip, the program has now\
+checked all phase1 solutions of upto 12 moves and is busy with 13. \'a0It\
+found 792256 solutions of 12 moves (and that in less than 10 minutes)!\
+\
+Some additional data about minimal paths along coordinates:\
+Phase 1:\
+twist:		6\
+flip:		7\
+choice:		5\
+twist+flip:	9\
+twist+choice:	9\
+flip+choice:	9\
+\
+Phase 2:\
+corners:	13\
+edges:		8\
+slice edges:	4\
+corners+slice:	14\
+edges+slice:	12\
+\
+Based on this I expect a maximal distance in phase 1 of about 10/11, and\
+in phase 2 of about 16/17.\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May 17 21:03:44 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA19309; Sun, 17 May 92 21:03:44 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA06061 (5.65b/2.10/CWI-Amsterdam); Mon, 18 May 1992 03:03:35 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA23353 (5.65b/2.10/CWI-Amsterdam); Mon, 18 May 1992 03:03:34 +0200\
+Date: Mon, 18 May 1992 03:03:34 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205180103.AA23353.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205180103.AA23353.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:keng@zcar.asd.sgi.com"}}{\fldrslt \cf2 \ul \ulc2 keng@zcar.asd.sgi.com}}\
+Subject: My program is too fast ;-).\
+\
+I have posted a bit on my version of Kociemba's program, and I can only\
+conclude that my program is too fast. \'a0After doing the superfliptwist,\
+the superflip and the supertwist I thought about trying those configurations\
+where Singmaster's notes did not give a solution better than 21 moves.\
+I find now that it takes more time to enter the configurations than what\
+the program needs to solve it! \'a0Upto now I found the following (I will not\
+give the exact moves, as I think Kociemba wants to publish a bit more about\
+this):\
+superflip:	20 moves\
+supertwist:	16 moves\
+superfliptwist:	20 moves\
+Walker's 6+:	17 moves (was 22)\
+Walker's 6X:	19 moves (was 25)\
+Walker's worm:	14 moves (was 23)\
+\
+Initialization time for the program is 2.5 minutes. \'a0But it finds solutions\
+after only a few seconds! \'a0If you have a configuration that you think is at\
+a large distance from start, mail it and I will disprove it ;-).\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Sun May 17 22:10:48 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA20296; Sun, 17 May 92 22:10:48 EDT\
+Received: from phnom-penh.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA08289; Sun, 17 May 92 19:10:33 PDT\
+Date: Sun, 17 May 92 19:10:33 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205180210.AA08289@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205180210.AA08289@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:keng@zcar.asd.sgi.com"}}{\fldrslt \cf2 \ul \ulc2 keng@zcar.asd.sgi.com}}\
+Subject: Re: \'a0My program is too fast ;-).\
+\
+stop it, you're killing me! \'a0i also have the same idea for combining\
+the "coordinates" in pairs, but i'm not getting too far implementing\
+it. \'a0:-( \'a0i wouldn't suggest using singmaster's notes for pattern\
+maneuvers. \'a0have you seen bandelow's book? \'a0it has very short\
+maneuvers for most patterns, including two different ones for\
+"walker's worm" in 14 turns (assuming i've got the right pattern in\
+mind). \'a0bandelow counts "slice turns" as one move, though, so\
+his maneuver for 6X (order 3) is 24 face turns.\
+\
+what amazes me about this whole business is that the algorithm\
+finds very short moves when they exist. \'a0i would have expected\
+the program to produce maneuvers of approximately the same\
+length for all patterns. \'a0i would say that this is a major step\
+forward.\
+\
+you'll probably be swamped with patterns to test, but here's a\
+couple:\
+\
+stripes: (18) F3 U1 F2 U3 R1 B2 R3 U1 F2 L2 U3 L1 B2 L3 U1 L2 U3 F1.\
+\
+python: (15) R1 U3 F3 B1 L1 F2 L3 F1 B3 U3 R3 L1 F2 U2 L3.\
+\
+since i found these by hand, i'm curious to see how close they\
+are to optimal. \'a0hopefully i'll have my program running soon.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Mon May 18 09:02:04 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA29031; Mon, 18 May 92 09:02:04 EDT\
+Received: from jacobi.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA10968; Mon, 18 May 92 06:02:02 PDT\
+Date: Mon, 18 May 92 06:02:02 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205181302.AA10968@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205181302.AA10968@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: kociemba's algorithm\
+\
+after a long struggle, it appears that i finally have kociemba's\
+algorithm working properly, with the improvement that dik mentioned.\
+the first pattern i tested was "anaconda" (bandelow's terminology),\
+which dik called "walker's worm" (singmaster's terminology?).\
+(i think that's the same pattern.) \'a0within 10 minutes, most of which\
+was initializing tables, the program produced the following 14 quarter\
+turn maneuver, which is better (in the quarter turn metric) than the two\
+maneuvers bandelow gives in his book. \'a0here it is:\
+\
+anaconda: (14 qt) B1 R1 D3 R3 F1 B3 D1 F3 U1 D3 L1 F1 L3 U3.\
+\
+more results as they come in. \'a0my program isn't quite finished yet;\
+hopefully i won't screw it up attempting to improve it.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Mon May 18 19:17:44 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA20636; Mon, 18 May 92 19:17:44 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA17210 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 01:17:41 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA25710 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 01:17:40 +0200\
+Date: Tue, 19 May 1992 01:17:40 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205182317.AA25710.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205182317.AA25710.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkely.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkely.edu}}\
+Subject: Re: \'a0My program is too fast ;-).\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 stop it, you're killing me!\
+\pard\pardeftab720\ql\qnatural
+\cf0 Stop yourself ;-).\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0i wouldn't suggest using singmaster's notes for pattern\
+maneuvers. \'a0have you seen bandelow's book? \'a0it has very short\
+maneuvers for most patterns, including two different ones for\
+"walker's worm" in 14 turns (assuming i've got the right pattern in\
+mind). \'a0bandelow counts "slice turns" as one move, though, so\
+his maneuver for 6X (order 3) is 24 face turns.\
+\pard\pardeftab720\ql\qnatural
+\cf0 Leider haben wir nur die Deutschen Ausgabe. \'a0There are apparently\
+differences between the German and the English edition. \'a0The English\
+edition is later and has probably improved sequences (he has promised\
+also improved sequences for the second German edition, but I do not\
+think it ever came out).\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 what amazes me about this whole business is that the algorithm\
+finds very short moves when they exist. \'a0i would have expected\
+the program to produce maneuvers of approximately the same\
+length for all patterns. \'a0i would say that this is a major step\
+forward.\
+\pard\pardeftab720\ql\qnatural
+\cf0 The point is that my program deliberately tries short sequences first in\
+both phases. \'a0This is at the expense of more work when longer sequences\
+are tried (because you will find the shorter sequences again that you\
+abort). \'a0The main advantage is that if you find an overall short sequence\
+you have much less work to do in the second phase, and can much faster\
+abort your searches. \'a0Here some information about the searching for\
+superflip (the numbers are for phase 1):\
+	Length	Number found	Solutions found\
+	\'a0\'a08	\'a0\'a0\'a0\'a0\'a00		-\
+	\'a0\'a09	\'a0\'a0\'a0\'a0\'a00		-\
+	\'a010	\'a0\'a03072		10+13, 10+12\
+	\'a011	\'a061568		11+10\
+	\'a012	792256		-\
+	\'a013	8695488		13+ 7\
+As you see when having the large number of solutions for length 13 in phase 1\
+we have only to look at most 7 moves deep in phase 2, and 6 deep as soon as\
+we found the solution (which occurs reasonably fast). \'a0That is why it is\
+possible to do all that work in about 45 minutes. \'a0(For der Mouse, the machine\
+is an FPS. \'a0A SPARC processor twice as fast as a SPARCStation ELC. \'a0But I\
+think the program is bounded by memory access time. \'a0The program requires\
+about 12 MB memory.) \'a0Now I think the longest distance in phase 1 is about 11\
+or 12 (it is at least 11, that is sure). \'a0So in general you will find a\
+solution already when there is no need yet to do very much.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 you'll probably be swamped with patterns to test, but here's a\
+couple:\
+stripes: (18) F3 U1 F2 U3 R1 B2 R3 U1 F2 L2 U3 L1 B2 L3 U1 L2 U3 F1.\
+python: (15) R1 U3 F3 B1 L1 F2 L3 F1 B3 U3 R3 L1 F2 U2 L3.\
+\pard\pardeftab720\ql\qnatural
+\cf0 I could not improve the first but what do you think of:\
+(12+ 2=14): U2 B3 D3 L1 F1 B3 U3 F1 U3 D1 R3 B1 D1 F2\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 since i found these by hand, i'm curious to see how close they\
+are to optimal. \'a0hopefully i'll have my program running soon.\
+\pard\pardeftab720\ql\qnatural
+\cf0 14 for python is probably optimal. \'a0But you can try as you have your program\
+running.\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:Don.Woods@eng.sun.com"}}{\fldrslt \cf2 \ul \ulc2 Don.Woods@eng.sun.com}} \'a0Mon May 18 19:27:15 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:Don.Woods@eng.sun.com"}}{\fldrslt \cf2 \ul \ulc2 Don.Woods@eng.sun.com}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 Sun.COM}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA20962; Mon, 18 May 92 19:27:15 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://Eng.Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 Eng.Sun.COM}} ({\field{\*\fldinst{HYPERLINK "http://zigzag-bb.Corp.Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 zigzag-bb.Corp.Sun.COM}}) by {\field{\*\fldinst{HYPERLINK "http://Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 Sun.COM}} (4.1/SMI-4.1)\
+	id AA03799; Mon, 18 May 92 16:27:08 PDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://colossal.Eng.Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 colossal.Eng.Sun.COM}} by {\field{\*\fldinst{HYPERLINK "http://Eng.Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 Eng.Sun.COM}} (4.1/SMI-4.1)\
+	id AA20177; Mon, 18 May 92 16:27:12 PDT\
+Received: by {\field{\*\fldinst{HYPERLINK "http://colossal.Eng.Sun.COM/"}}{\fldrslt \cf2 \ul \ulc2 colossal.Eng.Sun.COM}} (4.1/SMI-4.1)\
+	id AA04124; Mon, 18 May 92 16:27:34 PDT\
+Date: Mon, 18 May 92 16:27:34 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Don.Woods@eng.sun.com"}}{\fldrslt \cf2 \ul \ulc2 Don.Woods@eng.sun.com}} (Don Woods)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205182327.AA04124@colossal.Eng.Sun.COM"}}{\fldrslt \cf2 \ul \ulc2 9205182327.AA04124@colossal.Eng.Sun.COM}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Subject: Re: Kociemba's algorithm\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Program details: the program starts with phase1 allowing for succesively\
+1, 2 etc. until a maximal number of moves. \'a0As soon as phase1 hits a\
+solution phase2 is called, again with a maximum number of moves starting\
+at 1.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+I don't remember from the earlier description; are the searches being done\
+depth-first or breadth-first? \'a0If breadth-first, then there is no reason to\
+put an upper limit on the number of moves for finding a phase1 solution,\
+since the algorithm HAS to solve phase1 in order to find an overall solution.\
+\
+Once you have an overall solution, of course, the length of phase1+phase2\
+solution can be used as an upper bound on subsequent phase1 solutions.\
+\
+Also, do you reduce the "maximum number of moves" for phase2 based on\
+solutions already found? \'a0For instance, once you have found a combined\
+phase1+phase2 solution in 20 moves, then if you find an alternative phase1\
+solution in 14 moves there is no reason to look deeper than 5 moves in\
+phase2 (or 6 if you want to find all solutions that tie for minimum length).\
+\
+	-- Don.\
+\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Mon May 18 19:48:28 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA21591; Mon, 18 May 92 19:48:28 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA18208 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 01:48:27 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA25754 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 01:48:26 +0200\
+Date: Tue, 19 May 1992 01:48:26 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205182348.AA25754.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205182348.AA25754.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Don.Woods@eng.sun.com"}}{\fldrslt \cf2 \ul \ulc2 Don.Woods@eng.sun.com}}\
+Subject: Re: Kociemba's algorithm\
+Cc: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 I don't remember from the earlier description; are the searches being done\
+depth-first or breadth-first? \'a0If breadth-first, then there is no reason to\
+put an upper limit on the number of moves for finding a phase1 solution,\
+since the algorithm HAS to solve phase1 in order to find an overall solution.\
+\pard\pardeftab720\ql\qnatural
+\cf0 I do depth-first. \'a0I think the breadth of the tree is much too large to be\
+handled in breadth first fashion (currently I abort the program when it\
+reaches a length in phase 1 such that the number of solutions is a few\
+million).\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Once you have an overall solution, of course, the length of phase1+phase2\
+solution can be used as an upper bound on subsequent phase1 solutions.\
+\pard\pardeftab720\ql\qnatural
+\cf0 Right.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Also, do you reduce the "maximum number of moves" for phase2 based on\
+solutions already found? \'a0For instance, once you have found a combined\
+phase1+phase2 solution in 20 moves, then if you find an alternative phase1\
+solution in 14 moves there is no reason to look deeper than 5 moves in\
+phase2 (or 6 if you want to find all solutions that tie for minimum length).\
+\pard\pardeftab720\ql\qnatural
+\cf0 Also done, I do not look for ties.\
+\
+dik\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Mon May 18 22:07:37 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA25373; Mon, 18 May 92 22:07:37 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA20122 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 04:07:27 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA26407 (5.65b/2.10/CWI-Amsterdam); Tue, 19 May 1992 04:07:26 +0200\
+Date: Tue, 19 May 1992 04:07:26 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205190207.AA26407.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205190207.AA26407.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Kociemba's algorithm\
+\
+I did some more and found fast algorithms. \'a0The most amazing one was for\
+the configuration with two 2x2x2 cubes embedded in the cube:\
+	( 9+ 6=15): U1 L2 D1 R1 B3 R1 B3 R1 B3 D3 L2 U1 R2 F2 U2\
+This looks remarkably like a random sequence of moves. \'a0I find especially\
+the part R1 B3 R1 B3 R1 B3 intriguing!\
+\
+(For der Mouse. \'a0I lost your e-mail address. \'a0I can provide you with the\
+program. \'a0And for everybody, it is available, although I still do not like\
+the input method.)\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Tue May 19 13:25:44 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA14775; Tue, 19 May 92 13:25:44 EDT\
+Received: from asparagus.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA25455; Tue, 19 May 92 10:25:38 PDT\
+Date: Tue, 19 May 92 10:25:38 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205191725.AA25455@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205191725.AA25455@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: assorted results\
+\
+\pard\pardeftab720\ql\qnatural
+\cf3 stripes: (18) F3 U1 F2 U3 R1 B2 R3 U1 F2 L2 U3 L1 B2 L3 U1 L2 U3 F1.\
+python: (15) R1 U3 F3 B1 L1 F2 L3 F1 B3 U3 R3 L1 F2 U2 L3.\
+\pard\pardeftab720\ql\qnatural
+\cf2 I could not improve the first but what do you think of:\
+(12+ 2=14): U2 B3 D3 L1 F1 B3 U3 F1 U3 D1 R3 B1 D1 F2\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+i mentioned these because i was particularly proud of them, especially\
+since they were constructed by hand. \'a0my program was able to improve\
+"stripes", but i reoriented the pattern first. \'a0perhaps this is why\
+i had better success. \'a0stripes (17 face / 20 quarter):\
+R1 U1 D1 R2 F1 U3 D1 F3 B1 U3 R3 L3 B1 L2 U1 D3 B2 \'a0(14 + 3)\
+so if you have any efficient pattern maneuvers that you're especially\
+proud of, let's see if they can't be improved.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 I did some more and found fast algorithms. \'a0The most amazing one was for\
+the configuration with two 2x2x2 cubes embedded in the cube:\
+	( 9+ 6=15): U1 L2 D1 R1 B3 R1 B3 R1 B3 D3 L2 U1 R2 F2 U2\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+this can also be done in 18 quarter turns:\
+L1 F1 L1 D3 B1 D1 L2 F2 D3 F3 R1 U3 R3 F2 D1 \'a0(13 + 2)\
+also "cube within cube within cube" \'a017 face / 22 quarter turns:\
+L3 D1 R3 B3 D1 L2 D2 L3 D3 L1 U1 D2 R3 U3 B2 R2 D3 \'a0(13 + 4)\
+"twisted rings" \'a016 face / 18 quarter turns:\
+B1 R1 B3 R2 U3 F3 L1 U1 R1 D1 L1 U3 B3 L1 U1 L2 \'a0(14 + 2)\
+"twisted cube edges" \'a014 face / 14 quarter turns:\
+D1 L3 B1 R1 D3 R3 D1 B3 L1 B1 R3 B3 R1 D3 \'a0(13 + 1)\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Leider haben wir nur die Deutschen Ausgabe. \'a0There are apparently\
+differences between the German and the English edition. \'a0The English\
+edition is later and has probably improved sequences (he has promised\
+also improved sequences for the second German edition, but I do not\
+think it ever came out).\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+'tis a shame. \'a0the english edition is very good. \'a0i've never seen the\
+german. \'a0in the english edition he gives several "open snakes".\
+here's what my program has to say about them.\
+"rattlesnake" \'a014 face / 18 quarter turns:\
+F3 D3 L1 D3 L2 F1 B2 U1 L3 U3 R3 B2 R1 L2 \'a0(13 + 1)\
+"black mamba" \'a014 face / 14 quarter turns:\
+L1 U1 R1 F3 R3 L1 U1 L3 U3 D1 B1 D3 L3 U3 \'a0(13 + 1)\
+"green mamba" \'a013 face / 14 quarter turns:\
+R3 L2 F1 R1 U1 L3 F3 B1 U1 B3 U3 L3 U3 \'a0(12 + 1)\
+"boa" \'a012 face / 16 quarter turns:\
+D1 R1 F3 R1 L1 F2 R2 D3 L2 F2 L1 F3 \'a0(12 + 0)\
+\
+this last one was very nice, since it was completely solved in stage 1!\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Also done, I do not look for ties.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+i am currently looking for ties, but will soon stop. \'a0this is mainly to\
+catch (by eye) maneuvers that are short quarter turn-wise. \'a0i realize\
+this is stupid for at least two reasons: \'a01: the program may well be\
+passing up sequences which are shorter in quarter turns; \'a02: a slightly\
+different version of the program will specifically look for the shortest\
+sequence in quarter turns. \'a0i'm trying to think of the best way to do this.\
+unfortunately, the temptation is NOT to think, but to feed every\
+imaginable pattern into the program. \'a0:-)\
+\
+still need to do some polishing ...\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Tue May 19 21:00:38 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA00867; Tue, 19 May 92 21:00:38 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://steenbok.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 steenbok.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA25906 (5.65b/2.10/CWI-Amsterdam); Wed, 20 May 1992 03:00:29 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://steenbok.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 steenbok.cwi.nl}} \
+	id AA23701 (5.65b/2.10/CWI-Amsterdam); Wed, 20 May 1992 03:00:27 +0200\
+Date: Wed, 20 May 1992 03:00:27 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205200100.AA23701.dik@steenbok.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205200100.AA23701.dik@steenbok.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Re: \'a0assorted results\
+\
+	\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0My program was able to improve\
+	"stripes", but i reoriented the pattern first. \'a0perhaps this is why\
+	i had better success.\
+True. \'a0Orientation of non-symmetric patterns is important because the first\
+step is to get at a situation that is also non-symmetric.\
+\
+	'tis a shame. \'a0the english edition is very good.\
+The german edition is also good, but clearly older. \'a0The newer patterns you\
+mention are not in the german edition. \'a0(I may note that Christoph Bandelow\
+is still selling puzzles. \'a0The 5x5x5 amongst others.)\
+\
+	R3 L2 F1 R1 U1 L3 F3 B1 U1 B3 U3 L3 U3 \'a0(12 + 1)\
+	D1 R1 F3 R1 L1 F2 R2 D3 L2 F2 L1 F3 \'a0(12 + 0)\
+\
+	this last one was very nice, since it was completely solved in stage 1!\
+Yup. \'a0But the last but one will not improve and is optimal, and in fact solved\
+with stage 1 (but you did not find it because you limited your search 12 deep).\
+\
+	\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0I'm trying to think of the best way to do this.\
+	unfortunately, the temptation is NOT to think, but to feed every\
+	imaginable pattern into the program. \'a0:-)\
+How true. \'a0I stopped feeding new patterns. \'a0Currently I am calculating the\
+maximal distance in stage 1. \'a0It will take a bit of time because I have to\
+consider 2,217,093,120 possibilities. \'a0But I think that the method I have\
+is feasible. \'a0My conjecture was that the maximal distance was 11 or 12.\
+That was wrong. \'a0It is at least 12 (the superfliptwist needs 12 moves in\
+phase 1). \'a0My current conjecture is 12. \'a0Work is in progress, the first\
+1,082,565 configurations give the following picture (i.e. all configurations\
+without flip):\
+Moves	Number\
+\'a00	\'a0\'a0\'a0\'a01\
+\'a01	\'a0\'a0\'a0\'a02\
+\'a02	\'a0\'a0\'a017\
+\'a03	\'a0\'a0134\
+\'a04	\'a01065\
+\'a05	\'a08214\
+\'a06	54919\
+\'a07	269388\
+\'a08	562427\
+\'a09	183730\
+10	\'a02668\
+The pattern is similar to what was found with the 2x2x2 cube. \'a0The majority\
+of configurations requires 2 less than the maximum. \'a0But apparently flips are\
+harder to deal with than the rest of phase 1, so I am waiting for more results.\
+Note that 12 would improve Kloostermans 42 moves to 37.\
+\
+dik\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Wed May 20 16:06:25 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA27635; Wed, 20 May 92 16:06:25 EDT\
+Received: from phnom-penh.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA13051; Wed, 20 May 92 13:06:14 PDT\
+Date: Wed, 20 May 92 13:06:14 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205202006.AA13051@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205202006.AA13051@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: Re: \'a0assorted results\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 True. \'a0Orientation of non-symmetric patterns is important because the first\
+step is to get at a situation that is also non-symmetric.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+next stage: have the program account for symmetries of the pattern,\
+face turns that commute with the pattern, ...\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 	'tis a shame. \'a0the english edition is very good.\
+The german edition is also good, but clearly older. \'a0The newer patterns you\
+mention are not in the german edition.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+again, a shame. \'a0i think that these snake patterns are among the most\
+interesting things in the book.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Currently I am calculating the\
+maximal distance in stage 1. \'a0It will take a bit of time because I have to\
+consider 2,217,093,120 possibilities. \'a0But I think that the method I have\
+is feasible.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+how much time do you anticipate the job will take? \'a0it seems that we'd\
+get a much better improvement (of kloosterman's bound) by calculating\
+the maximal distance in stage 2. \'a0of course, this requires going through\
+19,508,428,800 possibilities (nearly 9 times as many). \'a0is this feasible?\
+also it seems that "god's algorithm" for stage 2 (i.e. face turns are\
+restricted to \'a0D, U, B2, F2, L2, R2) would be very similar to\
+god's algorithm for the "magic domino," and this similarity should\
+become stronger as the patterns get further away from START.\
+\
+from the pruning tables used in stage 2, dik gives the following maximal\
+distances:\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Phase 2:\
+corners:	13\
+edges:		8\
+slice edges:	4\
+corners+slice:	14\
+edges+slice:	12\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+i was slightly surprised to see a difference between the figures for\
+"corners" and those for "corners + slice edges". \'a0but the difference\
+between "edges" and "edges + slice edges" is shocking. \'a0so perhaps the\
+two "god's algorithms" above are not TOO similar.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Based on this I expect a maximal distance \'a0[ ... ]\
+in phase 2 of about 16/17.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+i'm pretty sure i know a pattern that requires 15 face turns. \'a0i wouldn't\
+be all that surprised if 15 was the maximum, although i haven't tested many\
+patterns.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Wed May 20 17:14:12 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA00649; Wed, 20 May 92 17:14:12 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA10861 (5.65b/2.10/CWI-Amsterdam); Wed, 20 May 1992 23:13:12 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA02174 (5.65b/2.10/CWI-Amsterdam); Wed, 20 May 1992 23:13:11 +0200\
+Date: Wed, 20 May 1992 23:13:11 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205202113.AA02174.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205202113.AA02174.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Re: \'a0assorted results\
+\
+\pard\pardeftab720\ql\qnatural
+\cf3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Currently I am calculating the\
+maximal distance in stage 1. \'a0It will take a bit of time because I have to\
+consider 2,217,093,120 possibilities. \'a0But I think that the method I have\
+is feasible.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+\cf2 how much time do you anticipate the job will take?\
+\pard\pardeftab720\ql\qnatural
+\cf0 A few days. \'a0I started yesterday night at 2:30 AM, it is now 11:05 PM. \'a0I have\
+calculated the distances for approximately 145 million configurations. \'a0The\
+majority of the work has been done sinc 6:00 PM. \'a0(I am using 39 SGI Indigo's,\
+1 Large SGI, 2 processors of an SGI file server and the scalar (SPARC)\
+processor of an FPS, so it is lots of computer time!)\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0it seems that we'd\
+get a much better improvement (of kloosterman's bound) by calculating\
+the maximal distance in stage 2. \'a0of course, this requires going through\
+19,508,428,800 possibilities (nearly 9 times as many). \'a0is this feasible?\
+\pard\pardeftab720\ql\qnatural
+\cf0 Right. \'a0But is not feasible, at least I do not see possibilities at this\
+moment. \'a0My estimate is that it would take much more than 9 times as much.\
+The reason is that the algorithm as I have organized it allows a lot of\
+shortcuts. \'a0What I do is in the space of order 2048 * 2187 * 495 assign to\
+each processor in turn a slice of the 2048 dimension. \'a0Within that slice,\
+going from 0 moves until every configuration has been assigned a distance,\
+a path is searched for the given distance. \'a0The major shortcut comes when\
+a path is found. \'a0Using configurations with known distance, U, D, L and R\
+turns are applied and also F2 and L2 turns to calculate new distances.\
+For those moves the flip does not change. \'a0This makes that I have to search\
+paths for only about 10% of the cases. \'a0I see no way (yet) to do similar\
+things for phase 2.\
+\
+dik\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Sat May 23 01:56:38 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA17982; Sat, 23 May 92 01:56:38 EDT\
+Received: from phnom-penh.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA03559; Fri, 22 May 92 22:56:34 PDT\
+Date: Fri, 22 May 92 22:56:34 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205230556.AA03559@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205230556.AA03559@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: new upper bound\
+\
+i've managed to reduce the upper bound for the length of god's\
+algorithm to 39 face turns / 56 quarter turns. \'a0we work in three\
+stages:\
+\
+1. from \'a0<U, F, R, L, B, D> \'a0to \'a0<U, R, F>\
+2. from \'a0<U, R, F> \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0to \'a0<U, R2, F2>\
+3. from \'a0<U, R2, F2> \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0to \'a0START\
+\
+where we're only allowed to use moves that keep us within the\
+given subgroup.\
+\
+these three stages were chosen because of the moderate(!) sizes\
+of the coset spaces that must be considered. \'a0the numbers are\
+253440, \'a015676416, \'a0and \'a010886400. \'a0the maximum number of moves\
+in each stage was calculated by exhaustively searching the space.\
+\
+if we count by "face turns," these maximum numbers are 8, 13 and 19.\
+however, if we make any turns in stage 2, the last such is a quarter\
+turn of either \'a0F \'a0or \'a0R, and the direction is irrelevant. \'a0those\
+positions at distance 19 in stage 3 (only 24 in all) were checked\
+to see that they may be solved in 19 face turns starting with\
+either \'a0F2 \'a0or \'a0R2. \'a0therefore we can arrange to combine the last\
+move of stage 2 with the first move of stage 3 in the event that\
+we must make the maximal number of moves in each stage. \'a0this\
+gives the final figure of 39 face turns.\
+\
+if we count by "quarter turns," the maximum numbers are 9, 16 and 33.\
+this time, those configurations at distance either 32 or 33 in stage 3\
+(only 10 and 4 positions, respectively) were tested as above.\
+each has minimal sequences starting with \'a0F2 \'a0and with \'a0R2. \'a0as above,\
+we may cancel a quarter turn from the end of stage 3 with a quarter\
+turn at the beginning of stage 3, to get the final figure of 56\
+quarter turns.\
+\
+the next step is to reduce the figure for stage 3 by allowing other\
+turns. \'a0i only plan on allowing \'a0D, U, B2, F2, L2, R2, \'a0as in the\
+second stage of kociemba's algorithm. \'a0after that, i may try to reduce\
+the numbers for stage 2. \'a0however, in this case, i don't expect much\
+of a reduction (maybe 1 turn).\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May 24 07:31:21 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA05498; Sun, 24 May 92 07:31:21 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA18991 (5.65b/2.10/CWI-Amsterdam); Sun, 24 May 1992 13:31:14 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA07227 (5.65b/2.10/CWI-Amsterdam); Sun, 24 May 1992 13:31:13 +0200\
+Date: Sun, 24 May 1992 13:31:13 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205241131.AA07227.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205241131.AA07227.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:anneke@fwi.uva.nl"}}{\fldrslt \cf2 \ul \ulc2 anneke@fwi.uva.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: New upper bound on God's algorithm for Rubik's cube\
+\
+Earlier than expected I have gotten my results. \'a0Using a farm of workstations\
+I have calculated the distances for all cosets in phase 1 of Kociemba's\
+algorithm. \'a0As I have conjectured already, the maximal distance is 12.\
+Together with Kloosterman's result for their third and fourth phase (which\
+together form Kociemba's second phase) the upperbound on God's algorithm\
+is now 37. \'a0Below follows the set of distances for the first phase:\
+\'a00: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01\
+\'a01: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04\
+\'a02: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a074\
+\'a03: \'a0\'a0\'a0\'a0\'a0\'a01230\
+\'a04: \'a0\'a0\'a0\'a0\'a018056\
+\'a05: \'a0\'a0\'a0\'a0245902\
+\'a06: \'a0\'a0\'a03082221\
+\'a07: \'a0\'a034529024\
+\'a08: \'a0301243996\
+\'a09: 1209021801\
+10: \'a0663711855\
+11: \'a0\'a0\'a05238847\
+12: \'a0\'a0\'a0\'a0\'a0\'a0\'a0109\
+tot: 2217093120\
+\
+It took quite a bit of computer time. \'a0In all 116 processors in 112 different\
+machines have cooperated, although not all at the same time %. \'a0The maximal\
+amount of concurrent processing was on 100 processors last night. \'a0The\
+distribution was: 69 Sun's (SS 1, SS 1+, SLC, ELC), 40 SGI's, 1 SGI 4D/310VGX,\
+5 processors of an SGI 260S compute server and the scalar (SPARC) processor\
+of an FPS 500. \'a0I expect it would have taken one or two hours only on a machine\
+with 1 GByte of memory. \'a0Calculations on the second phase are still out of\
+the question. \'a0Distributing the processing would take much more than 9 times\
+as much. \'a0I expect it would take about a day on a machine with 4 GByte of\
+memory.\
+\
+I conjecture that the maximal distance in phase 2 is at most 16. \'a0There is a\
+lower bound on it of 14. \'a0This would make the upperbound for God's algorithm 28.\
+\
+dik\
+--\
+% These processors would have been idle most of the time otherwise!\
+--\
+dik t. winter, cwi, kruislaan 413, 1098 sj \'a0amsterdam, nederland\
+{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Sun May 24 09:11:51 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA05968; Sun, 24 May 92 09:11:51 EDT\
+Received: from maize.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA04669; Sun, 24 May 92 06:10:21 PDT\
+Date: Sun, 24 May 92 06:10:21 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205241310.AA04669@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205241310.AA04669@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:anneke@fwi.uva.nl"}}{\fldrslt \cf2 \ul \ulc2 anneke@fwi.uva.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}\
+Subject: Re: \'a0New upper bound on God's algorithm for Rubik's cube\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 Together with Kloosterman's result for their third and fourth phase (which\
+together form Kociemba's second phase) the upperbound on God's algorithm\
+is now 37.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+well, at least i had the record for a couple of days! \'a0;-)\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Below follows the set of distances for the first phase:\
+\'a00: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01\
+\'a01: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04\
+\'a02: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a074\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+but i don't understand how we can get 74 positions at distance 2 from\
+only 4 positions at distance 1. \'a0the 4 positions at distance 1 are\
+easy to see: they're the positions obtained from START by the turns\
+B, F, L \'a0and \'a0R. \'a0with only 18 different face turns, each should\
+extend to at most 18 positions at distance 2. \'a0am i missing something\
+obvious here? \'a0(the numbers do seem to add up, though.)\
+\
+\pard\pardeftab720\ql\qnatural
+\cf2 I conjecture that the maximal distance in phase 2 is at most 16. \'a0There is a\
+lower bound on it of 14.\
+\pard\pardeftab720\ql\qnatural
+\cf0 \
+the pattern (written in permutation notation) \'a0(FR, FL) (UFL, DFR) is\
+at distance 15, so that's (also) a lower bound. \'a0however, if the whole\
+cube is turned so that the \'a0F \'a0face becomes the \'a0U face, then the new\
+pattern is still in the subgroup of stage 2, but is now at distance 14.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May 24 10:23:12 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA06406; Sun, 24 May 92 10:23:12 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA19523 (5.65b/2.10/CWI-Amsterdam); Sun, 24 May 1992 16:22:55 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA07622 (5.65b/2.10/CWI-Amsterdam); Sun, 24 May 1992 16:22:55 +0200\
+Date: Sun, 24 May 1992 16:22:55 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205241422.AA07622.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205241422.AA07622.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:anneke@fwi.uva.nl"}}{\fldrslt \cf2 \ul \ulc2 anneke@fwi.uva.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@life.ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@life.ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Re: \'a0New upper bound on God's algorithm for Rubik's cube\
+\
+I retract my earlier message. \'a0There is something definitely wrong!\
+(All that idle time wasted...) \'a0I have to reconsider!\
+\
+dik\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} \'a0Sun May 24 11:04:20 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA06624; Sun, 24 May 92 11:04:20 EDT\
+Received: from phnom-penh.berkeley.edu.berkeley.edu by {\field{\*\fldinst{HYPERLINK "http://math.berkeley.edu/"}}{\fldrslt \cf2 \ul \ulc2 math.berkeley.edu}} (4.1/1.33(math))\
+	id AA04847; Sun, 24 May 92 08:04:09 PDT\
+Date: Sun, 24 May 92 08:04:09 PDT\
+From: {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}} (michael reid)\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205241504.AA04847@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 9205241504.AA04847@math.berkeley.edu}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:anneke@fwi.uva.nl"}}{\fldrslt \cf2 \ul \ulc2 anneke@fwi.uva.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}\
+Subject: details ...\
+\
+perhaps i should give the figures i obtained when getting my upper\
+bound of 39 face / 56 quarter turns in case i also have an error.\
+recall the method: we work in three stages:\
+\
+1. from \'a0<U, F, R, L, B, D> \'a0to \'a0<U, R, F>\
+2. from \'a0<U, R, F> \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0to \'a0<U, R2, F2>\
+3. from \'a0<U, R2, F2> \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0to \'a0START\
+\
+where we're only allowed to use moves that keep us within the\
+given subgroup. \'a0the number of positions that must be considered\
+in each stage are \'a0253440, \'a015676416, \'a0and \'a010886400 respectively.\
+\
+stage 1:\
+using face turns: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0using quarter turns:\
+distance \'a0number \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0distance \'a0\'a0\'a0\'a0number\
+\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01\
+\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06\
+\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a090 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a039\
+\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0852 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0276\
+\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a07169 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01899\
+\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a044182 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a011245\
+\'a06 \'a0\'a0\'a0\'a0\'a0\'a0131636 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a049412\
+\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a068940 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a0117221\
+\'a08 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0561 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a070767\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02574\
+stage 2:\
+using face turns: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0using quarter turns:\
+distance \'a0number \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0distance \'a0\'a0\'a0\'a0number\
+\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01\
+\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02\
+\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a012 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08\
+\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a072 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a036\
+\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0420 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0158\
+\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02410 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0694\
+\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a013752 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02980\
+\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a075796 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a012744\
+\'a08 \'a0\'a0\'a0\'a0\'a0\'a0390421 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a053646\
+\'a09 \'a0\'a0\'a0\'a0\'a01735771 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 \'a0\'a0\'a0\'a0\'a0\'a0\'a0216354\
+10 \'a0\'a0\'a0\'a0\'a05351383 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a010 \'a0\'a0\'a0\'a0\'a0\'a0\'a0799868\
+11 \'a0\'a0\'a0\'a0\'a06696700 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a011 \'a0\'a0\'a0\'a0\'a0\'a02477802\
+12 \'a0\'a0\'a0\'a0\'a01399195 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a012 \'a0\'a0\'a0\'a0\'a0\'a05310848\
+13 \'a0\'a0\'a0\'a0\'a0\'a0\'a010481 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a013 \'a0\'a0\'a0\'a0\'a0\'a05419046\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a014 \'a0\'a0\'a0\'a0\'a0\'a01356020\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a015 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a026192\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a016 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a017\
+stage 3:\
+using face turns: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0using quarter turns:\
+distance \'a0number \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0distance \'a0\'a0\'a0\'a0number\
+\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a00 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01\
+\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02\
+\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a014 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a03\
+\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a044 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a03 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08\
+\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0128 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a014\
+\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0392 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a05 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a024\
+\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01157 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a06 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a052\
+\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a03458 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a07 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a096\
+\'a08 \'a0\'a0\'a0\'a0\'a0\'a0\'a010057 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0176\
+\'a09 \'a0\'a0\'a0\'a0\'a0\'a0\'a029286 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a09 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0352\
+10 \'a0\'a0\'a0\'a0\'a0\'a0\'a082814 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a010 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0664\
+11 \'a0\'a0\'a0\'a0\'a0\'a0228621 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a011 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a01248\
+12 \'a0\'a0\'a0\'a0\'a0\'a0591704 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a012 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a02409\
+13 \'a0\'a0\'a0\'a0\'a01362497 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a013 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04516\
+14 \'a0\'a0\'a0\'a0\'a02545752 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a014 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a08519\
+15 \'a0\'a0\'a0\'a0\'a03272940 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a015 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a016100\
+16 \'a0\'a0\'a0\'a0\'a02260555 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a016 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a030171\
+17 \'a0\'a0\'a0\'a0\'a0\'a0484818 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a017 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a056140\
+18 \'a0\'a0\'a0\'a0\'a0\'a0\'a012133 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a018 \'a0\'a0\'a0\'a0\'a0\'a0\'a0102981\
+19 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a024 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a019 \'a0\'a0\'a0\'a0\'a0\'a0\'a0186728\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a020 \'a0\'a0\'a0\'a0\'a0\'a0\'a0331234\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a021 \'a0\'a0\'a0\'a0\'a0\'a0\'a0563985\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a022 \'a0\'a0\'a0\'a0\'a0\'a0\'a0912719\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a023 \'a0\'a0\'a0\'a0\'a0\'a01365051\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a024 \'a0\'a0\'a0\'a0\'a0\'a01812011\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a025 \'a0\'a0\'a0\'a0\'a0\'a02044832\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a026 \'a0\'a0\'a0\'a0\'a0\'a01783956\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a027 \'a0\'a0\'a0\'a0\'a0\'a01105488\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a028 \'a0\'a0\'a0\'a0\'a0\'a0\'a0450322\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a029 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a097881\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a030 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a07958\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a031 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0745\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a032 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a010\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a033 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a04\
+\
+it would be nice if someone could confirm these figures. \'a0i have done\
+some testing, but not extensively.\
+\
+mike\
+\
+From {\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}} \'a0Sun May 24 19:38:50 1992\
+Return-Path: <{\field{\*\fldinst{HYPERLINK "mailto:dik@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 dik@cwi.nl}}>\
+Received: from {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://life.ai.mit.edu/"}}{\fldrslt \cf2 \ul \ulc2 life.ai.mit.edu}} (4.1/AI-4.10) id AA12159; Sun, 24 May 92 19:38:50 EDT\
+Received: from {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} by {\field{\*\fldinst{HYPERLINK "http://charon.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 charon.cwi.nl}} with SMTP\
+	id AA03186 (5.65b/2.10/CWI-Amsterdam); Mon, 25 May 1992 01:38:41 +0200\
+Received: by {\field{\*\fldinst{HYPERLINK "http://boring.cwi.nl/"}}{\fldrslt \cf2 \ul \ulc2 boring.cwi.nl}} \
+	id AA10405 (5.65b/2.10/CWI-Amsterdam); Mon, 25 May 1992 01:38:40 +0200\
+Date: Mon, 25 May 1992 01:38:40 +0200\
+From: {\field{\*\fldinst{HYPERLINK "mailto:Dik.Winter@cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 Dik.Winter@cwi.nl}}\
+Message-Id: <{\field{\*\fldinst{HYPERLINK "mailto:9205242338.AA10405.dik@boring.cwi.nl"}}{\fldrslt \cf2 \ul \ulc2 9205242338.AA10405.dik@boring.cwi.nl}}>\
+To: {\field{\*\fldinst{HYPERLINK "mailto:anneke@fwi.uva.nl"}}{\fldrslt \cf2 \ul \ulc2 anneke@fwi.uva.nl}}, {\field{\*\fldinst{HYPERLINK "mailto:cube-lovers@ai.mit.edu"}}{\fldrslt \cf2 \ul \ulc2 cube-lovers@ai.mit.edu}}, {\field{\*\fldinst{HYPERLINK "mailto:reid@math.berkeley.edu"}}{\fldrslt \cf2 \ul \ulc2 reid@math.berkeley.edu}}\
+Subject: Program bug, and new ideas. \'a0Will they work?\
+\
+Well, I found the bug. \'a0There was an initialization error which made the\
+program think there was a shorter path than there was in a number of cases.\
+Alas, as always, the bug did not reveal itself in the test runs I did, it\
+was only in the final totals that it was apparent.\
+\
+The bad thing is that removing the bug increases the compute time considerably,\
+because you have in essence to calculate an explicit path for every\
+configuration. \'a0I estimate the increase is by a factor of about 3, based on\
+some experiments.\
+\
+The good thing is that it got me thinking about an old idea I had.\
+To calculate path lengths to the group generated by [U,D,L2,R2,F2,B2]\
+it is irrelevant whether you rotate the complete cube around the U-D\
+axis. \'a0Also half turn rotations around the R-L axis are irrelevant.\
+And finally, mirroring the cube along the F-R-B-L plane is irrelevant!\
+But in most cases this changes twist/flip and position values. \'a0So if\
+we look at the twist/flip/position space of 2187*2048*495 cosets we can\
+reduce the calculations along one dimension as long as we remember the\
+number of representations. \'a0I did some calculations and found that\
+2187 can be reduced to 168 or 2048 can be reduced to 219 or 495 can be\
+reduced to 45. \'a0Of these obviously the first one is the most fruitful.\
+Of course I have to check myself (and anybody who is willing, go ahead).\
+Reduction of 2187 to 168 would reduce the total space from 2,217,093,120\
+to 170,311,680 calculations. \'a0But then again, dividing the latter figure\
+by 4, that could be done in core on a machine with about 50 MByte of memory\
+(to calculate path lengths in core only 2 bits per configuration are needed).\
+\
+I will try around, dik\
+}
