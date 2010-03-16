@@ -1,8 +1,9 @@
 \section{Kociemba's Optimal Solver}
-In the following the Kociemba optimal solver\cite{kociemba09} will be explained and why it can solve any scrambled \rubik{} in 29 \twist{}s or less. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be  defined at first. 
+In the following the Kociemba optimal solver\cite{kociemba09} will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
 
 \subsection{Relabeling}
-The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''. Each edge cube with a \facelet{} with the front or back face color and \textbf{not} the up or down face color on the other \facelet{} is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
+The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  Each edge \piece{} on the front and back where the \piece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
+
 
 \begin{figure}[hb]
 	\centering
