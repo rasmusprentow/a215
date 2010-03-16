@@ -20,12 +20,12 @@ F U' R U
 \subsection{Step 2 - completing the first layer}
 When the cross is completed the next step is to position the corner pieces of the first layer correctly. The first layer is set as the up face (U). A corner consisting of facets with the colors of the down face is positioned directly above it's correct  position. The correct position is between the three faces that have the same colors as the three facets of the corner piece. ((NEED ALGORITHM TO GET IT HERE?)) Once the piece is above it's correct position, the cube should be viewed in such an angle that the piece is in the upper right corner of the front face, the following algorithm is repeated until the corner piece is oriented and positioned correctly:
 
-R U R' U'
+R' D' R D
 
 If the piece is above the correct position the algorithm twists the corner clock-wise and positions it in the correct position. If the piece is in the correct position the algorithm positions the piece above the correct position. The maximum number of repetitions until the piece is oriented and positioned correctly is five, because the piece can be two twists away from it's correct orientation. 
 The algorithm can be performed inverted which twists the corner counter clock-wise and looks as follows:
 
-U R U' R'
+D' R' D R
 
 If the correct algorithm is used the maximum number of repetitions is three. If number of twists and time used is not of importance it is only necessary to remember one of them.
 
