@@ -1,20 +1,30 @@
 \section{Kociemba's Optimal Solver}
-In the following the Kociemba optimal solver\cite{kociemba09} will be explained and why it can solve any \rubik{} in 29 \twist{}s or less. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be  defined at first. 
+In the following the Kociemba optimal solver\cite{kociemba09} will be explained and why it can solve any scrambled \rubik{} in 29 \twist{}s or less. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be  defined at first. 
 
 \subsection{Relabeling}
 The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''. Each edge cube with a \facelet{} with the front or back face color and \textbf{not} the up or down face color on the other \facelet{} is marked with the letters ``FB''. Figure \ref{fig:relabel1} shows an example.
 
 \begin{figure}[hb]
 	\centering
-		\includegraphics{input/pics/relabel1}
+		\includegraphics[scale = 0.8]{input/pics/relabel1}
 	\caption{\myCaption{A relabeled Rubik's Cube with the up and down faces blue and green respectively, and red and orange as front and back.}}
 	\label{fig:relabel1}
 \end{figure}
 
 When relabeling a \rubik{} in the position $s$ it is written as: $r(s)$. A \rubik{} in any position, $s$, is said to be en the set of positions called $H$ if and only if: $r(s)=r(e)$.
 
-The following moves are in the set of moves $A$: U, U', U2, D, D', D2, R2, L2, F2 and B2. If using move sequences in $A$ on a position in $H$, the cube will always be in $H$.
+The following moves are in the set of moves $A$: U, U', U2, D, D', D2, R2, L2, F2 and B2. If using move sequences in $A$ on a position in $H$, the cube will always be in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted -- see figure \ref{fig:relabel2:D'}. The last four moves are all very similar to each other. If any side face -- not up or down -- is twisted 180 degrees, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FD'' labels placed and oriented correctly.
 
+\begin{figure}[htb]
+	\centering
+	\subfloat[\myCaption{A relabeled cube that has been permutated with the move D'.}]{\label{fig:relabel2:D'}\includegraphics[width=0.45\textwidth]{input/pics/relabel3.PNG}}
+	\vspace{0.1\textwidth}
+	\subfloat[\myCaption{A relabeled cube that has been permutated with the move F2.}]{\label{fig:relabel2:F2}\includegraphics[width=0.45\textwidth]{input/pics/relabel2.PNG}}
+	\caption{\myCaption{Two positions which have been permuted with a move in $A$.}}
+	\label{fig:relabel2}
+\end{figure}
+
+If using moves in $A$ on a position outside $H$, the cube can not enter $H$.
 
 \subsection{Overall description}
 \label{sub:overallDescription}
