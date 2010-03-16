@@ -2,21 +2,21 @@
 In the following the Kociemba optimal solver\cite{kociemba09} will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
 
 \subsection{Relabeling}
-The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  Each edge \piece{} on the front and back where the \piece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
-
-
+The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  Each edge \cpiece{} on the front and back where the \cpiece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
 \begin{figure}[hb]
 	\centering
 		\includegraphics[scale = 0.8]{input/pics/relabelClean}
 	\caption{\myCaption{A relabeled Rubik's Cube with the up and down faces blue and green respectively, and red and orange as front and back.}}
 	\label{fig:relabelClean}
 \end{figure}
+When relabeling a \rubik{} in the position $s$ it is written as: $r(s)$. A \rubik{} in any position, $s$, is said to be in the set of positions called $H$ if and only if: $r(s)=r(e)$.
 
-When relabeling a \rubik{} in the position $s$ it is written as: $r(s)$. A \rubik{} in any position, $s$, is said to be en the set of positions called $H$ if and only if: $r(s)=r(e)$.
+\subsection{The subgroup $H$}
+%%% Beaware if the subgroup is introduced somewhere else. it should actually be. 
+The following moves: U, U', U2, D, D', D2, R2, L2, F2 and B2 are in the set of moves $A$. Using moves from $A$ on a position in $H$, will always result in a \rubik{} in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is \twist{}ed 180 degress, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
 
-The following moves are in the set of moves $A$: U, U', U2, D, D', D2, R2, L2, F2 and B2. If using move sequences in $A$ on a position in $H$, the cube will always be in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is twisted 180 degrees, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
 
-\begin{figure}[htb]
+\begin{figure}[!hb]
 	\centering
 	\subfloat[\myCaption{A relabeled cube that has been permutated with the move D.}]{\label{fig:relabel2:D}\includegraphics[width=0.45\textwidth]{input/pics/relabelD.PNG}}
 	\vspace{0.1\textwidth}
@@ -24,16 +24,12 @@ The following moves are in the set of moves $A$: U, U', U2, D, D', D2, R2, L2, F
 	\caption{\myCaption{Two positions which have been permuted with a move in $A$.}}
 	\label{fig:relabel2}
 \end{figure}
-
-
-If using moves in $A$ on a position outside $H$, the cube can not enter $H$.
-
 \subsection{Overall description}
 \label{sub:overallDescription}
-The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds a move sequence $b$ which will transform the relabeled cube into the subgroup $H$. This move will be denoted: $r(a)\cdot{}b \in H$. The second phase will the determine the length from the position $ab$ to the unit position $e$ by a table lookup. 
+The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds a move sequence $b$ which will transform the relabeled cube into the subgroup $H$. This move will be denoted: $r(a)\cdot{}b \in H$. The second phase will then determine the length from the position $ab$ to the unit position $e$ by a table lookup. 
 
 
-\begin{algorithm}                     
+\begin{algorithm}[!h]                     
 \caption{Kociemba's Algorithm \cite{rokicki09}}          
 \label{alg:kociemba}        
 \begin{algorithmic}[1]
@@ -52,12 +48,12 @@ The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds 
 \end{algorithmic}
 \end{algorithm}
 
-At first in the algorithm the diameter length ($d$), pictured in figure(somewhere) is set to zero and the length($l$) is set to infinite. The \textbf{while} loop will run as long as $d$ is smaller than $l$. For the first run this is true, and will only test if the scrambled cube already is in the subgroup $H$. (If so it will actually continue since a solution that goes out of $H$ might be a faster solution). 
-
-\begin{figure}[hb]
+At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the length ($l$) is set to infinite. The \textbf{while} loop will run as long as $d$ is smaller than $l$. For the first run this is true, and will only test if the scrambled cube already is in the subgroup $H$. If so it will actually continue since a solution that goes out of $H$ might be a faster solution. 
+//// RETTET HERTIL - DAN OG RASMUS
+\begin{figure}[!hb]
 	\centering
-		\includegraphics{input/pics/searchExpansion.pdf}
-	\caption{\myCaption{As the diameter of the search $d$ increases, the increasing of possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertex. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not in considered in this example. }}
+		\includegraphics[scale=0.75]{input/pics/searchExpansion.pdf}
+	\caption{\myCaption{As the distance of the search $d$ increases, the increasing of possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not in considered in this example. }}
 	\label{fig:searchExpansion}
 \end{figure}
 
