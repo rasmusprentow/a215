@@ -2,7 +2,7 @@
 \label{sec:beginner}
 
 \Section{The Beginner's Algorithm}
-This section describes the easiest algorithm memorable for a human solver. The algorithm is divided into XX different steps. Once the algorithm has been memorized, it is easy to recognize which step of the algorithm has been reached, so the correct move sequence can be applied. It is only necessery to remember a single move sequence for each step. The beginner's algorithm can however be made more efficient by remembering another somewhat similar move sequence for a few of the steps. Despite of this the beginner's algorithm is twist-wise quite inefficient, because purpose of them moves is to reach the next step instead of reaching the solved state and thereby taking a solving detour. 
+This section describes the easiest algorithm memorable for a human solver. The algorithm is divided into XX different steps. Once the algorithm has been memorized, it is easy to recognize which step of the algorithm has been reached, so the correct move sequence can be applied. It is only necessery to remember a single move sequence for each step. The beginner's algorithm can however be made more efficient by remembering another somewhat similar move sequence for a few of the steps. Despite of this the beginner's algorithm is twist-wise quite inefficient because the purpose of the moves is to reach the next step instead of reaching the solved state and thereby taking a solving detour. 
 
 \subsection{Step 1 - getting the cross}
 The first step of the beginner's algorithm is to get a cross on any face. Getting a cross on a face means to align the facelets next to the center facelet, so that all of the aligned facelets are of the same color, while at the same time the used edge pieces have the same color of the center facelets on each of the two faces on which they are.
@@ -10,6 +10,7 @@ The first step of the beginner's algorithm is to get a cross on any face. Gettin
 ((INSERT PICTURE OF A CROSS))
 
 The face on which the cross is being assembled is set to be the top face. An edge piece that consists of the same colors as the center piece of the top face and the center piece of the front face is placed in the bottom of the front face. With two twists of the front face the edge piece is positioned correctly in the cross. If the edge piece is oriented correctly the cube is turned (noted y) and the process is repeated until the cross is assembled. However if the piece is oriented in the wrong way the following algorithm will change it's orientation without ruining any part of the cross that may already be assembled:
+
 
 F' U L' U'
 
@@ -20,12 +21,16 @@ F U' R U
 \subsection{Step 2 - completing the first layer}
 When the cross is completed the next step is to position the corner pieces of the first layer correctly. The first layer is set as the up face (U). A corner consisting of facets with the colors of the down face is positioned directly above it's correct  position. The correct position is between the three faces that have the same colors as the three facets of the corner piece. ((NEED ALGORITHM TO GET IT HERE?)) Once the piece is above it's correct position, the cube should be viewed in such an angle that the piece is in the upper right corner of the front face, the following algorithm is repeated until the corner piece is oriented and positioned correctly:
 
+
 R U R' U'
+
 
 If the piece is above the correct position the algorithm twists the corner clock-wise and positions it in the correct position. If the piece is in the correct position the algorithm positions the piece above the correct position. The maximum number of repetitions until the piece is oriented and positioned correctly is five, because the piece can be two twists away from it's correct orientation. 
 The algorithm can be performed inverted which twists the corner counter clock-wise and looks as follows:
 
+
 U R U' R'
+
 
 If the correct algorithm is used the maximum number of repetitions is three. If number of twists and time used is not of importance it is only necessary to remember one of them.
 
@@ -34,11 +39,15 @@ If the correct algorithm is used the maximum number of repetitions is three. If 
 \subsection{Step 3 - completing the second layer}
 The purpose of this step is to position the four edges belonging to the second layer correctly. The algorithms used in this step either swaps the top edge piece of the front face with the left or right edge piece. That is why the edge piece that needs to be moved down to the second layer must be positioned at the top of the face that is next to the face of one of the edges colors, where the second color is the same as the front face's color. There is however a difference in which of the two faces is used as the front face, because if the wrong face is used as front face the piece will only be positioned correctly but not oriented correctly. That facelet of the edge towards the front face must be of the same color as the front face. If the edge piece is to be swapped with the right edge piece of the front face the following algorithm is used:
 
+
 U R U' R' U' F' U F
+
 
 If the piece is to be swapped with the left edge piece of the front face the following algorithm is used:
 
+
 U' L' U L U F U' F'
+
 
 If none of the edge pieces who belong to the second layer are in the third layer and the first two layers is still not completed. This occurs if the edges are all in the second layer but not positioned or oriented correctly. One of the algorithms can be used to swap an edge piece from the third layer with one of the edges in the second layer which is not positioned or oriented correctly. Now the edge piece belonging to the second layer can be moved to it's correct position.
 
@@ -47,7 +56,9 @@ If none of the edge pieces who belong to the second layer are in the third layer
 \subsection{Step 4 - getting the last layer cross}
 Solving the last layer is divided into four steps. The order of these steps can be different and still yield the same result. We start out by getting the cross in the last layer, which is the same as the cross on the first layer. The algorithm used is however different. The only algorithm used in this step is the following:
 
+
 F R U R' U' F'
+
 
 Besides remembering the algorithm it is also important to know how the cube should be oriented.
 
@@ -59,7 +70,9 @@ If it is not possible to form a opposite L or a horizontal line the algorithm wi
 
 to orient the cross correctly there is one algorithm to remember:
 
+
 R U R' U R 2U R' 
+
 
 Again it is important to know how to orient the cube. By twisting the upper layer it is possible to position the upper layer so it either complete the cross in two faces on each opposite side of the cube or two faces next to each other.
 
@@ -72,11 +85,14 @@ If none of the orientations above are possible the algorithm will make it possib
 \subsection{Step 5 - completing the last layer}
 The purpose of this step is to position the corners on the right position and with the right orientation. Firstly the corners must be positioned correctly. To do so there are two algorithms to remember. One for rotating three corners clockwise and one for rotating them counter-clockwise:
 
+
 U R U' L' U R' U' L
 This algorithm will rotate the corners counter-clockwise.
 
+
 U' L' U R U' L U R'
 This algorithm will rotate the corners clockwise.
+
 
 The orientation is again important to position the corners. If one of the corners already is positioned correctly. That corner is chosen not to be moved. 
 
@@ -88,6 +104,8 @@ If there is not any correct corner. One of the two algorithms above done once wi
 
 To orient the corners correctly the algorithm from orienting the corners in the first layer is used:
 
+
 R' D' R D
+
 
 But in this step when one corner is completed. Instead of turning the whole cube to the next corner, the cube is locked on one face. Then when going to solve the next corner the upper layer is twisted until the incorrect corner is positioned at the front right corner of the cube.
