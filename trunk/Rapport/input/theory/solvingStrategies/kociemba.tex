@@ -54,18 +54,22 @@ The \textbf{for} loop runs through all move sequences in the range $d$ -- recall
 Then an \textbf{if}-statement checks if the move sequence transforms the cube into the subgroup $H$. If so the algorithm checks whether $d + d_2(ab)$ is less than the length of the last solution, if so, $d + d_2(ab)$ is the new shortest move sequence, $l$, to $e$. 
 The lookup table denoted $d_2(ab)$ returns the numbers of twist required to transform a position in $H$ to the position $e$. This is done only by using moves in $A$. %$d_2(ab)$ is a lookup table which takes a position in $H$ and returns the number of twists it takes to transform the position to $e$ using moves in $A$ 
 The lookup table is the second phase and is further described in the subsection \ref{sub:secondPhase}. 
-The first time this \textbf{if}-statement is executed it will return true and this will be the new length of the solution. The \textbf{while} loop will end when $d$ is incremented to $l$.
+The first time this \textbf{if}-statement is executed it will return true and this will be the new length of the solution. The \textbf{while} loop will end when $d$ is incremented to $l$. Figure \ref{fig:kociemba2} illustrates the algorithm.
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/kocieambe2.pdf}
 	\caption{\myCaption{Here the move sequences the leads to a shorter length in the algorithm is denoted. The lines going from $a$ to a point in $H$ is the move sequence denoted $b$. The lines from points in $H$ to the point $e$ is the move sequence denoted $c$ . The numbers beside the lines are the number of moves. Note that the moves in $c$ is decreasing as the numbers of moves in $b$ is increasing.  }}
-	\label{fig:kocieambe2}
+	\label{fig:kociemba2}
 \end{figure}
 
 \subsection{First phase}
 \label{sub:firstPhase}
-...The first phase finds a move sequence, $b$,  from a position $a$ that transform the cube into the subgroup $H$...
-In figure \ref{fig:searchExpansion} the amount of elements in $S^d$ to a specific $d$ is attempted to be shown.
+The first phase finds a move sequence, $b$,  from a position $a$ that transform the cube into the subgroup $H$ this is done by going through all possible moves with a sequence of the length $d$. This is a breadth-first search algorithm.  cite\{dmatbogen\}.
+In figure \ref{fig:searchExpansion} the amount of elements in $S^d$ to a specific $d$ is illustrated.
+An example of a giving search from a position $a$ is given. The algorithm starts by searching in $S^{d}$, where $d =  0$. This will give the position $a$ itself. The distance $d$ is then incremented to 1. This will result in 18 new possible move sequences all one twist away from $a$. Thereafter the $d$ is incremented and the search now moves 18 moves from from the previous positions obtained be the search where $d = 1$. This allows a possibility for optimization of the algorithm since some of the moves will eventually be the same. I.e. the two move sequences R2 and R' R' is of length 1 and 2 respectively, but the result is the same transformed cube. The algorithm checks whether the transformed cube is in $H$ by relabeling it and checking if $r(ab) = r(e)$. The actual implementation of the algorithm may vary and will be omitted for now.
+
+$d$ continues to be incremented until it reaches the length $l$. Since $l$ starts with the value infinite, it has to be changed in order to stop the loop. This happens in the second phase.
+
 \begin{figure}[!hb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/searchExpansion.pdf}
