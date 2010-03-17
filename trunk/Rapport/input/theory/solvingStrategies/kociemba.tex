@@ -1,5 +1,5 @@
 \section{Kociemba's Optimal Solver}
-In the following the Kociemba optimal solver\cite{kociemba09} will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
+In the following the Kociemba optimal solver\cite{kociemba09} \cite{cubelovers92} will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
 
 \subsection{Relabeling}
 The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  Each edge \cpiece{} on the front and back where the \cpiece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
@@ -48,15 +48,15 @@ The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds 
 \end{algorithmic}
 \end{algorithm}
 
-At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the length ($l$) is set to infinite. The \textbf{while} loop will run as long as $d$ is smaller than $l$. For the first run this is true, and will only test if the scrambled cube already is in the subgroup $H$. If so it will actually continue since a solution that goes out of $H$ might be a faster solution.  \cite{cubemail92} 
+At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the length ($l$) is set to infinite. The \textbf{while} loop will run as long as $d$ is smaller than $l$. For the first run this is true, and will only test if the scrambled cube already is in the subgroup $H$. If so it will continue since a solution that goes out of $H$ might be a faster solution. 
 \begin{figure}[!hb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/searchExpansion.pdf}
-	\caption{\myCaption{As the distance of the search $d$ increases, the increasing of possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not in considered in this example. }}
+	\caption{\myCaption{As the distance of the search $d$ increases, the possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not in considered in this example. }}
 	\label{fig:searchExpansion}
 \end{figure}
 
-The \textbf{for} loop runs through all move sequences in range $d$ -- recall that $S^d$ is the set containing every move sequence that uses $d$ twists in figure \ref{fig:searchExpansion} it is shown the amount of elements in $S^d$ to a specific $d$. Then an \textbf{if}-statement checks whether the move sequence transforms the cube into the subgroup $H$. If so the algorithm checks whether $d + d_2$ is lesser than the length of the last solution, if so, $d + d_2$ is the new shortest move sequence, $l$, to $e$. $d_2$ is a lookup table which takes a position in $H$ and returns the number of twists it takes to move the position to $e$ using moves in $A$ -- this is further described in the subsection \ref{sub:secondPhase}. The first time this \textbf{if} statement is run it will return true and this will be the new length of the solution. Thereby the \textbf{while} loop will end when $d$ is incremented to $l$.
+The \textbf{for} loop runs through all move sequences in the range $d$ -- recall that $S^d$ is the set containing every move sequence that uses $d$ twists. In figure \ref{fig:searchExpansion} the amount of elements in $S^d$ to a specific $d$ is attempted to be shown. Then an \textbf{if}-statement checks if the move sequence transforms the cube into the subgroup $H$. If so the algorithm checks whether $d + d_2(ab)$ is less than the length of the last solution, if so, $d + d_2(ab)$ is the new shortest move sequence, $l$, to $e$. $d_2(ab)$ is a lookup table which takes a position in $H$ and returns the number of twists it takes to move the position to $e$ using moves in $A$ -- this is further described in the subsection \ref{sub:secondPhase}. The first time this \textbf{if}-statement is run it will return true and this will be the new length of the solution. Thereby the \textbf{while} loop will end when $d$ is incremented to $l$.
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/kocieambe2.pdf}
