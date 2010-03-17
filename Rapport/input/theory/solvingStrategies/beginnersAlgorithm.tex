@@ -9,7 +9,7 @@ The first step of the beginner's algorithm is to get a cross on any face. Gettin
 \begin{center}
 	\includegraphics[width=0.45\textwidth]{input/pics/1FLCross.jpg}	
 \end{center}
-\caption{123}
+\caption{A first layer cross on the green face}
 \label{fig:1FL-cross}
 \end{wrapfigure}
 
@@ -34,7 +34,7 @@ If the correct move sequence is used the maximum number of repetitions is three.
 \begin{center}
 	\includegraphics[width=0.45\textwidth]{input/pics/2FL.jpg}	
 \end{center}
-\caption{123}
+\caption{The first layer completed}
 \label{fig:2FL}
 \end{wrapfigure}
 
@@ -53,7 +53,7 @@ If none of the edge pieces who belong to the second layer are in the third layer
 \begin{center}
 	\includegraphics[width=0.45\textwidth]{input/pics/3F2L.jpg}	
 \end{center}
-\caption{123}
+\caption{The first two layers completed}
 \label{fig:3F2L}
 \end{wrapfigure}
 
@@ -65,28 +65,28 @@ F R U R' U' F' \\
 
 Besides remembering the move sequence it is also important to know how the cube should be oriented.
 
-If the upface colors forms a line. The cube can be turned until the line forms a horizontal line. The move sequence will then form the cross.
+If the up face colors form a line. The cube can be turned until the line forms a horizontal line. If the move sequence then is performed, the cross will be formed.
 
-If it is possible to form a opposite L character with the upface colors. The cube must be oriented with the opposite L in the back left corner of the cube(Billede evt?). The move sequence will get the cube to the horizontal line and then again to the cross.
+If the up face colors form an opposite L character with the up face colors the move sequence will form the line. The cube must be oriented with the opposite L in the back left corner of the cube. 
 
-If it is not possible to form a opposite L or a horizontal line the move sequence will get the cube to the opposite L position.
+If the up face colors do not form the opposite L the line or the cross, the move sequence will form the opposite L.
 
 \begin{figure}[htb]
 	\centering
-		\subfloat[\myCaption{A relabeled cube that has been permutated with the move D.}]{\label{fig:cross:4LLcross1}\includegraphics[width=0.28\textwidth]{input/pics/4LLcross1.jpg}}
+		\subfloat[\myCaption{The up face colors form the opposite L}]{\label{fig:cross:4LLcross1}\includegraphics[width=0.28\textwidth]{input/pics/4LLcross1.jpg}}
 		\hspace{0.02\textwidth}
-		\subfloat[\myCaption{A relabeled cube that has been permutated with the move D.}]{\label{fig:cross:5LLcross2}\includegraphics[width=0.28\textwidth]{input/pics/5LLcross2.jpg}}
+		\subfloat[\myCaption{The up face colors form the horizontal line}]{\label{fig:cross:5LLcross2}\includegraphics[width=0.28\textwidth]{input/pics/5LLcross2.jpg}}
 		\hspace{0.02\textwidth}
-		\subfloat[\myCaption{A relabeled cube that has been permutated with the move D.}]{\label{fig:cross:6LLcross3}\includegraphics[width=0.28\textwidth]{input/pics/6LLcross3.jpg}}
-		\caption{\myCaption{123321}}
+		\subfloat[\myCaption{The up face colors form the cross}]{\label{fig:cross:6LLcross3}\includegraphics[width=0.28\textwidth]{input/pics/6LLcross3.jpg}}
+		\caption{\myCaption{The steps in the completion of the last layer cross}}
 		\label{fig:cross}
 \end{figure}
-
+%Tjek om billederne står rigtigt
 To orient the cross correctly there is one move sequence to remember: \\
 
 R U R' U R 2U R' \\
 
-Again it is important to know how to orient the cube. By twisting the upper layer it is possible to position the upper layer so it either complete the cross in two faces on each opposite side of the cube or two faces next to each other.
+Again it is important to know how to orient the cube. By twisting the upper layer it is possible to position the upper layer so it either has two edge pieces next to each other or directly across from each other.
 
 \begin{wrapfigure}{R}{0.5\textwidth}
 \begin{center}
@@ -96,28 +96,31 @@ Again it is important to know how to orient the cube. By twisting the upper laye
 \label{fig:7LLedges}
 \end{wrapfigure}
 
-If the complete faces are next to each other. The cube must be oriented with a complete face on the back face and a complete face on the right face. The move sequence will then make it possible to twist the cube to the complete cross with and U twist.
+If the correct edges piece are next to each other. The cube must be oriented with a correct edge piece on the back face and a complete face on the right face. The move sequence will then make it possible to twist the up layer so that all the edge pieces are correctly positioned and oriented.
 
-If the complete cross are in two faces on each opposite of the cube. The cube must be oriented with a correct face on the front and back face. The move sequence will then bring the cube to the orientation where the correct faces is next to each other.
+If the correct edge pieces are across each other the move sequence can be performed a single time to get two edge pieces next to each other.
 
-If none of the orientations above are possible the move sequence will make it possible.
 
 \subsection{Step 5 - completing the last layer}
 The purpose of this step is to position and orient the corners correctly. Firstly the corners must be positioned correctly. To do so there are two move sequences to remember -- one for rotating three corners clockwise and one for rotating them counter-clockwise. It is however only necessary to remember one of them and repeat that one until the corners are positioned correctly, if the number of twists is unimportant to the solver. \\
-
+\\
 U R U' L' U R' U' L
+\\
 This move sequence will rotate the corners counter-clockwise.
-
+\\
+\\
 U' L' U R U' L U R'
+\\
 This move sequence will rotate the corners clockwise.
-
+\\
+\\
 The orientation is again important to position the corners. If one of the corners already is positioned correctly. That corner is chosen not to be moved. 
 
 If the three other corners need to be moved counter-clockwise. The correct corner is positioned as the front right corner. The move sequence will then position the corners correctly.
 
 If the three other corners need to be moved clockwise. The correct corner is positioned as the front left corner. The move sequence will then position the corners correctly.
 
-If there is not any correct corner. One of the two move sequences above done once will make a correct positioned corner.
+If there are no correct corners. One of the two move sequences above performed once will make yield a correcly positioned corner.
 
 \begin{wrapfigure}{R}{0.5\textwidth}
 \begin{center}
