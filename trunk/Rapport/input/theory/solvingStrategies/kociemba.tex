@@ -1,5 +1,7 @@
 \section{Kociemba's Optimal Solver}
-In the following the Kociemba optimal solver\cite{kociemba09} \cite{cubelovers92} will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
+Kociamba's optimal solver is an algorithm created in order to find the twist-wise optimal solution to any scrambled \rubik{}\cite{kociemba09} \cite{cubelovers92}. The algorithm consist of two phases and they will be described further in the following. The first phase is based on a principle called relabeling, which will be defined at first. 
+
+%In the following the Kociemba optimal solver will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
 
 \subsection{Relabeling}
 The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  Each edge \cpiece{} on the front and back where the \cpiece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. Figure \ref{fig:relabelClean} shows an example.
@@ -9,9 +11,10 @@ The relabeling process  starts with choosing an up face with a corresponding dow
 	\caption{\myCaption{A relabeled Rubik's Cube with the up and down faces blue and green respectively, and red and orange as front and back.}}
 	\label{fig:relabelClean}
 \end{figure}
-When relabeling a \rubik{} in the position $s$ it is written as: $r(s)$. A \rubik{} in any position, $s$, is said to be in the set of positions called $H$ if and only if: $r(s)=r(e)$.
+When relabeling a \rubik{} in the position $s$ it is written as: $r(s)$. A \rubik{} in any position, $s$, is said to be in the set of positions called $H$(See subsection \ref{sub:theSubgroupH}) if and only if: $r(s)=r(e)$.
 
 \subsection{The subgroup $H$}
+\label{sub:theSubgroupH}
 %%% Beaware if the subgroup is introduced somewhere else. it should actually be. 
 The following moves: U, U', U2, D, D', D2, R2, L2, F2 and B2 are in the set of moves $A$. Using moves from $A$ on a position in $H$, will always result in a \rubik{} in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is \twist{}ed 180 degress, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
 
@@ -45,10 +48,13 @@ The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds 
 	\ENDFOR
 	\STATE {$d=d+1$}
 \ENDWHILE
+\STATE $b$ is now the optimal solution
 \end{algorithmic}
 \end{algorithm}
 
-At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the length ($l$) is set to infinite. The \textbf{while} loop will run as long as $d$ is smaller than $l$. For the first run this is true, and will only test if the scrambled cube already is in the subgroup $H$. If so it will continue since a solution that goes out of $H$ might be a faster solution. 
+At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the total length ($l$) is set to infinite. The total length is the amount of moves used to get from $a$ to $e$, while $d$ is the limited search length to find a move sequence that transforms the \rubik{} into a position i $H$. 
+The \textbf{while} loop will run as long as $d$ is smaller than $l$.
+%For the first run this is true, and will only test if the scrambled \rubik{} already is in the subgroup $H$. If so it will continue since a solution that goes out of $H$ might be a faster solution. 
 
 The \textbf{for} loop runs through all move sequences in the range $d$ -- recall that $S^d$ is the set containing every move sequence that uses $d$ twists. This search of moves in $S^d$ is called the first phase and is further described in \ref{sub:firstPhase}.
 Then an \textbf{if}-statement checks if the move sequence transforms the cube into the subgroup $H$. If so the algorithm checks whether $d + d_2(ab)$ is less than the length of the last solution, if so, $d + d_2(ab)$ is the new shortest move sequence, $l$, to $e$. 
@@ -66,7 +72,7 @@ The first time this \textbf{if}-statement is executed it will return true and th
 \label{sub:firstPhase}
 The first phase finds a move sequence, $b$,  from a position $a$ that transform the cube into the subgroup $H$ this is done by going through all possible moves with a sequence of the length $d$. This is a breadth-first search algorithm.  cite\{dmatbogen\}.
 In figure \ref{fig:searchExpansion} the amount of elements in $S^d$ to a specific $d$ is illustrated.
-An example of a giving search from a position $a$ is given. The algorithm starts by searching in $S^{d}$, where $d =  0$. This will give the position $a$ itself. The distance $d$ is then incremented to 1. This will result in 18 new possible move sequences all one twist away from $a$. Thereafter the $d$ is incremented and the search now moves 18 moves from from the previous positions obtained be the search where $d = 1$. This allows a possibility for optimization of the algorithm since some of the moves will eventually be the same. I.e. the two move sequences R2 and R' R' is of length 1 and 2 respectively, but the result is the same transformed cube. The algorithm checks whether the transformed cube is in $H$ by relabeling it and checking if $r(ab) = r(e)$. The actual implementation of the algorithm may vary and will be omitted for now.
+An example of a giving search from a position $a$ is given. The algorithm starts by searching in $S^{d}$, where $d =  0$. This will give the position $a$ itself. The distance $d$ is then incremented to 1. This will result in 18 new possible move sequences all one twist away from $a$. Thereafter the $d$ is incremented and the search now moves 18 moves from the previous positions obtained in the search where $d = 1$. This allows a possibility for optimization of the algorithm since some of the moves will eventually be the same. I.e. the two move sequences R2 and R' R' is of length 1 and 2 respectively, but the result is the same transformed cube. The algorithm checks whether the transformed cube is in $H$ by relabeling it and checking if $r(ab) = r(e)$. The actual implementation of the algorithm may vary and will be omitted for now.
 
 $d$ continues to be incremented until it reaches the length $l$. Since $l$ starts with the value infinite, it has to be changed in order to stop the loop. This happens in the second phase.
 
@@ -80,7 +86,7 @@ $d$ continues to be incremented until it reaches the length $l$. Since $l$ start
 
 \subsection{Second Phase}
 \label{sub:secondPhase}
-The goal of the second phase is to find the length of the shortest move sequence to transform the cube from a position in $H$ into $e$. The time wise most efficient way to do this is to have a lookup table which has a length for each position in $H$. This table has to be very large, considering the amount of elements in $H$. Note that all \cpiece{} in a cube in $H$ has a correct orientation.
+The goal of the second phase is to find the length of the shortest move sequence to transform the cube from a position in $H$ into $e$. In order to do this whit in a reasonable amount of time a lookup table is prefered instead of a calculation of each position over and over again. This table has to be very large, considering the amount of elements in $H$. Note that all \cpiece{} in a cube in $H$ has a correct orientation. 
 
 The amount of elements can be calculated by imagining that one were to assemble the \rubik{}, starting with a disassembled \rubik{}. The first corner \cpiece{} can be placed in eight different places. The next corner has seven possible positions etc. 
 %until the last two corners which has a specific place since two corners can not be swapped. 
