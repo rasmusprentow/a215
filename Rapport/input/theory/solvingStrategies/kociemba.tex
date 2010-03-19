@@ -70,26 +70,26 @@ The first time this \textbf{if}-statement is executed it will return true and th
 
 \subsection{First phase}
 \label{sub:firstPhase}
-The first phase finds a move sequence, $b$,  from a position $a$ that transform the cube into the subgroup $H$ this is done by going through all possible moves with a sequence of the length $d$. This is a breadth-first search algorithm.  cite\{dmatbogen\}.
+The first phase finds a move sequence, $b$, from a position $a$ that transform the \rubik into the subgroup $H$ this is done by going through all possible moves with a sequence of the length $d$. This is a breadth-first search algorithm.  cite\{dmatbogen\}.
 In figure \ref{fig:searchExpansion} the amount of elements in $S^d$ to a specific $d$ is illustrated.
-An example of a giving search from a position $a$ is given. The algorithm starts by searching in $S^{d}$, where $d =  0$. This will give the position $a$ itself. The distance $d$ is then incremented to 1. This will result in 18 new possible move sequences all one twist away from $a$. Thereafter the $d$ is incremented and the search now moves 18 moves from the previous positions obtained in the search where $d = 1$. This allows a possibility for optimization of the algorithm since some of the moves will eventually be the same. I.e. the two move sequences R2 and R' R' is of length 1 and 2 respectively, but the result is the same transformed cube. The algorithm checks whether the transformed cube is in $H$ by relabeling it and checking if $r(ab) = r(e)$. The actual implementation of the algorithm may vary and will be omitted for now.
+An example of a search from a position $a$ is given. The algorithm starts by searching in $S^{d}$, where $d =  0$. This will give the position $a$ itself. The distance $d$ is then incremented to 1. This will result in 18 new possible move sequences all one twist away from $a$. Thereafter the $d$ is incremented and the search now moves 18 moves from the previous positions obtained in the search where $d = 1$. This allows a possibility for optimization of the algorithm since some of the moves will eventually be the same. I.e. the two move sequences R2 and R' R' is of length 1 and 2 respectively, but the result is the same transformed cube. The algorithm checks whether the transformed cube is in $H$ by relabeling it and checking if $r(ab) = r(e)$. The actual implementation of the algorithm may vary and will be omitted for now.
 
 $d$ continues to be incremented until it reaches the length $l$. Since $l$ starts with the value infinite, it has to be changed in order to stop the loop. This happens in the second phase.
 
 \begin{figure}[!hb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/searchExpansion.pdf}
-	\caption{\myCaption{As the distance of the search $d$ increases, the possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not in considered in this example. }}
+	\caption{\myCaption{As the distance of the search $d$ increases, the possible move sequences expands rapidly. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$. Note: symmetry is not considered in this example. }}
 	\label{fig:searchExpansion}
 \end{figure}
 
 
 \subsection{Second Phase}
 \label{sub:secondPhase}
-The goal of the second phase is to find the length of the shortest move sequence to transform the cube from a position in $H$ into $e$. In order to do this whit in a reasonable amount of time a lookup table is prefered instead of a calculation of each position over and over again. This table has to be very large, considering the amount of elements in $H$. Note that all \cpiece{} in a cube in $H$ has a correct orientation. 
+The goal of the second phase is to find the length of the shortest move sequence to transform the \rubik from a position in $H$ into $e$. In order to do this within a reasonable amount of time a lookup table is prefered instead of a calculation of each position over and over again. This table has to be very large, considering the amount of elements in $H$. Note that all \cpiece{} in a cube in $H$ has a correct orientation. 
 
 The amount of elements can be calculated by imagining that one were to assemble the \rubik{}, starting with a disassembled \rubik{}. The first corner \cpiece{} can be placed in eight different places. The next corner has seven possible positions etc. 
 %until the last two corners which has a specific place since two corners can not be swapped. 
-This gives $8! = 40320$ possibilities for the corners. The eight edges of the top and down layer can be placed similarly and also yields $8!$.  The four edges of the middle layer can be placed in four different spots this yield $4! = 24$. Since it is impossible to swap two corners without swapping any edges the amount of possibilities is limited by $\frac{1}{2}$. The final result would be $\frac{4!\cdot(8!)^{2}}{2} \approx 19.508\cdot10^{9}$ elements in $H$.
+This gives $8! = 40320$ possibilities for the corners. The eight edges of the top and down layer can be placed similarly and also yields $8!$.  The four edges of the middle layer can be placed in four different placeses this yield $4! = 24$. Since it is impossible to swap two corners without swapping any edges the amount of possibilities is limited by $\frac{1}{2}$. The final result would be $\frac{4!\cdot(8!)^{2}}{2} \approx 19.508\cdot10^{9}$ elements in $H$.
 
  
