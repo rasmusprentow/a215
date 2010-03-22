@@ -18,7 +18,7 @@ When relabeling a \rubik{} in the position $s$ it is written as $r(s)$. A \rubik
 \subsection{The subgroup $H$}
 \label{sub:theSubgroupH}
 %%% Beaware if the subgroup is introduced somewhere else. it should actually be. 
-The following moves: U, U', U2, D, D', D2, R2, L2, F2 and B2 are in the set of moves $A$. Using moves from $A$ on a position in $H$, will always result in a \rubik{} in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is \twist{}ed 180 degress, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
+The moves U, U', U2, D, D', D2, R2, L2, F2 and B2 is the set of moves $A$. Using moves from $A$ on a position in $H$, will always result in a \rubik{} in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is \twist{}ed 180 degrees, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
 
 
 \begin{figure}[!hb]
@@ -54,8 +54,8 @@ The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds 
 \end{algorithmic}
 \end{algorithm}
 
-At first in the algorithm the search distance ($d$), see figure \ref{fig:searchExpansion} is set to zero and the total length ($l$) is set to infinite. The total length is the amount of moves used to get from $a$ to $e$, while $d$ is the limited search length to find a move sequence that transforms the \rubik{} into a position i $H$. 
-The \textbf{while} loop will run as long as $d$ is smaller than $l$.
+The search distance in the algorith ($d$), see figure \ref{fig:searchExpansion} is initially set to zero and the total length ($l$) is set to infinite. The total length is the amount of moves used to get from $a$ to $e$, while $d$ is the limited search length to find a move sequence that transforms the \rubik{} into a position in $H$. 
+The \textbf{while} loop will run as long as $d$ is less than $l$.
 %For the first run this is true, and will only test if the scrambled \rubik{} already is in the subgroup $H$. If so it will continue since a solution that goes out of $H$ might be a faster solution. 
 
 The \textbf{for} loop runs through all move sequences in the range $d$ -- recall that $S^d$ is the set containing every move sequence that uses $d$ twists. This search of moves in $S^d$ is called the first phase and is further described in \ref{sub:firstPhase}.
