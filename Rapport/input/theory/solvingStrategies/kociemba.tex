@@ -88,10 +88,14 @@ $d$ continues to be incremented until it reaches the length $l$. Since $l$ start
 
 \subsection{Second Phase}
 \label{sub:secondPhase}
-The goal of the second phase is to find the length of the shortest move sequence to transform the \rubik from a position in $H$ into $e$. In order to do this within a reasonable amount of time a lookup table is prefered instead of a calculation of each position over and over again. This table has to be very large, considering the amount of elements in $H$. Note that all \cpiece{} in a cube in $H$ has a correct orientation. 
+The goal of the second phase is to find the length of the shortest move sequence to transform the \rubik{} from a position in $H$ into $e$. A way to solve this problem is by having a lookup table. This table has to be very large, considering the amount of elements in $H$. 
 
-The amount of elements can be calculated by imagining that one were to assemble the \rubik{}, starting with a disassembled \rubik{}. The first corner \cpiece{} can be placed in eight different places. The next corner has seven possible positions etc. 
+The amount of elements can be calculated by imagining that one were to assemble the \rubik{}, starting with a disassembled \rubik{}. The first corner \cpiece{} can be placed in eight different places. The next corner has seven possible positions etc. Note that all \cpiece{}s in a cube in $H$ has the correct orientation. 
 %until the last two corners which has a specific place since two corners can not be swapped. 
-This gives $8! = 40320$ possibilities for the corners. The eight edges of the top and down layer can be placed similarly and also yields $8!$.  The four edges of the middle layer can be placed in four different placeses this yield $4! = 24$. Since it is impossible to swap two corners without swapping any edges the amount of possibilities is limited by $\frac{1}{2}$. The final result would be $\frac{4!\cdot(8!)^{2}}{2} \approx 19.508\cdot10^{9}$ elements in $H$.
+This gives $8! = 40320$ possibilities for the corners. 
+The eight edges of the top and down layer can be placed similarly and also yields $8!$.  
+The four edges of the middle layer can be placed in four different places this yield $4! = 24$. Since it is impossible to swap two corners without swapping any edges the amount of possibilities is halved. 
+The final result is $\frac{4!\cdot(8!)^{2}}{2} \approx 19.508\cdot10^{9}$ elements in $H$.
+The actual implementation of such a table will be discussed in section(HUSK REF). 
 
  
