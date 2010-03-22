@@ -1,23 +1,24 @@
-\chapter {Graph theory}
+\chapter {Graph Theory}
+\label{chap:graphTheory}
 \myTop{This chapter regards the graph theory in relation to the Rubik's Cube. Their would be a description of the shortest path and calculation of the diameter. The chapter will end in an example using a much smaller Rubik's Cube graph; the Middle movement graph.}
 
-Graph theory  in general..
+A graph consists of a set of vertices, $V$, and a set of edges, $E$.
 
-
-\section{Shortest path}
-The shortest path from one point to another in a graph can be found by checking the length of each possible path. This is easy for small graph such as the one described in subsection \ref{sub:middleMoveGroup} but for bigger graph such as the \rubik{} graph this is practical impossible. 
+\section{Shortest Path}
+The shortest path from one point to another in a graph can be found by checking the length of each possible path. This is easy for small graph such as the one described in subsection \ref{sub:middleMoveGroup} but for bigger graph such as the \rubik{} graph this is practically impossible. 
 
 The shortest path between two vertices can be found with Dijkstra's Algorithm \cite[p. 651]{Rosen07}. The description of the algorithm is omitted for brevity. Dijkstra's Algorithm takes an weighted graph and two vertices as input. Because of this the \rubik{} graph has to be weighted. Since each move contributes to the total number of moves by the same number, one, each edge is given the weight 1. The weight will be omitted in every illustration in this chapter because they are all 1.  
 
-\section{Solving the diameter}
+\section{Solving the Diameter}
+To find the diameter of a graph is to find the longest shortest path between any two vertices in the given graph. This can be done by using Dijkstra's Algorithm on every set of vertices in the graph. This can be applied to the \rubik{} graph as well and finding the maximum number of \twist{}s to solve the \rubik{} in the worst case scenario. Unfortunately this approach is not viable because of the tremendous amount of positions the \rubik{} has even when considering symmetries.
 
+The diameter of the \rubik{} graph can be found be finding where the upper and lower bound meet with some other method.
 
-
-\section{Describing the Cube as a graph}
+\section{Describing the Cube as a Graph}
 In order to describe the \rubik{} as a graph it is necessary to determine the edges and the vertices. In this example each edge of the graph is a move and the vertices represent the positions.  
 
 
 
-\subsection{The middle movement graph}
+\subsection{The Middle Movement Graph}
 \label{sub:middleMoveGroup}
 This graph is a \rubik{} graph consisting of only the moves that \twist{} the middle sections. This is R2m F2m U2m. Note: R2m = R2 L2.  The graph of this group is fairly small, since it only consist of eight vertices and 12 edges. 
