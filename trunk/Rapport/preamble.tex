@@ -38,7 +38,7 @@
 %%%%%% Prettier chapters %%%%%
 %\usepackage[Lenny]{fncychap}%
 %\usepackage[Sonny]{fncychap}%
-%\usepackage[Glenn]{fncychap}%
+\usepackage[Bjornstrup]{fncychap}%
 %\usepackage[Conny]{fncychap}%
 %\usepackage[Rejne]{fncychap}%
 %\usepackage{xparse}%
@@ -83,10 +83,10 @@
 \input{functions/wordList}
 %%%%%%%%%%%%%%%%%%%%
 
-%%%%  Makes the titles look nicer. i guess. Rasmus out. %%%%%%%
-\usepackage{titlesec} \newcommand{\bigrule}{\titlerule[0.5mm]} \titleformat{\chapter}[display] {\bfseries\Huge} {  \vskip-2em 
+%%%%  Makes the titles look nicer. i guess. Rasmus out. %%%%%%% Don't remove
+%\usepackage{titlesec} \newcommand{\bigrule}{\titlerule[0.5mm]} \titleformat{\chapter}[display] {\bfseries\Huge} {  \vskip-2em 
  %\titlerule 
- \filright  \huge\chaptertitlename\ \vspace{5mm}  \huge\thechapter} {0mm} {\filright} [\vspace{3mm} \bigrule \vspace{-10mm}] %
+% \filright  \huge\chaptertitlename\ \vspace{5mm}  \huge\thechapter} {0mm} {\filright} [\vspace{3mm} \bigrule \vspace{-10mm}] %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Depracted %%%%%%%%%
@@ -98,7 +98,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%% tops 'n' tails %%%%%%%%%%%%
-\newcommand{\myTop}[1]{\textit{#1} \vspace{3.4mm} \hrule \vspace{3.4mm} }
+\newcommand{\myTop}[1]{\vspace{-8mm}  \vspace{0mm} \textit{#1} \vspace{3.4mm} \hrule \vspace{3.4mm} }
 %\newcommand{\myTop}[1]{ \vspace{3.4mm} \textit{#1} \  \\  \hrule \  \\}%
 \newcommand{\myTail}[1]{  \ \\ \hrule \ \\ \textit{#1}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
