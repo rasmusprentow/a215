@@ -1,54 +1,64 @@
 \documentclass{book}
 
+
+%%%%%%%%%% Various Packages %%%%%%%%%
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[numbers]{natbib}
-
-%\usepackage{en-bib}  % anyone who knows this?
-
 \usepackage{verbatim} %% For Comment enviroment
 \usepackage{lastpage}  % gives lastpage commando
+\usepackage{algorithm}  %%% Algorithm Eviroment
+\usepackage{algorithmic}  %%% Algorithm Eviroment
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % Math Paths
+\usepackage{fancyhdr} % For headers
+\usepackage{xifthen}% provides \isempty test and ifthen else 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{algorithm}
-\usepackage{algorithmic}
 
-%% Make links work
+
+%%%%%% Depracted  %%%%%%%%
+%\usepackage{en-bib}  % anyone who knows this?
+%\usepackage{en-bib}  % anyone who knows this?
+%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%% Make links work %%%%%%%%%%
 \usepackage[pdfborder={0 0 0 0}, backref=section]{hyperref}
 %\usepackage[a4paper, bookmarks=true, bookmarksopen=true, bookmarksnumbered=true, pdfborder={0 0 0 0}, colorlinks=true, breaklinks=true, backref=section]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% Math Paths
-\usepackage{amsmath,amsfonts,amssymb,amsthm}
-
-%% For header
-\usepackage{fancyhdr}
 
 %%% something? useful? hopefully!
 \usepackage[]{graphicx} %dvips
 \usepackage{subfig}% Need to make several pictures in one float
 \usepackage{wrapfig}% Enables us to wrap text around a figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%% Prettier chapters %%%%%
 %\usepackage[Lenny]{fncychap}
 %\usepackage[Sonny]{fncychap}
 %\usepackage[Glenn]{fncychap}
 %\usepackage[Conny]{fncychap}
 %\usepackage[Rejne]{fncychap}
 %\usepackage{xparse}
-
-
-\usepackage{xifthen}% provides \isempty test and ifthen else 
-
-
+%%%%%%%%%%%%%%%%%%%%
 
 
 
 %\setcitestyle{numbers}
+
+%%%% Bibliography %%%%%%
 \bibliographystyle{plainnat}
+%%%%%%%%%%%%%%%%%
 
+
+%%%%%% Something something might be important  %%%%%%%%%
 \setcounter{tocdepth}{1}
-
 \linespread{1}
+%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%% Depracted %%%%%%%%%%%
 %\setlength{\marginparwidth}{10pt}
 %\setlength{\textwidth}{400pt}
 %\setlength{\textheight}{620pt}
@@ -58,43 +68,74 @@
 %\setlength{\headsep}{10pt}
 %\setlength{\oddsidemargin}{50pt}
 %\setlength{\evensidemargin}{10pt}
+%%%%%%%%%%%%%%%%%%%%
 
 
 
+%%%%%%%%%%%%  COMMANDS   %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% Get commands defined Elsewhere %%%%%%%%%
 \input{functions/caseControl}
 \input{functions/myDate}
 \input{functions/wordList}
+%%%%%%%%%%%%%%%%%%%%
 
-%COMMANDS:
+%%%%  Makes the titles look nicer. i guess. Rasmus out. %%%%%%%
+\usepackage{titlesec} 
+\newcommand{\bigrule}{\titlerule[0.5mm]} 
+\titleformat{\chapter}[display] 
+{\bfseries\Huge} 
+{ 
+ \vskip-2em 
+ %\titlerule 
+ \filright 
+ \huge\chaptertitlename\ 
+ \vspace{5mm} 
+ \huge\thechapter} 
+{0mm} 
+{\filright} 
+[\vspace{3mm} \bigrule \vspace{-10mm}] %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newcommand{\picturepath}[1]{input/pics/}
-%Used to determine the highlight of the first word in the terminology
+%%%%% Depracted %%%%%%%%%
+\newcommand{\picturepath}[1]{input/pics/}
+
+
+%%%%% Used to determine the highlight of the first word in the terminology %%%%%
 \newcommand{\myTermHigh}[1]{\textbf{#1}: }
+%%%%%%%%%%%%%%%%%%%%%%
 
-%tops 'n' tails
-\newcommand{\myTop}[1]{\textit{#1} \  \\  \hrule \  \\}%
+%%%%%%%%% tops 'n' tails %%%%%%%%%%%%
+\newcommand{\myTop}[1]{\textit{#1} \vspace{3.4mm} \hrule \vspace{1.5mm} \ \\}
+%\newcommand{\myTop}[1]{ \vspace{3.4mm} \textit{#1} \  \\  \hrule \  \\}%
 \newcommand{\myTail}[1]{  \ \\ \hrule \ \\ \textit{#1}}%
-\newcommand{\startTop}{\textbf{Change this command to myTop with the top as argument} \\}%
-\newcommand{\stopTop}{\textbf{Change this command to myTop with the top as argument} \\}%
-\newcommand{\startTail}{\textbf{Change this command to myTail with the tail as argument} \\}%
-\newcommand{\stopTail}{\textbf{Change this command to myTail with the tail as argument} \\ }%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%Use this for caption text
+%%%%%%%%% Use this for caption text %%%%%%%%%%
 \newcommand{\myCaption}[1]{\textit{\footnotesize #1} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Bruges til skillekolonner og r\ae{}kker . Definerer tykkelsen. 
+%%%%%%%% Bruges til skillekolonner og r\ae{}kker . Definerer tykkelsen. %%%%%%
 \newcommand{\vrules}{{\vrule width 0.6pt}}
 \newcommand{\hrules}{{\hrule height 1.2pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Commands for getting e.g. ``st'' lifted in 1st
+%%%%%%%Commands for getting e.g. ``st'' lifted in 1st   %%%%%%%%%%%
 \newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
 \newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
 \newcommand{\ths}[0]{\superscript{th}}
 \newcommand{\st}[0]{\superscript{st}}
 \newcommand{\nd}[0]{\superscript{nd}}
 \newcommand{\rd}[0]{\superscript{rd}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%% Defining Theorem
+%%%%%%%%% Defining Theorem %%%%%%%%%%%
 \theoremstyle{definition} \newtheorem{theorem}{Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
