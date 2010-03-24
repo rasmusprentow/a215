@@ -10,31 +10,32 @@
 \end{itemize}
 
 \section{General cube terminology}
+\label{sec:generalNotation}
 \begin{itemize}
-\label{general_notation}
 \item \myTermHigh{Face}A face is an entire side of the cube. A \rubik{} has 6 faces.
 \item \myTermHigh{\facet{c}}The small stickers on the cube. Each face has 9 \facet{}s.
 \item \myTermHigh{Corner}Corner pieces have 3 \facet{}s and are placed at the corners. 
 \item \myTermHigh{Edge}Edge pieces have 2 \facet{}s and are placed at the edges of each face. 
 \item \myTermHigh{Center}Center pieces have 1 \facet{} and are placed at the center of each face and are immovable unless the cube is turned. 
-\item \myTermHigh{Turn}A turn of the cube is equal to rotating the whole cube 90 degrees(=changing view angle).
-\item \myTermHigh{Twist}A twist is a rotation of a face.%Twisting means the rotation of a side of the cube. Often denoted as R' for exampel. This yields twist the right side counter-clockwise.
+\item \myTermHigh{Turn}A turn of the cube is equal to rotating the whole cube 90 degrees -- changing view angle.
+\item \myTermHigh{Twist}A rotation of a face.%Twisting means the rotation of a side of the cube. Often denoted as R' for exampel. This yields twist the right side counter-clockwise.
 \end{itemize}
 
 \section{Movement notation terminology}
+\label{sec:moveNotation}
 A cube consists of 6 faces and the notations of these are the following.
 \begin{itemize}
-\label{move_notation}
-\item \myTermHigh{Front face} F -- This face faces the cuber.
-\item \myTermHigh{Left face} L -- This face faces the left hand side of the cuber.
-\item \myTermHigh{Right face} R -- This face faces the right hand side of the cuber.
-\item \myTermHigh{Up face} U -- This face faces up.
-\item \myTermHigh{Down face} D -- This face faces down.
-\item \myTermHigh{Back face} B -- This face faces away from the cuber.
+\item \myTermHigh{Front face -- F}This face faces the cuber.
+\item \myTermHigh{Left face -- L}This face faces the left hand side of the cuber.
+\item \myTermHigh{Right face -- R}This face faces the right hand side of the cuber.
+\item \myTermHigh{Up face -- U}This face faces up.
+\item \myTermHigh{Down face -- D}This face faces down.
+\item \myTermHigh{Back face -- B}This face faces away from the cuber.
 \end{itemize} 
 
 A face can be twisted in two directions -- clockwise and counterclockwise. When twisting a face the direction is determined as if you were facing the face.
-A twist in the clockwise direction has the same name as the face. i.e. a clockwise turn of the right face is notated "R" and pronounced "right". A counterclockwise twist of the right face is notated "R'" and pronounced "right prime". This gaoes for all the faces.
+A twist in the clockwise direction has the same name as the face. i.e. a clockwise turn of the right face is notated ``R'' and pronounced ``right''.
+A counterclockwise twist of the right face is notated ``R'' and pronounced ``right prime''. This goes for all the faces.
 
 A turn of the cube can be done in six directions. Clockwise and counterclockwise around each of the three axes.
 
@@ -43,28 +44,35 @@ A turn of the cube can be done in six directions. Clockwise and counterclockwise
 
 
 \section{Group theory related terminology}
-\huge{Under construction}
 \begin{itemize}
-\item $S$ : 18 standard twist.
-\item $s$ : Specific position.
-\item $|s|$ : Length from $e$ till $s$.
-\item $H$ : Positions obtained by $A$.
-\item $A$ : twist U, U', U2 ,F2, R2, B2 ,L2, D, D' and D2.
-\item $G$ : All positions. 
-\item $r(s)$ : The relabeling of position $s$.
-\item $S^{n}$ : Set consisting of max $n$ moves in $S$.
-\item $S*$ : Every combination of twists in $S$.
-\item $d(s)$ : Diameter, shortest |s|.
-\item $R$ : set of $r(G)$.
-\item $M$ : 48 color permutation turn and mirror.
-\item $e$: The solved state of the \rubik{}(unit cube).
+\item \myTermHigh{$S$}The 18 standard \twist{}s.
+\item \myTermHigh{$s$}A specific position of the \rubik{}.
+\item \myTermHigh{$|s|$}The number of \twist{}s of a move sequence that transform $e$ into $s$.
+\item \myTermHigh{$H$}Positions which obey the following:
+\begin{itemize}
+	\item Every \cpiece{} is correctly oriented.
+	\item Every edge \cpiece{} not containing either an up \facelet{} or a down \facelet{} is positioned in the middle layer.
+\end{itemize}
+\item \myTermHigh{$A$}Set containing the following twists: U, U', U2 ,F2, R2, B2 ,L2, D, D' and D2.
+\item \myTermHigh{$G$}All positions which can be obtained without disassembling the \rubik{}. 
+\item \myTermHigh{$r(s)$}The relabeling of the position $s$.
+\item \myTermHigh{$S^{n}$}Set of move sequences consisting every possible sequence of max $n$ moves in $S$.
+\item \myTermHigh{$S*$}Every combination of \twist{}s in $S$.
+\item \myTermHigh{$d(s)$}Distance, the shortest $|s|$.
+\item \myTermHigh{$R$}set of $r(G)$.
+\item \myTermHigh{$M$}48 color permutation turn and mirror.
+\item \myTermHigh{$e$}The solved state of the \rubik{}(unit cube).
+\end{itemize}
 
-\item $a$ (kociemba) : En position i $G$
-\item $b$ (kociemba) : Path from $a$ to $H$ $S*$
-\item $c$ (kociemba) : Path from $H$ to $e$ ($abc = e$) $A*$
-\item $d$ (kociembe) : distance for search %what?
-\item $d2$ (kociemba) : Table lookup of distance $b$ from a position.
-
+\subsection{Kociemba}
+Here are the terms which are specifically used section \ref{sec:kociemba}. Note that positions can be considered as the shortest move sequence that transform it into $e$.
+\begin{itemize}
+\item \myTermHigh{$a$}A position in $G$.
+\item \myTermHigh{$b$}Path from $a$ to a position in $H$ using move sequences in $S*$.
+\item \myTermHigh{$c$}Path from $b$ to $e$ using mo sequences in $A*$.
+\item \myTermHigh{$ab$}Combination of the to move sequences $a$ and $b$, in that order.
+\item \myTermHigh{$d$}Distance for phase 1.
+\item \myTermHigh{$d2$}Table lookup for the distance from $ab$ to $e$.
 \end{itemize}
 
 
