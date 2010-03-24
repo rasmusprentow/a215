@@ -1,0 +1,30 @@
+\section{Proof of the Upper Bound}
+
+%INTRODUCTION
+
+\subsection{Set Solver}
+The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kocimba's algorithm. The set solver is a viable method for proving the upper bound because it uses a look-up table that
+
+\begin{algorithm}[!h]                     
+\caption{Set Solver \cite{rokicki09}}          
+\label{alg:setSolver}        
+\begin{algorithmic}[1]
+\STATE $f=null$  %TJEK OM NULL VIRKER
+\STATE $d=0$
+\WHILE {true} 
+	\STATE {$f=f \cup fA$}
+		\IF {$f = H$}
+			\STATE {return d}
+		\ENDIF
+		\IF {d \leq m }
+			\FOR {$b \in S^d, r(ab) = e $}
+				\STATE {$f=f\cup ab$}
+			\ENDFOR
+		\ENDIF
+		\IF {$f = H$}
+			\STATE {return $d$}
+		\ENDIF
+	\STATE {$d=d+1$}
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
