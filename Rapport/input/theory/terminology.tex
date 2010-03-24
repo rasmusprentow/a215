@@ -19,6 +19,7 @@
 \item \myTermHigh{Center}Center pieces have 1 \facet{} and are placed at the center of each face and are immovable unless the cube is turned. 
 \item \myTermHigh{Turn}A turn of the cube is equal to rotating the whole cube 90 degrees -- changing view angle.
 \item \myTermHigh{Twist}A rotation of a face.%Twisting means the rotation of a side of the cube. Often denoted as R' for exampel. This yields twist the right side counter-clockwise.
+\item \myTermHigh{Move sequence}  The same as a sequence of \twist{}s. 
 \end{itemize}
 
 \section{Movement notation terminology}
@@ -31,11 +32,14 @@ A cube consists of 6 faces and the notations of these are the following.
 \item \myTermHigh{Up face -- U}This face faces up.
 \item \myTermHigh{Down face -- D}This face faces down.
 \item \myTermHigh{Back face -- B}This face faces away from the cuber.
+\item \myTermHigh{General move -- M}Can be any of the above faces.
 \end{itemize} 
 
 A face can be twisted in two directions -- clockwise and counterclockwise. When twisting a face the direction is determined as if you were facing the face.
 A twist in the clockwise direction has the same name as the face. i.e. a clockwise turn of the right face is notated ``R'' and pronounced ``right''.
 A counterclockwise twist of the right face is notated ``R'' and pronounced ``right prime''. This goes for all the faces.
+A 180 degree \twist{} of a face is denoted M2. 
+Beside the normal face \twist{} there are middle \twist{}s. These are denoted Mm Mm' and Mm2 e.g. Rm2 is a \twist{} of the middle section looking from the R face. This \twist{} is equal to the two \twist{} R2 and L2.  
 
 A turn of the cube can be done in six directions. Clockwise and counterclockwise around each of the three axes.
 
@@ -53,7 +57,7 @@ A turn of the cube can be done in six directions. Clockwise and counterclockwise
 	\item Every \cpiece{} is correctly oriented.
 	\item Every edge \cpiece{} not containing either an up \facelet{} or a down \facelet{} is positioned in the middle layer.
 \end{itemize}
-\item \myTermHigh{$A$}Set containing the following twists: U, U', U2 ,F2, R2, B2 ,L2, D, D' and D2.
+\item \myTermHigh{$A$}Set containing the following \twist{}s: U, U', U2 ,F2, R2, B2 ,L2, D, D' and D2.
 \item \myTermHigh{$G$}All positions which can be obtained without disassembling the \rubik{}. 
 \item \myTermHigh{$r(s)$}The relabeling of the position $s$.
 \item \myTermHigh{$S^{n}$}Set of move sequences consisting every possible sequence of max $n$ moves in $S$.
@@ -69,7 +73,7 @@ Here are the terms which are specifically used section \ref{sec:kociemba}. Note 
 \begin{itemize}
 \item \myTermHigh{$a$}A position in $G$.
 \item \myTermHigh{$b$}Path from $a$ to a position in $H$ using move sequences in $S*$.
-\item \myTermHigh{$c$}Path from $b$ to $e$ using mo sequences in $A*$.
+\item \myTermHigh{$c$}Path from $b$ to $e$ using move sequences in $A*$.
 \item \myTermHigh{$ab$}Combination of the to move sequences $a$ and $b$, in that order.
 \item \myTermHigh{$d$}Distance for phase 1.
 \item \myTermHigh{$d2$}Table lookup for the distance from $ab$ to $e$.
