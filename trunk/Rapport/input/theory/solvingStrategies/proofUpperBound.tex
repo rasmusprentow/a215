@@ -10,26 +10,31 @@ The set solver does this by finding all the move sequences of a relabeled cube o
 \caption{Set Solver \cite{rokicki09}}          
 \label{alg:setSolver}        
 \begin{algorithmic}[1]
-\STATE {$f=null$}  %TJEK OM NULL VIRKER
+\STATE {$f=null$}
 \STATE {$d=0$}
 \WHILE {true} 
-	\STATE {$f = f \cup fA$ \{prepass\} }
-		\IF {$f = H$}
-			\STATE {return $d$} %% SKAL DETTE SÆTTES FØR WHILE LOOP?
-		\ENDIF
 		\IF {$d \leq m$}
-			\FOR {$b \in S^d, r(ab) = e $}
-				\STATE {$f = f \cup ab$}
+			\FOR {$b \in S^d$}
+				\IF {$r(ab) = r(e)$}
+					\STATE {$f = f \cup ab$}
+				\ENDIF
 			\ENDFOR
 		\ENDIF
 		\IF {$f = H$}
 			\STATE {return $d$}
 		\ENDIF
 	\STATE {$d = d + 1$}
+	\STATE {$f = f \cup fA$}
+	\IF {$f = H$}
+		\STATE {return $d$}
+	\ENDIF
 \ENDWHILE
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Prepass}
+First in the set sovler two variable is initialized. The first one $f$ which is a set that can hold all the positions of $H$ is set to $null$. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
 
-When the algorithm starts the prepass is set, this is done by applying all the different move sequences from $A$ to f. After this an if-statement tests if subgroup f equals subgroup H. If that is the case the distance is returned and the while loop ends. If not
+When these 
+
+
+%First time the while loop is run the first part, $f = f \cup fA$, does nothing. The reason why nothing happens is because f is initialized to $null$. When applying moves from $A$ to $null$ nothing happens. The next if-statement that test if $f = H$ will come out false, so $d$ will not be returned.
