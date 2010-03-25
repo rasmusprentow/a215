@@ -5,11 +5,30 @@ The shortest path of a graph and the calculation of the diameter of a graph will
 This can be used as a method to prove how many twists are needed to solve the Rubik's Cube in the worst case, also called the upper bound.
 The chapter will conclude with an example using a much smaller Rubik's Cube graph; the Middle movement graph.}
 
-A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described. \textit{uddyb}
-This means the graph is undirected, has no loops and there can only be one edge between two vertices. 
-Since all weights in the \rubik{} graph is $1$ the graph can be considered non-weighted. 
+A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described.
+A vertex is a point. A vertex can be connected to other vertices by an edge.
+An edge is a line between two vertices(an edge can in some graphs connect a vertex to it self, but such graphs are not considered here).
+If there is only one edge between any two vertices in a graph, then the graph is said to be simple.
+A graph is said to be connected if you can visit every vertex by starting at an arbitrary vertex and then reach every other vertex by traveling along the edges of the graph.
 
-The \rubik{} graph can have different sizes depending on the allowed \twist{}. The full \rubik{} graph is the graph where all moves are allowed. 
+A graph can be weighted, which means that every edge will have a weight.
+This weight can represent different things, distance between vertices, price for traveling between vertices or what ever makes sense for the given weighted graph.
+See figure \ref{fig:simpleGraph} for an example of a graph.
+
+\begin{figure}
+	\centering
+		\includegraphics[scale = 0.7]{input/pics/simpleGraph.png}
+	\caption{\myCaption{A simple connected graph with nine vertices. The black circles are vertices and the lines are edges.}}
+	\label{fig:simpleGraph}
+\end{figure}
+
+Graphs can be used to illustrate many different things such as relationships, geographical maps, tournaments etc.\cite[pp. 592-593]{rosen07} 
+
+For a graph of the \rubik{} it would be ideal to make vertices represent positions and edge represent \twist{}s. The weight of the edges would then be the number of \twist{}s required to get from one of the edges to the other -- hence the weight for every edge would be 1 if only edges representing a single \twist{} is included in the graph.
+%This means the graph is undirected, has no loops and there can only be one edge between two vertices. 
+%Since all weights in the \rubik{} graph is $1$ the graph can be considered non-weighted.
+
+The \rubik{} graph can have different sizes depending on the allowed \twist{}, e.g. a graph only considering Rm2, Um2 and Fm2 \twist{}s can be made into a relatively small graph compared to the full \rubik{} graph(see \ref{fig:graphMiddleSlice2} for illustration), which contains $4.33 \cdot 10^19$ vertices.
 
 %%Uddyb forklaring af rubik's cube som graf
 
