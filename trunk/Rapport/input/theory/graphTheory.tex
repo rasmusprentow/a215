@@ -1,21 +1,22 @@
 \chapter {Graph Theory}
 \label{chap:graphTheory}
-\myTop{This chapter regards the graph theory in relation to the Rubik's Cube. 
-There will be a description of the shortest path and calculation of the diameter of a graph, which could be a way to prove the upper bound. 
-The chapter will  conclude with an example using a much smaller Rubik's Cube graph; the Middle movement graph.}
+\myTop{This chapter concerns the graph theory in relation to the Rubik's Cube. 
+The shortest path of a graph and the calculation of the diameter of a graph will be described.
+This can be used as a method to prove how many twists are needed to solve the Rubik's Cube in the worst case, also called the upper bound.
+The chapter will conclude with an example using a much smaller Rubik's Cube graph; the Middle movement graph.}
 
-A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described. 
+A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described. \textit{uddyb}
 This means the graph is undirected, has no loops and there can only be one edge between two vertices. 
 Since all weights in the \rubik{} graph is $1$ the graph can be considered non-weighted. 
 
 The \rubik{} graph can have different sizes depending on the allowed \twist{}. The full \rubik{} graph is the graph where all moves are allowed. 
 
-
+%%Uddyb forklaring af rubik's cube som graf
 
 \section{Shortest Path}
 The shortest path from one vertex to another in a graph can be found by checking the length of each possible path. 
-This is easy for small graph such as the one described in subsection \ref{sub:middleMoveGroup} but for bigger graph such as the full \rubik{} graph this is practically impossible. 
-
+This is easy for small graph such as the \nameref{sub:middleMoveGroup} \ref{sub:middleMoveGroup}, which will be described later in this chapter. For bigger graph such as the full \rubik{} graph this is practically impossible. 
+%%Mikael rettet her til
 The shortest path between two vertices can be found with Dijkstra's Algorithm \cite[p. 651]{Rosen07}. The description of the algorithm is omitted for brevity. Dijkstra's Algorithm takes an weighted graph and two vertices as input. 
 Because of this the \rubik{} graph has to be weighted. Since each \twist{} contributes to the total number of \twist{}s by the same number, one, each edge is given the weight 1. The weight will be omitted in every illustration in this chapter because they are all 1.  
 
