@@ -3,28 +3,33 @@
 %INTRODUCTION
 
 \subsection{Set Solver}
-The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kocimba's algorithm. The set solver is a viable method for proving the upper bound because it uses a look-up table that
+The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube but a whole set of cubes at the time as the name suggests. This means that it solves approximately 19.5 billion cubes at a time.
+The set solver does this by finding all the move sequences of a relabeled cube of the distance d that transforms the cube into $H$. %All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to $H$ has been found.
 
 \begin{algorithm}[!h]                     
 \caption{Set Solver \cite{rokicki09}}          
 \label{alg:setSolver}        
 \begin{algorithmic}[1]
-\STATE $f=null$  %TJEK OM NULL VIRKER
-\STATE $d=0$
+\STATE {$f=null$}  %TJEK OM NULL VIRKER
+\STATE {$d=0$}
 \WHILE {true} 
-	\STATE {$f=f \cup fA$}
+	\STATE {$f = f \cup fA$ \{prepass\} }
 		\IF {$f = H$}
-			\STATE {return d}
+			\STATE {return $d$} %% SKAL DETTE SÆTTES FØR WHILE LOOP?
 		\ENDIF
-		\IF {d \leq m }
+		\IF {$d \leq m$}
 			\FOR {$b \in S^d, r(ab) = e $}
-				\STATE {$f=f\cup ab$}
+				\STATE {$f = f \cup ab$}
 			\ENDFOR
 		\ENDIF
 		\IF {$f = H$}
 			\STATE {return $d$}
 		\ENDIF
-	\STATE {$d=d+1$}
+	\STATE {$d = d + 1$}
 \ENDWHILE
 \end{algorithmic}
 \end{algorithm}
+
+\subsubsection{Prepass}
+
+When the algorithm starts the prepass is set, this is done by applying all the different move sequences from $A$ to f. After this an if-statement tests if subgroup f equals subgroup H. If that is the case the distance is returned and the while loop ends. If not
