@@ -32,9 +32,16 @@ The set solver does this by finding all the move sequences of a relabeled cube o
 \end{algorithmic}
 \end{algorithm}
 
-First in the set sovler two variable is initialized. The first one $f$ which is a set that can hold all the positions of $H$ is set to $null$. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
+First in the set sovler two variables are initialized. The first one $f$ is a set that can hold all the positions of $H$ is set to $null$. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
 
-When these 
+Next the while loop is run. It will run until $d$ is returned, which is when all positions in $H$ has been found or $d$ has reached it's maximum limit, $m$.
 
+If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to $f$ if it is a position in $H$. 
+For efficiency's sake move sequences that give the exact same position more than once are not used. If a move sequence contained F F', that part would be unnecessary. 
+
+if $f$ is equal to $H$ all positions in $H$ have been found, $d$ is returned and the algorithm has finished. 
+If not $d$ is incremented by one. 
+The different $A$ moves are performed on all the current $H$ positions in $f$ and the new $H$ positions are saved in $f$.
+If $f$ contains all positions in $H$, $d$ is returned. If not the while loop continues.
 
 %First time the while loop is run the first part, $f = f \cup fA$, does nothing. The reason why nothing happens is because f is initialized to $null$. When applying moves from $A$ to $null$ nothing happens. The next if-statement that test if $f = H$ will come out false, so $d$ will not be returned.
