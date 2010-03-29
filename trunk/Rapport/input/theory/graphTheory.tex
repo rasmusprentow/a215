@@ -22,19 +22,19 @@ See figure \ref{fig:simpleGraph} for an example of a graph.
 	\label{fig:simpleGraph}
 \end{figure}
 
-Graphs can be used to illustrate many different things such as relationships, geographical maps, tournaments etc.\cite[pp. 592-593]{rosen07} 
+Graphs can be used to illustrate many different things such as relationships, geographical maps, tournaments etc.\cite[pp. 592-593]{Rosen07} 
 
 For a graph of the \rubik{} it would be ideal to make vertices represent positions and edge represent \twist{}s. The weight of the edges would then be the number of \twist{}s required to get from one of the edges to the other -- hence the weight for every edge would be 1 if only edges representing a single \twist{} is included in the graph.
 %This means the graph is undirected, has no loops and there can only be one edge between two vertices. 
 %Since all weights in the \rubik{} graph is $1$ the graph can be considered non-weighted.
 
-The \rubik{} graph can have different sizes depending on the allowed \twist{}, e.g. a graph only considering Rm2, Um2 and Fm2 \twist{}s can be made into a relatively small graph compared to the full \rubik{} graph(see \ref{fig:graphMiddleSlice2} for illustration), which contains $4.33 \cdot 10^19$ vertices.
+The \rubik{} graph can have different sizes depending on the allowed \twist{}, e.g. a graph only considering Rm2, Um2 and Fm2 \twist{}s can be made into a relatively small graph compared to the full \rubik{} graph(see \ref{fig:graphMiddleSlice2} for illustration), which contains $4.33 \cdot 10^{19}$ vertices.
 
 %%Uddyb forklaring af rubik's cube som graf
 
 \section{Shortest Path}
 The shortest path from one vertex to another in a graph can be found by checking the length of each possible path. 
-This is easy for small graph such as the \nameref{sub:middleMoveGroup} \ref{sub:middleMoveGroup}, which will be described later in this chapter. For bigger graph such as the full \rubik{} graph this is practically impossible. 
+This is easy for small graph such as the \nameref{sub:middleMoveGraph} \ref{sub:middleMoveGraph}, which will be described later in this chapter. For bigger graph such as the full \rubik{} graph this is practically impossible. 
 %%Mikael rettet her til
 The shortest path between two vertices can be found with Dijkstra's Algorithm \cite[p. 651]{Rosen07}. The description of the algorithm is omitted for brevity. Dijkstra's Algorithm takes an weighted graph and two vertices as input. 
 Because of this the \rubik{} graph has to be weighted. Since each \twist{} contributes to the total number of \twist{}s by the same number, one, each edge is given the weight 1. The weight will be omitted in every illustration in this chapter because they are all 1.  
@@ -55,13 +55,13 @@ It is practically impossible to draw this graph. Therefore the graph will be exp
 
 
 \subsection{The Middle Movement Graph}
-\label{sub:middleMoveGroup}
+\label{sub:middleMoveGraph}
 This graph is a \rubik{} graph consisting of only the moves that \twist{} the middle sections. 
 This is Rm2 Fm2 Um2. Note: Rm2 = R2 L2.  This graph is fairly small, since it only consist of eight vertices and 12 edges. See figure \ref{fig:graphMiddleSlice2}. \cite[pp. 158-167]{Rubik87}
 
-\begin{figure}
+\begin{figure}[bht!]
 	\centering
-		\includegraphics[width = \textwidth]{input/pics/graphMiddleSlice2.PNG}
+		\includegraphics[width = 0.7\textwidth]{input/pics/graphMiddleSlice2.PNG}
 	\caption{\myCaption{The graph of the middle movement positions.}}
 	\label{fig:graphMiddleSlice2}
 \end{figure}
