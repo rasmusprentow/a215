@@ -74,6 +74,41 @@ this group of $S_n$
 
 Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2, \tau(1)=1,\tau(2)=3,\tau(3)=2$ so $(\sigma\tau)(1)=\tau(3)=2,(\sigma\tau)(2)=\tau(1)=1, (\sigma\tau)(3)=\tau(2)=3.$
 
+\section{5,1 Disjoint Cycle Decomposition}
+
+There is a more compact way of writing elements of the symmetric group; this is best explained by an
+example.
+
+\subsection{Example 5.5.} Consider $\sigma \neq S\_12$ defined by
+
+	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
+	\sigma(7) = 7 \sigma(8) = 3 \sigma(9) = 10 \sigma(10) = 1 \sigma(11) = 11 \sigma(12) = 8$
+
+We will write ”$i \rigtharrow j$” (“i maps to j”) to mean $\sigma(i) = j$. Then,
+
+	$1 \rigtharrow 12, 12 \rigtharrow 8, 8 \rigtharrow 3, 3 \rigtharrow 5, 5 \rigtharrow 6, 6 \rigtharrow 9, 9 \rigtharrow 10, 10 7\rigtharrow 1
+	2 \rigtharrow 4, 4 \rigtharrow 2
+	7 \rigtharrow 7
+	11 \rigtharrow 11$
+
+
+This data tells us what $\sigma$ does to each number, so it defines $\sigma$. As shorthand, we write
+$\sigma$ = (1 12 8 3 5 6 9 10) (2 4) (7) (11).
+
+Here, (1 12 8 3 5 6 9 10), (2 4), (7), and (10) are called cycles. When writing the disjoint cycle decomposition,
+we leave out the cycles with just one number, so the disjoint cycle decomposition of $\sigma$ is
+$\sigma$ = (1 12 8 3 5 6 9 10) (2 4). 
+
+Now, let’s actually define what a cycle is.
+
+\subsection{Definition 5.6}. The cycle $(i\_1 i\_2 · · · i\_k)$ is the element $\tau \in S\_n$ defined by $\tau(i\_1) = i\_2, \tau(i\_2) = i\_3, . . . , \tau(i\_k -1) =
+i\_k, \tau(i\_k) = i\_1$ and $\tau(j) = j$ if $j \neq i\_r$ for any $r$. The length of this cycle is $k$, and the support of the cycle
+is the set ${i\_1, . . . , i\_k}$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
+length $k$ is also called a $k-cycle$.
+
+\subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
+supp $\tau = \oslash$
+
 
 
 
