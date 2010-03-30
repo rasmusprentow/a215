@@ -1,0 +1,75 @@
+%\input{preamble}
+\documentclass{article}
+\bibliographystyle{plainnat}
+\setcounter{tocdepth}{1}
+\linespread{1}
+
+\begin{document}
+
+\tableofcontents
+
+\section{Problem Analysis}
+Since 1977, when the Rubik's Cube was initially released for sale, the Rubik's Cube has frustrated, inspired and entertained many people. This 3x3x3 cube has so many possible settings that the solution can not just be guessed out of sheer luck. Because of this a community around solving the Rubik's Cube has emerged. The community is divided into two parts both concerning efficient solving -- one efficient time-wise and the other efficient twist-wise i.e. solving in the least amount of time and solving in the least amount of twists \cite{speedsolving.forum}. 
+
+The part concerning speed-wise efficiency, often referred to as speedcubing is the largest part of the community and the majority of the competitions held by the WCA\footnote{WCA, World Cube Association, is the official organization for Rubik's Cube related competitions.} \cite{wca} revolve around speedcubing.
+
+The first official competition was held in 1982 in Hungary and is regarded as the first World championship. Since 2002 there have been held annual world championships and plenty other events concerning speedcubing. 
+
+The part of the community concerning twist-wise efficiency is much smaller than the speedsolving part. The majority of the research in the twist-wise efficient area is published as scientific articles explaining the algorithms. Even though competitions with the goal of the least amount of twists to solve the cube are held, many of the twist-wise efficient algorithms are not useful for human solving. These algorithms rely on computer power to look through a large amount of possibilities, which is not a viable option for a human competitor.
+
+The ultimate goal for the twist-wise efficiency community is to find the God's algorithm, which is the algorithm that solves the cube in the absolute least amount of twists from any given position. A part of finding the God's algorithm is to find the amount of moves need to perform it. The upper bound of the Rubik's Cube is the minimum number of twists that the most efficient algorithm at the moment can perform. The lower bound is the least number of twists required to solve the cube in the currently known worst case scenario. It is interesting to study this part of the Rubik's Cube community because it is currently moving, proving new upper bounds.
+
+\subsection{Problem Statement}
+What are the current upper and lower bound of the Rubik's Cube and how have they been proven? \\
+\\
+How can we create an application which can solve the Rubik's Cube?
+\begin{itemize}
+	\item Which algorithms can be used and which is the most efficient with respect to the number of twists?
+\end{itemize}
+
+\subsection{Problem Limitations}
+Because the amount of different algorithms for Rubik's Cube solving, not every algorithm will be covered in this project.
+
+The Rubik's Cube solving algorithm will be primarily for technical use, meaning that usability will not be in focus.
+
+\section{Structure}
+Our report is divided into four parts and an appendix. The four parts are Introduction, Theory, Implementation and Epilogue.
+The content of these parts are as following:
+\begin{itemize}
+	\item \textbf{Introduction:} Primarily contextual subjects are found within this part, such as Recreational Mathematics and Origin of the Cube. It is also in this part where the problem analysis is placed. This part is nearly completed.
+	\item \textbf{Theory:} This part presents the fundamental theory regarding the Rubik's Cube. A general terminology initializes this part and is followed by group and graph theory. A description of two different solving strategies, beginners algorithm and kociemba's optimal solver, are also included in this part. This part is halfway done.
+	\item \textbf{Implementation:} We have not begun work on this part jet, but we expect to include a description of how our implementation of the Rubik's Cube and at least one solving strategy. Our implementation will be made in java, since we are all familiar.
+	\item \textbf{Epilogue:} Work on this part will not be initiated until our implementation is completed.
+\end{itemize}
+
+
+
+\section{Strategy for problem solving}
+
+We will achieve our goal and solve our problem statement by examine the theory of the rubiks cube and understand the theory and then apply it in an actual implementation. 
+
+\subsection{The work process}
+The actual work is done in subgroups consisting of 2-3 members.  The subgroups have relatively short termed deadlines. The deadlines are organized on our wall-calender. In order to achieve the best result the work of one group is not only corrected by the authoring group but by an other group as well. The groups changes between tasks. 
+
+\subsection{The wall calendar}
+In order to manage our schedule and tasks we use a large wall calendar. This calender works as a post-it wall as well. A task is described with a post-it. 
+
+\section{Time plan}
+Our current time plan is listed below. 
+\begin{itemize}
+	\item \textbf{8th march:} Planned on starting on the theoretical part.
+	\item \textbf{13th april:} Start on the implementation part.
+	\item \textbf{15th april:} Start programming. 
+	\item \textbf{7th may:} Report ready for proofreading.
+	\item \textbf{25th may:} Report ready for printing.
+	\item \textbf{27th may:} Hand in report.
+	\item \textbf{28th may:} Hand in process analysis.
+\end{itemize}
+
+
+
+
+\addcontentsline{toc}{section}{\numberline{}Litterature}
+\bibliography{bib}
+
+\end{document}
