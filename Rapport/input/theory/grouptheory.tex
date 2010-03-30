@@ -93,11 +93,11 @@ We will write $i \rightarrow j$ (i maps to j) to mean $\sigma(i) = j$. Then,
 
 
 This data tells us what $\sigma$ does to each number, so it defines $\sigma$. As shorthand, we write
-$\sigma$ = (1 12 8 3 5 6 9 10) (2 4) (7) (11).
+$\sigma = (1 12 8 3 5 6 9 10) (2 4) (7) (11).$
 
-Here, (1 12 8 3 5 6 9 10), (2 4), (7), and (10) are called cycles. When writing the disjoint cycle decomposition,
+Here, $(1 12 8 3 5 6 9 10), (2 4), (7), and (10)$ are called cycles. When writing the disjoint cycle decomposition,
 we leave out the cycles with just one number, so the disjoint cycle decomposition of $\sigma$ is
-$\sigma$ = (1 12 8 3 5 6 9 10) (2 4). 
+$\sigma = (1 12 8 3 5 6 9 10) (2 4).$ 
 
 Now, let's actually define what a cycle is.
 
@@ -111,25 +111,48 @@ supp $\tau = \oslash$
 
 \subsection{Lemma 5.8} Let $\sigma,\tau\in S\_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
 
-Proof. Let $i\in{1, . . . , n}.$ Since supp \sigma\cap supp \tau = \oslash, there are only two possibilities:
+Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
 \begin{itemize}
-\item i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
-(\tau \circ \sigma)(i) = \sigma(i) = i.
+\item $i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
+(\tau \circ \sigma)(i) = \sigma(i) = i.$
 
-\item Otherwise, i is in the support of exactly one of \sigma and \tau. We may suppose without loss of generality that
-i \notin supp \sigma and i \in supp \tau. Then, \sigma(i) = i, so (\sigma \circ \tau)(i) = \tau(i). On the other hand, (\tau \circ \sigma)(i) = \sigma(\tau(i)).
-Now, since \tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma. Therefore, \sigma(\tau(i)) = \tau(i). So, we
-again have (\sigma\tau)(i) = (\tau \sigma)(i).
+\item Otherwise, i is in the support of exactly one of $\sigma$ and $\tau$. We may suppose without loss of generality that
+$i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
+Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So, we
+again have $(\sigma\tau)(i) = (\tau \sigma)(i).$
 \end{itemize}
 
-Therefore, (\sigma \tau)(i) = (\tau \sigma)(i) = i for all i, which shows that \sigma \tau= \tau \sigma.
-Any \sigma \in S\_n can be written as a product (under the group operation, which is composition) of disjoint cycles.
-This product is called the disjoint cycle decomposition of \sigma. In our example, we gave a method for finding
+Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma.$
+Any $\sigma \in S\_n$ can be written as a product (under the group operation, which is composition) of disjoint cycles.
+This product is called the disjoint cycle decomposition of $\sigma.$ In our example, we gave a method for finding
 the disjoint cycle decomposition of a permutation.
-We write the identity permutation as 1.
+We write the identity permutation as $1$.
 
+\subsection{Example 5.9} $S\_2$ consists of two permutations,$ 1 and (1 2).$
 
+\subsection{Example 5.10} Let $\sigma, \tau \in S\_6$ be defined by
 
+$\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
+\tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
+
+In cycle notation, $\sigma = (1 3 4)(2 5) and \tau = (1 5)(2 4). Then, \sigma \tau= (1 3 2) (4 5) and \sigma \tau= (1 2)(3 4 5). We
+can also easily compute \sigma^2 = (1 4 3) and \tau^2 = 1.$
+
+\subsection{Definition 5.11} If $\sigma \in S\_n$ is the product of disjoint cycles of lengths$ n\_1, . . . , n\_r$ (including its 1-cycles),
+then the integers $n\_1, . . . , n\_r$ are called the cycle type of $\sigma.$
+
+\section{\rubik{}}
+
+We can write each move of the Rubik's cube using a slightly modified cycle notation. We want to describe
+what happens to each oriented cubie; that is, we want to describe where each cubie moves and where each
+face of the cubie moves. For example, if we unfold the cube and draw the down face, it looks like
+
+If we rotate this face clockwise by $90^\circ$ (that is, we apply the move D), then the down face looks like
+
+So, D(dlf) = dfr because the dlf cubie now lives in the dfr cubicle (with the d face of the cubie lying in the d
+face of the cubicle, the l face of the cubie lying in the f face of the cubicle, and the f face of the cubie lying
+in the r face of the cubicle). Similarly, D(dfr) = drb, D(drb) = dbl, and D(dbl) = dlf. If we do the same thing
+for the edge cubies, we find D = (dlf dfr drb dbl)(df dr db dl).
 
 \myTail{
 }
