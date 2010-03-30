@@ -15,24 +15,24 @@ The group we have choosen to look at is the $(G, *)$ group. This group consists 
 
 To describe the \rubik{} with group theory we will take a set of moves and make them into a group, which we will call $(G, *)$.
 
-$G$ defines all the moves of the \rubik{} that is possible. Group operations can be defined the following way: $M\_1$ is a move and $M\_2$ is a move, so therefore $M\_1 * M\_2$ is a move where you have to do the $M\_1$ move first, and then the $M\_2$ move. To prove that the \rubik{} is a group there is four points that must be correct.
+$G$ defines all the moves of the \rubik{} that is possible. Group operations can be defined the following way: $M_1$ is a move and $M_2$ is a move, so therefore $M_1 * M_2$ is a move where you have to do the $M_1$ move first, and then the $M_2$ move. To prove that the \rubik{} is a group there is four points that must be correct.
 
 \begin {itemize}
-\item The element $G$ is underneath $*$ because $M\_1$ and $M\_2$ are moves  and $M\_1 * M\_2$ is also a move.
+\item The element $G$ is underneath $*$ because $M_1$ and $M_2$ are moves  and $M_1 * M_2$ is also a move.
 
 \item $e$ is an empty move (which does not change the configuration of the \rubik{}), So if you have to do the move $M * e$ that basicly means that you have the move $M$ and then do nothing, so that means that $M*e=M$
 
 \item If $M$ is a move then it is possible to reverse this move, this moved is called $M'$. Therefore $M*M' = e$, so every elements in $G$ has a reverse move.
 
-\item To prove * is associative it is important to remember that the moves made on the \rubik{} can be defined on the changes it makes to the configuration of the \rubik{}. 
-If c is an oriented rubik's cubie, M(c) will be the orientation c for the oriented cubicle c ends in after the move is applied.
-Example the move R wll move the ur cubie to the br cubicle, so therefore $R(ur)=br$. If there is more than one move sequence then the operation will look like this $B'(R(ur))=db$. If there is another move the cubie will be oriented in the M2(M1(c)), therefore $(M1*M2)(c)=M2(M1(c))$. 
+\item To prove $*$ is associative it is important to remember that the moves made on the \rubik{} can be defined on the changes it makes to the configuration of the \rubik{}. 
+If $c$ is an oriented rubik's cubie, $M(c)$ will be the orientation $c$ for the oriented cubicle $c$ ends in after the move is applied.
+Example the move $R$ wll move the $ur$ cubie to the $br$ cubicle, so therefore $R(ur)=br$. If there is more than one move sequence then the operation will look like this $B'(R(ur))=db$. If there is another move the cubie will be oriented in the $M_2 (M_1 (c))$, therefore $(M_1 *M_2 )(c)=M_2 (M_1 (c))$. 
 
 \end {itemize}
 
-The multiplications operator is used because the \rubik{} movements is not commutative and the addition operator is used with commutative elements which is the reason that can not be used. (evt matrix eksempel) KILDE HER.
+The multiplications operator is used because the \rubik{} movements is not commutative and the addition operator is used with commutative elements which is the reason that can not be used. (evt matrix eksempel) \cite [p. 157]{Rubik87}.
 
-* is associative (samme som not commutative?) because $(M1*M2)*M3 = M1*(M2*M3)$ for any moves M1, M2 and M3. $(M1*M2)*M3$ and $M1*(M2*M3)$ does the same operation to every cubie. This is the same as saying $[(M1*M2)*M3](C)=[M1*(M2*M3)](C)=M3(M2(M1(C)))$ for any cubie C. Therefore * is associative.
+$*$ is associative (samme som not commutative?) because $(M_1 *M_2 )*M_3 = M_1 *(M_2 *M_3 )$ for any moves $M_1$, $M_2$ and $M_3$. $(M_1 *M_2 )*M_3$ and $M_1 *(M_2 *M_3 )$ does the same operation to every cubie. This is the same as saying $[(M_1 *M_2 )*M_3 ](C)=[M_1 *(M_2 *M_3 )](C)=M_3 (M_2 (M_1 (C)))$ for any cubie $C$. Therefore $*$ is associative.
 
 \section{Subgroup}
 As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations.
@@ -79,7 +79,7 @@ Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2,
 There is a more compact way of writing elements of the symmetric group; this is best explained by an
 example.
 
-\subsection{Example 5.5.} Consider $\sigma \in S\_12$ defined by
+\subsection{Example 5.5.} Consider $\sigma \in S_(12)$ defined by
 
 	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
 	\sigma(7) = 7 \sigma(8) = 3 \sigma(9) = 10 \sigma(10) = 1 \sigma(11) = 11 \sigma(12) = 8$
@@ -101,15 +101,15 @@ $\sigma = (1 12 8 3 5 6 9 10) (2 4).$
 
 Now, let's actually define what a cycle is.
 
-\subsection{Definition 5.6}. The cycle $(i\_1 i\_2 ... i\_k)$ is the element $\tau \in S\_n$ defined by $\tau(i\_1) = i\_2, \tau(i\_2) = i\_3, . . . , \tau(i\_k -1) =
-i\_k, \tau(i\_k) = i\_1$ and $\tau(j) = j$ if $j \neq i\_r$ for any $r$. The length of this cycle is $k$, and the support of the cycle
-is the set ${i\_1, . . . , i\_k}$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
+\subsection{Definition 5.6}. The cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
+i_k , \tau(i_k ) = i_1 $ and $\tau(j) = j$ if $j \neq i_r $ for any $r$. The length of this cycle is $k$, and the support of the cycle
+is the set ${i_1 , . . . , i_k }$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
 length $k$ is also called a $k-cycle$.
 
 \subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
 supp $\tau = \oslash$
 
-\subsection{Lemma 5.8} Let $\sigma,\tau\in S\_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
+\subsection{Lemma 5.8} Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
 
 Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
 \begin{itemize}
@@ -123,14 +123,14 @@ again have $(\sigma\tau)(i) = (\tau\sigma)(i).$
 \end{itemize}
 
 Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma.$
-Any $\sigma \in S\_n$ can be written as a product (under the group operation, which is composition) of disjoint cycles.
+Any $\sigma \in S_n$ can be written as a product (under the group operation, which is composition) of disjoint cycles.
 This product is called the disjoint cycle decomposition of $\sigma.$ In our example, we gave a method for finding
 the disjoint cycle decomposition of a permutation.
 We write the identity permutation as $1$.
 
-\subsection{Example 5.9} $S\_2$ consists of two permutations,$ 1 and (1 2).$
+\subsection{Example 5.9} $S_2$ consists of two permutations,$ 1 and (1 2).$
 
-\subsection{Example 5.10} Let $\sigma, \tau \in S\_6$ be defined by
+\subsection{Example 5.10} Let $\sigma, \tau \in S_6$ be defined by
 
 $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
 \tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
@@ -138,8 +138,8 @@ $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6)
 In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. We
 can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
 
-\subsection{Definition 5.11} If $\sigma \in S\_n$ is the product of disjoint cycles of lengths $n\_1, . . . , n\_r$ (including its 1-cycles),
-then the integers$ n\_1, . . . , n\_r$ are called the cycle type of $\sigma$.
+\subsection{Definition 5.11} If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
+then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
 
 \section{Rubiks Cube}
 
