@@ -34,7 +34,7 @@ The \rubik{} graph can have different sizes depending on the allowed \twist{}, e
 
 \section{Shortest Path}
 The shortest path from one vertex to another in a graph can be found by checking the length of each possible path. 
-This is easy for small graph such as the \nameref{sub:middleMoveGraph} \ref{sub:middleMoveGraph}, which will be described later in this chapter. For bigger graph such as the full \rubik{} graph this is practically impossible. 
+This is easy for small graph such as the \nameref{sub:middleMoveGraph} \ref{sub:middleMoveGraph}, which will be described later in this chapter. For a bigger graph such as the full \rubik{} graph this is practically impossible. 
 %%Mikael rettet her til
 The shortest path between two vertices can be found with Dijkstra's Algorithm \cite[p. 651]{Rosen07}. The description of the algorithm is omitted for brevity. Dijkstra's Algorithm takes an weighted graph and two vertices as input. 
 Because of this the \rubik{} graph has to be weighted. Since each \twist{} contributes to the total number of \twist{}s by the same number, one, each edge is given the weight 1. The weight will be omitted in every illustration in this chapter because they are all 1.  
