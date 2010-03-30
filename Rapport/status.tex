@@ -1,12 +1,46 @@
 %\input{preamble}
 \documentclass{article}
 \bibliographystyle{plainnat}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[numbers]{natbib}
+\usepackage[]{graphicx} %dvips
+\usepackage[]{subfig}% Need to make several pictures in one float
+\usepackage{verbatim} %% For Comment enviroment
+\usepackage{lastpage}  % gives lastpage commando
+\usepackage{algorithm}  %%% Algorithm Eviroment
+\usepackage{algorithmic}  %%% Algorithm Eviroment
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % Math Paths
+\usepackage{fancyhdr} % For headers
+\usepackage{xifthen}% provides \isempty test and ifthen else 
 \setcounter{tocdepth}{1}
 \linespread{1}
 
 \begin{document}
 
 \tableofcontents
+
+\ \pagebreak{}
+\section{Table of content of the report}
+
+
+
+\begin{figure}[hp]
+	\centering
+		\includegraphics[scale = 0.7]{toc1.pdf}
+		\label{fig:toc1}
+\end{figure}
+\begin{figure}
+	\centering
+		\includegraphics[scale = 0.7]{toc2.pdf}
+	
+	\label{fig:toc2}
+\end{figure}
+
+
+
+
+\ \pagebreak{}
 
 \section{Problem Analysis}
 Since 1977, when the Rubik's Cube was initially released for sale, the Rubik's Cube has frustrated, inspired and entertained many people. This 3x3x3 cube has so many possible settings that the solution can not just be guessed out of sheer luck. Because of this a community around solving the Rubik's Cube has emerged. The community is divided into two parts both concerning efficient solving -- one efficient time-wise and the other efficient twist-wise i.e. solving in the least amount of time and solving in the least amount of twists \cite{speedsolving.forum}. 
@@ -37,8 +71,10 @@ Our report is divided into four parts and an appendix. The four parts are Introd
 The content of these parts are as following:
 \begin{itemize}
 	\item \textbf{Introduction:} Primarily contextual subjects are found within this part, such as Recreational Mathematics and Origin of the Cube. It is also in this part where the problem analysis is placed. This part is nearly completed.
-	\item \textbf{Theory:} This part presents the fundamental theory regarding the Rubik's Cube. A general terminology initializes this part and is followed by group and graph theory. A description of two different solving strategies, beginners algorithm and kociemba's optimal solver, are also included in this part. This part is halfway done.
-	\item \textbf{Implementation:} We have not begun work on this part jet, but we expect to include a description of how our implementation of the Rubik's Cube and at least one solving strategy. Our implementation will be made in java, since we are all familiar.
+	\item \textbf{Theory:} This part presents the fundamental theory regarding the Rubik's Cube. A general terminology initializes this part and is followed by group and graph theory. A description of two different solving strategies, beginners algorithm and kociemba's optimal solver. This part is halfway done.
+	
+	\item \textbf{Implementation:} We have not begun work on this part jet, but we expect to include a description of how our implementation of the Rubik's Cube and at least one solving strategy. Which algorithms we will implement is not yet discussed.
+	 Our implementation will be made in java, since we are all familiar with this language.
 	\item \textbf{Epilogue:} Work on this part will not be initiated until our implementation is completed.
 \end{itemize}
 
@@ -53,6 +89,10 @@ The actual work is done in subgroups consisting of 2-3 members.  The subgroups h
 
 \subsection{The wall calendar}
 In order to manage our schedule and tasks we use a large wall calendar. This calender works as a post-it wall as well. A task is described with a post-it. 
+\includegraphics[]{Billede0075.jpg}
+
+\section{Resources}
+We have taken email contact with Mr. Herbert Kociemba who is the author of one of the algorithms. We expect to use this contact to achieve more knowledge of his algorithm.
 
 \section{Time plan}
 Our current time plan is listed below. 
@@ -67,7 +107,10 @@ Our current time plan is listed below.
 \end{itemize}
 
 
+\section{Process Analysis}
+The work process has been processing in a steady pace. The time plan is over held and deadlines are not exceeded. The process of the theory sections are going smooth and we estimate that the date for the initializing of the work on the implementation will be held. 
 
+For the social parts we have not encountered any notable problems. We are in our group room from 8am till 3pm every day. Not working the entire time but primarily. 
 
 \addcontentsline{toc}{section}{\numberline{}Litterature}
 \bibliography{bib}
