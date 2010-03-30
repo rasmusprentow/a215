@@ -35,8 +35,9 @@ The multiplications operator is used because the \rubik{} movements is not commu
 $*$ is associative (samme som not commutative?) because $(M_1 *M_2 )*M_3 = M_1 *(M_2 *M_3 )$ for any moves $M_1$, $M_2$ and $M_3$. $(M_1 *M_2 )*M_3$ and $M_1 *(M_2 *M_3 )$ does the same operation to every cubie. This is the same as saying $[(M_1 *M_2 )*M_3 ](C)=[M_1 *(M_2 *M_3 )](C)=M_3 (M_2 (M_1 (C)))$ for any cubie $C$. Therefore $*$ is associative.
 
 \section{Subgroup}
-As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations.
-
+As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations, but it is not all of these configurations that are possible to do.  To make it more easy we will not look at all moves of the \rubik{} but only the moves of the down and right faces. To better understand G, we will split it up in small pieces.
+A nonempty subset H of the group (G,*) is called a subgroup of G if (H,*) is a group
+To check if a subset actually is a subgroup the following lemma can be used
 
 
 
