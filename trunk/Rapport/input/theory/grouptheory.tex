@@ -106,7 +106,7 @@ i\_k, \tau(i\_k) = i\_1$ and $\tau(j) = j$ if $j \neq i\_r$ for any $r$. The len
 is the set ${i\_1, . . . , i\_k}$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
 length $k$ is also called a $k-cycle$.
 
-\subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
+\subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
 supp $\tau = \oslash$
 
 \subsection{Lemma 5.8} Let $\sigma,\tau\in S\_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
@@ -119,7 +119,7 @@ Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ th
 \item Otherwise, i is in the support of exactly one of $\sigma$ and $\tau$. We may suppose without loss of generality that
 $i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
 Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So, we
-again have $(\sigma\tau)(i) = (\tau \sigma)(i).$
+again have $(\sigma\tau)(i) = (\tau\sigma)(i).$
 \end{itemize}
 
 Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma.$
@@ -135,19 +135,19 @@ We write the identity permutation as $1$.
 $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
 \tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
 
-In cycle notation, $\sigma = (1 3 4)(2 5) and \tau = (1 5)(2 4). Then, \sigma \tau= (1 3 2) (4 5) and \sigma \tau= (1 2)(3 4 5). We
-can also easily compute \sigma^2 = (1 4 3) and \tau^2 = 1.$
+In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. We
+can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
 
-\subsection{Definition 5.11} If $\sigma \in S\_n$ is the product of disjoint cycles of lengths$ n\_1, . . . , n\_r$ (including its 1-cycles),
-then the integers $n\_1, . . . , n\_r$ are called the cycle type of $\sigma.$
+\subsection{Definition 5.11} If $\sigma \in S\_n$ is the product of disjoint cycles of lengths $n\_1, . . . , n\_r$ (including its 1-cycles),
+then the integers$ n\_1, . . . , n\_r$ are called the cycle type of $\sigma$.
 
 \section{\rubik{}}
 
-We can write each move of the Rubik's cube using a slightly modified cycle notation. We want to describe
+We can write each move of the \rubik{} cube using a slightly modified cycle notation. We want to describe
 what happens to each oriented cubie; that is, we want to describe where each cubie moves and where each
 face of the cubie moves. For example, if we unfold the cube and draw the down face, it looks like
 
-If we rotate this face clockwise by $90^\circ$ (that is, we apply the move D), then the down face looks like
+If we rotate this face clockwise by $90\circ$ (that is, we apply the move D), then the down face looks like
 
 So, D(dlf) = dfr because the dlf cubie now lives in the dfr cubicle (with the d face of the cubie lying in the d
 face of the cubicle, the l face of the cubie lying in the f face of the cubicle, and the f face of the cubie lying
