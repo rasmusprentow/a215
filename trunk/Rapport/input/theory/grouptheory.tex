@@ -11,18 +11,18 @@ As stated in general cube terminology there is 8 corners \cpiece{} and the first
 
 \section{Definition of the Rubik's Cube group}
 To fully understand if the \rubik{} can be described as group theory, we will have to understand what a group is.
-The group we have choosen to look at is the (G, *) group. This group consists of a set G and an operation *. (ref til gruppen (G, *) her, for bedre at forstaa den)
+The group we have choosen to look at is the $(G, *)$ group. This group consists of a set $G$ and an operation $*$. (ref til gruppen (G, *) her, for bedre at forstaa den)
 
-To describe the \rubik{} with group theory we will take a set of moves and make them into a group, which we will call (G, *). G is the possible moves of the \rubik{}.
+To describe the \rubik{} with group theory we will take a set of moves and make them into a group, which we will call $(G, *)$.
 
-G defines all the moves of the \rubik{} that is possible. Group operations can be defined the following way: M1 is a move and M2 is a move, so therefore M1*M2 is a move where you have to do the M1 move first, and then the M2 move. To prove that the \rubik{} is a group there is four points that must be correct.
+$G$ defines all the moves of the \rubik{} that is possible. Group operations can be defined the following way: $M\_1$ is a move and $M\_2$ is a move, so therefore $M\_1 * M\_2$ is a move where you have to do the $M\_1$ move first, and then the $M\_2$ move. To prove that the \rubik{} is a group there is four points that must be correct.
 
 \begin {itemize}
-\item The element G is underneath * because M1 and M2 are moves  and M1*M2 is also a move.
+\item The element $G$ is underneath $*$ because $M\_1$ and $M\_2$ are moves  and $M\_1 * M\_2$ is also a move.
 
-\item e is a empty move (which does not change the configuration of the \rubik{}), So if you have to do the move M*e that basicly means that you have the move M and then do nothing, so that means that $M*e=M$
+\item $e$ is an empty move (which does not change the configuration of the \rubik{}), So if you have to do the move $M * e$ that basicly means that you have the move $M$ and then do nothing, so that means that $M*e=M$
 
-\item If M is a move then it is possible to reverse this move, this moved is called M'. Therefore $M*M' = e$, so every elements in G has a reverse move.
+\item If $M$ is a move then it is possible to reverse this move, this moved is called $M'$. Therefore $M*M' = e$, so every elements in $G$ has a reverse move.
 
 \item To prove * is associative it is important to remember that the moves made on the \rubik{} can be defined on the changes it makes to the configuration of the \rubik{}. 
 If c is an oriented rubik's cubie, M(c) will be the orientation c for the oriented cubicle c ends in after the move is applied.
@@ -101,7 +101,7 @@ $\sigma = (1 12 8 3 5 6 9 10) (2 4).$
 
 Now, let's actually define what a cycle is.
 
-\subsection{Definition 5.6}. The cycle $(i\_1 i\_2 · · · i\_k)$ is the element $\tau \in S\_n$ defined by $\tau(i\_1) = i\_2, \tau(i\_2) = i\_3, . . . , \tau(i\_k -1) =
+\subsection{Definition 5.6}. The cycle $(i\_1 i\_2 ï¿½ ï¿½ ï¿½ i\_k)$ is the element $\tau \in S\_n$ defined by $\tau(i\_1) = i\_2, \tau(i\_2) = i\_3, . . . , \tau(i\_k -1) =
 i\_k, \tau(i\_k) = i\_1$ and $\tau(j) = j$ if $j \neq i\_r$ for any $r$. The length of this cycle is $k$, and the support of the cycle
 is the set ${i\_1, . . . , i\_k}$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
 length $k$ is also called a $k-cycle$.
