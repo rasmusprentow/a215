@@ -79,7 +79,7 @@ Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2,
 There is a more compact way of writing elements of the symmetric group; this is best explained by an
 example.
 
-\subsection{Example 5.5.} Consider $\sigma \neq S\_12$ defined by
+\subsection{Example 5.5.} Consider $\sigma \in S\_12$ defined by
 
 	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
 	\sigma(7) = 7 \sigma(8) = 3 \sigma(9) = 10 \sigma(10) = 1 \sigma(11) = 11 \sigma(12) = 8$
@@ -109,17 +109,22 @@ length $k$ is also called a $k-cycle$.
 \subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
 supp $\tau = \oslash$
 
-Lemma 5.8. Let ,  2 Sn be cycles. If  and  are disjoint, then  = .
-Proof. Let i 2 {1, . . . , n}. Since supp  \ supp  = ?, there are only two possibilities:
-• i 62 supp  and i 62 supp  . In this case, (i) = i and  (i) = i, so (   )(i) =  (i) = i and
-(  )(i) = (i) = i.
-• Otherwise, i is in the support of exactly one of  and  . We may suppose without loss of generality that
-i 62 supp  and i 2 supp  . Then, (i) = i, so (   )(i) =  (i). On the other hand, (  )(i) = ( (i)).
-Now, since  (i) 2 supp  and supp  \ supp  = ?,  (i) 62 supp . Therefore, ( (i)) =  (i). So, we
-again have ( )(i) = ()(i).
-Therefore, ( )(i) = ()(i) = i for all i, which shows that  = .
-Any  2 Sn can be written as a product (under the group operation, which is composition) of disjoint cycles.
-This product is called the disjoint cycle decomposition of . In our example, we gave a method for finding
+\subsection{Lemma 5.8} Let $\sigma,\tau\in S\_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
+
+Proof. Let $i\in{1, . . . , n}.$ Since supp \sigma\cap supp \tau = \oslash, there are only two possibilities:
+\begin{itemize}
+\item i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
+(\tau \circ \sigma)(i) = \sigma(i) = i.
+
+\item Otherwise, i is in the support of exactly one of \sigma and \tau. We may suppose without loss of generality that
+i \notin supp \sigma and i \in supp \tau. Then, \sigma(i) = i, so (\sigma \circ \tau)(i) = \tau(i). On the other hand, (\tau \circ \sigma)(i) = \sigma(\tau(i)).
+Now, since \tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma. Therefore, \sigma(\tau(i)) = \tau(i). So, we
+again have (\sigma\tau)(i) = (\tau \sigma)(i).
+\end{itemize}
+
+Therefore, (\sigma \tau)(i) = (\tau \sigma)(i) = i for all i, which shows that \sigma \tau= \tau \sigma.
+Any \sigma \in S\_n can be written as a product (under the group operation, which is composition) of disjoint cycles.
+This product is called the disjoint cycle decomposition of \sigma. In our example, we gave a method for finding
 the disjoint cycle decomposition of a permutation.
 We write the identity permutation as 1.
 
