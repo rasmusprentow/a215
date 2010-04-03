@@ -5,21 +5,33 @@ The shortest path of a graph and the calculation of the diameter of a graph will
 This can be used as a method to prove how many twists are needed to solve the Rubik's Cube in the worst case, also called the upper bound.
 The chapter will conclude with an example using a much smaller Rubik's Cube graph; the Middle movement graph.}
 
-A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described.
+A graph consists of a set of vertices, $V$ \cite[p. 592]{Rosen07}, and a set of edges, $E$. There are several types of graphs, but in this chapter only simple graphs are described. 
 A vertex is a point. A vertex can be connected to other vertices by an edge.
-An edge is a line between two vertices(an edge can in some graphs connect a vertex to it self, but such graphs are not considered here).
+An edge is a line between two vertices(an edge can in some graphs connect a vertex to it self, called a loop, but such graphs are not considered here). Figure \ref{fig:generalDescriptionGraph} illustrates the basic principles of a graph.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[scale = 0.7]{input/pics/generalDescriptionGraph.png}
+	\caption{\myCaption{This is a graph with multiple lines and a loop. The graph is connected, but not simple.}}
+	\label{fig:generalDescriptionGraph}
+\end{figure}
+
 If there is only one edge between any two vertices in a graph, then the graph is said to be simple.
-A graph is said to be connected if you can visit every vertex by starting at an arbitrary vertex and then reach every other vertex by traveling along the edges of the graph.
+A graph is said to be connected if you can visit every vertex by starting at an arbitrary vertex and then reach every other vertex by traveling along the edges of the graph. Figure \ref{fig:simpleUnconnectedGraph} illustrates an unconnected graph while figure \ref{fig:simpleConnectedGraph} illustrates a connected graph. 
+
+Graphs can be directed. this means the edges has a direction and travel can only be made along an edge in one direction. Figure \ref{fig:simpleDirectionalGraph} illustrates a directional graph. 
 
 A graph can be weighted, which means that every edge will have a weight.
 This weight can represent different things, distance between vertices, price for traveling between vertices or what ever makes sense for the given weighted graph.
-See figure \ref{fig:simpleGraph} for an example of a graph.
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
-		\includegraphics[scale = 0.7]{input/pics/simpleGraph.png}
-	\caption{\myCaption{A simple connected graph with nine vertices. The black circles are vertices and the lines are edges.}}
-	\label{fig:simpleGraph}
+		\subfloat[\myCaption{A simple connected graph.}]{\label{fig:simpleConnectedGraph}\includegraphics[width=0.15\textwidth]{input/pics/simpleConnectedGraph.png}}
+		\hspace{0.02\textwidth}
+		\subfloat[\myCaption{A simple unconnected graph.}]{\label{fig:simpleUnconnectedGraph}\includegraphics[width=0.15\textwidth]{input/pics/simpleUnconnectedGraph.png}}
+		\hspace{0.02\textwidth}
+		\subfloat[\myCaption{The up face colors form the cross}]{\label{fig:simpleDirectionalGraph}\includegraphics[width=0.15\textwidth]{input/pics/simpleDirectionalGraph.png}}
+		\caption{\myCaption{Two simple graphs and one simple directed graph.}}
+		\label{fig:cross}
 \end{figure}
 
 Graphs can be used to illustrate many different things such as relationships, geographical maps, tournaments etc.\cite[pp. 592-593]{Rosen07} 
