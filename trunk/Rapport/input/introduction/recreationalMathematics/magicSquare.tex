@@ -24,14 +24,14 @@ The \msquare{}\cite{aiden06} hails from ancient China. It was said that the peop
 
 The \msquare{} from this tale was of the order 3. This is not the only order in which a \msquare{} can be created; it is possible to make an ``$n$'' order \msquare{}. Generally a \msquare{} of the order $n$ contains the numbers from 1 to $n^2$. It has been proven that it is not possible to make a second order \msquare{}. Since simply trying all possible squares with the numbers 1, 2, 3 and 4 inside results no combination that gives the same sum on each row, column and diagonal.
 
-In order to solve the \msquare{}, it is needed to know the magic constant -- the constant which every row, line and diagonal adds up to for the given order $n$. This constant can be computed with the formula in \ref{align:magicConstant}.
+In order to solve the \msquare{}, it is needed to know the magic constant -- the constant which every row, column and diagonal adds up to for the given order $n$. This constant can be computed with the formula in \ref{align:magicConstant}.
 
 \begin{align}
 \label{align:magicConstant}
 	M(n) = \frac{n \cdot (n^2+1)}{2}
 \end{align}
 
-The proof of this formula is quite straight forward. As the table \ref{tab:magicSquareOrder3} illustrates, a \msquare{} of the order 3 contains the numbers from 1 to 9.
+The proof of this formula is quite straight forward. As table \ref{tab:magicSquareOrder3} illustrates, a \msquare{} of the order 3 contains the numbers from 1 to 9.
 
 The sum of the numbers of a row in a \msquare{} is equal to the magic constant. If the magic constant is multiplied by the order $n$ it would be equal to the sum of all the integers, since each number only occurs once in a \msquare{}.
 
@@ -53,5 +53,6 @@ The equation \ref{proof:magicConstant3} shows the function which gives the magic
 %Variations of the \msquare{} exist. For example the numbers which can be inserted into the sub squares, could exceed $n^2$. This would change the magic constant. A \msquare with the integers 1 to $n^2$ within its sub squares is called a ``Normal \msquare''.
 
 A \mcube{} is created from squares put on top of each other so they make up a cube form. 
-This makes it clear that there is a connection between \msquare{}s and  \mcube{}s.
-An example of this can be seen on figure \ref{fig:presentMagicCube}.
+This makes it clear that there is a connection between \msquare{}s and \mcube{}s.
+The following section will demonstrate how the \mcube{} is related to the \rubik{} and thereby show that the \msquare{} is related to the \rubik{} as well.
+An example of the \mcube{} can be seen on figure \ref{fig:presentMagicCube}.
