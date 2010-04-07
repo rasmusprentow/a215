@@ -57,10 +57,10 @@ Therefore, $(H,*)$ is a group, which means that $H$ is a subgroup of $G$.
 
 \section{The Symmetric Group}
 
-instead of than just looking at configurations of 8 cubies, the configurations of the cube can be seen as $n$ objects. 
-these objects be named $1, 2, . . . , n,$ these names are arbitrary. the arranging of these objects can be seen as
-putting them into n slots. If the slots is numberet $1, 2, . . . , n,$ can it be define as a function $\sigma : {1, 2, . . . , n} \rightarrow
-{1, 2, . . . , n}$ by letting $\sigma(i)$ be the number put into slot i.
+Instead of just looking at configurations of 8 cubies, the configurations of the cube can be seen as $n$ objects. 
+These objects be named $1, 2, . . . , n,$ these names are arbitrary. the arranging of these objects can be seen as
+putting them into $n$ slots. If the slots is numberet $1, 2, . . . , n,$ can it be define as a function $\sigma : {1, 2, . . . , n} \rightarrow
+{1, 2, . . . , n}$ by letting $\sigma(i)$ be the number put into slot $i$.
 
 \subsection{Example 5.1.} 
 Tag the objects $1, 2, 3$ in the order $3 1 2$. So, it corresponds to the function $\sigma: {1, 2, 3} \rightarrow {1, 2, 3}$
@@ -80,8 +80,7 @@ bijections ${1, . . . , n} \rightarrow {1, . . . , n}$. Therefore, instead of st
 
 \subsection{Definition 5,3}
 
-The Symmetric Group of $n$ letters is the set of bijection from ${1,2,......n}$ to ${1,2,......n}$ with with the operation of composition.
-this group of $S_n$
+The Symmetric Group of $n$ letters are the set of bijection from ${1,2,......n}$ to ${1,2,......n}$ with the operation of composition. This group will be called $S_n$
 
 \subsection{Exemple 5,4}
 
@@ -89,7 +88,7 @@ Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2,
 
 \section{5,1 Disjoint Cycle Decomposition}
 
-There is a more compact way of writing elements of the symmetric group; this is best explained by an
+There is a more compact way of writing elements of the symmetric group; this can best be explained by an
 example.
 
 \subsection{Example 5.5.} Consider $\sigma \in S_(12)$ defined by
@@ -105,14 +104,14 @@ We will write $i \rightarrow j$ (i maps to j) to mean $\sigma(i) = j$. Then,
 	11 \rightarrow 11$
 
 
-This data tells us what $\sigma$ does to each number, so it defines $\sigma$. As shorthand, we write
+This data tells what $\sigma$ does to each number, so it will define $\sigma$. As shorthand, we write
 $\sigma = (1 12 8 3 5 6 9 10) (2 4) (7) (11).$
 
 Here, $(1 12 8 3 5 6 9 10), (2 4), (7), and (10)$ are called cycles. When writing the disjoint cycle decomposition,
 we leave out the cycles with just one number, so the disjoint cycle decomposition of $\sigma$ is
 $\sigma = (1 12 8 3 5 6 9 10) (2 4).$ 
 
-Now, let's actually define what a cycle is.
+Now it will be defined what a cycle is.
 
 \subsection{Definition 5.6}. The cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
 i_k , \tau(i_k ) = i_1 $ and $\tau(j) = j$ if $j \neq i_r $ for any $r$. The length of this cycle is $k$, and the support of the cycle
@@ -129,7 +128,7 @@ Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ th
 \item $i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
 (\tau \circ \sigma)(i) = \sigma(i) = i.$
 
-\item Otherwise, i is in the support of exactly one of $\sigma$ and $\tau$. We may suppose without loss of generality that
+\item Otherwise, $i$ is in the support of exactly one of $\sigma$ and $\tau$. We may suppose without loss of generality that
 $i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
 Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So, we
 again have $(\sigma\tau)(i) = (\tau\sigma)(i).$
