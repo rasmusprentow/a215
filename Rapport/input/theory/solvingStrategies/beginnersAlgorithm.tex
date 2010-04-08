@@ -23,8 +23,8 @@ When the cross is completed the next step is to position the corner pieces of th
 
 R' D' R D \\
 
-If the piece is above the correct position the algorithm twists the corner clock-wise and positions it in the correct position. If the piece is in the correct position the algorithm positions the piece above the correct position. The maximum number of repetitions until the piece is oriented and positioned correctly is five, because the piece can be two twists away from it's correct orientation. 
-The move sequence can be performed inverted which twists the corner counter clock-wise and looks as follows: \\
+If the piece is above the correct position the algorithm twists the cornerclockwise and positions it in the correct position. If the piece is in the correct position the algorithm positions the piece above the correct position. The maximum number of repetitions until the piece is oriented and positioned correctly is five, because the piece can be two twists away from it's correct orientation. 
+The move sequence can be performed inverted which twists the corner counterclockwise and looks as follows: \\
 
 D' R' D R \\
 
@@ -59,7 +59,7 @@ If none of the edge pieces who belong to the second layer are in the third layer
 
 \subsection{Step 4 - getting the last layer cross}
 %%%Step 4 is divided into 4 step? Perhaps substeps instead.
-Solving the last layer is divided into four steps. The order of these steps can be different and still yield the same result. We start out by getting the cross in the last layer, which is the same as the cross on the first layer. The move sequence used is however different. The only move sequence used in this step is the following: \\
+Solving the last layer is divided into four substeps. The order of these steps can be different and still yield the same result. We start out by getting the cross in the last layer, which is the same as the cross on the first layer. The move sequence used is however different. The only move sequence used in this step is the following: \\
 
 F R U R' U' F' \\
 
@@ -90,7 +90,7 @@ If the up face colors do not form the opposite L the line or the cross, the move
 \label{fig:7LLedges}
 \end{wrapfigure}
 
-%Tjek om billederne står rigtigt
+
 To orient the cross correctly there is one move sequence to remember: \\
 
 R U R' U R 2U R' \\
@@ -117,7 +117,7 @@ This move sequence will rotate the corners clockwise.
 \\
 The orientation is again important to position the corners. If one of the corners already is positioned correctly. That corner is chosen not to be moved. 
 
-If the three other corners need to be moved counter-clockwise. The correct corner is positioned as the front right corner. The move sequence will then position the corners correctly.
+If the three other corners need to be moved counterclockwise. The correct corner is positioned as the front right corner. The move sequence will then position the corners correctly.
 
 If the three other corners need to be moved clockwise. The correct corner is positioned as the front left corner. The move sequence will then position the corners correctly.
 
