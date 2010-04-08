@@ -1,13 +1,13 @@
 %\documentclass{report}\begin{document}
 \chapter{Group Theory (\textit{Not done})}
 
-\myTop{In this chapter we will explain group theory and how it can be used to solve the \rubik{}. When we have a good understand of the group theory we will be able to use it later for our own program.
+\myTop{In this chapter we will explain group theory and how it can be used to solve the \rubik{}. When we have a good understanding of the group theory we will be able to use it later for our own program.
 }
 
 \section{Permutations}
 In this section we will use the same move notations as in \ref{sec:moveNotation}.
 To calculate how many positions the cube can be placed in, we have to look at the general cube terminology \ref{sec:generalNotation}.
-As stated in general cube terminology there is 8 corners \cpiece{} and the first corner you place can be placed in 8 positions, and after that is placed the next corner \cpiece{} can be placed in one of the 7 positions left, since we already use 1, and so on. So that means that the corner pieces can be placed in $8*7*6*5*4*3*2*1=8!$ Now the 8 corner \cpiece{} is placed at the right position they might not have the right orientation since a corner \cpiece{} have three different colors and therefor 3 different orientations, so there is $3^8$ orientations of the 8 corner \cpiece{}. That means there is $8!*3^8$ ways the corner \cpiece{} can be placed. As stated in the terminology there is 12 edge \cpiece{}. These edge \cpiece{}s can be positioned in 12 different positions and every edge \cpiece{} can be oriented in two different ways. So there is $2^12$ different orientations and $12!$ different positions of the edge \cpiece{}. This gives us $2^{12}*12!$ different edge permutations and a total of $3^8*2^{12}*12!*8!$
+As stated in general cube terminology there is 8 corners \cpiece{} and the first corner you place can be placed in 8 positions, and after that is placed the next corner \cpiece{} can be placed in one of the 7 positions left, since we already use 1, and so on. So that means that the corner pieces can be placed in $8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=8!$ positions. Now the 8 corner \cpiece{} is placed at the right position they might not have the right orientation since a corner \cpiece{} has three different colors and therefor 3 different orientations, so there are $3^8$ orientations of the 8 corner \cpiece{}. That means there is $8!\cdot3^8$ ways the corner \cpiece{} can be placed. As stated in the terminology there are 12 edge \cpiece{}s. These edge \cpiece{}s can be positioned in 12 different positions and every edge \cpiece{} can be oriented in two different ways. So there is $2^12$ different orientations and $12!$ different positions of the edge \cpiece{}. This gives us $2^{12}\cdot12!$ different edge permutations and a total of $3^8\cdot2^{12}\cdot12!\cdot8!=519,024,039,293,878,272,000$
 
 \section{Definition of the Rubik's Cube group}
 To fully understand if the \rubik{} can be described as group theory, we will have to understand what a group is.
@@ -62,11 +62,11 @@ These objects be named $1, 2, . . . , n,$ these names are arbitrary. the arrangi
 putting them into $n$ slots. If the slots is numberet $1, 2, . . . , n,$ can it be define as a function $\sigma : {1, 2, . . . , n} \rightarrow
 {1, 2, . . . , n}$ by letting $\sigma(i)$ be the number put into slot $i$.
 
-\subsection{Example 5.1.} 
+\subsection{Example} 
 Tag the objects $1, 2, 3$ in the order $3 1 2$. So, it corresponds to the function $\sigma: {1, 2, 3} \rightarrow {1, 2, 3}$
 defined by $\sigma(1) = 3$,$\sigma(2) = 1$, and $\sigma(3) = 2$.
 
-\subsection{Lemma 5,2}
+\subsection{Lemma}
 
 Imagine that $x\neq y$. Since a number cannot be in more than one slot, if $x \neq y$, slots x and y must contain
 
@@ -78,20 +78,20 @@ But if $\sigma: {1, . . . , n} \rightarrow {1, . . . , n}$ is a bijection, So $\
 objects: just put object $\sigma(i)$ in slot i. So, the arrangements is the same as the set of
 bijections ${1, . . . , n} \rightarrow {1, . . . , n}$. Therefore, instead of studying possible arrangements, the bijections can be studied instead.
 
-\subsection{Definition 5,3}
+\subsection{Definition}
 
 The Symmetric Group of $n$ letters are the set of bijection from ${1,2,......n}$ to ${1,2,......n}$ with the operation of composition. This group will be called $S_n$
 
-\subsection{Exemple 5,4}
+\subsection{Exemple}
 
 Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2, \tau(1)=1,\tau(2)=3,\tau(3)=2$ so $(\sigma\tau)(1)=\tau(3)=2,(\sigma\tau)(2)=\tau(1)=1, (\sigma\tau)(3)=\tau(2)=3.$
 
-\section{5,1 Disjoint Cycle Decomposition}
+\section{Disjoint Cycle Decomposition}
 
 There is a more compact way of writing elements of the symmetric group; this can best be explained by an
 example.
 
-\subsection{Example 5.5.} Consider $\sigma \in S_(12)$ defined by
+\subsection{Example} Consider $\sigma \in S_(12)$ defined by
 
 	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
 	\sigma(7) = 7 \sigma(8) = 3 \sigma(9) = 10 \sigma(10) = 1 \sigma(11) = 11 \sigma(12) = 8$
@@ -113,15 +113,15 @@ $\sigma = (1 12 8 3 5 6 9 10) (2 4).$
 
 Now it will be defined what a cycle is.
 
-\subsection{Definition 5.6}. The cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
+\subsection{Definition}. The cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
 i_k , \tau(i_k ) = i_1 $ and $\tau(j) = j$ if $j \neq i_r $ for any $r$. The length of this cycle is $k$, and the support of the cycle
 is the set ${i_1 , . . . , i_k }$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
 length $k$ is also called a $k-cycle$.
 
-\subsection{Definition 5.7}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
+\subsection{Definition}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
 supp $\tau = \oslash$
 
-\subsection{Lemma 5.8} Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
+\subsection{Lemma} Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
 
 Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
 \begin{itemize}
@@ -140,9 +140,9 @@ This product is called the disjoint cycle decomposition of $\sigma.$ In the exam
 the disjoint cycle decomposition of a permutation.
 The identity permutation will be written as $1$.
 
-\subsection{Example 5.9} $S_2$ consists of two permutations,$ 1 and (1 2).$
+\subsection{Example} $S_2$ consists of two permutations,$ 1 and (1 2).$
 
-\subsection{Example 5.10} Let $\sigma, \tau \in S_6$ be defined by
+\subsection{Example} Let $\sigma, \tau \in S_6$ be defined by
 
 $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
 \tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
@@ -150,18 +150,28 @@ $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6)
 In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. We
 can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
 
-\subsection{Definition 5.11} If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
+
+} If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
 then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
 
 \section{Rubiks Cube}
 
 Each move of the \rubik{} will be described by using a slightly modified cycle notation. A describetion of what happens to each oriented cubie will be needed, so it will describe where each cubie moves and where each face of the cubie moves. For example, if the \rubik{} is unfolded, then draw the down face, so it will look like the following:
 
-INDSÆT BILLEDE
+\subsection{Definition
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{input/pics/rubiks1.jpg}
+	\label{fig:rubiks1}
+\end{figure}
 
 If we rotate this face clockwise by $90\circ$ (that is, we apply the move D), then the down face looks like:
 
-INDSÆT BILLEDE
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{input/pics/rubiks2.jpg}
+	\label{fig:rubiks2}
+\end{figure}
 
 So, $D(dlf) = dfr$ because the $dlf$ \cpiece{} now lives in the $dfr$ cubicle (with the down face of the \cpiece{} lying in the down
 face of the cubicle, the left face of the \cpiece{} lying in the front face of the cubicle, and the front face of the \cpiece{} lying
