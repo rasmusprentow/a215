@@ -10,8 +10,8 @@ To calculate how many positions the cube can be placed in, we have to look at th
 As stated in general cube terminology there is 8 corners \cpiece{} and the first corner you place can be placed in 8 positions, and after that is placed the next corner \cpiece{} can be placed in one of the 7 positions left, since we already use 1, and so on. So that means that the corner pieces can be placed in $8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=8!$ positions. Now the 8 corner \cpiece{} is placed at the right position they might not have the right orientation since a corner \cpiece{} has three different colors and therefor 3 different orientations, so there are $3^8$ orientations of the 8 corner \cpiece{}. That means there is $8!\cdot3^8$ ways the corner \cpiece{} can be placed. As stated in the terminology there are 12 edge \cpiece{}s. These edge \cpiece{}s can be positioned in 12 different positions and every edge \cpiece{} can be oriented in two different ways. So there is $2^12$ different orientations and $12!$ different positions of the edge \cpiece{}. This gives us $2^{12}\cdot12!$ different edge permutations and a total of $3^8\cdot2^{12}\cdot12!\cdot8!=519,024,039,293,878,272,000$
 
 \section{Definition of the Rubik's Cube group}
-To fully understand if the \rubik{} can be described as group theory, we will have to understand what a group is.
-The group we have choosen to look at is the $(G, *)$ group. This group consists of a set $G$ and an operation $*$. (ref til gruppen (G, *) her, for bedre at forstaa den)
+To fully understand if the \rubik{} can be described as group theory, it will be needed to understand what a group is.
+The group that has been choosen to look at is the $(G, *)$ group. This group consists of a set $G$ and an operation $*$. (ref til gruppen (G, *) her, for bedre at forstaa den)
 
 To describe the \rubik{} with group theory we will take a set of moves and make them into a group, which we will call $(G, *)$.
 
@@ -35,7 +35,7 @@ The multiplications operator is used because the \rubik{} movements is not commu
 $*$ is associative (samme som not commutative?) because $(M_1 *M_2 )*M_3 = M_1 *(M_2 *M_3 )$ for any moves $M_1$, $M_2$ and $M_3$. $(M_1 *M_2 )*M_3$ and $M_1 *(M_2 *M_3 )$ does the same operation to every cubie. This is the same as saying $[(M_1 *M_2 )*M_3 ](C)=[M_1 *(M_2 *M_3 )](C)=M_3 (M_2 (M_1 (C)))$ for any cubie $C$. Therefore $*$ is associative.
 
 \section{Subgroup}
-As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations, but it is not all of these configurations that are possible to do.  To make it more easy we will not look at all moves of the \rubik{} but only the moves of the down and right faces. To better understand G, we will split it up in small pieces.
+As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations, but it is not all of these configurations that are possible to do.  To make it more easy there will only be looked at some moves of the \rubik{} but only the moves of the down and right faces. To better understand G, it can be split up in small pieces.
 A nonempty subset H of the group (G,*) is called a subgroup of G if (H,*) is a group
 To check if a subset actually is a subgroup the following lemma can be used
 
@@ -104,11 +104,11 @@ We will write $i \rightarrow j$ (i maps to j) to mean $\sigma(i) = j$. Then,
 	11 \rightarrow 11$
 
 
-This data tells what $\sigma$ does to each number, so it will define $\sigma$. As shorthand, we write
+This data tells what $\sigma$ does to each number, so it will define $\sigma$. As shorthand, and write
 $\sigma = (1 12 8 3 5 6 9 10) (2 4) (7) (11).$
 
 Here, $(1 12 8 3 5 6 9 10), (2 4), (7), and (10)$ are called cycles. When writing the disjoint cycle decomposition,
-we leave out the cycles with just one number, so the disjoint cycle decomposition of $\sigma$ is
+the cycles is left out with just one number, so the disjoint cycle decomposition of $\sigma$ is
 $\sigma = (1 12 8 3 5 6 9 10) (2 4).$ 
 
 Now it will be defined what a cycle is.
@@ -128,10 +128,10 @@ Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ th
 \item $i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
 (\tau \circ \sigma)(i) = \sigma(i) = i.$
 
-\item Otherwise, $i$ is in the support of exactly one of $\sigma$ and $\tau$. We may suppose without loss of generality that
+\item Otherwise, $i$ is in the support of exactly one of $\sigma$ and $\tau$. it may suppose without loss of generality that
 $i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
-Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So, we
-again have $(\sigma\tau)(i) = (\tau\sigma)(i).$
+Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So,
+again there is $(\sigma\tau)(i) = (\tau\sigma)(i).$
 \end{itemize}
 
 Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma$.
@@ -147,8 +147,10 @@ The identity permutation will be written as $1$.
 $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
 \tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
 
-In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. We
+In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. it
 can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
+
+\subsection{Definition}
 
  If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
 then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
@@ -157,7 +159,6 @@ then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
 
 Each move of the \rubik{} will be described by using a slightly modified cycle notation. A description of what happens to each oriented cubie will be needed, so it will describe where each cubie moves and where each face of the cubie moves. For example, if the \rubik{} is unfolded, then draw the down face, so it will look like the following:
 
-\subsection{Definition}
 
 \begin{figure}[h]
 	\centering	
@@ -166,7 +167,7 @@ Each move of the \rubik{} will be described by using a slightly modified cycle n
 	\label{fig:rubiks1}
 \end{figure}
 
-If we rotate this face clockwise by $90\circ$ (that is, we apply the move D), then the down face looks like:
+Rotate this face clockwise by $90\circ$ (this is called the D move), then the down face looks like:
 
 \begin{figure}[h]
 	\centering
@@ -177,8 +178,8 @@ If we rotate this face clockwise by $90\circ$ (that is, we apply the move D), th
 
 So, $D(dlf) = dfr$ because the $dlf$ \cpiece{} now lives in the $dfr$ cubicle (with the down face of the \cpiece{} lying in the down
 face of the cubicle, the left face of the \cpiece{} lying in the front face of the cubicle, and the front face of the \cpiece{} lying
-in the right face of the cubicle). Similary, $D(dfr) = drb$, $D(drb) = dbl$, and $D(dbl) = dlf$. If we do the same thing
-for the edge \cpiece{}s, we find $D = (dlf dfr drb dbl)(df dr db dl)$.
+in the right face of the cubicle). Similary, $D(dfr) = drb$, $D(drb) = dbl$, and $D(dbl) = dlf$. Do the same thing
+for the edge \cpiece{}s, and then $D = (dlf dfr drb dbl)(df dr db dl)$.
 
 \section{Configurations of the Rubik's Cube}
 
