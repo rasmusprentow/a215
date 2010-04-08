@@ -31,7 +31,7 @@ The set solver does this by finding all the move sequences of a relabeled cube o
 \end{algorithmic}
 \end{algorithm}
 
-First in the set sovler two variables are initialized. The first one $f$ is a set that can hold all the positions of $H$ is set to $null$. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
+First in the set solver two variables are initialized. The first one $f$ is a set that can hold all the positions of $H$ is set to $null$. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
 
 Next the while loop is run. It will run until $d$ is returned, which is when all positions in $H$ has been found or $d$ has reached it's maximum limit, $m$.
 
@@ -56,7 +56,7 @@ When the algorithm has finished all the different possible $H$ positions should 
 This is a slow moving field, but some events have occurred the last couple of years. The reason why it is a slow process to prove the upper bound, is because there is a vast amount of different positions a \rubik{} can assume. Even with todays computer power there is simply to much data to process. This had the effect that a small group of people dedicate a lot of time to create and improve algorithms to solve arbitrary \rubik{}s. We have looked at the algorithm that Herbert Kociemba made and now we will look at the set solver, which Tomas Rokicki helped create.
 
 %The result
-The set solver has a special way of testing the \rubik{}s. It does not solve them to the unit position e, instead it finds a move sequence for a subgroup of the \rubik{} this way it can solve 19.5 million cubes and not just one.
+The set solver has a special way of testing the \rubik{}s. It does not solve them to the unit position $e$, instead it finds a move sequence for a subgroup of the \rubik{} this way it can solve approximately 19.5 milliard cubes at a time and not just one. The reason for this is that if you relabel an arbitrary cube, that given cube can be unlabeled to approximately 19.5 milliard different cube positions. Recall that there are approximately 19.5 milliard positions in the set $H$ and all these positions are equal to $e$ when relabeled. The same logic applies to any other given position.
 
 It started moving fast when that set solver proved the first upper bound of 25 moves. This was done on home computers from October 2007 to March 2008. They only needed to solve 6000 sets, but after this they got contacted by John Welborn from Sony Pictures Imageworks and he offered a lot of idle computers from a computer farm to help on the project. 
 
