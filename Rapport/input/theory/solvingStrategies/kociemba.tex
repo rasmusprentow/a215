@@ -1,8 +1,10 @@
 \section{Kociemba's Optimal Solver}
 \label{sec:kociemba}
-Kociemba's optimal solver is an algorithm created with the purpose to find the twist-wise optimal solution to any scrambled \rubik{}\cite{kociemba09} \cite{cubelovers92}. The algorithm consists of two phases. The first phase is based on a principle called relabeling, which will be defined at first. 
+Kociemba's optimal solver is an algorithm created with the purpose of finding the twist-wise optimal solution to any scrambled \rubik{}\cite{kociemba09} \cite{cubelovers92}. It has been developed by Herbert Kociemba who has studied physics and mathematics at Technische Universität Darmstadt\cite{TUD} (1974-1979) and is currently teaching at a gymnasium. His interest in the \rubik{} started in the 1980 and he implemented his first algorithm -- Kociemba's Two Phase algorithm -- in 1990. See appendix \ref{chap:emailCorrespondence} for the e-mail correspondence with Herbert Kociemba.
 
-%In the following the Kociemba optimal solver will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first. 
+The Kociemba's optimal solver consists of two phases and is based on Kociemba's Two Phase algorithm. The first phase is based on a principle called relabeling, which will be defined at first. 
+
+%In the following the Kociemba optimal solver will be described in detiail. Kociemba's Algorithm finds a solution to a scrambled \rubik{} using two phases and is based on another algorithm by Kociemba called Two Phase Algorithm. In order to fully understand kociemba's algorithm a process called relabeling must be defined at first.
 
 \subsection{Relabeling}
 The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  %Each edge \cpiece{} on the front and back where the \cpiece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. 
@@ -97,6 +99,4 @@ This gives $8! = 40320$ possibilities for the corners.
 The eight edges of the top and down layer can be placed similarly and also yields $8!$.  
 The four edges of the middle layer can be placed in four different places this yield $4! = 24$. Since it is impossible to swap two corners without swapping any edges the amount of possibilities is halved. 
 The final result is $\frac{4!\cdot(8!)^{2}}{2} \approx 19.508\cdot10^{9}$ elements in $H$.
-The actual implementation of such a table will be discussed in section(HUSK REF). 
-
- 
+The actual implementation of such a table will be discussed in section \emph{Remember reference here}. 
