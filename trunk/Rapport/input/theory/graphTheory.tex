@@ -52,9 +52,21 @@ The shortest path between two vertices can be found by using e.g. Dijkstra's Alg
 Because of this the \rubik{} graph has to be weighted. Since each \twist{} contributes to the total number of \twist{}s by the same number, one, each edge is given the weight 1. The weight will be omitted in every illustration in this chapter because they are all 1.  
 
 \section{Solving the Diameter}
-To find the diameter of a graph is to find the longest shortest path between any two vertices in the given graph i.e. the shortest path with the highest value. 
-This can be done by using Dijkstra's Algorithm on every set of vertices in the graph. 
-This can be applied to the \rubik{} graph as well in order to find the maximum number of \twist{}s to solve the \rubik{} in the worst case scenario. %Unfortunately this approach is not viable because of the tremendous amount of positions the \rubik{} has even when considering symmetries.
+To find the diameter of a graph is to find the longest shortest path between any two vertices in the given graph i.e. the shortest path of the given graph with the highest value. 
+This can be done by using Dijkstra's Algorithm on every pair of vertices in the graph.
+By doing so, every shortest path is found between every pair of vertices.
+Then the highest value of these is the diameter of the given graph.
+
+To give the reader a better understanding of the idea of the diameter, see figure \ref{fig:diameter}.
+
+\begin{figure}[htb]
+	\centering
+		\includegraphics[width = 0.5\textwidth]{input/pics/diameter}
+	\caption{\myCaption{In this graph there are 10 vertex pairs, note that the shortest path from e.g. A to B is the same as B to A. The shortest paths of this graph is: A to B: 69 ; A to C: 48 ; A to D: 63 ; A to E: 61 ; B to C: 21 ; B to D: 36 ; B to E: 34 ; C to D: 15 ; C to E: 13 ; D to E: 28. The diameter of this graph is 69, since this is the highest value among shortest paths of the graph.}}
+	\label{fig:diameter}
+\end{figure}
+
+This can be applied to the \rubik{} graph as well in order to find the maximum number of \twist{}s to solve the \rubik{} in the worst case scenario -- the position which requires the most amount of \twist{}s to solve. %Unfortunately this approach is not viable because of the tremendous amount of positions the \rubik{} has even when considering symmetries.
 
 %The diameter of the \rubik{} graph can be found be finding where the upper and lower bound meet with some other method.
 
