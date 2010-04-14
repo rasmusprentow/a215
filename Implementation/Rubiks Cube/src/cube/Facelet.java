@@ -1,5 +1,6 @@
 package cube;
 
+
 public enum Facelet {
 	
 	PRIMARY_0,
@@ -8,6 +9,7 @@ public enum Facelet {
 	SECONDARY_1,
 	TERTIARY_0,
 	TERTIARY_1
+
 
 }
 
