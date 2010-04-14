@@ -6,6 +6,18 @@ public abstract class Face {
 	EdgeCubicle[] edgeArray = new EdgeCubicle[4];
 	Facelet faceColor;
 	
+	/**
+	 * The corners and edges must be given in clockwise order
+	 * @param corner0
+	 * @param corner1
+	 * @param corner2
+	 * @param corner3
+	 * @param edge0
+	 * @param edge1
+	 * @param edge2
+	 * @param edge3
+	 * @param color the color of the center cubie of this face
+	 */
 	public Face(CornerCubicle corner0, CornerCubicle corner1,
 			CornerCubicle corner2, CornerCubicle corner3,
 			EdgeCubicle edge0, EdgeCubicle edge1,
@@ -24,7 +36,15 @@ public abstract class Face {
 		faceColor = color;
 	}
 
-	public Face(CornerCubicle[] cornerList, EdgeCubicle[] edgeList, Facelet color) {
+	/**
+	 * The corners and edges must be given in clockwise order
+	 * @param cornerList
+	 * @param edgeList
+	 * @param color the color of the center cubie of this face
+	 * @throws IllegalArgumentException if the arrays are not both 4 in length
+	 */
+	public Face(CornerCubicle[] cornerList, EdgeCubicle[] edgeList, Facelet color)
+		throws IllegalArgumentException {
 		if(cornerList.length != 4 || edgeList.length != 4) {
 			throw new IllegalArgumentException("Invalid length of array");
 		}
@@ -35,6 +55,10 @@ public abstract class Face {
 		}
 	}
 
+	/**
+	 * 
+	 * @return the color of the center cubie of this face
+	 */
 	public Facelet getFacelet() {
 		return faceColor;
 	}
