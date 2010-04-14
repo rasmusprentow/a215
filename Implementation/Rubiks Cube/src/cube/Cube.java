@@ -73,5 +73,15 @@ public class Cube {
 		
 
 	}
+	
+	public Face[] getPrimary(){
+		return primary;
+	}
+	public Face[] getSecondary(){
+		return primary;
+	}
+	public Face[] getTertiary(){
+		return primary;
+	}
 
 }
