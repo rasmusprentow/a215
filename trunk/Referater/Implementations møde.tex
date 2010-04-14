@@ -1,0 +1,120 @@
+\documentclass{article}
+
+\begin{document}
+
+\section{Implementer Cuben}
+
+\begin{itemize}
+	\item Skal kunne l\o{}se cuben
+	\begin{itemize}
+		\item Optimal solver
+		\item Beginners
+	\end{itemize}
+	\item GUI/UI
+	\begin{itemize}
+		\item 2D
+		\item 3D
+		\item Console
+	\end{itemize}
+	\item Definer Cuben
+	\item Definer twists
+\end{itemize}
+
+\section{Definition af cuben}
+
+\begin{itemize}
+	\item Nummerer
+	\item Cubie \& cubicle
+	\begin{itemize}
+		\item Cube
+		\begin{itemize}
+			\item 8 corner cubies
+			\item 8 corner cubicles
+			\item 12 edge cubies
+			\item 12 edge cubicles
+			\item 6 faces
+			\begin{itemize}
+				\item 1 center cubie per face
+				\item pointer to cubicles
+			\end{itemize}
+			\item 6 center cubies
+		\end{itemize}
+		\item Cubie
+		\begin{itemize}
+			\item Orientation
+			\item 2-3 facelets
+		\end{itemize}
+		\item Cubicle
+		\begin{itemize}
+			\item pointer til cubie
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\section{Definition af enkelte klasser}
+
+\begin{itemize}
+	\item Cube
+	\begin{itemize}
+		\item Pointer til faces
+		\item 3 sm\aa{} arrays med to faces hver
+		\item Skal placere cubicles
+		\item Instans var for hver cubicle
+	\end{itemize}
+	\item Face
+	\begin{itemize}
+		\item Twist method $\rightarrow$ tag h\o{}jde for orientation
+		\item Constructor tager 4 corners og 4 edges - cubicles som input i et array
+		\item Farve til centerpiece
+		\item Pointer til facelet
+		\item Rigtig r\ae{}kkef\o{}lge ved input af corners og edges
+	\end{itemize}
+	\item Cubicle
+	\begin{itemize}
+		\item Constructor uden argument
+		\item Instans var pointer til cube
+		\item Getters og setters
+	\end{itemize}
+	\item Cubie
+	\begin{itemize}
+		\item Styr p\aa{} orientation
+		\item Pointer til facelet
+		\item Getters og setters
+	\end{itemize}
+	\item Facelet
+	\begin{itemize}
+		\item Styr p\aa{} farven
+	\end{itemize}
+\end{itemize}
+
+\section{Report structure}
+
+\begin{itemize}
+	\item Implementation
+	\begin{itemize}
+		\item Thoughts behind the implementation
+		\begin{itemize}
+			\item Cube
+			\item Beginners
+			\item Optimal
+			\item Maybe some GUI
+		\end{itemize}
+		\item Actual implementation
+		\begin{itemize}
+			\item Cube
+			\item Beginners
+			\item Optimal
+			\item Maybe some GUI 
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\section{Videre udvikling}
+
+Bruge maps til at beskrive faces i stedet for arrays
+Indtastning af en arbitr\ae{}r cube, hvor orientation passer
+
+
+
+
+\end{document}
