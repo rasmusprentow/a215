@@ -35,5 +35,43 @@ public abstract class Face {
 		}
 	}
 
-
+	public Facelet getFacelet() {
+		return faceColor;
+	}
+	
+	public void cwTwist() {
+		CornerCubie tempCorner;
+		tempCorner = cornerArray[0].getCornerCubie();
+			
+		cornerArray[0].setCornerCubie(cornerArray[3].getCornerCubie());
+		cornerArray[3].setCornerCubie(cornerArray[2].getCornerCubie());
+		cornerArray[2].setCornerCubie(cornerArray[1].getCornerCubie());
+		cornerArray[1].setCornerCubie(tempCorner);
+		
+		EdgeCubie tempEdge;
+		tempEdge = edgeArray[0].getEdgeCubie();
+			
+		edgeArray[0].setEdgeCubie(edgeArray[3].getEdgeCubie());
+		edgeArray[3].setEdgeCubie(edgeArray[2].getEdgeCubie());
+		edgeArray[2].setEdgeCubie(edgeArray[1].getEdgeCubie());
+		edgeArray[1].setEdgeCubie(tempEdge);
+	}
+	
+	public void ccwTwist() {
+		CornerCubie tempCorner;
+		tempCorner = cornerArray[0].getCornerCubie();
+			
+		cornerArray[0].setCornerCubie(cornerArray[1].getCornerCubie());
+		cornerArray[1].setCornerCubie(cornerArray[2].getCornerCubie());
+		cornerArray[2].setCornerCubie(cornerArray[3].getCornerCubie());
+		cornerArray[3].setCornerCubie(tempCorner);
+		
+		EdgeCubie tempEdge;
+		tempEdge = edgeArray[0].getEdgeCubie();
+			
+		edgeArray[0].setEdgeCubie(edgeArray[1].getEdgeCubie());
+		edgeArray[1].setEdgeCubie(edgeArray[2].getEdgeCubie());
+		edgeArray[2].setEdgeCubie(edgeArray[3].getEdgeCubie());
+		edgeArray[3].setEdgeCubie(tempEdge);
+	}
 }
