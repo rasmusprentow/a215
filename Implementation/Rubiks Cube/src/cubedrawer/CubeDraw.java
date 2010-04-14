@@ -18,9 +18,9 @@ public class CubeDraw extends JPanel {
 		// TODO Auto-generated constructor stub
 		
 		
-		//cube = new Cube();
+		cube = new Cube();
 		
-		//cube.getPrimary()[0].getFacelet()
+		cube.getPrimary()[0].
 		this.setPreferredSize(new Dimension(400,300));
 	}
 
