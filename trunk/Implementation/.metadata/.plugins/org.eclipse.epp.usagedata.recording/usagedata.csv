@@ -1,0 +1,9 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271237020359
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271237031625
+opened,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1271237031828
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1271237031953
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271237043515
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271237046937
+closed,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271237047578
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.406.v200903031852,"org.eclipse.jst.ws.axis.creation.ui",1271237048359
