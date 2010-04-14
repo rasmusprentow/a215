@@ -12,6 +12,31 @@ public enum Facelet {
 	TERTIARY_0,
 	TERTIARY_1;
 	
+	public String toString(){
+		switch(this){
+		case PRIMARY_0:
+			return "white";
+			
+		case PRIMARY_1:
+			return "yellow";
+			
+		case SECONDARY_0:
+			return "blue";
+		
+		case SECONDARY_1:
+			return "green";
+			
+		case TERTIARY_0:
+			return "orange";
+			
+		case TERTIARY_1:
+			return "red";
+		}
+		return null;
+	}
+	
+	
+	
 	public Color toColor(){
 		switch(this){
 		case PRIMARY_0:
