@@ -5,10 +5,24 @@ public class EdgeCubie extends Cubie {
 	private Facelet secondaryFacelet;
 	private Facelet tertiaryFacelet;
 	
-	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){
-		this.primaryFacelet = primaryFacelet;
-		this.secondaryFacelet = secondaryFacelet;
-		this.tertiaryFacelet = tertiaryFacelet;
+	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){ 
+		byte nullCount = 0; 
+		if(primaryFacelet == null) {
+			nullCount++;
+		}
+		if(secondaryFacelet == null) {
+			nullCount++;
+		}
+		if(tertiaryFacelet == null) {
+			nullCount++;
+		}
+		if(nullCount ==1){
+			this.primaryFacelet = primaryFacelet;
+			this.secondaryFacelet = secondaryFacelet;
+			this.tertiaryFacelet = tertiaryFacelet;	
+		} else {
+			throw new IllegalArgumentException ("one of the Facelets shall be null");
+		}
 	}
 	
 	
