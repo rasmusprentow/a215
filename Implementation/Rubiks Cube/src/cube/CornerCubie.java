@@ -10,6 +10,9 @@ public class CornerCubie extends Cubie {
 			this.name = i;
 		}
 		
+		/**
+		 * Sets the direction. Will throw an exception if the new direction is not 0 , 1 or 2. 
+		 */
 		public void setDirection(byte direction){
 			if (direction > 2){
 				throw new IllegalArgumentException ("keep it between 0-2");
