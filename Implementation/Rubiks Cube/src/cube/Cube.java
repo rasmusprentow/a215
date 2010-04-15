@@ -32,22 +32,22 @@ public class Cube {
 	//Edge cubicles
 	/////////////////////////////
 	//Top face cubicles
-	EdgeCubicle P0S0 = new EdgeCubicle(new EdgeCubie(primary_0, secondary_0, null));
-	EdgeCubicle P0T0 = new EdgeCubicle(new EdgeCubie(primary_0, null, tertiary_0));
-	EdgeCubicle P0S1 = new EdgeCubicle(new EdgeCubie(primary_0, secondary_1, null));
-	EdgeCubicle P0T1 = new EdgeCubicle(new EdgeCubie(primary_0, null, tertiary_1));
+	EdgeCubicle P0S0 = new EdgeCubicle(new EdgeCubie(primary_0, secondary_0, null,0));
+	EdgeCubicle P0T0 = new EdgeCubicle(new EdgeCubie(primary_0, null, tertiary_0,1));
+	EdgeCubicle P0S1 = new EdgeCubicle(new EdgeCubie(primary_0, secondary_1, null,2));
+	EdgeCubicle P0T1 = new EdgeCubicle(new EdgeCubie(primary_0, null, tertiary_1,3));
 	///////////////////////////
 	//Down face cubicles
-	EdgeCubicle P1T0 = new EdgeCubicle(new EdgeCubie(primary_1, null, tertiary_0));
-	EdgeCubicle P1S0 = new EdgeCubicle(new EdgeCubie(primary_1, secondary_0, null));
-	EdgeCubicle P1T1 = new EdgeCubicle(new EdgeCubie(primary_1, null, tertiary_1));
-	EdgeCubicle P1S1 = new EdgeCubicle(new EdgeCubie(primary_1, secondary_1, null));
+	EdgeCubicle P1T0 = new EdgeCubicle(new EdgeCubie(primary_1, null, tertiary_0,4));
+	EdgeCubicle P1S0 = new EdgeCubicle(new EdgeCubie(primary_1, secondary_0, null,5));
+	EdgeCubicle P1T1 = new EdgeCubicle(new EdgeCubie(primary_1, null, tertiary_1,6));
+	EdgeCubicle P1S1 = new EdgeCubicle(new EdgeCubie(primary_1, secondary_1, null,7));
 	//////////////////////////
 	//Center piece cubicles
-	EdgeCubicle S0T1 = new EdgeCubicle(new EdgeCubie(null, secondary_0, tertiary_1));
-	EdgeCubicle S0T0 = new EdgeCubicle(new EdgeCubie(null, secondary_0, tertiary_0));
-	EdgeCubicle S1T0 = new EdgeCubicle(new EdgeCubie(null, secondary_1, tertiary_0));
-	EdgeCubicle S1T1 = new EdgeCubicle(new EdgeCubie(null, secondary_1, tertiary_1));
+	EdgeCubicle S0T1 = new EdgeCubicle(new EdgeCubie(null, secondary_0, tertiary_1,8));
+	EdgeCubicle S0T0 = new EdgeCubicle(new EdgeCubie(null, secondary_0, tertiary_0,9));
+	EdgeCubicle S1T0 = new EdgeCubicle(new EdgeCubie(null, secondary_1, tertiary_0,10));
+	EdgeCubicle S1T1 = new EdgeCubicle(new EdgeCubie(null, secondary_1, tertiary_1,11));
 	/////////////////////////////
 
 	
