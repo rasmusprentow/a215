@@ -61,14 +61,14 @@ public class Cube {
 	
 	public Cube(){
 
-		primary[0] = new PrimaryFace(P0S1T0, P0S1T1, P0S0T1, P0S0T0, P0S0, P0T1, P0S1, P0T0, primary_0);
-		primary[1] = new PrimaryFace(P1S0T0, P1S0T1, P1S1T1, P1S1T0, P1T1, P1S0, P1T0, P1S1, primary_1);
+		primary[0] = new PrimaryFace(P0S1T0, P0S1T1, P0S0T1, P0S0T0, P0S1, P0T1, P0S0, P0T0, primary_0);
+		primary[1] = new PrimaryFace(P1S0T0, P1S0T1, P1S1T1, P1S1T0, P1S0, P1T1, P1S1, P1T0, primary_1);
 
-		secondary[0] = new SecondaryFace(P0S0T0, P0S0T1, P1S0T1, P1S0T0, P0S0, S0T0, P1S0, S0T1, secondary_0);
-		secondary[1] = new SecondaryFace(P0S1T1, P0S1T0, P1S1T0, P1S1T1, P0S1, S1T1, P1S1, S1T0, secondary_1);
+		secondary[0] = new SecondaryFace(P0S0T0, P0S0T1, P1S0T1, P1S0T0, P0S0, S0T1, P1S0, S0T0, secondary_0);
+		secondary[1] = new SecondaryFace(P0S1T1, P0S1T0, P1S1T0, P1S1T1, P0S1, S1T0, P1S1, S1T1, secondary_1);
 		 
-		tertiary[0] = new TertiaryFace(P0S1T0, P0S0T0, P1S0T0, P1S1T0, P0T0, S1T0, P1T0, S0T0, tertiary_0);
-		tertiary[1] = new TertiaryFace(P0S0T1, P0S1T1, P1S1T1, P1S0T1, P0T1, S0T1, P1T1, S1T1, tertiary_1);
+		tertiary[0] = new TertiaryFace(P0S1T0, P0S0T0, P1S0T0, P1S1T0, P0T0, S0T0, P1T0, S1T0, tertiary_0);
+		tertiary[1] = new TertiaryFace(P0S0T1, P0S1T1, P1S1T1, P1S0T1, P0T1, S1T1, P1T1, S0T1, tertiary_1);
 		
 		
 
