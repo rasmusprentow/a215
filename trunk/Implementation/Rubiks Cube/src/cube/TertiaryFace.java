@@ -18,14 +18,33 @@ public class TertiaryFace extends Face {
 	}
 
 	public void cwTwist(){
-		
+		//First we call the super version of this method, which puts the cubies in
+		//the right cubicles.
 		super.cwTwist();
+		
+		//Now we orient correctly.
 		for(int i = 0; i < 4; i++){
+			//Corner orientation
+			//Swapping 0 and 1
 			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
 
 			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
+			}
+			
+			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 0){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
+			}
+			
+			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
 
 			//The orientation of the edges are not changed.
@@ -34,14 +53,33 @@ public class TertiaryFace extends Face {
 	}
 	
 	public void ccwTwist(){
+		//First we call the super version of this method, which puts the cubies in
+		//the right cubicles.
+		super.ccwTwist();
 		
-		super.cwTwist();
+		//Now we orient correctly.
 		for(int i = 0; i < 4; i++){
+			//Corner orientation
+			//Swapping 0 and 1
 			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
 
 			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
+			}
+			
+			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 0){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
+			}
+			
+			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
 
 			//The orientation of the edges are not changed.
