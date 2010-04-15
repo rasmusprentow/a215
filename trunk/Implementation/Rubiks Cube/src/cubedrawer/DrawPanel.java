@@ -15,10 +15,10 @@ import cube.Cube;
 import cube.EdgeCubie;
 import cube.Face;
 
-public class CubeDraw extends JPanel {
+public class DrawPanel extends JPanel {
 	private Cube cube;
 	private int rectHW = 30; 
-	public CubeDraw() {
+	public DrawPanel() {
 		// TODO Auto-generated constructor stub
 		
 		
@@ -97,7 +97,7 @@ public class CubeDraw extends JPanel {
 				} else 	if(faceOrder == 1){
 					if(ccubie.getPrimaryOrientation() == 1){
 						g.setColor(ccubie.getFacelet(0).toColor());
-						System.out.print("NO");
+						//System.out.print("NO");
 					} else {
 						if (ccubie.getSecondaryOrientation() == 1){
 							g.setColor(ccubie.getFacelet(1).toColor());
@@ -159,10 +159,18 @@ public class CubeDraw extends JPanel {
 
 
 				} else 	if(faceOrder == 1){
-					if(ecubie.getPrimaryOrientation() == 0){
-						g.setColor(ecubie.getFacelet(1).toColor());
+					if(i == 7 || i == 1){
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(0).toColor());
+						}
 					} else {
-						g.setColor(ecubie.getFacelet(0).toColor());
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(0).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(1).toColor());
+						}
 					}
 
 
@@ -181,7 +189,7 @@ public class CubeDraw extends JPanel {
 				//g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				g.setColor(Color.black);
-				g.drawString(Integer.toString(ecubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
+				//g.drawString(Integer.toString(ecubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
 				edgeCount++;
 				//Remember
 			}
@@ -198,7 +206,7 @@ public class CubeDraw extends JPanel {
 
 	
 	enum MoveButtons { 
-		R, RP, F, FP, U, UP, D, DP, L, LP, B, BP ,REP;
+		 U, UP, D, DP, F, FP,  B, BP, L, LP, R, RP ,RESET;
 		
 		public String toString(){
 			String old = super.toString();
