@@ -63,14 +63,44 @@ public class CubeDraw extends JPanel {
 			} else if(i%2 == 0){
 				// finds the right facelet .
 				CornerCubie ccubie = face.getCornerCubicle()[cornerCount].getCornerCubie();
+				if(faceOrder == 0){
+					if(ccubie.getDirection() == 0){
+						g.setColor(ccubie.getFacelet(0).toColor());
+					}
+					else if(ccubie.getDirection() == 1){
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+					else if(ccubie.getDirection() == 2){
+						g.setColor(ccubie.getFacelet(1).toColor());
+					}
+				} else 	if(faceOrder == 1){
+					if(ccubie.getDirection() == 0){
+						g.setColor(ccubie.getFacelet(1).toColor());
+					}
+					else if(ccubie.getDirection() == 1){
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+					else if(ccubie.getDirection() == 2){
+						g.setColor(ccubie.getFacelet(0).toColor());
+					}
+				} else 	if(faceOrder == 2){
+					if(ccubie.getDirection() == 0){
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+					else if(ccubie.getDirection() == 1){
+						g.setColor(ccubie.getFacelet(1).toColor());
+					}
+					else if(ccubie.getDirection() == 2){
+						g.setColor(ccubie.getFacelet(0).toColor());
+					}
+				}
 				
-				g.setColor(ccubie.getFacelet(faceOrder).toColor());
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				cornerCount++;
 				
 			} else if (i%2 != 0){
-				g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
-				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				//g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				edgeCount++;
 			}
 			g.setColor(Color.black);
@@ -86,7 +116,7 @@ public class CubeDraw extends JPanel {
 
 	
 	enum MoveButtons { 
-		R, RP, F, FP, T, TP, D, DP, L, LP, B, BP;
+		R, RP, F, FP, U, UP, D, DP, L, LP, B, BP;
 		
 		public String toString(){
 			String old = super.toString();
