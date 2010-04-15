@@ -65,6 +65,9 @@ public abstract class Face {
 		return faceColor;
 	}
 	
+	/**
+	 * Turns the face clockwise
+	 */
 	public void cwTwist() {
 		CornerCubie tempCorner;
 		tempCorner = cornerArray[0].getCornerCubie();
@@ -83,6 +86,9 @@ public abstract class Face {
 		edgeArray[1].setEdgeCubie(tempEdge);
 	}
 	
+	/**
+	 * Turns the face counter-clockwise
+	 */
 	public void ccwTwist() {
 		CornerCubie tempCorner;
 		tempCorner = cornerArray[0].getCornerCubie();

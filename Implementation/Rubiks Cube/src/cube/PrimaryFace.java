@@ -20,42 +20,87 @@ public class PrimaryFace extends Face {
 	 * The function twists the face clock wise
 	 */
 
-	public void cwTwist(){
+	public void cwTwist() {
+		//First we call the super version of this method, which puts the cubies in
+		//the right cubicles.
 		super.cwTwist();
+		
+		//Now we orient correctly.
 		for(int i = 0; i < 4; i++){
+			//Here we change the primary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
 			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
-				System.out.println("Changing 1 to 2 of cubie: " + cornerArray[i].getCornerCubie());
 			} 
 			
 			else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
-				System.out.println("Changing 2 to 1 of cubie: " + cornerArray[i].getCornerCubie());
 			} 
 			
-			else {
-				System.out.println("Changing 0 to 0 of cubie: " + cornerArray[i].getCornerCubie());
+			
+			//Here we change the secondary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
+			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)2);
+			} 
+			
+			else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 2){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			} 
+			
+			
+			//Here we change the tertiary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
+			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)2);
+			} 
+			
+			else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 			}
+			
 		}
 	}
 	/**
 	 * The function twists the face counter clock wise
 	 */
-	public void ccwTwist(){
+	public void ccwTwist() {
+		//First we call the super version of this method, which puts the cubies in
+		//the right cubicles.
 		super.ccwTwist();
+		
+		//Now we orient correctly.
 		for(int i = 0; i < 4; i++){
+			//Here we change the primary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
 			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
-				System.out.println("Changing 1 to 2 of cubie: " + cornerArray[i].getCornerCubie());
 			} 
 			
 			else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
-				System.out.println("Changing 2 to 1 of cubie: " + cornerArray[i].getCornerCubie());
 			} 
 			
-			else {
-				System.out.println("Changing 0 to 0 of cubie: " + cornerArray[i].getCornerCubie());
+			
+			//Here we change the secondary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
+			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)2);
+			} 
+			
+			else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 2){
+				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			} 
+			
+			
+			//Here we change the tertiary orientation.
+			//If it is 1 before the twist it will become 2 and vice versa
+			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)2);
+			} 
+			
+			else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
+				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 			}
 		}
 	}
