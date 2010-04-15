@@ -21,10 +21,10 @@ public class TertiaryFace extends Face {
 		
 		super.cwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 1){
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
@@ -37,10 +37,10 @@ public class TertiaryFace extends Face {
 		
 		super.cwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 1){
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
