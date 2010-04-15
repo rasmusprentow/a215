@@ -27,10 +27,10 @@ public enum Facelet {
 			return "green";
 			
 		case TERTIARY_0:
-			return "orange";
+			return "red";
 			
 		case TERTIARY_1:
-			return "red";
+			return "orange";
 		}
 		return null;
 	}
@@ -52,10 +52,10 @@ public enum Facelet {
 			return Color.green;
 			
 		case TERTIARY_0:
-			return Color.orange;
+			return Color.red;
 			
 		case TERTIARY_1:
-			return Color.red;
+			return Color.orange;
 		}
 		return null;
 	}

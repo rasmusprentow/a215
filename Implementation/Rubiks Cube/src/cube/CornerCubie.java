@@ -1,9 +1,6 @@
 package cube;
 
 public class CornerCubie extends Cubie {
-		private Facelet primaryFacelet;
-		private Facelet secondaryFacelet;
-		private Facelet tertiaryFacelet;
 	
 		
 		public CornerCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){
@@ -38,6 +35,7 @@ public class CornerCubie extends Cubie {
 		public Facelet getTertiaryFacelet() {
 			return tertiaryFacelet;
 		}
+		
 }
 
 
