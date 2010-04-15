@@ -202,6 +202,11 @@ public class DrawPanel extends JPanel {
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
 	
+	public void reset(){
+		cube = new Cube();
+		repaint();
+	}
+	
 	public Cube getCube(){
 		return cube;
 	}
