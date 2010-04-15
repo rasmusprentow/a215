@@ -98,4 +98,15 @@ public abstract class Face {
 		edgeArray[2].setEdgeCubie(edgeArray[3].getEdgeCubie());
 		edgeArray[3].setEdgeCubie(tempEdge);
 	}
+	
+	/**
+	 * 
+	 */
+	public CornerCubicle[] getCornerCubicle() {
+		return cornerArray;
+	}
+	
+	public EdgeCubicle[] getEdgeCubicle() {
+		return edgeArray;
+	}
 }
