@@ -8,17 +8,17 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-import cubedrawer.CubeDraw.MoveButtons;
+import cubedrawer.DrawPanel.MoveButtons;
 
 public class MainPanel extends JPanel implements ActionListener {
 	SidePanel sidePanel;
-	CubeDraw cubeDrawer;
+	DrawPanel cubeDrawer;
 	
 	public MainPanel() {
 		// TODO Auto-generated constructor stub
 		this.setLayout(new BorderLayout(3,3));
 		//this.setBackground(Color.black);
-		cubeDrawer = new CubeDraw();
+		cubeDrawer = new DrawPanel();
 		this.add(cubeDrawer, BorderLayout.CENTER);
 		sidePanel = new SidePanel();
 		this.add(sidePanel,BorderLayout.EAST);
