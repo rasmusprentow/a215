@@ -5,9 +5,13 @@ package cubedrawer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.EnumSet;
 
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
 import static cubedrawer.MoveButtons.*;
 import cube.CornerCubie;
 import cube.Cube;
@@ -31,7 +35,14 @@ public class DrawPanel extends JPanel {
 		cube = new Cube();
 		this.setBackground(Color.white);
 		//this.setPreferredSize(new Dimension(400,300));
+		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
+		 String filename = "Khachaturian-Sabre_Dance.mp3";
+	     MP3 mp3 = new MP3(filename);
+	      mp3.play();
+	      
+	  	Timer timer = new Timer(20, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(); 	}  });
+	      
 	}
 
 	@Override
