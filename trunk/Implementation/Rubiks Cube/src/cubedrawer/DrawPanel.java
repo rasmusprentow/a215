@@ -5,8 +5,10 @@ package cubedrawer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.util.EnumSet;
 
+import javax.swing.JPanel;
+import static cubedrawer.MoveButtons.*;
 import cube.CornerCubie;
 import cube.Cube;
 import cube.EdgeCubie;
@@ -203,6 +205,100 @@ public class DrawPanel extends JPanel {
 		}
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
+	
+	
+	public void buttonHandler(MoveButtons t){
+		switch(t){
+		case U:
+			cube.getPrimary()[0].cwTwist();
+			break;
+		case UP:
+			cube.getPrimary()[0].ccwTwist();
+			break;
+		case U2:
+			cube.getPrimary()[0].cwTwist();
+			cube.getPrimary()[0].cwTwist();
+			break;
+		case D:
+			cube.getPrimary()[1].cwTwist();
+			break;
+		case DP:
+			cube.getPrimary()[1].ccwTwist();
+			break;
+		case D2:
+			cube.getPrimary()[1].cwTwist();
+			cube.getPrimary()[1].cwTwist();
+			break;
+		case F:
+			cube.getSecondary()[0].cwTwist();
+			break;
+		case FP:
+			cube.getSecondary()[0].ccwTwist();
+			break;
+		case F2:
+			cube.getSecondary()[0].cwTwist();
+			cube.getSecondary()[0].cwTwist();
+			break;
+		case B:
+			cube.getSecondary()[1].cwTwist();
+			break;
+		case BP:
+			cube.getSecondary()[1].ccwTwist();
+			break;
+		case B2:
+			cube.getSecondary()[1].cwTwist();
+			cube.getSecondary()[1].cwTwist();
+			break;
+		case L:
+			cube.getTertiary()[0].cwTwist();
+			break;
+		case LP:
+			cube.getTertiary()[0].ccwTwist();
+			break;
+		case L2:
+			cube.getTertiary()[0].cwTwist();
+			cube.getTertiary()[0].cwTwist();
+			break;
+		case R:
+			cube.getTertiary()[1].cwTwist();
+			break;
+		case RP:
+			cube.getTertiary()[1].ccwTwist();
+			break;
+		case R2:
+			cube.getTertiary()[1].cwTwist();
+			cube.getTertiary()[1].cwTwist();
+			break;
+		case SCREWDRIVER:
+			reset();
+			break;
+		case SCRAMBLE:
+			scramble();
+			break;
+		default:
+			System.out.println("Something is wrong");
+				
+		}	
+	}
+
+	
+	private void scramble() {
+		// TODO Auto-generated method stub
+		EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
+		for(int i = 0; i < 50; i++){
+			int moveNum = (int)(Math.random()*18);
+			System.out.println(moveNum);
+			twistSequence((MoveButtons)moves.toArray()[moveNum]);
+		}
+		
+	}
+
+	public void twistSequence(MoveButtons... t){
+		for(MoveButtons key: t){
+			buttonHandler(key);
+		}
+	}
+	
 	
 	public void reset(){
 		cube = new Cube();
