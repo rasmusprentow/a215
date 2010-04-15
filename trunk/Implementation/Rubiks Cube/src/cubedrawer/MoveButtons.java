@@ -12,7 +12,7 @@ enum MoveButtons {
 			} else if(this == SCREWDRIVER){
 				return "<html><center>Screw<br>driver</center></html>";
 			} else if(this == YOU_KNOW){
-				return "<html><center>Try and<br>Die</center></html>";
+				return "<html><center>Dance!!</center></html>";
 			}
 		} catch (IndexOutOfBoundsException e){
 			return old;
