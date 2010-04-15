@@ -40,10 +40,10 @@ public class MainPanel extends JPanel implements ActionListener {
 			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.FP)){
 				cubeDrawer.getCube().getSecondary()[0].ccwTwist();
 			}
-			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.T)){
+			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.U)){
 				cubeDrawer.getCube().getPrimary()[0].cwTwist();
 			}
-			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.TP)){
+			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.UP)){
 				cubeDrawer.getCube().getPrimary()[0].ccwTwist();
 			}
 			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.D)){
