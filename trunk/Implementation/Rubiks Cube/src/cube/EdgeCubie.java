@@ -1,14 +1,15 @@
 package cube;
 
 public class EdgeCubie extends Cubie {
-
+	
 	/**
 	 * Throws an exception if not one of the facelets is null.
 	 * @param primaryFacelet 
 	 * @param secondaryFacelet
 	 * @param tertiaryFacelet
 	 */
-	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){ 
+	public int name;
+	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet, int name){ 
 		byte nullCount = 0; 
 		if(primaryFacelet == null) {
 			nullCount++;
@@ -19,13 +20,14 @@ public class EdgeCubie extends Cubie {
 		if(tertiaryFacelet == null) {
 			nullCount++;
 		}
-		if(nullCount ==1){
+		if(nullCount == 1){
 			this.primaryFacelet = primaryFacelet;
 			this.secondaryFacelet = secondaryFacelet;
 			this.tertiaryFacelet = tertiaryFacelet;	
 		} else {
 			throw new IllegalArgumentException ("one of the Facelets shall be null");
 		}
+		this.name = name;
 	}
 	
 	
@@ -62,5 +64,23 @@ public class EdgeCubie extends Cubie {
 	}
 	public Facelet getTertiaryFacelet() {
 		return tertiaryFacelet;
+	}
+	
+	public Facelet getFacelet(int i){
+		if(i == 0){
+			if(primaryFacelet != null){
+				return primaryFacelet;
+			} else {
+				return secondaryFacelet;
+			}
+		} else if(i == 1){
+			if(tertiaryFacelet != null){
+				return tertiaryFacelet;
+			} else {
+				return secondaryFacelet;
+			}
+		} else {
+			throw new IllegalArgumentException(" i Must be between 0 and 1");
+		}
 	}
 }

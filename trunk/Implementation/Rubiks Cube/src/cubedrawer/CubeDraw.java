@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import cube.CornerCubie;
 import cube.Cube;
+import cube.EdgeCubie;
 import cube.Face;
 
 public class CubeDraw extends JPanel {
@@ -56,7 +57,8 @@ public class CubeDraw extends JPanel {
 	public void draw3x3(int x, int y, Graphics g, Face face){
 		byte cornerCount = 0;
 		byte edgeCount = 0;
-		int[] newOrder = {0 , 1, 3 ,2 };
+		int[] newCornerOrder = {0 , 1, 3 ,2 };
+		int[] newEdgeOrder = {0 , 3, 1 ,2 };
 		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
 		for(int i = 0; i < 9; i++){
 			if(i == 4){
@@ -64,7 +66,7 @@ public class CubeDraw extends JPanel {
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			} else if(i%2 == 0){
 				// finds the right facelet .
-				CornerCubie ccubie = face.getCornerCubicle()[newOrder[cornerCount]].getCornerCubie();
+				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCornerCubie();
 				if(faceOrder == 0){
 					if(ccubie.getPrimaryOrientation() == 0){
 						g.setColor(ccubie.getFacelet(0).toColor());
@@ -99,9 +101,7 @@ public class CubeDraw extends JPanel {
 					} else {
 						if (ccubie.getSecondaryOrientation() == 1){
 							g.setColor(ccubie.getFacelet(1).toColor());
-							System.out.println("Jeg gŒr i den rigtige");
 						} else {
-							System.out.println("Jeg gŒr i den forkerte");
 							g.setColor(ccubie.getFacelet(2).toColor());
 						}
 					}
@@ -145,18 +145,49 @@ public class CubeDraw extends JPanel {
 				
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				g.setColor(Color.black);
-				g.drawString(Integer.toString(ccubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
+			//	g.drawString(Integer.toString(ccubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
 				cornerCount++;
 				
 			} else if (i%2 != 0){
+				
+				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getEdgeCubie();
+
+
+				if(faceOrder == 0){
+					g.setColor(ecubie.getFacelet(ecubie.getPrimaryOrientation()).toColor());
+
+
+
+				} else 	if(faceOrder == 1){
+					if(ecubie.getPrimaryOrientation() == 0){
+						g.setColor(ecubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ecubie.getFacelet(0).toColor());
+					}
+
+
+
+				} else 	if(faceOrder == 2){
+					if(ecubie.getPrimaryOrientation() == 0){
+						g.setColor(ecubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ecubie.getFacelet(0).toColor());
+					}
+
+
+
+				}
+
 				//g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
-				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.setColor(Color.black);
+				g.drawString(Integer.toString(ecubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
 				edgeCount++;
 				//Remember
 			}
 			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
-			
+
 		}
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
