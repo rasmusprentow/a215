@@ -20,7 +20,7 @@ public class CubeDraw extends JPanel {
 		
 		
 		cube = new Cube();
-		
+	
 		this.setBackground(Color.white);
 		this.setPreferredSize(new Dimension(400,300));
 	}
@@ -30,33 +30,40 @@ public class CubeDraw extends JPanel {
 		int startX = 10;
 		int startY = 10;
 		// TOP
-		draw3x3(startX + 3*rectHW, startY,g);
+		draw3x3(startX + 3*rectHW, startY,g, 	cube.getPrimary()[0].getFacelet().toColor());
 		
 		// Left
-		draw3x3(startX , startY + 3*rectHW,g);
+		draw3x3(startX , startY + 3*rectHW,g, 	cube.getTertiary()[0].getFacelet().toColor());
 		
 		// Front
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,	cube.getSecondary()[0].getFacelet().toColor());
 		
 		// Right
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g);
+		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, cube.getTertiary()[1].getFacelet().toColor());
 		
 		// Back
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g);
+		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, cube.getSecondary()[1].getFacelet().toColor());
 		
 		// Down
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, cube.getPrimary()[1].getFacelet().toColor());
 		
 	}
 
-	public void draw3x3(int x, int y, Graphics g){
+	public void draw3x3(int x, int y, Graphics g, Color centerColor){
 		for(int i = 0; i < 9; i++){
+		
+			g.setColor(centerColor);
+			g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
+			
 		}
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
 	
-	
+	public Cube getCube(){
+		return cube;
+	}
 
 	
 	enum MoveButtons { 
