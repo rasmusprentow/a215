@@ -67,16 +67,42 @@ public class CubeDraw extends JPanel {
 				CornerCubie ccubie = face.getCornerCubicle()[newOrder[cornerCount]].getCornerCubie();
 				if(faceOrder == 0){
 					if(ccubie.getPrimaryOrientation() == 0){
-					
 						g.setColor(ccubie.getFacelet(0).toColor());
+					} else {
+						if (ccubie.getSecondaryOrientation() == 0){
+							g.setColor(ccubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ccubie.getFacelet(2).toColor());
+						}
 					}
+					/*
 					else if(ccubie.getPrimaryOrientation() == 1){
-						g.setColor(ccubie.getFacelet(2).toColor());
+						if (ccubie.getSecondaryOrientation() == 0){
+							g.setColor(ccubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ccubie.getFacelet(2).toColor());
+						}
 					}
 					else if(ccubie.getPrimaryOrientation() == 2){
-						g.setColor(ccubie.getFacelet(1).toColor());
+						if (ccubie.getSecondaryOrientation() == 0){
+							g.setColor(ccubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ccubie.getFacelet(2).toColor());
+						}
 					}
+					*/
+					
 				} else 	if(faceOrder == 1){
+					if(ccubie.getPrimaryOrientation() == 1){
+						g.setColor(ccubie.getFacelet(0).toColor());
+					} else {
+						if (ccubie.getSecondaryOrientation() == 1){
+							g.setColor(ccubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ccubie.getFacelet(2).toColor());
+						}
+					}
+					/*
 					if(ccubie.getSecondaryOrientation() == 0){
 						g.setColor(ccubie.getFacelet(1).toColor());
 						System.out.println("dir 0");
@@ -89,16 +115,29 @@ public class CubeDraw extends JPanel {
 						g.setColor(ccubie.getFacelet(2).toColor());
 						System.out.println("dir 2");
 					}
+					*/
+
 				} else 	if(faceOrder == 2){
-					if(ccubie.getPrimaryOrientation() == 0){
-						g.setColor(ccubie.getTertiaryFacelet().toColor());
+					if(ccubie.getPrimaryOrientation() == 2){
+						g.setColor(ccubie.getFacelet(0).toColor());
+					} else {
+						if (ccubie.getSecondaryOrientation() == 2){
+							g.setColor(ccubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ccubie.getFacelet(2).toColor());
+						}
 					}
-					else if(ccubie.getPrimaryOrientation() == 1){
+					/*
+					if(ccubie.getTertiaryOrientation() == 0){
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+					else if(ccubie.getTertiaryOrientation() == 1){
 						g.setColor(ccubie.getFacelet(1).toColor());
 					}
-					else if(ccubie.getPrimaryOrientation() == 2){
+					else if(ccubie.getTertiaryOrientation() == 2){
 						g.setColor(ccubie.getFacelet(0).toColor());
 					}
+					*/
 				}
 				
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
