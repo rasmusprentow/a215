@@ -65,6 +65,7 @@ public class CubeDraw extends JPanel {
 				CornerCubie ccubie = face.getCornerCubicle()[cornerCount].getCornerCubie();
 				if(faceOrder == 0){
 					if(ccubie.getDirection() == 0){
+					
 						g.setColor(ccubie.getFacelet(0).toColor());
 					}
 					else if(ccubie.getDirection() == 1){
@@ -76,16 +77,19 @@ public class CubeDraw extends JPanel {
 				} else 	if(faceOrder == 1){
 					if(ccubie.getDirection() == 0){
 						g.setColor(ccubie.getFacelet(1).toColor());
+						System.out.println("dir 0");
 					}
 					else if(ccubie.getDirection() == 1){
-						g.setColor(ccubie.getFacelet(2).toColor());
+						g.setColor(ccubie.getFacelet(0).toColor());
+						System.out.println("dir 1");
 					}
 					else if(ccubie.getDirection() == 2){
-						g.setColor(ccubie.getFacelet(0).toColor());
+						g.setColor(ccubie.getFacelet(2).toColor());
+						System.out.println("dir 2");
 					}
 				} else 	if(faceOrder == 2){
 					if(ccubie.getDirection() == 0){
-						g.setColor(ccubie.getFacelet(2).toColor());
+						g.setColor(ccubie.getTertiaryFacelet().toColor());
 					}
 					else if(ccubie.getDirection() == 1){
 						g.setColor(ccubie.getFacelet(1).toColor());
@@ -96,6 +100,8 @@ public class CubeDraw extends JPanel {
 				}
 				
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.setColor(Color.black);
+				g.drawString(Integer.toString(ccubie.name), i%3*rectHW + x + 10, (int)Math.ceil(i/3)*rectHW + y + 15);
 				cornerCount++;
 				
 			} else if (i%2 != 0){
@@ -116,7 +122,7 @@ public class CubeDraw extends JPanel {
 
 	
 	enum MoveButtons { 
-		R, RP, F, FP, U, UP, D, DP, L, LP, B, BP;
+		R, RP, F, FP, U, UP, D, DP, L, LP, B, BP ,REP;
 		
 		public String toString(){
 			String old = super.toString();
