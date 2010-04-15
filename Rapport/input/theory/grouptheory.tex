@@ -55,36 +55,33 @@ Instead of just looking at configurations of 8 cubies, the configurations of the
 These objects be named $1, 2, . . . , n,$ these names are arbitrary. the arranging of these objects can be seen as
 putting them into $n$ slots. If the slots is numberet $1, 2, . . . , n,$ can it be define as a function $\sigma : {1, 2, . . . , n} \rightarrow
 {1, 2, . . . , n}$ by letting $\sigma(i)$ be the number put into slot $i$.
-
+\begin{comment}
 \subsection{Example} 
 Tag the objects $1, 2, 3$ in the order $3 1 2$. So, it corresponds to the function $\sigma: {1, 2, 3} \rightarrow {1, 2, 3}$
 defined by $\sigma(1) = 3$,$\sigma(2) = 1$, and $\sigma(3) = 2$.
-
-\subsection{Lemma}
-
+\end{comment}
+\paragraph{}
 Imagine that $x\neq y$. Since a number cannot be in more than one slot, if $x \neq y$, slots x and y must contain
-
 different numbers. That is, $\sigma(x) \neq \sigma(y)$. Therefore, $\sigma$ is one-to-one.
-
+\paragraph{}
 Any number $y \in {1, 2, . . . , n}$ must lie in some slot, say slot x. Then, $\sigma(x) = y$.
-
+\paragraph{}
 But if $\sigma: {1, . . . , n} \rightarrow {1, . . . , n}$ is a bijection, So $\sigma$ can be used to defines the arrangement of the n
 objects: just put object $\sigma(i)$ in slot i. So, the arrangements is the same as the set of
 bijections ${1, . . . , n} \rightarrow {1, . . . , n}$. Therefore, instead of studying possible arrangements, the bijections can be studied instead.
-
-\subsection{Definition}
+\paragraph{}
 
 The Symmetric Group of $n$ letters are the set of bijection from ${1,2,......n}$ to ${1,2,......n}$ with the operation of composition. This group will be called $S_n$
-
+\begin{comment}
 \subsection{Exemple}
 
 Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2, \tau(1)=1,\tau(2)=3,\tau(3)=2$ so $(\sigma\tau)(1)=\tau(3)=2,(\sigma\tau)(2)=\tau(1)=1, (\sigma\tau)(3)=\tau(2)=3.$
-
+\end{comment}
+\pagebreak{}
 \section{Disjoint Cycle Decomposition}
 
-There is a more compact way of writing elements of the symmetric group; this can best be explained by an
-example.
-
+There is a more compact way of writing elements of the symmetric group.
+\begin{comment}
 \subsection{Example} Consider $\sigma \in S_(12)$ defined by
 
 	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
@@ -104,36 +101,35 @@ $\sigma = (1 12 8 3 5 6 9 10) (2 4) (7) (11).$
 Here, $(1 12 8 3 5 6 9 10), (2 4), (7), and (10)$ are called cycles. When writing the disjoint cycle decomposition,
 the cycles is left out with just one number, so the disjoint cycle decomposition of $\sigma$ is
 $\sigma = (1 12 8 3 5 6 9 10) (2 4).$ 
-
-Now it will be defined what a cycle is.
-
-\subsection{Definition}. The cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
+\end{comment}
+\paragraph{}
+The difinition of a cycle is if the cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
 i_k , \tau(i_k ) = i_1 $ and $\tau(j) = j$ if $j \neq i_r $ for any $r$. The length of this cycle is $k$, and the support of the cycle
 is the set ${i_1 , . . . , i_k }$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
 length $k$ is also called a $k-cycle$.
-
-\subsection{Definition}. Two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
+\paragraph{}
+If two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
 supp $\tau = \oslash$
-
-\subsection{Lemma} Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
-
-Proof. Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
+\paragraph{}
+Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
+\paragraph{}
+Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
 \begin{itemize}
 \item $i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
 (\tau \circ \sigma)(i) = \sigma(i) = i.$
-
+\paragraph{}
 \item Otherwise, $i$ is in the support of exactly one of $\sigma$ and $\tau$. it may suppose without loss of generality that
 $i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
 Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So,
 again there is $(\sigma\tau)(i) = (\tau\sigma)(i).$
 \end{itemize}
-
+\paragraph{}
 Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma$.
 Any $\sigma \in S_n$ can be written as a product (under the group operation, which is composition) of disjoint cycles.
 This product is called the disjoint cycle decomposition of $\sigma.$ In the example, there was given a method for finding
 the disjoint cycle decomposition of a permutation.
 The identity permutation will be written as $1$.
-
+\paragraph{}
 \begin{comment}
 \subsection{Example} $S_2$ consists of two permutations,$ 1 and (1 2).$
 
@@ -145,9 +141,7 @@ $\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6)
 In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. it
 can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
 \end{comment}
-\subsection{Definition}
-
- If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
+If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
 then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
 \pagebreak{}
 
