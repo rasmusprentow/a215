@@ -35,7 +35,16 @@ public class CornerCubie extends Cubie {
 			}
 		}
 		
-
+		public void setTertiaryOrientation(byte o){
+			if (o > 1){
+				throw new IllegalArgumentException ("keep it between 0-2");
+			} else if (o < 0){
+				throw new IllegalArgumentException ("keep it between 0-2"); 
+				
+			} else  {
+				this.tertiaryOrientation = o;
+			}
+		}
 
 		public Facelet getPrimaryFacelet() {
 			return primaryFacelet;

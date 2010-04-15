@@ -7,6 +7,7 @@ public abstract class Cubie {
 	protected Facelet tertiaryFacelet;
 	protected byte primaryOrientation;
 	protected byte secondaryOrientation;
+	protected byte tertiaryOrientation;
 
 	protected abstract void setPrimaryOrientation(byte direction);
 	
@@ -18,6 +19,10 @@ public abstract class Cubie {
 	
 	public byte getSecondaryOrientation() {
 		return secondaryOrientation;
+	}
+	
+	public byte getTertiaryOrientation() {
+		return tertiaryOrientation;
 	}
 
 	/**
