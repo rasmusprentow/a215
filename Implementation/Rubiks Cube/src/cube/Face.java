@@ -100,12 +100,15 @@ public abstract class Face {
 	}
 	
 	/**
-	 * 
+	 * @return cornerArray which contains the four corners of this face.
 	 */
 	public CornerCubicle[] getCornerCubicle() {
 		return cornerArray;
 	}
 	
+	/**
+	 * @return edgeArray which contains the four corners of this face.
+	 */
 	public EdgeCubicle[] getEdgeCubicle() {
 		return edgeArray;
 	}
