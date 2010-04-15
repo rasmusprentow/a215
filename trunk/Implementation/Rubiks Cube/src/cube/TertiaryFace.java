@@ -17,4 +17,35 @@ public class TertiaryFace extends Face {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void cwTwist(){
+		
+		super.cwTwist();
+		for(int i = 0; i < 4; i++){
+			if((int)cornerArray[i].getCornerCubie().getDirection() == 0){
+				cornerArray[i].getCornerCubie().setDirection((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getDirection() == 1){
+				cornerArray[i].getCornerCubie().setDirection((byte)0);
+			}
+
+			//The orientation of the edges are not changed.
+		}
+		
+	}
+	
+	public void ccwTwist(){
+		
+		super.cwTwist();
+		for(int i = 0; i < 4; i++){
+			if((int)cornerArray[i].getCornerCubie().getDirection() == 0){
+				cornerArray[i].getCornerCubie().setDirection((byte)1);
+
+			}else if((int)cornerArray[i].getCornerCubie().getDirection() == 1){
+				cornerArray[i].getCornerCubie().setDirection((byte)0);
+			}
+
+			//The orientation of the edges are not changed.
+		}
+		
+	}
 }

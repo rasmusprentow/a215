@@ -8,6 +8,8 @@ public abstract class Face {
 	
 	/**
 	 * The corners and edges must be given in clockwise order
+	 * When looking at the cube in CubeDraw the first corner must be the top left corner and from then on the corners must be given clock-wise.
+	 * When looking at the cube in CubeDraw the first edge must be the top, the second the right, the third the down, the fourth the left.
 	 * @param corner0
 	 * @param corner1
 	 * @param corner2
