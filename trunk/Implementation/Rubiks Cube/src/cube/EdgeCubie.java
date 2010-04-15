@@ -1,9 +1,7 @@
 package cube;
 
 public class EdgeCubie extends Cubie {
-	private Facelet primaryFacelet;
-	private Facelet secondaryFacelet;
-	private Facelet tertiaryFacelet;
+
 	
 	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){ 
 		byte nullCount = 0; 
