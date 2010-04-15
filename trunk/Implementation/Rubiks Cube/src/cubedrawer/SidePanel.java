@@ -9,8 +9,6 @@ import java.util.TreeMap;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import cubedrawer.DrawPanel.MoveButtons;
-
 
 public class SidePanel extends JPanel {
 	private TreeMap<MoveButtons, JButton> twistButtons;
