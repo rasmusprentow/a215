@@ -19,12 +19,12 @@ public class DrawPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Cube cube;
 	private int rectHW = 30; 
+	
 	public DrawPanel() {
 		// TODO Auto-generated constructor stub
 		
 		
 		cube = new Cube();
-	
 		this.setBackground(Color.white);
 		//this.setPreferredSize(new Dimension(400,300));
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
@@ -35,6 +35,8 @@ public class DrawPanel extends JPanel {
 		super.paintComponents(g);
 		int startX = 10;
 		int startY = 10;
+		g.setColor(this.getBackground());
+		g.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
 		// TOP
 		draw3x3(startX + 3*rectHW, startY,g,cube.getPrimary()[0]);
 		

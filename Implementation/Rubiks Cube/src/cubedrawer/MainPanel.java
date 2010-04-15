@@ -1,10 +1,12 @@
 package cubedrawer;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
 
 public class MainPanel extends JPanel implements ActionListener {
 	/**
@@ -16,11 +18,12 @@ public class MainPanel extends JPanel implements ActionListener {
 	
 	public MainPanel() {
 		// TODO Auto-generated constructor stub
-		this.setLayout(new BorderLayout(3,3));
-		//this.setBackground(Color.black);
+		this.setLayout(new BorderLayout());
+		this.setBackground(Color.black);
 		cubeDrawer = new DrawPanel();
 		this.add(cubeDrawer, BorderLayout.CENTER);
 		sidePanel = new SidePanel();
+		sidePanel.setBorder(new EtchedBorder());
 		this.add(sidePanel,BorderLayout.EAST);
 		sidePanel.addActionListener(this);
 	}
