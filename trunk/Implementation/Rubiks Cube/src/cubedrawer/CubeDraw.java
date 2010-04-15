@@ -10,6 +10,7 @@ import java.awt.LayoutManager;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import cube.CornerCubie;
 import cube.Cube;
 import cube.Face;
 
@@ -51,11 +52,26 @@ public class CubeDraw extends JPanel {
 	}
 
 	public void draw3x3(int x, int y, Graphics g, Face face){
-		
+		byte cornerCount = 0;
+		byte edgeCount = 0;
+		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
 		for(int i = 0; i < 9; i++){
-			
-			g.setColor(centerColor);
-			g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+			if(i == 4){
+				g.setColor(face.getFacelet().toColor());
+				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+			} else if(i%2 == 0){
+				// finds the right facelet .
+				CornerCubie ccubie = face.getCornerCubicle()[cornerCount].getCornerCubie();
+				
+				g.setColor(ccubie.getFacelet(faceOrder).toColor());
+				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				cornerCount++;
+				
+			} else if (i%2 != 0){
+				g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
+				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				edgeCount++;
+			}
 			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
 			
