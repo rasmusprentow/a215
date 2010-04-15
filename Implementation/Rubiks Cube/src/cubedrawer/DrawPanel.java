@@ -5,9 +5,6 @@ package cubedrawer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.LayoutManager;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import cube.CornerCubie;
@@ -16,6 +13,10 @@ import cube.EdgeCubie;
 import cube.Face;
 
 public class DrawPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Cube cube;
 	private int rectHW = 30; 
 	public DrawPanel() {
@@ -29,27 +30,28 @@ public class DrawPanel extends JPanel {
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 	}
 
+	@Override
 	public void paintComponent(Graphics g){
 		super.paintComponents(g);
 		int startX = 10;
 		int startY = 10;
 		// TOP
-		draw3x3(startX + 3*rectHW, startY,g,(Face) cube.getPrimary()[0]);
+		draw3x3(startX + 3*rectHW, startY,g,cube.getPrimary()[0]);
 		
 		// Left
-		draw3x3(startX , startY + 3*rectHW,g, (Face) cube.getTertiary()[0]);
+		draw3x3(startX , startY + 3*rectHW,g, cube.getTertiary()[0]);
 		
 		// Front
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,(Face) cube.getSecondary()[0]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,cube.getSecondary()[0]);
 		
 		// Right
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, (Face) cube.getTertiary()[1]);
+		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, cube.getTertiary()[1]);
 		
 		// Back
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, (Face) cube.getSecondary()[1]);
+		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, cube.getSecondary()[1]);
 		
 		// Down
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, (Face) cube.getPrimary()[1]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, cube.getPrimary()[1]);
 		
 	}
 
