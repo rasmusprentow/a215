@@ -24,7 +24,8 @@ public class CubeDraw extends JPanel {
 		cube = new Cube();
 	
 		this.setBackground(Color.white);
-		this.setPreferredSize(new Dimension(400,300));
+		//this.setPreferredSize(new Dimension(400,300));
+		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 	}
 
 	public void paintComponent(Graphics g){
