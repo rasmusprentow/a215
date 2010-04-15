@@ -66,37 +66,37 @@ public class CubeDraw extends JPanel {
 				// finds the right facelet .
 				CornerCubie ccubie = face.getCornerCubicle()[newOrder[cornerCount]].getCornerCubie();
 				if(faceOrder == 0){
-					if(ccubie.getDirection() == 0){
+					if(ccubie.getPrimaryDirection() == 0){
 					
 						g.setColor(ccubie.getFacelet(0).toColor());
 					}
-					else if(ccubie.getDirection() == 1){
+					else if(ccubie.getPrimaryDirection() == 1){
 						g.setColor(ccubie.getFacelet(2).toColor());
 					}
-					else if(ccubie.getDirection() == 2){
+					else if(ccubie.getPrimaryDirection() == 2){
 						g.setColor(ccubie.getFacelet(1).toColor());
 					}
 				} else 	if(faceOrder == 1){
-					if(ccubie.getDirection() == 0){
+					if(ccubie.getPrimaryDirection() == 0){
 						g.setColor(ccubie.getFacelet(1).toColor());
 						System.out.println("dir 0");
 					}
-					else if(ccubie.getDirection() == 1){
+					else if(ccubie.getPrimaryDirection() == 1){
 						g.setColor(ccubie.getFacelet(0).toColor());
 						System.out.println("dir 1");
 					}
-					else if(ccubie.getDirection() == 2){
+					else if(ccubie.getPrimaryDirection() == 2){
 						g.setColor(ccubie.getFacelet(2).toColor());
 						System.out.println("dir 2");
 					}
 				} else 	if(faceOrder == 2){
-					if(ccubie.getDirection() == 0){
+					if(ccubie.getPrimaryDirection() == 0){
 						g.setColor(ccubie.getTertiaryFacelet().toColor());
 					}
-					else if(ccubie.getDirection() == 1){
+					else if(ccubie.getPrimaryDirection() == 1){
 						g.setColor(ccubie.getFacelet(1).toColor());
 					}
-					else if(ccubie.getDirection() == 2){
+					else if(ccubie.getPrimaryDirection() == 2){
 						g.setColor(ccubie.getFacelet(0).toColor());
 					}
 				}

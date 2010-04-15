@@ -5,14 +5,23 @@ public abstract class Cubie {
 	protected Facelet primaryFacelet;
 	protected Facelet secondaryFacelet;
 	protected Facelet tertiaryFacelet;
-	protected byte direction;
+	protected byte primaryOrientation;
+	protected byte secondaryOrientation;
 
-	protected void setDirection(byte direction) {
+	protected void setPrimaryOrientation(byte direction) {
+
+	}
+	
+	protected void setSecondaryOrientation(byte direction) {
 
 	}
 
-	public byte getDirection() {
-		return direction;
+	public byte getPrimaryDirection() {
+		return primaryOrientation;
+	}
+	
+	public byte getSecondaryDirection() {
+		return secondaryOrientation;
 	}
 
 	/**

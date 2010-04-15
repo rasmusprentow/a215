@@ -13,14 +13,25 @@ public class CornerCubie extends Cubie {
 		/**
 		 * Sets the direction. Will throw an exception if the new direction is not 0 , 1 or 2. 
 		 */
-		public void setDirection(byte direction){
-			if (direction > 2){
+		public void setPrimaryOrientation(byte o){
+			if (o > 2){
 				throw new IllegalArgumentException ("keep it between 0-2");
-			} else if (direction < 0){
+			} else if (o < 0){
 				throw new IllegalArgumentException ("keep it between 0-2"); 
 				
 			} else  {
-				this.direction = direction;
+				this.primaryOrientation = o;
+			}
+		}
+		
+		public void setSecondaryOrientation(byte o){
+			if (o > 2){
+				throw new IllegalArgumentException ("keep it between 0-2");
+			} else if (o < 0){
+				throw new IllegalArgumentException ("keep it between 0-2"); 
+				
+			} else  {
+				this.secondaryOrientation = o;
 			}
 		}
 		

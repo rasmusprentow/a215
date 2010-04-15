@@ -25,18 +25,18 @@ public class SecondaryFace extends Face {
 	public void cwTwist(){
 		super.cwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getDirection() == 0){
-				cornerArray[i].getCornerCubie().setDirection((byte)2);
+			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
 
-			}else if((int)cornerArray[i].getCornerCubie().getDirection() == 2){
-				cornerArray[i].getCornerCubie().setDirection((byte)0);
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 2){
+				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
-			if((int)edgeArray[i].getEdgeCubie().getDirection() == 0){
-				edgeArray[i].getEdgeCubie().setDirection((byte)1);
+			if((int)edgeArray[i].getEdgeCubie().getPrimaryDirection() == 0){
+				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)1);
 
 			}else{
-				edgeArray[i].getEdgeCubie().setDirection((byte)0);
+				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)0);
 			}
 		}
 	}
@@ -46,18 +46,18 @@ public class SecondaryFace extends Face {
 	public void ccwTwist(){
 		super.ccwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getDirection() == 0){
-				cornerArray[i].getCornerCubie().setDirection((byte)2);
+			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
 
-			}else if((int)cornerArray[i].getCornerCubie().getDirection() == 2){
-				cornerArray[i].getCornerCubie().setDirection((byte)0);
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 2){
+				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
-			if((int)edgeArray[i].getEdgeCubie().getDirection() == 0){
-				edgeArray[i].getEdgeCubie().setDirection((byte)1);
+			if((int)edgeArray[i].getEdgeCubie().getPrimaryDirection() == 0){
+				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)1);
 
 			}else{
-				edgeArray[i].getEdgeCubie().setDirection((byte)0);
+				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)0);
 			}
 
 
