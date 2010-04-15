@@ -25,14 +25,14 @@ public class SecondaryFace extends Face {
 	public void cwTwist(){
 		super.cwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 2){
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
-			if((int)edgeArray[i].getEdgeCubie().getPrimaryDirection() == 0){
+			if((int)edgeArray[i].getEdgeCubie().getPrimaryOrientation() == 0){
 				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)1);
 
 			}else{
@@ -46,14 +46,14 @@ public class SecondaryFace extends Face {
 	public void ccwTwist(){
 		super.ccwTwist();
 		for(int i = 0; i < 4; i++){
-			if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 0){
+			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryDirection() == 2){
+			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 
-			if((int)edgeArray[i].getEdgeCubie().getPrimaryDirection() == 0){
+			if((int)edgeArray[i].getEdgeCubie().getPrimaryOrientation() == 0){
 				edgeArray[i].getEdgeCubie().setPrimaryOrientation((byte)1);
 
 			}else{

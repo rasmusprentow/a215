@@ -16,11 +16,11 @@ public abstract class Cubie {
 
 	}
 
-	public byte getPrimaryDirection() {
+	public byte getPrimaryOrientation() {
 		return primaryOrientation;
 	}
 	
-	public byte getSecondaryDirection() {
+	public byte getSecondaryOrientation() {
 		return secondaryOrientation;
 	}
 
