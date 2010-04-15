@@ -2,7 +2,12 @@ package cube;
 
 public class EdgeCubie extends Cubie {
 
-	
+	/**
+	 * Throws an exception if not one of the facelets is null.
+	 * @param primaryFacelet 
+	 * @param secondaryFacelet
+	 * @param tertiaryFacelet
+	 */
 	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){ 
 		byte nullCount = 0; 
 		if(primaryFacelet == null) {
