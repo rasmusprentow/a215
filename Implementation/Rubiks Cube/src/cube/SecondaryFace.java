@@ -46,6 +46,7 @@ public class SecondaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
 			}
 			
+			/*
 			//if the primary orientation is 0 it will become 2 and vice versa 
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)2);
@@ -53,6 +54,7 @@ public class SecondaryFace extends Face {
 			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
+			*/
 
 			//Edge orientation
 			//Swapping primary orientation
@@ -91,7 +93,7 @@ public class SecondaryFace extends Face {
 				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
 			}
 			
-			//if the primary orientation is 0 it will become 2 and vice versa 
+			//if the secondary orientation is 0 it will become 2 and vice versa 
 			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)2);
 
@@ -99,13 +101,15 @@ public class SecondaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
 			}
 			
-			//if the primary orientation is 0 it will become 2 and vice versa 
+			/*
+			//if the tertiary orientation is 0 it will become 2 and vice versa 
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)2);
 
 			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
+			*/
 
 			//Edge orientation
 			//Swapping primary orientation

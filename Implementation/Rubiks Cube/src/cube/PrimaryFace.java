@@ -48,7 +48,7 @@ public class PrimaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
 			} 
 			
-			
+			/*
 			//Here we change the tertiary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
@@ -58,6 +58,7 @@ public class PrimaryFace extends Face {
 			else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 			}
+			*/
 			
 		}
 	}
@@ -92,7 +93,7 @@ public class PrimaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
 			} 
 			
-			
+			/*
 			//Here we change the tertiary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
@@ -102,6 +103,7 @@ public class PrimaryFace extends Face {
 			else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 2){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 			}
+			*/
 		}
 	}
 }

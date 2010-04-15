@@ -40,12 +40,14 @@ public class TertiaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
 			}
 			
+			/*
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 
 			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
+			*/
 
 			//The orientation of the edges are not changed.
 		}
@@ -75,12 +77,14 @@ public class TertiaryFace extends Face {
 				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
 			}
 			
+			/*
 			if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 0){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)1);
 
 			}else if((int)cornerArray[i].getCornerCubie().getTertiaryOrientation() == 1){
 				cornerArray[i].getCornerCubie().setTertiaryOrientation((byte)0);
 			}
+			*/
 
 			//The orientation of the edges are not changed.
 		}
