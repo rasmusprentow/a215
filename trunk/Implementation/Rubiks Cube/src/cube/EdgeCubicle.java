@@ -1,18 +1,19 @@
 package cube;
 
 public class EdgeCubicle extends Cubicle {
-	private EdgeCubie edgeCubie;
+	private EdgeCubie cubie;
 	
 	public EdgeCubicle(){
 	
 	}
 	public EdgeCubicle (EdgeCubie edgeCubie){
-		setEdgeCubie(edgeCubie);
+		setCubie(edgeCubie);
 	}
-	public void setEdgeCubie(EdgeCubie edgeCubie) {
-		this.edgeCubie = edgeCubie;
+	public void setCubie(EdgeCubie edgeCubie) {
+		this.cubie = edgeCubie;
 	}
-	public EdgeCubie getEdgeCubie() {
-		return edgeCubie;
+	public EdgeCubie getCubie() {
+		return cubie;
 	}
+	
 }

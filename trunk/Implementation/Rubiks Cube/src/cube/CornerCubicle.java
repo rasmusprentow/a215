@@ -2,18 +2,18 @@ package cube;
 
 public class CornerCubicle extends Cubicle {
 	
-	private CornerCubie cornerCubie;
+	private CornerCubie cubie;
 	
 	public CornerCubicle(){
 	
 	}
 	public CornerCubicle (CornerCubie cornerCubie){
-		setCornerCubie(cornerCubie);
+		setCubie(cornerCubie);
 	}
-	public void setCornerCubie(CornerCubie cornerCubie) {
-		this.cornerCubie = cornerCubie;
+	public void setCubie(CornerCubie cornerCubie) {
+		this.cubie = cornerCubie;
 	}
-	public CornerCubie getCornerCubie() {
-		return cornerCubie;
+	public CornerCubie getCubie() {
+		return cubie;
 	}
 }

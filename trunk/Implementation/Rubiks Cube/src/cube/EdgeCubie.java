@@ -8,8 +8,7 @@ public class EdgeCubie extends Cubie {
 	 * @param secondaryFacelet
 	 * @param tertiaryFacelet
 	 */
-	public int name;
-	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet, int name){ 
+	public EdgeCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){ 
 		byte nullCount = 0; 
 		if(primaryFacelet == null) {
 			nullCount++;
@@ -27,7 +26,6 @@ public class EdgeCubie extends Cubie {
 		} else {
 			throw new IllegalArgumentException ("one of the Facelets shall be null");
 		}
-		this.name = name;
 	}
 	
 	

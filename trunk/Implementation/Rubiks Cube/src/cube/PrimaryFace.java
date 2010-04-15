@@ -29,23 +29,23 @@ public class PrimaryFace extends Face {
 		for(int i = 0; i < 4; i++){
 			//Here we change the primary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
-			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
+			if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 1){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)2);
 			} 
 			
-			else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
+			else if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 2){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)1);
 			} 
 			
 			
 			//Here we change the secondary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
-			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)2);
+			if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)2);
 			} 
 			
-			else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 2){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			else if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 2){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)1);
 			} 
 			
 			/*
@@ -74,23 +74,23 @@ public class PrimaryFace extends Face {
 		for(int i = 0; i < 4; i++){
 			//Here we change the primary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
-			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)2);
+			if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 1){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)2);
 			} 
 			
-			else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 2){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
+			else if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 2){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)1);
 			} 
 			
 			
 			//Here we change the secondary orientation.
 			//If it is 1 before the twist it will become 2 and vice versa
-			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)2);
+			if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)2);
 			} 
 			
-			else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 2){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			else if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 2){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)1);
 			} 
 			
 			/*
