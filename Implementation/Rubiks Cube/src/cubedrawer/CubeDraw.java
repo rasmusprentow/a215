@@ -20,7 +20,7 @@ public class CubeDraw extends JPanel {
 		
 		cube = new Cube();
 		
-		cube.getPrimary()[0].
+	
 		this.setPreferredSize(new Dimension(400,300));
 	}
 
@@ -55,22 +55,23 @@ public class CubeDraw extends JPanel {
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		 JFrame window = new JFrame("Graph");
-		 CubeDraw content = new CubeDraw();
-	     window.setContentPane(content);
-	      window.pack();  // Set size of window to preferred size of its contents.
-	      window.setResizable(true);  // User can't change the window's size.
-	      window.setLocation(50,0);
-	      window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-	      window.setVisible(true);
-		
-		
-	}
+	
 
+	
+	enum MoveButtons { 
+		R, RP, F, FP, T, TP, D, DP, L, LP, B, BP;
+		
+		public String toString(){
+			String old = super.toString();
+			try {
+				if(old.charAt(1) == 'P'){
+					return old.charAt(0) + "'";
+				}
+			} catch (IndexOutOfBoundsException e){
+				return old;
+			}
+			return old;
+			
+		}
+	}
 }
