@@ -17,7 +17,7 @@ public class SidePanel extends JPanel {
 	private TreeMap<MoveButtons, JButton> twistButtons;
 
 	public SidePanel() {
-		this.setLayout(new GridLayout(0,2));
+		this.setLayout(new GridLayout(0,3));
 		twistButtons = new TreeMap<MoveButtons, JButton>();
 		for(MoveButtons key : MoveButtons.values()){
 			twistButtons.put(key, new JButton(key.toString()));
