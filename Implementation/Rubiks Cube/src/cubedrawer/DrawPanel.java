@@ -23,6 +23,8 @@ public class DrawPanel extends JPanel {
 	private int rectHW = 30; 
 	private Console console;
 	private boolean moving;
+	private boolean specialMove;
+	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	
 	public DrawPanel(Console console) {
 		this.console = console;
@@ -113,6 +115,10 @@ public class DrawPanel extends JPanel {
 
 
 	public void buttonHandler(MoveButtons t){
+		if(!specialMove && moves.contains(t)){
+			startMoving();
+			console.addText(t + " ");
+		}
 		switch(t){
 		case U:
 			cube.getPrimary()[0].cwTwist();
@@ -181,30 +187,59 @@ public class DrawPanel extends JPanel {
 			scramble();
 			break;
 		case YOU_KNOW:
-			twistSequence(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
+			youKnowMove();
 			break;
 		default:
-			System.out.println("Something is wrong");
+			console.addTextln("Something is wrong");
 
 		}	
+	
+
 	}
 
+	private void startMoving(){
+		if(moving == false){
+			moving = true;
+			console.addText("Applying Moves: ");
+		} 
+	}
+	
+	private void stopMoving(){
+		if(moving){
+
+		moving = false;
+		console.addTextln("");
+		}
+	}
+
+	public void youKnowMove(){
+		
+		stopMoving();
+		moving = true;
+		console.addText("Pons asinurum:");
+		twistSequence(U2, D2,F2, B2,  L2, R2);
+		console.addTextln("");
+		//moving = false;
+		moving = false;
+	}
 
 	private void scramble() {
+		stopMoving();
+		specialMove = true;
 		// TODO Auto-generated method stub
 		String moveSequence = "";
 		console.addText("Scrambling:");
-		EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 		for(int i = 0; i < 10; i++){
 			int moveNum = (int)(Math.random()*18);
 			twistSequence((MoveButtons)moves.toArray()[moveNum]);
 			moveSequence = moveSequence + " " + ((MoveButtons)moves.toArray()[moveNum]).toString();
 		}
 		console.addTextln(moveSequence);
-
+		specialMove = false;
 	}
 
 	public void twistSequence(MoveButtons... t){
+		//stopMoving();
 		for(MoveButtons key: t){
 			buttonHandler(key);
 		}
@@ -212,6 +247,8 @@ public class DrawPanel extends JPanel {
 
 
 	public void reset(){
+		stopMoving();
+		console.addTextln("Pick up screwdriver, disassemble cube, assemble cube correctly \n");
 		cube = new Cube();
 		repaint();
 	}
