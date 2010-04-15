@@ -77,15 +77,15 @@ public class CubeDraw extends JPanel {
 						g.setColor(ccubie.getFacelet(1).toColor());
 					}
 				} else 	if(faceOrder == 1){
-					if(ccubie.getPrimaryOrientation() == 0){
+					if(ccubie.getSecondaryOrientation() == 0){
 						g.setColor(ccubie.getFacelet(1).toColor());
 						System.out.println("dir 0");
 					}
-					else if(ccubie.getPrimaryOrientation() == 1){
+					else if(ccubie.getSecondaryOrientation() == 1){
 						g.setColor(ccubie.getFacelet(0).toColor());
 						System.out.println("dir 1");
 					}
-					else if(ccubie.getPrimaryOrientation() == 2){
+					else if(ccubie.getSecondaryOrientation() == 2){
 						g.setColor(ccubie.getFacelet(2).toColor());
 						System.out.println("dir 2");
 					}
