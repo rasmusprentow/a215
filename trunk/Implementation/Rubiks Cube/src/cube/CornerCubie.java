@@ -1,12 +1,13 @@
 package cube;
 
 public class CornerCubie extends Cubie {
-	
+		public int name;
 		
-		public CornerCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet){
+		public CornerCubie (Facelet primaryFacelet, Facelet secondaryFacelet, Facelet tertiaryFacelet, int i){
 			this.primaryFacelet = primaryFacelet;
 			this.secondaryFacelet = secondaryFacelet;
 			this.tertiaryFacelet = tertiaryFacelet;
+			this.name = i;
 		}
 		
 		public void setDirection(byte direction){
