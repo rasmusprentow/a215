@@ -52,9 +52,11 @@ public class CubeDraw extends JPanel {
 		
 	}
 
+	
 	public void draw3x3(int x, int y, Graphics g, Face face){
 		byte cornerCount = 0;
 		byte edgeCount = 0;
+		int[] newOrder = {0 , 1, 3 ,2 };
 		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
 		for(int i = 0; i < 9; i++){
 			if(i == 4){
@@ -62,7 +64,7 @@ public class CubeDraw extends JPanel {
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			} else if(i%2 == 0){
 				// finds the right facelet .
-				CornerCubie ccubie = face.getCornerCubicle()[cornerCount].getCornerCubie();
+				CornerCubie ccubie = face.getCornerCubicle()[newOrder[cornerCount]].getCornerCubie();
 				if(faceOrder == 0){
 					if(ccubie.getDirection() == 0){
 					
@@ -108,6 +110,7 @@ public class CubeDraw extends JPanel {
 				//g.setColor(face.getEdgeCubicle()[edgeCount].getEdgeCubie().getFacelet(faceOrder).toColor());
 				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				edgeCount++;
+				//Remember
 			}
 			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
