@@ -1,7 +1,7 @@
 package cubedrawer;
 
 enum MoveButtons { 
-	 U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2,SCREWDRIVER, SCRAMBLE;
+	 U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2,SCREWDRIVER, SCRAMBLE, YOU_KNOW;
 	
 	@Override
 	public String toString(){

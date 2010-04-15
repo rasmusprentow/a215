@@ -275,6 +275,9 @@ public class DrawPanel extends JPanel {
 		case SCRAMBLE:
 			scramble();
 			break;
+		case YOU_KNOW:
+			twistSequence(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
+			break;
 		default:
 			System.out.println("Something is wrong");
 				
@@ -287,7 +290,6 @@ public class DrawPanel extends JPanel {
 		EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 		for(int i = 0; i < 50; i++){
 			int moveNum = (int)(Math.random()*18);
-			System.out.println(moveNum);
 			twistSequence((MoveButtons)moves.toArray()[moveNum]);
 		}
 		
