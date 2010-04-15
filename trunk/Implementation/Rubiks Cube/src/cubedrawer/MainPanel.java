@@ -64,7 +64,7 @@ public class MainPanel extends JPanel implements ActionListener {
 			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.RP)){
 				cubeDrawer.getCube().getTertiary()[1].ccwTwist();
 			}
-			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.RESET)){
+			if(e.getSource() ==  sidePanel.getTwistButtons().get(MoveButtons.SCREWDRIVER)){
 				cubeDrawer.reset();
 			}
 			
