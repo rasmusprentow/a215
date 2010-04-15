@@ -29,20 +29,31 @@ public class EdgeCubie extends Cubie {
 	}
 	
 	
-	public void setDirection(byte direction){
-		if (direction > 1){
+	public void setPrimaryOrientation(byte o){
+		if (o > 1){
 			throw new IllegalArgumentException ("keep it between 0-2");
-		} else if (direction < 0){
+		} else if (o < 0){
 			throw new IllegalArgumentException ("keep it between 0-2"); 
 			
 		} else  {
-			this.direction = direction;
+			this.primaryOrientation = o;
 		}
 	}
+	
+	public void setSecondaryOrientation(byte o){
+		if (o > 1){
+			throw new IllegalArgumentException ("keep it between 0-2");
+		} else if (o < 0){
+			throw new IllegalArgumentException ("keep it between 0-2"); 
+			
+		} else  {
+			this.secondaryOrientation = o;
+		}
+	}
+	
 	public Facelet getPrimaryFacelet() {
 		return primaryFacelet;
 	}
-
 
 	public Facelet getSecondaryFacelet() {
 		return secondaryFacelet;
