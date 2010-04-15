@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import cube.Cube;
+import cube.Face;
 
 public class CubeDraw extends JPanel {
 	private Cube cube;
@@ -30,28 +31,29 @@ public class CubeDraw extends JPanel {
 		int startX = 10;
 		int startY = 10;
 		// TOP
-		draw3x3(startX + 3*rectHW, startY,g, 	cube.getPrimary()[0].getFacelet().toColor());
+		draw3x3(startX + 3*rectHW, startY,g,(Face) cube.getPrimary()[0]);
 		
 		// Left
-		draw3x3(startX , startY + 3*rectHW,g, 	cube.getTertiary()[0].getFacelet().toColor());
+		draw3x3(startX , startY + 3*rectHW,g, (Face) cube.getTertiary()[0]);
 		
 		// Front
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,	cube.getSecondary()[0].getFacelet().toColor());
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,(Face) cube.getSecondary()[0]);
 		
 		// Right
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, cube.getTertiary()[1].getFacelet().toColor());
+		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, (Face) cube.getTertiary()[1]);
 		
 		// Back
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, cube.getSecondary()[1].getFacelet().toColor());
+		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, (Face) cube.getSecondary()[1]);
 		
 		// Down
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, cube.getPrimary()[1].getFacelet().toColor());
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, (Face) cube.getPrimary()[1]);
 		
 	}
 
-	public void draw3x3(int x, int y, Graphics g, Color centerColor){
-		for(int i = 0; i < 9; i++){
+	public void draw3x3(int x, int y, Graphics g, Face face){
 		
+		for(int i = 0; i < 9; i++){
+			
 			g.setColor(centerColor);
 			g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			g.setColor(Color.black);
