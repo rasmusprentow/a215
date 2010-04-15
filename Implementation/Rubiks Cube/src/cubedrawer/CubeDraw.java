@@ -2,6 +2,7 @@ package cubedrawer;
 
 
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
@@ -20,7 +21,7 @@ public class CubeDraw extends JPanel {
 		
 		cube = new Cube();
 		
-	
+		this.setBackground(Color.white);
 		this.setPreferredSize(new Dimension(400,300));
 	}
 
