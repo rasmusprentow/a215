@@ -40,7 +40,9 @@ public class DrawPanel extends JPanel {
 		//this.setPreferredSize(new Dimension(400,300));
 		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
-		
+		timer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(); repaint(); 	}  });
+		 String filename = "Khachaturian-Sabre_Dance.mp3";
+	     mp3 = new MenuPanel(filename);
 	}
 
 	@Override
@@ -193,11 +195,21 @@ public class DrawPanel extends JPanel {
 			reset();
 			break;
 		case SCRAMBLE:
-			doScramble();
+			
+				scramble();
+			
 			scrambles = 0;
 			break;
 		case YOU_KNOW:
-			scramble();
+			if(timer.isRunning()){
+				System.out.println("aha");
+				mp3.close();
+				timer.stop();
+
+			} else {
+				mp3.play();
+				timer.start();
+			}
 			break;
 		default:
 			console.addTextln("Something is wrong");
@@ -233,15 +245,8 @@ public class DrawPanel extends JPanel {
 		moving = false;
 	}
 
-	private void scramble() {
-		 String filename = "Khachaturian-Sabre_Dance.mp3";
-	     mp3 = new MenuPanel(filename);
-	      mp3.play();
-	      
-	  	timer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	doScramble(); repaint(); 	}  });
-	      timer.start();
-	}
-	private void doScramble(){
+	
+	private void scramble(){
 		stopMoving();
 		specialMove = true;
 		// TODO Auto-generated method stub
@@ -254,12 +259,13 @@ public class DrawPanel extends JPanel {
 		}
 		console.addTextln(moveSequence);
 		specialMove = false;
+		/*
 		if(scrambles > 500){
 			timer.stop();
 			mp3.close();
 		}
 		scrambles++;
-		
+		*/
 	}
 
 	public void twistSequence(MoveButtons... t){
