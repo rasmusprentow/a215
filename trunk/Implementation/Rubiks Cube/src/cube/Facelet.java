@@ -52,7 +52,7 @@ public enum Facelet {
 			return Color.blue;
 			
 		case TERTIARY_0:
-			return new Color(240,140,12);
+			return new Color(255,140,12);
 			
 		case TERTIARY_1:
 			return Color.red;
