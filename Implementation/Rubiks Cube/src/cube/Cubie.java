@@ -8,13 +8,9 @@ public abstract class Cubie {
 	protected byte primaryOrientation;
 	protected byte secondaryOrientation;
 
-	protected void setPrimaryOrientation(byte direction) {
-
-	}
+	protected abstract void setPrimaryOrientation(byte direction);
 	
-	protected void setSecondaryOrientation(byte direction) {
-
-	}
+	protected abstract void setSecondaryOrientation(byte direction);
 
 	public byte getPrimaryOrientation() {
 		return primaryOrientation;
