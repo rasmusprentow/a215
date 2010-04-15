@@ -22,6 +22,7 @@ public class DrawPanel extends JPanel {
 	private Cube cube;
 	private int rectHW = 30; 
 	private Console console;
+	private boolean moving;
 	
 	public DrawPanel(Console console) {
 		this.console = console;
@@ -199,7 +200,7 @@ public class DrawPanel extends JPanel {
 			twistSequence((MoveButtons)moves.toArray()[moveNum]);
 			moveSequence = moveSequence + " " + ((MoveButtons)moves.toArray()[moveNum]).toString();
 		}
-		console.addText(moveSequence);
+		console.addTextln(moveSequence);
 
 	}
 
