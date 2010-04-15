@@ -24,12 +24,12 @@ import java.io.FileInputStream;
 import javazoom.jl.player.Player;
 
 
-public class MP3 {
+public class MenuPanel {
     private String filename;
     private Player player; 
 
     // constructor that takes the name of an MP3 file
-    public MP3(String filename) {
+    public MenuPanel(String filename) {
         this.filename = filename;
     }
 

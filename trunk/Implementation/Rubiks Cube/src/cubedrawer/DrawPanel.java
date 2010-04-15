@@ -31,7 +31,7 @@ public class DrawPanel extends JPanel {
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer timer;
 	private int scrambles;
-	private MP3 mp3;
+	private MenuPanel mp3;
 	
 	public DrawPanel(Console console) {
 		this.console = console;
@@ -193,10 +193,11 @@ public class DrawPanel extends JPanel {
 			reset();
 			break;
 		case SCRAMBLE:
-			scramble();
+			doScramble();
+			scrambles = 0;
 			break;
 		case YOU_KNOW:
-			youKnowMove();
+			scramble();
 			break;
 		default:
 			console.addTextln("Something is wrong");
@@ -234,7 +235,7 @@ public class DrawPanel extends JPanel {
 
 	private void scramble() {
 		 String filename = "Khachaturian-Sabre_Dance.mp3";
-	     mp3 = new MP3(filename);
+	     mp3 = new MenuPanel(filename);
 	      mp3.play();
 	      
 	  	timer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	doScramble(); repaint(); 	}  });
@@ -253,7 +254,7 @@ public class DrawPanel extends JPanel {
 		}
 		console.addTextln(moveSequence);
 		specialMove = false;
-		if(scrambles > 200){
+		if(scrambles > 500){
 			timer.stop();
 			mp3.close();
 		}
