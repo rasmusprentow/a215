@@ -3,7 +3,6 @@ package cubedrawer;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.util.Map;
 import java.util.TreeMap;
 
 import javax.swing.JButton;
@@ -11,6 +10,10 @@ import javax.swing.JPanel;
 
 
 public class SidePanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TreeMap<MoveButtons, JButton> twistButtons;
 
 	public SidePanel() {

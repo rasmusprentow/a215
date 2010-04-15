@@ -3,6 +3,7 @@ package cubedrawer;
 enum MoveButtons { 
 	 U, UP, D, DP, F, FP,  B, BP, L, LP, R, RP ,RESET;
 	
+	@Override
 	public String toString(){
 		String old = super.toString();
 		try {
