@@ -21,16 +21,16 @@ public enum Facelet {
 			return "yellow";
 			
 		case SECONDARY_0:
-			return "blue";
+			return "green";
 		
 		case SECONDARY_1:
-			return "green";
+			return "blue";
 			
 		case TERTIARY_0:
-			return "red";
+			return "orange";
 			
 		case TERTIARY_1:
-			return "orange";
+			return "red";
 		}
 		return null;
 	}
@@ -46,16 +46,16 @@ public enum Facelet {
 			return Color.yellow;
 			
 		case SECONDARY_0:
-			return Color.blue;
+			return Color.green;
 		
 		case SECONDARY_1:
-			return Color.green;
+			return Color.blue;
 			
 		case TERTIARY_0:
-			return Color.red;
+			return Color.orange;
 			
 		case TERTIARY_1:
-			return Color.orange;
+			return Color.red;
 		}
 		return null;
 	}
