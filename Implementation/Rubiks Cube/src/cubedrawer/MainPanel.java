@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-import cubedrawer.DrawPanel.MoveButtons;
-
 public class MainPanel extends JPanel implements ActionListener {
 	SidePanel sidePanel;
 	DrawPanel cubeDrawer;
