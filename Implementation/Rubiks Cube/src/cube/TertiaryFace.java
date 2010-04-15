@@ -26,18 +26,18 @@ public class TertiaryFace extends Face {
 		for(int i = 0; i < 4; i++){
 			//Corner orientation
 			//Swapping 0 and 1
-			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
+			if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 0){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
+			}else if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 1){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)0);
 			}
 			
-			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 0){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 0){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
+			}else if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)0);
 			}
 			
 			/*
@@ -63,18 +63,18 @@ public class TertiaryFace extends Face {
 		for(int i = 0; i < 4; i++){
 			//Corner orientation
 			//Swapping 0 and 1
-			if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 0){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)1);
+			if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 0){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getPrimaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setPrimaryOrientation((byte)0);
+			}else if((int)cornerArray[i].getCubie().getPrimaryOrientation() == 1){
+				cornerArray[i].getCubie().setPrimaryOrientation((byte)0);
 			}
 			
-			if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 0){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)1);
+			if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 0){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)1);
 
-			}else if((int)cornerArray[i].getCornerCubie().getSecondaryOrientation() == 1){
-				cornerArray[i].getCornerCubie().setSecondaryOrientation((byte)0);
+			}else if((int)cornerArray[i].getCubie().getSecondaryOrientation() == 1){
+				cornerArray[i].getCubie().setSecondaryOrientation((byte)0);
 			}
 			
 			/*

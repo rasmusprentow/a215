@@ -66,7 +66,7 @@ public class DrawPanel extends JPanel {
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			} else if(i%2 == 0){
 				// finds the right facelet .
-				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCornerCubie();
+				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
 				if(faceOrder == 0){
 					if(ccubie.getPrimaryOrientation() == 0){
 						g.setColor(ccubie.getFacelet(0).toColor());
@@ -150,7 +150,7 @@ public class DrawPanel extends JPanel {
 				
 			} else if (i%2 != 0){
 				
-				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getEdgeCubie();
+				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getCubie();
 
 
 				if(faceOrder == 0){

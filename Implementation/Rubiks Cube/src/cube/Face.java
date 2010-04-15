@@ -70,20 +70,20 @@ public abstract class Face {
 	 */
 	public void cwTwist() {
 		CornerCubie tempCorner;
-		tempCorner = cornerArray[0].getCornerCubie();
+		tempCorner = cornerArray[0].getCubie();
 			
-		cornerArray[0].setCornerCubie(cornerArray[3].getCornerCubie());
-		cornerArray[3].setCornerCubie(cornerArray[2].getCornerCubie());
-		cornerArray[2].setCornerCubie(cornerArray[1].getCornerCubie());
-		cornerArray[1].setCornerCubie(tempCorner);
+		cornerArray[0].setCubie(cornerArray[3].getCubie());
+		cornerArray[3].setCubie(cornerArray[2].getCubie());
+		cornerArray[2].setCubie(cornerArray[1].getCubie());
+		cornerArray[1].setCubie(tempCorner);
 		
 		EdgeCubie tempEdge;
-		tempEdge = edgeArray[0].getEdgeCubie();
+		tempEdge = edgeArray[0].getCubie();
 			
-		edgeArray[0].setEdgeCubie(edgeArray[3].getEdgeCubie());
-		edgeArray[3].setEdgeCubie(edgeArray[2].getEdgeCubie());
-		edgeArray[2].setEdgeCubie(edgeArray[1].getEdgeCubie());
-		edgeArray[1].setEdgeCubie(tempEdge);
+		edgeArray[0].setCubie(edgeArray[3].getCubie());
+		edgeArray[3].setCubie(edgeArray[2].getCubie());
+		edgeArray[2].setCubie(edgeArray[1].getCubie());
+		edgeArray[1].setCubie(tempEdge);
 	}
 	
 	/**
@@ -91,20 +91,20 @@ public abstract class Face {
 	 */
 	public void ccwTwist() {
 		CornerCubie tempCorner;
-		tempCorner = cornerArray[0].getCornerCubie();
+		tempCorner = cornerArray[0].getCubie();
 			
-		cornerArray[0].setCornerCubie(cornerArray[1].getCornerCubie());
-		cornerArray[1].setCornerCubie(cornerArray[2].getCornerCubie());
-		cornerArray[2].setCornerCubie(cornerArray[3].getCornerCubie());
-		cornerArray[3].setCornerCubie(tempCorner);
+		cornerArray[0].setCubie(cornerArray[1].getCubie());
+		cornerArray[1].setCubie(cornerArray[2].getCubie());
+		cornerArray[2].setCubie(cornerArray[3].getCubie());
+		cornerArray[3].setCubie(tempCorner);
 		
 		EdgeCubie tempEdge;
-		tempEdge = edgeArray[0].getEdgeCubie();
+		tempEdge = edgeArray[0].getCubie();
 			
-		edgeArray[0].setEdgeCubie(edgeArray[1].getEdgeCubie());
-		edgeArray[1].setEdgeCubie(edgeArray[2].getEdgeCubie());
-		edgeArray[2].setEdgeCubie(edgeArray[3].getEdgeCubie());
-		edgeArray[3].setEdgeCubie(tempEdge);
+		edgeArray[0].setCubie(edgeArray[1].getCubie());
+		edgeArray[1].setCubie(edgeArray[2].getCubie());
+		edgeArray[2].setCubie(edgeArray[3].getCubie());
+		edgeArray[3].setCubie(tempEdge);
 	}
 	
 	/**
