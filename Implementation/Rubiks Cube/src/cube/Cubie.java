@@ -5,8 +5,8 @@ public abstract class Cubie {
 	protected Facelet primaryFacelet;
 	protected Facelet secondaryFacelet;
 	protected Facelet tertiaryFacelet;
-	protected byte primaryOrientation;
-	protected byte secondaryOrientation = 1;
+	protected byte primaryOrientation = 0; // By default all primary facelets are in the right position
+	protected byte secondaryOrientation = 1; // And all secondary facelets are on secondary faces.
 
 	protected abstract void setPrimaryOrientation(byte direction);
 	
