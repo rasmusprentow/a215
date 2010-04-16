@@ -21,11 +21,15 @@ public class Console extends JPanel {
 		this.scrollPane = new JScrollPane(this.console);
 		this.add(this.scrollPane);
 		scrollPane.setWheelScrollingEnabled(true);
-
 	}
 
 	public void addTextln(String s){
 		console.append(s + "\n");
+		console.setCaretPosition(console.getText().length() - 1);
+	}
+	
+	public void addln(){
+		console.append("\n");
 		console.setCaretPosition(console.getText().length() - 1);
 	}
 
