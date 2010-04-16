@@ -72,6 +72,8 @@ public class DrawPanel extends JPanel {
 		int[] newEdgeOrder = {0 , 3, 1 ,2 };
 		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
 		for(int i = 0; i < 9; i++){
+			g.setColor(Color.black);
+			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
 			if(i == 4){
 				g.setColor(face.getFacelet().toColor());
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
@@ -87,9 +89,11 @@ public class DrawPanel extends JPanel {
 						g.setColor(ccubie.getFacelet(2).toColor());
 					}
 				}
+				
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				g.setColor(Color.black);
 				cornerCount++;
+				
 			} else if (i%2 != 0){
 				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getCubie();
 				if(faceOrder == 0){
@@ -115,10 +119,11 @@ public class DrawPanel extends JPanel {
 						g.setColor(ecubie.getFacelet(0).toColor());
 					}
 				}
-				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
-				g.setColor(Color.black);
+				
 				edgeCount++;
+				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			}
+			
 			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
 
