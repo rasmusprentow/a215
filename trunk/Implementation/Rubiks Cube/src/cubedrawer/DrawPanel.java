@@ -2,9 +2,12 @@ package cubedrawer;
 
 
 
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.EnumSet;
@@ -69,20 +72,22 @@ public class DrawPanel extends JPanel {
 		super.paintComponents(g);
 		int startX = 10;
 		int startY = 10;
-		g.setColor(this.getBackground());
-		g.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		draw3x3(startX + 3*rectHW, startY,g,cube.getPrimary()[0]);
-		draw3x3(startX , startY + 3*rectHW,g, cube.getTertiary()[0]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g ,cube.getSecondary()[0]);
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g, cube.getTertiary()[1]);
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g, cube.getSecondary()[1]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g, cube.getPrimary()[1]);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
+		g2.setColor(this.getBackground());
+		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
+		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
+		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		
 		
 	}
 
 
-	public void draw3x3(int x, int y, Graphics g, Face face){
+	public void draw3x3(int x, int y, Graphics2D g, Face face){
 		byte cornerCount = 0;
 		byte edgeCount = 0;
 		int[] newCornerOrder = {0 , 1, 3 ,2 };
