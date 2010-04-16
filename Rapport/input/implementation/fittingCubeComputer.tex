@@ -1,7 +1,7 @@
 \chapter{Fitting the Rubik's Cube into the computer}
 A \rubik{} is a rather complicated 3-dimensional structure and fitting this structure into a computer system is quite complicated. The \rubik{} is build up by 26 cubies held together by each other. This type of structure is not obvious to the computer. If the cube is depicted in the computer in a two-dimensional space the original \rubik{} structure gets even more out of hand. 
 
-A simple way though to handle the \rubik{} in the program is a two dimensional depiction and simply move the \facelet{}s around. But this approach will be far from reality and might not give a usefull and easy to work on program. 
+A simple way though to handle the \rubik{} in the program is a two dimensional depiction and simply move the \facelet{}s around. But this approach will be far from reality and might not give a useful and easy to work on program. 
 
 An object-oriented approach to the problem will give a more useful structure. Dividing the cube into its sub structures. The cube as we know consist of of the 6 faces each with 9 shared \cpiece{}. A face also consist of 9 cubicle which acts as a placeholder for a  \cpiece{}. There are 3 types of \cpiece{} and cubicles; corner, edge and centers. The center pieces never move and therefore there are no reason to define a place older and a \cipeice{} for those. Instead the face is granted a \facelet{}.
 
