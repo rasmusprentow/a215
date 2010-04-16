@@ -83,5 +83,14 @@ public class Cube {
 	public TertiaryFace[] getTertiary(){
 		return tertiary;
 	}
-
+	public Face[] getFace(int i){
+		switch(i){
+		case 0:
+			return primary;
+		case 1:
+			return secondary;
+		default:
+			return tertiary;
+		}
+	}
 }
