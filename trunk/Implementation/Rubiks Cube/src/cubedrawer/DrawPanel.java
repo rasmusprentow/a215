@@ -43,7 +43,7 @@ public class DrawPanel extends JPanel {
 		//this.setPreferredSize(new Dimension(400,300));
 		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
-		scrambleDanceTimer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(); repaint(); 	}  });
+		scrambleDanceTimer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(1); repaint(); 	}  });
 		playDanceTimer = new Timer(2*60*1000+29*1000, new ActionListener() {
 			
 			@Override
@@ -213,7 +213,7 @@ public class DrawPanel extends JPanel {
 			reset();
 			break;
 		case SCRAMBLE:
-			scramble();
+			scramble(50);
 			break;
 		case YOU_KNOW:
 			setSystemVolume(30000);
@@ -263,14 +263,17 @@ public class DrawPanel extends JPanel {
 		moving = false;
 	}
 
-	
-	private void scramble(){
+	/**
+	 * 
+	 * @param n the number of moves to be performed on the cube
+	 */
+	private void scramble(int n){
 		stopMoving();
 		specialMove = true;
 		// TODO Auto-generated method stub
 		String moveSequence = "";
 		console.addText("Scrambling:");
-		for(int i = 0; i < 1; i++){
+		for(int i = 0; i < n; i++){
 			int moveNum = (int)(Math.random()*18);
 			twistSequence((MoveButtons)moves.toArray()[moveNum]);
 			moveSequence = moveSequence + " " + ((MoveButtons)moves.toArray()[moveNum]).toString();
