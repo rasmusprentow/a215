@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.EnumSet;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.FloatControl;
+import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -30,7 +33,6 @@ public class DrawPanel extends JPanel {
 	private boolean specialMove;
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer timer;
-	private int scrambles;
 	private MenuPanel mp3;
 	
 	public DrawPanel(Console console) {
@@ -195,12 +197,10 @@ public class DrawPanel extends JPanel {
 			reset();
 			break;
 		case SCRAMBLE:
-			
-				scramble();
-			
-			scrambles = 0;
+			scramble();
 			break;
 		case YOU_KNOW:
+			setSystemVolume(30000);
 			if(timer.isRunning()){
 				System.out.println("aha");
 				mp3.close();
@@ -287,6 +287,41 @@ public class DrawPanel extends JPanel {
 		return cube;
 	}
 
-
+	public void setSystemVolume(final int vol)
+	{
+		final Port lineOut;
+		try
+		{
+			if(AudioSystem.isLineSupported(Port.Info.LINE_OUT))
+			{
+				lineOut = (Port)AudioSystem.getLine(Port.Info.LINE_OUT);
+				lineOut.open();
+			}
+			else if(AudioSystem.isLineSupported(Port.Info.HEADPHONE))
+			{
+				lineOut = (Port)AudioSystem.getLine(Port.Info.HEADPHONE);
+				lineOut.open();
+			}
+			else if(AudioSystem.isLineSupported(Port.Info.SPEAKER))
+			{
+				lineOut = (Port)AudioSystem.getLine(Port.Info.SPEAKER);
+				lineOut.open();
+			}
+			else
+			{
+				System.out.println("Unable to get Output Port");
+				return;
+			}
+ 
+			final FloatControl controlIn = (FloatControl)lineOut.getControl(FloatControl.Type.VOLUME);
+			final float volume = 100 * (controlIn.getValue() / controlIn.getMaximum());
+			controlIn.setValue((float)vol / 100);
+			System.out.println("SetSystemVolume : volume = " + volume);
+		}
+		catch(final Exception e)
+		{
+			System.out.println(e + " LINE_OUT");
+		}
+	}
 
 }
