@@ -33,7 +33,7 @@ public class DrawPanel extends JPanel {
 	private boolean specialMove;
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer timer;
-	private MenuPanel mp3;
+	private MP3 mp3;
 	
 	public DrawPanel(Console console) {
 		this.console = console;
@@ -44,7 +44,7 @@ public class DrawPanel extends JPanel {
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		timer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(); repaint(); 	}  });
 		 String filename = "Khachaturian-Sabre_Dance.mp3";
-	     mp3 = new MenuPanel(filename);
+	     mp3 = new MP3(filename);
 	}
 
 	@Override
