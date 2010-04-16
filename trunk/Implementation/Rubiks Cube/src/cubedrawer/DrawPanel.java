@@ -33,6 +33,7 @@ public class DrawPanel extends JPanel {
 	private boolean specialMove;
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer scrambleDanceTimer;
+	private Timer playDanceTimer;
 	private MP3 mp3;
 	
 	public DrawPanel(Console console) {
@@ -43,6 +44,16 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(); repaint(); 	}  });
+		playDanceTimer = new Timer(2*60*1000+29*1000, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				mp3.play();
+			}
+		});
+		
+		
 		 String filename = "Khachaturian-Sabre_Dance.mp3";
 	     mp3 = new MP3(filename);
 	}
@@ -207,12 +218,14 @@ public class DrawPanel extends JPanel {
 		case YOU_KNOW:
 			setSystemVolume(30000);
 			if(scrambleDanceTimer.isRunning()){
-				System.out.println("aha");
+				//System.out.println("aha");
 				mp3.close();
 				scrambleDanceTimer.stop();
+				playDanceTimer.stop();
 
 			} else {
 				mp3.play();
+				playDanceTimer.start();
 				scrambleDanceTimer.start();
 			}
 			break;
