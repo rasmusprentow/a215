@@ -43,7 +43,13 @@ public class DrawPanel extends JPanel {
 		//this.setPreferredSize(new Dimension(400,300));
 		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
-		scrambleDanceTimer = new Timer(100, new ActionListener() { public void actionPerformed(ActionEvent evt) { 	scramble(1); repaint(); 	}  });
+		scrambleDanceTimer = new Timer(500, new ActionListener() { 
+			public void actionPerformed(ActionEvent evt) { 	
+				scramble(1); 
+				if(scrambleDanceTimer.getDelay() > 100){ scrambleDanceTimer.setDelay(scrambleDanceTimer.getDelay() - 23); }
+				repaint(); 
+				}
+			});
 		playDanceTimer = new Timer(2*60*1000+29*1000, new ActionListener() {
 			
 			@Override
