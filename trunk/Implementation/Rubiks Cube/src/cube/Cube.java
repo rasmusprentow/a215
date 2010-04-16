@@ -54,8 +54,7 @@ public class Cube {
 	
 	
 	/**
-	 * Indeholder seks faces fordelt på tre arrays alt efter om de er primary, secondary eller tertiary.
-	 * 
+	 * Contains six faces distributed on three arrays depending on whether they are primary, secondary, or tertiary.
 	 * 
 	 */
 	
