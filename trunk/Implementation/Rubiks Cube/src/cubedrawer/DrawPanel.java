@@ -270,7 +270,7 @@ public class DrawPanel extends JPanel {
 		// TODO Auto-generated method stub
 		String moveSequence = "";
 		console.addText("Scrambling:");
-		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < 1; i++){
 			int moveNum = (int)(Math.random()*18);
 			twistSequence((MoveButtons)moves.toArray()[moveNum]);
 			moveSequence = moveSequence + " " + ((MoveButtons)moves.toArray()[moveNum]).toString();
