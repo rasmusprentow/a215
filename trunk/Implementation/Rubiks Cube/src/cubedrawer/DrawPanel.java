@@ -31,6 +31,7 @@ public class DrawPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Cube cube;
 	private int rectHW = 30; 
+	private int startDelay = 500;
 	private Console console;
 	private boolean moving;
 	private boolean specialMove;
@@ -46,14 +47,14 @@ public class DrawPanel extends JPanel {
 		//this.setPreferredSize(new Dimension(400,300));
 		console.addTextln("Behold the Cube ");
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
-		scrambleDanceTimer = new Timer(500, new ActionListener() { 
+		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
 			public void actionPerformed(ActionEvent evt) { 	
 				scramble(1); 
 				if(scrambleDanceTimer.getDelay() > 100){ scrambleDanceTimer.setDelay(scrambleDanceTimer.getDelay() - 23); }
 				repaint(); 
 				}
 			});
-		playDanceTimer = new Timer(2*60*1000+29*1000, new ActionListener() {
+		playDanceTimer = new Timer(2*60*1000+28*1000, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -158,7 +159,8 @@ public class DrawPanel extends JPanel {
 		if(!specialMove && moves.contains(t)){
 			startMoving();
 			console.addText(t + " ");
-		}
+		}		
+		
 		switch(t){
 		case U:
 			cube.getPrimary()[0].cwTwist();
@@ -233,6 +235,7 @@ public class DrawPanel extends JPanel {
 				mp3.close();
 				scrambleDanceTimer.stop();
 				playDanceTimer.stop();
+				scrambleDanceTimer.setDelay(startDelay);
 
 			} else {
 				mp3.play();
