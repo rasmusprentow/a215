@@ -10,7 +10,10 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.FloatControl;
@@ -35,10 +38,13 @@ public class DrawPanel extends JPanel {
 	private Console console;
 	private boolean moving;
 	private boolean specialMove;
+	private boolean doNotSaveNextMove;
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer scrambleDanceTimer;
 	private Timer playDanceTimer;
 	private MP3 mp3;
+	//private ArrayList<MoveButtons> previousMoves;
+	private LinkedList<MoveButtons> previousMoves;
 	
 	public DrawPanel(Console console) {
 		this.console = console;
@@ -46,6 +52,9 @@ public class DrawPanel extends JPanel {
 		this.setBackground(Color.white);
 		//this.setPreferredSize(new Dimension(400,300));
 		console.addTextln("Behold the Cube ");
+		//previousMoves = new ArrayList<MoveButtons>();
+		previousMoves = new LinkedList<MoveButtons>();
+		
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
 			public void actionPerformed(ActionEvent evt) { 	
@@ -156,10 +165,15 @@ public class DrawPanel extends JPanel {
 
 
 	public void buttonHandler(MoveButtons t){
-		if(!specialMove && moves.contains(t)){
+		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
 			console.addText(t + " ");
-		}		
+			
+			previousMoves.add(t);
+		} else if(doNotSaveNextMove) {
+			
+			doNotSaveNextMove = false;
+		}
 		
 		switch(t){
 		case U:
@@ -243,6 +257,9 @@ public class DrawPanel extends JPanel {
 				scrambleDanceTimer.start();
 			}
 			break;
+		case UNDO:
+			undo();
+			break;
 		default:
 			console.addTextln("Something is wrong");
 
@@ -253,9 +270,10 @@ public class DrawPanel extends JPanel {
 
 	private void startMoving(){
 		if(moving == false){
+			previousMoves.clear();
 			moving = true;
 			console.addText("Applying Moves: ");
-		} 
+		}
 	}
 	
 	private void stopMoving(){
@@ -272,9 +290,9 @@ public class DrawPanel extends JPanel {
 		moving = true;
 		console.addText("Pons asinurum:");
 		twistSequence(U2, D2,F2, B2,  L2, R2);
-		console.addTextln("");
+		//console.addTextln("");
 		//moving = false;
-		moving = false;
+		//moving = false;
 	}
 
 	/**
@@ -307,6 +325,7 @@ public class DrawPanel extends JPanel {
 		//stopMoving();
 		for(MoveButtons key: t){
 			buttonHandler(key);
+			previousMoves.add(key);
 		}
 	}
 
@@ -356,6 +375,17 @@ public class DrawPanel extends JPanel {
 		catch(final Exception e)
 		{
 			System.out.println(e + " LINE_OUT");
+		}
+	}
+	
+	private void undo() {
+		stopMoving();
+		doNotSaveNextMove = true;
+		try {
+		buttonHandler(previousMoves.removeLast().inverse());
+		}
+		catch (NoSuchElementException e) {
+			// TODO: handle exception
 		}
 	}
 
