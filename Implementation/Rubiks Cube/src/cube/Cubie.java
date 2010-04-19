@@ -24,8 +24,8 @@ public abstract class Cubie {
 
 	/**
 	 * 
-	 * @param i
-	 * @return primary if i = 0 second if 1 = 2 and so on.
+	 * @param i primary if i = 0 secondary if i = 1 and tertiary if i = 2.
+	 * @return primary if i = 0 secondary if i = 1 and tertiary if i = 2.
 	 */
 	public Facelet getFacelet(int i){
 		switch (i){
