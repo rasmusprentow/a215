@@ -1,5 +1,5 @@
 %\documentclass{report}\begin{document}
-\chapter{Group Theory (\textit{Not done})}
+\chapter{Group Theory}
 
 \myTop{In this chapter we will explain group theory and how it can be used to solve the \rubik{}. When we have a good understanding of the group theory we will be able to use it later for our own program.
 }
@@ -16,7 +16,6 @@ As stated in the terminology there are 12 edge \cpiece{}s. These edge \cpiece{}s
 
 \section{Definition of the Rubik's Cube group}
 To understand if the \rubik{} can be described as a group, it is important to understand what a group is.
-In group theory the group is written $(Element, Operator)$ where the element is the sets the group consist of and the operator is the operation that is made between the sets. When the \rubik{} is made into a group the set will be a move or a set of moves that are applied to the \rubik{}. The operator in the \rubik{} group will be astrix ($*$) because the \rubik{}s movements are not commutative. They are not commutative because it does not matter in which order the moves is applied to the \rubik{}\cite[p. 157]{Rubik87}.
 In group theory the group is written as $(Set, Operator)$ where the set are the elements the group consist of and the operator is the operation that is made between the elements. When looking at \rubik{} as a group the set will be a move or a set of moves that are applied to the \rubik{}. The operator in the \rubik{} group will be astrix ($*$) because the \rubik{}s movements are not commutative. The moves are not commutative because it matters in which order they are applied to the \rubik{}\cite[p. 157]{Rubik87}.
 
 To prove that the \rubik{} is a group there are four points it must fulfil:
@@ -28,30 +27,28 @@ To prove that the \rubik{} is a group there are four points it must fulfil:
 
 \item If $M$ is a move then there is a reverse move, which is called $M'$. Therefore $M*M' = e$, which means every element in the group has a reverse move.
 
-\item The operation must be associative. A move sequence can be defined as the orientation and position it puts each \cpiece{} in. If $c$ is an oriented  cubie, $M(c)$ will be the orientation $c$ for the oriented cubicle $c$ ends in after the move is applied. For instance the move $R$ will move the $ur$ cubie to the $br$ cubicle, so therefore $R(ur)=br$. If a move sequence is applied, then the operation will look like this $B'(R(ur))=db$. If there is another move the cubie will be oriented in the $M_2 (M_1 (c))$, therefore $(M_1 *M_2 )(c)=M_2 (M_1 (c))$. 
-\item The operation must be associative. A move sequence can be defined as the orientation and position it puts each \cpiece{} in. If $c$ is an oriented \cpiece{}, $M(c)$ will be the orientation $c$ for the oriented cubicle $c$ ends in after the move is applied. For instance the move $R$ wll move the $ur$ cubie to the $br$ cubicle, so therefore $R(ur)=br$. If there is more than one move sequence then the operation will look like this $B'(R(ur))=db$. If there is another move the cubie will be oriented in the $M_2 (M_1 (c))$, therefore $(M_1 *M_2 )(c)=M_2 (M_1 (c))$. 
-
-$*$ is associative because $(M_1 *M_2 )*M_3 = M_1 *(M_2 *M_3 )$ for any moves $M_1$, $M_2$ and $M_3$. $(M_1 *M_2 )*M_3$ and $M_1 *(M_2 *M_3 )$ does the same operation to every cubie. This is the same as saying $[(M_1 *M_2 )*M_3 ](C)=[M_1 *(M_2 *M_3 )](C)=M_3 (M_2 (M_1 (C)))$ for any cubie $C$. Therefore $*$ is associative.
+\item The operation must be associative. A move sequence can be defined as the orientation and position it puts each \cpiece{} in. If $c$ is an oriented  cubie, $M(c)$ will be the orientation $c$ for the oriented cubicle $c$ ends in after the move is applied. For instance the move $R$ will move the $ur$ cubie to the $br$ cubicle, so therefore $R(ur)=br$. If a move sequence is applied, then the operation will look like this $B'(R(ur))=db$.
+$*$ is associative because $(M_1 *M_2 )*M_3 = M_1 *(M_2 *M_3 )$ for any moves $M_1$, $M_2$ and $M_3$. $(M_1 *M_2 )*M_3$ and $M_1 *(M_2 *M_3 )$ does the same operation to every cubie. This is the same as saying $[(M_1 *M_2 )*M_3 ](c)=[M_1 *(M_2 *M_3 )](c)=M_3 (M_2 (M_1 (c)))$ for any cubie $c$. Therefore $*$ is associative.
 
 \end {itemize}
 
 \section{Subgroup}
-As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations, but it is not all of these configurations that are possible to do.  To make it more easy there will only be looked at some moves of the \rubik{} but only the moves of the down and right faces. To better understand G, it can be split up in small pieces.
-A nonempty subset H of the group (G,*) is called a subgroup of G if (H,*) is a group
+As said in the Permutation section, there is $3^8*2^{12}*12!*8!$ possible configurations, but it is not all of these configurations that are possible to do.  To make it more easy there will only be looked at some moves of the \rubik{} but only the moves of the down and right faces. To better understand $G$, it can be split up in small pieces.
+A nonempty subset $H$ of the group $(G,*)$ is called a subgroup of $G$ if $(H,*)$ is a group
 To check if a subset actually is a subgroup the following can be used.
 
 
-Let $(G,*)$ be a group. A nonempty subset $H$ of $G$ is a subgroup of $(G,*)$ iff, for every $a, b \in H$, $a * b^(-1) \in H$.
+Let $(G,*)$ be a group. A nonempty subset $H$ of $G$ is a subgroup of $(G,*)$ if, for every $a, b \in H$, $a * b^{-1} \in H$.
 
-Proof. First, suppose $H$ is a subgroup. If $b \in H$, then $b^(-1) \in H since (H,*)$ is a group. So, if $a \in H$ as well, then $a * b^(-1) \in H$.
+Proof. First, suppose $H$ is a subgroup. If $b \in H$, then $b^{-1} \in H since (H,*)$ is a group. So, if $a \in H$ as well, then $a * b^{-1} \in H$.
 
-Conversely, suppose that, for every $a, b \in H$, $a * b^(-1) \in H$.
+Conversely, suppose that, for every $a, b \in H$, $a * b^{-1} \in H$.
 
 \begin {itemize}
 \item First, notice that $*$ is associative since $(G,*)$ is a group.
-\item Let $a \in H$. Then, $e = a * a^(-1)$, so $e \in H$.
-\item Let $b \in H$. Then $b^(-1) = e * b^(-1) \in H$, so inverse exist in $H$.
-\item Let $a, b \in H$. By the previous step, $b^(-1) \in H$, so $a* (b^(-1))^(-1) = a* b \in H$. Thus, $H$ is closed under $*$.
+\item Let $a \in H$. Then, $e = a * a^{-1}$, so $e \in H$.
+\item Let $b \in H$. Then $b^{-1} = e * b^{-1} \in H$, so inverse exist in $H$.
+\item Let $a, b \in H$. By the previous step, $b^{-1} \in H$, so $a* (b^{-1})^{-1} = a* b \in H$. Thus, $H$ is closed under $*$.
 \end {itemize}
 
 Therefore, $(H,*)$ is a group, which means that $H$ is a subgroup of $G$.
