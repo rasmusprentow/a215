@@ -13,10 +13,15 @@ The cube consist of the 6 faces each with 9 shared \cpiece{}.
 A face also consist of 9 \cubicle{}s which acts as placeholders for the \cpiece{}s. 
 There are 3 types of \cpiece{} and cubicles; corner, edge and centers. 
 The center \cpiece{}s will never move and therefore there are no reason to define a \cubicle{} and a \cpiece{} for those. Instead the face is simple granted a \facelet{} which defines the color of the given face.
-
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.7]{input/pics/twistOfUpFace.pdf}
+	\caption{\myCaption{A twist of a face will not only inflict the twisted face but also its adjacent faces. }}
+	\label{fig:twistOfUpFace}
+\end{figure}
 This structure allows for the same \cubicle{} to be in several faces. 
 Two faces for edges and three for corners. 
-In this structure moving a face will move the \cpiece{}s around in the \cubicle{}s(See some picture) This makes the adjacent face to the moving face, get some of its \cpiece{}s moved to other \cubicle{}s as well. 
+In this structure moving a face will move the \cpiece{}s around in the \cubicle{}s. See figure \ref{fig:twistOfUpFace}.This makes the adjacent face to the moving face, get some of its \cpiece{}s moved to other \cubicle{}s as well. 
 For example when twisting the up face of a \rubik{} will inflict the move the \cpiece{}s of the R, L, B and F faces. 
 
 The problem of this structure though is it requires variables to determined how the \facelet{} should be orientated. 
