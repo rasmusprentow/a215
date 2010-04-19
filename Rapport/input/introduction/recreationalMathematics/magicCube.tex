@@ -1,13 +1,50 @@
 \subsection{Magic Cube}
 \label{sub:mcube}
-\begin{figure}[h]
+
+
+
+%\begin{figure}[h]	\centering		\includegraphics[scale=0.8]{input/pics/presentMagicCube2}	\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}	\end{figure}
+
+
+
+\begin{figure}[b]
 	\centering
-		\includegraphics[scale=0.8]{input/pics/presentMagicCube2}
-	\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}
-	\label{fig:presentMagicCube}
+		\subfloat[\myCaption{Top layer.}]{
+		
+		\begin{tabular}{|c|c|c|}
+			\hline
+			7&11&24 \\ \hline
+			23&9&10 \\ \hline
+			12&22&8 \\ \hline
+		\end{tabular}
+		}
+		\hspace{0.02\textwidth}
+		\subfloat[\myCaption{Middle layer.}]{
+		\begin{tabular}{|c|c|c|}
+			\hline
+			15&25&2 \\ \hline
+			1&14&27 \\ \hline
+			26&3&13 \\ \hline
+		\end{tabular}
+
+		}
+		\hspace{0.02\textwidth}
+		\subfloat[\myCaption{Buttom layer.}]{ 
+		\begin{tabular}{|c|c|c|}
+			\hline
+			20&6&16 \\ \hline
+			18&19&5 \\ \hline
+			4&17&21 \\ \hline
+		\end{tabular}
+		}
+		\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}
+		\label{fig:presentMagicCube}
 \end{figure}
 
-Both a \msquare{} and a \mcube{} have a magic constant, which can be the sum of each row, column and pillar. However this is where the similarity ends. There are also similarities between the \mcube{} and the \rubik{} which will be elaborated on later.
+
+
+Both a \msquare{} and a \mcube{} have a magic constant, which can be the sum of each row, column and pillar. See figure \ref{fig:presentMagicCube}.
+ However this is where the similarity ends. There are also similarities between the \mcube{} and the \rubik{} which will be elaborated on later. 
 
 We have shown how to calculate the magic constant in a \msquare{}.
 In a  \mcube{} there is not a big difference in the formula to calculate the magic constant.
