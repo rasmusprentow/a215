@@ -3,6 +3,7 @@ package algorithms;
 import java.util.EnumSet;
 
 import cube.Cube;
+import cube.EdgeCubie;
 
 import cube.Cube.EdgePos;
 
@@ -25,9 +26,13 @@ public class Beginners {
 	}
 	
 	private void solveFLCross(){
-		EnumSet <EdgePos> edges = EnumSet<EdgePos>.of()
+		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.P1S0, EdgePos.P1S1, EdgePos.P1T0, EdgePos.P1T1);
 		
-		EdgePos.
+		for(EdgePos key: edges){
+			EdgeCubie e = cube.getECubie(key);
+			
+			///START
+		}
 	}
 	
 	
