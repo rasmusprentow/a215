@@ -1,23 +1,23 @@
 \section{Class Interaction}
 In this section the different classes of the \rubik{} and their interaction with each other will be determined.
-\subsection{The Cube Class}
-The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the faces and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubie{}s are then put into a \face{} by its constructer. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary.
+\subsection{The Cube}
+The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the \face{}s and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubicle{}s are then put into a \face{} by its constructor. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary.
 
-\subsection{The Face Classes}
-The \face{} class constructer takes cubicles from the cube class and position them in a clockwise order. Furthermore the \face{} class constructer requires a \facelet{} which it will use as center \facelet{}. In addition the \face{} class implements two methods that twist a face clockwise or counterclockwise.
+\subsection{The Face}
+The \face{} class constructor takes eight cubicles (four corners and four edges) and position them in a clockwise order. Furthermore the \face{} class constructor requires a \facelet{} which it will use as center \facelet{}. In addition the \face{} class implements two methods which twist the face clockwise or counterclockwise -- namely \textit{cwTwist} and \textit{ccwTwist} respectively.
 
 There are three different types of \face{}s; primary \face{}s, secondary \face{}s, and tertiary \face{}s.
 Each type has its own subclass, which inherits from the \face{} superclass.
-The reason for the different classes is that there is a different in how the orientation of the \cubie{}s changes depending on what type of \face{} being \twist{}ed.
+The reason for the different classes is that there is a difference in how the orientation of the \cubie{}s changes depending on what type of \face{} being \twist{}ed.
 %Orientation of \cubie{}s will be covered in ref\{orientation\}.
 
-\subsection{The Cubicle Classes}
+\subsection{The Cubicle}
 %Måske noget om cubicle class, hvis der bliver lavet noget.
-The corner and edge \cubicle{} classes each has one instance variable, namely the \cubie{} they hold. The \cpiece{} is set by the constructer of the \cubicle{} class.
+The corner and edge \cubicle{} classes each has one instance variable, namely the \cubie{} they hold. The \cpiece{} is set by the constructor of the \cubicle{} class.
 
-\subsection{The Cubie Classes}
-The \cpiece{} class sets the orientation correctly by default, and it implements methods that return the orientation and \facelet{}s of the \cpiece{}. The corner and edge \cpiece{} classes implements methods which return the orientation of the \cpiece{}.
+\subsection{The Cubie}
+The \cpiece{} class sets the orientation correctly by default, and it implements methods that return the orientation and \facelet{}s of the \cpiece{}. The corner and edge \cpiece{} classes implements two different methods which return the orientation of the \cpiece{}.
 
-\subsection{The Facelet Class}
-The \facelet{} class is an enumeration that contains the colors of the \facelet{}s, it implements a \textit{toColor} method which define the color of each \facelet{}.
-\myTail{}
+\subsection{The Facelet}
+%%The \facelet{} class is an enumeration that contains the colors of the \facelet{}s, it implements a \textit{toColor} method which define the color of each \facelet{}.
+The \facelet{}s are defined in an enumeration which contains the colors of the \facelet{}s, it implements a \textit{toColor} method which define the color of each \facelet{}.
