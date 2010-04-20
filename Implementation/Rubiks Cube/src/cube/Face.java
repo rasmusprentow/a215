@@ -23,7 +23,8 @@ public abstract class Face {
 	public Face(CornerCubicle corner0, CornerCubicle corner1,
 			CornerCubicle corner2, CornerCubicle corner3,
 			EdgeCubicle edge0, EdgeCubicle edge1,
-			EdgeCubicle edge2, EdgeCubicle edge3, Facelet color) {
+			EdgeCubicle edge2, EdgeCubicle edge3, Facelet color)
+			throws IllegalArgumentException {
 		
 		cornerArray[0] = corner0;
 		cornerArray[1] = corner1;
@@ -34,6 +35,15 @@ public abstract class Face {
 		edgeArray[1] = edge1;
 		edgeArray[2] = edge2;
 		edgeArray[3] = edge3;
+		
+		for(int i = 0 ; i < 4 ; i++) {
+			if(cornerArray[i] == null) {
+				throw new IllegalArgumentException("Corner number: " + i + " is null");
+			}
+			if(edgeArray[i] == null) {
+				throw new IllegalArgumentException("Edge number: " + i + " is null");
+			}
+		}
 		
 		faceColor = color;
 	}
