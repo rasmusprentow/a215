@@ -1,0 +1,63 @@
+\section{Disjoint Cycle Decomposition}
+There is a more compact way of writing elements of the symmetric group.
+\begin{comment}
+\subsection{Example} Consider $\sigma \in S_(12)$ defined by
+
+	$\sigma(1) = 12 \sigma(2) = 4 \sigma(3) = 5 \sigma(4) = 2 \sigma(5) = 6 \sigma(6) = 9
+	\sigma(7) = 7 \sigma(8) = 3 \sigma(9) = 10 \sigma(10) = 1 \sigma(11) = 11 \sigma(12) = 8$
+
+We will write $i \rightarrow j$ (i maps to j) to mean $\sigma(i) = j$. Then,
+
+	$1 \rightarrow 12, 12 \rightarrow 8, 8 \rightarrow 3, 3 \rightarrow 5, 5 \rightarrow 6, 6 \rightarrow 9, 9 \rightarrow 10, 10 7\rightarrow 1
+	2 \rightarrow 4, 4 \rightarrow 2
+	7 \rightarrow 7
+	11 \rightarrow 11$
+
+
+This data tells what $\sigma$ does to each number, so it will define $\sigma$. As shorthand, and write
+$\sigma = (1 12 8 3 5 6 9 10) (2 4) (7) (11).$
+
+Here, $(1 12 8 3 5 6 9 10), (2 4), (7), and (10)$ are called cycles. When writing the disjoint cycle decomposition,
+the cycles is left out with just one number, so the disjoint cycle decomposition of $\sigma$ is
+$\sigma = (1 12 8 3 5 6 9 10) (2 4).$ 
+\end{comment}
+The difinition of a cycle is if the cycle $(i_1  i_2 ... i_k )$ is the element $\tau \in S_n$ defined by $\tau(i_1 ) = i_2 , \tau(i_2 ) = i_3 , . . . , \tau(i_k  -1) =
+i_k , \tau(i_k ) = i_1 $ and $\tau(j) = j$ if $j \neq i_r $ for any $r$. The length of this cycle is $k$, and the support of the cycle
+is the set ${i_1 , . . . , i_k }$ of numbers which appear in the cycle. The support is denoted by supp $\tau$ . A cycle of
+length $k$ is also called a $k-cycle$.
+
+If two cycles $\sigma$ and $\tau$ are disjoint if they have no numbers in common; that is, supp$\sigma \cap$ 
+supp $\tau = \oslash$
+
+Let $\sigma,\tau\in S_n$ be cycles. If $\sigma$ and $\tau$ are disjoint, then $\sigma\tau = \tau\sigma$.
+
+Let $i\in{1, . . . , n}.$ Since $supp \sigma\cap supp \tau = \oslash,$ there are only two possibilities:
+\begin{itemize}
+\item $i \notin supp \sigma and i \notin supp \tau. In this case, \sigma(i) = i and \tau(i) = i, so (\sigma \circ \tau)(i) =\tau(i) = i and
+(\tau \circ \sigma)(i) = \sigma(i) = i.$
+
+\item Otherwise, $i$ is in the support of exactly one of $\sigma$ and $\tau$. it may suppose without loss of generality that
+$i \notin supp \sigma$ and $i \in supp \tau.$ Then, $\sigma(i) = i,$ so $(\sigma \circ \tau)(i) = \tau(i).$ On the other hand, $(\tau \circ \sigma)(i) = \sigma(\tau(i)).$
+Now, since $\tau(i) \in supp \tau and supp \tau \cap supp \sigma = \oslash, \tau(i) \notin supp \sigma.$ Therefore, $\sigma(\tau(i)) = \tau(i).$ So,
+again there is $(\sigma\tau)(i) = (\tau\sigma)(i).$
+\end{itemize}
+
+Therefore, $(\sigma \tau)(i) = (\tau \sigma)(i) = i$ for all $i$, which shows that $\sigma \tau= \tau \sigma$.
+Any $\sigma \in S_n$ can be written as a product (under the group operation, which is composition) of disjoint cycles.
+This product is called the disjoint cycle decomposition of $\sigma.$ In the example, there was given a method for finding
+the disjoint cycle decomposition of a permutation.
+The identity permutation will be written as $1$.
+
+\begin{comment}
+\subsection{Example} $S_2$ consists of two permutations,$ 1 and (1 2).$
+
+\subsection{Example} Let $\sigma, \tau \in S_6$ be defined by
+
+$\sigma(1) = 3 \sigma(2) = 5 \sigma(3) = 4 \sigma(4) = 1 \sigma(5) = 2 \sigma(6) = 6
+\tau(1) = 5 \tau(2) = 4 \tau(3) = 3 \tau(4) = 2 \tau(5) = 1 \tau(6) = 6$
+
+In cycle notation, $\sigma = (1 3 4)(2 5)$ and $\tau = (1 5)(2 4)$. Then, $\sigma \tau= (1 3 2) (4 5)$ and $\sigma \tau= (1 2)(3 4 5)$. it
+can also easily compute $\sigma^2 = (1 4 3) and \tau^2 = 1.$
+\end{comment}
+If $\sigma \in S_n$ is the product of disjoint cycles of lengths $n_1, . . . , n_r$ (including its 1-cycles),
+then the integers$ n_1, . . . , n_r$ are called the cycle type of $\sigma$.
