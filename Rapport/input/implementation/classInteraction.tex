@@ -1,19 +1,23 @@
 \section{Class Interaction}
-\myTop{}
+In this section the different classes of the \rubik{} and their interaction with each other will be determined.
 \subsection{The Cube Class}
-The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the faces and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubie{}s are then put into a \face{}. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary.
+The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the faces and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubie{}s are then put into a \face{} by its constructer. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary.
+
 \subsection{The Face Classes}
-The \face{} class takes cubicles from the cube class and position them in a clockwise order. Furthermore the \face{} class takes a face color from the cube class and gives it to a face. In addition the \face{} class makes two methods that twist a face clockwise or counterclockwise.
+The \face{} class constructer takes cubicles from the cube class and position them in a clockwise order. Furthermore the \face{} class constructer requires a \facelet{} which it will use as center \facelet{}. In addition the \face{} class implements two methods that twist a face clockwise or counterclockwise.
 
 There are three different types of \face{}s; primary \face{}s, secondary \face{}s, and tertiary \face{}s.
-Each type has its own class, which inherits from the \face{} class.
+Each type has its own subclass, which inherits from the \face{} superclass.
 The reason for the different classes is that there is a different in how the orientation of the \cubie{}s changes depending on what type of \face{} being \twist{}ed.
-Orientation of \cubie{}s will be covered in ref\{orientation\}.
+%Orientation of \cubie{}s will be covered in ref\{orientation\}.
+
 \subsection{The Cubicle Classes}
 %Måske noget om cubicle class, hvis der bliver lavet noget.
-The corner \cubicle{} class creates a \cubicle{} either with or without a corresponding corner \cpiece{}. The edge \cubicle{} class has the same properties, just with an edge \cubicle{}.
+The corner and edge \cubicle{} classes each has one instance variable, namely the \cubie{} they hold. The \cpiece{} is set by the constructer of the \cubicle{} class.
+
 \subsection{The Cubie Classes}
-The \cpiece{} class sets the orientation correctly by default, and it has functions that return the orientation and \facelet{}s of the \cpiece{}. The corner and edge \cpiece{} classes have functions which return the orientation of the \cpiece{}.
+The \cpiece{} class sets the orientation correctly by default, and it implements methods that return the orientation and \facelet{}s of the \cpiece{}. The corner and edge \cpiece{} classes implements methods which return the orientation of the \cpiece{}.
+
 \subsection{The Facelet Class}
-The \facelet{} class contains the color of a \facelet{}.
+The \facelet{} class is an enumeration that contains the colors of the \facelet{}s, it implements a \textit{toColor} method which define the color of each \facelet{}.
 \myTail{}
