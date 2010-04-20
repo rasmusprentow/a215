@@ -1,0 +1,37 @@
+a = cube
+d = 0
+l = 50
+
+Senum
+Aenum
+notAenum
+
+while( l > d) {
+b = MoveButtons[d]
+TRY
+while true{
+
+ab = permute(a,b)
+	if (ab.isInH()){
+	moveSeq=solveFromH(ab)
+	
+		if(d+moveSeq.l<l){
+		l = d+moveSeq.l
+		bestmoveseq=b+moveSeq
+		}
+	}
+inc(b)
+}
+CATCH
+d++
+}
+return bestmoveseq
+
+
+Statik
+	permute(cube,moveSequence)
+isInH(),
+SolveFromH(cube) //temp CUBE
+increaseWithSMoves(moveSequence)
+
+moveSequence = MoveButtons[]x
