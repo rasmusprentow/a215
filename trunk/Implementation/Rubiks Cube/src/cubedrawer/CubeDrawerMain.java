@@ -17,7 +17,7 @@ public class CubeDrawerMain {
 	      window.setLocation(50,0);
 	      window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 	      window.setVisible(true);
-		
+		 
 		
 	}
 }
