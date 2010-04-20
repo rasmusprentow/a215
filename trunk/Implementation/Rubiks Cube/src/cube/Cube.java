@@ -5,53 +5,55 @@ import cubedrawer.*;
 
 public class Cube {
 
-	PrimaryFace[] primary = new PrimaryFace[2];
-	SecondaryFace[] secondary = new SecondaryFace[2];
-	TertiaryFace[] tertiary = new TertiaryFace[2];
+	PrimaryFace[] primary;
+	SecondaryFace[] secondary;
+	TertiaryFace[] tertiary;
 
-	Facelet primary_0 = Facelet.PRIMARY_0;
-	Facelet primary_1 = Facelet.PRIMARY_1;
-	Facelet secondary_0 = Facelet.SECONDARY_0;
-	Facelet secondary_1 = Facelet.SECONDARY_1;
-	Facelet tertiary_0 = Facelet.TERTIARY_0;
-	Facelet tertiary_1 = Facelet.TERTIARY_1;
+	Facelet primary_0;
+	Facelet primary_1;
+	Facelet secondary_0;
+	Facelet secondary_1;
+	Facelet tertiary_0;
+	Facelet tertiary_1;
 	
 	public enum EdgePos {P0S0,P0S1,P1S0,P1S1,P0T0,P0T1,P1T0,P1T1,S0T0,S0T1,S1T0,S1T1}; //Positions for edge pieces
-	TreeMap <EdgePos, EdgeCubie> eCubies = new TreeMap <EdgePos, EdgeCubie>(); // treemap taking positions and gives the cubie
+	
+	TreeMap <EdgePos, EdgeCubie> eCubies;
+	
 	//Corner cubicles
 	/////////////////////////////
 	//Top face cubicles
-	CornerCubicle P0S0T1 = new CornerCubicle(new CornerCubie(primary_0, secondary_0, tertiary_1));
-	CornerCubicle P0S0T0 = new CornerCubicle(new CornerCubie(primary_0, secondary_0, tertiary_0));
-	CornerCubicle P0S1T0 = new CornerCubicle(new CornerCubie(primary_0, secondary_1, tertiary_0));
-	CornerCubicle P0S1T1 = new CornerCubicle(new CornerCubie(primary_0, secondary_1, tertiary_1));
+	CornerCubicle P0S0T1;
+	CornerCubicle P0S0T0;
+	CornerCubicle P0S1T0;
+	CornerCubicle P0S1T1;
 	///////////////////////////
 	//Down face cubicles
-	CornerCubicle P1S1T0 = new CornerCubicle(new CornerCubie(primary_1, secondary_1, tertiary_0));
-	CornerCubicle P1S0T0 = new CornerCubicle(new CornerCubie(primary_1, secondary_0, tertiary_0));
-	CornerCubicle P1S0T1 = new CornerCubicle(new CornerCubie(primary_1, secondary_0, tertiary_1));
-	CornerCubicle P1S1T1 = new CornerCubicle(new CornerCubie(primary_1, secondary_1, tertiary_1));
+	CornerCubicle P1S1T0;
+	CornerCubicle P1S0T0;
+	CornerCubicle P1S0T1;
+	CornerCubicle P1S1T1;
 	//////////////////////////
 
 	//Edge cubicles
 	/////////////////////////////
 	//Top face cubicles
-	EdgeCubicle P0S0 = new EdgeCubicle(eCubies.put(EdgePos.P0S0, new EdgeCubie(primary_0, secondary_0, null)));
-	EdgeCubicle P0T0 = new EdgeCubicle(eCubies.put(EdgePos.P0T0, new EdgeCubie(primary_0, null, tertiary_0)));
-	EdgeCubicle P0S1 = new EdgeCubicle(eCubies.put(EdgePos.P0S1, new EdgeCubie(primary_0, secondary_1, null)));
-	EdgeCubicle P0T1 = new EdgeCubicle(eCubies.put(EdgePos.P0T1, new EdgeCubie(primary_0, null, tertiary_1)));
+	EdgeCubicle P0S0;
+	EdgeCubicle P0T0;
+	EdgeCubicle P0S1;
+	EdgeCubicle P0T1;
 	///////////////////////////
 	//Down face cubicles
-	EdgeCubicle P1T0 = new EdgeCubicle(eCubies.put(EdgePos.P1T0, new EdgeCubie(primary_1, null, tertiary_0)));
-	EdgeCubicle P1S0 = new EdgeCubicle(eCubies.put(EdgePos.P1S0, new EdgeCubie(primary_1, secondary_0, null)));
-	EdgeCubicle P1T1 = new EdgeCubicle(eCubies.put(EdgePos.P1T1, new EdgeCubie(primary_1, null, tertiary_1)));
-	EdgeCubicle P1S1 = new EdgeCubicle(eCubies.put(EdgePos.P1S1, new EdgeCubie(primary_1, secondary_1, null)));
+	EdgeCubicle P1T0;
+	EdgeCubicle P1S0;
+	EdgeCubicle P1T1;
+	EdgeCubicle P1S1;
 	//////////////////////////
 	//Center piece cubicles
-	EdgeCubicle S0T1 = new EdgeCubicle(eCubies.put(EdgePos.S0T1, new EdgeCubie(null, secondary_0, tertiary_1)));
-	EdgeCubicle S0T0 = new EdgeCubicle(eCubies.put(EdgePos.S0T0, new EdgeCubie(null, secondary_0, tertiary_0)));
-	EdgeCubicle S1T0 = new EdgeCubicle(eCubies.put(EdgePos.S1T0, new EdgeCubie(null, secondary_1, tertiary_0)));
-	EdgeCubicle S1T1 = new EdgeCubicle(eCubies.put(EdgePos.S1T1, new EdgeCubie(null, secondary_1, tertiary_1)));
+	EdgeCubicle S0T1;
+	EdgeCubicle S0T0;
+	EdgeCubicle S1T0;
+	EdgeCubicle S1T1;
 	/////////////////////////////
 
 
@@ -63,7 +65,71 @@ public class Cube {
 	 */
 
 	public Cube(){
+		
+		primary = new PrimaryFace[2];
+		secondary = new SecondaryFace[2];
+		tertiary = new TertiaryFace[2];
+		
+		Facelet primary_0 = Facelet.PRIMARY_0;
+		Facelet primary_1 = Facelet.PRIMARY_1;
+		Facelet secondary_0 = Facelet.SECONDARY_0;
+		Facelet secondary_1 = Facelet.SECONDARY_1;
+		Facelet tertiary_0 = Facelet.TERTIARY_0;
+		Facelet tertiary_1 = Facelet.TERTIARY_1;
 
+		eCubies = new TreeMap <EdgePos, EdgeCubie>(); // treemap taking positions and gives the cubie
+		//Corner cubicles
+		/////////////////////////////
+		//Top face cubicles
+		P0S0T1 = new CornerCubicle(new CornerCubie(primary_0, secondary_0, tertiary_1));
+		P0S0T0 = new CornerCubicle(new CornerCubie(primary_0, secondary_0, tertiary_0));
+		P0S1T0 = new CornerCubicle(new CornerCubie(primary_0, secondary_1, tertiary_0));
+		P0S1T1 = new CornerCubicle(new CornerCubie(primary_0, secondary_1, tertiary_1));
+		///////////////////////////
+		//Down face cubicles
+		P1S1T0 = new CornerCubicle(new CornerCubie(primary_1, secondary_1, tertiary_0));
+		P1S0T0 = new CornerCubicle(new CornerCubie(primary_1, secondary_0, tertiary_0));
+		P1S0T1 = new CornerCubicle(new CornerCubie(primary_1, secondary_0, tertiary_1));
+		P1S1T1 = new CornerCubicle(new CornerCubie(primary_1, secondary_1, tertiary_1));
+		//////////////////////////
+
+		//Edge cubicles
+		/////////////////////////////
+		//Top face cubicles
+		eCubies.put(EdgePos.P0S0, new EdgeCubie(primary_0, secondary_0, null));
+		eCubies.put(EdgePos.P0T0, new EdgeCubie(primary_0, null, tertiary_0));
+		eCubies.put(EdgePos.P0S1, new EdgeCubie(primary_0, secondary_1, null));
+		eCubies.put(EdgePos.P0T1, new EdgeCubie(primary_0, null, tertiary_1));
+		
+		P0S0 = new EdgeCubicle(eCubies.get(EdgePos.P0S0));
+		P0T0 = new EdgeCubicle(eCubies.get(EdgePos.P0T0));
+		P0S1 = new EdgeCubicle(eCubies.get(EdgePos.P0S1));
+		P0T1 = new EdgeCubicle(eCubies.get(EdgePos.P0T1));
+		///////////////////////////
+		//Down face cubicles
+		eCubies.put(EdgePos.P1T0, new EdgeCubie(primary_1, null, tertiary_0));
+		eCubies.put(EdgePos.P1S0, new EdgeCubie(primary_1, secondary_0, null));
+		eCubies.put(EdgePos.P1T1, new EdgeCubie(primary_1, null, tertiary_1));
+		eCubies.put(EdgePos.P1S1, new EdgeCubie(primary_1, secondary_1, null));
+		
+		P1T0 = new EdgeCubicle(eCubies.get(EdgePos.P1T0));
+		P1S0 = new EdgeCubicle(eCubies.get(EdgePos.P1S0));
+		P1T1 = new EdgeCubicle(eCubies.get(EdgePos.P1T1));
+		P1S1 = new EdgeCubicle(eCubies.get(EdgePos.P1S1));
+		//////////////////////////
+		//Center piece cubicles
+		eCubies.put(EdgePos.S0T1, new EdgeCubie(null, secondary_0, tertiary_1));
+		eCubies.put(EdgePos.S0T0, new EdgeCubie(null, secondary_0, tertiary_0));
+		eCubies.put(EdgePos.S1T0, new EdgeCubie(null, secondary_1, tertiary_0));
+		eCubies.put(EdgePos.S1T1, new EdgeCubie(null, secondary_1, tertiary_1));
+		
+		S0T1 = new EdgeCubicle(eCubies.get(EdgePos.S0T1));
+		S0T0 = new EdgeCubicle(eCubies.get(EdgePos.S0T0));
+		S1T0 = new EdgeCubicle(eCubies.get(EdgePos.S1T0));
+		S1T1 = new EdgeCubicle(eCubies.get(EdgePos.S1T1));
+		/////////////////////////////
+		
+		//Faces
 		primary[0] = new PrimaryFace(P0S1T0, P0S1T1, P0S0T1, P0S0T0, P0S1, P0T1, P0S0, P0T0, primary_0);
 		primary[1] = new PrimaryFace(P1S0T0, P1S0T1, P1S1T1, P1S1T0, P1S0, P1T1, P1S1, P1T0, primary_1);
 
@@ -121,6 +187,16 @@ public class Cube {
 
 
 		return true;
+	}
+	
+	public boolean isSolved() {
+		if(this.isInH()) {
+			
+			
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	
