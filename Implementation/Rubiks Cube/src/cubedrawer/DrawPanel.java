@@ -34,6 +34,7 @@ public class DrawPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Cube cube;
 	private int rectHW = 30; 
+	private int dispHW = 30; //the distance moved after drawing each polygon
 	private int startDelay = 500;
 	private Console console;
 	private boolean moving;
@@ -86,14 +87,15 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
-		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
+		//draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		//draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
+		//draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+		//draw3x3(startX  + 3*rectHW*3 - 30, startY + 3*rectHW - 30,g2, cube.getSecondary()[1]);
+		//draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+		draw3x3poly(startX + 3*rectHW, startY + 3*dispHW, g2,cube.getPrimary()[0]);
 		
-		
+		g.drawPolygon(new int[]{50, 55, 60, 65},new int[] {30, 35, 70, 44}, 4);
 	}
 
 
@@ -162,7 +164,23 @@ public class DrawPanel extends JPanel {
 		}
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
+	
+	public void draw3x3poly(int x, int y, Graphics2D g, Face face){
+		
+		int[] listX = {0, dispHW, rectHW, rectHW + dispHW};
+		int[] listY = {0, -dispHW, 0, -dispHW};
+		
+		for(int i = 0; i < 9; i++){
+			for(int j = 0; j < 4; j++){
+				listX[j] = listX[j] + dispHW * i;
+			}
+			g.setColor(Color.black);
+			g.drawPolygon(listX, listY, 4);
+			System.out.println(listX.toString());
+		}
+		
 
+	}
 
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
