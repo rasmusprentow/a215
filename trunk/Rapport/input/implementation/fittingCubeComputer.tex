@@ -5,8 +5,8 @@ The \rubik{} is build up by 26 moving \cpiece{}s held together by each other.  T
 
 %If the \rubik{} is depicted in the computer in a two-dimensional space, its depiction will be far from the original \rubik{} structure.
 A simple way to handle the \rubik{} in the program is a two-dimensional depiction and  just simply move the \facelet{}s around.
-The analogue to this on a real \rubik{} would be to take of the colored stickers off and move them to their new position rather than actually move the \cubie{}s when twisting the \rubik{}.
-This approach will be far from reality and will make the implementations of solving algorithms, such as Kociemba's optimal solver and the beginner's algorithm more complicated, since they need to know the place of the \cpiece{}s, and not just the \facelet{}s to determine the next step.
+The analogue to this on a real \rubik{} would be to take the colored stickers off and move them to their new position rather than actually move the \cubie{}s when twisting the \rubik{}.
+This approach would be far from reality and would make the implementation of solving algorithms, such as Kociemba's optimal solver and the beginner's algorithm more complicated, since they need to know the position of the \cpiece{}s, and not just the \facelet{}s in order to determine the next step.
 
 A more object-oriented approach than to move the sticker would give a more useful structure for solving the problem.
 If we divided the \rubik{} into it's sub structures it consists of six faces each with nine shared \cubie{}s.
