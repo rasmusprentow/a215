@@ -87,15 +87,15 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		//draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
-		//draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
-		//draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
+		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		//draw3x3(startX  + 3*rectHW*3 - 30, startY + 3*rectHW - 30,g2, cube.getSecondary()[1]);
-		//draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
-		draw3x3poly(startX + 3*rectHW, startY + 3*dispHW, g2,cube.getPrimary()[0]);
+		draw3x3(startX  + 3*rectHW*3, startY + 3*rectHW,g2, cube.getSecondary()[1]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+		//draw3x3poly(startX + 3*rectHW, startY + 3*dispHW, g2,cube.getPrimary()[0]);
 		
-		g.drawPolygon(new int[]{50, 55, 60, 65},new int[] {30, 35, 70, 44}, 4);
+		//g.drawPolygon(new int[]{50, 55, 60, 65},new int[] {30, 35, 70, 44}, 4);
 	}
 
 
