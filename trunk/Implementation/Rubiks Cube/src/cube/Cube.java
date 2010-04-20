@@ -16,7 +16,7 @@ public class Cube {
 	Facelet tertiary_0 = Facelet.TERTIARY_0;
 	Facelet tertiary_1 = Facelet.TERTIARY_1;
 	
-	enum EdgePos {P0S0,P0S1,P1S0,P1S1,P0T0,P0T1,P1T0,P1T1,S0T0,S0T1,S1T0,S1T1}; //Positions for edge pieces
+	public enum EdgePos {P0S0,P0S1,P1S0,P1S1,P0T0,P0T1,P1T0,P1T1,S0T0,S0T1,S1T0,S1T1}; //Positions for edge pieces
 	TreeMap <EdgePos, EdgeCubie> eCubies = new TreeMap <EdgePos, EdgeCubie>(); // treemap taking positions and gives the cubie
 	//Corner cubicles
 	/////////////////////////////
