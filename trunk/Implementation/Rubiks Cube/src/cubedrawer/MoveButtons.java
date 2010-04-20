@@ -56,4 +56,19 @@ public enum MoveButtons {
 	public static MoveButtons inverseOf(MoveButtons move) throws IllegalAccessError {
 		return move.inverse();
 	}
+	
+	public static MoveButtons[] inverseOf(MoveButtons[] move) throws IllegalAccessError {
+		
+		MoveButtons temp;
+		
+		for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
+			temp = move[i];
+			move[i] = move[j];
+			move[j] = temp;
+			move[i].inverse();
+			move[j].inverse();
+		}
+		
+		return move;
+	}
 }
