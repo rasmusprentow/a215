@@ -1,0 +1,20 @@
+\section{Subgroup}
+From section \ref{sec:permutations} it is given, that there is $3^8\cdot2^{12}\cdot12!\cdot8!$ permutations, but it is not all of these permutations that are possible to do. To make it more easy there will only be looked at some moves of the \rubik{} but only the moves of the down and right faces. To better understand $G$, it can be split up in small pieces.
+A nonempty subset $H$ of the group $(G,*)$ is called a subgroup of $G$ if $(H,*)$ is a group.
+To check if a subset actually is a subgroup the following can be used.
+
+
+Let $(G,*)$ be a group. A nonempty subset $H$ of $G$ is a subgroup of $(G,*)$ if, for every $a, b \in H$, $a * b^{-1} \in H$.
+
+Proof. First, suppose $H$ is a subgroup. If $b \in H$, then $b^{-1} \in H $since$ (H,*)$ is a group. So, if $a \in H$ as well, then $a * b^{-1} \in H$.
+
+Conversely, suppose that, for every $a, b \in H$, $a * b^{-1} \in H$.
+
+\begin {itemize}
+\item First, notice that $*$ is associative since $(G,*)$ is a group.
+\item Let $a \in H$. Then, $e = a * a^{-1}$, so $e \in H$.
+\item Let $b \in H$. Then $b^{-1} = e * b^{-1} \in H$, so inverse exist in $H$.
+\item Let $a, b \in H$. By the previous step, $b^{-1} \in H$, so $a* (b^{-1})^{-1} = a* b \in H$. Thus, $H$ is closed under $*$.
+\end {itemize}
+
+Therefore, $(H,*)$ is a group, which means that $H$ is a subgroup of $G$.

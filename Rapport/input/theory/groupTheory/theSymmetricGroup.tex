@@ -1,0 +1,26 @@
+\section{The Symmetric Group}
+Instead of just looking at configurations of 8 cubies, the configurations of the cube can be seen as $n$ objects. 
+These objects be named $1, 2, . . . , n,$ these names are arbitrary. the arranging of these objects can be seen as
+putting them into $n$ slots. If the slots is numberet $1, 2, . . . , n,$ can it be define as a function $\sigma : {1, 2, . . . , n} \rightarrow
+{1, 2, . . . , n}$ by letting $\sigma(i)$ be the number put into slot $i$.
+\begin{comment}
+\subsection{Example} 
+Tag the objects $1, 2, 3$ in the order $3 1 2$. So, it corresponds to the function $\sigma: {1, 2, 3} \rightarrow {1, 2, 3}$
+defined by $\sigma(1) = 3$,$\sigma(2) = 1$, and $\sigma(3) = 2$.
+\end{comment}
+
+Imagine that $x\neq y$. Since a number cannot be in more than one slot, if $x \neq y$, slots x and y must contain
+different numbers. That is, $\sigma(x) \neq \sigma(y)$. Therefore, $\sigma$ is one-to-one.
+
+Any number $y \in {1, 2, . . . , n}$ must lie in some slot, say slot x. Then, $\sigma(x) = y$.
+
+But if $\sigma: {1, . . . , n} \rightarrow {1, . . . , n}$ is a bijection, So $\sigma$ can be used to defines the arrangement of the n
+objects: just put object $\sigma(i)$ in slot i. So, the arrangements is the same as the set of
+bijections ${1, . . . , n} \rightarrow {1, . . . , n}$. Therefore, instead of studying possible arrangements, the bijections can be studied instead.
+
+The Symmetric Group of $n$ letters are the set of bijection from ${1,2,......n}$ to ${1,2,......n}$ with the operation of composition. This group will be called $S_n$
+\begin{comment}
+\subsection{Exemple}
+
+Let $\sigma,\tau \neq S_3$ be defined as $\sigma(1)=3, \sigma(2)=1, \sigma(3)=2, \tau(1)=1,\tau(2)=3,\tau(3)=2$ so $(\sigma\tau)(1)=\tau(3)=2,(\sigma\tau)(2)=\tau(1)=1, (\sigma\tau)(3)=\tau(2)=3.$
+\end{comment}
