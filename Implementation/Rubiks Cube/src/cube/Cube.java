@@ -115,77 +115,85 @@ public class Cube {
 
 		return true;
 	}
+	
+	
+	
+	
+	//Static methods
+	
+	/**
+	 * 
+	 * @param a the cube to permute
+	 * @param moveSequence the moves to permute <b>a</b>
+	 * @return the permuted cube
+	 */
 	static public Cube permute(Cube a, MoveButtons[] moveSequence) {
-		
-		
-		
+
 		for (int i = 0; i < moveSequence.length; i++) {
+			switch(moveSequence[i]){
+			case U:
+				a.getPrimary()[0].cwTwist();
+				break;
+			case UP:
+				a.getPrimary()[0].ccwTwist();
+				break;
+			case U2:
+				a.getPrimary()[0].cwTwist();
+				a.getPrimary()[0].cwTwist();
+				break;
+			case D:
+				a.getPrimary()[1].cwTwist();
+				break;
+			case DP:
+				a.getPrimary()[1].ccwTwist();
+				break;
+			case D2:
+				a.getPrimary()[1].cwTwist();
+				a.getPrimary()[1].cwTwist();
+				break;
+			case F:
+				a.getSecondary()[0].cwTwist();
+				break;
+			case FP:
+				a.getSecondary()[0].ccwTwist();
+				break;
+			case F2:
+				a.getSecondary()[0].cwTwist();
+				a.getSecondary()[0].cwTwist();
+				break;
+			case B:
+				a.getSecondary()[1].cwTwist();
+				break;
+			case BP:
+				a.getSecondary()[1].ccwTwist();
+				break;
+			case B2:
+				a.getSecondary()[1].cwTwist();
+				a.getSecondary()[1].cwTwist();
+				break;
+			case L:
+				a.getTertiary()[0].cwTwist();
+				break;
+			case LP:
+				a.getTertiary()[0].ccwTwist();
+				break;
+			case L2:
+				a.getTertiary()[0].cwTwist();
+				a.getTertiary()[0].cwTwist();
+				break;
+			case R:
+				a.getTertiary()[1].cwTwist();
+				break;
+			case RP:
+				a.getTertiary()[1].ccwTwist();
+				break;
+			case R2:
+				a.getTertiary()[1].cwTwist();
+				a.getTertiary()[1].cwTwist();
+				break;
+			}
+		}
 		
-		
-		switch(moveSequence[i]){
-		case U:
-			cube.getPrimary()[0].cwTwist();
-			break;
-		case UP:
-			cube.getPrimary()[0].ccwTwist();
-			break;
-		case U2:
-			cube.getPrimary()[0].cwTwist();
-			cube.getPrimary()[0].cwTwist();
-			break;
-		case D:
-			cube.getPrimary()[1].cwTwist();
-			break;
-		case DP:
-			cube.getPrimary()[1].ccwTwist();
-			break;
-		case D2:
-			cube.getPrimary()[1].cwTwist();
-			cube.getPrimary()[1].cwTwist();
-			break;
-		case F:
-			cube.getSecondary()[0].cwTwist();
-			break;
-		case FP:
-			cube.getSecondary()[0].ccwTwist();
-			break;
-		case F2:
-			cube.getSecondary()[0].cwTwist();
-			cube.getSecondary()[0].cwTwist();
-			break;
-		case B:
-			cube.getSecondary()[1].cwTwist();
-			break;
-		case BP:
-			cube.getSecondary()[1].ccwTwist();
-			break;
-		case B2:
-			cube.getSecondary()[1].cwTwist();
-			cube.getSecondary()[1].cwTwist();
-			break;
-		case L:
-			cube.getTertiary()[0].cwTwist();
-			break;
-		case LP:
-			cube.getTertiary()[0].ccwTwist();
-			break;
-		case L2:
-			cube.getTertiary()[0].cwTwist();
-			cube.getTertiary()[0].cwTwist();
-			break;
-		case R:
-			cube.getTertiary()[1].cwTwist();
-			break;
-		case RP:
-			cube.getTertiary()[1].ccwTwist();
-			break;
-		case R2:
-			cube.getTertiary()[1].cwTwist();
-			cube.getTertiary()[1].cwTwist();
-			break;
-		
-		
-		return null;
-		
+		return a;
 	}
 }
