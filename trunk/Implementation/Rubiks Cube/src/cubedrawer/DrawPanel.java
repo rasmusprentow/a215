@@ -278,6 +278,9 @@ public class DrawPanel extends JPanel {
 		case UNDO:
 			undo();
 			break;
+		case KOCIEMBA:
+			kociemba();
+			break;
 		default:
 			console.addTextln("Something is wrong");
 
@@ -356,6 +359,8 @@ public class DrawPanel extends JPanel {
 		repaint();
 	}
 
+	
+	
 	public Cube getCube(){
 		return cube;
 	}
@@ -407,5 +412,14 @@ public class DrawPanel extends JPanel {
 			// TODO: handle exception
 		}
 	}
-
+	
+	private void kociemba() {
+		stopMoving();
+		//console.addTextln("Solving with Kociemba's algorithm, please wait.");
+		if (cube.isInH()){
+			console.addTextln("The cube is in the subgroup H!");
+		} else {
+			console.addTextln("The cube is not in the subgroup H!");
+		}
+	}
 }
