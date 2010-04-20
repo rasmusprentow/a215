@@ -332,6 +332,7 @@ public class DrawPanel extends JPanel {
 
 	public void reset(){
 		stopMoving();
+		previousMoves.clear();
 		console.addTextln("Pick up screwdriver, disassemble cube, assemble cube correctly \n");
 		cube = new Cube();
 		repaint();
