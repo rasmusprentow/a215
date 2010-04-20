@@ -1,6 +1,10 @@
 package algorithms;
 
+import java.util.EnumSet;
+
 import cube.Cube;
+
+import cube.Cube.EdgePos;
 
 public class Beginners {
 	private Cube cube;
@@ -20,7 +24,11 @@ public class Beginners {
 		return null;
 	}
 	
-	
+	private void solveFLCross(){
+		EnumSet <EdgePos> edges = EnumSet<EdgePos>.of()
+		
+		EdgePos.
+	}
 	
 	
 }
