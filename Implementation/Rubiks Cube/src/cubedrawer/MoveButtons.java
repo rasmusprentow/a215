@@ -30,7 +30,7 @@ public enum MoveButtons {
 	 * @return the inverse of the move calling the function
 	 * @throws IllegalAccessError if the caller is not a move
 	 */
-	public MoveButtons inverse() throws IllegalAccessError {
+	public MoveButtons invert() throws IllegalAccessError {
 		if(this.ordinal() >= 18) {
 			throw new IllegalAccessError("Unable to invert " + this);
 		}
@@ -54,7 +54,7 @@ public enum MoveButtons {
 	 * @throws IllegalAccessError if <b>move</b> is not a move
 	 */
 	public static MoveButtons inverseOf(MoveButtons move) throws IllegalAccessError {
-		return move.inverse();
+		return move.invert();
 	}
 	
 	public static MoveButtons[] inverseOf(MoveButtons[] move) throws IllegalAccessError {
@@ -65,8 +65,8 @@ public enum MoveButtons {
 			temp = move[i];
 			move[i] = move[j];
 			move[j] = temp;
-			move[i].inverse();
-			move[j].inverse();
+			move[i].invert();
+			move[j].invert();
 		}
 		
 		return move;
