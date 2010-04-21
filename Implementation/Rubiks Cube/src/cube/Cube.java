@@ -426,6 +426,10 @@ public class Cube {
 	*/
 	//Static methods
 
+	static public Cube permute(Cube a, MoveButtons move) {
+		return permute(a,new MoveButtons[]{move});
+	}
+	
 	/**
 	 * 
 	 * @param a the cube to permute
