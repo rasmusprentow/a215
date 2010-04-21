@@ -230,6 +230,16 @@ public class Cube {
 		return cCubies.get(pos);
 	}
 
+public EdgeCubicle getECubicle(EdgePos pos){
+		
+		return eCubicles.get(pos);
+	}
+	
+	public CornerCubicle getCCubicle(CornerPos pos){
+		
+		return cCubicles.get(pos);
+	}
+	
 	public boolean isInH() {
 
 		for (int i = 0; i < 4; i++){

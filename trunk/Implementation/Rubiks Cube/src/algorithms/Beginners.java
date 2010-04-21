@@ -5,7 +5,7 @@ import java.util.EnumSet;
 import cube.Cube;
 import cube.EdgeCubie;
 
-import cube.Cube.EdgePos;
+import cube.EdgePos;
 
 public class Beginners {
 	private Cube cube;
