@@ -195,14 +195,11 @@ public class DrawPanel extends JPanel {
 
 			for (int j = 0; j < 4; j++) {
 				polygons[i][j] = listX[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
-				polygons[i*2][j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
-			}
-			for (int k = 0; k < 4; k++) {
-				System.out.print(polygons[i][k] + " " + polygons[i*2][k]);
+				polygons[i+9][j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
 			}
 			
 			g.setColor(Color.black);
-			g.drawPolygon(polygons[i], polygons[i*2], 4);
+			g.drawPolygon(polygons[i], polygons[i+9], 4);
 
 			if(i == 4){
 				for (int k = 0; k < 4; k++) {
@@ -210,7 +207,7 @@ public class DrawPanel extends JPanel {
 				}
 				System.out.println();
 				g.setColor(face.getFacelet().toColor());
-				g.fillPolygon(polygons[i], polygons[i*2], 4);
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
 
 			} else if(i%2 == 0){
 				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
@@ -226,7 +223,7 @@ public class DrawPanel extends JPanel {
 				}
 
 				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
-				g.fillPolygon(polygons[i], polygons[i*2], 4);
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
 				cornerCount++;
 
 			} else if (i%2 != 0){
@@ -257,12 +254,12 @@ public class DrawPanel extends JPanel {
 
 				edgeCount++;
 				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
-				g.fillPolygon(polygons[i], polygons[i*2], 4);
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
 			}
 
 			g.setColor(Color.black);
 			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
-			g.drawPolygon(polygons[i], polygons[i*2], 4);
+			g.drawPolygon(polygons[i], polygons[i+9], 4);
 
 		}
 		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
