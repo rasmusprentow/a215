@@ -2,6 +2,7 @@ package algorithms;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.LinkedList;
 
 import cube.CornerCubie;
 import cube.CornerPos;
@@ -14,15 +15,15 @@ import cubedrawer.MoveButtons;
 
 public class Beginners {
 	private Cube cube;
-	private ArrayList<MoveButtons> moves;
+	private LinkedList<MoveButtons> moves;
 
 	public Beginners(Cube cube) {
 		this.cube = cube;
-		moves = new ArrayList<MoveButtons>();
+		moves = new LinkedList<MoveButtons>();
 	}
 
 
-	public ArrayList<MoveButtons> solve(){
+	public LinkedList<MoveButtons> solve(){
 
 		moves.clear();
 		solveFLCross();

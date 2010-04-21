@@ -10,7 +10,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.LinkedList;
@@ -21,6 +20,8 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+import util.CubeTools;
 
 import algorithms.*;
 
@@ -557,14 +558,16 @@ public class DrawPanel extends JPanel {
 		stopMoving();
 		//moving = true;
 		//specialMove = true;
-		
-		ArrayList<MoveButtons> moves = beginners.solve();
+		LinkedList<MoveButtons> original = beginners.solve();
+		int size =  original.size();
+		LinkedList<MoveButtons> moves = CubeTools.eliminateInverses((LinkedList<MoveButtons>)original.clone());
 		previousMoves.addAll(moves);
-		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists");
+		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists  - Original had"  + size );
 		for(MoveButtons key: moves){
 			console.addText(key + " ");			
 		}
 		console.addTextln("");
+	
 		
 
 		
@@ -626,7 +629,7 @@ public class DrawPanel extends JPanel {
 	private void kociemba() {
 		stopMoving();
 		console.addTextln("Solving with Kociemba's algorithm, please wait.");
-		MoveButtons[] kociembasMoveSequence , temp;
+		MoveButtons[] kociembasMoveSequence;
 		kociembasMoveSequence = kociemba.solve(12);
 		
 		twistSequence(kociembasMoveSequence);
