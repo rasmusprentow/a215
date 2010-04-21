@@ -61,7 +61,7 @@ public class Cube {
 	/////////////////////////////
 
 
-	
+
 
 	/**
 	 * Contains six faces distributed on three arrays depending on whether they are primary, secondary, or tertiary.
@@ -237,7 +237,7 @@ public class Cube {
 
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param input The cubie which faces you want to find
@@ -248,7 +248,7 @@ public class Cube {
 		Face[] result = null;
 		if(input.getClass() == new CornerCubie(primary_0, secondary_0, tertiary_0).getClass()) {
 			result = new Face[3];
-			
+
 			for(int i = 0 ; i < 2 ; i++) {
 				for(int j = 0 ; j < 4 ; j++) {
 					if(primary[i].getCornerCubicle()[j].getCubie() == input) {
@@ -266,7 +266,7 @@ public class Cube {
 		} else if(input.getClass() == new EdgeCubie(primary_0, secondary_0, null).getClass()) {
 			result = new Face[2];
 			int index = 0;
-			
+
 			for(int i = 0 ; i < 2 ; i++) {
 				for(int j = 0 ; j < 4 ; j++) {
 					if(primary[i].getEdgeCubicle()[j].getCubie() == input) {
@@ -285,7 +285,7 @@ public class Cube {
 					}
 				}
 			}
-			
+
 			if(index <= 1) {
 				for(int i = 0 ; i < 2 ; i++) {
 					for(int j = 0 ; j < 4 ; j++) {
@@ -298,7 +298,7 @@ public class Cube {
 		} else {
 			throw new IllegalArgumentException("The cubie must be either a corner or edge");
 		}
-		
+
 		return result;
 	}
 
@@ -460,5 +460,77 @@ public class Cube {
 		}
 
 		return a;
+	}
+	/**
+	 * 
+	 * @param facelet The color of the face, which is input.
+	 * @param m If m = 0 -- normal move, if m = 1 prime move, if m = 2 double move.
+	 * @return returns MoveButtons
+	 */
+	public MoveButtons FaceToMove(Facelet facelet, int m){
+
+		switch(facelet){
+		case PRIMARY_0:
+			if(m == 0){
+				return MoveButtons.U;
+			}
+			else if(m == 1){
+				return MoveButtons.UP;
+			}
+			else{
+				return MoveButtons.U2;
+			}
+		case PRIMARY_1:
+			if(m == 0){
+				return MoveButtons.D;
+			}
+			else if(m == 1){
+				return MoveButtons.DP;
+			}
+			else{
+				return MoveButtons.D2;
+			}
+		case SECONDARY_0:
+			if(m == 0){
+				return MoveButtons.F;
+			}
+			else if(m == 1){
+				return MoveButtons.FP;
+			}
+			else{
+				return MoveButtons.F2;
+			}
+		case SECONDARY_1:
+			if(m == 0){
+				return MoveButtons.B;
+			}
+			else if(m == 1){
+				return MoveButtons.BP;
+			}
+			else{
+				return MoveButtons.B2;
+			}
+		case TERTIARY_0:
+			if(m == 0){
+				return MoveButtons.L;
+			}
+			else if(m == 1){
+				return MoveButtons.LP;
+			}
+			else{
+				return MoveButtons.L2;
+			}
+		default:
+			if(m == 0){
+				return MoveButtons.R;
+			}
+			else if(m == 1){
+				return MoveButtons.RP;
+			}
+			else{
+				return MoveButtons.R2;
+			}
+		}
+
 	}
 }
