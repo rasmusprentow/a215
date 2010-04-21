@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
 
 import cube.Cube;
@@ -10,25 +11,27 @@ import cubedrawer.MoveButtons;
 
 public class Beginners {
 	private Cube cube;
-
+	private ArrayList<MoveButtons> moves;
 
 	public Beginners(Cube cube) {
 		this.cube = cube;
+		moves = new ArrayList<MoveButtons>();
 	}
 
 
-	public String solve(){
-
+	public ArrayList<MoveButtons> solve(){
+		
+		moves.clear();
 		solveFLCross();
 
-		return null;
+		return moves;
 	}
 
 	private void algortihm1(EdgePos p){
 		MoveButtons[] moves;
 		switch (p) {
 		case P1S0:
-			moves = new MoveButtons[]{ MoveButtons.FP, MoveButtons.D,MoveButtons.RP, MoveButtons.DP};
+			moves = new MoveButtons[]{ MoveButtons.FP, MoveButtons.D,MoveButtons.RP, MoveButtons.DP };
 			break;
 
 		case P1S1:
@@ -42,7 +45,9 @@ public class Beginners {
 			moves = new MoveButtons[]{ MoveButtons.LP, MoveButtons.D, MoveButtons.FP, MoveButtons.DP};
 			break;
 		}
-		Cube.permute(cube, moves);
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
 	}
 
 	private void solveFLCross(){
