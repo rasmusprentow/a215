@@ -2,6 +2,11 @@ package algorithms;
 
 public class UnableToIncreaseMoveSequenceException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5415875049433999112L;
+
 	public UnableToIncreaseMoveSequenceException() {
 		// TODO Auto-generated constructor stub
 	}
