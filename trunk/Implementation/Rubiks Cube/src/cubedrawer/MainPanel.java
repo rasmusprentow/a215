@@ -42,14 +42,6 @@ public class MainPanel extends JPanel implements ActionListener {
 				cubeDrawer.buttonHandler(key);
 			}
 		}
-			
-			
-		//}
-		
-		
-		//cubeDrawer.getCube().
-		
-		
 		cubeDrawer.repaint();
 	}
 
