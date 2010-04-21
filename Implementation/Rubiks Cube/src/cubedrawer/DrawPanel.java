@@ -97,22 +97,22 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		
+		/*
 		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
 		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+		*/
 		
-		/*
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
 		draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
 		draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
 		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 		draw3x3SecondaryPolygon(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		 */
+		
 	}
 
 
@@ -270,8 +270,8 @@ public class DrawPanel extends JPanel {
 
 	public void draw3x3SecondaryPolygon(int x, int y, Graphics2D g, Face face){
 
-		int[] listX = {x, x - dispHW, x - dispHW, x};
-		int[] listY = {y, y + 2*dispHW, y + rectHW + 2*dispHW, y + rectHW};
+		int[] listX = {x + 2*dispHW, x, x, x + 2*dispHW};
+		int[] listY = {y - dispHW, y, y + rectHW, y + rectHW - dispHW};
 		int[][] polygons = new int[18][4];
 		byte cornerCount = 0;
 		byte edgeCount = 0;
@@ -282,8 +282,8 @@ public class DrawPanel extends JPanel {
 		for(int i = 0; i < 9; i++){
 
 			for (int j = 0; j < 4; j++) {
-				polygons[i+9][j] = listY[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
-				polygons[i][j] = listX[j] + (int)Math.ceil(i/3)*dispHW;
+				polygons[i][j] = listX[j] + i%3*2*dispHW;
+				polygons[i+9][j] = listY[j] + (int)Math.ceil(i/3)*3*dispHW - i%3*dispHW;
 			}
 			
 			g.setColor(Color.black);
@@ -348,9 +348,11 @@ public class DrawPanel extends JPanel {
 
 		}
 		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
-
-		g.drawPolygon(new int[]{x + 2*dispHW, x - 4*dispHW, x - dispHW + 2*rectHW, x + 2*dispHW + 3*rectHW+1}, 
-				new int[]{y - dispHW-1, y + 2*dispHW-1, y + 2*dispHW-1, y - dispHW-1}, 4);
+		//int[] listX = {x + 2*dispHW, x, x, x + 2*dispHW};
+		//int[] listY = {y - dispHW, y, y + rectHW, y + rectHW - dispHW};
+		
+		g.drawPolygon(new int[]{x, x, x + 2*rectHW, x + 2*rectHW + 1}, 
+			new int[]{y - 1, y + 3*rectHW - 1, y + 6*dispHW - 1, y - 3*dispHW - 1}, 4);
 
 	}
 
