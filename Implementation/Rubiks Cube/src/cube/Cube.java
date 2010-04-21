@@ -376,6 +376,10 @@ public class Cube {
 		}
 	}
 	
+	/**
+	 * The cube <i>must</i> be inside H, or it might return a false positive
+	 * @return True if the cube is solve otherwise false.
+	 */
 	public boolean isSolvedInsideH() {
 		CornerPos[] cp = CornerPos.values();
 		EdgePos[] ep = EdgePos.values();
