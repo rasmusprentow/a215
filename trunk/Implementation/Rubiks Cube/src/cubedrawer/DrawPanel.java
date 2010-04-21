@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.LinkedList;
@@ -57,13 +58,13 @@ public class DrawPanel extends JPanel {
 		cube = new Cube();
 		this.setBackground(Color.white);
 		//this.setPreferredSize(new Dimension(400,300));
-		console.addTextln("Behold the Cube ");
+		console.addTextln("Behold the Cube");
 		//previousMoves = new ArrayList<MoveButtons>();
 		previousMoves = new LinkedList<MoveButtons>();
 
 		beginners = new Beginners(cube);
 		kociemba = new Kociemba(cube);
-		
+
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
 			public void actionPerformed(ActionEvent evt) { 	
@@ -95,18 +96,21 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-
-
+		/*
+		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
-		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
-		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+		 */
 
-		//draw3x3(startX  + 8*rectHW , startY + 2*rectHW,g2, cube.getSecondary()[1]);
-		//draw3x3poly(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
-
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
+		draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
+		draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
+		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[1]);
+		//draw3x3SecondaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 	}
 
 
@@ -176,34 +180,38 @@ public class DrawPanel extends JPanel {
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
 
-	public void draw3x3poly(int x, int y, Graphics2D g, Face face){
+	public void draw3x3PrimaryPolygon(int x, int y, Graphics2D g, Face face){
 
 		int[] listX = {x, x + 2*dispHW, x + rectHW + 2*dispHW, x + rectHW};
-		int[] tempX = new int[4];
 		int[] listY = {y, y - dispHW, y - dispHW, y};
-		int[] tempY = new int[4];
+		int[][] polygons = new int[18][4];
 		byte cornerCount = 0;
 		byte edgeCount = 0;
 		int[] newCornerOrder = {0 , 1, 3 ,2 };
 		int[] newEdgeOrder = {0 , 3, 1 ,2 };
 		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
 
-		g.drawPolygon(new int[]{x + 2*dispHW, x - 4*dispHW, x - dispHW + 2*rectHW, x + 2*dispHW + 3*rectHW}, 
-				new int[]{y - dispHW - 1, y + 2*dispHW - 1, y + 2*dispHW - 1, y - dispHW - 1}, 4);
 		for(int i = 0; i < 9; i++){
-			g.setColor(Color.black);
-			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
-			//g.drawPolygon(,, 4);
 
 			for (int j = 0; j < 4; j++) {
-				tempX[j] = listX[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
-				tempY[j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
+				polygons[i][j] = listX[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
+				polygons[i*2][j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
 			}
-			g.drawPolygon(tempX, tempY, 4);
+			for (int k = 0; k < 4; k++) {
+				System.out.print(polygons[i][k] + " " + polygons[i*2][k]);
+			}
+			
+			g.setColor(Color.black);
+			g.drawPolygon(polygons[i], polygons[i*2], 4);
 
 			if(i == 4){
+				for (int k = 0; k < 4; k++) {
+					System.out.print(polygons[i][k] + " " + polygons[i*2][k] + " ");
+				}
+				System.out.println();
 				g.setColor(face.getFacelet().toColor());
-				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.fillPolygon(polygons[i], polygons[i*2], 4);
+
 			} else if(i%2 == 0){
 				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
 
@@ -218,7 +226,7 @@ public class DrawPanel extends JPanel {
 				}
 
 				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
-				g.setColor(Color.black);
+				g.fillPolygon(polygons[i], polygons[i*2], 4);
 				cornerCount++;
 
 			} else if (i%2 != 0){
@@ -249,28 +257,23 @@ public class DrawPanel extends JPanel {
 
 				edgeCount++;
 				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.fillPolygon(polygons[i], polygons[i*2], 4);
 			}
 
 			g.setColor(Color.black);
 			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
+			g.drawPolygon(polygons[i], polygons[i*2], 4);
 
 		}
 		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 
+		g.drawPolygon(new int[]{x + 2*dispHW, x - 4*dispHW, x - dispHW + 2*rectHW, x + 2*dispHW + 3*rectHW+1}, 
+				new int[]{y - dispHW-1, y + 2*dispHW-1, y + 2*dispHW-1, y - dispHW-1}, 4);
 
+	}
 
+	public void draw3x3SecondaryPolygon(int x, int y, Graphics2D g, Face face){
 
-
-		//g.setColor(Color.black);
-		//g.drawPolygon(listX, listY, 4);
-		/*
-		for(int i = 0; i < 9; i++){
-
-			listX[j] = listX[j] + dispHW * i;
-
-		g.setColor(Color.black);
-		g.drawPolygon(listX, listY, 4);
-		 */
 	}
 
 	public void buttonHandler(MoveButtons t){
@@ -372,7 +375,7 @@ public class DrawPanel extends JPanel {
 		case KOCIEMBA:
 			kociemba();
 			break;
-			
+
 		case BEGINNERS:
 			beginners();
 			
@@ -451,7 +454,7 @@ public class DrawPanel extends JPanel {
 			previousMoves.add(key);
 		}
 	}
-	
+
 	public void twistSequence(ArrayList<MoveButtons> e){
 		//stopMoving();
 		for(MoveButtons key: e){
@@ -535,7 +538,7 @@ public class DrawPanel extends JPanel {
 		stopMoving();
 		doNotSaveNextMove = true;
 		try {
-		buttonHandler(previousMoves.removeLast().invert());
+			buttonHandler(previousMoves.removeLast().invert());
 		}
 		catch (NoSuchElementException e) {
 			// TODO: handle exception
@@ -552,10 +555,10 @@ public class DrawPanel extends JPanel {
 		
 		stopMoving();
 	}
-	
+
 	private void test() {
 		MoveButtons[] seq = {U,F,R2};
-		
+
 		if(test == 0) {
 			Cube.permute(cube, seq);
 			for(int i = 0 ; i < seq.length ; i++) {
