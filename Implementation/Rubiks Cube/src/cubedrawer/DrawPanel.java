@@ -21,6 +21,8 @@ import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import algorithms.Beginners;
+
 import static cubedrawer.MoveButtons.*;
 import cube.CornerCubie;
 import cube.Cube;
@@ -44,6 +46,7 @@ public class DrawPanel extends JPanel {
 	private Timer scrambleDanceTimer;
 	private Timer playDanceTimer;
 	private MP3 mp3;
+	private Beginners beginners;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
 
@@ -56,6 +59,8 @@ public class DrawPanel extends JPanel {
 		//previousMoves = new ArrayList<MoveButtons>();
 		previousMoves = new LinkedList<MoveButtons>();
 
+		beginners = new Beginners(cube);
+		
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
 			public void actionPerformed(ActionEvent evt) { 	
@@ -363,6 +368,10 @@ public class DrawPanel extends JPanel {
 			break;
 		case KOCIEMBA:
 			kociemba();
+			break;
+			
+		case BEGINNERS:
+			beginners.solve();
 			break;
 		default:
 			console.addTextln("Something is wrong");
