@@ -298,6 +298,15 @@ public EdgeCubicle getECubicle(EdgePos pos){
 		}
 	}
 	
+public Face getLastFace(EdgeCubie e){
+		
+		if(e.getTertiaryFacelet()== null){
+			return	getFace(e.getSecondaryFacelet());
+			
+		}else {
+			return getFace(e.getTertiaryFacelet());
+		}
+	}
 	
 	//Static methods
 	
