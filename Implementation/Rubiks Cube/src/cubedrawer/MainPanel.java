@@ -21,14 +21,12 @@ public class MainPanel extends JPanel implements ActionListener {
 		// TODO Auto-generated constructor stub
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.black);
-	
 		sidePanel = new SidePanel();
 		sidePanel.setBorder(new EtchedBorder());
 		this.add(sidePanel,BorderLayout.EAST);
 		sidePanel.addActionListener(this);
 		console = new Console();
 		this.add(console, BorderLayout.SOUTH);
-		
 		console.setBorder(new EtchedBorder());
 		cubeDrawer = new DrawPanel(console);
 		cubeDrawer.setBorder(new EtchedBorder());
