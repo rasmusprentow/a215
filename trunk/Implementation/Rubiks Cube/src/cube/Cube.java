@@ -263,7 +263,7 @@ public class Cube {
 			
 			for(int i = 0 ; i < 2 ; i++) {
 				for(int j = 0 ; j < 4 ; j++) {
-					if(primary[i].getCornerCubicle()[j].getCubie() == input) {
+					if(primary[i].getEdgeCubicle()[j].getCubie() == input) {
 						result[index] = primary[i];
 						index++;
 						break;
@@ -272,7 +272,7 @@ public class Cube {
 			}
 			for(int i = 0 ; i < 2 ; i++) {
 				for(int j = 0 ; j < 4 ; j++) {
-					if(secondary[i].getCornerCubicle()[j].getCubie() == input) {
+					if(secondary[i].getEdgeCubicle()[j].getCubie() == input) {
 						result[index] = secondary[i];
 						index++;
 						break;
@@ -283,7 +283,7 @@ public class Cube {
 			if(index <= 1) {
 				for(int i = 0 ; i < 2 ; i++) {
 					for(int j = 0 ; j < 4 ; j++) {
-						if(tertiary[i].getCornerCubicle()[j].getCubie() == input) {
+						if(tertiary[i].getEdgeCubicle()[j].getCubie() == input) {
 							result[index] = tertiary[i];
 						}
 					}
