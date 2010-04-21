@@ -108,9 +108,9 @@ public class Beginners {
 	}
 	
 	/**
-	 * Solves the first Layer.
+	 * Solves the corners of the first Layer.
 	 */
-	private void solveFL(){
+	private void solveFL(){ // 
 		EnumSet<CornerPos> corners = EnumSet.of(CornerPos.P1S0T0, CornerPos.P1S1T0, CornerPos.P1S0T1, CornerPos.P1S1T1);
 		//EnumSet<CornerPos> oppCorners = EnumSet.of(CornerPos.P0S0T0, CornerPos.P0S1T0, CornerPos.P1S0T1, CornerPos.P1S1T1);
 		
@@ -126,15 +126,16 @@ public class Beginners {
 			} else if(cube.getFace(c)[0].getFacelet() == Facelet.PRIMARY_1) { // It is in the down face
 				
 
-				for(CornerPos cornerKey: corners){ // For all edges in the second layer
-					if(cube.getCCubicle(cornerKey).getCubie() == c){
-						algorithm4(cornerKey);
-						while(cube.getFace(c)[1].getFacelet() != c.getSecondaryFacelet() || cube.getFace(c)[2].getFacelet() != c.getTertiaryFacelet()){
+				for(CornerPos cornerKey: corners){ // For all corners 
+					if(cube.getCCubicle(cornerKey).getCubie() == c){ // If the cube in this corner is the cube currently being placed.
+						algorithm4(cornerKey);		// Switches the cubes
+						while(cube.getFace(c)[1].getFacelet() != c.getSecondaryFacelet() || cube.getFace(c)[2].getFacelet() != c.getTertiaryFacelet()){ 
+							// Rotates as long as the cube is not in its right spot. The means  P0S*T*.
 							moves.add(MoveButtons.U);
 							Cube.permute(cube, MoveButtons.U);
 						}
-						algorithm4(key);
-						while (c.getPrimaryOrientation() != 0){  // Is it oriented wrong
+						algorithm4(key);	 // Moves the cube into place.
+						while (c.getPrimaryOrientation() != 0){  // As long as it is orientated wrong rotate it.
 							//System.out.println("på plads vender forkert " + key);
 							algorithm3(key);
 						}
@@ -246,7 +247,10 @@ public class Beginners {
 	}
 	
 
-	
+		/**
+		 * Svitches the cube in the P1 on layer with the same cube in the p0 layer.
+		 * @param p The P1 position of the switch.
+		 */
 		private void algorithm4(CornerPos p){
 		MoveButtons[] moves;
 		switch(p){
