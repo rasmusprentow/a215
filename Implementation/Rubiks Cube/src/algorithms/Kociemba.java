@@ -111,19 +111,24 @@ public class Kociemba {
 				i++;
 				do {
 					moveSequence[length-1] = (MoveButtons)S.toArray()[moveSequence[length-1].ordinal() + 1];
+					
 				} while(A.contains(moveSequence[length-1]));
-
+				
 			} else {
 				throw new ArrayIndexOutOfBoundsException();
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
+			if (length == 1 ) {
+				throw new UnableToIncreaseMoveSequenceException();
+			}
 			moveSequence[length-1] = F;
 			for (; i <= length; i++) {
 				try {
+					System.out.println((MoveButtons)S.size())
 					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
 					break;
 				} catch (ArrayIndexOutOfBoundsException e1) {
-					if (length - i != 0) {
+					if (length - 1 != i) {
 						moveSequence[length-i] = U;
 					} else {
 						throw new UnableToIncreaseMoveSequenceException();
@@ -135,6 +140,7 @@ public class Kociemba {
 		for ( ; i > 0; i--) {
 			try {
 				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
+					System.out.println("Jeg er recursiv!");
 					increaseWithSNotEndingWithA(moveSequence, length-i);
 					break;
 				}
@@ -187,6 +193,7 @@ public class Kociemba {
 							System.out.print(c[i] + " ");
 						}
 						System.out.println();
+						System.out.println("Increasing with A!");
 						increaseWithA(c, d-1);
 					}
 				}
