@@ -280,7 +280,19 @@ public EdgeCubicle getECubicle(EdgePos pos){
 	
 	public boolean isSolved() {
 		if(this.isInH()) {
-			
+			CornerPos[] cp = CornerPos.values();
+			EdgePos[] ep = EdgePos.values();
+			for (int i = 0; i < 6; i++) {
+				
+				if (cCubicles.get(cp[i]).getCubie() != cCubies.get(cp[i])) {
+					return false;
+				}
+			}
+			for (int i = 0; i < 10; i++) {
+				if (eCubicles.get(ep[i]).getCubie() != eCubies.get(ep[i])) {
+					return false;
+				}
+			}
 			
 			return true;
 		} else {
