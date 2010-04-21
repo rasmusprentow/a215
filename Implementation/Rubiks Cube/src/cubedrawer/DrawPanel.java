@@ -34,7 +34,7 @@ public class DrawPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Cube cube;
 	private int rectHW = 30; 
-	private int dispHW = 30; //the distance moved after drawing each polygon
+	private int dispHW = 10; //the distance moved after drawing each polygon
 	private int startDelay = 500;
 	private Console console;
 	private boolean moving;
@@ -46,7 +46,7 @@ public class DrawPanel extends JPanel {
 	private MP3 mp3;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
-	
+
 	public DrawPanel(Console console) {
 		this.console = console;
 		cube = new Cube();
@@ -55,27 +55,27 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Behold the Cube ");
 		//previousMoves = new ArrayList<MoveButtons>();
 		previousMoves = new LinkedList<MoveButtons>();
-		
+
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
 			public void actionPerformed(ActionEvent evt) { 	
 				scramble(1); 
 				if(scrambleDanceTimer.getDelay() > 100){ scrambleDanceTimer.setDelay(scrambleDanceTimer.getDelay() - 23); }
 				repaint(); 
-				}
-			});
+			}
+		});
 		playDanceTimer = new Timer(2*60*1000+28*1000, new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				mp3.play();
 			}
 		});
-		
-		
-		 String filename = "Khachaturian-Sabre_Dance.mp3";
-	     mp3 = new MP3(filename);
+
+
+		String filename = "Khachaturian-Sabre_Dance.mp3";
+		mp3 = new MP3(filename);
 	}
 
 	@Override
@@ -87,17 +87,18 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		System.out.println("Now prime 0");
-		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+
+
+		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		draw3x3(startX  + 3*rectHW*3, startY + 3*rectHW,g2, cube.getSecondary()[1]);
-		System.out.println("Now prime 1");
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
-		//draw3x3poly(startX + 3*rectHW, startY + 3*dispHW, g2,cube.getPrimary()[0]);
-		
-		//g.drawPolygon(new int[]{50, 55, 60, 65},new int[] {30, 35, 70, 44}, 4);
+		draw3x3(startX  + 8*rectHW , startY + 2*rectHW,g2, cube.getSecondary()[1]);
+		//draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		//draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+
+
+		draw3x3poly(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
+
 	}
 
 
@@ -115,7 +116,7 @@ public class DrawPanel extends JPanel {
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			} else if(i%2 == 0){
 				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
-				
+
 				if(ccubie.getPrimaryOrientation() == faceOrder){
 					g.setColor(ccubie.getFacelet(0).toColor());
 				} else {
@@ -125,14 +126,13 @@ public class DrawPanel extends JPanel {
 						g.setColor(ccubie.getFacelet(2).toColor());
 					}
 				}
-				
+
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 				g.setColor(Color.black);
 				cornerCount++;
-				
+
 			} else if (i%2 != 0){
 				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getCubie();
-				System.out.println(face + " " + face.getEdgeCubicle()[newEdgeOrder[edgeCount]] + " " + ecubie + " " + newEdgeOrder[edgeCount] + " " + edgeCount);
 				if(faceOrder == 0){
 					g.setColor(ecubie.getFacelet(ecubie.getPrimaryOrientation()).toColor());
 				} else 	if(faceOrder == 1){
@@ -156,46 +156,126 @@ public class DrawPanel extends JPanel {
 						g.setColor(ecubie.getFacelet(0).toColor());
 					}
 				}
-				
+
 				edgeCount++;
 				g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
 			}
-			
+
 			g.setColor(Color.black);
 			g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
 
 		}
 		g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 	}
-	
-	public void draw3x3poly(int x, int y, Graphics2D g, Face face){
-		
-		int[] listX = {0, dispHW, rectHW, rectHW + dispHW};
-		int[] listY = {0, -dispHW, 0, -dispHW};
-		
-		for(int i = 0; i < 9; i++){
-			for(int j = 0; j < 4; j++){
-				listX[j] = listX[j] + dispHW * i;
-			}
-			g.setColor(Color.black);
-			g.drawPolygon(listX, listY, 4);
-			System.out.println(listX.toString());
-		}
-		
 
+	public void draw3x3poly(int x, int y, Graphics2D g, Face face){
+
+		int[] listX = {x, x + 2*dispHW, x + rectHW + 2*dispHW, x + rectHW};
+		int[] tempX = new int[4];
+		int[] listY = {y, y - dispHW, y - dispHW, y};
+		int[] tempY = new int[4];
+		byte cornerCount = 0;
+		byte edgeCount = 0;
+		int[] newCornerOrder = {0 , 1, 3 ,2 };
+		int[] newEdgeOrder = {0 , 3, 1 ,2 };
+		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
+
+		g.drawPolygon(new int[]{x + 2*dispHW, x - 4*dispHW, x - dispHW + 2*rectHW, x + 2*dispHW + 3*rectHW}, 
+				new int[]{y - dispHW - 1, y + 2*dispHW - 1, y + 2*dispHW - 1, y - dispHW - 1}, 4);
+		for(int i = 0; i < 9; i++){
+			g.setColor(Color.black);
+			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
+			//g.drawPolygon(,, 4);
+
+			for (int j = 0; j < 4; j++) {
+				tempX[j] = listX[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
+				tempY[j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
+			}
+			g.drawPolygon(tempX, tempY, 4);
+
+			if(i == 4){
+				g.setColor(face.getFacelet().toColor());
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+			} else if(i%2 == 0){
+				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
+
+				if(ccubie.getPrimaryOrientation() == faceOrder){
+					g.setColor(ccubie.getFacelet(0).toColor());
+				} else {
+					if (ccubie.getSecondaryOrientation() == faceOrder){
+						g.setColor(ccubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+				}
+
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.setColor(Color.black);
+				cornerCount++;
+
+			} else if (i%2 != 0){
+				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getCubie();
+				if(faceOrder == 0){
+					g.setColor(ecubie.getFacelet(ecubie.getPrimaryOrientation()).toColor());
+				} else 	if(faceOrder == 1){
+					if(i == 7 || i == 1){
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(0).toColor());
+						}
+					} else {
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(0).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(1).toColor());
+						}
+					}
+				} else 	if(faceOrder == 2){
+					if(ecubie.getPrimaryOrientation() == 0){
+						g.setColor(ecubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ecubie.getFacelet(0).toColor());
+					}
+				}
+
+				edgeCount++;
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+			}
+
+			g.setColor(Color.black);
+			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
+
+		}
+		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
+
+
+
+
+
+		//g.setColor(Color.black);
+		//g.drawPolygon(listX, listY, 4);
+		/*
+		for(int i = 0; i < 9; i++){
+
+			listX[j] = listX[j] + dispHW * i;
+
+		g.setColor(Color.black);
+		g.drawPolygon(listX, listY, 4);
+		 */
 	}
 
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
 			console.addText(t + " ");
-			
+
 			previousMoves.add(t);
 		} else if(doNotSaveNextMove) {
-			
+
 			doNotSaveNextMove = false;
 		}
-		
+
 		switch(t){
 		case U:
 			cube.getPrimary()[0].cwTwist();
@@ -288,7 +368,7 @@ public class DrawPanel extends JPanel {
 			console.addTextln("Something is wrong");
 
 		}	
-	
+
 
 	}
 
@@ -299,17 +379,17 @@ public class DrawPanel extends JPanel {
 			console.addText("Applying Moves: ");
 		}
 	}
-	
+
 	private void stopMoving(){
 		if(moving){
 
-		moving = false;
-		console.addTextln("");
+			moving = false;
+			console.addTextln("");
 		}
 	}
 
 	public void youKnowMove(){
-		
+
 		stopMoving();
 		moving = true;
 		console.addText("Pons asinurum:");
@@ -342,7 +422,7 @@ public class DrawPanel extends JPanel {
 			mp3.close();
 		}
 		scrambles++;
-		*/
+		 */
 	}
 
 	public void twistSequence(MoveButtons... t){
@@ -362,8 +442,8 @@ public class DrawPanel extends JPanel {
 		repaint();
 	}
 
-	
-	
+
+
 	public Cube getCube(){
 		return cube;
 	}
@@ -393,7 +473,7 @@ public class DrawPanel extends JPanel {
 				System.out.println("Unable to get Output Port");
 				return;
 			}
- 
+
 			final FloatControl controlIn = (FloatControl)lineOut.getControl(FloatControl.Type.VOLUME);
 			final float volume = 100 * (controlIn.getValue() / controlIn.getMaximum());
 			controlIn.setValue((float)vol / 100);
@@ -404,7 +484,7 @@ public class DrawPanel extends JPanel {
 			System.out.println(e + " LINE_OUT");
 		}
 	}
-	
+
 	private void undo() {
 		stopMoving();
 		doNotSaveNextMove = true;
@@ -415,7 +495,7 @@ public class DrawPanel extends JPanel {
 			// TODO: handle exception
 		}
 	}
-	
+
 	private void kociemba() {
 		stopMoving();
 		//console.addTextln("Solving with Kociemba's algorithm, please wait.");
