@@ -21,6 +21,7 @@ public class Beginners {
 	
 	public String solve(){
 		
+		solveFLCross();
 		
 		return null;
 	}
@@ -30,6 +31,10 @@ public class Beginners {
 		
 		for(EdgePos key: edges){
 			EdgeCubie e = cube.getECubie(key);
+			
+			if(cube.getECubicle(key).getCubie()== e){
+			System.out.println("cuben er på plads");	
+			}
 			
 			///START
 		}
