@@ -238,7 +238,13 @@ public class Cube {
 		}
 	}
 	
-	public Face[] getFace(Cubie input) {
+	/**
+	 * 
+	 * @param input The cubie which faces you want to find
+	 * @return An array of face which cantains the cubicle with the cubie <b>input</b> 
+	 * @throws IllegalArgumentException If the cubie is neither corner nor edge
+	 */
+	public Face[] getFace(Cubie input) throws IllegalArgumentException{
 		Face[] result = null;
 		if(input.getClass() == new CornerCubie(primary_0, secondary_0, tertiary_0).getClass()) {
 			result = new Face[3];
@@ -289,6 +295,8 @@ public class Cube {
 					}
 				}
 			}
+		} else {
+			throw new IllegalArgumentException("The cubie must be either a corner or edge");
 		}
 		
 		return result;

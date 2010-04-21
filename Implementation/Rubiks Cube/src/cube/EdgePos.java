@@ -12,5 +12,5 @@ public enum EdgePos {
 	S0T0,
 	S0T1,
 	S1T0,
-	S1T1; //Positions for edge pieces
+	S1T1; //Positions for edge cubies and edge cubicles
 }
