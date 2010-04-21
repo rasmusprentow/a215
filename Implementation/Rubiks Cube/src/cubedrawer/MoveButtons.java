@@ -62,16 +62,26 @@ public enum MoveButtons {
 		return move.invert();
 	}
 	
+	/**
+	 * 
+	 * @param move
+	 * @return
+	 * @throws IllegalAccessError
+	 */
 	public static MoveButtons[] inverseOf(MoveButtons[] move) throws IllegalAccessError {
 		
 		MoveButtons temp;
-		
-		for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
-			temp = move[i];
-			move[i] = move[j];
-			move[j] = temp;
-			move[i].invert();
-			move[j].invert();
+		if(move.length == 1) {
+			move[0].invert();
+		} else {
+
+			for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
+				temp = move[i];
+				move[i] = move[j];
+				move[j] = temp;
+				move[i].invert();
+				move[j].invert();
+			}
 		}
 		
 		return move;
