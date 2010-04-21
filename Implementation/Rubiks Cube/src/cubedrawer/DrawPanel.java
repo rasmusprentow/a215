@@ -21,7 +21,7 @@ import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import algorithms.Beginners;
+import algorithms.*;
 
 import static cubedrawer.MoveButtons.*;
 import cube.CornerCubie;
@@ -47,6 +47,7 @@ public class DrawPanel extends JPanel {
 	private Timer playDanceTimer;
 	private MP3 mp3;
 	private Beginners beginners;
+	private Kociemba kociemba;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
 
@@ -461,6 +462,7 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Pick up screwdriver, disassemble cube, assemble cube correctly \n");
 		cube = new Cube();
 		beginners = new Beginners(cube);
+		kociemba = new Kociemba(cube);
 		repaint();
 	}
 
@@ -530,5 +532,10 @@ public class DrawPanel extends JPanel {
 		} else {
 			console.addTextln("The cube is not in the subgroup H!");
 		}
+		
+		
+		/*
+		kociemba.solve(12);
+		*/
 	}
 }
