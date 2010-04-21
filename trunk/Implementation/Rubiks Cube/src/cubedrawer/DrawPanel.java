@@ -92,12 +92,12 @@ public class DrawPanel extends JPanel {
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
-		draw3x3(startX  + 8*rectHW , startY + 2*rectHW,g2, cube.getSecondary()[1]);
-		//draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
-		//draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
+		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
 
-
-		draw3x3poly(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
+		//draw3x3(startX  + 8*rectHW , startY + 2*rectHW,g2, cube.getSecondary()[1]);
+		//draw3x3poly(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 
 	}
 
