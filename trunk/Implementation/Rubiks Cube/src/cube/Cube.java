@@ -224,6 +224,11 @@ public class Cube {
 		
 		return eCubies.get(pos);
 	}
+	
+	public CornerCubie getCCubie(CornerPos pos){
+		
+		return cCubies.get(pos);
+	}
 
 	public boolean isInH() {
 
