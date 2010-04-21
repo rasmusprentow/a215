@@ -96,21 +96,22 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		/*
+		
 		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
 		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		 */
-
+		
+		/*
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
 		draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
 		draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
 		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
-		//draw3x3SecondaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
+		draw3x3SecondaryPolygon(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+		 */
 	}
 
 
@@ -268,7 +269,90 @@ public class DrawPanel extends JPanel {
 
 	public void draw3x3SecondaryPolygon(int x, int y, Graphics2D g, Face face){
 
+		int[] listX = {x, x - dispHW, x - dispHW, x};
+		int[] listY = {y, y + 2*dispHW, y + rectHW + 2*dispHW, y + rectHW};
+		int[][] polygons = new int[18][4];
+		byte cornerCount = 0;
+		byte edgeCount = 0;
+		int[] newCornerOrder = {0 , 1, 3 ,2 };
+		int[] newEdgeOrder = {0 , 3, 1 ,2 };
+		int faceOrder = (int) Math.floor(face.getFacelet().ordinal()/2);
+
+		for(int i = 0; i < 9; i++){
+
+			for (int j = 0; j < 4; j++) {
+				polygons[i+9][j] = listY[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
+				polygons[i][j] = listX[j] + (int)Math.ceil(i/3)*dispHW;
+			}
+			
+			g.setColor(Color.black);
+			g.drawPolygon(polygons[i], polygons[i+9], 4);
+
+			if(i == 4){
+
+				g.setColor(face.getFacelet().toColor());
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
+
+			} else if(i%2 == 0){
+				CornerCubie ccubie = face.getCornerCubicle()[newCornerOrder[cornerCount]].getCubie();
+
+				if(ccubie.getPrimaryOrientation() == faceOrder){
+					g.setColor(ccubie.getFacelet(0).toColor());
+				} else {
+					if (ccubie.getSecondaryOrientation() == faceOrder){
+						g.setColor(ccubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ccubie.getFacelet(2).toColor());
+					}
+				}
+
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
+				cornerCount++;
+
+			} else if (i%2 != 0){
+				EdgeCubie ecubie = face.getEdgeCubicle()[newEdgeOrder[edgeCount]].getCubie();
+				if(faceOrder == 0){
+					g.setColor(ecubie.getFacelet(ecubie.getPrimaryOrientation()).toColor());
+				} else 	if(faceOrder == 1){
+					if(i == 7 || i == 1){
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(1).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(0).toColor());
+						}
+					} else {
+						if(ecubie.getPrimaryOrientation() == 0){
+							g.setColor(ecubie.getFacelet(0).toColor());
+						} else {
+							g.setColor(ecubie.getFacelet(1).toColor());
+						}
+					}
+				} else 	if(faceOrder == 2){
+					if(ecubie.getPrimaryOrientation() == 0){
+						g.setColor(ecubie.getFacelet(1).toColor());
+					} else {
+						g.setColor(ecubie.getFacelet(0).toColor());
+					}
+				}
+
+				edgeCount++;
+				//g.fillRect(i%3*rectHW + x + 1, (int)Math.ceil(i/3)*rectHW + y + 1, rectHW - 1, rectHW -1);
+				g.fillPolygon(polygons[i], polygons[i+9], 4);
+			}
+
+			g.setColor(Color.black);
+			//g.drawRect(i%3*rectHW + x, (int)Math.ceil(i/3)*rectHW + y, rectHW, rectHW);
+			g.drawPolygon(polygons[i], polygons[i+9], 4);
+
+		}
+		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
+
+		g.drawPolygon(new int[]{x + 2*dispHW, x - 4*dispHW, x - dispHW + 2*rectHW, x + 2*dispHW + 3*rectHW+1}, 
+				new int[]{y - dispHW-1, y + 2*dispHW-1, y + 2*dispHW-1, y - dispHW-1}, 4);
+
 	}
+
 
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
