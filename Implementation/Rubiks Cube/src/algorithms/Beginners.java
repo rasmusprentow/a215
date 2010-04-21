@@ -33,8 +33,11 @@ public class Beginners {
 			EdgeCubie e = cube.getECubie(key);
 			
 			if(cube.getECubicle(key).getCubie()== e){
-			System.out.println("cuben er på plads");	
+				if(e.getPrimaryOrientation()== 0){
+					
+				}
 			}
+			
 			
 			///START
 		}

@@ -220,6 +220,24 @@ public class Cube {
 		}
 	}
 	
+	public Face getFace(Facelet f){
+		switch(f){
+		case PRIMARY_0:
+			return primary[0];
+		case PRIMARY_1:
+			return primary[1];
+		case SECONDARY_0:
+			return secondary[0];
+		case SECONDARY_1:
+			return secondary[1];
+		case TERTIARY_0:
+			return tertiary[0];
+		default:
+			return tertiary[1];				
+		
+		}
+	}
+	
 	public EdgeCubie getECubie(EdgePos pos){
 		
 		return eCubies.get(pos);
@@ -270,7 +288,15 @@ public EdgeCubicle getECubicle(EdgePos pos){
 		}
 	}
 	
-	
+	public Face getFirstFace(EdgeCubie e){
+		
+		if(e.getPrimaryFacelet()== null){
+			return	getFace(e.getSecondaryFacelet());
+			
+		}else {
+			return getFace(e.getPrimaryFacelet());
+		}
+	}
 	
 	
 	//Static methods
