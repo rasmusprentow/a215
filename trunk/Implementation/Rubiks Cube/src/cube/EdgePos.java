@@ -1,8 +1,8 @@
 package cube;
 
 public enum EdgePos {
-	P0S0,
-	P0S1,
+	P0S0, 
+	P0S1,	
 	P1S0,
 	P1S1,
 	P0T0,
