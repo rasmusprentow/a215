@@ -65,7 +65,10 @@ public class Kociemba {
 		try {
 			if (i == 1) {
 				i++;
-				moveSequence[length-1] = (MoveButtons)notA.toArray()[moveSequence[length-1].ordinal() + 1];
+				do {
+					moveSequence[length-1] = (MoveButtons)S.toArray()[moveSequence[length-1].ordinal() + 1];
+				} while(A.contains(moveSequence[length-1]));
+				
 			} else {
 				throw new ArrayIndexOutOfBoundsException();
 			}
@@ -124,7 +127,9 @@ public class Kociemba {
 
 		for (; i <= length; i++) {
 			try {
-				moveSequence[length-i] = (MoveButtons)A.toArray()[moveSequence[length-i].ordinal() + 1];
+				do {
+					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
+				} while(notA.contains(moveSequence[length-i]));
 				break;
 			} catch (ArrayIndexOutOfBoundsException e1) {
 				if (length - i != 0) {
@@ -138,13 +143,14 @@ public class Kociemba {
 		for ( ; i > 0; i--) {
 			try {
 				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
-					increaseWithSNotEndingWithA(moveSequence, length-i);
+					increaseWithA(moveSequence, length-i);
 					break;
 				}
 			} catch (ArrayIndexOutOfBoundsException e2) {
 
 			}
 		}
+		
 		return moveSequence;
 	}
 }
