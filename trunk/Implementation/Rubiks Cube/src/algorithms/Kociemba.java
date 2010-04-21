@@ -124,7 +124,6 @@ public class Kociemba {
 			moveSequence[length-1] = F;
 			for (; i <= length; i++) {
 				try {
-					System.out.println((MoveButtons)S.size())
 					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
 					break;
 				} catch (ArrayIndexOutOfBoundsException e1) {
