@@ -5,6 +5,7 @@ import java.util.EnumSet;
 
 import cube.Cube;
 import cube.EdgeCubie;
+import cube.Facelet;
 
 import cube.EdgePos;
 import cubedrawer.MoveButtons;
@@ -63,7 +64,9 @@ public class Beginners {
 					algortihm1(key);
 				}
 			}
-
+			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_1){
+				System.out.println("Den er i gul, mand! " + key);
+			}
 
 			///START
 		}

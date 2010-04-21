@@ -460,6 +460,7 @@ public class DrawPanel extends JPanel {
 		previousMoves.clear();
 		console.addTextln("Pick up screwdriver, disassemble cube, assemble cube correctly \n");
 		cube = new Cube();
+		beginners = new Beginners(cube);
 		repaint();
 	}
 
