@@ -4,3 +4,6 @@ This chapter is divided into the different steps used in the beginner's algorith
 \section{Step 1 -- the First layer Cross}
 For the sake of simplicity the first layer in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
 
+The first question our program needs to ask is whether the edge pieces already are positioned correctly. If that is the case and the edge piece is also oriented correctly, the program proceeds to the next edge piece. If not an algorithm is performed, which changes the edge piece's orientation without ruining other possibly correctly positioned edge pieces. When the edge piece is in the the correct position and has the correct orientation, the program moves on to another edge piece. 
+
+If the edge piece in question is not in it's correct position, there are two 
