@@ -38,6 +38,7 @@ public class DrawPanel extends JPanel {
 	private int rectHW = 30; 
 	private int dispHW = 10; //the distance moved after drawing each polygon
 	private int startDelay = 500;
+	private int test = 0;
 	private Console console;
 	private boolean moving;
 	private boolean specialMove;
@@ -380,6 +381,10 @@ public class DrawPanel extends JPanel {
 			beginners.solve();
 			//specialMove = false;
 			break;
+		case TEST:
+			stopMoving();
+			test();
+			break;
 		default:
 			console.addTextln("Something is wrong");
 
@@ -530,6 +535,18 @@ public class DrawPanel extends JPanel {
 		kociembasMoveSequence = kociemba.solve(12);
 		if (kociembasMoveSequence[0] != null) {
 			twistSequence(kociembasMoveSequence);
+		}
+	}
+	
+	private void test() {
+		MoveButtons[] seq = {F,U,R2};
+		
+		if(test == 0) {
+			Cube.permute(cube, seq);
+			test = 1;
+		} else {
+			Cube.permute(cube, MoveButtons.inverseOf(seq));
+			test = 0;
 		}
 	}
 }
