@@ -23,20 +23,41 @@ public class Kociemba {
 		int d = 0;
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b;
-
 		while (l > d) {
 			b = new MoveButtons[d];
 
+			for (int i = 0; i < b.length; i++) {
+				
+				if (b.length - i == 1) {
+					b[b.length - 1] = F;
+				} else if (i%2 == 0) {
+					b[i] = U;
+				} else {
+					b[i] = D;
+				}
+			}
+			try {
+			while (true) {
+				Cube.permute(cube, b);
+				
 
-
-
+				increaseWithSNotEndingWithA(b, b.length-1);
+			}
+			} catch (UnableToIncreaseMoveSequenceException e) {
+				
+			}
+			d++;
 		}
-
-
 		return result;
-
 	}
 
+	/**
+	 * Needs to be written! Btw, recursive method.
+	 * @param moveSequence
+	 * @param startWith
+	 * @return
+	 * @throws UnableToIncreaseMoveSequenceException
+	 */
 	public MoveButtons[] increaseWithSNotEndingWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
 		int length = moveSequence.length;
 		int i = length - startWith;
