@@ -73,20 +73,21 @@ public enum MoveButtons {
 
 		MoveButtons temp;
 
-		if(move.length == 1) {
-			move[0].invert();
-		} else {
-			try {
-				for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
-					temp = move[i];
-					move[i] = move[j];
-					move[j] = temp;
-					move[i].invert();
-					move[j].invert();
-				}
-			} catch (ArrayIndexOutOfBoundsException e) {
+		if(move.length%2 == 1) {
+			move[move.length/2] = move[move.length/2].invert();
+		} 
+		try {
+			for(int i = 0 , j = move.length-1 ; i < j ; i++ , j++) {
+				temp = move[i];
+				move[i] = move[j];
+				move[j] = temp;
+				move[i] = move[i].invert();
+				move[j] = move[j].invert();
 			}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			
 		}
+		
 		return move;
 	}
 
