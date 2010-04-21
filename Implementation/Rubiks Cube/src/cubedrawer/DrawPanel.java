@@ -371,7 +371,9 @@ public class DrawPanel extends JPanel {
 			break;
 			
 		case BEGINNERS:
-			beginners.solve();
+			stopMoving();
+			console.addText("Beginners Algortihm: ");
+			this.twistSequence(beginners.solve());
 			break;
 		default:
 			console.addTextln("Something is wrong");
@@ -441,7 +443,14 @@ public class DrawPanel extends JPanel {
 			previousMoves.add(key);
 		}
 	}
-
+	
+	public void twistSequence(ArrayList<MoveButtons> e){
+		//stopMoving();
+		for(MoveButtons key: e){
+			buttonHandler(key);
+			previousMoves.add(key);
+		}
+	}
 
 	public void reset(){
 		stopMoving();
