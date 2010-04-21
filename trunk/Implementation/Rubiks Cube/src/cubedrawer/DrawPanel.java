@@ -61,6 +61,7 @@ public class DrawPanel extends JPanel {
 		previousMoves = new LinkedList<MoveButtons>();
 
 		beginners = new Beginners(cube);
+		kociemba = new Kociemba(cube);
 		
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
@@ -451,8 +452,10 @@ public class DrawPanel extends JPanel {
 	public void twistSequence(ArrayList<MoveButtons> e){
 		//stopMoving();
 		for(MoveButtons key: e){
-			buttonHandler(key);
-			previousMoves.add(key);
+			if (key != null) {
+				buttonHandler(key);
+				previousMoves.add(key);
+			}
 		}
 	}
 
@@ -522,20 +525,11 @@ public class DrawPanel extends JPanel {
 
 	private void kociemba() {
 		stopMoving();
-		//console.addTextln("Solving with Kociemba's algorithm, please wait.");
-		if (cube.isInH()){
-			if (cube.isSolved()) {
-				console.addTextln("The cube is solved!");
-			} else {
-				console.addTextln("The cube is in the subgroup H!");
-			}
-		} else {
-			console.addTextln("The cube is not in the subgroup H!");
+		console.addTextln("Solving with Kociemba's algorithm, please wait.");
+		MoveButtons[] kociembasMoveSequence;
+		kociembasMoveSequence = kociemba.solve(12);
+		if (kociembasMoveSequence[0] != null) {
+			twistSequence(kociembasMoveSequence);
 		}
-		
-		
-		/*
-		kociemba.solve(12);
-		*/
 	}
 }

@@ -1,7 +1,7 @@
 package cubedrawer;
 public enum MoveButtons { 
-	 U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2, SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, KOCIEMBA, BEGINNERS;
-	
+	U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2, SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, KOCIEMBA, BEGINNERS;
+
 	@Override
 	public String toString(){
 		String old = super.toString();
@@ -22,9 +22,9 @@ public enum MoveButtons {
 		} catch (IndexOutOfBoundsException e){
 			return old;
 		}
-		
+
 	}
-	
+
 	/**
 	 * This method finds the inverse of the move which calls it.
 	 * @return the inverse of the move calling the function
@@ -46,12 +46,12 @@ public enum MoveButtons {
 			return this;
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	//Static methods
-	
+
 	/**
 	 * This method finds the inverse of <b>move</b>.
 	 * @param move the move which you want to find the inverse
@@ -61,7 +61,7 @@ public enum MoveButtons {
 	public static MoveButtons inverseOf(MoveButtons move) throws IllegalAccessError {
 		return move.invert();
 	}
-	
+
 	/**
 	 * 
 	 * @param move
@@ -69,24 +69,26 @@ public enum MoveButtons {
 	 * @throws IllegalAccessError
 	 */
 	public static MoveButtons[] inverseOf(MoveButtons[] move) throws IllegalAccessError {
-		
+
 		MoveButtons temp;
+
 		if(move.length == 1) {
 			move[0].invert();
 		} else {
-
-			for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
-				temp = move[i];
-				move[i] = move[j];
-				move[j] = temp;
-				move[i].invert();
-				move[j].invert();
+			try {
+				for(int i = 0 , j = move.length-1 ; i <= j ; i++ , j++) {
+					temp = move[i];
+					move[i] = move[j];
+					move[j] = temp;
+					move[i].invert();
+					move[j].invert();
+				}
+			} catch (ArrayIndexOutOfBoundsException e) {
 			}
 		}
-		
 		return move;
 	}
-	
+
 	/**
 	 * 
 	 * @param a
@@ -94,15 +96,15 @@ public enum MoveButtons {
 	 * @return
 	 */
 	public static boolean isSameFace(MoveButtons a , MoveButtons b)
-		throws IllegalAccessError {
+	throws IllegalAccessError {
 		if(a.ordinal() >= 18 || a.ordinal() >= 18) {
 			throw new IllegalAccessError("One of the moves is not a face");
 		}
-		
+
 		if(a.ordinal()/3 == b.ordinal()/3) {
 			return true;
 		}
-		
+
 		return false;
 	}
 }
