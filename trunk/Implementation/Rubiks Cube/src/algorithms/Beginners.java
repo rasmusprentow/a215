@@ -24,7 +24,7 @@ public class Beginners {
 
 		moves.clear();
 		solveFLCross();
-
+		moves.clear();
 		return moves;
 	}
 
@@ -49,7 +49,32 @@ public class Beginners {
 		for(int i = 0; i < moves.length; i++){
 			this.moves.add(moves[i]);
 		}
-		cube.permute(cube, moves);
+		Cube.permute(cube, moves);
+	}
+
+	private void algortihm2(EdgePos p){
+		MoveButtons[] moves;
+		switch (p) {
+		case S0T0:
+			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U,MoveButtons.FP };
+			break;
+
+		case S0T1:
+			moves = new MoveButtons[]{ MoveButtons.FP, MoveButtons.U,MoveButtons.F};
+			break;
+
+		case S1T0:
+			moves = new MoveButtons[]{ MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.U, MoveButtons.BP};
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+			System.out.println(moves[i]);
+		}
+		Cube.permute(cube, moves);
 	}
 
 	private void solveFLCross(){
@@ -68,22 +93,69 @@ public class Beginners {
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_1){
 				System.out.println("Den er i gul, mand! " + key);
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
-				
+
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
-				
+
 				do{
 					moves.add(MoveButtons.U);
 					Cube.permute(cube, MoveButtons.U);
 				}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
-				
+
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
+					System.out.println("på plads vender forkert " + key);
+					algortihm1(key);
+				}
+			} 
+			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
+
+
+				do{
+					moves.add(MoveButtons.U);
+					Cube.permute(cube, MoveButtons.U);
+				}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
+
+				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
+					System.out.println("på plads vender forkert " + key);
+					algortihm1(key);
+				}
+			} else { // cubien er ikke i et primært face!
+				EnumSet<EdgePos> secondEdges = EnumSet.of(EdgePos.S1T0, EdgePos.S1T1, EdgePos.S0T0, EdgePos.S0T1);
+
+				for(EdgePos edgeKey: secondEdges){ // For all edges in the second layer
+
+					if(cube.getECubicle(edgeKey).getCubie() == e){
+
+						algortihm2(edgeKey);
+						System.out.println("Moving " + edgeKey);
+						
+						
+						
+						do{
+							moves.add(MoveButtons.U);
+							Cube.permute(cube, MoveButtons.U);
+						}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
+
+						moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+						Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+						if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
+							System.out.println("på plads vender forkert " + key);
+							algortihm1(key);
+						}
+						break;
+						
+					}
+				}
+				
+				
+
+				///START
 			}
-			
-
-			///START
 		}
+
+
 	}
-
-
 }
