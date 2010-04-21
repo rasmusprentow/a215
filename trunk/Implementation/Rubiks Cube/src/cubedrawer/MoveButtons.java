@@ -47,6 +47,11 @@ public enum MoveButtons {
 		}
 	}
 	
+	
+	
+	
+	//Static methods
+	
 	/**
 	 * This method finds the inverse of <b>move</b>.
 	 * @param move the move which you want to find the inverse
@@ -70,5 +75,24 @@ public enum MoveButtons {
 		}
 		
 		return move;
+	}
+	
+	/**
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static boolean isSameFace(MoveButtons a , MoveButtons b)
+		throws IllegalAccessError {
+		if(a.ordinal() >= 18 || a.ordinal() >= 18) {
+			throw new IllegalAccessError("One of the moves is not a face");
+		}
+		
+		if(a.ordinal()/3 == b.ordinal()/3) {
+			return true;
+		}
+		
+		return false;
 	}
 }
