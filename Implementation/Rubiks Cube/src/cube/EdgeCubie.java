@@ -64,6 +64,7 @@ public class EdgeCubie extends Cubie {
 		return tertiaryFacelet;
 	}
 	
+	
 	public Facelet getFacelet(int i){
 		if(i == 0){
 			if(primaryFacelet != null){

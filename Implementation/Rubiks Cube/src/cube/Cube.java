@@ -220,6 +220,11 @@ public class Cube {
 		}
 	}
 
+	/**
+	 * Returns the face that has this facelet as center facelet. 
+	 * @param f
+	 * @return
+	 */
 	public Face getFace(Facelet f){
 		switch(f){
 		case PRIMARY_0:
@@ -302,21 +307,42 @@ public class Cube {
 		return result;
 	}
 
+	/**
+	 * Returns the cubie that belongs in this position
+	 * @param pos
+	 * @return
+	 */
 	public EdgeCubie getECubie(EdgePos pos){
 
 		return eCubies.get(pos);
 	}
 
+	
+	/**
+	 * Returns the cubie that belongs in this position
+	 * @param pos
+	 * @return
+	 */
 	public CornerCubie getCCubie(CornerPos pos){
 
 		return cCubies.get(pos);
 	}
 
+	/**
+	 * Returns the cubicle of a position
+	 * @param pos
+	 * @return
+	 */	
 	public EdgeCubicle getECubicle(EdgePos pos){
 
 		return eCubicles.get(pos);
 	}
 
+	/**
+	 * Returns the cubicle of a position
+	 * @param pos
+	 * @return
+	 */
 	public CornerCubicle getCCubicle(CornerPos pos){
 
 		return cCubicles.get(pos);
@@ -364,6 +390,11 @@ public class Cube {
 		}
 	}
 
+	/**
+	 * Gets the face that the cubie belongs to
+	 * @param e
+	 * @return
+	 *//*
 	public Face getFirstFace(EdgeCubie e){
 
 		if(e.getPrimaryFacelet()== null){
@@ -383,7 +414,7 @@ public class Cube {
 			return getFace(e.getTertiaryFacelet());
 		}
 	}
-
+	*/
 	//Static methods
 
 	/**
