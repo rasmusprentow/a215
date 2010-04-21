@@ -66,7 +66,11 @@ public class Beginners {
 			}
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_1){
 				System.out.println("Den er i gul, mand! " + key);
-
+				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				
+				do{
+					moves.add(MoveButtons.U);
+				}while(cube.getLastFace(e))
 			}
 
 			///START
