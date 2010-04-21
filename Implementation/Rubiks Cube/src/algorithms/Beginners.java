@@ -16,9 +16,6 @@ public class Beginners {
 		this.cube = cube;
 	}
 
-	private void transpose(){
-
-	}
 
 	public String solve(){
 
