@@ -21,7 +21,7 @@ import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import util.CubeTools;
+import util.MoveTools;
 
 import algorithms.*;
 
@@ -465,6 +465,9 @@ public class DrawPanel extends JPanel {
 			stopMoving();
 			test();
 			break;
+		case TEST2:
+			
+			break;
 		default:
 			console.addTextln("Something is wrong");
 
@@ -562,14 +565,18 @@ public class DrawPanel extends JPanel {
 		//specialMove = true;
 		LinkedList<MoveButtons> original = beginners.solve();
 		int size =  original.size();
-		LinkedList<MoveButtons> moves = CubeTools.eliminateInverses((LinkedList<MoveButtons>)original.clone());
+		LinkedList<MoveButtons> moves = MoveTools.eliminateAll((LinkedList<MoveButtons>)original.clone());
 		previousMoves.addAll(moves);
 		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists  - Original had"  + size );
 		for(MoveButtons key: moves){
+			console.addText(key + " ");
+		}
+		console.addTextln("");
+		for(MoveButtons key: original){
 			console.addText(key + " ");			
 		}
 		console.addTextln("");
-	
+		
 		
 
 		
