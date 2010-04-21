@@ -68,7 +68,7 @@ public class Kociemba {
 				do {
 					moveSequence[length-1] = (MoveButtons)S.toArray()[moveSequence[length-1].ordinal() + 1];
 				} while(A.contains(moveSequence[length-1]));
-				
+
 			} else {
 				throw new ArrayIndexOutOfBoundsException();
 			}
@@ -106,13 +106,34 @@ public class Kociemba {
 		if (!cube.isInH()) {
 			throw new InvalidCube("The cube is not in H!!");
 		} 
-		if (cube.isSolved()) {
+		if (cube.isSolvedInsideH()) {
 			return null;
 		} 
 
 		MoveButtons[] c;
 
+		for (int d = 1; d <= 18; d++) {
+			c = new MoveButtons[d];
 
+			for (int i = 0; i < c.length; i++) {
+
+				if (i%2 == 0) {
+					c[i] = U;
+				} else {
+					c[i] = D;
+				}
+			}
+			try {
+				while (true) {
+					Cube.permute(cube, c);
+					if (cube.isSolvedInsideH()) {
+						return c;
+					}
+				}
+			} catch (UnableToIncreaseMoveSequenceException e) {
+				
+			}
+		}
 
 
 
@@ -150,7 +171,7 @@ public class Kociemba {
 
 			}
 		}
-		
+
 		return moveSequence;
 	}
 }
