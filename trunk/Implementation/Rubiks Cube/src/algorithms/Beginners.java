@@ -49,6 +49,7 @@ public class Beginners {
 		for(int i = 0; i < moves.length; i++){
 			this.moves.add(moves[i]);
 		}
+		cube.permute(cube, moves);
 	}
 
 	private void solveFLCross(){
@@ -68,10 +69,17 @@ public class Beginners {
 				System.out.println("Den er i gul, mand! " + key);
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				
+				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				
 				do{
 					moves.add(MoveButtons.U);
-				}while(cube.getLastFace(e))
+					Cube.permute(cube, MoveButtons.U);
+				}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
+				
+				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
+				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 			}
+			
 
 			///START
 		}

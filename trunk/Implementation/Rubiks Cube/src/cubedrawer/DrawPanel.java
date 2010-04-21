@@ -376,7 +376,7 @@ public class DrawPanel extends JPanel {
 			//moving = true;
 			//specialMove = true;
 			console.addTextln("Beginners Algortihm: ");
-			this.twistSequence(beginners.solve());
+			beginners.solve();
 			//specialMove = false;
 			break;
 		default:
