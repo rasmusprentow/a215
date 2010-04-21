@@ -23,7 +23,8 @@ public class Kociemba {
 		int d = 0;
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
-		while (l > d) {
+		while (l > d && d <= maxSMoves) {
+			System.out.println(d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
@@ -38,24 +39,48 @@ public class Kociemba {
 			}
 			try {
 				while (true) {
+					//System.out.println("Permuting!");
 					Cube.permute(cube, b);
 					try {
+						//System.out.println("Solving from H!");
 						c = solveFromH();
 						if (d + c.length < l) {
 							l = d + c.length;
+							System.out.println("The solutions of the length " + l);
 							int j = 0;
 							for ( ; j < d; j++) {
-								result[j] = b[j];	
+								result[j] = b[j];
+								System.out.print(b[j] + " ");
 							}
-							for (int k = 0 ; k < d; k++,j++) {
-								result[j] = c[k];	
+							for (int k = 0 ; k < c.length; k++,j++) {
+								result[j] = c[k];
+								System.out.print(c[k] + " ");
 							}
-
+							System.out.println();
 						}
 
 					} catch (InvalidCube e) {
-
+						System.out.println("Not in H!");
 					}
+					
+					for (int i = 0; i < b.length; i++) {
+						System.out.print(b[i] + " ");
+					}
+					System.out.println();
+					
+					
+					Cube.permute(cube, MoveButtons.inverseOf(b));
+					MoveButtons.inverseOf(b);
+					
+					
+					for (int i = 0; i < b.length; i++) {
+						System.out.print(b[i] + " ");
+					}
+					System.out.println();
+					
+					//System.out.println("Increasing with S not A!");
+					
+					
 					increaseWithSNotEndingWithA(b, b.length-1);
 				}
 			} catch (UnableToIncreaseMoveSequenceException e) {
@@ -74,8 +99,12 @@ public class Kociemba {
 	 * @throws UnableToIncreaseMoveSequenceException
 	 */
 	private MoveButtons[] increaseWithSNotEndingWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
+		
 		int length = moveSequence.length;
 		int i = length - startWith;
+		if(length <= 0) {
+			throw new UnableToIncreaseMoveSequenceException();
+		}
 
 		try {
 			if (i == 1) {
@@ -122,9 +151,10 @@ public class Kociemba {
 			throw new InvalidCube("The cube is not in H!!");
 		} 
 		if (cube.isSolvedInsideH()) {
-			return null;
+			System.out.println("One solution found!");
+			return new MoveButtons[0];
 		} 
-
+		
 		MoveButtons[] c;
 
 		for (int d = 1; d <= 18; d++) {
@@ -144,10 +174,19 @@ public class Kociemba {
 					Cube.permute(cube, c);
 
 					if (cube.isSolvedInsideH()) {
+						System.out.println("Another solution found!");
 						return c;
 					} else {
+						for (int i = 0; i < c.length; i++) {
+							System.out.print(c[i] + " ");
+						}
+						System.out.println();
 						Cube.permute(cube, MoveButtons.inverseOf(c));
 						MoveButtons.inverseOf(c);
+						for (int i = 0; i < c.length; i++) {
+							System.out.print(c[i] + " ");
+						}
+						System.out.println();
 						increaseWithA(c, d-1);
 					}
 				}
