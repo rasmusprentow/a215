@@ -409,7 +409,7 @@ public class DrawPanel extends JPanel {
 		stopMoving();
 		doNotSaveNextMove = true;
 		try {
-		buttonHandler(previousMoves.removeLast().inverse());
+		buttonHandler(previousMoves.removeLast().invert());
 		}
 		catch (NoSuchElementException e) {
 			// TODO: handle exception
