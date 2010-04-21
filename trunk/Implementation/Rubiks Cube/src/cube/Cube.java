@@ -15,15 +15,15 @@ public class Cube {
 	Facelet secondary_1;
 	Facelet tertiary_0;
 	Facelet tertiary_1;
-		
+
 	//Map of the cubies
 	TreeMap <EdgePos, EdgeCubie> eCubies;
 	TreeMap <CornerPos, CornerCubie> cCubies;
-	
+
 	//Map of the cubicles
 	TreeMap <EdgePos, EdgeCubicle> eCubicles;
 	TreeMap <CornerPos, CornerCubicle> cCubicles;
-	
+
 	//Corner cubicles
 	/////////////////////////////
 	//Top face cubicles
@@ -69,11 +69,11 @@ public class Cube {
 	 */
 
 	public Cube(){
-		
+
 		primary = new PrimaryFace[2];
 		secondary = new SecondaryFace[2];
 		tertiary = new TertiaryFace[2];
-		
+
 		primary_0 = Facelet.PRIMARY_0;
 		primary_1 = Facelet.PRIMARY_1;
 		secondary_0 = Facelet.SECONDARY_0;
@@ -81,11 +81,11 @@ public class Cube {
 		tertiary_0 = Facelet.TERTIARY_0;
 		tertiary_1 = Facelet.TERTIARY_1;
 
-		
+
 		//Cubies
 		eCubies = new TreeMap <EdgePos, EdgeCubie>(); // treemap taking positions and gives the cubie
 		cCubies = new TreeMap <CornerPos, CornerCubie>(); // treemap of corner positions;
-		
+
 		//Corner cubies
 		/////////////////////////////
 		//Top face cubies
@@ -121,12 +121,12 @@ public class Cube {
 		eCubies.put(EdgePos.S1T0, new EdgeCubie(null, secondary_1, tertiary_0));
 		eCubies.put(EdgePos.S1T1, new EdgeCubie(null, secondary_1, tertiary_1));
 		/////////////////////////////
-		
-		
+
+
 		//Cubicles
 		eCubicles = new TreeMap <EdgePos, EdgeCubicle>();
 		cCubicles = new TreeMap <CornerPos, CornerCubicle>();
-		
+
 		//Corner cubicles
 		/////////////////////////////
 		//Top face cubicles
@@ -134,7 +134,7 @@ public class Cube {
 		P0S0T0 = new CornerCubicle(cCubies.get(CornerPos.P0S0T0));
 		P0S1T0 = new CornerCubicle(cCubies.get(CornerPos.P0S1T0));
 		P0S1T1 = new CornerCubicle(cCubies.get(CornerPos.P0S1T1));
-		
+
 		cCubicles.put(CornerPos.P0S0T1, P0S0T1);
 		cCubicles.put(CornerPos.P0S0T0, P0S0T0);
 		cCubicles.put(CornerPos.P0S1T0, P0S1T0);
@@ -145,7 +145,7 @@ public class Cube {
 		P1S0T0 = new CornerCubicle(cCubies.get(CornerPos.P1S0T0));
 		P1S0T1 = new CornerCubicle(cCubies.get(CornerPos.P1S0T1));
 		P1S1T1 = new CornerCubicle(cCubies.get(CornerPos.P1S1T1));
-		
+
 		cCubicles.put(CornerPos.P1S1T0, P1S1T0);
 		cCubicles.put(CornerPos.P1S0T0, P1S0T0);
 		cCubicles.put(CornerPos.P1S0T1, P1S0T1);
@@ -159,7 +159,7 @@ public class Cube {
 		P0T0 = new EdgeCubicle(eCubies.get(EdgePos.P0T0));
 		P0S1 = new EdgeCubicle(eCubies.get(EdgePos.P0S1));
 		P0T1 = new EdgeCubicle(eCubies.get(EdgePos.P0T1));
-		
+
 		eCubicles.put(EdgePos.P0S0, P0S0);
 		eCubicles.put(EdgePos.P0T0, P0T0);
 		eCubicles.put(EdgePos.P0S1, P0S1);
@@ -170,7 +170,7 @@ public class Cube {
 		P1S0 = new EdgeCubicle(eCubies.get(EdgePos.P1S0));
 		P1T1 = new EdgeCubicle(eCubies.get(EdgePos.P1T1));
 		P1S1 = new EdgeCubicle(eCubies.get(EdgePos.P1S1));
-		
+
 		eCubicles.put(EdgePos.P1T0, P1T0);
 		eCubicles.put(EdgePos.P1S0, P1S0);
 		eCubicles.put(EdgePos.P1T1, P1T1);
@@ -181,13 +181,13 @@ public class Cube {
 		S0T0 = new EdgeCubicle(eCubies.get(EdgePos.S0T0));
 		S1T0 = new EdgeCubicle(eCubies.get(EdgePos.S1T0));
 		S1T1 = new EdgeCubicle(eCubies.get(EdgePos.S1T1));
-		
+
 		eCubicles.put(EdgePos.S0T1, S0T1);
 		eCubicles.put(EdgePos.S0T0, S0T0);
 		eCubicles.put(EdgePos.S1T0, S1T0);
 		eCubicles.put(EdgePos.S1T1, S1T1);
 		/////////////////////////////
-		
+
 		//Faces
 		primary[0] = new PrimaryFace(P0S1T0, P0S1T1, P0S0T1, P0S0T0, P0S1, P0T1, P0S0, P0T0, primary_0);
 		primary[1] = new PrimaryFace(P1S0T0, P1S0T1, P1S1T1, P1S1T0, P1S0, P1T1, P1S1, P1T0, primary_1);
@@ -219,7 +219,7 @@ public class Cube {
 			return tertiary;
 		}
 	}
-	
+
 	public Face getFace(Facelet f){
 		switch(f){
 		case PRIMARY_0:
@@ -234,30 +234,86 @@ public class Cube {
 			return tertiary[0];
 		default:
 			return tertiary[1];				
-		
+
 		}
 	}
 	
-	public EdgeCubie getECubie(EdgePos pos){
+	public Face[] getFace(Cubie input) {
+		Face[] result = null;
+		if(input.getClass() == new CornerCubie(primary_0, secondary_0, tertiary_0).getClass()) {
+			result = new Face[3];
+			
+			for(int i = 0 ; i < 2 ; i++) {
+				for(int j = 0 ; j < 4 ; j++) {
+					if(primary[i].getCornerCubicle()[j].getCubie() == input) {
+						result[0] = primary[i];
+					}
+					if(secondary[i].getCornerCubicle()[j].getCubie() == input) {
+						result[1] = secondary[i];
+					}
+					if(tertiary[i].getCornerCubicle()[j].getCubie() == input) {
+						result[2] = tertiary[i];
+					}
+				}
+			}
+
+		} else if(input.getClass() == new EdgeCubie(primary_0, secondary_0, null).getClass()) {
+			result = new Face[2];
+			int index = 0;
+			
+			for(int i = 0 ; i < 2 ; i++) {
+				for(int j = 0 ; j < 4 ; j++) {
+					if(primary[i].getCornerCubicle()[j].getCubie() == input) {
+						result[index] = primary[i];
+						index++;
+						break;
+					}
+				}
+			}
+			for(int i = 0 ; i < 2 ; i++) {
+				for(int j = 0 ; j < 4 ; j++) {
+					if(secondary[i].getCornerCubicle()[j].getCubie() == input) {
+						result[index] = secondary[i];
+						index++;
+						break;
+					}
+				}
+			}
+			
+			if(index <= 1) {
+				for(int i = 0 ; i < 2 ; i++) {
+					for(int j = 0 ; j < 4 ; j++) {
+						if(tertiary[i].getCornerCubicle()[j].getCubie() == input) {
+							result[index] = tertiary[i];
+						}
+					}
+				}
+			}
+		}
 		
+		return result;
+	}
+
+	public EdgeCubie getECubie(EdgePos pos){
+
 		return eCubies.get(pos);
 	}
-	
+
 	public CornerCubie getCCubie(CornerPos pos){
-		
+
 		return cCubies.get(pos);
 	}
 
-public EdgeCubicle getECubicle(EdgePos pos){
-		
+	public EdgeCubicle getECubicle(EdgePos pos){
+
 		return eCubicles.get(pos);
 	}
-	
+
 	public CornerCubicle getCCubicle(CornerPos pos){
-		
+
 		return cCubicles.get(pos);
 	}
-	
+
 	public boolean isInH() {
 
 		for (int i = 0; i < 4; i++){
@@ -277,13 +333,13 @@ public EdgeCubicle getECubicle(EdgePos pos){
 
 		return true;
 	}
-	
+
 	public boolean isSolved() {
 		if(this.isInH()) {
 			CornerPos[] cp = CornerPos.values();
 			EdgePos[] ep = EdgePos.values();
 			for (int i = 0; i < 6; i++) {
-				
+
 				if (cCubicles.get(cp[i]).getCubie() != cCubies.get(cp[i])) {
 					return false;
 				}
@@ -293,35 +349,34 @@ public EdgeCubicle getECubicle(EdgePos pos){
 					return false;
 				}
 			}
-			
+
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	public Face getFirstFace(EdgeCubie e){
-		
+
 		if(e.getPrimaryFacelet()== null){
 			return	getFace(e.getSecondaryFacelet());
-			
+
 		}else {
 			return getFace(e.getPrimaryFacelet());
 		}
 	}
-	
-public Face getLastFace(EdgeCubie e){
-		
+
+	public Face getLastFace(EdgeCubie e){
+
 		if(e.getTertiaryFacelet()== null){
 			return	getFace(e.getSecondaryFacelet());
-			
+
 		}else {
 			return getFace(e.getTertiaryFacelet());
 		}
 	}
-	
-	//Static methods
 
+	//Static methods
 
 	/**
 	 * 
@@ -395,7 +450,7 @@ public Face getLastFace(EdgeCubie e){
 				break;
 			}
 		}
-		
+
 		return a;
 	}
 }
