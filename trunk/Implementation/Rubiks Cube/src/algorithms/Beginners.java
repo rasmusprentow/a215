@@ -54,12 +54,12 @@ public class Beginners {
 	private void solveFLCross(){
 		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.P1S0, EdgePos.P1S1, EdgePos.P1T0, EdgePos.P1T1);
 
-		for(EdgePos key: edges){
+		for(EdgePos key: edges){ // For all edges in the P1 layer
 			EdgeCubie e = cube.getECubie(key);
 
-			if(cube.getECubicle(key).getCubie()== e){
+			if(cube.getECubicle(key).getCubie()== e){ //Is the cubie in its right place
 				System.out.println("på plads  " + key);
-				if(e.getPrimaryOrientation()!= 0){
+				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					System.out.println("på plads vender forkert " + key);
 					algortihm1(key);
 				}
