@@ -374,12 +374,8 @@ public class DrawPanel extends JPanel {
 			break;
 			
 		case BEGINNERS:
-			stopMoving();
-			//moving = true;
-			//specialMove = true;
-			console.addTextln("Beginners Algortihm: ");
-			beginners.solve();
-			//specialMove = false;
+			beginners();
+			
 			break;
 		case TEST:
 			stopMoving();
@@ -392,6 +388,8 @@ public class DrawPanel extends JPanel {
 
 
 	}
+
+
 
 	private void startMoving(){
 		if(moving == false){
@@ -474,7 +472,23 @@ public class DrawPanel extends JPanel {
 		repaint();
 	}
 
+	private void beginners() {
+		stopMoving();
+		//moving = true;
+		//specialMove = true;
+		
+		ArrayList<MoveButtons> moves = beginners.solve();
+		previousMoves.addAll(moves);
+		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists");
+		for(MoveButtons key: moves){
+			console.addText(key + " ");			
+		}
+		console.addTextln("");
+		
 
+		
+		//specialMove = false;		
+	}
 
 	public Cube getCube(){
 		return cube;
