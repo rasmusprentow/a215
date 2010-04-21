@@ -372,8 +372,11 @@ public class DrawPanel extends JPanel {
 			
 		case BEGINNERS:
 			stopMoving();
-			console.addText("Beginners Algortihm: ");
+			//moving = true;
+			//specialMove = true;
+			console.addTextln("Beginners Algortihm: ");
 			this.twistSequence(beginners.solve());
+			//specialMove = false;
 			break;
 		default:
 			console.addTextln("Something is wrong");
