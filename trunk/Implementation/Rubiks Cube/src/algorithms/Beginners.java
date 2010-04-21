@@ -21,7 +21,7 @@ public class Beginners {
 
 
 	public ArrayList<MoveButtons> solve(){
-		
+
 		moves.clear();
 		solveFLCross();
 
@@ -66,6 +66,7 @@ public class Beginners {
 			}
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_1){
 				System.out.println("Den er i gul, mand! " + key);
+
 			}
 
 			///START
