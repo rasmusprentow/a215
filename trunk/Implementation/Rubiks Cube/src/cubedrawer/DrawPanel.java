@@ -109,7 +109,7 @@ public class DrawPanel extends JPanel {
 		draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
 		draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
 		draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
-		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[1]);
+		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 		//draw3x3SecondaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 	}
 
