@@ -531,11 +531,12 @@ public class DrawPanel extends JPanel {
 	private void kociemba() {
 		stopMoving();
 		console.addTextln("Solving with Kociemba's algorithm, please wait.");
-		MoveButtons[] kociembasMoveSequence;
+		MoveButtons[] kociembasMoveSequence , temp;
 		kociembasMoveSequence = kociemba.solve(12);
-		if (kociembasMoveSequence[0] != null) {
-			twistSequence(kociembasMoveSequence);
-		}
+		
+		twistSequence(kociembasMoveSequence);
+		
+		stopMoving();
 	}
 	
 	private void test() {

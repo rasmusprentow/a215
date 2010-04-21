@@ -17,14 +17,19 @@ public class Kociemba {
 		cube = a;
 	}
 
+	/**
+	 * Solves the cube which is referred to when constructing the Kociemba object
+	 * @param maxSMoves Maximum number of S moves
+	 * @return The move sequence to solve the cube 
+	 */
 	public MoveButtons[] solve(int maxSMoves) {
 
-		MoveButtons[] result = new MoveButtons[29];
+		MoveButtons[] result = null;
 		int d = 0;
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			System.out.println(d);
+			System.out.println("d is: " + d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
@@ -46,7 +51,8 @@ public class Kociemba {
 						c = solveFromH();
 						if (d + c.length < l) {
 							l = d + c.length;
-							System.out.println("The solutions of the length " + l);
+							result = new MoveButtons[l];
+							System.out.println("The solutions of the length " + l + ". The solution is:");
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
@@ -127,7 +133,7 @@ public class Kociemba {
 					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
 					break;
 				} catch (ArrayIndexOutOfBoundsException e1) {
-					if (length - 1 != i) {
+					if (length - i != 0) {
 						moveSequence[length-i] = U;
 					} else {
 						throw new UnableToIncreaseMoveSequenceException();
@@ -139,7 +145,7 @@ public class Kociemba {
 		for ( ; i > 0; i--) {
 			try {
 				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
-					System.out.println("Jeg er recursiv!");
+					System.out.println("Recursing!");
 					increaseWithSNotEndingWithA(moveSequence, length-i);
 					break;
 				}
@@ -180,6 +186,8 @@ public class Kociemba {
 
 					if (cube.isSolvedInsideH()) {
 						System.out.println("Another solution found!");
+						Cube.permute(cube, MoveButtons.inverseOf(c));
+						MoveButtons.inverseOf(c); //Inverted twice
 						return c;
 					} else {
 						for (int i = 0; i < c.length; i++) {
