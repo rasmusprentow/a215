@@ -2,8 +2,7 @@ package algorithms;
 
 import java.util.EnumSet;
 
-import cube.Cube;
-import cube.InvalidCube;
+import cube.*;
 import cubedrawer.MoveButtons;
 import static cubedrawer.MoveButtons.*;
 
