@@ -202,10 +202,7 @@ public class DrawPanel extends JPanel {
 			g.drawPolygon(polygons[i], polygons[i+9], 4);
 
 			if(i == 4){
-				for (int k = 0; k < 4; k++) {
-					System.out.print(polygons[i][k] + " " + polygons[i*2][k] + " ");
-				}
-				System.out.println();
+
 				g.setColor(face.getFacelet().toColor());
 				g.fillPolygon(polygons[i], polygons[i+9], 4);
 
