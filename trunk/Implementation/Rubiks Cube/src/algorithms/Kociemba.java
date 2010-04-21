@@ -3,6 +3,7 @@ package algorithms;
 import java.util.EnumSet;
 
 import cube.Cube;
+import cube.InvalidCube;
 import cubedrawer.MoveButtons;
 import static cubedrawer.MoveButtons.*;
 
@@ -27,7 +28,7 @@ public class Kociemba {
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
-				
+
 				if (b.length - i == 1) {
 					b[b.length - 1] = F;
 				} else if (i%2 == 0) {
@@ -37,14 +38,14 @@ public class Kociemba {
 				}
 			}
 			try {
-			while (true) {
-				Cube.permute(cube, b);
-				
+				while (true) {
+					Cube.permute(cube, b);
+					if ()
 
-				increaseWithSNotEndingWithA(b, b.length-1);
-			}
+						increaseWithSNotEndingWithA(b, b.length-1);
+				}
 			} catch (UnableToIncreaseMoveSequenceException e) {
-				
+
 			}
 			d++;
 		}
@@ -58,7 +59,7 @@ public class Kociemba {
 	 * @return
 	 * @throws UnableToIncreaseMoveSequenceException
 	 */
-	public MoveButtons[] increaseWithSNotEndingWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
+	private MoveButtons[] increaseWithSNotEndingWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
 		int length = moveSequence.length;
 		int i = length - startWith;
 
@@ -81,6 +82,56 @@ public class Kociemba {
 					} else {
 						throw new UnableToIncreaseMoveSequenceException();
 					}
+				}
+			}
+		}
+
+		for ( ; i > 0; i--) {
+			try {
+				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
+					increaseWithSNotEndingWithA(moveSequence, length-i);
+					break;
+				}
+			} catch (ArrayIndexOutOfBoundsException e2) {
+
+			}
+		}
+		return moveSequence;
+	}
+
+	private MoveButtons[] solveFromH() throws InvalidCube {
+
+		if (!cube.isInH()) {
+			throw new InvalidCube("The cube is not in H!!");
+		} 
+		if (cube.isSolved()) {
+			return null;
+		} 
+
+		MoveButtons[] c;
+
+
+
+
+
+
+		return c;
+
+	}
+
+	private MoveButtons[] increaseWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
+		int length = moveSequence.length;
+		int i = length - startWith;
+
+		for (; i <= length; i++) {
+			try {
+				moveSequence[length-i] = (MoveButtons)A.toArray()[moveSequence[length-i].ordinal() + 1];
+				break;
+			} catch (ArrayIndexOutOfBoundsException e1) {
+				if (length - i != 0) {
+					moveSequence[length-i] = U;
+				} else {
+					throw new UnableToIncreaseMoveSequenceException();
 				}
 			}
 		}
