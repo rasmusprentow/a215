@@ -16,6 +16,7 @@ public class Cube {
 	Facelet tertiary_0;
 	Facelet tertiary_1;
 		
+	//Map of the cubies
 	TreeMap <EdgePos, EdgeCubie> eCubies;
 	TreeMap <CornerPos, CornerCubie> cCubies;
 	
