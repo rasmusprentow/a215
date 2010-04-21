@@ -61,7 +61,7 @@ public class Cube {
 	/////////////////////////////
 
 
-
+	
 
 	/**
 	 * Contains six faces distributed on three arrays depending on whether they are primary, secondary, or tertiary.
@@ -321,7 +321,8 @@ public Face getLastFace(EdgeCubie e){
 	}
 	
 	//Static methods
-	
+
+
 	/**
 	 * 
 	 * @param a the cube to permute
