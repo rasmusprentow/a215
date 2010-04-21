@@ -22,7 +22,7 @@ public class Kociemba {
 		MoveButtons[] result = new MoveButtons[29];
 		int d = 0;
 		int l = Integer.MAX_VALUE;
-		MoveButtons[] b;
+		MoveButtons[] b,c;
 		while (l > d) {
 			b = new MoveButtons[d];
 
@@ -39,9 +39,24 @@ public class Kociemba {
 			try {
 				while (true) {
 					Cube.permute(cube, b);
-					if ()
+					try {
+						c = solveFromH();
+						if (d + c.length < l) {
+							l = d + c.length;
+							int j = 0;
+							for ( ; j < d; j++) {
+								result[j] = b[j];	
+							}
+							for (int k = 0 ; k < d; k++,j++) {
+								result[j] = c[k];	
+							}
 
-						increaseWithSNotEndingWithA(b, b.length-1);
+						}
+
+					} catch (InvalidCube e) {
+
+					}
+					increaseWithSNotEndingWithA(b, b.length-1);
 				}
 			} catch (UnableToIncreaseMoveSequenceException e) {
 
@@ -115,7 +130,7 @@ public class Kociemba {
 		for (int d = 1; d <= 18; d++) {
 			c = new MoveButtons[d];
 
-			for (int i = 0; i < c.length; i++) {
+			for (int i = 0; i < d; i++) {
 
 				if (i%2 == 0) {
 					c[i] = U;
@@ -125,21 +140,23 @@ public class Kociemba {
 			}
 			try {
 				while (true) {
+
 					Cube.permute(cube, c);
+
 					if (cube.isSolvedInsideH()) {
 						return c;
+					} else {
+						Cube.permute(cube, MoveButtons.inverseOf(c));
+						MoveButtons.inverseOf(c);
+						increaseWithA(c, d-1);
 					}
 				}
+
 			} catch (UnableToIncreaseMoveSequenceException e) {
-				
+
 			}
 		}
-
-
-
-
-		return c;
-
+		return null;
 	}
 
 	private MoveButtons[] increaseWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
