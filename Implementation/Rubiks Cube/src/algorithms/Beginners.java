@@ -311,20 +311,28 @@ public class Beginners {
 		System.out.println("I'm here");
 
 		
-		System.out.println("POSO" + P0S0.getPrimaryOrientation());
-		System.out.println(P0S1.getPrimaryOrientation());
-		System.out.println(P0T0.getPrimaryOrientation());
-		System.out.println(P0T1.getPrimaryOrientation());
-		
+		System.out.println("POSO " + P0S0.getPrimaryOrientation());
+		System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+		System.out.println("POTO " + P0T0.getPrimaryOrientation());
+		System.out.println("POT1 " + P0T1.getPrimaryOrientation());
+
 		if(P0S0.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1 && P0T1.getPrimaryOrientation() == 1){
 			//Alle er lig en
+			
 			System.out.println("Front 1");
+			System.out.println("POSO " + P0S0.getPrimaryOrientation());
+			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+			System.out.println("POTO " + P0T0.getPrimaryOrientation());
+			System.out.println("POT1 " + P0T1.getPrimaryOrientation());
 			algortihm8(Facelet.SECONDARY_0);
 		}
 
 		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
 			System.out.println("Front 2");
-
+			System.out.println("POSO " + P0S0.getPrimaryOrientation());
+			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+			System.out.println("POT0 " + P0T0.getPrimaryOrientation());
+			System.out.println("POT1 " + P0T1.getPrimaryOrientation());
 			algortihm8(Facelet.SECONDARY_0);
 
 
@@ -333,7 +341,10 @@ public class Beginners {
 
 		if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1){
 			System.out.println("Right 3");
-
+			System.out.println("POSO " + P0S0.getPrimaryOrientation());
+			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+			System.out.println("POT0 " + P0T0.getPrimaryOrientation());
+			System.out.println("POT1 " + P0T1.getPrimaryOrientation());
 			algortihm8(Facelet.TERTIARY_1);
 
 
@@ -342,7 +353,10 @@ public class Beginners {
 		} 
 		if(P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1){
 			System.out.println("Back 4");
-
+			System.out.println("POSO " + P0S0.getPrimaryOrientation());
+			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+			System.out.println("POT0 " + P0T0.getPrimaryOrientation());
+			System.out.println("POT1 " + P0T1.getPrimaryOrientation());
 			algortihm8(Facelet.SECONDARY_1);
 			//  _
 			// |
@@ -351,7 +365,10 @@ public class Beginners {
 
 		if(P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
 			System.out.println("Left 5");
-
+			System.out.println("POSO " + P0S0.getPrimaryOrientation());
+			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
+			System.out.println("POT0 " + P0T0.getPrimaryOrientation());
+			System.out.println("POT1 " + P0T1.getPrimaryOrientation());
 			algortihm8(Facelet.TERTIARY_0);
 		
 
