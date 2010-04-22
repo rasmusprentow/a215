@@ -79,7 +79,7 @@ public enum MoveButtons {
 			move[move.length/2] = move[move.length/2].invert();
 		} 
 		try {
-			for(int i = 0 , j = move.length-1 ; i < j ; i++ , j++) {
+			for(int i = 0 , j = move.length-1 ; i < j ; i++ , j--) {
 				temp = move[i];
 				move[i] = move[j];
 				move[j] = temp;

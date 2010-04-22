@@ -9,12 +9,18 @@ import static cubedrawer.MoveButtons.*;
 public class Kociemba {
 
 	private Cube cube;
+	private AlgorithmOutput output;
 	private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2);
 	private EnumSet<MoveButtons> A = EnumSet.of(U, UP ,U2, D, DP, D2, F2, B2, L2, R2);
 	private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 
 	public Kociemba (Cube a) {
 		cube = a;
+	}
+	
+	public Kociemba (Cube a , AlgorithmOutput output) {
+		cube = a;
+		this.output = output;
 	}
 
 	/**
@@ -29,7 +35,7 @@ public class Kociemba {
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			System.out.println("Try solving with depth: " + d);
+			output.addTextln("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
@@ -52,17 +58,17 @@ public class Kociemba {
 						if (d + c.length < l) {
 							l = d + c.length;
 							result = new MoveButtons[l];
-							System.out.println("The solutions of the length " + l + ". The solution is:");
+							output.addTextln("The solutions of the length " + l + ". The solution is:");
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
-								System.out.print(b[j] + " ");
+								output.addText(b[j] + " ");
 							}
 							for (int k = 0 ; k < c.length; k++,j++) {
 								result[j] = c[k];
-								System.out.print(c[k] + " ");
+								output.addText(c[k] + " ");
 							}
-							System.out.println();
+							output.addTextln("");
 						}
 
 					} catch (InvalidCube e) {
@@ -158,7 +164,7 @@ public class Kociemba {
 		MoveButtons[] c;
 
 		for (int d = 1; d <= maxAMoves; d++) {
-			System.out.println("Solving in H, with depth: " + d);
+			output.addTextln("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
 			for (int i = 0; i < d; i++) {

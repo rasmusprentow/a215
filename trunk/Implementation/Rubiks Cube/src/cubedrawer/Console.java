@@ -5,7 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class Console extends JPanel {
+import algorithms.AlgorithmOutput;
+
+public class Console extends JPanel implements AlgorithmOutput{
 	/**
 	 * 
 	 */
