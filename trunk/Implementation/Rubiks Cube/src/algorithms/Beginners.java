@@ -229,11 +229,11 @@ public class Beginners {
 					if(cube.getECubicle(newPlace).getCubie() == e){
 						algorithm5(newPlace); 
 					}
-					
+
 				}
-				
+
 			}
-			
+
 			if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
 				//It is in the white face
 				if(e.getPrimaryOrientation() == 0){
@@ -302,17 +302,17 @@ public class Beginners {
 	}
 
 	public void solveLLCross(){
-		
+
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S1 = cube.getECubie(EdgePos.P0S1);
 		EdgeCubie P0T0 = cube.getECubie(EdgePos.P0T0);
 		EdgeCubie P0T1 = cube.getECubie(EdgePos.P0T1);
-		
-		
+
+
 		if(P0S0.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1 && P0T1.getPrimaryOrientation() == 1){
 			//Alle er lig en
 		}
-		
+
 		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
 			// _|
 		} else if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
@@ -321,26 +321,26 @@ public class Beginners {
 		} else if(P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 0){
 			//  _
 			// |
-		
+
 		} else if(P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
 			// L
 		}
-		
+
 		if(P0T1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 0){
 			// -
 		} else if(P0S1.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
 			// |
 		}
-		
+
 		/*
 		int P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
-		*/
+		 */
 	}
-	
-	
+
+
 	/**
 	 * Turns the edges
 	 * @param the edge to be oriented.
@@ -525,6 +525,29 @@ public class Beginners {
 		}
 		Cube.permute(cube, moves);
 
+	}
+	private void algortihm8(Facelet f){
+		MoveButtons[] moves;
+		switch (f) {
+		case SECONDARY_0:
+			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP};
+			break;
+
+		case SECONDARY_1:
+			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP};
+			break;
+
+		case TERTIARY_0:
+			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.UP, MoveButtons.LP};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.B, MoveButtons.U, MoveButtons.BP, MoveButtons.UP, MoveButtons.RP};
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
 	}
 }
 
