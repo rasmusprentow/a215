@@ -1,8 +1,9 @@
 \section{Step 3 -- solving the second layer}
 
-In this step the second layer vil be solved. 
+In this step the second layer will be solved. 
 
-The first question our program needs to ask is that one of the edge pieces already are positioned and oriented correctly in the second layer. If that is the case the program vil proceed to the next edge piece. If the edge piece is oriented incorrectly the program will use an algorithme to move the edge piece up to the top layer and after then use the same algorithme to place the edge piece back into the correctly place and oriented right. 
+The program solve this layer by positioning and orienting the correct edge piece in a certain edge cubicle. When one cubicle has it's correct cubie in it's correct orientation, the program moves on to the next cubicle. This method may be as others earlier used in the implementation not be the optimal way of completing the step with regards to the number of twists. However the method is less complicated to implement.
+The first question the program needs to ask is if the piece in question is already positioned and oriented correctly in the second layer. If that is the case the program will proceed to the next edge piece. If the edge piece is oriented incorrectly the program will use an algorithm to move the edge piece to the top layer and  move it back to the same position -- but oriented correctly. 
 
-If the edge piece is not in it's correctly position the program needs to now where the correct edge piece is position. First the program check for it in the top layer    
+If the edge piece is not in it's correctly position the program needs to know where the correct edge piece is positioned. First the program checks for it in the top layer. If it is in the top layer up moves are applied to the \cube{} until the edge piece is positioned in such a way that an algorithm can be applied to move it to it's correct position with the correct orientation. If the edge piece is in the second layer the same type of algorithm is applied to swap an edge piece from the top layer with the edge piece in question. Now the edge piece can be positioned correctly as described before.
 
