@@ -42,6 +42,7 @@ public class DrawPanel extends JPanel {
 	private int startDelay = 500;
 	private int test = 0;
 	private Console console;
+	private boolean toggleView;
 	private boolean moving;
 	private boolean specialMove;
 	private boolean doNotSaveNextMove;
@@ -97,22 +98,26 @@ public class DrawPanel extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING ,    RenderingHints.VALUE_ANTIALIAS_ON);
 		g2.setColor(this.getBackground());
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
-		/*
-		draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
-		draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
-		draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
-		draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		*/
-		
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
-		draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
-		draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
-		draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
-		draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
-		draw3x3SecondaryPolygon(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-		
+
+		if (toggleView) {
+			
+			draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
+			draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+			draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
+			draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
+			draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
+			draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+			
+		} else {
+
+			draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
+			draw3x3(startX  + 3*rectHW , startY + 3*rectHW, g2, cube.getSecondary()[0]);
+			draw3x3(startX  + 2*rectHW * 4 , startY + 2*rectHW, g2, cube.getSecondary()[1]);
+			draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
+			draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
+			draw3x3SecondaryPolygon(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
+			
+		}
 	}
 
 
@@ -199,7 +204,7 @@ public class DrawPanel extends JPanel {
 				polygons[i][j] = listX[j] + i%3*rectHW - ((int)Math.ceil(i/3)*2*dispHW);
 				polygons[i+9][j] = listY[j] + (int)Math.ceil(i/3)*dispHW;
 			}
-			
+
 			g.setColor(Color.black);
 			g.drawPolygon(polygons[i], polygons[i+9], 4);
 
@@ -285,7 +290,7 @@ public class DrawPanel extends JPanel {
 				polygons[i][j] = listX[j] + i%3*2*dispHW;
 				polygons[i+9][j] = listY[j] + (int)Math.ceil(i/3)*3*dispHW - i%3*dispHW;
 			}
-			
+
 			g.setColor(Color.black);
 			g.drawPolygon(polygons[i], polygons[i+9], 4);
 
@@ -350,9 +355,9 @@ public class DrawPanel extends JPanel {
 		//g.drawRect(x - 1, y - 1, 3*rectHW, 3*rectHW);
 		//int[] listX = {x + 2*dispHW, x, x, x + 2*dispHW};
 		//int[] listY = {y - dispHW, y, y + rectHW, y + rectHW - dispHW};
-		
+
 		g.drawPolygon(new int[]{x, x, x + 2*rectHW, x + 2*rectHW + 1}, 
-			new int[]{y - 1, y + 3*rectHW - 1, y + 6*dispHW - 1, y - 3*dispHW - 1}, 4);
+				new int[]{y - 1, y + 3*rectHW - 1, y + 6*dispHW - 1, y - 3*dispHW - 1}, 4);
 
 	}
 
@@ -456,27 +461,28 @@ public class DrawPanel extends JPanel {
 		case KOCIEMBA:
 			kociemba();
 			break;
-
 		case BEGINNERS:
 			beginners();
-			
 			break;
 		case TEST:
 			stopMoving();
 			test();
 			break;
-		case TEST2:
-			
+		case TOGGLEVIEW:
+			toggleView();
 			break;
 		default:
 			console.addTextln("Something is wrong");
-
 		}	
-
-
 	}
 
-
+	private void toggleView() {
+		if (toggleView) {
+			toggleView = false;
+		} else {
+			toggleView = true;
+		}
+	}
 
 	private void startMoving(){
 		if(moving == false){
@@ -576,10 +582,10 @@ public class DrawPanel extends JPanel {
 			console.addText(key + " ");			
 		}
 		console.addTextln("");
-		
-		
 
-		
+
+
+
 		//specialMove = false;		
 	}
 
@@ -640,9 +646,9 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Solving with Kociemba's algorithm, please wait.");
 		MoveButtons[] kociembasMoveSequence;
 		kociembasMoveSequence = kociemba.solve(12);
-		
+
 		twistSequence(kociembasMoveSequence);
-		
+
 		stopMoving();
 	}
 
