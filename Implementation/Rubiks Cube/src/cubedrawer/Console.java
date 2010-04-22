@@ -28,15 +28,18 @@ public class Console extends JPanel implements AlgorithmOutput{
 	public void addTextln(String s){
 		console.append(s + "\n");
 		console.setCaretPosition(console.getText().length() - 1);
+		repaint();
 	}
 	
 	public void addln(){
 		console.append("\n");
 		console.setCaretPosition(console.getText().length() - 1);
+		repaint();
 	}
 
 	public void addText(String s){
 		console.append(s + " ");
 		console.setCaretPosition(console.getText().length() - 1);
+		repaint();
 	}
 }
