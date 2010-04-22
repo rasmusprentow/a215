@@ -144,13 +144,13 @@ public class MoveTools {
 					iter.remove();
 					MoveButtons theMoved = iter.previous();
 					iter.remove();
-					System.out.println("Removing two " + theMoved);
+					//System.out.println("Removing two " + theMoved);
 					if(theMoved.toString().substring(1).equals("'")){ // If it is a prime
 						iter.add(MoveButtons.values()[theMoved.ordinal()+1]);
-						System.out.println("Replacing with " + MoveButtons.values()[theMoved.ordinal()+1]);
+						//System.out.println("Replacing with " + MoveButtons.values()[theMoved.ordinal()+1]);
 					} else {
 						iter.add(MoveButtons.values()[theMoved.ordinal()+2]);
-						System.out.println("Replacing with " + MoveButtons.values()[theMoved.ordinal()+2]);
+						//System.out.println("Replacing with " + MoveButtons.values()[theMoved.ordinal()+2]);
 					}
 				}
 				previous = move;
@@ -188,54 +188,6 @@ public class MoveTools {
 
 		}
 
-		/*
-			} else if(dups == 2){
-				iter.previous();
-				for(int i = 0; i < dups + 1; i++){
-					iter.previous();
-					iter.remove();
-				}
-				if(move.toString().substring(1).equals("'")){ // If it is a prime
-					iter.add(MoveButtons.values()[move.ordinal()-1]);
-				} else {
-					iter.add(MoveButtons.values()[move.ordinal()+1]);
-				}
-			} else if(dups == 1){
-				iter.previous();
-				for(int i = 0; i < dups + 1; i++){
-					iter.previous();
-					iter.remove();
-				}
-				if(move.toString().substring(1).equals("'")){ // If it is a prime
-					iter.add(MoveButtons.values()[move.ordinal()+1]);
-				} else {
-					iter.add(MoveButtons.values()[move.ordinal()+2]);
-				}
-			}
-
-			if(iter.hasNext()){
-				MoveButtons previous = iter.next();
-				if(iter.hasNext()){
-					MoveButtons previous2 = iter.next();
-					if(iter.hasNext()){
-						MoveButtons previous3 = iter.next();
-						while(iter.hasNext()){
-							move = iter.next();
-							if(previous)){
-								foundInverses = true;
-								iter.remove();
-								iter.previous();
-								iter.remove();
-								move = iter.next();
-							}
-							previous3 = previous2;
-							previous2 = previous;
-							previous = move;
-						}
-					}
-				}
-			}
-		 */
 		return moves;
 
 	}
