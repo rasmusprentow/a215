@@ -33,7 +33,7 @@ public class MoveTools {
 		moves = eliminateQuads(moves);
 		moves = eliminateTri(moves);
 		moves = combineList(moves);
-		return moves;
+		return moves; 
 	}
 	/**
 	 * Removes all inverse moves from the list. Will not duplicate orignal list. 
