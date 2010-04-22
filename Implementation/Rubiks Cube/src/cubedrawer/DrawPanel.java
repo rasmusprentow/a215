@@ -52,6 +52,7 @@ public class DrawPanel extends JPanel {
 	private MP3 mp3;
 	private Beginners beginners;
 	private Kociemba kociemba;
+	Thread kociembaThread;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
 
@@ -645,19 +646,52 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void kociemba() {
-		stopMoving();
-		console.addTextln("Solving with Kociemba's algorithm, please wait.");
-		MoveButtons[] kociembasMoveSequence;
-		kociembasMoveSequence = kociemba.solve(12);
 		
-		twistSequence(kociembasMoveSequence);
-		stopMoving();
+		System.out.println(kociembaThread);
+		if(kociembaThread != null && kociembaThread.isAlive()) {
+			try {
+				kociembaThread.stop();
+				kociembaThread = null;
+			} catch (IllegalMonitorStateException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+			}
+		} else {
+			kociembaThread = new Thread() {
+	            public void run() {
+	            	stopMoving();
+	        		console.addTextln("Solving with Kociemba's algorithm, please wait.");
+	        		MoveButtons[] kociembasMoveSequence;
+	                kociembasMoveSequence = kociemba.solve(12);
+	                
+	                System.out.print("The shortest movesequence is: ");
+	                console.addTextln("The shortest movesequence is: ");
+					for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
+						System.out.print(kociembasMoveSequence[i] + " ");
+						console.addText(kociembasMoveSequence[i] + " ");
+					}
+					System.out.println();
+					
+					repaint();
+	                
+					kociembaThread.stop();
+					kociembaThread = null;
+					
+	                //twistSequence(kociembasMoveSequence);
+	        		//stopMoving();
+	            }
+	        };
+	       
+	        kociembaThread.start();
+		}	
+		
+		System.out.println(kociembaThread);
 		
 		return;
 	}
 
 	private void test() {
-		MoveButtons[] seq = {R,L,F,B};
+		MoveButtons[] seq = {U,DP,F,BP,L};
 
 		if(test == 0) {
 			Cube.permute(cube, seq);
