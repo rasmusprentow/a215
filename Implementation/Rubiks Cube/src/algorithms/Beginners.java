@@ -387,7 +387,57 @@ public class Beginners {
 		Cube.permute(cube, moves);
 
 	}
-}
 
+	
+	//INSERT ALG5 HERE
+
+	private void algorithm6(EdgePos p){
+		MoveButtons[] moves;
+		switch(p){
+		case P0S0:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F};
+			break;
+		case P0T1:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP, MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R};
+			break;
+		case P0S1:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP, MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L};
+
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+
+	}
+	
+	private void algorithm7(EdgePos p){
+		MoveButtons[] moves;
+		switch(p){
+		case P0S0:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP};
+			break;
+		case P0T1:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP};
+			break;
+		case P0S1:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP};
+
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+
+	}
+}
 
 
