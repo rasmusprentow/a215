@@ -65,7 +65,7 @@ public class DrawPanel extends JPanel {
 		previousMoves = new LinkedList<MoveButtons>();
 
 		beginners = new Beginners(cube);
-		kociemba = new Kociemba(cube);
+		kociemba = new Kociemba(cube , console);
 
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
@@ -561,7 +561,7 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Pick up screwdriver, disassemble cube, assemble cube correctly \n");
 		cube = new Cube();
 		beginners = new Beginners(cube);
-		kociemba = new Kociemba(cube);
+		kociemba = new Kociemba(cube , console);
 		repaint();
 	}
 
@@ -653,7 +653,7 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void test() {
-		MoveButtons[] seq = {U,F,R2};
+		MoveButtons[] seq = {R,L,F,B};
 
 		if(test == 0) {
 			Cube.permute(cube, seq);
