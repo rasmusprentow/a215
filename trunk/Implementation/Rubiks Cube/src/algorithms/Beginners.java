@@ -29,7 +29,7 @@ public class Beginners {
 		solveFLCross();
 		solveFL();
 		solveF2L();
-		solveLLCross();
+		//solveLLCross();
 		return moves;
 	}
 
@@ -604,6 +604,42 @@ public class Beginners {
 		}
 		Cube.permute(cube, moves);
 	}
+	/* Cases skal laves om til det rigtige */
+	private void algortihm9(EdgePos p){
+		MoveButtons[] moves;
+		switch (p) {
+		case P0S0:
+			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U2, MoveButtons.RP, MoveButtons.U};
+			/* Front move
+			 * 
+			 */
+			break;
+		case P0S1:
+			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.U, MoveButtons.F, MoveButtons.U2, MoveButtons.FP, MoveButtons.U};
+			/* Left move
+			 * 
+			 */
+			break;
+		case P0T0:
+			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U2, MoveButtons.LP, MoveButtons.U};
+			/* Back move
+			 * 
+			 */
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.U, MoveButtons.BP, MoveButtons.U, MoveButtons.B, MoveButtons.U2, MoveButtons.BP, MoveButtons.U};
+			/* Right move
+			 * */
+			break;
+
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+		
+	 }
+	
 }
 
 
