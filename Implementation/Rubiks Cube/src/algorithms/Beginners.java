@@ -42,7 +42,6 @@ public class Beginners {
 				//System.out.println("Den er i gul, mand! " + key);
 				if(cube.getECubicle(key).getCubie()== e){ // Hvis den er på plads
 					moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
-
 					Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				}
 
