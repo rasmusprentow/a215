@@ -304,19 +304,17 @@ public class Beginners {
 
 	public void solveLLCross(){
 
-		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
+	//	cube.getECubicle(EdgePos.P0S1).getCubie();
 		EdgeCubie P0S1 = cube.getECubie(EdgePos.P0S1);
 		EdgeCubie P0T0 = cube.getECubie(EdgePos.P0T0);
 		EdgeCubie P0T1 = cube.getECubie(EdgePos.P0T1);
+		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S1);
 		System.out.println("I'm here");
 
+	
 		
-		System.out.println("POSO " + P0S0.getPrimaryOrientation());
-		System.out.println("POS1 " + P0S1.getPrimaryOrientation());
-		System.out.println("POTO " + P0T0.getPrimaryOrientation());
-		System.out.println("POT1 " + P0T1.getPrimaryOrientation());
-
-		if(P0S0.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1 && P0T1.getPrimaryOrientation() == 1){
+		
+		if(cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1){
 			//Alle er lig en
 			
 			System.out.println("Front 1");
@@ -327,7 +325,7 @@ public class Beginners {
 			algortihm8(Facelet.SECONDARY_0);
 		}
 
-		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+		if(	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
 			System.out.println("Front 2");
 			System.out.println("POSO " + P0S0.getPrimaryOrientation());
 			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
@@ -339,7 +337,7 @@ public class Beginners {
 			// _|
 		} 
 
-		if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1){
+		if(	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1){
 			System.out.println("Right 3");
 			System.out.println("POSO " + P0S0.getPrimaryOrientation());
 			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
@@ -351,7 +349,7 @@ public class Beginners {
 			// _
 			//  |
 		} 
-		if(P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1){
+		if(cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1){
 			System.out.println("Back 4");
 			System.out.println("POSO " + P0S0.getPrimaryOrientation());
 			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
@@ -363,7 +361,7 @@ public class Beginners {
 
 		} 
 
-		if(P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+		if(cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
 			System.out.println("Left 5");
 			System.out.println("POSO " + P0S0.getPrimaryOrientation());
 			System.out.println("POS1 " + P0S1.getPrimaryOrientation());
