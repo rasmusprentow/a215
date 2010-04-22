@@ -1,0 +1,47 @@
+\section{Method Increase With S Not Ending With A}
+
+- skriv et eller andet...
+
+
+		try {
+			if (i == 1) {
+				i++;
+				do {
+					moveSequence[length-1] = (MoveButtons)S.toArray()[moveSequence[length-1].ordinal() + 1];
+					
+				} while(A.contains(moveSequence[length-1]));
+				
+			} else {
+				throw new ArrayIndexOutOfBoundsException();
+			}
+		} catch (ArrayIndexOutOfBoundsException e) {
+			if (length == 1 ) {
+				throw new UnableToIncreaseMoveSequenceException();
+			}
+			moveSequence[length-1] = F;
+			for (; i <= length; i++) {
+				try {
+					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
+					break;
+				} catch (ArrayIndexOutOfBoundsException e1) {
+					if (length - i != 0) {
+						moveSequence[length-i] = U;
+					} else {
+						throw new UnableToIncreaseMoveSequenceException();
+					}
+				}
+			}
+		}
+
+		for ( ; i > 0; i--) {
+			try {
+				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
+					increaseWithSNotEndingWithA(moveSequence, length-i);
+					break;
+				}
+			} catch (ArrayIndexOutOfBoundsException e2) {
+
+			}
+		}
+		return moveSequence;
+	}
