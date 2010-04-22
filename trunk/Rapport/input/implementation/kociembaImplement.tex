@@ -1,6 +1,9 @@
 \chapter{Implementing Kociemba's Optimal Solver}
-\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with }
+\label{chap:kociembaImplement}
+\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}
 
+The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing is differing from the original at one point:
+We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only tries to find the shortest length, not the actual sequence of moves.
 \input{input/implementation/kociembaImplement/methodSolve}
 
 \myTail{}

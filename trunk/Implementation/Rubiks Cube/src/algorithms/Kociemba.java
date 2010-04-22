@@ -35,7 +35,7 @@ public class Kociemba {
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			//output.addTextln("Try solving with depth: " + d);
+			output.addTextln("Try solving with depth: " + d);
 			System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
@@ -60,18 +60,19 @@ public class Kociemba {
 							l = d + c.length;
 							result = new MoveButtons[l];
 							output.addTextln("The solutions of the length " + l + ". The solution is:");
+							System.out.println("The solutions of the length " + l + ". The solution is:");
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
-								//output.addText(b[j] + " ");
+								output.addText(b[j] + " ");
 								System.out.print(b[j] + " ");
 							}
 							for (int k = 0 ; k < c.length; k++,j++) {
 								result[j] = c[k];
-								//output.addText(c[k] + " ");
+								output.addText(c[k] + " ");
 								System.out.print(c[k] + " ");
 							}
-							//output.addTextln("");
+							output.addTextln("");
 							System.out.println();
 						}
 
