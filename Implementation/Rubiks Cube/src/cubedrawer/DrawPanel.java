@@ -21,7 +21,7 @@ import javax.sound.sampled.Port;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import util.MoveTools;
+import util.*;
 
 import algorithms.*;
 
@@ -646,10 +646,8 @@ public class DrawPanel extends JPanel {
 		console.addTextln("Solving with Kociemba's algorithm, please wait.");
 		MoveButtons[] kociembasMoveSequence;
 		kociembasMoveSequence = kociemba.solve(12);
-
-		twistSequence(kociembasMoveSequence);
-
-		stopMoving();
+		
+		return;
 	}
 
 	private void test() {

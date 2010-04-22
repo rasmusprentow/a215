@@ -25,7 +25,7 @@ public class Delayer {
 		int j;
 		while(run) {
 			i++;
-			j = i/(i*3+1);
+			j = (i*3+1);
 		}
 		time.stop();
 	}
@@ -35,12 +35,13 @@ public class Delayer {
 		
 		Timer time = new Timer(delay, new WhatToCallIt());
 		time.start();
+		time.addActionListener(new WhatToCallIt());
 		
 		int i = 0;
 		int j;
 		while(run) {
 			i++;
-			j = i/(i*3+1);
+			j = (i*3+1);
 		}
 		time.stop();
 	}
@@ -49,16 +50,28 @@ public class Delayer {
 		run = true;
 		delay = milliseconds;
 		
-		Timer time = new Timer(delay, new WhatToCallIt());
+		System.out.println(delay);
+		Timer time = new Timer(delay, new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("Stop");
+				run = false;
+				notifyAll();
+			}
+			
+		});
 		time.start();
-		
-		int i = 0;
-		int j;
-		while(run) {
-			i++;
-			j = i/(i*3+1);
+		try {
+			wait();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		time.stop();
+		
+		
 	}
 	
 	private class WhatToCallIt implements ActionListener {
@@ -66,6 +79,7 @@ public class Delayer {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			System.out.println("Stop");
 			run = false;
 		}
 		
