@@ -22,3 +22,33 @@
 - returner resultatet i sidste ende.
 -  og der er nogle try catch som sørger for at det hele ikke løber i endless loop
 
+			try {
+				while (true) {
+					Cube.permute(cube, b);
+					try {
+						c = solveFromH(l - d);
+						if (d + c.length < l) {
+							l = d + c.length;
+							result = new MoveButtons[l];
+							output.addTextln("The solutions of the length " + l + ". The solution is:");
+							int j = 0;
+							for ( ; j < d; j++) {
+								result[j] = b[j];
+								output.addText(b[j] + " ");
+							}
+							for (int k = 0 ; k < c.length; k++,j++) {
+								result[j] = c[k];
+								output.addText(c[k] + " ");
+							}
+							output.addTextln("");
+						}
+					} catch (InvalidCube e) { }
+					Cube.permute(cube, MoveButtons.inverseOf(b));
+					MoveButtons.inverseOf(b);					
+					increaseWithSNotEndingWithA(b, b.length-1);
+				}
+			} catch (UnableToIncreaseMoveSequenceException e) {	}
+			d++;
+		}
+		return result;
+	}
