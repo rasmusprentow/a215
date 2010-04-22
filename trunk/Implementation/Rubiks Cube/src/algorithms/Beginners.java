@@ -211,6 +211,7 @@ public class Beginners {
 	}
 
 	public void solveF2L(){
+		System.out.println("wassup nigga");
 		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
 
 		for(EdgePos key: edges){ // For all edges in the P1 layer
@@ -297,9 +298,9 @@ public class Beginners {
 			}
 		}
 
+
 	}
 
-<<<<<<< .mine
 	public void solveLLCross(){
 		
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
@@ -313,9 +314,10 @@ public class Beginners {
 		}
 		
 		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
-			// 
-		} else if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
-			
+			// _|
+		} else if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
+			// _
+			//  |
 		}
 		
 		/*
@@ -327,8 +329,6 @@ public class Beginners {
 	}
 	
 	
-=======
->>>>>>> .r739
 	/**
 	 * Turns the edges
 	 * @param the edge to be oriented.
@@ -513,29 +513,6 @@ public class Beginners {
 		}
 		Cube.permute(cube, moves);
 
-	}
-	private void algortihm8(Facelet f){
-		MoveButtons[] moves;
-		switch (f) {
-		case SECONDARY_0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP};
-			break;
-
-		case SECONDARY_1:
-			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP};
-			break;
-
-		case TERTIARY_0:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.UP, MoveButtons.LP};
-			break;
-		default:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.B, MoveButtons.U, MoveButtons.BP, MoveButtons.UP, MoveButtons.RP};
-			break;
-		}
-		for(int i = 0; i < moves.length; i++){
-			this.moves.add(moves[i]);
-		}
-		Cube.permute(cube, moves);
 	}
 }
 
