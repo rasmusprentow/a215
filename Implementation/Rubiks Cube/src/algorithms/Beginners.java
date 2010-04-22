@@ -29,6 +29,7 @@ public class Beginners {
 		solveFLCross();
 		solveFL();
 		solveF2L();
+		//solveLLCross();
 		return moves;
 	}
 
@@ -307,31 +308,70 @@ public class Beginners {
 		EdgeCubie P0S1 = cube.getECubie(EdgePos.P0S1);
 		EdgeCubie P0T0 = cube.getECubie(EdgePos.P0T0);
 		EdgeCubie P0T1 = cube.getECubie(EdgePos.P0T1);
+		System.out.println("I'm here");
 
-
+		
+		System.out.println("POSO" + P0S0.getPrimaryOrientation());
+		System.out.println(P0S1.getPrimaryOrientation());
+		System.out.println(P0T0.getPrimaryOrientation());
+		System.out.println(P0T1.getPrimaryOrientation());
+		
 		if(P0S0.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1 && P0T1.getPrimaryOrientation() == 1){
 			//Alle er lig en
+			System.out.println("Front 1");
+			algortihm8(Facelet.SECONDARY_0);
 		}
 
-		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
+		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+			System.out.println("Front 2");
+
+			algortihm8(Facelet.SECONDARY_0);
+
+
 			// _|
-		} else if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
+		} 
+
+		if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1){
+			System.out.println("Right 3");
+
+			algortihm8(Facelet.TERTIARY_1);
+
+
 			// _
 			//  |
-		} else if(P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 0){
+		} 
+		if(P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1){
+			System.out.println("Back 4");
+
+			algortihm8(Facelet.SECONDARY_1);
 			//  _
 			// |
 
-		} else if(P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
+		} 
+
+		if(P0T1.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+			System.out.println("Left 5");
+
+			algortihm8(Facelet.TERTIARY_0);
+		
+
+
 			// L
-		}
+		} 
+		/*
+		if(P0T1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+			algortihm8(Facelet.SECONDARY_0);
+			System.out.println("Front 6");
 
-		if(P0T1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 0){
 			// -
-		} else if(P0S1.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
+		} 
+			if(P0S1.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1){
 			// |
-		}
+			System.out.println("Left 7");
 
+			algortihm8(Facelet.TERTIARY_0);
+		}
+		 */
 		/*
 		int P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
