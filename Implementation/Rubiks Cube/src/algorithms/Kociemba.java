@@ -35,7 +35,7 @@ public class Kociemba {
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			output.addTextln("Try solving with depth: " + d);
+			//output.addTextln("Try solving with depth: " + d);
 			System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
@@ -63,24 +63,27 @@ public class Kociemba {
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
-								output.addText(b[j] + " ");
+								//output.addText(b[j] + " ");
+								System.out.print(b[j] + " ");
 							}
 							for (int k = 0 ; k < c.length; k++,j++) {
 								result[j] = c[k];
-								output.addText(c[k] + " ");
+								//output.addText(c[k] + " ");
+								System.out.print(c[k] + " ");
 							}
-							output.addTextln("");
+							//output.addTextln("");
+							System.out.println();
 						}
 
 					} catch (InvalidCube e) {
 						//System.out.println("Not in H!");
 					}
-
+/*
 					System.out.print("S: ");
 					for (int i = 0 ; i < b.length; i++) {
 						System.out.print(b[i] + " ");
 					}
-					System.out.println();
+					System.out.println();*/
 					
 					Cube.permute(cube, MoveButtons.inverseOf(b));
 					MoveButtons.inverseOf(b);					
@@ -165,8 +168,8 @@ public class Kociemba {
 		
 		MoveButtons[] c;
 
-		for (int d = 1; d <= maxAMoves; d++) {
-			output.addTextln("Solving in H, with depth: " + d);
+		for (int d = 1; d < maxAMoves; d++) {
+			//output.addTextln("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
 			for (int i = 0; i < d; i++) {
@@ -188,12 +191,12 @@ public class Kociemba {
 						MoveButtons.inverseOf(c); //Inverted twice
 						return c;
 					} else {
-						
+						/*
 						System.out.print("A: ");
 						for (int i = 0 ; i < c.length; i++) {
 							System.out.print(c[i] + " ");
 						}
-						System.out.println();
+						System.out.println();*/
 						
 						Cube.permute(cube, MoveButtons.inverseOf(c));
 						MoveButtons.inverseOf(c);
