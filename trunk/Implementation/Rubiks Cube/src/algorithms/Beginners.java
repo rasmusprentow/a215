@@ -135,9 +135,9 @@ public class Beginners {
 
 						algortihm2(edgeKey);
 					//	System.out.println("Moving " + edgeKey);
-						
-						
-						
+
+
+
 						while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
 							moves.add(MoveButtons.U);
 							Cube.permute(cube, MoveButtons.U);
@@ -155,15 +155,15 @@ public class Beginners {
 			}
 		}
 	}
-	*/
+	 */
 	/**
 	 * Solves the corners of the first Layer.
 	 */
 	private void solveFL(){ // 
 		EnumSet<CornerPos> corners = EnumSet.of(CornerPos.P1S0T0, CornerPos.P1S1T0, CornerPos.P1S0T1, CornerPos.P1S1T1);
 		//EnumSet<CornerPos> oppCorners = EnumSet.of(CornerPos.P0S0T0, CornerPos.P0S1T0, CornerPos.P1S0T1, CornerPos.P1S1T1);
-		
-		
+
+
 		for(CornerPos key: corners){ // For all corners in the P1 layer
 			CornerCubie c = cube.getCCubie(key);
 			if(cube.getCCubicle(key).getCubie()== c){ //Is the cubie in its right place
@@ -173,7 +173,7 @@ public class Beginners {
 					algorithm3(key);
 				}
 			} else if(cube.getFace(c)[0].getFacelet() == Facelet.PRIMARY_1) { // It is in the down face
-				
+
 
 				for(CornerPos cornerKey: corners){ // For all corners 
 					if(cube.getCCubicle(cornerKey).getCubie() == c){ // If the cube in this corner is the cube currently being placed.
@@ -190,8 +190,8 @@ public class Beginners {
 						}
 					}
 				}
-				
-				
+
+
 			} else { // It is in the up face
 				while(cube.getFace(c)[1].getFacelet() != c.getSecondaryFacelet() || cube.getFace(c)[2].getFacelet() != c.getTertiaryFacelet()){
 					moves.add(MoveButtons.U);
@@ -202,36 +202,79 @@ public class Beginners {
 					//System.out.println("på plads vender forkert " + key);
 					algorithm3(key);
 				}
-				
+
 			}
-			
-			
-			
+
+
+
 		}
 	}
-	
+
 	private void solveF2L(){
 		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
-		
+
 		for(EdgePos key: edges){ // For all edges in the P1 layer
 			EdgeCubie e = cube.getECubie(key);
 			if(cube.getECubicle(key).getCubie()== e){ //Is the cubie in its right place
 				//	System.out.println("på plads  " + key);
-					if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
+				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//	System.out.println("på plads vender forkert " + key);
-						algortihm5(key);
-					}
+					algortihm5(key); // denne algoritme er ikke skrevet endnu.
 				}
+			}
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
 				//It is in the white face
-				
+				if(e.getPrimaryOrientation() == 0){
+					while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
+						moves.add(MoveButtons.U);
+						Cube.permute(cube, MoveButtons.U);
+					}
+					if(e.getFacelet(1) == Facelet.TERTIARY_0){
+						if(e.getFacelet(1) == Facelet.SECONDARY_0){
+							algorithm6(key); //alg6 goes right
+						} 
+						else{
+							algorithm7(key); //alg7 goes left
+						}
+					} else {
+						if(e.getFacelet(1) == Facelet.SECONDARY_0){
+							algorithm7(key);
+						}
+						else{
+							algorithm6(key);
+						}
+					}
+
+
+				}
+				else { //orientation is 1
+					while(cube.getFace(e)[1].getFacelet() != e.getFacelet(0)){
+						moves.add(MoveButtons.U);
+						Cube.permute(cube, MoveButtons.U);
+					}
+					if(e.getFacelet(1) == Facelet.SECONDARY_0){
+						if(e.getFacelet(1) == Facelet.TERTIARY_0){
+							algorithm6(key); //alg6 goes right
+						} 
+						else{
+							algorithm7(key); //alg7 goes left
+						}
+					} else {
+						if(e.getFacelet(1) == Facelet.TERTIARY_0){
+							algorithm7(key);
+						}
+						else{
+							algorithm6(key);
+						}
+					}
+				}
 			}
 		}
-		
-		
+
+
 	}
-	
-	
+
+
 	/**
 	 * Turns the edges
 	 * @param the edge to be oriented.
@@ -313,15 +356,15 @@ public class Beginners {
 			this.moves.add(moves[i]);
 		}
 		Cube.permute(cube, moves);
-		
-	}
-	
 
-		/**
-		 * Svitches the cube in the P1 on layer with the same cube in the p0 layer.
-		 * @param p The P1 position of the switch.
-		 */
-		private void algorithm4(CornerPos p){
+	}
+
+
+	/**
+	 * Svitches the cube in the P1 on layer with the same cube in the p0 layer.
+	 * @param p The P1 position of the switch.
+	 */
+	private void algorithm4(CornerPos p){
 		MoveButtons[] moves;
 		switch(p){
 		case P1S0T0:
@@ -342,7 +385,7 @@ public class Beginners {
 			this.moves.add(moves[i]);
 		}
 		Cube.permute(cube, moves);
-		
+
 	}
 }
 
