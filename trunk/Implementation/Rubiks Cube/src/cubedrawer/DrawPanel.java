@@ -647,6 +647,9 @@ public class DrawPanel extends JPanel {
 		MoveButtons[] kociembasMoveSequence;
 		kociembasMoveSequence = kociemba.solve(12);
 		
+		twistSequence(kociembasMoveSequence);
+		stopMoving();
+		
 		return;
 	}
 
