@@ -29,7 +29,7 @@ public class Beginners {
 		solveFLCross();
 		solveFL();
 		solveF2L();
-		//solveLLCross();
+		solveLLCross();
 		return moves;
 	}
 
