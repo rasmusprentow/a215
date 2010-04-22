@@ -161,6 +161,27 @@ public class Beginners {
 		}
 	}
 	
+	private void solveF2L(){
+		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
+		
+		for(EdgePos key: edges){ // For all edges in the P1 layer
+			EdgeCubie e = cube.getECubie(key);
+			if(cube.getECubicle(key).getCubie()== e){ //Is the cubie in its right place
+				//	System.out.println("på plads  " + key);
+					if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
+					//	System.out.println("på plads vender forkert " + key);
+						algortihm5(key);
+					}
+				}
+			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
+				//It is in the white face
+				
+			}
+		}
+		
+		
+	}
+	
 	
 	/**
 	 * Turns the edges
