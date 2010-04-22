@@ -473,7 +473,7 @@ public class DrawPanel extends JPanel {
 			toggleView();
 			break;
 		case SOLVEF2L:
-			beginners.solveF2L();
+			beginners.solveLLCross();
 			break;
 		default:
 			console.addTextln("Something is wrong");
