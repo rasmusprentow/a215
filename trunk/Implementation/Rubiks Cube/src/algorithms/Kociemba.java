@@ -29,7 +29,7 @@ public class Kociemba {
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			System.out.println("d is: " + d);
+			System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
@@ -47,8 +47,8 @@ public class Kociemba {
 					//System.out.println("Permuting!");
 					Cube.permute(cube, b);
 					try {
-						//System.out.println("Solving from H!");
-						c = solveFromH();
+						c = solveFromH(l - d);
+						//c = solveFromH(5);
 						if (d + c.length < l) {
 							l = d + c.length;
 							result = new MoveButtons[l];
@@ -66,26 +66,16 @@ public class Kociemba {
 						}
 
 					} catch (InvalidCube e) {
-						System.out.println("Not in H!");
+						//System.out.println("Not in H!");
 					}
-					
-					for (int i = 0; i < b.length; i++) {
+
+					for (int i = 0 ; i < b.length; i++) {
 						System.out.print(b[i] + " ");
 					}
 					System.out.println();
-					
 					
 					Cube.permute(cube, MoveButtons.inverseOf(b));
-					MoveButtons.inverseOf(b);
-					
-					
-					for (int i = 0; i < b.length; i++) {
-						System.out.print(b[i] + " ");
-					}
-					System.out.println();
-					
-					//System.out.println("Increasing with S not A!");
-					
+					MoveButtons.inverseOf(b);					
 					
 					increaseWithSNotEndingWithA(b, b.length-1);
 				}
@@ -145,7 +135,6 @@ public class Kociemba {
 		for ( ; i > 0; i--) {
 			try {
 				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
-					System.out.println("Recursing!");
 					increaseWithSNotEndingWithA(moveSequence, length-i);
 					break;
 				}
@@ -156,19 +145,20 @@ public class Kociemba {
 		return moveSequence;
 	}
 
-	private MoveButtons[] solveFromH() throws InvalidCube {
+	private MoveButtons[] solveFromH(int maxAMoves) throws InvalidCube {
 
 		if (!cube.isInH()) {
 			throw new InvalidCube("The cube is not in H!!");
 		} 
 		if (cube.isSolvedInsideH()) {
-			System.out.println("One solution found!");
+			//System.out.println("One solution found! With 0 A moves");
 			return new MoveButtons[0];
 		} 
 		
 		MoveButtons[] c;
 
-		for (int d = 1; d <= 18; d++) {
+		for (int d = 1; d <= maxAMoves; d++) {
+			System.out.println("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
 			for (int i = 0; i < d; i++) {
@@ -185,22 +175,14 @@ public class Kociemba {
 					Cube.permute(cube, c);
 
 					if (cube.isSolvedInsideH()) {
-						System.out.println("Another solution found!");
+						//System.out.println("Another solution found!");
 						Cube.permute(cube, MoveButtons.inverseOf(c));
 						MoveButtons.inverseOf(c); //Inverted twice
 						return c;
 					} else {
-						for (int i = 0; i < c.length; i++) {
-							System.out.print(c[i] + " ");
-						}
-						System.out.println();
 						Cube.permute(cube, MoveButtons.inverseOf(c));
 						MoveButtons.inverseOf(c);
-						for (int i = 0; i < c.length; i++) {
-							System.out.print(c[i] + " ");
-						}
-						System.out.println();
-						System.out.println("Increasing with A!");
+
 						increaseWithA(c, d-1);
 					}
 				}
@@ -209,7 +191,7 @@ public class Kociemba {
 
 			}
 		}
-		return null;
+		return new MoveButtons[maxAMoves+1];
 	}
 
 	private MoveButtons[] increaseWithA(MoveButtons[] moveSequence, int startWith) throws UnableToIncreaseMoveSequenceException {
