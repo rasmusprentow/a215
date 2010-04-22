@@ -373,20 +373,20 @@ public class Beginners {
 
 			// L
 		} 
-		/*
-		if(P0T1.getPrimaryOrientation() == 0 && P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 1 && P0S0.getPrimaryOrientation() == 1){
+		
+		if(cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
 			algortihm8(Facelet.SECONDARY_0);
 			System.out.println("Front 6");
-
+			
 			// -
 		} 
-			if(P0S1.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0 && P0T1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1){
+			if(cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1){
 			// |
 			System.out.println("Left 7");
 
 			algortihm8(Facelet.TERTIARY_0);
 		}
-		 */
+		 
 		/*
 		int P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
