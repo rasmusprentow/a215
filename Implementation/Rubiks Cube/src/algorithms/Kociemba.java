@@ -36,6 +36,7 @@ public class Kociemba {
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
 			output.addTextln("Try solving with depth: " + d);
+			System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
