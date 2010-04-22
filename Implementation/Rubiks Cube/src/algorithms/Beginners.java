@@ -318,8 +318,12 @@ public class Beginners {
 		} else if(P0T0.getPrimaryOrientation() == 0 && P0S0.getPrimaryOrientation() == 0){
 			// _
 			//  |
-		}
+		} else if(P0S0 && P0T1){
+			
 		
+		} else if(P0T1 P0S1){
+			
+		}
 		/*
 		int P0S0 = cube.getECubie(EdgePos.P0S0);
 		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
