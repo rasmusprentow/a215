@@ -28,7 +28,7 @@ public class Beginners {
 		moves.clear();
 		solveFLCross();
 		solveFL();
-		//solveF2L();
+		solveF2L();
 		return moves;
 	}
 
@@ -211,7 +211,7 @@ public class Beginners {
 	}
 
 	public void solveF2L(){
-		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0);//, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
+		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
 
 		for(EdgePos key: edges){ // For all edges in the P1 layer
 			EdgeCubie e = cube.getECubie(key);
@@ -219,9 +219,20 @@ public class Beginners {
 				//	System.out.println("på plads  " + key);
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//	System.out.println("på plads vender forkert " + key);
-					algorithm6(key); // denne algoritme er ikke skrevet endnu.
+					algorithm5(key); // denne algoritme er ikke skrevet endnu.
 				}
 			}
+			if(cube.getFace(e)[0].getFacelet() != Facelet.PRIMARY_0){
+
+				for(EdgePos newPlace: edges){ // For all edges in the P1 layer
+					if(cube.getECubicle(newPlace).getCubie() == e){
+						algorithm5(newPlace); 
+					}
+					
+				}
+				
+			}
+			
 			if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
 				//It is in the white face
 				if(e.getPrimaryOrientation() == 0){
@@ -266,17 +277,17 @@ public class Beginners {
 
 							if(e.getFacelet(0) == Facelet.SECONDARY_0){
 								if(e.getFacelet(1) == Facelet.TERTIARY_0){
-									algorithm6(edgeKey); //alg6 goes right
+									algorithm7(edgeKey); //alg6 goes right
 								} 
 								else{
-									algorithm7(edgeKey); //alg7 goes left
+									algorithm6(edgeKey); //alg7 goes left
 								}
 							} else {
 								if(e.getFacelet(1) == Facelet.TERTIARY_0){
-									algorithm7(edgeKey);
+									algorithm6(edgeKey);
 								}
 								else{
-									algorithm6(edgeKey);
+									algorithm7(edgeKey);
 								}
 							}
 						}
@@ -288,6 +299,36 @@ public class Beginners {
 
 	}
 
+<<<<<<< .mine
+	public void solveLLCross(){
+		
+		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
+		EdgeCubie P0S1 = cube.getECubie(EdgePos.P0S1);
+		EdgeCubie P0T0 = cube.getECubie(EdgePos.P0T0);
+		EdgeCubie P0T1 = cube.getECubie(EdgePos.P0T1);
+		
+		
+		if(P0S0.getPrimaryOrientation() == 1 && P0S1.getPrimaryOrientation() == 1 && P0T0.getPrimaryOrientation() == 1 && P0T1.getPrimaryOrientation() == 1){
+			//Alle er lig en
+		}
+		
+		if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
+			// 
+		} else if(P0T0.getPrimaryOrientation() == 0 && P0S1.getPrimaryOrientation() == 0){
+			
+		}
+		
+		/*
+		int P0S0 = cube.getECubie(EdgePos.P0S0);
+		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
+		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
+		EdgeCubie P0S0 = cube.getECubie(EdgePos.P0S0);
+		*/
+	}
+	
+	
+=======
+>>>>>>> .r739
 	/**
 	 * Turns the edges
 	 * @param the edge to be oriented.
@@ -401,7 +442,29 @@ public class Beginners {
 
 	}
 
+	private void algorithm5(EdgePos p){
+		MoveButtons[] moves;
+		switch(p){
+		case S0T0:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP};
+			break;
+		case S0T1:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F};
+			break;
+		case S1T0:
+			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP};
 
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+
+	}
 	//INSERT ALG5 HERE
 
 	private void algorithm6(EdgePos p){
