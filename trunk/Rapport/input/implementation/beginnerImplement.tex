@@ -1,22 +1,5 @@
 \chapter{Beginner's Algorithm}
 \myTop{In this chapter the process of implementing the  beginner's algorithm, which was described in the theory part. This implementation will not be as effective as the beginner's algorithm is capable of being. The reason for this is that we only want our implementation to solve the \cube{}, and the number of twists in this algorithm is of low priority.}
 This chapter is divided into the different steps used in the beginner's algorithm.
-\section{Step 1 -- the First layer Cross}
-For the sake of simplicity the first layer in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
-
-The first question our program needs to ask is whether the edge pieces already are positioned correctly. If that is the case and the edge piece is also oriented correctly, the program proceeds to the next edge piece. If not an algorithm is performed, which changes the edge piece's orientation without ruining other possibly correctly positioned edge pieces(This algorithm will be known as "`alorithm 1"'). When the edge piece is in the the correct position and has the correct orientation, the program moves on to another edge piece. 
-
-If the edge piece in question is not in it's correct position, the program needs to know where the edge is positioned. 
-The way this is done is by first checking if the edge piece is positioned in the first layer. 
-If this is the case the edge piece in question is moved to the opposite layer. 
-If the edge piece is not in the first layer it can either be in the opposite layer or in the second layer.
-Is the edge piece positioned in the second layer an algorithm is performed which moves the edge piece to the white layer, which is the opposite of the layer in which we make the cross.
-
-Now that the edge piece is in white layer it needs to be moved to the position directly above where it is correctly positioned. 
-The program does this by twisting the up face once (known as an U move) and checks if the edge piece is above it's correct position.
-The edge piece is now positioned in two faces -- the white face and the face which has the same color as the edge piece's second facelet i.e. the face that is not yellow.
-In order to position the edge piece correctly that face is twisted twice.
-The edge piece is now in it's correct position, and if it is oriented correctly the program moves on to another edge piece.
-If the edge piece is oriented incorrectly algorithm 1 is performed. If more edge pieces needs to be positioned or oriented correctly the program will continue with the same method until the cross is finished in which case the program moves on to the next step.
-
-%INSERT FLOWCHART
+\input{input/implementation/beginnersAlg/step1}
+\input{input/implementation/beginnersAlg/step2}
