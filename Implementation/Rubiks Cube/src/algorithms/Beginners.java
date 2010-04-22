@@ -52,11 +52,10 @@ public class Beginners {
 
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 
-				do{
+				while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
 					moves.add(MoveButtons.U);
 					Cube.permute(cube, MoveButtons.U);
-				}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
-
+				}
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
@@ -67,10 +66,10 @@ public class Beginners {
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
 
 
-				do{
+				while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
 					moves.add(MoveButtons.U);
 					Cube.permute(cube, MoveButtons.U);
-				}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
+				}
 
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
@@ -90,10 +89,10 @@ public class Beginners {
 						
 						
 						
-						do{
+						while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
 							moves.add(MoveButtons.U);
 							Cube.permute(cube, MoveButtons.U);
-						}while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1));
+						}
 
 						moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 						Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
