@@ -75,6 +75,7 @@ public class Kociemba {
 						//System.out.println("Not in H!");
 					}
 
+					System.out.print("S: ");
 					for (int i = 0 ; i < b.length; i++) {
 						System.out.print(b[i] + " ");
 					}
@@ -186,6 +187,13 @@ public class Kociemba {
 						MoveButtons.inverseOf(c); //Inverted twice
 						return c;
 					} else {
+						
+						System.out.print("A: ");
+						for (int i = 0 ; i < c.length; i++) {
+							System.out.print(c[i] + " ");
+						}
+						System.out.println();
+						
 						Cube.permute(cube, MoveButtons.inverseOf(c));
 						MoveButtons.inverseOf(c);
 
