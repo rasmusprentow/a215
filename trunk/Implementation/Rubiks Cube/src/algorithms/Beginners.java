@@ -168,7 +168,7 @@ public class Beginners {
 		for(CornerPos key: corners){ // For all corners in the P1 layer
 			CornerCubie c = cube.getCCubie(key);
 			if(cube.getCCubicle(key).getCubie()== c){ //Is the cubie in its right place
-				System.out.println("på plads  " + key);
+				/*System.out.println("på plads  " + key);*/
 				while (c.getPrimaryOrientation() != 0){  // Is it oriented wrong
 					//System.out.println("på plads vender forkert " + key);
 					algorithm3(key);
