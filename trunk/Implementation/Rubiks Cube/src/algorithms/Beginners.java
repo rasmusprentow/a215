@@ -32,7 +32,7 @@ public class Beginners {
 		solveF2L();
 		solveLLCross();
 		solveLLCrossPos();
-		//SolveLLCornerPos();
+		SolveLLCornerPos();
 		return moves;
 	}
 
