@@ -51,8 +51,11 @@ public class KociembaV2 {
 			}
 			Cube.permute(cube, b);
 			try {
+				//System.out.println(b[d-1]);
+			} catch (ArrayIndexOutOfBoundsException e3){}
+			try {
 				while (true) {
-					//System.out.println("Permuting!");
+					////System.out.println("Permuting!");
 
 					try {
 						c = solveFromH(l - d);
@@ -129,17 +132,25 @@ public class KociembaV2 {
 					if(isSameFace(moveSequence[i], moveSequence[i-1])) {
 						increaseWithSNotEndingWithA(moveSequence, i);
 					} else {
+						//System.out.println(moveSequence[i]);
 						Cube.permute(cube, moveSequence[i]);
 					}
 				} catch (ArrayIndexOutOfBoundsException e2) {
+					//System.out.println(moveSequence[i]);
 					Cube.permute(cube, moveSequence[i]);
 				}
 				return;
 			} catch (ArrayIndexOutOfBoundsException e) {
 				moveSequence[i] = F;
-				Cube.permute(cube, moveSequence[i].invert());
-				moveSequence[i].invert();
 				i--;
+				try {
+					Cube.permute(cube, moveSequence[i].invert());
+					//System.out.println(moveSequence[i]);
+					moveSequence[i].invert();
+				} catch (ArrayIndexOutOfBoundsException e4) {
+					throw new UnableToIncreaseMoveSequenceException();
+				}
+
 				increaseWithSNotEndingWithA(moveSequence, i);
 				return;
 			}
@@ -153,17 +164,24 @@ public class KociembaV2 {
 							return;
 						} else {
 							Cube.permute(cube, moveSequence[j]);
+							//System.out.println(moveSequence[j]);
 						}
 					} catch (ArrayIndexOutOfBoundsException e2) {
 						Cube.permute(cube, moveSequence[j]);
+						//System.out.println(moveSequence[j]);
 					}
 				}
 				return; 
 			} catch (ArrayIndexOutOfBoundsException e) {
 				moveSequence[i] = U;
-				Cube.permute(cube, moveSequence[i].invert());
-				moveSequence[i].invert();
 				i--;
+				try {
+					Cube.permute(cube, moveSequence[i].invert());
+					//System.out.println(moveSequence[i]);
+					moveSequence[i].invert();
+				} catch (ArrayIndexOutOfBoundsException e4) {
+					throw new UnableToIncreaseMoveSequenceException();
+				}
 				increaseWithSNotEndingWithA(moveSequence, i);
 				return;
 			}
@@ -179,11 +197,11 @@ public class KociembaV2 {
 			//System.out.println("One solution found! With 0 A moves");
 			return new MoveButtons[0];
 		} 
-		System.out.println("In H");
 		MoveButtons[] c;
 
 		for (int d = 1; d < maxAMoves; d++) {
-			//output.addTextln("Solving in H, with depth: " + d);
+			output.addTextln("Solving in H, with depth: " + d);
+			System.out.println("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
 			for (int i = 0; i < d; i++) {
@@ -195,6 +213,7 @@ public class KociembaV2 {
 				}
 			}
 			Cube.permute(cube, c);
+			//System.out.println(c[d-1]);
 			try {
 				while (true) {
 
@@ -251,17 +270,24 @@ public class KociembaV2 {
 						return;
 					} else {
 						Cube.permute(cube, moveSequence[j]);
+						//System.out.println(moveSequence[j]);
 					}
 				} catch (ArrayIndexOutOfBoundsException e2) {
 					Cube.permute(cube, moveSequence[j]);
+					//System.out.println(moveSequence[j]);
 				}
 			}
 			return; 
 		} catch (ArrayIndexOutOfBoundsException e) {
 			moveSequence[i] = U;
-			Cube.permute(cube, moveSequence[i].invert());
-			moveSequence[i].invert();
 			i--;
+			try {
+				Cube.permute(cube, moveSequence[i].invert());
+				//System.out.println(moveSequence[i]);
+				moveSequence[i].invert();
+			} catch (ArrayIndexOutOfBoundsException e3) {
+				throw new UnableToIncreaseMoveSequenceException();
+			}
 			increaseWithA(moveSequence, i);
 			return;
 		}
