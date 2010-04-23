@@ -337,7 +337,7 @@ public class Beginners {
 					i++;
 				}
 			}
-			System.out.println("Number of correct edges, bitches: " + i);
+			//System.out.println("Number of correct edges, bitches: " + i);
 			if(i < 2){
 				moves.add(MoveButtons.U);
 				Cube.permute(cube, MoveButtons.U);
@@ -349,29 +349,54 @@ public class Beginners {
 				algorithm9(Facelet.SECONDARY_0);
 				moves.add(MoveButtons.UP);
 				Cube.permute(cube, MoveButtons.UP);
-				System.out.println("Front 1");
+				//System.out.println("Front 1");
 			}
 			if(cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
 				algorithm9(Facelet.TERTIARY_0);
 				moves.add(MoveButtons.UP);
 				Cube.permute(cube, MoveButtons.UP);
-				System.out.println("Left 2");
+				//System.out.println("Left 2");
 			}
 			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0)){
 				algorithm9(Facelet.SECONDARY_1);
-				System.out.println("Back 3");
+				//System.out.println("Back 3");
 			}
 			else if(cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1) && cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0)){
 				algorithm9(Facelet.TERTIARY_1);
-				System.out.println("Right 4");
+				//System.out.println("Right 4");
 			}
 			else if(cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
 				algorithm9(Facelet.SECONDARY_0);
-				System.out.println("Front 5");
+				//System.out.println("Front 5");
 			}
 			else if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
 				algorithm9(Facelet.TERTIARY_0);
 				System.out.println("Left 6");
+			}
+		}
+	}
+
+	public void solveLLCornerPos(){
+		int i = 0;
+		EnumSet<CornerPos> corners = EnumSet.of(CornerPos.P0S0T0, CornerPos.P0S0T1, CornerPos.P0S1T0, CornerPos.P0S1T1);
+
+		for(CornerPos key: corners){
+			if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
+				i++;
+			}
+		}
+		System.out.println("Number of correct corners, bitches: " + i);
+		if(i < 4){
+			if(i == 0){
+				algorithm10(P0S0T0);
+			}
+
+			else if(i == 1){
+				for(CornerPos key: corners){
+					if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
+						algorithm10(key);
+					}
+				}
 			}
 		}
 	}
@@ -619,6 +644,7 @@ public class Beginners {
 		Cube.permute(cube, moves);
 
 	}
+
 
 }
 
