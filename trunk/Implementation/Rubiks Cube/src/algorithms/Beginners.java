@@ -13,6 +13,7 @@ import cube.Facelet;
 
 import cube.EdgePos;
 import cubedrawer.MoveButtons;
+import static cubedrawer.MoveButtons.*;
 
 public class Beginners {
 	private Cube cube;
@@ -27,12 +28,15 @@ public class Beginners {
 	public LinkedList<MoveButtons> solve(){
 
 		moves.clear();
-		solveFLCross();
-		solveFL();
-		solveF2L();
-		solveLLCross();
-		solveLLCrossPos();
-		solveLLCornerPos();
+		if(!cube.isSolved()){
+			solveFLCross();
+			solveFL();
+			solveF2L();
+			solveLLCross();
+			solveLLCrossPos();
+			solveLLCornerPos();
+			solveLLCornerOri();
+		}
 		return moves;
 	}
 
@@ -394,7 +398,7 @@ public class Beginners {
 				algorithm10(CornerPos.P0S0T0);
 				i = 1;
 			}
-			
+
 			if(i == 1){
 				for(CornerPos key: corners){
 					if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
@@ -415,6 +419,22 @@ public class Beginners {
 					}
 				}
 			}
+		}
+	}
+
+	public void solveLLCornerOri(){
+		EnumSet<CornerPos> corners = EnumSet.of(P0S0T1, P0S1T1, P0S1T0, P0S0T0);
+		for(CornerPos key: corners){
+			if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
+
+			}
+		}
+		for(int i = 0; i < 4; i++){
+			while(cube.getCCubicle(P0S0T1).getCubie().getPrimaryOrientation() != 0){
+				algorithm11();
+			} 
+			moves.add(MoveButtons.U);
+			Cube.permute(cube, MoveButtons.U);
 		}
 	}
 
@@ -679,6 +699,18 @@ public class Beginners {
 			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.B, MoveButtons.U, MoveButtons.FP};
 			break;
 		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+
+	}
+
+
+	private void algorithm11(){
+		MoveButtons[] moves;
+		moves = new MoveButtons[]{ RP, DP, R, D,  RP, DP, R, D};
+
 		for(int i = 0; i < moves.length; i++){
 			this.moves.add(moves[i]);
 		}
