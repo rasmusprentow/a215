@@ -645,7 +645,28 @@ public class Beginners {
 
 	}
 
+private void algorithm10(CornerPos p){
+		MoveButtons[] moves;
+		switch(p){
+		case P0S0T0:
+			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP};
+			break;
+		case P0S0T1:
+			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP};
+			break;
+		case P0S1T0:
+			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP};
+			break;
+		default:
+			moves = new MoveButtons[]{ MoveButtons.RP, MoveButtons.UP, MoveButtons.R};
 
-}
+			break;
+		}
+		for(int i = 0; i < moves.length; i++){
+			this.moves.add(moves[i]);
+		}
+		Cube.permute(cube, moves);
+
+	}
 
 
