@@ -52,7 +52,7 @@ public class DrawPanel extends JPanel {
 	private MP3 mp3;
 	private Beginners beginners;
 	private Kociemba kociemba;
-	private KociembaV2 kociembaV2;
+	//private KociembaV2 kociembaV2;
 	Thread kociembaThread;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
@@ -68,7 +68,7 @@ public class DrawPanel extends JPanel {
 
 		beginners = new Beginners(cube);
 		kociemba = new Kociemba(cube , console);
-		kociembaV2 = new KociembaV2(cube , console);
+		//kociembaV2 = new KociembaV2(cube , console);
 
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
