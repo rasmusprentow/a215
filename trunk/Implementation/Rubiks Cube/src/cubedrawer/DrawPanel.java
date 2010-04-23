@@ -70,7 +70,7 @@ public class DrawPanel extends JPanel {
 
 		beginners = new Beginners(cube);
 		kociemba = new Kociemba(cube , console);
-		//kociembaV2 = new KociembaV2(cube , console);
+		kociembaV2 = new KociembaV2(cube , console);
 
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
