@@ -52,6 +52,7 @@ public class DrawPanel extends JPanel {
 	private MP3 mp3;
 	private Beginners beginners;
 	private Kociemba kociemba;
+	private KociembaV2 kociembaV2;
 	Thread kociembaThread;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
@@ -67,6 +68,7 @@ public class DrawPanel extends JPanel {
 
 		beginners = new Beginners(cube);
 		kociemba = new Kociemba(cube , console);
+		kociembaV2 = new KociembaV2(cube , console);
 
 		this.setPreferredSize(new Dimension(20 + rectHW*12 , 20 + rectHW*9));
 		scrambleDanceTimer = new Timer(startDelay, new ActionListener() { 
@@ -462,6 +464,9 @@ public class DrawPanel extends JPanel {
 		case KOCIEMBA:
 			kociemba();
 			break;
+		case KOCIEMBAV2:
+			kociembaV2();
+			break;
 		case BEGINNERS:
 			beginners();
 			break;
@@ -478,6 +483,66 @@ public class DrawPanel extends JPanel {
 		default:
 			console.addTextln("Something is wrong");
 		}	
+	}
+
+	private void kociembaV2() {
+		/*
+		stopMoving();
+		console.addTextln("Solving with Kociemba's improved algorithm, please wait.");
+		MoveButtons[] kociembasMoveSequence;
+		kociembasMoveSequence = kociembaV2.solve(12);
+		System.out.print("The shortest movesequence is: ");
+		console.addTextln("The shortest movesequence is: ");
+		for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
+			System.out.print(kociembasMoveSequence[i] + " ");
+			console.addText(kociembasMoveSequence[i] + " ");
+		}
+		System.out.println();
+
+		repaint();
+		*/
+		
+		System.out.println(kociembaThread);
+		if(kociembaThread != null && kociembaThread.isAlive()) {
+			try {
+				kociembaThread.stop();
+				kociembaThread = null;
+			} catch (IllegalMonitorStateException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+			}
+		} else {
+			kociembaThread = new Thread() {
+	            public void run() {
+	            	stopMoving();
+	        		console.addTextln("Solving with Kociemba's improved algorithm, please wait.");
+	        		MoveButtons[] kociembasMoveSequence;
+	                kociembasMoveSequence = kociembaV2.solve(12);
+
+	                System.out.print("The shortest movesequence is: ");
+	                console.addTextln("The shortest movesequence is: ");
+					for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
+						System.out.print(kociembasMoveSequence[i] + " ");
+						console.addText(kociembasMoveSequence[i] + " ");
+					}
+					System.out.println();
+
+					repaint();
+
+					kociembaThread.stop();
+					kociembaThread = null;
+
+	                //twistSequence(kociembasMoveSequence);
+	        		//stopMoving();
+	            }
+	        };
+
+	        kociembaThread.start();
+		}	
+
+		System.out.println(kociembaThread);
+		 
+		return;
 	}
 
 	private void toggleView() {
@@ -566,6 +631,7 @@ public class DrawPanel extends JPanel {
 		cube = new Cube();
 		beginners = new Beginners(cube);
 		kociemba = new Kociemba(cube , console);
+		kociembaV2 = new KociembaV2(cube , console);
 		repaint();
 	}
 
@@ -646,7 +712,7 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void kociemba() {
-
+		/*
 		stopMoving();
 		console.addTextln("Solving with Kociemba's algorithm, please wait.");
 		MoveButtons[] kociembasMoveSequence;
@@ -662,7 +728,7 @@ public class DrawPanel extends JPanel {
 
 		repaint();
 
-		/*
+		*/
 		System.out.println(kociembaThread);
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
@@ -702,7 +768,7 @@ public class DrawPanel extends JPanel {
 		}	
 
 		System.out.println(kociembaThread);
-		 */
+		 
 		return;
 	}
 

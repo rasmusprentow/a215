@@ -49,6 +49,7 @@ public class Kociemba {
 					b[i] = D;
 				}
 			}
+			
 			try {
 				while (true) {
 					//System.out.println("Permuting!");
