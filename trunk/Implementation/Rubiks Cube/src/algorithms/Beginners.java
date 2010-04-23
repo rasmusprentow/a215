@@ -381,10 +381,9 @@ public class Beginners {
 
 	public void solveLLCornerPos(){
 		int i = 0;
-		EnumSet<CornerPos> corners = EnumSet.of(CornerPos.P0S0T0, CornerPos.P0S0T1, CornerPos.P0S1T0, CornerPos.P0S1T1);
-
+		EnumSet<CornerPos> corners = EnumSet.of(P0S0T0, CornerPos.P0S0T1, CornerPos.P0S1T0, CornerPos.P0S1T1);
+		i = 0;
 		for(CornerPos key: corners){
-			i = 0;
 			if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
 				i++;
 			}
@@ -393,23 +392,25 @@ public class Beginners {
 		if(i < 4){
 			if(i == 0){
 				algorithm10(CornerPos.P0S0T0);
+				i = 1;
 			}
-
-			else if(i == 1){
+			
+			if(i == 1){
 				for(CornerPos key: corners){
 					if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
 						algorithm10(key);
+						i = 0;
 						for(CornerPos countKey: corners){
-							i = 0;
 							if(cube.getCCubicle(countKey).getCubie() == cube.getCCubie(countKey)){
 								i++;
 							}
 						}
 						if(i == 4){
-							break;
+							return;
 						}
 						else{
 							algorithm10(key);
+							return;
 						}
 					}
 				}
@@ -663,6 +664,7 @@ public class Beginners {
 
 	private void algorithm10(CornerPos p){
 		MoveButtons[] moves;
+		System.out.println("Corner: " + p);
 		switch(p){
 		case P0S0T0:
 			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.L, MoveButtons.U, MoveButtons.RP};
@@ -670,7 +672,7 @@ public class Beginners {
 		case P0S0T1:
 			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.F, MoveButtons.U, MoveButtons.BP};
 			break;
-		case P0S1T0:
+		case P0S1T1:
 			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.R, MoveButtons.U, MoveButtons.LP};
 			break;
 		default:
