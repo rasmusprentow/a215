@@ -381,6 +381,7 @@ public class Beginners {
 		EnumSet<CornerPos> corners = EnumSet.of(CornerPos.P0S0T0, CornerPos.P0S0T1, CornerPos.P0S1T0, CornerPos.P0S1T1);
 
 		for(CornerPos key: corners){
+			i = 0;
 			if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
 				i++;
 			}
@@ -388,13 +389,25 @@ public class Beginners {
 		System.out.println("Number of correct corners, bitches: " + i);
 		if(i < 4){
 			if(i == 0){
-				algorithm10(P0S0T0);
+				algorithm10(CornerPos.P0S0T0);
 			}
 
 			else if(i == 1){
 				for(CornerPos key: corners){
 					if(cube.getCCubicle(key).getCubie() == cube.getCCubie(key)){
 						algorithm10(key);
+						for(CornerPos countKey: corners){
+							i = 0;
+							if(cube.getCCubicle(countKey).getCubie() == cube.getCCubie(countKey)){
+								i++;
+							}
+						}
+						if(i == 4){
+							break;
+						}
+						else{
+							algorithm10(key);
+						}
 					}
 				}
 			}
