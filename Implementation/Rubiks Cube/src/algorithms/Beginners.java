@@ -1,6 +1,5 @@
 package algorithms;
 
-import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.LinkedList;
 
@@ -344,7 +343,7 @@ public class Beginners {
 				Cube.permute(cube, MoveButtons.U);
 			}
 		}
-		
+
 		if(i < 4){
 			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1)){
 				algorithm9(Facelet.SECONDARY_0);
