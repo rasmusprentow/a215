@@ -30,6 +30,7 @@ public class Beginners {
 		solveF2L();
 		solveLLCross();
 		solveLLCrossPos();
+		//SolveLLCornerPos();
 		return moves;
 	}
 
@@ -658,21 +659,20 @@ public class Beginners {
 
 	}
 
-private void algorithm10(CornerPos p){
+	private void algorithm10(CornerPos p){
 		MoveButtons[] moves;
 		switch(p){
 		case P0S0T0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP};
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.L, MoveButtons.U, MoveButtons.RP};
 			break;
 		case P0S0T1:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP};
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.F, MoveButtons.U, MoveButtons.BP};
 			break;
 		case P0S1T0:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP};
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.R, MoveButtons.U, MoveButtons.LP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.RP, MoveButtons.UP, MoveButtons.R};
-
+			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.B, MoveButtons.U, MoveButtons.FP};
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
@@ -683,3 +683,4 @@ private void algorithm10(CornerPos p){
 	}
 
 
+}
