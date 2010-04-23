@@ -30,6 +30,7 @@ public class Beginners {
 		solveFL();
 		solveF2L();
 		//solveLLCross();
+		solveLLCrossPos();
 		return moves;
 	}
 
@@ -56,7 +57,7 @@ public class Beginners {
 
 					if(cube.getECubicle(edgeKey).getCubie() == e){
 
-						algortihm2(edgeKey);
+						algorithm2(edgeKey);
 
 					}
 				}
@@ -75,7 +76,7 @@ public class Beginners {
 			if(cube.getECubicle(key).getCubie()== e){
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//	System.out.println("på plads vender forkert " + key);
-					algortihm1(key);
+					algorithm1(key);
 				}
 			}
 
@@ -93,7 +94,7 @@ public class Beginners {
 				//	System.out.println("på plads  " + key);
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//	System.out.println("på plads vender forkert " + key);
-					algortihm1(key);
+					algorithm1(key);
 				}
 			}
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_1){
@@ -110,7 +111,7 @@ public class Beginners {
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//	System.out.println("på plads vender forkert " + key);
-					algortihm1(key);
+					algorithm1(key);
 				}
 			} 
 			else if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
@@ -125,7 +126,7 @@ public class Beginners {
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 					//System.out.println("på plads vender forkert " + key);
-					algortihm1(key);
+					algorithm1(key);
 				}
 			} else { // cubien er ikke i et primært face!
 				EnumSet<EdgePos> secondEdges = EnumSet.of(EdgePos.S1T0, EdgePos.S1T1, EdgePos.S0T0, EdgePos.S0T1);
@@ -134,7 +135,7 @@ public class Beginners {
 
 					if(cube.getECubicle(edgeKey).getCubie() == e){
 
-						algortihm2(edgeKey);
+						algorithm2(edgeKey);
 						//	System.out.println("Moving " + edgeKey);
 
 
@@ -148,7 +149,7 @@ public class Beginners {
 						Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 						if(e.getPrimaryOrientation()!= 0){  // Is it oriented correctly
 							//	System.out.println("på plads vender forkert " + key);
-							algortihm1(key);
+							algorithm1(key);
 						}
 						break;
 					}
@@ -304,34 +305,83 @@ public class Beginners {
 
 	public void solveLLCross(){
 		if(cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.SECONDARY_0);
+			algorithm8(Facelet.SECONDARY_0);
 		}
 		if(	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.SECONDARY_0);
+			algorithm8(Facelet.SECONDARY_0);
 		} 
 		if(	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.TERTIARY_1);
+			algorithm8(Facelet.TERTIARY_1);
 		} 
 		if(cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.SECONDARY_1);
+			algorithm8(Facelet.SECONDARY_1);
 		} 
 		if(cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && 	cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.TERTIARY_0);
+			algorithm8(Facelet.TERTIARY_0);
 		} 
 		if(cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.SECONDARY_0);
+			algorithm8(Facelet.SECONDARY_0);
 		} 
-			if(cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1){
-			algortihm8(Facelet.TERTIARY_0);
+		if(cube.getECubicle(EdgePos.P0S1).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0S0).getCubie().getPrimaryOrientation() == 0 && cube.getECubicle(EdgePos.P0T1).getCubie().getPrimaryOrientation() == 1 && cube.getECubicle(EdgePos.P0T0).getCubie().getPrimaryOrientation() == 1){
+			algorithm8(Facelet.TERTIARY_0);
 		}
 	}
 
+	public void solveLLCrossPos(){
+		int i = 0;
+		while(i < 2){
+			i = 0;
+			EnumSet<EdgePos> secondEdges = EnumSet.of(EdgePos.P0T0, EdgePos.P0T1, EdgePos.P0S0, EdgePos.P0S1);
+
+			for(EdgePos edgeKey: secondEdges){
+				if(cube.getECubicle(edgeKey).getCubie() == cube.getECubie(edgeKey)){
+					i++;
+				}
+			}
+			System.out.println("Number of correct edges, bitches: " + i);
+			if(i < 2){
+				moves.add(MoveButtons.U);
+				Cube.permute(cube, MoveButtons.U);
+			}
+		}
+		
+		if(i < 4){
+			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1)){
+				algorithm9(Facelet.SECONDARY_0);
+				moves.add(MoveButtons.UP);
+				Cube.permute(cube, MoveButtons.UP);
+				System.out.println("Front 1");
+			}
+			if(cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
+				algorithm9(Facelet.TERTIARY_0);
+				moves.add(MoveButtons.UP);
+				Cube.permute(cube, MoveButtons.UP);
+				System.out.println("Left 2");
+			}
+			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0)){
+				algorithm9(Facelet.SECONDARY_1);
+				System.out.println("Back 3");
+			}
+			else if(cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1) && cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0)){
+				algorithm9(Facelet.TERTIARY_1);
+				System.out.println("Right 4");
+			}
+			else if(cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
+				algorithm9(Facelet.SECONDARY_0);
+				System.out.println("Front 5");
+			}
+			else if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
+				algorithm9(Facelet.TERTIARY_0);
+				System.out.println("Left 6");
+			}
+		}
+	}
 
 	/**
 	 * Turns the edges
 	 * @param the edge to be oriented.
 	 */
-	private void algortihm1(EdgePos p){
+	private void algorithm1(EdgePos p){
 		MoveButtons[] moves;
 		switch (p) {
 		case P1S0:
@@ -359,7 +409,7 @@ public class Beginners {
 	 * Moves the cube from middle layer to up layer.
 	 * @param The position of the edge the cubie is in. 
 	 */
-	private void algortihm2(EdgePos p){
+	private void algorithm2(EdgePos p){
 		MoveButtons[] moves;
 		switch (p) {
 		case S0T0:
@@ -512,7 +562,7 @@ public class Beginners {
 		Cube.permute(cube, moves);
 
 	}
-	private void algortihm8(Facelet f){
+	private void algorithm8(Facelet f){
 		MoveButtons[] moves;
 		switch (f) {
 		case SECONDARY_0:
@@ -536,7 +586,7 @@ public class Beginners {
 		Cube.permute(cube, moves);
 	}
 	/* Cases skal laves om til det rigtige */
-	private void algortihm9(Facelet f){
+	private void algorithm9(Facelet f){
 		MoveButtons[] moves;
 		switch (f) {
 		case SECONDARY_0:
@@ -568,9 +618,9 @@ public class Beginners {
 			this.moves.add(moves[i]);
 		}
 		Cube.permute(cube, moves);
-		
-	 }
-	
+
+	}
+
 }
 
 
