@@ -3,10 +3,10 @@ For the sake of simplicity the first layer in our implementation will always be 
 
 The first question our program needs to ask is whether the edge pieces already are positioned correctly. If that is the case and the edge piece is also oriented correctly, the program proceeds to the next edge piece. If not an algorithm is performed, which changes the edge piece's orientation without ruining other possibly correctly positioned edge pieces(This algorithm will be known as "`algorithm 1"'). When the edge piece is in the the correct position and has the correct orientation, the program moves on to another edge piece. 
 
-If the edge \piece{} in question is not in it's correct position, the program needs to know where the edge is positioned. 
-The way this is done is by first checking if the edge \piece{} is positioned in the first layer. 
-If this is the case the edge \piece{} in question is moved to the opposite layer. 
-If the edge \piece{} is not in the first layer it can either be in the opposite layer or in the second layer.
+If the edge \cpiece{} in question is not in it's correct position, the program needs to know where the edge is positioned. 
+The way this is done is by first checking if the edge \cpiece{} is positioned in the first layer. 
+If this is the case the edge \cpiece{} in question is moved to the opposite layer. 
+If the edge \cpiece{} is not in the first layer it can either be in the opposite layer or in the second layer.
 Is the edge piece positioned in the second layer an algorithm is performed which moves the edge piece to the white layer, which is the opposite of the layer in which we make the cross.
 
 Now that the edge piece is in white layer it needs to be moved to the position directly above where it is correctly positioned. 
