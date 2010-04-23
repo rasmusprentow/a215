@@ -87,13 +87,13 @@ public class DrawPanel extends JPanel {
 				mp3.play();
 			}
 		});
-		beginnersTimer = new Timer(2, new ActionListener() {
+		beginnersTimer = new Timer(200, new ActionListener() {
 		
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!solvingMoves.isEmpty()){
 					
-				console.addText(solvingMoves.getFirst() + " ");
+				console.addText(solvingMoves.getFirst() + "");
 				Cube.permute(cube, solvingMoves.getFirst());
 				solvingMoves.removeFirst();
 				}
@@ -506,23 +506,16 @@ public class DrawPanel extends JPanel {
 				moveSequence = moveSequence + " " + ((MoveButtons)this.moves.toArray()[moveNum]).toString();
 				Cube.permute(cube, (MoveButtons)this.moves.toArray()[moveNum]);
 			}
-			
-			
 			repaint();
+			//LinkedList<MoveButtons> moveSpec = ;
 			solvingMoves.addAll(MoveTools.eliminateAll(beginners.solve()));
 			console.addTextln(moveSequence);
 			console.addTextln("Now i solve it with these " + solvingMoves.size() + " moves:");
-			reset();
+			
 			for(MoveButtons m: moves){
 				Cube.permute(cube, m);
 			}
 			beginnersTimer.start();
-			
-				
-			
-			
-			
-			beginners.solveLLCornerPos();
 			break;
 		default:
 			console.addTextln("Something is wrong");
@@ -689,11 +682,7 @@ public class DrawPanel extends JPanel {
 		previousMoves.addAll(moves);
 		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists  - Original had"  + size );
 		for(MoveButtons key: moves){
-			console.addText(key + " ");
-		}
-		console.addTextln("");
-		for(MoveButtons key: original){
-			console.addText(key + " ");			
+			console.addText(key + "");
 		}
 		console.addTextln("");
 

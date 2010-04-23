@@ -25,14 +25,15 @@ public class MoveTools {
 	}
 
 	public static LinkedList<MoveButtons> eliminateAll(LinkedList<MoveButtons> moves){
-		//moves = splitList(moves);
-		//moves = eliminateInverses(moves);
-		//moves = eliminateQuads(moves);
-		//moves = eliminateTri(moves);
-		//moves = eliminateInverses(moves);
-		//moves = eliminateQuads(moves);
-		//moves = eliminateTri(moves);
-		//moves = combineList(moves);
+		System.out.println("Makes no sense");
+		moves = splitList(moves);
+		moves = eliminateInverses(moves);
+		moves = eliminateQuads(moves);
+		moves = eliminateTri(moves);
+		moves = eliminateInverses(moves);
+		moves = eliminateQuads(moves);
+		moves = eliminateTri(moves);
+		moves = combineList(moves);
 		return moves; 
 	}
 	/**
