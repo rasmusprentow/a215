@@ -101,14 +101,14 @@ public class DrawPanel extends JPanel {
 		g2.fillRect(0, 0, this.getWidth() + 1, this.getHeight());
 
 		if (toggleView) {
-			
+
 			draw3x3(startX + 3*rectHW, startY,g2,cube.getPrimary()[0]);
 			draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
 			draw3x3(startX  + 3*rectHW , startY + 3*rectHW,g2 ,cube.getSecondary()[0]);
 			draw3x3(startX  + 3*rectHW*3 , startY + 3*rectHW,g2, cube.getSecondary()[1]);
 			draw3x3(startX , startY + 3*rectHW,g2, cube.getTertiary()[0]);
 			draw3x3(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-			
+
 		} else {
 
 			draw3x3(startX  + 3*rectHW , startY + 3*rectHW * 2,g2, cube.getPrimary()[1]);
@@ -117,7 +117,7 @@ public class DrawPanel extends JPanel {
 			draw3x3(startX , startY + 3*rectHW, g2, cube.getTertiary()[0]);
 			draw3x3PrimaryPolygon(startX + 3*rectHW + 4*dispHW, startY + 7*dispHW, g2,cube.getPrimary()[0]);
 			draw3x3SecondaryPolygon(startX  + 3*rectHW*2 , startY + 3*rectHW,g2, cube.getTertiary()[1]);
-			
+
 		}
 	}
 
@@ -646,7 +646,23 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void kociemba() {
-		
+
+		stopMoving();
+		console.addTextln("Solving with Kociemba's algorithm, please wait.");
+		MoveButtons[] kociembasMoveSequence;
+		kociembasMoveSequence = kociemba.solve(12);
+
+		System.out.print("The shortest movesequence is: ");
+		console.addTextln("The shortest movesequence is: ");
+		for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
+			System.out.print(kociembasMoveSequence[i] + " ");
+			console.addText(kociembasMoveSequence[i] + " ");
+		}
+		System.out.println();
+
+		repaint();
+
+		/*
 		System.out.println(kociembaThread);
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
@@ -663,7 +679,7 @@ public class DrawPanel extends JPanel {
 	        		console.addTextln("Solving with Kociemba's algorithm, please wait.");
 	        		MoveButtons[] kociembasMoveSequence;
 	                kociembasMoveSequence = kociemba.solve(12);
-	                
+
 	                System.out.print("The shortest movesequence is: ");
 	                console.addTextln("The shortest movesequence is: ");
 					for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
@@ -671,22 +687,22 @@ public class DrawPanel extends JPanel {
 						console.addText(kociembasMoveSequence[i] + " ");
 					}
 					System.out.println();
-					
+
 					repaint();
-	                
+
 					kociembaThread.stop();
 					kociembaThread = null;
-					
+
 	                //twistSequence(kociembasMoveSequence);
 	        		//stopMoving();
 	            }
 	        };
-	       
+
 	        kociembaThread.start();
 		}	
-		
+
 		System.out.println(kociembaThread);
-		
+		 */
 		return;
 	}
 
