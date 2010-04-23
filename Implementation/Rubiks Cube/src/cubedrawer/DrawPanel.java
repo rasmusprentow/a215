@@ -49,6 +49,7 @@ public class DrawPanel extends JPanel {
 	private EnumSet<MoveButtons> moves = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP,F2,  B, BP, B2, L, LP, L2, R, RP , R2);
 	private Timer scrambleDanceTimer;
 	private Timer playDanceTimer;
+	private Timer beginnersTimer;
 	private MP3 mp3;
 	private Beginners beginners;
 	private Kociemba kociemba;
@@ -56,9 +57,10 @@ public class DrawPanel extends JPanel {
 	Thread kociembaThread;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
+	LinkedList<MoveButtons> solvingMoves; // For slow begginners.
 
-	public DrawPanel(Console console) {
-		this.console = console;
+	public DrawPanel(Console c) {
+		this.console = c;
 		cube = new Cube();
 		this.setBackground(Color.white);
 		//this.setPreferredSize(new Dimension(400,300));
@@ -82,8 +84,23 @@ public class DrawPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				mp3.play();
+			}
+		});
+		beginnersTimer = new Timer(2, new ActionListener() {
+		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(!solvingMoves.isEmpty()){
+					
+				console.addText(solvingMoves.getFirst() + " ");
+				Cube.permute(cube, solvingMoves.getFirst());
+				solvingMoves.removeFirst();
+				}
+				else {
+					beginnersTimer.stop();
+				}
+				repaint();
 			}
 		});
 
@@ -477,7 +494,34 @@ public class DrawPanel extends JPanel {
 		case TOGGLEVIEW:
 			toggleView();
 			break;
-		case SOLVEF2L:
+		case BEGINNERSLOW:
+			this.reset();
+			String moveSequence = "";
+			LinkedList<MoveButtons> moves = new LinkedList<MoveButtons>();
+			solvingMoves = new LinkedList<MoveButtons>();
+			console.addText("Getting a new cube and scrambles it with theese moves:");
+			for(int i = 0; i < 50; i++){
+				int moveNum = (int)(Math.random()*18);
+				moves.add((MoveButtons)this.moves.toArray()[moveNum]);
+				moveSequence = moveSequence + " " + ((MoveButtons)this.moves.toArray()[moveNum]).toString();
+				Cube.permute(cube, (MoveButtons)this.moves.toArray()[moveNum]);
+			}
+			
+			
+			repaint();
+			solvingMoves.addAll(MoveTools.eliminateAll(beginners.solve()));
+			console.addTextln(moveSequence);
+			console.addTextln("Now i solve it with these " + solvingMoves.size() + " moves:");
+			reset();
+			for(MoveButtons m: moves){
+				Cube.permute(cube, m);
+			}
+			beginnersTimer.start();
+			
+				
+			
+			
+			
 			beginners.solveLLCornerPos();
 			break;
 		default:

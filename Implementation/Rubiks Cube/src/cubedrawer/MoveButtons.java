@@ -1,7 +1,7 @@
 package cubedrawer;
 public enum MoveButtons { 
 	 U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2,
-	 SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, KOCIEMBA, KOCIEMBAV2, BEGINNERS, TEST, TOGGLEVIEW, SOLVEF2L;
+	 SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, KOCIEMBA, KOCIEMBAV2, BEGINNERS, TEST, TOGGLEVIEW, BEGINNERSLOW;
 	
 	@Override
 	public String toString(){
@@ -21,6 +21,8 @@ public enum MoveButtons {
 				return "<html><center>EPIC<br>Kociemba</center></html>";
 			} else if(this == TOGGLEVIEW){
 				return "<html><center>Toggle<br>view</center></html>";
+			} else if(this == BEGINNERSLOW){
+				return "<html><center>Beginners<br>Extra</center></html>"; 
 			} else {
 				return (old.substring(0, 1)) + (old.substring(1)).toLowerCase();
 			}

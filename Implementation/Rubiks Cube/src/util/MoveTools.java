@@ -25,14 +25,14 @@ public class MoveTools {
 	}
 
 	public static LinkedList<MoveButtons> eliminateAll(LinkedList<MoveButtons> moves){
-		moves = splitList(moves);
-		moves = eliminateInverses(moves);
-		moves = eliminateQuads(moves);
-		moves = eliminateTri(moves);
-		moves = eliminateInverses(moves);
-		moves = eliminateQuads(moves);
-		moves = eliminateTri(moves);
-		moves = combineList(moves);
+		//moves = splitList(moves);
+		//moves = eliminateInverses(moves);
+		//moves = eliminateQuads(moves);
+		//moves = eliminateTri(moves);
+		//moves = eliminateInverses(moves);
+		//moves = eliminateQuads(moves);
+		//moves = eliminateTri(moves);
+		//moves = combineList(moves);
 		return moves; 
 	}
 	/**
@@ -131,7 +131,6 @@ public class MoveTools {
 
 	public static LinkedList<MoveButtons> combineList(LinkedList<MoveButtons> moves){
 		
-		boolean foundInverses = true;
 
 		ListIterator<MoveButtons> iter = moves.listIterator();
 		MoveButtons move;
@@ -140,7 +139,6 @@ public class MoveTools {
 			while(iter.hasNext()){
 				move = iter.next();
 				if(move.equals(previous) && !move.toString().substring(1).equals("2")){
-					foundInverses = true;
 					iter.remove();
 					MoveButtons theMoved = iter.previous();
 					iter.remove();
