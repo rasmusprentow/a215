@@ -1,9 +1,10 @@
 \chapter{Beginner's Algorithm}
 \myTop{In this chapter the process of implementing the  beginner's algorithm, which was described in the theory part. This implementation will not be as effective as the beginner's algorithm is capable of being. The reason for this is that we only want our implementation to solve the \cube{}, and the number of twists in this algorithm is of low priority.}
 This chapter is divided into the different steps used in the beginner's algorithm.
-Each step is using different algorithms which all are structured the same way. The algorithms are all using a switch/case statement, which does something different depending on the \piece{} to be moved. The algorithm performed is actually the same if the cube were rotated, but this is not implemented so the switch case solution will be used.
+Each step is using different algorithms which all are structured the same way. The algorithms are all using a switch/case statement, which does something different depending on the \cpiece{} to be moved. The algorithm performed is actually the same if the cube were rotated, but this is not implemented so the switch case solution will be used.
 \input{input/implementation/beginnersAlg/step1}
 \input{input/implementation/beginnersAlg/step2}
 \input{input/implementation/beginnersAlg/step3}
+\input{input/implementation/beginnersAlg/step4}
 \section{Twist shortening}
 The implementation of the beginners algorithm is not the most twist wise effecient so in order to reduce the amount of twist used can easily be reduced.Based  on the group theory (ref) it is known that some moves can be reduced. This is inverse moves and  three or two equal moves  in a row. e.g.  the twists U U U is equivalent to U'. Also U' and U is each others inverses and are equivalent to doing nothing. 
