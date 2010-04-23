@@ -4,6 +4,8 @@ import java.util.EnumSet;
 import java.util.LinkedList;
 
 import cube.CornerCubie;
+import static cube.CornerPos.*;
+import static cube.EdgePos.*;
 import cube.CornerPos;
 import cube.Cube;
 import cube.EdgeCubie;
