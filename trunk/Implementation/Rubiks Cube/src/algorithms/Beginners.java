@@ -536,22 +536,22 @@ public class Beginners {
 		Cube.permute(cube, moves);
 	}
 	/* Cases skal laves om til det rigtige */
-	private void algortihm9(EdgePos p){
+	private void algortihm9(Facelet f){
 		MoveButtons[] moves;
-		switch (p) {
-		case P0S0:
+		switch (f) {
+		case SECONDARY_0:
 			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U2, MoveButtons.RP, MoveButtons.U};
 			/* Front move
 			 * 
 			 */
 			break;
-		case P0S1:
+		case TERTIARY_0:
 			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.U, MoveButtons.F, MoveButtons.U2, MoveButtons.FP, MoveButtons.U};
 			/* Left move
 			 * 
 			 */
 			break;
-		case P0T0:
+		case SECONDARY_1:
 			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U2, MoveButtons.LP, MoveButtons.U};
 			/* Back move
 			 * 
