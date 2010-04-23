@@ -52,7 +52,7 @@ public class DrawPanel extends JPanel {
 	private MP3 mp3;
 	private Beginners beginners;
 	private Kociemba kociemba;
-	//private KociembaV2 kociembaV2;
+	private KociembaV2 kociembaV2;
 	Thread kociembaThread;
 	//private ArrayList<MoveButtons> previousMoves;
 	private LinkedList<MoveButtons> previousMoves;
