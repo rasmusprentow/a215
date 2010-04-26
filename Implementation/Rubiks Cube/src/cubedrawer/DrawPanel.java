@@ -385,7 +385,7 @@ public class DrawPanel extends JPanel {
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
-			console.addText(t + "");
+
 
 			previousMoves.add(t);
 		} else if(doNotSaveNextMove) {
@@ -517,6 +517,9 @@ public class DrawPanel extends JPanel {
 			}
 			beginnersTimer.start();
 			break;
+		case TEST2:
+			test2();
+			break;
 		case SUPERFLIP:
 	//		this.twistSequence(F, R, U2, B, L, UP, LP, U2, BP, RP, U, F2, L, R, U2, B, L, UP, LP, U2, BP, RP, U, LP, F);
 			stopMoving();
@@ -570,7 +573,8 @@ public class DrawPanel extends JPanel {
 						console.addText(kociembasMoveSequence[i] + " ");
 					}
 					System.out.println();
-
+					console.addTextln("");
+					
 					repaint();
 
 					kociembaThread.stop();
@@ -812,10 +816,13 @@ public class DrawPanel extends JPanel {
 	private void test() {
 		MoveButtons[] seq = {U,DP,F,BP,L};
 
-			Cube.permute(cube, seq);
-			for(int i = 0 ; i < seq.length ; i++) {
-				System.out.print(seq[i] + " ");
-			}
-			System.out.println();
+		Cube.permute(cube, seq);
+
+	}
+
+	private void test2() {
+		// TODO Auto-generated method stub
+		MoveButtons[] seq = {BP,U2,BP};
+		Cube.permute(cube, seq);
 	}
 }
