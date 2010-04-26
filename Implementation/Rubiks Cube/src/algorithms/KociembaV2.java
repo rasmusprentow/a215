@@ -36,7 +36,7 @@ public class KociembaV2 {
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
 			output.addTextln("Try solving with depth: " + d);
-			System.out.println("Try solving with depth: " + d);
+			//System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
 			for (int i = 0; i < b.length; i++) {
@@ -64,31 +64,31 @@ public class KociembaV2 {
 							l = d + c.length;
 							result = new MoveButtons[l];
 							output.addTextln("The solutions of the length " + l + ". The solution is:");
-							System.out.println("The solutions of the length " + l + ". The solution is:");
+							//System.out.println("The solutions of the length " + l + ". The solution is:");
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
 								output.addText(b[j] + " ");
-								System.out.print(b[j] + " ");
+								//System.out.print(b[j] + " ");
 							}
 							for (int k = 0 ; k < c.length; k++,j++) {
 								result[j] = c[k];
 								output.addText(c[k] + " ");
-								System.out.print(c[k] + " ");
+								//System.out.print(c[k] + " ");
 							}
 							output.addTextln("");
-							System.out.println();
+							//System.out.println();
 						}
 
 					} catch (InvalidCube e) {
 						//System.out.println("Not in H!");
 					}
 					/*
-					System.out.print("S: ");
+					//System.out.print("S: ");
 					for (int i = 0 ; i < b.length; i++) {
-						System.out.print(b[i] + " ");
+						//System.out.print(b[i] + " ");
 					}
-					System.out.println();*/
+					//System.out.println();*/
 					try {
 						Cube.permute(cube, b[d-1].invert());
 						b[d-1].invert();
@@ -201,7 +201,7 @@ public class KociembaV2 {
 
 		for (int d = 1; d < maxAMoves; d++) {
 			output.addTextln("Solving in H, with depth: " + d);
-			System.out.println("Solving in H, with depth: " + d);
+			//System.out.println("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
 			for (int i = 0; i < d; i++) {
@@ -226,11 +226,11 @@ public class KociembaV2 {
 						return c;
 					} else {
 						/*
-						System.out.print("A: ");
+						//System.out.print("A: ");
 						for (int i = 0 ; i < c.length; i++) {
-							System.out.print(c[i] + " ");
+							//System.out.print(c[i] + " ");
 						}
-						System.out.println();*/
+						//System.out.println();*/
 
 						Cube.permute(cube, c[d-1].invert());
 						c[d-1].invert();
