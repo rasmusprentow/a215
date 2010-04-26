@@ -385,8 +385,8 @@ public class DrawPanel extends JPanel {
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
-
-
+			
+			console.addText(t.toString());
 			previousMoves.add(t);
 		} else if(doNotSaveNextMove) {
 
