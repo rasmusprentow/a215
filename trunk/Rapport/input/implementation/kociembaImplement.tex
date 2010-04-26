@@ -7,10 +7,20 @@ We are interested in the shortest move sequence to solve a scrambled cube, where
 Because of this we have chosen not to have a lookup table since it would have to contain 20 milliard move sequences, which is impossible on todays computers considering that the lookup table only containing the length would have a size of 4 GB \cite{cubeExplorer} and a table containing the move sequences would have to be much larger.
 
 A move can be defined using 4 bits, since there are 10 $A$ moves and $2^4=16$ which is enough.
-To calculate the size of a lookup table containing the move sequence it is just a mater of multiplying the size of one move with the number of moves a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits. This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve inside $H$ would be: $987$ GB, which is 
+To calculate the size of a lookup table containing the move sequence it is just a mater of multiplying the size of one move with the number of moves a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
+This size is again multiplied with the number of positions which needs this length for solving.
+The size of a lookup table containing every move sequences to solve inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM} \cite{maxMotherboardRAM}.
 
-	\input{input/implementation/kociembaImplement/methodSolve}
-	\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
+Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest move sequence. A flowchart of out implementation is shown in figure \ref{fig:kociembaFlow}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width = \textwidth, trim = 0mm 110mm 50mm 0mm, clip]{input/pics/kociembaFlow}
+	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver. $b$ is a move sequence variable, which takes the scrambled cube into $H$, $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside $H$, and $e$ is the depth which the $H$ solver is searching.}}
+	\label{fig:kociembaFlow}
+\end{figure}
+
+	%\input{input/implementation/kociembaImplement/methodSolve}
+	%\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
 
 \myTail{}
