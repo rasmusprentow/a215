@@ -1,7 +1,11 @@
 \chapter{Beginner's Algorithm}
-\myTop{In this chapter the process of implementing the  beginner's algorithm, which was described in the theory part. This implementation will not be as effective as the beginner's algorithm is capable of being. The reason for this is that we only want our implementation to solve the \cube{}, and the number of twists in this algorithm is of low priority.}
+\myTop{In this chapter the process of implementing the beginner's algorithm, which was described in the theory part. This implementation will not be as effective as the beginner's algorithm is capable of being. The reason for this is that we only want our implementation to solve the \cube{}, and the number of twists in this algorithm is of low priority.}
+
 This chapter is divided into the different steps used in the beginner's algorithm.
 Each step is using different algorithms which all are structured the same way. The algorithms are all using a switch/case statement, which does something different depending on the \cpiece{} to be moved. The algorithm performed is actually the same if the cube were rotated, but this is not implemented so the switch case solution will be used.
+
+For the sake of simplicity the first layer in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
+
 \input{input/implementation/beginnersAlg/step1}
 \input{input/implementation/beginnersAlg/step2}
 \input{input/implementation/beginnersAlg/step3}
