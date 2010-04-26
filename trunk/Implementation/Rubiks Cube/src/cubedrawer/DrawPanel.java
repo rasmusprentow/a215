@@ -541,6 +541,7 @@ public class DrawPanel extends JPanel {
 		
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
+				console.addTextln("Stopping Kociemba's algorithm!");
 				kociembaThread.stop();
 				kociembaThread = null;
 			} catch (IllegalMonitorStateException e) {
@@ -761,6 +762,7 @@ public class DrawPanel extends JPanel {
 		*/
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
+				console.addTextln("Stopping Kociemba's algorithm!");
 				kociembaThread.stop();
 				kociembaThread = null;
 			} catch (IllegalMonitorStateException e) {
@@ -803,20 +805,10 @@ public class DrawPanel extends JPanel {
 	private void test() {
 		MoveButtons[] seq = {U,DP,F,BP,L};
 
-		if(test == 0) {
 			Cube.permute(cube, seq);
 			for(int i = 0 ; i < seq.length ; i++) {
 				System.out.print(seq[i] + " ");
 			}
 			System.out.println();
-			test = 1;
-		} else {
-			Cube.permute(cube, MoveButtons.inverseOf(seq));
-			for(int i = 0 ; i < seq.length ; i++) {
-				System.out.print(seq[i] + " ");
-			}
-			System.out.println();
-			test = 0;
-		}
 	}
 }

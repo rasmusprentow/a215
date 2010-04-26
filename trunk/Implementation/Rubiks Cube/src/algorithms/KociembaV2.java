@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.sql.Time;
 import java.util.EnumSet;
 
 import cube.*;
@@ -8,6 +9,8 @@ import static cubedrawer.MoveButtons.*;
 
 public class KociembaV2 {
 
+	private long startTime;
+	private Time time;
 	private Cube cube;
 	private AlgorithmOutput output;
 	private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2);
@@ -30,6 +33,8 @@ public class KociembaV2 {
 	 */
 	public MoveButtons[] solve(int maxSMoves) {
 
+		time = new Time(0);
+		startTime = time.getTime();
 		MoveButtons[] result = null;
 		int d = 0;
 		int l = Integer.MAX_VALUE;
@@ -77,6 +82,7 @@ public class KociembaV2 {
 								//System.out.print(c[k] + " ");
 							}
 							output.addTextln("");
+							output.addTextln("Time spend: " + (time.getTime() - startTime)/1000 + " seconds");
 							//System.out.println();
 						}
 
