@@ -219,7 +219,7 @@ public class Beginners {
 	}
 
 	public void solveF2L(){
-		System.out.println("wassup nigga");
+		//System.out.println("wassup nigga");
 		EnumSet<EdgePos> edges = EnumSet.of(EdgePos.S0T0, EdgePos.S0T1, EdgePos.S1T0, EdgePos.S1T1);
 
 		for(EdgePos key: edges){ // For all edges in the P1 layer
@@ -392,7 +392,7 @@ public class Beginners {
 				i++;
 			}
 		}
-		System.out.println("Number of correct corners, bitches: " + i);
+		//System.out.println("Number of correct corners, bitches: " + i);
 		if(i < 4){
 			if(i == 0){
 				algorithm10(CornerPos.P0S0T0);
@@ -684,7 +684,7 @@ public class Beginners {
 
 	private void algorithm10(CornerPos p){
 		MoveButtons[] moves;
-		System.out.println("Corner: " + p);
+		//System.out.println("Corner: " + p);
 		switch(p){
 		case P0S0T0:
 			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.L, MoveButtons.U, MoveButtons.RP};
