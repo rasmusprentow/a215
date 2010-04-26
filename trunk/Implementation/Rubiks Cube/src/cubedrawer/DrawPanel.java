@@ -385,7 +385,7 @@ public class DrawPanel extends JPanel {
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
-			console.addText(t + " ");
+			console.addText(t + "");
 
 			previousMoves.add(t);
 		} else if(doNotSaveNextMove) {
@@ -516,6 +516,13 @@ public class DrawPanel extends JPanel {
 				Cube.permute(cube, m);
 			}
 			beginnersTimer.start();
+			break;
+		case SUPERFLIP:
+	//		this.twistSequence(F, R, U2, B, L, UP, LP, U2, BP, RP, U, F2, L, R, U2, B, L, UP, LP, U2, BP, RP, U, LP, F);
+			stopMoving();
+			moving = true;
+			console.addText("Superflip: ");
+			this.twistSequence(U, R2, F, B, R, B2, R, U2, L, B2, R, UP, DP, R2, F, D2, B2, U2, RP, L);
 			break;
 		default:
 			console.addTextln("Something is wrong");
@@ -678,7 +685,7 @@ public class DrawPanel extends JPanel {
 		int size =  original.size();
 		LinkedList<MoveButtons> moves = MoveTools.eliminateAll((LinkedList<MoveButtons>)original.clone());
 		previousMoves.addAll(moves);
-		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists  - Original had"  + size );
+		console.addTextln("Solving with beginners Algorithm using " + moves.size() + " twists  - Original had "  + size);
 		for(MoveButtons key: moves){
 			console.addText(key + "");
 		}
