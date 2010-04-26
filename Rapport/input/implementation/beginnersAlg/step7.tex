@@ -1,5 +1,11 @@
 \section{Step -- Solving last layer orientation}
+This is the last step and when the algorithm gets to this step everything is placed correctly, the corners of the last layer only needs to be orientated correctly.
 
+The algorithm takes one corner at a time and checks this orientation. This is alway the up right front corner. If it orientated wrongly algorithm 10 is applied, this algorithm rotates a corner without ruining the rest of the \cube{}. When the corner is correctly orientated the U face is \twist{}ed so a new corner is placed in this position and the same procedure is applied. After four U turns and appliance of algorithm 10 the cube is finally solved. 
+
+
+
+\begin{comment}
 In the last layer the corners in the last layer were poisitend correctly but not oreiented. In this step will the coreners be oreinted correctly and as result it will lead to that the \rubiks{} will be solved.
 
 This step is very simple because it there is only four corners to control and either the corner is oriented correctly or is isn't.  
@@ -7,4 +13,5 @@ This step is very simple because it there is only four corners to control and ei
 The program vil first control that the front-right-up corner is oriented correctly if not the will use the an algorithm twice and after the program vil control the corner again if the corner is not oriented correctly his time the use teh algorithme and will continue with this until the corner is oriented correctly. 
 Then the corner is orented correctly the program will make at up move ("U") and will control the new corner and the program will do this with every corner in the last layer until they are oriented corectly.  
 
+\end{comment}
 %husk flow diagram 
