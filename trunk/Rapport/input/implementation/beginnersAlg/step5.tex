@@ -1,10 +1,13 @@
 \section{Step 5 -- solving the white cross edge}
-In the previous section the white layer cross was solved, but the edge piece were not positioned in the correct position. In this step the edge pieces will be solved all at once as opposed to previous sections where the program has solve the \cpiece{} one at the time. 
+In this step the edges of the last layer cross will be positioned correctly. Their orientation will not be changed, since they are already oriented correctly.
 
-In this step the edge pieces in the white cross will be positioned correctly. First every case of possible position of the edge pieces without any interest in orientation of the edge piece, as result of the previous step there only were looking at orientation instead of position. 
+The first thing the program needs to know if less than two edges are in their correct position. 
+If that is the case the last layer face is rotated clockwise, and the check is performed again. 
+We know that either two or all four edges will be oriented by doing the above. 
+If all four edges are oriented correctly the method will return, since the step is complete.
+If not the program needs to know which two edges are positioned correctly.
+If the the two correctly positioned edges are positioned directly across each other algorithm 9 is performed.
+The correctly positioned edges are now on two faces next to each other. This is either reaches by algorithm 9 or they were already positioned in this way.
+The program checks which two edges are positioned correctly and performs algorithm 9 accordingly. 
 
-The program will look at how the edge piece can be positionen in wery case. There is only three main possible position for the edge piece and it will use the same algorithm in all three steps. 
-The first of the three positions is that two of the edge piece are positend side by side if this is the case the algorithme vil positend the last two edge piece in the lase layer. 
-The second position is if the to edge piece are positend opposite of each other in the last layer and again the same algorithm vil be used so the edge piece will be posited side by side as in the previous example and the procedural will be the same as in the previous example. 
-The last position is the edge piece in the white cross are positend correctly already in this case the program will continue to next step in solving the \rubik{}.
-
+The edges are now positioned and oriented correctly.
