@@ -22,34 +22,55 @@
 - returner resultatet i sidste ende.
 -  og der er nogle try catch som s\o{}rger for at det hele ikke l\o{}ber i endless loop
 
-The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. Thereafter the method enters a while loop which runs in a endless loop where it permutes with the move sequence b. The permute method BLABLABLABLABLLABBLA. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.
+The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. Thereafter the method enters a while loop which runs in a endless loop where it permutes with the move sequence b. The permute method BLALABLABLA. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.
 
-			try {
+
+
+try {
 				while (true) {
+					//System.out.println("Permuting!");
 					Cube.permute(cube, b);
 					try {
 						c = solveFromH(l - d);
+						//c = solveFromH(5);
 						if (d + c.length < l) {
 							l = d + c.length;
 							result = new MoveButtons[l];
 							output.addTextln("The solutions of the length " + l + ". The solution is:");
+							System.out.println("The solutions of the length " + l + ". The solution is:");
 							int j = 0;
 							for ( ; j < d; j++) {
 								result[j] = b[j];
 								output.addText(b[j] + " ");
+								System.out.print(b[j] + " ");
 							}
 							for (int k = 0 ; k < c.length; k++,j++) {
 								result[j] = c[k];
 								output.addText(c[k] + " ");
+								System.out.print(c[k] + " ");
 							}
 							output.addTextln("");
+							System.out.println();
 						}
-					} catch (InvalidCube e) { }
+
+					} catch (InvalidCube e) {
+						//System.out.println("Not in H!");
+					}
+/*
+					System.out.print("S: ");
+					for (int i = 0 ; i < b.length; i++) {
+						System.out.print(b[i] + " ");
+					}
+					System.out.println();*/
+					
 					Cube.permute(cube, MoveButtons.inverseOf(b));
 					MoveButtons.inverseOf(b);					
+					
 					increaseWithSNotEndingWithA(b, b.length-1);
 				}
-			} catch (UnableToIncreaseMoveSequenceException e) {	}
+			} catch (UnableToIncreaseMoveSequenceException e) {
+
+			}
 			d++;
 		}
 		return result;
