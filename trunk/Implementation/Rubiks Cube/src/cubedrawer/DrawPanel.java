@@ -539,7 +539,6 @@ public class DrawPanel extends JPanel {
 		repaint();
 		*/
 		
-		System.out.println(kociembaThread);
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
 				kociembaThread.stop();
@@ -576,8 +575,6 @@ public class DrawPanel extends JPanel {
 
 	        kociembaThread.start();
 		}	
-
-		System.out.println(kociembaThread);
 		 
 		return;
 	}
@@ -762,7 +759,6 @@ public class DrawPanel extends JPanel {
 		repaint();
 
 		*/
-		System.out.println(kociembaThread);
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
 				kociembaThread.stop();
@@ -800,7 +796,6 @@ public class DrawPanel extends JPanel {
 	        kociembaThread.start();
 		}	
 
-		System.out.println(kociembaThread);
 		 
 		return;
 	}
