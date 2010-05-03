@@ -1,48 +1,81 @@
 \section{Method Increase With S Not Ending With A}
 
-The method "Increase With S Not Ending With A" is the method that increments the move sequence b. When the method is called it takes two parameters, it needs a move sequence of the type MoveButtons and an integer named startWith. As the method initializes it creates two variables of the type integer, length and i. The length is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable length will be used. The variable i is used to keep track of where in the move sequence a move is changed.
+The method "Increase With S Not Ending With A" is the method that increments a move sequence. When the method is called it takes two parameters, a move sequence of the type MoveButtons and an integer. As the method initializes it creates two variables of the type integer, \textit{length} and \textit{i}. The variable \textit{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \textit{length} will be used. The variable \textit{i} is used to keep track of where in the move sequence a move is changed.
 
- 
+\begin{verbatim}
 
-		try {
-			if (i == 1) {
-				i++;
+
+
+		int length = moveSequence.length;
+		int i = startWith;
+		if(startWith < 0 || length <= 0) {
+			throw new UnableToIncreaseMoveSequenceException();
+		}
+
+		if (i == length - 1) {
+
+			try {
 				do {
-					moveSequence[length-1] = (MoveButtons)S.toArray()[moveSequence[length-1].ordinal() + 1];
-					
-				} while(A.contains(moveSequence[length-1]));
-				
-			} else {
-				throw new ArrayIndexOutOfBoundsException();
-			}
-		} catch (ArrayIndexOutOfBoundsException e) {
-			if (length == 1 ) {
-				throw new UnableToIncreaseMoveSequenceException();
-			}
-			moveSequence[length-1] = F;
-			for (; i <= length; i++) {
+					moveSequence[i] = (MoveButtons)S.toArray()[moveSequence[i].ordinal() + 1];
+				} while(A.contains(moveSequence[i]));
 				try {
-					moveSequence[length-i] = (MoveButtons)S.toArray()[moveSequence[length-i].ordinal() + 1];
-					break;
-				} catch (ArrayIndexOutOfBoundsException e1) {
-					if (length - i != 0) {
-						moveSequence[length-i] = U;
+					if(isSameFace(moveSequence[i], moveSequence[i-1])) {
+						increaseWithSNotEndingWithA(moveSequence, i);
 					} else {
-						throw new UnableToIncreaseMoveSequenceException();
+						//System.out.println(moveSequence[i]);
+						Cube.permute(cube, moveSequence[i]);
+					}
+				} catch (ArrayIndexOutOfBoundsException e2) {
+					//System.out.println(moveSequence[i]);
+					Cube.permute(cube, moveSequence[i]);
+				}
+				return;
+			} catch (ArrayIndexOutOfBoundsException e) {
+				moveSequence[i] = F;
+				i--;
+				try {
+					Cube.permute(cube, moveSequence[i].invert());
+					//System.out.println(moveSequence[i]);
+					moveSequence[i].invert();
+				} catch (ArrayIndexOutOfBoundsException e4) {
+					throw new UnableToIncreaseMoveSequenceException();
+				}
+
+				increaseWithSNotEndingWithA(moveSequence, i);
+				return;
+			}
+		} else {
+			try {
+				moveSequence[i] = (MoveButtons)S.toArray()[moveSequence[i].ordinal() + 1];
+				for (int j = i ; j < length; j++) {
+					try {
+						if(isSameFace(moveSequence[j], moveSequence[j-1])) {
+							increaseWithSNotEndingWithA(moveSequence, j);
+							return;
+						} else {
+							Cube.permute(cube, moveSequence[j]);
+							//System.out.println(moveSequence[j]);
+						}
+					} catch (ArrayIndexOutOfBoundsException e2) {
+						Cube.permute(cube, moveSequence[j]);
+						//System.out.println(moveSequence[j]);
 					}
 				}
-			}
-		}
-
-		for ( ; i > 0; i--) {
-			try {
-				if(isSameFace(moveSequence[length-i], moveSequence[length-i-1])) {
-					increaseWithSNotEndingWithA(moveSequence, length-i);
-					break;
+				return; 
+			} catch (ArrayIndexOutOfBoundsException e) {
+				moveSequence[i] = U;
+				i--;
+				try {
+					Cube.permute(cube, moveSequence[i].invert());
+					//System.out.println(moveSequence[i]);
+					moveSequence[i].invert();
+				} catch (ArrayIndexOutOfBoundsException e4) {
+					throw new UnableToIncreaseMoveSequenceException();
 				}
-			} catch (ArrayIndexOutOfBoundsException e2) {
-
+				increaseWithSNotEndingWithA(moveSequence, i);
+				return;
 			}
 		}
-		return moveSequence;
 	}
+	
+\end{verbatim}
