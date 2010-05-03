@@ -775,6 +775,7 @@ public class DrawPanel extends JPanel {
 			try {
 				console.addTextln("Stopping Kociemba's algorithm!");
 				kociembaThread.stop();
+				
 				kociembaThread = null;
 			} catch (IllegalMonitorStateException e) {
 				// TODO Auto-generated catch block
