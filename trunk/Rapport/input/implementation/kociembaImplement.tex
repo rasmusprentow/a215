@@ -9,7 +9,7 @@ Because of this we have chosen not to have a lookup table since it would have to
 A move can be defined using 4 bits, since there are 10 $A$ moves and $2^4=16$ which is enough.
 To calculate the size of a lookup table containing the move sequence it is just a mater of multiplying the size of one move with the number of moves a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM} \cite{maxMotherboardRAM}.
+The size of a lookup table containing every move sequences to solve inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
 
 Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest move sequence. A flowchart of out implementation is shown in figure \ref{fig:kociembaFlow}.
 
@@ -20,7 +20,7 @@ Instead of the lookup table our solver will have to try every move sequence insi
 	\label{fig:kociembaFlow}
 \end{figure}
 
-	%\input{input/implementation/kociembaImplement/methodSolve}
-	%\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
+	\input{input/implementation/kociembaImplement/methodSolve}
+	\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
 
-\myTail{}
+\myTail{This chapter has shown how we have implemented Kociemba's optimal solver, with descriptions of key points of the source code. }
