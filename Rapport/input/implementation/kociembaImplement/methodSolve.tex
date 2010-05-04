@@ -1,28 +1,6 @@
 \section{Method Solve}
 
-- Initialiserer 5 variabler af forskellige typer
-- hopper ind i en while l\o{}kke
-- hvergang while l\o{}kke bliver k\o{}rt bliver et array initialiseret lavet af moves.
-- twist
-- to moves af samme type
--  humle = pilsen knappes
-- hopper ind i l\o{}kke der k\o{}rer uendeligt
-- hvor den permuter med moveseq b
-- k\o{}rer lignende funktion , som hedder solveFromH
-- g\o{}r den med en parameter l - d
-- resultat den f\aa{}r s\ae{}tter den = c
-- tester om den nuv\ae{}rende l\ae{}ngde d + l\ae{}ngden c < l
-- hvis ja l = de to foreg\aa{}ende l\ae{}ngder
-- initialiserer resultat arrayet
-- tilf\o{}jer moveseq b og moveseq c til moveseq resultatet
-- permuter cuben tilbage igen, inverse af b
-
-- increasewithSnotendwithA --> reference
-- t\ae{}ller d op
-- returner resultatet i sidste ende.
--  og der er nogle try catch som s\o{}rger for at det hele ikke l\o{}ber i endless loop
-
-The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. Thereafter the method enters a while loop which runs in a endless loop where it permutes with the move sequence b. The permute method applies the moves to the cube. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.  This will return a result that will be putted in the c array. Thereafter it test if the length d + c's length is lower than the length of l. If that is true the case l will be set as the product of d + c and the result array will be initialized with l. In The result array the move sequence b and the movesequence c is added. after it has tested the length the \rubik{}  permutes the b move sequence back one depth and perform the increaseWithSNotEndingWithA method which will be described in section BLABLA( REF HER!!!!!!!!). After the increaseWithSNotEndingWithA method the program count d array size up by one.
+The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. Thereafter the method enters a while loop which runs in a endless loop where it permutes with the move sequence b. The permute method applies the moves to the cube. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.  This will return a result that will be putted in the c array. Thereafter it test if the length d + c's length is lower than the length of l. If that is true the case l will be set as the product of d + c and the result array will be initialized with l. In The result array the move sequence b and the movesequence c is added. after it has tested the length the \rubik{}  permutes the b move sequence back one depth and perform the increaseWithSNotEndingWithA method which will be described in section BLABLA( REF HER!!!!!!!!). After the increaseWithSNotEndingWithA method the program counts the d array size up by one.
 
 
 \begin{verbatim}
