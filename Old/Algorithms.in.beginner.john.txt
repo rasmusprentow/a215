@@ -1,0 +1,11 @@
+Algorithm 1 - Fix the orientation of Edge cubies that is in the right position -Step 1
+Algorithm 2 - Moves a cubie to the white layer if it is placed in the 2nd layer - Step 1
+Algorithm 3 - Fix the orientation of corner cubies that is in the right position - Step 2
+Algorithm 4 - If a corner is in the yellow layer it will move it to the white layer. If a corner is in the white layer it will move it down to the yellow layer. - Step 2
+Algorithm 5 - Moves an edge cubie to the white UP layer if it is placed in the second layer. - Step 3
+Algorithm 6 - Moves an edge cubie placed in the white up layer and the right face to the second layer right side. - Step 3
+Algorithm 7 - Moves an edge cubie placed in the white up layer and the right face to the second layer left side. - Step 3
+Algorithm 8 - Will fix the cross on the white layer, depending on how much of the cross is done, it will have to be applied several times. - Step 4
+Algorithm 9 - Will position the edge cubies in the white cross correctly. - Step 5
+Algorithm 10 - Will position the corner cubies in the white layer correctly. - Step 6
+Algorithm 11 - Fix the orientation of the corner cubies in the white layer that is not orientated correctly. - Step 7
