@@ -1,13 +1,12 @@
-\section{Step 5 -- solving the white cross edge}
-In this step the edges of the last layer cross will be positioned correctly. Their orientation will not be changed, since they are already oriented correctly.
+\section{Step 5 -- finishing the last layer cross}
+In the theoretical description of beginners algorithm step five is the implementation steps five, six and seven. 
+In this step the edges of the last layer cross will be positioned correctly. Their orientation will not be changed, since they are already oriented correctly. See subsection \ref{sub:step5}.
 
-The first thing the program needs to know if less than two edges are in their correct position. 
-If that is the case the last layer face is rotated clockwise, and the check is performed again. 
-We know that either two or all four edges will be oriented by doing the above. 
-If all four edges are oriented correctly the method will return, since the step is complete.
-If not the program needs to know which two edges are positioned correctly.
-If the the two correctly positioned edges are positioned directly across each other algorithm 9 is performed.
-The correctly positioned edges are now on two faces next to each other. This is either reaches by algorithm 9 or they were already positioned in this way.
-The program checks which two edges are positioned correctly and performs algorithm 9 accordingly. 
+The four \cpiece{}s in the white layer cross can only be in the four \cubicle{}. This leaves os with essentially two cases. Either all is placed correct or two is placed correct. This requires twisting the up face until one of the cases will appear. 
+
+The program only need to response to the case were two \cpiece{}s is placed correctly. 
+If the the two correctly positioned edges are positioned directly across each other \textit{algorithm 9} is performed.
+The correctly positioned edge \cpiece{}s are now on two faces next to each other. This is either reached by \textit{algorithm 9} or they were already positioned this way.
+The program checks which two edge \cpiece{}s are positioned correctly and performs \textit{algorithm 9} accordingly. 
 
 The edges are now positioned and oriented correctly.
