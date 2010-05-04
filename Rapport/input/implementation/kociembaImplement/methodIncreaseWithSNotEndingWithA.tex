@@ -10,7 +10,6 @@ The last move performed on the cube can never be a move from the group A (maaske
 At first the method test if it is working with the last move, if this is the case then a do-while loop will be executed.
 Inside this loop the parameter move sequence will be updated with a move from S, but the condition in the loop is that it shall run while the enumset A contains the new updated move.
 When a move not in A is found, then the loop is ended.
-A code snippet is shown here:
 
 \begin{verbatim}
 if (i == length - 1) {
@@ -22,7 +21,6 @@ if (i == length - 1) {
 When the loop is over a new method is called, \textit{isSameFace} this method tests if the new move is the same as the move before this.
 If they are the same, then the method will call itself else it will permute the cube with the current move sequence.
 When the \rubik{} has been permuted it will \textit{return} and method will end.
-A code snippet is shown here:
 
 \begin{verbatim}
 if(isSameFace(moveSequence[i], moveSequence[i-1])) {
@@ -37,7 +35,7 @@ When the method tries to increase the move, it will at some point reach the end 
 When this occurs an \textit{ArrayIndexOutOfBoundsException} will be thrown, this exception is caught in a try-catch.
 If the exception is caught then the last place in the move sequence array will be set equal to the move F.
 After this the counter variable \textit{i} will be decremented.
-Then the method will call itself, and after it has increased the second last
+Then the method will call itself, and after it has increased the second last move it will \textit{return} and end the method.
 
 \begin{verbatim}
 moveSequence[i] = F;
@@ -46,25 +44,12 @@ increaseWithSNotEndingWithA(moveSequence, i);
 return;
 \end{verbatim}
 
-
+All this code are executed if and only if the first condition is true.
+If it is not true, then the method will start increasing the current move with a S move.
 
 
 \begin{verbatim}
 
-		
-			} catch (ArrayIndexOutOfBoundsException e) {
-				moveSequence[i] = F;
-				i--;
-				try {
-					Cube.permute(cube, moveSequence[i].invert());
-					moveSequence[i].invert();
-				} catch (ArrayIndexOutOfBoundsException e4) {
-					throw new UnableToIncreaseMoveSequenceException();
-				}
-
-				increaseWithSNotEndingWithA(moveSequence, i);
-				return;
-			}
 		} else {
 			try {
 				moveSequence[i] = (MoveButtons)S.toArray()[moveSequence[i].ordinal() + 1];
@@ -75,11 +60,9 @@ return;
 							return;
 						} else {
 							Cube.permute(cube, moveSequence[j]);
-							//System.out.println(moveSequence[j]);
 						}
 					} catch (ArrayIndexOutOfBoundsException e2) {
 						Cube.permute(cube, moveSequence[j]);
-						//System.out.println(moveSequence[j]);
 					}
 				}
 				return; 
