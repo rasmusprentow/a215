@@ -1,7 +1,7 @@
-\section{Proof of the Upper Bound}
+\chapter{Proof of the Upper Bound}
 The upper bound of the \rubik{} is the lowest number of twists needed to solve the \rubik in the worst case proven so far. Such proofs have been published several times, and the upper bound has been lowered each time. A major breakthrough was when Thistlewaite's algorithm was proven to be able to solve an arbitrary cube in 52 twists or less. Since then a lot of progress has been made in the field. This section describes this progression.
 
-\subsection{Set Solver}
+\section{Set Solver}
 The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube but a whole set of cubes at the time as the name suggests. This means that it solves approximately 19.5 milliard cubes at a time.
 The set solver does this by finding all the move sequences of a relabeled cube of the distance $d$ that transforms the cube into $H$. 
 The algorithm the set solver consists of i described in pseudo code below\ref{alg:setSolver}.%All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to $H$ has been found.
@@ -52,7 +52,7 @@ When the algorithm has finished all the different possible $H$ positions should 
 
 
 %RESULTATER
-\subsection{The Current and Previous Upper Bounds}
+\section{The Current and Previous Upper Bounds}
 %Introduction??
 This is a slow moving field, but some events have occurred in the field the last couple of years.%% DAN DAN DAN DAN giv kilder pl0x
 The reason why it is a slow process to prove the upper bound, is that there is a vast amount of different positions a \rubik{} can be in. Even with todays computer power there is simply to much data to process. This had the effect that a small group of people dedicate a lot of time to create and improve algorithms to solve arbitrary \rubik{}s. The set set solver created by Thomas Rockicki, which was described in the previous section will now be further described.
