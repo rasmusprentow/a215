@@ -15,10 +15,11 @@ The program does this by \twist{}ing the up face once (known as an U \twist{}) a
 The edge piece is now positioned in two faces -- the white face and the face which has the same color as the edge  \cpiece{}'s second \facelet{} i.e. the face that is not yellow.
 In order to position the edge \cpiece{} that face is twisted twice.
 The edge \cpiece{}  is now in it's correct position, and if it is oriented correctly the program moves on to another edge  \cpiece{} .
-If the edge \cpiece{} is oriented incorrectly \textit{algorithm 1} is performed. If more edge  \cpiece{}s needs to be positioned or oriented correctly the program will continue with the same method until the cross is finished in which case the program moves on to the next step.
+If the edge \cpiece{} is oriented incorrectly \textit{algorithm 1} is performed. If more edge  \cpiece{}s needs to be positioned or oriented correctly the program will continue with the same method until the cross is finished in which case the program moves on to the next step. see \ref{fig:FlCrossFlow}.
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=\textwidth]{input/pics/FlCrossFlow.pdf}
+		\includegraphics{input/pics/FlCrossFlow.pdf}
+	\caption{The picture illustrates what is done in step one.}
 	\label{fig:FlCrossFlow}
 \end{figure}
