@@ -7,7 +7,7 @@ Each step is using different algorithms which all are structured the same way. T
 For the sake of simplicity the first layer(down face) in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
 
 \subsubsection{Algorithms}
-The implementation uses several algorithms which all have in common that they are named algorithmX, where X is a natural number. There are 11 of these and they are all a set of twists that should be performed. 
+The implementation uses several algorithms which all have in common that they are named algorithm X, where X is a natural number. There are 11 of these and they are all a set of twists that should be performed. 
 
 Most of them contains a switch/case statement which is dependent on some input specified for each algorithm. In all cases this is based on the angle of view. Normally a human will simply rotate the whole \cube{} and perform the same algorithm, but we found it easier simply to define the algorithms from the different view perspectives. 
 \begin{verbatim}
@@ -41,4 +41,4 @@ This algorithm takes a corner position and based on that it knows which type of 
 \input{input/implementation/beginnersAlg/step7}
 
 \section{Twist shortening}
-The implementation of the beginners algorithm is not the most twist wise efficient so in order to reduce the amount of twist used can easily be reduced. Based on the group theory (ref) it is known that some moves can be reduced. This is inverse moves and  three or two equal moves  in a row. e.g.  the twists U U U is equivalent to U'. Also U' and U is each others inverses and are equivalent to doing nothing. 
+The implementation of the beginners algorithm is not the most efficient twist wise, so in order to reduce the amount of twist used can easily be reduced. Based on the group theory (ref) it is known that some moves can be reduced. This is inverse moves and  three or two equal moves  in a row. e.g.  the twists U U U is equivalent to U'. Also U' and U are each others inverses and are equivalent to doing nothing. 
