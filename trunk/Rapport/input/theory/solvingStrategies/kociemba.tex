@@ -10,7 +10,7 @@ The Kociemba's optimal solver consists of two phases and is based on Kociemba's 
 The relabeling process  starts with choosing an up face with a corresponding down face. Then choosing a front face with a corresponding back face. Each \facelet{} with the color of the up or down face is marked with the letters ``UD''.  %Each edge \cpiece{} on the front and back where the \cpiece{} does not contain a ``UD'' sticker is marked with the letters ``FB''. 
 Every edge \cpiece{} that is not labeled with "`UD"' is labeled with "`FB"' on the front and back face.
 Figure \ref{fig:relabelClean} shows an example.
-\begin{figure}[hb]
+\begin{figure}[!hbt]
 	\centering
 		\includegraphics[scale = 0.8]{input/pics/relabelClean}
 	\caption{\myCaption{A relabeled Rubik's Cube with the up and down faces as blue and green and red and orange as front and back.}}
@@ -24,7 +24,7 @@ When relabeling a \rubik{} in the position $s$ it is written as $r(s)$. A \rubik
 The moves U, U', U2, D, D', D2, R2, L2, F2 and B2 is the set of moves $A$. Using moves from $A$ on a position in $H$, will always result in a \rubik{} in $H$. The reason for this can easily be tested with a \rubik{}. If using one of the three up face moves or one of the three down face moves, the ``FB'' labels are not moved and the ``UD'' labels are simply rotated on the face that is being twisted, see figure \ref{fig:relabel2:D}. The last four moves are all very similar to each other. If any side face -- not up or down -- is \twist{}ed 180 degrees, the three \facelet{}s on the up face is moved to the down face and vice versa and thereby keeping all the ``UD'' labels on the up and down face and keeping the orientation correct. The two remaining relabeled \facelet{}s are swapped which keeps the ``FB'' labels placed and oriented correctly, see figure \ref{fig:relabel2:R2}.
 
 
-\begin{figure}[!hb]
+\begin{figure}[!hbt]
 	\centering
 	\subfloat[\myCaption{A relabeled cube that has been permutated with the move D.}]{\label{fig:relabel2:D}\includegraphics[width=0.45\textwidth]{input/pics/relabelD.PNG}}
 	\hspace{0.05\textwidth}
@@ -53,7 +53,7 @@ The first phase takes a scrambled cube $a$ and relabels it $r(a)$ then it finds 
 	\ENDFOR
 	\STATE {$d=d+1$}
 \ENDWHILE
-\STATE $b$ is now the optimal solution
+\STATE $l$ is now the length of the optimal solution to $a$
 \end{algorithmic}
 \end{algorithm}
 
@@ -65,11 +65,11 @@ The \textbf{for} loop runs through all move sequences in the range $d$ -- recall
 Then an \textbf{if}-statement checks if the move sequence transforms the cube into the subgroup $H$. If so the algorithm checks whether $d + d_2(ab)$ is less than the length of the last solution, if so, $d + d_2(ab)$ is the new shortest move sequence, $l$, to $e$. 
 The lookup table denoted $d_2(ab)$ returns the numbers of twist required to transform a position in $H$ to the position $e$. This is done only by using moves in $A$. %$d_2(ab)$ is a lookup table which takes a position in $H$ and returns the number of twists it takes to transform the position to $e$ using moves in $A$ 
 The lookup table is the second phase and is further described in the subsection \ref{sub:secondPhase}. 
-The first time this \textbf{if}-statement is executed it will return true and this will be the new length of the solution. The \textbf{while} loop will end when $d$ is incremented to $l$. Figure \ref{fig:kociemba2} illustrates the algorithm.
-\begin{figure}[htb]
+The first time this \textbf{if}-statement is executed it will return true and this will be the new length of the solution. The \textbf{while} loop will end when $d$ is incremented to $l$, then the optimal solution has the length $l$. The actual solution is $b$ plus some move sequence in $A^{d_{2}(ab)}$. Figure \ref{fig:kociemba2} illustrates the algorithm.
+\begin{figure}[!htb]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/kocieambe2.pdf}
-	\caption{\myCaption{ The lines going from $a$ to a point in $H$ is the move sequence denoted $b$. The lines from points in $H$ to the point $e$ is the move sequence denoted $c$ . The numbers beside the lines are the number of moves. Note that the moves in $c$ is decreasing as the numbers of moves in $b$ is increasing. The line that goes directly from $a$ to $e$ is the shortest move sequence possible. }}
+	\caption{\myCaption{The lines going from $a$ to a point in $H$ is the move sequence denoted $b$. The lines from points in $H$ to the point $e$ is the move sequence denoted $c$ . The numbers beside the lines are the number of moves. Note that the moves in $c$ is decreasing as the numbers of moves in $b$ is increasing. The line that goes directly from $a$ to $e$ is the shortest move sequence possible. }}
 	\label{fig:kociemba2}
 \end{figure}
 
@@ -81,7 +81,7 @@ An example of a search from a position $a$ is given. The algorithm starts by sea
 
 $d$ continues to be incremented until it reaches the length $l$. Since $l$ starts with the value infinite, it has to be changed in order to stop the loop. This happens in the second phase.
 
-\begin{figure}[!hb]
+\begin{figure}[!hbt]
 	\centering
 		\includegraphics[scale=0.75]{input/pics/searchExpansion.pdf}
 	\caption{\myCaption{As the distance of the search $d$ increases, the possible move sequences expands exponentially. For each vertex on the graph there is 18 child vertices. The amount of leaves for each search depth would be $18^{d}$.}}
