@@ -1,4 +1,4 @@
-\chapter{Implementing Kociemba's Optimal Solver}
+\chapter{Kociemba's Optimal Solver}
 \label{chap:kociembaImplement}
 \myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}
 The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing is differing from the original at one point:
@@ -16,9 +16,11 @@ Instead of the lookup table our solver will have to try every move sequence insi
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width = \textwidth, trim = 0mm 110mm 50mm 0mm, clip]{input/pics/kociembaFlow}
-	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver. $b$ is a move sequence variable, which takes the scrambled cube into $H$, $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside $H$, and $e$ is the depth which the $H$ solver is searching.}}
+	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver. $b$ is a move sequence variable, which takes the scrambled cube into $H$, $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside $H$, and $e$ is the depth which the $H$ solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a new shorter move sequence is found.}}
 	\label{fig:kociembaFlow}
 \end{figure}
+
+The optimal solver's approach to solving the \rubik{} is trying every move sequence not tried so far and if the cube is inside $H$ it will start using only $A$ moves. Every time a shorter move sequence is found it is saved.
 
 	\input{input/implementation/kociembaImplement/methodSolve}
 	%\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
