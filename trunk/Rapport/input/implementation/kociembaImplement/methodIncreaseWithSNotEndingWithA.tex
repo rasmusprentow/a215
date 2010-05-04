@@ -3,7 +3,9 @@
 The method "Increase With S Not Ending With A" is the method that increments a move sequence. When the method is called it takes two parameters, a move sequence of the type MoveButtons and an integer. As the method initializes it creates two variables of the type integer, \textit{length} and \textit{i}. The variable \textit{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \textit{length} will be used. The variable \textit{i} is used to keep track of where in the move sequence a move is changed and it is set equal to the integer parameter. 
 
 The last move performed on the cube can never be a move from the group A (maaske referance til der hvor det staar). At first the function test if it is working with the last move, if this is the case then a do-while loop will be executed. Inside this loop the parameter move sequence will be updated with a move from S, but the condition in the loop is that it shall run while the enumset A contains the new updated move sequence. When a move not in A i found, then the loop is ended.
-When the loop is over a new function is called, \textit{isSameFace} this function tests if the new move is the same as the move before this. If they are the same, then the function will call itself else it will permute the cube with the current move sequence. 
+When the loop is over a new function is called, \textit{isSameFace} this function tests if the new move is the same as the move before this. If they are the same, then the function will call itself else it will permute the cube with the current move sequence. When the cube has been permuted it will \textit{return} and function will end.
+
+
 
 
 \begin{verbatim}
@@ -18,11 +20,9 @@ When the loop is over a new function is called, \textit{isSameFace} this functio
 					if(isSameFace(moveSequence[i], moveSequence[i-1])) {
 						increaseWithSNotEndingWithA(moveSequence, i);
 					} else {
-						//System.out.println(moveSequence[i]);
 						Cube.permute(cube, moveSequence[i]);
 					}
 				} catch (ArrayIndexOutOfBoundsException e2) {
-					//System.out.println(moveSequence[i]);
 					Cube.permute(cube, moveSequence[i]);
 				}
 				return;
