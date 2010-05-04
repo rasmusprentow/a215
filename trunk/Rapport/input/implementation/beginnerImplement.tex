@@ -7,7 +7,30 @@ Each step is using different algorithms which all are structured the same way. T
 For the sake of simplicity the first layer(down face) in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
 
 \subsubsection{Algorithms}
+The implementation uses several algorithms which all have in common that they are named algorithmX, where X is a natural number. There are 11 of these and they are all a set of twists that should be performed. 
 
+Most of them contains a switch/case statement which is dependent on some input specified for each algorithm. In all cases this is based on the angle of view. Normally a human will simply rotate the whole \cube{} and perform the same algorithm, but we found it easier simply to define the algorithms from the different view perspectives. 
+\begin{verbatim}
+private void algorithm3(CornerPos p){
+		MoveButtons[] moves;
+		switch(p){
+		case P1S0T0:
+			moves = new MoveButtons[]{ LP, UP, L, U, LP, UP, L};
+			break;
+		case P1S0T1:
+			moves = new MoveButtons[]{ R, UP, RP, U, R, UP, RP};
+			break;
+		case P1S1T0:
+			moves = new MoveButtons[]{ L, UP, LP, U, L, UP, LP};
+			break;
+		default:
+			moves = new MoveButtons[]{ RP, UP, R, U, RP, UP, R};
+			break;
+		}
+		Cube.permute(cube, moves);
+	}
+\end{verbatim}
+This algorithm takes a corner position and based on that it knows which type of moves that needs to be applied. The Cube object has a property permute which allows for several moves to be applied at the same time. The \textit{MoveButtons} type is a Enumeration which contains the buttons used in the GUI. The same enumeration is used to determine moves. Even though this seems confusing it proved quite worthwhile, since it allows for some smart maneuvers. 
 
 \input{input/implementation/beginnersAlg/step1}
 \input{input/implementation/beginnersAlg/step2}
