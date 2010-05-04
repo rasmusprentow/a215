@@ -1,43 +1,43 @@
 \section{Method Solve}
 
-The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. Thereafter the method enters a while loop which runs in a endless loop where it permutes with the move sequence b. The permute method applies the moves to the cube. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.  This will return a result that will be putted in the c array. Thereafter it test if the length d + c's length is lower than the length of l. If that is true the case l will be set as the product of d + c and the result array will be initialized with l. In The result array the move sequence b and the movesequence c is added. after it has tested the length the \rubik{}  permutes the b move sequence back one depth and perform the increaseWithSNotEndingWithA method which will be described in section BLABLA( REF HER!!!!!!!!). After the increaseWithSNotEndingWithA method the program counts the d integer up by one. When the program is unable
+The method Solve is the method that connects all the submethods into one big method that apply the Kociemba's algorithm onto the \rubik{}. It start with initializing five variables; a result array which will contain the final move sequence, a d integer which will determine the search depth, a l integer which also is used to determine the search depth, a b array which will contain the move sequence until the \rubik{} enters H and a c array which will be the move sequence after the \rubik{} has entered H. Thereafter it enters a while loop which initialize an array of moves everytime the loop runs. After that the method enters a while loop which runs in an endless loop where it permutes with the move sequence b. The permute method applies the moves to the cube. After that it will try solve the \rubik{} from H with the method of the same name, solveFromH, with the parameter l - d.  This will return a result that will be putted in the c array. Thereafter it test if the length d + c's length is lower than the length of l. If that is true  l will be set as the product of d + c size and the result array will be initialized with l. In The result array the move sequence b and the movesequence c is added. after it has tested the length the \rubik{}  permutes the b move sequence back one depth and perform the increaseWithSNotEndingWithA method which will be described in section BLABLA( REF HER!!!!!!!!). After the increaseWithSNotEndingWithA method the program counts the d integer up by one. When the program is unable to find a solution length shorter than the last solution it will return the result array.
 
 
 \begin{verbatim}
 try {
-				while (true) {
-					Cube.permute(cube, b);
-					try {
-						c = solveFromH(l - d);
-						if (d + c.length < l) {
-							l = d + c.length;
-							result = new MoveButtons[l];
-							output.addTextln("The solutions of the length " + l + ". The solution is:");
-							int j = 0;
-							for ( ; j < d; j++) {
-								result[j] = b[j];
-								output.addText(b[j] + " ");
-							} 
-							for (int k = 0 ; k < c.length; k++,j++) {
-								result[j] = c[k];
-								output.addText(c[k] + " "););
-							}
-							output.addTextln("");
-						}
-
-					} catch (InvalidCube e) {
-					}
-					
-					Cube.permute(cube, MoveButtons.inverseOf(b));
-					MoveButtons.inverseOf(b);					
-					
-					increaseWithSNotEndingWithA(b, b.length-1);
+	while (true) {
+		Cube.permute(cube, b);
+		try {
+			c = solveFromH(l - d);
+			if (d + c.length < l) {
+				l = d + c.length;
+				result = new MoveButtons[l];
+				output.addTextln("The solutions of the length " + l + ". The solution is:");
+				int j = 0;
+				for ( ; j < d; j++) {
+					result[j] = b[j];
+					output.addText(b[j] + " ");
+				} 
+				for (int k = 0 ; k < c.length; k++,j++) {
+					result[j] = c[k];
+					output.addText(c[k] + " "););
 				}
-			} catch (UnableToIncreaseMoveSequenceException e) {
-
+				output.addTextln("");
 			}
-			d++;
+
+		} catch (InvalidCube e) {
 		}
-		return result;
+
+		Cube.permute(cube, MoveButtons.inverseOf(b));
+		MoveButtons.inverseOf(b);					
+
+		increaseWithSNotEndingWithA(b, b.length-1);
 	}
+} catch (UnableToIncreaseMoveSequenceException e) {
+
+}
+d++;
+}
+return result;
+}
 \end{verbatim}
