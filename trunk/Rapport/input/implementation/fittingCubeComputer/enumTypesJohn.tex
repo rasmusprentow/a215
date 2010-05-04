@@ -3,13 +3,19 @@ In order to get a good interpretation of the aspects of the \cube{} the differen
 
 One containing the possible positions and one defining the possible moves and one defining the faces.
 
-\subsubsection{Moves}
+\subsection{Moves}
 The enumeration class that contains all possible moves actually contains a property for each button in the GUI. Confusing as this might seem it actually saved a lot of time and worked quite well. Of course the permute method of the cube can be called with a button which is not a move and cause an error. This is not a robust program but a proof-of-concept. 
 
 \subsection{Faces}
-The different types of faces is well know by human by its color. But in the program we do not use regular colors we defined our own set which allow for changing the actual colors one place without affecting the rest of the program. 
+The different types of faces is well know by human by its color.
+But in the program we do not use regular colors we defined our own set which allow for changing the actual colors one place without affecting the rest of the program. 
 
-As know from section the orientation section (\ref{sec:orientation}) there are three different types of faces. Each consist of two separate faces. Therefore each face is know by its type and a number 0 or 1 e. g. the up face or the white face is know in the program as \textit{primary\_0}. Its opposite, the yellow face, is know as \textit{primary\_1}. 
+As known from the orientation section (\ref{sec:orientation}) there are three different types of faces.
+Each consist of two opposite faces. Therefore each face is known by its type and a number 0 or 1 e. g. the up face or the white face is know in the program as \textit{primary\_0}.
+Its opposite, the yellow face, is know as \textit{primary\_1}. 
 
-\subsubsection{Positions}
-The different positions is defined based on the faces. There are two types of positions; corners and edges. An edge position could be named P1S0; which means \textit{primary\_1} and \textit{secondary\_0}. In human terms this will be the down front edge. Corners have three faces and the corner immidiatly to the right of the edge would be P1S0T1.  
+\subsection{Positions}
+The different positions is defined based on the faces. There are two types of positions; corners and edges.
+An edge position could be named P1S0; which means \textit{primary\_1} and \textit{secondary\_0}.
+In human terms this will be the down front edge.
+Corners have three faces and the corner immediately to the right of the edge would be P1S0T1, which refers to the corner on the \textit{primary\_1}, \textit{secondary\_0}, and \textit{tertiary\_1} faces.
