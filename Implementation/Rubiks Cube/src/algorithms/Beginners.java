@@ -574,7 +574,6 @@ public class Beginners {
 		Cube.permute(cube, moves);
 
 	}
-	//INSERT ALG5 HERE
 
 	private void algorithm6(EdgePos p){
 		MoveButtons[] moves;
@@ -590,14 +589,12 @@ public class Beginners {
 			break;
 		default:
 			moves = new MoveButtons[]{ U, F, UP, FP, UP, LP, U, L};
-
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
 			this.moves.add(moves[i]);
 		}
 		Cube.permute(cube, moves);
-
 	}
 
 	private void algorithm7(EdgePos p){
@@ -684,7 +681,6 @@ public class Beginners {
 
 	private void algorithm10(CornerPos p){
 		MoveButtons[] moves;
-		//System.out.println("Corner: " + p);
 		switch(p){
 		case P0S0T0:
 			moves = new MoveButtons[]{ UP, LP, U, R, UP, L, U, RP};
@@ -703,7 +699,6 @@ public class Beginners {
 			this.moves.add(moves[i]);
 		}
 		Cube.permute(cube, moves);
-
 	}
 
 
