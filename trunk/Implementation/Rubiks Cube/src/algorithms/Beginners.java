@@ -72,8 +72,8 @@ public class Beginners {
 
 			if(cube.getFace(e)[0].getFacelet() == Facelet.PRIMARY_0){
 				while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
-					moves.add(MoveButtons.U);
-					Cube.permute(cube, MoveButtons.U);
+					moves.add(U);
+					Cube.permute(cube, U);
 				}
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
@@ -110,8 +110,8 @@ public class Beginners {
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 
 				while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
-					moves.add(MoveButtons.U);
-					Cube.permute(cube, MoveButtons.U);
+					moves.add(U);
+					Cube.permute(cube, U);
 				}
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
 				Cube.permute(cube, cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
@@ -124,8 +124,8 @@ public class Beginners {
 
 
 				while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
-					moves.add(MoveButtons.U);
-					Cube.permute(cube, MoveButtons.U);
+					moves.add(U);
+					Cube.permute(cube, U);
 				}
 
 				moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
@@ -147,8 +147,8 @@ public class Beginners {
 
 
 						while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
-							moves.add(MoveButtons.U);
-							Cube.permute(cube, MoveButtons.U);
+							moves.add(U);
+							Cube.permute(cube, U);
 						}
 
 						moves.add(cube.FaceToMove(cube.getFace(e)[1].getFacelet(), 2));
@@ -188,8 +188,8 @@ public class Beginners {
 						algorithm4(cornerKey);		// Switches the cubes
 						while(cube.getFace(c)[1].getFacelet() != c.getSecondaryFacelet() || cube.getFace(c)[2].getFacelet() != c.getTertiaryFacelet()){ 
 							// Rotates as long as the cube is not in its right spot. The means  P0S*T*.
-							moves.add(MoveButtons.U);
-							Cube.permute(cube, MoveButtons.U);
+							moves.add(U);
+							Cube.permute(cube, U);
 						}
 						algorithm4(key);	 // Moves the cube into place.
 						while (c.getPrimaryOrientation() != 0){  // As long as it is orientated wrong rotate it.
@@ -202,8 +202,8 @@ public class Beginners {
 
 			} else { // It is in the up face
 				while(cube.getFace(c)[1].getFacelet() != c.getSecondaryFacelet() || cube.getFace(c)[2].getFacelet() != c.getTertiaryFacelet()){
-					moves.add(MoveButtons.U);
-					Cube.permute(cube, MoveButtons.U);
+					moves.add(U);
+					Cube.permute(cube, U);
 				}
 				algorithm4(key);
 				while (c.getPrimaryOrientation() != 0){  // Is it oriented wrong
@@ -246,8 +246,8 @@ public class Beginners {
 				//It is in the white face
 				if(e.getPrimaryOrientation() == 0){
 					while(cube.getFace(e)[1].getFacelet() != e.getFacelet(1)){
-						moves.add(MoveButtons.U);
-						Cube.permute(cube, MoveButtons.U);
+						moves.add(U);
+						Cube.permute(cube, U);
 					}
 					EnumSet<EdgePos> secondEdges = EnumSet.of(EdgePos.P0T0, EdgePos.P0T1, EdgePos.P0S0, EdgePos.P0S1);
 
@@ -275,8 +275,8 @@ public class Beginners {
 				}
 				else { //orientation is 1
 					while(cube.getFace(e)[1].getFacelet() != e.getFacelet(0)){
-						moves.add(MoveButtons.U);
-						Cube.permute(cube, MoveButtons.U);
+						moves.add(U);
+						Cube.permute(cube, U);
 					}
 
 					EnumSet<EdgePos> secondEdges = EnumSet.of(EdgePos.P0T0, EdgePos.P0T1, EdgePos.P0S0, EdgePos.P0S1);
@@ -346,22 +346,22 @@ public class Beginners {
 			}
 			//System.out.println("Number of correct edges, bitches: " + i);
 			if(i < 2){
-				moves.add(MoveButtons.U);
-				Cube.permute(cube, MoveButtons.U);
+				moves.add(U);
+				Cube.permute(cube, U);
 			}
 		}
 
 		if(i < 4){
 			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0S1).getCubie() == cube.getECubie(EdgePos.P0S1)){
 				algorithm9(Facelet.SECONDARY_0);
-				moves.add(MoveButtons.UP);
-				Cube.permute(cube, MoveButtons.UP);
+				moves.add(UP);
+				Cube.permute(cube, UP);
 				//System.out.println("Front 1");
 			}
 			if(cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
 				algorithm9(Facelet.TERTIARY_0);
-				moves.add(MoveButtons.UP);
-				Cube.permute(cube, MoveButtons.UP);
+				moves.add(UP);
+				Cube.permute(cube, UP);
 				//System.out.println("Left 2");
 			}
 			if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T0).getCubie() == cube.getECubie(EdgePos.P0T0)){
@@ -433,8 +433,8 @@ public class Beginners {
 			while(cube.getCCubicle(P0S0T1).getCubie().getPrimaryOrientation() != 0){
 				algorithm11();
 			} 
-			moves.add(MoveButtons.U);
-			Cube.permute(cube, MoveButtons.U);
+			moves.add(U);
+			Cube.permute(cube, U);
 		}
 	}
 
@@ -446,18 +446,18 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch (p) {
 		case P1S0:
-			moves = new MoveButtons[]{ MoveButtons.FP, MoveButtons.D,MoveButtons.RP, MoveButtons.DP };
+			moves = new MoveButtons[]{ FP, D,RP, DP };
 			break;
 
 		case P1S1:
-			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.DP,MoveButtons.R, MoveButtons.D};
+			moves = new MoveButtons[]{ B, DP,R, D};
 			break;
 
 		case P1T1:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.DP, MoveButtons.F, MoveButtons.D};
+			moves = new MoveButtons[]{ R, DP, F, D};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.LP, MoveButtons.D, MoveButtons.FP, MoveButtons.DP};
+			moves = new MoveButtons[]{ LP, D, FP, DP};
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
@@ -474,18 +474,18 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch (p) {
 		case S0T0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U,MoveButtons.FP };
+			moves = new MoveButtons[]{ F, U,FP };
 			break;
 
 		case S0T1:
-			moves = new MoveButtons[]{ MoveButtons.FP, MoveButtons.U,MoveButtons.F};
+			moves = new MoveButtons[]{ FP, U,F};
 			break;
 
 		case S1T0:
-			moves = new MoveButtons[]{ MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			moves = new MoveButtons[]{ BP, U, B};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.U, MoveButtons.BP};
+			moves = new MoveButtons[]{ B, U, BP};
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
@@ -502,16 +502,16 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch(p){
 		case P1S0T0:
-			moves = new MoveButtons[]{ MoveButtons.LP, MoveButtons.UP, MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.UP, MoveButtons.L};
+			moves = new MoveButtons[]{ LP, UP, L, U, LP, UP, L};
 			break;
 		case P1S0T1:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP};
+			moves = new MoveButtons[]{ R, UP, RP, U, R, UP, RP};
 			break;
 		case P1S1T0:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP};
+			moves = new MoveButtons[]{ L, UP, LP, U, L, UP, LP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.RP, MoveButtons.UP, MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.UP, MoveButtons.R};
+			moves = new MoveButtons[]{ RP, UP, R, U, RP, UP, R};
 
 			break;
 		}
@@ -531,16 +531,16 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch(p){
 		case P1S0T0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP};
+			moves = new MoveButtons[]{ F, U, FP};
 			break;
 		case P1S0T1:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP};
+			moves = new MoveButtons[]{ R, U, RP};
 			break;
 		case P1S1T0:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP};
+			moves = new MoveButtons[]{ L, U, LP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.RP, MoveButtons.UP, MoveButtons.R};
+			moves = new MoveButtons[]{ RP, UP, R};
 
 			break;
 		}
@@ -555,16 +555,16 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch(p){
 		case S0T0:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP};
+			moves = new MoveButtons[]{ UP, LP, U, L, U, F, UP, FP};
 			break;
 		case S0T1:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F};
+			moves = new MoveButtons[]{ U, R, UP, RP, UP, FP, U, F};
 			break;
 		case S1T0:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			moves = new MoveButtons[]{ U, L, UP, LP, UP, BP, U, B};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP};
+			moves = new MoveButtons[]{ UP, RP, U, R, U, B, UP, BP};
 
 			break;
 		}
@@ -580,16 +580,16 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch(p){
 		case P0S0:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F};
+			moves = new MoveButtons[]{ U, R, UP, RP, UP, FP, U, F};
 			break;
 		case P0T1:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP, MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R};
+			moves = new MoveButtons[]{ U, B, UP, BP, UP, RP, U, R};
 			break;
 		case P0S1:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B};
+			moves = new MoveButtons[]{ U, L, UP, LP, UP, BP, U, B};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP, MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L};
+			moves = new MoveButtons[]{ U, F, UP, FP, UP, LP, U, L};
 
 			break;
 		}
@@ -604,16 +604,16 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch(p){
 		case P0S0:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.FP};
+			moves = new MoveButtons[]{ UP, LP, U, L, U, F, UP, FP};
 			break;
 		case P0T1:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.F, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.RP};
+			moves = new MoveButtons[]{ UP, FP, U, F, U, R, UP, RP};
 			break;
 		case P0S1:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.BP};
+			moves = new MoveButtons[]{ UP, RP, U, R, U, B, UP, BP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.B, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.LP};
+			moves = new MoveButtons[]{ UP, BP, U, B, U, L, UP, LP};
 
 			break;
 		}
@@ -627,18 +627,18 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch (f) {
 		case SECONDARY_0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.UP, MoveButtons.FP};
+			moves = new MoveButtons[]{ F, R, U, RP, UP, FP};
 			break;
 
 		case SECONDARY_1:
-			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.UP, MoveButtons.BP};
+			moves = new MoveButtons[]{ B, L, U, LP, UP, BP};
 			break;
 
 		case TERTIARY_0:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.UP, MoveButtons.LP};
+			moves = new MoveButtons[]{ L, F, U, FP, UP, LP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.B, MoveButtons.U, MoveButtons.BP, MoveButtons.UP, MoveButtons.RP};
+			moves = new MoveButtons[]{ R, B, U, BP, UP, RP};
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
@@ -651,25 +651,25 @@ public class Beginners {
 		MoveButtons[] moves;
 		switch (f) {
 		case SECONDARY_0:
-			moves = new MoveButtons[]{ MoveButtons.R, MoveButtons.U, MoveButtons.RP, MoveButtons.U, MoveButtons.R, MoveButtons.U2, MoveButtons.RP, MoveButtons.U};
+			moves = new MoveButtons[]{ R, U, RP, U, R, U2, RP, U};
 			/* Front move
 			 * 
 			 */
 			break;
 		case TERTIARY_0:
-			moves = new MoveButtons[]{ MoveButtons.F, MoveButtons.U, MoveButtons.FP, MoveButtons.U, MoveButtons.F, MoveButtons.U2, MoveButtons.FP, MoveButtons.U};
+			moves = new MoveButtons[]{ F, U, FP, U, F, U2, FP, U};
 			/* Left move
 			 * 
 			 */
 			break;
 		case SECONDARY_1:
-			moves = new MoveButtons[]{ MoveButtons.L, MoveButtons.U, MoveButtons.LP, MoveButtons.U, MoveButtons.L, MoveButtons.U2, MoveButtons.LP, MoveButtons.U};
+			moves = new MoveButtons[]{ L, U, LP, U, L, U2, LP, U};
 			/* Back move
 			 * 
 			 */
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.B, MoveButtons.U, MoveButtons.BP, MoveButtons.U, MoveButtons.B, MoveButtons.U2, MoveButtons.BP, MoveButtons.U};
+			moves = new MoveButtons[]{ B, U, BP, U, B, U2, BP, U};
 			/* Right move
 			 * */
 			break;
@@ -687,16 +687,16 @@ public class Beginners {
 		//System.out.println("Corner: " + p);
 		switch(p){
 		case P0S0T0:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.LP, MoveButtons.U, MoveButtons.R, MoveButtons.UP, MoveButtons.L, MoveButtons.U, MoveButtons.RP};
+			moves = new MoveButtons[]{ UP, LP, U, R, UP, L, U, RP};
 			break;
 		case P0S0T1:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.FP, MoveButtons.U, MoveButtons.B, MoveButtons.UP, MoveButtons.F, MoveButtons.U, MoveButtons.BP};
+			moves = new MoveButtons[]{ UP, FP, U, B, UP, F, U, BP};
 			break;
 		case P0S1T1:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.RP, MoveButtons.U, MoveButtons.L, MoveButtons.UP, MoveButtons.R, MoveButtons.U, MoveButtons.LP};
+			moves = new MoveButtons[]{ UP, RP, U, L, UP, R, U, LP};
 			break;
 		default:
-			moves = new MoveButtons[]{ MoveButtons.UP, MoveButtons.BP, MoveButtons.U, MoveButtons.F, MoveButtons.UP, MoveButtons.B, MoveButtons.U, MoveButtons.FP};
+			moves = new MoveButtons[]{ UP, BP, U, F, UP, B, U, FP};
 			break;
 		}
 		for(int i = 0; i < moves.length; i++){
