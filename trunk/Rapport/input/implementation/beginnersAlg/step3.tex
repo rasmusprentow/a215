@@ -1,9 +1,14 @@
 \section{Step 3 -- solving the second layer}
-
 In this step the second layer will be solved. 
+This means that the edges in the second or middle layer will get placed and orientated correctly. 
+In subsection \ref{sub:step3} this is step is generally described. 
 
-The program solve this layer by positioning and orienting the correct edge piece in a certain edge cubicle. When one cubicle has it's correct cubie in it's correct orientation, the program moves on to the next cubicle. This method may be as others earlier used in the implementation not be the optimal way of completing the step with regards to the number of twists. However the method is less complicated to implement.
-The first question the program needs to ask is if the piece in question is already positioned and oriented correctly in the second layer. If that is the case the program will proceed to the next edge piece. If the edge piece is oriented incorrectly the program will use an algorithm to move the edge piece to the top layer and  move it back to the same position -- but oriented correctly. 
+The program solve this layer by going through the 4 \cubicle{}s of the second layer and finding and placing the \cpiece{} in its \cubicle{}
 
-If the edge piece is not in it's correctly position the program needs to know where the correct edge piece is positioned. First the program checks for it in the top layer. If it is in the top layer up moves are applied to the \rubik{} until the edge piece is positioned in such a way that an algorithm can be applied to move it to it's correct position with the correct orientation. If the edge piece is in the second layer the same type of algorithm is applied to swap an edge piece from the top layer with the edge piece in question. Now the edge piece can be positioned correctly as described before.
+If the \cpiece is oriented incorrectly in the correct \cubicle{} the program will use an algorithm to move the edge \cpiece{} to the top layer and move it back to the same position -- but now the orientation will be correct. 
+
+If the edge \cpiece{} is not in it's correctly position the program needs to know where the correct edge piece is positioned. First the program checks for it in the top layer. 
+If it is in the top layer up moves are applied to the \rubik{} until the edge piece is positioned in such a way that an algorithm can be applied to move it to it's correct position with the correct orientation. 
+If the \cpiece{} is in the second layer but in a wrong \cubicle{} the same algorithm used to put it into place will get it out of place. 
+
 
