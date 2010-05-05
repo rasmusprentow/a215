@@ -46,9 +46,9 @@ After the loop is over a new method is called, \vr{isSameFace} this method tests
 If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move sequence.
 When the \rubik{} has been permuted it will \vr{return} and the method will end.
 
-The method increments the move, and at some point it will reach the end of the enumset.
-When this occurs an \vr{ArrayIndexOutOfBoundsException} will be thrown, this exception is caught in a \textbf{try-catch}.
-If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}.
+The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
+When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}, this exception is caught in a \textbf{try-catch}.
+If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}).
 After this the counter variable \vr{i} will be decremented.
 Then the method will call itself, and after it has increased the second last move it will \textit{return} and end the method.
 
