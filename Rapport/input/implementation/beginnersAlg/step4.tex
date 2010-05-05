@@ -3,16 +3,14 @@ In the previous steps the algorithms has solved one \cpiece{} at a time.
 This is not an option for this step. 
 Here several \cpiece{}s will be placed at a time. 
 
-This step will make the orientation of the top face cross correct. 
-Placing the \cpiece{}s correctly will first be done in the next. 
-This is done by checking each case of possible orientation for the edge \cpiece{}s in the top layer. 
-There are three primary positions where different actions should be taken exclusive the solved. See figure \ref{fig:cross}. 
+This step will make the top face cross. 
+Positioning the edge \cpiece{}s correctly not be done before the next step. 
+
+This step is performed by checking each case of possible orientations for the edge \cpiece{}s in the top layer. 
+There are three primary settings the top layer edge \cpiece{} can be in. See figure \ref{fig:cross}. 
 \begin{enumerate}
-\item The white \facelet{}s of the top layer forms an L-shape.
+\item The white \facelet{}s of the top layer form an L-shape.
 \item They form a row.
 \item Only the center \facelet{} is visible. 
 \end{enumerate}
-It is \textit{algorithm 8} that needs to be performed no matter the case. In case one the algorithm is applied twice, case two the algorithm is applied three times, case three the algorithm is applied one time. 
-
-
-
+It is \textit{algorithm 8} that needs to be performed no matter the case. In case one the algorithm is applied twice, case two the algorithm is applied three times, case three the algorithm is applied once.
