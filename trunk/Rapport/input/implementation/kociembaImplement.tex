@@ -2,16 +2,17 @@
 \label{chap:kociembaImplement}
 \myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}
 The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing is differing from the original at one point:
-We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only tries to find the shortest length, not the actual sequence of moves \cite{rokicki09}.
+We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
 
 Because of this we have chosen not to have a lookup table since it would have to contain 20 milliard move sequences, which is impossible on todays computers considering that the lookup table only containing the length would have a size of 4 GB \cite{cubeExplorer} and a table containing the move sequences would have to be much larger.
 
-A move can be defined using 4 bits, since there are 10 $A$ moves and $2^4=16$ which is enough.
-To calculate the size of a lookup table containing the move sequence it is just a mater of multiplying the size of one move with the number of moves a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
+An $A$ move can be defined using 4 bits.
+The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
+To calculate the size of a lookup table containing the move sequence it is just a matter of multiplying the size of one move with the number of moves in a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
+The size of a lookup table containing every move sequences to solve the \rubik{} inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
 
-Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest move sequence. A flowchart of out implementation is shown in figure \ref{fig:kociembaFlow}.
+Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest length. A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
 
 \begin{figure}[htbp]
 	\centering
@@ -20,9 +21,9 @@ Instead of the lookup table our solver will have to try every move sequence insi
 	\label{fig:kociembaFlow}
 \end{figure}
 
-The optimal solver's approach to solving the \rubik{} is trying every move sequence not tried so far and if the cube is inside $H$ it will start using only $A$ moves. Every time a shorter move sequence is found it is saved.
+The optimal solver's approach to solving the \rubik{} is trying every move sequence not tried so far. If the cube is inside $H$ it will start using only $A$ moves. Every time a shorter move sequence is found it is saved.
 
-	%\input{input/implementation/kociembaImplement/methodSolve}
+	\input{input/implementation/kociembaImplement/methodSolve}
 	\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
 
 \myTail{This chapter has shown how we have implemented Kociemba's optimal solver, with descriptions of key points of the source code.}
