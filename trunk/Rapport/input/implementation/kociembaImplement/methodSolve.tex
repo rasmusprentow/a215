@@ -1,6 +1,6 @@
 \section{The Solving Method}
 \label{sec:kSolve}
-The method named \vr{solve} (see code snippet \ref{src:kociemba}) acts like a main routine for the solving mechanism. By calling this method kociembas algorithm will be applied onto the \rubik{}. 
+The method named \vr{solve} (see code snippet \ref{src:kociemba}) acts like a main routine for the solving mechanism. By calling this method kociemba's algorithm will be applied onto the \rubik{}. 
 It start with initializing five variables; 
 \begin{itemize}
 \item an array \vr{result} which will contain the final move sequence.
@@ -38,7 +38,7 @@ The program start with the \vr{solveFromH} method to test if the cube is in \m{H
 
 Thereafter it tests if \vr{d + c.length} is lower than \vr{l}. 
 If that is true, \vr{l} will be set equal to the sum of \vr{d + c.length} and the \vr{result} array will be initialized with the size \vr{l}. 
-In the \vr{result} array the move sequence \vr{b} and the movesequence \vr{c} is added and the console will print the current \vr{result} and the time it took in seconds.
+In the \vr{result} array the move sequence \vr{b} and the move sequence \vr{c} is added and the console will print the current \vr{result} and the time it took in seconds.
 
 After the method has tested if \vr{d + c.length < l} the method will permute the \rubik{} back with the inverse of the last move. When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called. See section \ref{sec:increaseWithSNotEndingWithA}.
 
