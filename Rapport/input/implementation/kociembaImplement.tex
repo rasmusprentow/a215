@@ -10,7 +10,7 @@ An $A$ move can be defined using 4 bits.
 The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
 To calculate the size of a lookup table containing the move sequence it is just a matter of multiplying the size of one move with the number of moves in a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve the \rubik{} inside $H$ would be: $987$ GB, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
+The size of a lookup table containing every move sequences to solve the \rubik{} inside $H$ would be: $987$ GB \ref{chap:maple}, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
 
 Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest length. A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
 
