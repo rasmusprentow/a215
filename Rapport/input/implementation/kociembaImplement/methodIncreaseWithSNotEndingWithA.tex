@@ -8,8 +8,8 @@ The variable \textit{i} is used to keep track of where in the move sequence a mo
 
 The last move performed on the cube can never be a move from the group A (maaske referance til der hvor det staar).
 At first the method test if it is working with the last move, if this is the case then a do-while loop will be executed.
-Inside this loop the parameter move sequence will be updated with a move from S, but the condition in the loop is that it shall run while the enumset A contains the new updated move.
-When a move not in A is found, then the loop is ended.
+Inside this loop the parameter move sequence will be updated with a move from textit{S}, but the condition in the loop is that it shall run while the enumset \textit{A} contains the new updated move.
+When a move not in \textit{A} is found, then the loop is ended.
 
 \begin{verbatim}
 if (i == length - 1) {
@@ -33,7 +33,7 @@ return;
 
 When the method tries to increase the move, it will at some point reach the end of the enumset with moves.
 When this occurs an \textit{ArrayIndexOutOfBoundsException} will be thrown, this exception is caught in a try-catch.
-If the exception is caught then the last place in the move sequence array will be set equal to the move F.
+If the exception is caught then the last place in the move sequence array will be set equal to the move textit{F}.
 After this the counter variable \textit{i} will be decremented.
 Then the method will call itself, and after it has increased the second last move it will \textit{return} and end the method.
 
@@ -45,41 +45,13 @@ return;
 \end{verbatim}
 
 All this code are executed if and only if the first condition is true.
-If it is not true, then the method will start increasing the current move with a S move.
+If it is false, then the method will start increasing the current move with a textit{S} move.
+This is done the same way as above, except there is no do-while loop around it since we are interested in all the moves in textit{S}.
 
+When the method tests if two moves are the same, just as it did before if the first condition was true.
+It will now test if all the moves from the current position \textit{i} to the \textit{length}.
+This is done with a for-loop that count every step, and the same code snippet that tested if they were on the same face.
 
-\begin{verbatim}
-
-		} else {
-			try {
-				moveSequence[i] = (MoveButtons)S.toArray()[moveSequence[i].ordinal() + 1];
-				for (int j = i ; j < length; j++) {
-					try {
-						if(isSameFace(moveSequence[j], moveSequence[j-1])) {
-							increaseWithSNotEndingWithA(moveSequence, j);
-							return;
-						} else {
-							Cube.permute(cube, moveSequence[j]);
-						}
-					} catch (ArrayIndexOutOfBoundsException e2) {
-						Cube.permute(cube, moveSequence[j]);
-					}
-				}
-				return; 
-			} catch (ArrayIndexOutOfBoundsException e) {
-				moveSequence[i] = U;
-				i--;
-				try {
-					Cube.permute(cube, moveSequence[i].invert());
-					//System.out.println(moveSequence[i]);
-					moveSequence[i].invert();
-				} catch (ArrayIndexOutOfBoundsException e4) {
-					throw new UnableToIncreaseMoveSequenceException();
-				}
-				increaseWithSNotEndingWithA(moveSequence, i);
-				return;
-			}
-		}
-	}
-	
-\end{verbatim}
+Again we have been able to reuse the same code snippet.
+When the method gets to the end of the enumset S, it will set the move to the first move in S.
+This is done with the same code as before, except this time it sets the move to \textit{U}.
