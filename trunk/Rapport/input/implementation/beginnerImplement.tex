@@ -47,4 +47,12 @@ This algorithm is used in the second step of the beginner's algorithm. It rotate
 \input{input/implementation/beginnersAlg/step7}
 
 \section{Twist shortening}
-The implementation of the beginners algorithm is not the most efficient twist wise, so in order to reduce the amount of twist used can easily be reduced. Based on the group theory (ref) it is known that some moves can be reduced. This is inverse moves and  three or two equal moves  in a row. e.g.  the twists U U U is equivalent to U'. Also U' and U are each others inverses and are equivalent to doing nothing. 
+As mentioned before our implementation of the beginner's algorithm is not as efficient as it can be. We can however take some steps towards improving its efficiency. One of these steps is removing unnecessary moves and replacing a move sequence with a shorter move sequence, which give the same result.
+
+An unnecessary move sequence can be performing a twist and just after that twist perform its inverse move. e.g. performing \m{U U'} or \m{U' U}.
+According to the theory of groups BLA BLA BLA.
+
+It was necessary to be able to shorten the twists generally, so any move sequence can not be replaced with a shorter one in our program.
+An example of replacing a move sequence with a shorter one generally is replacing three of the same type of move with a single inverse move of that type. e.g. \m{U U U} also noted as \m{U2 U} or \m{U U2} can be replaced with a single inverse move \m{U'}. This is also described in the group theory chapter BLA BLA BLA.
+
+%Mangler referencer ved BLA BLA BLA.
