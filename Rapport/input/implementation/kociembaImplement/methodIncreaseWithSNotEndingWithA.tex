@@ -31,7 +31,7 @@ if (i == length - 1) {
 		} catch (ArrayIndexOutOfBoundsException e4) {
 			throw new UnableToIncreaseMoveSequenceException();
 		}
-			increaseWithSNotEndingWithA(moveSequence, i);
+		increaseWithSNotEndingWithA(moveSequence, i);
 		return;
 	}
 }
@@ -48,9 +48,9 @@ When the \rubik{} has been permuted it will \vr{return} and the method will end.
 
 The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
 When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}, this exception is caught in a \textbf{try-catch}.
-If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}).
-After this the counter variable \vr{i} will be decremented.
-Then the method will call itself, and after it has increased the second last move it will \textit{return} and end the method.
+If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
+Now the counter variable \vr{i} will be decremented and the method will call itself.
+After it has increased the second last move it will \vr{return} and end the method.
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{The definition of the enumsets S, A, and notA.}, label=src:enumset]
 private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2, B, BP, B2, L, LP, L2, R, RP, R2);
@@ -59,13 +59,16 @@ private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 \end{lstlisting}
 
 All this code are executed if and only if the first condition is true.
-If it is false, then the method will start increasing the current move with a textit{S} move.
-This is done the same way as above, except there is no do-while loop around it since we are interested in all the moves in textit{S}.
+If it is false, then the method will start increasing the current move with a \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
+This is done the same way as above, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
 
 When the method tests if two moves are the same, just as it did before if the first condition was true.
-It will now test if all the moves from the current position \textit{i} to the \textit{length}.
-This is done with a for-loop that count every step, and the same code snippet that tested if they were on the same face.
+It will now test if the current move and the prior move is on the same face.
+This is done with a \textbf{for} loop that counts every step from \vr{i} to the \vr{length} of the move sequence.
 
-Again we have been able to reuse the same code snippet.
-When the method gets to the end of the enumset S, it will set the move to the first move in S.
-This is done with the same code as before, except this time it sets the move to \textit{U}.
+We have been able to reuse the same code snippet.
+When the method gets to the end of the enumset \vr{S}, it will set the move to the first move in \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
+This is done with the same code as before, except this time it sets the move to \m{U}.
+
+There is a similar method named \vr{increaseWithA} that uses the same code.
+The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
