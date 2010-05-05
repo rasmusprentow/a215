@@ -4,7 +4,7 @@ The upper bound of the \rubik{} is the lowest number of twists needed to solve t
 \section{Set Solver}
 The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube but a whole set of cubes at the time as the name suggests. This means that it solves approximately 19.5 milliard cubes at a time.
 The set solver does this by finding all the move sequences of a relabeled cube of the distance $d$ that transforms the cube into $H$. 
-The algorithm the set solver consists of i described in pseudo code below\ref{alg:setSolver}.%All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to $H$ has been found.
+The algorithm the set solver consists of i described in pseudo code below \ref{alg:setSolver}.%All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to $H$ has been found.
 
 \begin{algorithm}[!h]                     
 \caption{Set Solver \cite{rokicki09}}          
@@ -64,5 +64,5 @@ The progression greatly accelerated when that set solver proved the first upper 
 
 After this the process of lowering the bound sped up, not long after they proved the upper bound of 24 and 23. As the upper bound is lowered they need to solve more and more sets to ensure that it is the upper bound, and they needed to test almost 27000 and 180000 sets for 24 and 23. 
 
-The newest upper bound is on 22 moves and was proved in 2009 (KILDE med tidspunkt på!!!). To prove this they needed to compute 1,265,326 different sets. At the moment they have not proven that the upper bound can be 21, but the computer farm is currently working on it, and they expect that it is possible to lower the upper bound to 20. This means that any arbitrary \rubik{} could be solved in just 20 moves.
+The newest upper bound is on 22 moves and was proved in 2009 (KILDE med tidspunkt pÃ‚!!!). To prove this they needed to compute 1,265,326 different sets. At the moment they have not proven that the upper bound can be 21, but the computer farm is currently working on it, and they expect that it is possible to lower the upper bound to 20. This means that any arbitrary \rubik{} could be solved in just 20 moves.
  
