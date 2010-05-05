@@ -10,6 +10,8 @@ The implementation uses several algorithms which all are named algorithm X, wher
 
 Most of them contains a switch/case statement which is dependent on some input specified for each algorithm. In all cases this is based on the point of view. Normally a human will simply rotate the whole \cube{} and perform the same algorithm, but we found it easier simply to define the algorithms from the different locations.
 
+Here is an example of the source code of an algorithm used in the program.
+
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{This is algorithm 3, which will orientate the corners correctly. The for-loop is only for adding the moves to the console.}, label=src:beginners, float=htb]
 private void algorithm3(CornerPos p){
 	MoveButtons[] moves;
@@ -34,7 +36,7 @@ private void algorithm3(CornerPos p){
 	}
 \end{lstlisting}
 
-This algorithm takes a corner position and based on that it knows which type of moves that needs to be applied. The Cube object has a property permute which allows for several moves to be applied at the same time. The \textit{MoveButtons} type is a Enumeration which contains the buttons used in the GUI. The same enumeration is used to determine moves. Even though this seems confusing it proved quite worthwhile, since it allows for some smart maneuvers. 
+This algorithm is used in the second step of the beginner's algorithm. It rotates a corner \cpiece{} which is in its correct orientation. Which corner that is rotated is based on which is input. 
 
 \input{input/implementation/beginnersAlg/step1}
 \input{input/implementation/beginnersAlg/step2}
