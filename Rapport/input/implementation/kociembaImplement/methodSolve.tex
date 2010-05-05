@@ -1,15 +1,14 @@
 \section{Method Solve}
-
-
-The method \textit{solve} connects all the submethods into one big method that apply Kociemba's algorithm onto the \rubik{}. 
+\label{sec:kSolve}
+The method \vr{solve} connects all the submethods into one big method that apply Kociemba's algorithm onto the \rubik{}. 
 It start with initializing five variables; 
-a \textit{result} array which will contain the final move sequence, an integer \textit{d} which will determine the search depth, 
-an integer \textit{l} which also is used to determine the search depth, 
-an array \textit{b} which will contain the move sequence until the \rubik{} enters \textit{H} 
-and an array \textit{c} which will be the move sequence after the \rubik{} has entered \textit{H}.
+an array \vr{result} which will contain the final move sequence, an integer \vr{d} which will determine the search depth, 
+an integer \vr{l} which also is used to determine the search depth, 
+an array \vr{b} which will contain the move sequence until the \rubik{} enters \m{H} 
+and an array \vr{c} which will be the move sequence after the \rubik{} has entered \m{H}.
 %evt sætte de 5 variabler i punktform??
 
-\begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the code to kociemba's optimal solver}, label=src:kociemba]
+\begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in kociemba's optimal solver}, label=src:kociemba]
 try {
 	c = solveFromH(l - d);
 	if (d + c.length < l) {
@@ -32,58 +31,13 @@ try {
 } catch (InvalidCube e) {}
 \end{lstlisting}
 
-\begin{verbatim}
-			
-			try {
-				while (true) {
-					try {
-						c = solveFromH(l - d);
-\end{verbatim}
-The program start with The \textit{solveFromH} method test if the cube is in H. If that is the case it will start solving the cube with \textit{U} and \textit{D} twists.
+The program start with the \vr{solveFromH} method to test if the cube is in \m{H}. The method \vr{solveFromH} is called with a parameter, which determines how deep it will search. If the \rubik{} is in \m{H} then the method will start solving it with \m{A} moves.
 
-\begin{verbatim}
-						if (d + c.length < l) {
-							l = d + c.length;
-							result = new MoveButtons[l];
-							output.addTextln("The solutions of the length " + l + ". The solution is:");
-							int j = 0;
-							for ( ; j < d; j++) {
-								result[j] = b[j];
-								output.addText(b[j] + " ");
-							}
-							for (int k = 0 ; k < c.length; k++,j++) {
-								result[j] = c[k];
-								output.addText(c[k] + " ");
-							}
-							output.addTextln("");
-							output.addTextln("Time spend: " + ((curTime - startTime)/1000) + " seconds");
-						}
-\end{verbatim}
-Thereafter it test if the length \textit{d} + \textit{c}'s length is lower than the length of \textit{l}. 
-If that is true \textit{l} will be set as the product of \textit{d} + \textit{c} size and the result array will be initialized with \textit{l}. 
-In The \textit{result} array the move sequence \textit{b} and the movesequence \textit{c} is added and the console will print a solution and the time it took in seconds.
+Thereafter it tests if \vr{d + c.length} is lower than \vr{l}. 
+If that is true, \vr{l} will be set equal to the sum of \vr{d + c.length} and the \vr{result} array will be initialized with the size \vr{l}. 
+In the \vr{result} array the move sequence \vr{b} and the movesequence \vr{c} is added and the console will print the current \vr{result} and the time it took in seconds.
 
-\begin{verbatim}
-					} catch (InvalidCube e) {}
-					try {
-						Cube.permute(cube, b[d-1].invert());
-						b[d-1].invert();
-					} catch (ArrayIndexOutOfBoundsException e) {}
+After the method has tested if \vr{d + c.length < l} the method will permute the \rubik{} back with the inverse of the last move. When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called. See section \ref{sec:increaseWithSNotEndingWithA}.
 
-					increaseWithSNotEndingWithA(b, d-1);
-					
-\end{verbatim}
-After the program has tested if(d + c.length < l) the program will permute the cube back by the lenght of d and start the \textit{increaseWithSNotEndingWithA} method.
-
-\begin{verbatim}
-			}
-			} catch (UnableToIncreaseMoveSequenceException e) {}
-
-			d++;
-		}
-		return result;
-	}
-\end{verbatim}
-
-After the  \textit{increaseWithSNotEndingWithA} method the program counts the \textit{d} integer up by one. 
-When the program is unable to find a solution length shorter than the last solution it will return the \textit{result} array.
+When the method \vr{increaseWithSNotEndingWithA} throws an exception of the type \vr{UnableToIncreaseMoveSequenceException} the method increments \vr{d}. 
+When \vr{d} is incremented to \vr{l} the method will return the \vr{result} array.
