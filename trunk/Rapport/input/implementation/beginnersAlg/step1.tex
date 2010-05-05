@@ -1,7 +1,7 @@
 \section{Step 1 -- getting the cross}
 This step will get the first layer cross, this equals fitting and orientating of the edges in the yellow face. 
 The step is generally described in subsection \ref{sub:step1}.
-First the program takes the edge \cubie{} in \cubicle{} P1S0.
+First the program takes the edge \cubie{} in \cubicle{} \vr{P1S0}.
 Then the question our program needs to ask is whether the edge \cpiece{}s already are positioned correctly.
 If that is the case and the edge \cpiece{} is also oriented correctly, the program proceeds to the next edge \cpiece{}.
 If not correctly oriented, an algorithm is performed, which changes the edge piece's orientation without ruining other possibly correctly positioned edge \cpiece{}s. 
@@ -14,11 +14,11 @@ If the edge \cpiece{} is not in the first layer it can either be in the opposite
 Is the edge \cpiece{}  positioned in the second layer an algorithm is performed which moves the edge \cpiece{}  to the white layer (called \textit{algorithm 2}), which is the opposite of the layer in which we make the cross.
 
 Now that the edge \cpiece{}  is in white layer it needs to be moved to the position directly above where it is correctly positioned. 
-The program does this by \twist{}ing the up face once (known as an U \twist{}) and checks if the edge \cpiece{} is above it's correct position.
+The program does this by applying a \m{U} \twist{} and checks if the edge \cpiece{} is above it's correct position.
 The edge piece is now positioned in two faces -- the white face and the face which has the same color as the edge  \cpiece{}'s second \facelet{} i.e. the \facelet{} that is not yellow.
 In order to position the edge \cpiece{} that face is twisted twice.
 The edge \cpiece{} is now in it's correct position, and if it is oriented correctly the program moves on to another edge  \cpiece{} .
-If the edge \cpiece{} is oriented incorrectly \textit{algorithm 1} is performed. If more edge  \cpiece{}s needs to be positioned or oriented correctly the program will continue with the same method until the cross is finished in which case the program moves on to the next step. See figure \ref{fig:FlCrossFlow}.
+If the edge \cpiece{} is oriented incorrectly \vr{algorithm 1} is performed. If more edge  \cpiece{}s needs to be positioned or oriented correctly the program will continue with the same method until the cross is finished in which case the program moves on to the next step. See figure \ref{fig:FlCrossFlow}.
 
 \begin{figure}[htbp]
 	\centering
