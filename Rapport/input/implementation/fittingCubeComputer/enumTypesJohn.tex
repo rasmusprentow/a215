@@ -5,7 +5,7 @@ One containing the possible positions and one defining the possible moves and on
 
 \subsection{Moves}
 The enumeration class that contains all possible moves actually contains a property for each button in the GUI. Confusing as this might seem it actually saved a lot of time and worked quite well. Of course the permute method of the cube can be called with a button which is not a move and cause an error. This is not a robust program but a proof-of-concept. 
-The moves are named from a human perspective where the ``'''(prime) is replaces by a p. I. g. \m{U'}Â is UP.  
+The moves are named from a human perspective where the prime (\m{'}) is replaces by a ``P'', e.g. \m{U'} is \vr{UP}.
 
 \subsection{Faces}
 The different types of faces is well know by human by its color.
@@ -17,6 +17,6 @@ Its opposite, the yellow face, is know as \textit{primary\_1}.
 
 \subsection{Positions}
 The different positions is defined based on the faces. There are two types of positions; corners and edges.
-An edge position could be named P1S0; which means \textit{primary\_1} and \textit{secondary\_0}.
+An edge position could be named \vr{P1S0}; which means \textit{primary\_1} and \textit{secondary\_0}.
 In human terms this will be the down front edge.
-Corners have three faces and the corner immediately to the right of the edge would be P1S0T1, which refers to the corner on the \textit{primary\_1}, \textit{secondary\_0}, and \textit{tertiary\_1} faces.
+Corners have three faces and the corner immediately to the right of the edge would be \vr{P1S0T1}, which refers to the corner on the \textit{primary\_1}, \textit{secondary\_0}, and \textit{tertiary\_1} faces.
