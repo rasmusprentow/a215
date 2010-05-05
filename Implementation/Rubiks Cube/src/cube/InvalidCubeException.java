@@ -1,27 +1,27 @@
 package cube;
 
-public class InvalidCube extends Exception {
+public class InvalidCubeException extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3345412587734438071L;
 
-	public InvalidCube() {
+	public InvalidCubeException() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public InvalidCube(String message) {
+	public InvalidCubeException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public InvalidCube(Throwable cause) {
+	public InvalidCubeException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public InvalidCube(String message, Throwable cause) {
+	public InvalidCubeException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}

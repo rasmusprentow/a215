@@ -77,7 +77,7 @@ public class Kociemba {
 							System.out.println();
 						}
 
-					} catch (InvalidCube e) {
+					} catch (InvalidCubeException e) {
 						//System.out.println("Not in H!");
 					}
 /*
@@ -158,10 +158,10 @@ public class Kociemba {
 		return moveSequence;
 	}
 
-	private MoveButtons[] solveFromH(int maxAMoves) throws InvalidCube {
+	private MoveButtons[] solveFromH(int maxAMoves) throws InvalidCubeException {
 
 		if (!cube.isInH()) {
-			throw new InvalidCube("The cube is not in H!!");
+			throw new InvalidCubeException("The cube is not in H!!");
 		} 
 		if (cube.isSolvedInsideH()) {
 			//System.out.println("One solution found! With 0 A moves");
