@@ -5,9 +5,32 @@ The method \textit{solve} connects all the submethods into one big method that a
 It start with initializing five variables; 
 a \textit{result} array which will contain the final move sequence, an integer \textit{d} which will determine the search depth, 
 an integer \textit{l} which also is used to determine the search depth, 
-an array \textit{b} which will contain the move sequence until the \rubik{} enters H 
-and an array \textit{c} which will be the move sequence after the \rubik{} has entered H.
+an array \textit{b} which will contain the move sequence until the \rubik{} enters \textit{H} 
+and an array \textit{c} which will be the move sequence after the \rubik{} has entered \textit{H}.
 %evt sætte de 5 variabler i punktform??
+
+\begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the code to kociemba's optimal solver}, label=src:kociemba]
+try {
+	c = solveFromH(l - d);
+	if (d + c.length < l) {
+		curTime = System.currentTimeMillis();
+		l = d + c.length;
+		result = new MoveButtons[l];
+		output.addTextln("The solutions of the length " + l + ". The solution is:");
+		int j = 0;
+		for ( ; j < d; j++) {
+			result[j] = b[j];
+			output.addText(b[j] + " ");
+		}
+		for (int k = 0 ; k < c.length; k++,j++) {
+			result[j] = c[k];
+			output.addText(c[k] + " ");
+		}
+		output.addTextln("");
+		output.addTextln("Time spend: " + ((curTime - startTime)/1000) + " seconds");
+	}
+} catch (InvalidCube e) {}
+\end{lstlisting}
 
 \begin{verbatim}
 			
