@@ -1,7 +1,7 @@
 \section{Class Interaction}
 In this section the different classes of the \rubik{} and their interaction with each other will be determined.
 \subsection{The Cube}
-The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the \face{}s and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubicle{}s are then put into a \face{} by its constructor. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary.
+The cube class creates the 20 \cubicle{}s in which the \cpiece{}s can be positioned. Furthermore the cube class creates the \face{}s and \cubie{}s. The class also gives each \cpiece{} its \facelet{}s. The \cubicle{}s are then put into a \face{} by its constructor. The cube class creates six \face{}s -- two primary, two secondary and two tertiary faces. Each type of \face{}s are placed opposite to each other. e.g. the up and down faces are both primary. The cube has a static method, \vr{permute}, it has two arguments, a cube and a sequence of \twist{}. The \twist{}s are applied to the cube.
 
 \subsection{The Face}
 The \face{} class constructor takes eight cubicles (four corners and four edges) and position them in a clockwise order. Furthermore the \face{} class constructor requires a \facelet{} which it will use as center \facelet{}. In addition the \face{} class implements two methods which twist the face clockwise or counterclockwise -- namely \textit{cwTwist} and \textit{ccwTwist} respectively.
