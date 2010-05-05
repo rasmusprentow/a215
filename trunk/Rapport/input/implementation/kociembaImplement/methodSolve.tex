@@ -1,6 +1,6 @@
 \section{The Solving Method}
 \label{sec:kSolve}
-The method named \vr{solve} (see \ref{src:kociemba}) acts like a main routine for the solving mechanism. By calling this method kociembasalgortihm will be applied onto the \rubik{}. 
+The method named \vr{solve} (see code snippet \ref{src:kociemba}) acts like a main routine for the solving mechanism. By calling this method kociembas algorithm will be applied onto the \rubik{}. 
 It start with initializing five variables; 
 \begin{itemize}
 \item an array \vr{result} which will contain the final move sequence.
@@ -8,7 +8,8 @@ It start with initializing five variables;
 \item an integer \vr{l} which also is used to determine the search depth.
 \item an array \vr{b} which will contain the move sequence until the \rubik{} enters \m{H}.
 \item an array \vr{c} which will be the move sequence after the \rubik{} has entered \m{H}.
-%evt sætte de 5 variabler i punktform??
+\end{itemize}
+
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the solve method of kociemba's optimal solver}, label=src:kociemba]
 try {
