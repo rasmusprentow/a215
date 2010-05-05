@@ -4,7 +4,7 @@
 The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing is differing from the original at one point:
 We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
 
-Because of this we have chosen not to have a lookup table since it would have to contain 20 milliard move sequences, which is impossible on todays computers considering that the lookup table only containing the length would have a size of 4 GB \cite{cubeExplorer} and a table containing the move sequences would have to be much larger.
+Because of this we have chosen not to have a lookup table since it would have to contain 20 milliard move sequences, which is impossible on todays computers. Considering that the lookup table only containing the length would have a size of 4 GB \cite{cubeExplorer} and a table containing the move sequences would have to be much larger.
 
 An $A$ move can be defined using 4 bits.
 The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
