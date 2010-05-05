@@ -31,12 +31,12 @@ try {
 		output.addTextln("");
 		output.addTextln("Time spend: " + ((curTime - startTime)/1000) + " seconds");
 	}
-} catch (InvalidCube e) {}
+} catch (InvalidCubeException e) {}
 \end{lstlisting}
 
-The program start with the \vr{solveFromH} method to test if the cube is in \m{H}. The method \vr{solveFromH} is called with a parameter, which determines how deep it will search. If the \rubik{} is in \m{H} then the method will start solving it with \m{A} moves.
+The \vr{solve} method starts with the \vr{solveFromH} method to test if the cube is in \m{H}. The method \vr{solveFromH} is called with a parameter, which determines how deep it will search. If the \rubik{} is in \m{H} then the method will start solving it with \m{A} moves.
 
-Thereafter it tests if \vr{d + c.length} is lower than \vr{l}. 
+Thereafter it tests if \vr{d + c.length} > \vr{l}. 
 If that is true, \vr{l} will be set equal to the sum of \vr{d + c.length} and the \vr{result} array will be initialized with the size \vr{l}. 
 In the \vr{result} array the move sequence \vr{b} and the move sequence \vr{c} is added and the console will print the current \vr{result} and the time it took in seconds.
 
