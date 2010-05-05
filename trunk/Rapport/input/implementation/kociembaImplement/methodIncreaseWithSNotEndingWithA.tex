@@ -37,36 +37,26 @@ if (i == length - 1) {
 }
 \end{lstlisting}
 
-The last move performed on the cube can never be a move from the group A (maaske referance til der hvor det staar).
-At first the method test if it is working with the last move, if this is the case then a do-while loop will be executed.
-Inside this loop the parameter move sequence will be updated with a move from textit{S}, but the condition in the loop is that it shall run while the enumset \textit{A} contains the new updated move.
-When a move not in \textit{A} is found, then the loop is ended.
+The last move performed on the cube can never be an \m{A} move since \m{A} is a closed group, see section \ref{sec:subgroup}.
+At first the method tests if it is working with the last move, if this is the case then a \textbf{do-while} loop will be executed.
+Inside this loop the parameter \vr{moveSequence} will be updated with a move from \m{S}, but the condition in the loop is that it must run while the enumset \m{A} contains the new updated move.
+When a move not in \m{A} is found, then the loop is ended.
 
-When the loop is over a new method is called, \textit{isSameFace} this method tests if the new move is the same as the move before this.
-If they are the same, then the method will call itself else it will permute the cube with the current move sequence.
-When the \rubik{} has been permuted it will \textit{return} and method will end.
+After the loop is over a new method is called, \vr{isSameFace} this method tests if the new move is the same as the move before this.
+If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move sequence.
+When the \rubik{} has been permuted it will \vr{return} and the method will end.
 
-\begin{verbatim}
-if(isSameFace(moveSequence[i], moveSequence[i-1])) {
-	increaseWithSNotEndingWithA(moveSequence, i);
-} else {
-	Cube.permute(cube, moveSequence[i]);
-}
-return;
-\end{verbatim}
-
-When the method tries to increase the move, it will at some point reach the end of the enumset with moves.
-When this occurs an \textit{ArrayIndexOutOfBoundsException} will be thrown, this exception is caught in a try-catch.
-If the exception is caught then the last place in the move sequence array will be set equal to the move textit{F}.
-After this the counter variable \textit{i} will be decremented.
+The method increments the move, and at some point it will reach the end of the enumset.
+When this occurs an \vr{ArrayIndexOutOfBoundsException} will be thrown, this exception is caught in a \textbf{try-catch}.
+If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}.
+After this the counter variable \vr{i} will be decremented.
 Then the method will call itself, and after it has increased the second last move it will \textit{return} and end the method.
 
-\begin{verbatim}
-moveSequence[i] = F;
-i--;
-increaseWithSNotEndingWithA(moveSequence, i);
-return;
-\end{verbatim}
+\begin{lstlisting}[style=sourceCode, caption=\myCaption{The definition of the enumsets S, A, and notA.}, label=src:enumset]
+private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2, B, BP, B2, L, LP, L2, R, RP, R2);
+private EnumSet<MoveButtons> A = EnumSet.of(U, UP ,U2, D, DP, D2, F2, B2, L2, R2);
+private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
+\end{lstlisting}
 
 All this code are executed if and only if the first condition is true.
 If it is false, then the method will start increasing the current move with a textit{S} move.
