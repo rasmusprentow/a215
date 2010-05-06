@@ -1,6 +1,6 @@
 \section{The Move Incrementing Methods}
 \label{sec:increaseWithSNotEndingWithA}
-The method named \vr{increaseWithSNotEndingWithA} (see code snippet \ref{src:kociemba2}) increments a move sequence.
+The method named \vr{increaseWithSNotEndingWithA} (see code snippet \ref{src:kociemba2} for a key point of the method) increments a move sequence.
 When the method is called it takes two parameters, a move sequence of the type MoveButtons and an integer.
 As the method initializes it creates two variables of the type integer, \vr{length} and \vr{i}.
 The variable \vr{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \vr{length} will be used.
@@ -37,20 +37,20 @@ if (i == length - 1) {
 }
 \end{lstlisting}
 
-The last move performed on the cube can never be an \m{A} move since \m{A} is a closed group, see section \ref{sec:subgroup}.
+The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group, see section \ref{sec:subgroup}.
 At first the method tests if it is working with the last move, if this is the case then a \textbf{do-while} loop will be executed.
 Inside this loop the parameter \vr{moveSequence} will be updated with a move from \m{S}, but the condition in the loop is that it must run while the enumset \m{A} contains the new updated move.
 When a move not in \m{A} is found, then the loop is ended.
 
-After the loop is over a new method is called, \vr{isSameFace} this method tests if the new move is the same as the move before this.
-If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move sequence.
-When the \rubik{} has been permuted it will \vr{return} and the method will end.
+After the loop has run a new method is called, \vr{isSameFace}, this method tests if the new move is the same as the move before this.
+If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move.
+When the \rubik{} has been permuted it will return and the method will end.
 
 The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
 When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}, this exception is caught in a \textbf{try-catch}.
 If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
 Now the counter variable \vr{i} will be decremented and the method will call itself.
-After it has increased the second last move it will \vr{return} and end the method.
+After it has increased the second last move it will return and end the method.
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{The definition of the enumsets S, A, and notA.}, label=src:enumset]
 private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2, B, BP, B2, L, LP, L2, R, RP, R2);
@@ -58,17 +58,18 @@ private EnumSet<MoveButtons> A = EnumSet.of(U, UP ,U2, D, DP, D2, F2, B2, L2, R2
 private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 \end{lstlisting}
 
-All this code are executed if and only if the first condition is true.
-If it is false, then the method will start increasing the current move with a \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
+All this code is executed if and only if the first condition is true (\vr(i==length-1)).
+If it is false, then the method will start increasing the current move with an \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
 This is done the same way as above, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
 
 When the method tests if two moves are the same, just as it did before if the first condition was true.
 It will now test if the current move and the prior move is on the same face.
 This is done with a \textbf{for} loop that counts every step from \vr{i} to the \vr{length} of the move sequence.
 
-We have been able to reuse the same code snippet.
+%We have been able to reuse the same code snippet.
 When the method gets to the end of the enumset \vr{S}, it will set the move to the first move in \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
 This is done with the same code as before, except this time it sets the move to \m{U}.
 
-There is a similar method named \vr{increaseWithA} that uses the same code.
+There is a similar method named \vr{increaseWithA} that uses a very similar code.
 The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
+It uses a \textbf(do-while) to increase the move \vr{moveSequence[i]} and then increas again if \m{A} conatians this move.
