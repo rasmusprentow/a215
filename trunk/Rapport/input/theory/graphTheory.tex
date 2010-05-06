@@ -80,7 +80,7 @@ It is practically impossible to draw this graph. Therefore the graph will be exp
 \subsection{The Middle Movement Graph}
 \label{sub:middleMoveGraph}
 This graph is a \rubik{} graph consisting of only the moves that \twist{} the middle sections. 
-This is Rm2 Fm2 Um2. Note: Rm2 = R2 L2.  This graph is fairly small, since it only consists of eight vertices and 12 edges. See figure \ref{fig:graphMiddleSlice2}. \cite[pp. 158-167]{Rubik87}
+This is \m{Rm2 Fm2 Um2}. Note: \m{Rm2} $=$ \m{R2 L2}.  This graph is fairly small, since it only consists of eight vertices and 12 edges. See figure \ref{fig:graphMiddleSlice2}. \cite[pp. 158-167]{Rubik87}
 
 \begin{figure}[bht!]
 	\centering
@@ -89,8 +89,8 @@ This is Rm2 Fm2 Um2. Note: Rm2 = R2 L2.  This graph is fairly small, since it on
 	\label{fig:graphMiddleSlice2}
 \end{figure}
 
-Because of this graphs relatively small size the computation of the diameter is a somewhat simple task. It is possible to calculate the distance from all vertices to all other vertices, but since the graph is clearly symmetrical many calculations can be omitted. It is easy to see that the diameter must go from one corner to an opposite corner e.g. from the solved state to the pons asinorum\footnote{Pons asinorum is obtained from the solved state of a Rubik's Cube by the move sequence Rm2 Fm2 Um2.}. The diameter here is 3. 
+Because of this graphs relatively small size the computation of the diameter is a somewhat simple task. It is possible to calculate the distance from all vertices to all other vertices, but since the graph is clearly symmetrical many calculations can be omitted. It is easy to see that the diameter must go from one corner to an opposite corner e.g. from the solved state to the pons asinorum\footnote{Pons asinorum is obtained from the solved state of a Rubik's Cube by the move sequence \m{Rm2 Fm2 Um2.}}. The diameter here is 3. 
 
-In the full \rubik{} group it is believed that the analogous position to the pons asinorum, the superflip position, is the position which has the longest shortest path \cite{speedsolving.wiki}. This has however never been proven. This shortest path from the superflip to the solved position is 20\cite{rokicki09}.
+In the full \rubik{} group it is believed that the analogous position to the pons asinorum, the superflip position(see figure , is the position which has the longest shortest path \cite{speedsolving.wiki}. This has however never been proven. This shortest path from the superflip to the solved position is 20 \cite{rokicki09}. This is the known lower bound of the \cube{}.
 
 \myTail{A short general description of graph theory has been presented in this chapter along with a way to calculate the diameter of a graph. For better understanding the theory, an example on applying the theory on the Rubik's Cube has been shown.}
