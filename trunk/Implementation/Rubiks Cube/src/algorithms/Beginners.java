@@ -378,7 +378,7 @@ public class Beginners {
 			}
 			else if(cube.getECubicle(EdgePos.P0S0).getCubie() == cube.getECubie(EdgePos.P0S0) && cube.getECubicle(EdgePos.P0T1).getCubie() == cube.getECubie(EdgePos.P0T1)){
 				algorithm9(Facelet.TERTIARY_0);
-				System.out.println("Left 6");
+				
 			}
 		}
 	}
