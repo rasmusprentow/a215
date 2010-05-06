@@ -10,18 +10,18 @@ An $A$ move can be defined using 4 bits.
 The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
 To calculate the size of a lookup table containing the move sequence it is just a matter of multiplying the size of one move with the number of moves in a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve the \rubik{} inside $H$ would be: $987$ GB \ref{chap:maple}, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
+The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB \ref{chap:maple}, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
 
-Instead of the lookup table our solver will have to try every move sequence inside $H$ and find the one with the shortest length. A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
+Instead of the lookup table our solver will have to try every move sequence inside \m{H} and find the one with the shortest length. A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
 
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width = \textwidth, trim = 0mm 110mm 50mm 0mm, clip]{input/pics/kociembaFlow}
-	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver. $b$ is a move sequence variable, which takes the scrambled cube into $H$, $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside $H$, and $e$ is the depth which the $H$ solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a new shorter move sequence is found.}}
+	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver. $b$ is a move sequence variable, which takes the scrambled cube into \m{H}, $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a new shorter move sequence is found.}}
 	\label{fig:kociembaFlow}
 \end{figure}
 
-The optimal solver's approach to solving the \rubik{} is trying every move sequence not tried so far. If the cube is inside $H$ it will start using only $A$ moves. Every time a shorter move sequence is found it is saved.
+The optimal solver's approach to solving the \rubik{} is trying every move sequence not tried so far. If the cube is inside \m{H} it will start using only \m{A} moves. Every time a shorter move sequence is found it is saved.
 
 	\input{input/implementation/kociembaImplement/methodSolve}
 	\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
