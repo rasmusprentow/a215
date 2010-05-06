@@ -1,17 +1,18 @@
 \chapter{Proof of the Upper Bound}
-\myTop{The upper bound of the \rubik{} will be presented and explained in this chapter. The upper bound needs to be proven, in order for it to be recognized. That is why, how the current upper bound came to be is explained.}
+\myTop{The upper bound of the \rubik{} will be presented and explained in this chapter. The upper bound needs to be proven, in order for it to be recognized.
+That is why this chapter is essential for this project.}
 The upper bound of the \rubik{} is the lowest number of twists needed to solve the \rubik{} in the worst case proven so far. Such proofs have been published several times, and the upper bound has been lowered each time. A major breakthrough was when Thistlethwaite's algorithm was proven to be able to solve an arbitrary cube in 52 twists or less \cite{jaapthistle}. Since then a lot of progress has been made in the field. This section describes this progression.
 
 \section{Set Solver}
 The algorithm used to prove the current lowest upper bound is known as a set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube but a whole set of cubes at the time as the name suggests. This means that it solves approximately 19.5 milliard cubes at a time.
-The set solver does this by finding all the move sequences of a relabeled cube of the distance $d$ that transforms the cube into $H$. 
-The algorithm the set solver consists of i described in pseudo code below \ref{alg:setSolver}.%All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to $H$ has been found.
+The set solver does this by finding all the move sequences of a relabeled cube of the distance $d$ that transforms the cube into \m{H}. 
+The algorithm the set solver consists of i described in pseudo code below \ref{alg:setSolver}.%All the move sequences to transform the unlabeled cube to $e$ is in a database so it is fast to find the shortest move sequence, once the move sequence to \m{H} has been found.
 
 \begin{algorithm}[!h]                     
 \caption{Set Solver \cite{rokicki09}}          
 \label{alg:setSolver}        
 \begin{algorithmic}[1]
-\STATE {$f=null$}
+\STATE {$f=\oslash$}
 \STATE {$d=0$}
 \WHILE {true} 
 		\IF {$d \leq m$}
@@ -33,21 +34,22 @@ The algorithm the set solver consists of i described in pseudo code below \ref{a
 \end{algorithmic}
 \end{algorithm}
 
-First in the set solver two variables are initialized. The first one $f$ is a set that can hold all the positions of $H$ is set to an empty set. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in $H$. This distance $d$ is set to $0$.
+First in the set solver two variables are initialized. The first one \m{f} is a set that can hold all the positions of \m{H} is set to an empty set. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in \m{H}. This distance $d$ is initially set to $0$.
 
-Next the while loop is run. It will run until $d$ is returned, which is when all positions in $H$ has been found.
+Next the \textbf{while} loop is run. It will run until $d$ is returned, which is when all positions in \m{H} has been found.
 
-If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to $f$ if it is a position in $H$. $m$ is the maximum number of $S$ moves performed from the position $a$. When $m$ is equal to $m$ only $A$ moves are performed. %%%Er det godt nok nu, Alex?
+$m$ is the maximum number of \m{S} moves performed from the position $a$. When $d$ is equal to $m$ only \m{A} moves are performed.
+If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}.%%%Er det godt nok nu, Alex? Nej det er lort som altid
 For the sake of efficiency move sequences that give the exact same position more than once are not used. If a move sequence contained F F', that part would  of the move sequence would be unnecessary. 
 
-if $f$ is equal to $H$ all positions in $H$ have been found, $d$ is returned and the algorithm has finished. 
+if \m{f} is equal to \m{H} all positions in \m{H} have been found, $d$ is returned and the algorithm has finished. 
 If not $d$ is incremented by one. 
-The different $A$ moves are performed on all the current $H$ positions in $f$ and the new $H$ positions are saved in $f$.
-If $f$ contains all positions in $H$, $d$ is returned -- if not the while loop continues.
+The different \m{A} moves are performed on all the current \m{H} positions in \m{f} and the new \m{H} positions are saved in \m{f}.
+If \m{f} contains all positions in \m{H}, $d$ is returned -- if not the while loop continues.
 
 %Nyt afsnit nu?
 
-When the algorithm has finished all the different possible $H$ positions should be saved, if the maximum distance $m$ is set sufficiently high. The theoretically highest number of twists needed to transform any scrambled cube into $H$ is 12, but more positions are found in the for loop if $m$ is set higher. This is because the set solver both performs $A$ moves on a cube in $H$, which gives more $H$ positions. The set solver also performs moves that transforms a cube in $H$ to a cube not in $H$ and then back again by using $S$ moves.
+When the algorithm has finished all the different possible \m{H} positions should be saved, if the maximum distance $m$ is set sufficiently high. The theoretically highest number of twists needed to transform any scrambled cube into \m{H} is 12, but more positions are found in the for loop if $m$ is set higher. This is because the set solver both performs \m{A} moves on a cube in \m{H}, which gives more \m{H} positions. The set solver also performs moves that transforms a cube in \m{H} to a cube not in \m{H} and then back again by using \m{S} moves.
 
 %As $m$ gets higher the CPU time needed to finish the algorithm grows exponentially. 
 
@@ -59,7 +61,7 @@ This is a slow moving field, but some events have occurred in the field the last
 The reason why it is a slow process to prove the upper bound, is that there is a vast amount of different positions a \rubik{} can be in. Even with todays computer power there is simply to much data to process. This had the effect that a small group of people dedicate a lot of time to create and improve algorithms to solve arbitrary \rubik{}s. The set set solver created by Thomas Rockicki, which was described in the previous section will now be further described.
 
 %The result
-The set solver has a special way of testing the \rubik{}s. It does not solve them to the unit position $e$, instead it finds a move sequence for a subgroup of the \rubik{} this way it can solve approximately 19.5 milliard cubes at a time and not just one. The reason for this is that if you relabel an arbitrary cube, that given cube can be unlabeled to approximately 19.5 milliard different cube positions. Recall that there are approximately 19.5 milliard positions in the set $H$ and all these positions are equal to $e$ when relabeled. The same logic applies to any other given position.
+The set solver has a special way of testing the \rubik{}s. It does not solve them to the unit position $e$, instead it finds a move sequence for a subgroup of the \rubik{} this way it can solve approximately 19.5 milliard cubes at a time and not just one. The reason for this is that if you relabel an arbitrary cube, that given cube can be unlabeled to approximately 19.5 milliard different cube positions. Recall that there are approximately 19.5 milliard positions in the set \m{H} and all these positions are equal to $e$ when relabeled. The same logic applies to any other given position.
 
 The progression greatly accelerated when that set solver proved the first upper bound of 25 moves. This was done on home computers from October 2007 to March 2008. They only needed to solve 6000 sets, but after this they got contacted by John Welborn from Sony Pictures Imageworks and he offered a lot of idle computers from a computer farm to help on the project. 
 
