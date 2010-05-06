@@ -1,0 +1,8 @@
+\section{Statistic for the Beginners Algorithm}
+The twist-wise efficiency is not a primary concern in this implementation, but how twist-efficient or rather how twist-inefficient it is. 
+
+First it is necessary to determine how many moves of scrambling must be applied in order to find the worst case scenario. By computing the average for different amount of scrambles the graph quickly becomes steady at around 50 scrambles. Applying more scramble moves will not give a higher average. 
+
+By scrambling 100.000 cubes and solve them with the beginners algorithm we found an average of 151 moves. With a max of 224 moves and a minimum of 70 moves. 
+
+A peculiar note is that with one random scramble, it uses an average of 131 moves with a maximum of 155 and a minimum 94 moves. This is do to the not forward looking of the algorithm. 
