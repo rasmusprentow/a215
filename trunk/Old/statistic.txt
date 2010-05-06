@@ -1,0 +1,5 @@
+
+Scrambles: 50 Runs: 100000 in average 151 moves. 
+Max: 224 min: 70
+
+
