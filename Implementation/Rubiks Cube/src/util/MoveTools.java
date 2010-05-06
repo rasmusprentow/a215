@@ -25,7 +25,7 @@ public class MoveTools {
 	}
 
 	public static LinkedList<MoveButtons> eliminateAll(LinkedList<MoveButtons> moves){
-		System.out.println("Makes no sense");
+	
 		moves = splitList(moves);
 		moves = eliminateInverses(moves);
 		moves = eliminateQuads(moves);

@@ -88,14 +88,14 @@ public class DrawPanel extends JPanel {
 			}
 		});
 		beginnersTimer = new Timer(200, new ActionListener() {
-		
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!solvingMoves.isEmpty()){
-					
-				console.addText(solvingMoves.getFirst() + "");
-				Cube.permute(cube, solvingMoves.getFirst());
-				solvingMoves.removeFirst();
+
+					console.addText(solvingMoves.getFirst() + "");
+					Cube.permute(cube, solvingMoves.getFirst());
+					solvingMoves.removeFirst();
 				}
 				else {
 					beginnersTimer.stop();
@@ -385,7 +385,7 @@ public class DrawPanel extends JPanel {
 	public void buttonHandler(MoveButtons t){
 		if(!specialMove && moves.contains(t) && !doNotSaveNextMove){
 			startMoving();
-			
+
 			console.addText(t.toString());
 			previousMoves.add(t);
 		} else if(doNotSaveNextMove) {
@@ -479,10 +479,10 @@ public class DrawPanel extends JPanel {
 			undo();
 			break;
 		case KOCIEMBA:
-			kociemba();
-			break;
-		case KOCIEMBAV2:
 			kociembaV2();
+			break;
+		case STATISTIC:
+			statistic();
 			break;
 		case BEGINNERS:
 			beginners();
@@ -511,7 +511,7 @@ public class DrawPanel extends JPanel {
 			solvingMoves.addAll(MoveTools.eliminateAll(beginners.solve()));
 			console.addTextln(moveSequence);
 			console.addTextln("Now i solve it with these " + solvingMoves.size() + " moves:");
-			
+
 			for(MoveButtons m: moves){
 				Cube.permute(cube, m);
 			}
@@ -521,7 +521,7 @@ public class DrawPanel extends JPanel {
 			test2();
 			break;
 		case SUPERFLIP:
-	//		this.twistSequence(F, R, U2, B, L, UP, LP, U2, BP, RP, U, F2, L, R, U2, B, L, UP, LP, U2, BP, RP, U, LP, F);
+			//		this.twistSequence(F, R, U2, B, L, UP, LP, U2, BP, RP, U, F2, L, R, U2, B, L, UP, LP, U2, BP, RP, U, LP, F);
 			stopMoving();
 			moving = true;
 			console.addText("Superflip: ");
@@ -547,8 +547,8 @@ public class DrawPanel extends JPanel {
 		System.out.println();
 
 		repaint();
-		*/
-		
+		 */
+
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
 				console.addTextln("Stopping Kociemba's algorithm!");
@@ -560,34 +560,34 @@ public class DrawPanel extends JPanel {
 			}
 		} else {
 			kociembaThread = new Thread() {
-	            public void run() {
-	            	stopMoving();
-	        		console.addTextln("Solving with Kociemba's improved algorithm, please wait.");
-	        		MoveButtons[] kociembasMoveSequence;
-	                kociembasMoveSequence = kociembaV2.solve(12);
+				public void run() {
+					stopMoving();
+					console.addTextln("Solving with Kociemba's improved algorithm, please wait.");
+					MoveButtons[] kociembasMoveSequence;
+					kociembasMoveSequence = kociembaV2.solve(12);
 
-	                System.out.print("The shortest movesequence is: ");
-	                console.addTextln("The shortest movesequence is: ");
+					System.out.print("The shortest movesequence is: ");
+					console.addTextln("The shortest movesequence is: ");
 					for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
 						System.out.print(kociembasMoveSequence[i] + " ");
 						console.addText(kociembasMoveSequence[i] + " ");
 					}
 					System.out.println();
 					console.addTextln("");
-					
+
 					repaint();
 
 					kociembaThread.stop();
 					kociembaThread = null;
 
-	                //twistSequence(kociembasMoveSequence);
-	        		//stopMoving();
-	            }
-	        };
+					//twistSequence(kociembasMoveSequence);
+					//stopMoving();
+				}
+			};
 
-	        kociembaThread.start();
+			kociembaThread.start();
 		}	
-		 
+
 		return;
 	}
 
@@ -770,12 +770,12 @@ public class DrawPanel extends JPanel {
 
 		repaint();
 
-		*/
+		 */
 		if(kociembaThread != null && kociembaThread.isAlive()) {
 			try {
 				console.addTextln("Stopping Kociemba's algorithm!");
 				kociembaThread.stop();
-				
+
 				kociembaThread = null;
 			} catch (IllegalMonitorStateException e) {
 				// TODO Auto-generated catch block
@@ -783,14 +783,14 @@ public class DrawPanel extends JPanel {
 			}
 		} else {
 			kociembaThread = new Thread() {
-	            public void run() {
-	            	stopMoving();
-	        		console.addTextln("Solving with Kociemba's algorithm, please wait.");
-	        		MoveButtons[] kociembasMoveSequence;
-	                kociembasMoveSequence = kociemba.solve(12);
+				public void run() {
+					stopMoving();
+					console.addTextln("Solving with Kociemba's algorithm, please wait.");
+					MoveButtons[] kociembasMoveSequence;
+					kociembasMoveSequence = kociemba.solve(12);
 
-	                System.out.print("The shortest movesequence is: ");
-	                console.addTextln("The shortest movesequence is: ");
+					System.out.print("The shortest movesequence is: ");
+					console.addTextln("The shortest movesequence is: ");
 					for (int i = 0 ; i < kociembasMoveSequence.length; i++) {
 						System.out.print(kociembasMoveSequence[i] + " ");
 						console.addText(kociembasMoveSequence[i] + " ");
@@ -802,15 +802,15 @@ public class DrawPanel extends JPanel {
 					kociembaThread.stop();
 					kociembaThread = null;
 
-	                //twistSequence(kociembasMoveSequence);
-	        		//stopMoving();
-	            }
-	        };
+					//twistSequence(kociembasMoveSequence);
+					//stopMoving();
+				}
+			};
 
-	        kociembaThread.start();
+			kociembaThread.start();
 		}	
 
-		 
+
 		return;
 	}
 
@@ -818,6 +818,27 @@ public class DrawPanel extends JPanel {
 		MoveButtons[] seq = {U,DP,F,BP,L};
 
 		Cube.permute(cube, seq);
+
+	}
+
+	private void statistic(){
+		int base = 1000, scrambles  = 1, total = 0, max = 0, min = 0;
+
+		console.addTextln("Calculating statistics for Beginners Algorithm:");
+		for(int m = 1; m < 2; m++){
+			total = 0; max = 0; min = Integer.MAX_VALUE;
+			for(int i = 0; i < base; i++){
+				for(int j = 0; j < m; j++){
+					int moveNum = (int)(Math.random()*18);
+					Cube.permute(cube, (MoveButtons)moves.toArray()[moveNum]);
+				}
+				int size = MoveTools.eliminateAll(beginners.solve()).size();
+				if(size > max){				max = size;		}		if(size < min){				min = size;			}
+				total += size;
+
+			}
+			console.addTextln("Scrambles: " + m + " Runs: " + base + " in average " + total/base + " moves. \nMax: " + max + " min: " + min);
+		}
 
 	}
 

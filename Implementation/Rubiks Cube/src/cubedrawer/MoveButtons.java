@@ -1,7 +1,7 @@
 package cubedrawer;
 public enum MoveButtons { 
 	 U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2,
-	 SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, KOCIEMBA, KOCIEMBAV2, BEGINNERS, TEST, TEST2,
+	 SCREWDRIVER, SCRAMBLE, YOU_KNOW, UNDO, STATISTIC, KOCIEMBA, BEGINNERS, TEST, TEST2,
 	 TOGGLEVIEW, BEGINNERSLOW, SUPERFLIP;
 	
 	@Override
@@ -16,9 +16,7 @@ public enum MoveButtons {
 				return "<html><center>Scramble</center></html>";
 			} else if(this == YOU_KNOW){
 				return "<html><center>Dance!!</center></html>";
-			} else if(this == KOCIEMBA){
-				return "<html><center>Solve with<br>Kociemba</center></html>";
-			} else if(this == KOCIEMBAV2) {
+			} else if(this == KOCIEMBA) {
 				return "<html><center>EPIC<br>Kociemba</center></html>";
 			} else if(this == TOGGLEVIEW){
 				return "<html><center>Toggle<br>view</center></html>";
