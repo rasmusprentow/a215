@@ -58,11 +58,11 @@ private EnumSet<MoveButtons> A = EnumSet.of(U, UP ,U2, D, DP, D2, F2, B2, L2, R2
 private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 \end{lstlisting}
 
-All this code is executed if and only if the first condition is true (\vr(i==length-1)).
+All this code is executed if and only if the first condition (\vr{i==length-1}) is true.
 If it is false, then the method will start increasing the current move with an \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
 This is done the same way as above, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
 
-When the method tests if two moves are the same, just as it did before if the first condition was true.
+Then the method tests if two moves are on the same \face{}, just as it did in code snippet \ref{src:kociemba2}.
 It will now test if the current move and the prior move is on the same face.
 This is done with a \textbf{for} loop that counts every step from \vr{i} to the \vr{length} of the move sequence.
 
@@ -72,4 +72,4 @@ This is done with the same code as before, except this time it sets the move to 
 
 There is a similar method named \vr{increaseWithA} that uses a very similar code.
 The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
-It uses a \textbf(do-while) to increase the move \vr{moveSequence[i]} and then increas again if \m{A} conatians this move.
+It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} conatians this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).
