@@ -48,9 +48,12 @@ When the \rubik{} has been permuted it will return and the method will end.
 
 The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
 When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}, this exception is caught in a \textbf{try-catch}.
-If the exception is caught then the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
-Now the counter variable \vr{i} will be decremented and the method will call itself.
-After it has increased the second last move it will return and end the method.
+When the exception is caught the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
+When this happens the method will call it self on the move prior to the current. This will result in every move sequence it run through. 
+
+
+%Now the counter variable \vr{i} will be decremented and the method will call itself.
+%After it has increased the second last move it will return and end the method.
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{The definition of the enumsets S, A, and notA.}, label=src:enumset]
 private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2, B, BP, B2, L, LP, L2, R, RP, R2);
