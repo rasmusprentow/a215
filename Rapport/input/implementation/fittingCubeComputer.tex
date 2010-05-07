@@ -8,6 +8,8 @@ A simple way to handle the \rubik{} in the program is a two-dimensional depictio
 The analogue to this on a real \rubik{} would be to take the colored stickers off and move them to their new position rather than actually move the \cubie{}s when twisting the \rubik{}.
 This approach would be far from reality and would make the implementation of solving algorithms, such as Kociemba's optimal solver and the beginner's algorithm more complicated, since they need to know the position of the \cpiece{}s, and not just the \facelet{}s in order to determine the next step.
 
+	\input{input/implementation/fittingCubeComputer/classInteraction}
+
 A more object-oriented approach than to move the sticker would give a more useful structure for solving the problem.
 If we divided the \rubik{} into its sub structures it would consist of six faces each with nine shared \cubie{}s.
 %Dividing the \rubik{} into its sub structures. 
@@ -30,4 +32,4 @@ How this is done is described in section \ref{sec:orientation}.
 
 	\input{input/implementation/fittingCubeComputer/orientation}
 	\input{input/implementation/fittingCubeComputer/enumTypesJohn}
-	\input{input/implementation/fittingCubeComputer/classInteraction}
+	
