@@ -91,13 +91,4 @@ This is \m{Rm2 Fm2 Um2}. Note: \m{Rm2} $=$ \m{R2 L2}.  This graph is fairly smal
 
 Because of this graphs relatively small size the computation of the diameter is a somewhat simple task. It is possible to calculate the distance from all vertices to all other vertices, but since the graph is clearly symmetrical many calculations can be omitted. It is easy to see that the diameter must go from one corner to an opposite corner e.g. from the solved state to the pons asinorum\footnote{Pons asinorum is obtained from the solved state of a Rubik's Cube by the move sequence \m{Rm2 Fm2 Um2.}}. The diameter here is 3. 
 
-In the full \rubik{} group it is believed that the analogous position to the pons asinorum, the superflip position(see figure \ref{fig:superflip}) , is the position which has the longest shortest path \cite{speedsolving.wiki}. This has however never been proven. This shortest path from the superflip to the solved position is 20 \cite{rokicki09}. This has been proven by trying every possible solutions with move length 19 or less. This is the known lower bound of the \cube{}. It is not proven that there does not exist a position with a larger shortest path. 
-
-\begin{figure}[ht]
-	\centering
-		\includegraphics[scale = 0.7]{input/pics/superflip.pdf}
-	\caption{\myCaption{The superflip: every edge is flipped. The optimal solution to this position is 20 twists.}}
-	\label{fig:superflip}
-\end{figure}
-
 \myTail{A short general description of graph theory has been presented in this chapter along with a way to calculate the diameter of a graph. For better understanding the theory, an example on applying the theory on the Rubik's Cube has been shown.}
