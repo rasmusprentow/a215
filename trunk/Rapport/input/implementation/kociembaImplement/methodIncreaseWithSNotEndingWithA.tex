@@ -1,10 +1,15 @@
 \section{The Move Incrementing Methods}
 \label{sec:increaseWithSNotEndingWithA}
-The method named \vr{increaseWithSNotEndingWithA} (see code snippet \ref{src:kociemba2} for a key point of the method) increments a move sequence.
-When the method is called it takes two parameters, a move sequence of the type MoveButtons and an integer.
-As the method initializes it creates two variables of the type integer, \vr{length} and \vr{i}.
-The variable \vr{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \vr{length} will be used.
-The variable \vr{i} is used to keep track of where in the move sequence a move is changed and it is set equal to the input integer parameter. 
+The method named \vr{increaseWithSNotEndingWithA} increments a move sequence. This means it will find the next move in the list of all moves.
+
+When the method is called it takes two parameters, a move sequence of the type MoveButtons(ref) and an integer, \vr{i}, telling where in the move sequence the move should be incremented. The move sequence contains the so far executed moves.
+
+
+
+
+%As the method initializes it creates two variables of the type integer, \vr{length} and \vr{i}.
+%The variable \vr{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \vr{length} will be used.
+%The variable \vr{i} is used to keep track of where in the move sequence a move is changed and it is set equal to the input integer parameter. 
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the incrementing method of kociemba's optimal solver}, label=src:kociemba2]
 if (i == length - 1) {
@@ -37,10 +42,10 @@ if (i == length - 1) {
 }
 \end{lstlisting}
 
-The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group, see section \ref{sec:subgroup}.
-At first the method tests if it is working with the last move, if this is the case then a \textbf{do-while} loop will be executed.
-Inside this loop the parameter \vr{moveSequence} will be updated with a move from \m{S}, but the condition in the loop is that it must run while the enumset \m{A} contains the new updated move.
-When a move not in \m{A} is found, then the loop is ended.
+The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group, see section \ref{sec:subgroup}. The part of the code that increments the last move is shown in code snippet \ref{src:kociemba2}.
+At first a \textbf{do-while} loop is executed. 
+%If it is not working with the last another code snippet is executed and is very similar to this snippet. 
+Inside this loop; the parameter \vr{moveSequence} will be updated with a move from \m{S} as long as the new move is a move from \m{A}. This ensure that the move is not ending in \m{A}.
 
 After the loop has run a new method is called, \vr{isSameFace}, this method tests if the new move is the same as the move before this.
 If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move.
@@ -73,6 +78,6 @@ This is done with a \textbf{for} loop that counts every step from \vr{i} to the 
 When the method gets to the end of the enumset \vr{S}, it will set the move to the first move in \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
 This is done with the same code as before, except this time it sets the move to \m{U}.
 
-There is a similar method named \vr{increaseWithA} that uses a very similar code.
+There is a similar method named \vr{increaseWithA} that uses a very similar code, this is called from the \vr{solveFromH} method.
 The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
-It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} conatians this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).
+It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} contains this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).
