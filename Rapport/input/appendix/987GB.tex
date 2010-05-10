@@ -3,3 +3,11 @@
 The size which a lookup table containing move sequences to solving any \cube{} in \m{H} is found by adding the size of every move sequence which is used to solve a \cube{} inside \m{H}.
 Since there are 10 move different moves in \m{A}, 4 bits will sufice for a single move.
 The size of the entire lookup table will then be:
+> moves[0] := 1; moves[1] := 10; moves[2] := 67; moves[3] := 456; moves[4] := 3079; moves[5] := 19948; moves[6] := 123074; moves[7] := 736850; moves[8] := 4185118; moves[9] := 22630733; moves[10] := 116767872; moves[11] := 552538680; moves[12] := 2176344160; moves[13] := 5627785188; moves[14] := 7172925794; moves[15] := 3608731814; moves[16] := 224058996; moves[17] := 1575608; moves[18] := 1352;
+print(??); # input placeholder
+> size := sum(4*i*moves[i], i = 0 .. 18);
+print(`output redirected...`); # input placeholder
+                                1059719204004
+> evalf(size/(2^10)^3);
+print(`output redirected...`); # input placeholder
+                                 986.9404174
