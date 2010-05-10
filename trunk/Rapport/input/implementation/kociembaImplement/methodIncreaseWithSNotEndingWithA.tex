@@ -42,7 +42,7 @@ if (i == length - 1) {
 }
 \end{lstlisting}
 
-The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group, see section \ref{sec:subgroup}. The part of the code that increments the last move is shown in code snippet \ref{src:kociemba2}.
+The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group (see section \ref{sec:subgroup}). The part of the code that increments the last move is shown in code snippet \ref{src:kociemba2}.
 At first a \textbf{do-while} loop is executed. 
 %If it is not working with the last another code snippet is executed and is very similar to this snippet. 
 Inside this loop; the parameter \vr{moveSequence} will be updated with a move from \m{S} as long as the new move is a move from \m{A}. This ensure that the move is not ending in \m{A}.
