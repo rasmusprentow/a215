@@ -1,12 +1,12 @@
 \section{Step 2 -- Completing the First Layer}
-This step position the first layer corners into their correct position and orientation. The methods used for this step is very similar to the methods of step one. 
+This step positions the first layer corners into their correct position and orientation. The methods used for this step is very similar to the methods of step one. 
 Like step one the algorithm starts with a specific \cpiece{} and then positions and orientates it correctly, before moving on to the next \cpiece. 
 This step is generally described in subsection \ref{sub:step2}.
 
 First it checks whether the cube is already in the correct position, if that is the case and it is not correctly orientated an \textit{algorithm 3} will ``rotate'' this \cpiece{} in its \cubicle{} until the orientation is correct. 
 
-If the \cpiece{} is somewhere else in the down layer it will be moved to the top layer with \textit{algorithm 4}. 
+If the \cpiece{} is somewhere else in the down layer it will be moved to the top layer with \vr{algorithm 4}. 
 By now we know that the corner \cpiece{} is either placed correctly or is in the white layer. 
 The up face will be twisted until the \cpiece{} is placed directly above its correct place. 
-Then \textit{algorithm 4} that was used to move the \cpiece{} up will now move it down. 
-\textit{Algorithm 3} is then run until the \cpiece{} is orientated correctly.
+Then \vr{algorithm 4} that was used to move the \cpiece{} up will now move it down. 
+\vr{Algorithm 3} is then run until the \cpiece{} is orientated correctly.
