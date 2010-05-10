@@ -9,8 +9,7 @@ import static cubedrawer.MoveButtons.*;
 
 public class KociembaV2 {
 
-	private long startTime;
-	private long curTime;
+	
 	private Cube cube;
 	private AlgorithmOutput output;
 	private EnumSet<MoveButtons> S = EnumSet.of(U, UP ,U2, D, DP, D2, F, FP, F2,  B, BP, B2, L, LP, L2, R, RP, R2);
@@ -33,13 +32,16 @@ public class KociembaV2 {
 	 */
 	public MoveButtons[] solve(int maxSMoves) {
 
+		long startTime;
+		long curTime;
+		
 		startTime = System.currentTimeMillis();
 		MoveButtons[] result = null;
 		int d = 0;
 		int l = Integer.MAX_VALUE;
 		MoveButtons[] b,c;
 		while (l > d && d <= maxSMoves) {
-			output.addTextln("Try solving with depth: " + d);
+			output.addTextln("Try solving with depth: " + d + ". Time spend: " + (System.currentTimeMillis() - startTime) + " milliseconds");
 			//System.out.println("Try solving with depth: " + d);
 			b = new MoveButtons[d];
 
@@ -196,6 +198,10 @@ public class KociembaV2 {
 
 	private MoveButtons[] solveFromH(int maxAMoves) throws InvalidCubeException {
 
+		long startTime;
+		long curTime;
+		startTime = System.currentTimeMillis();
+		
 		if (!cube.isInH()) {
 			throw new InvalidCubeException("The cube is not in H!!");
 		} 
@@ -206,7 +212,7 @@ public class KociembaV2 {
 		MoveButtons[] c;
 
 		for (int d = 1; d < maxAMoves; d++) {
-			output.addTextln("Solving in H, with depth: " + d);
+			output.addTextln("Solving in H, with depth: " + d + ". Time spend inside H: " + (System.currentTimeMillis() - startTime) + " milliseconds");
 			//System.out.println("Solving in H, with depth: " + d);
 			c = new MoveButtons[d];
 
