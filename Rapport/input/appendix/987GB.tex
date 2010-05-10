@@ -1,8 +1,10 @@
 \chapter{Size of Lookup Table Containing Move Sequences}
 \label{chap:sizeOfLookUp}
+\emptyTop{}
 The size which a lookup table containing move sequences to solving any \cube{} in \m{H} is found by adding the size of every move sequence which is used to solve a \cube{} inside \m{H}.
 Since there are 10 move different moves in \m{A}, 4 bits will sufice for a single move.
-The size of the entire lookup table will then be:
+By taking the number of positions with a specific distances to $e$ and multiplying this number by the distance and 4 the total number of bits needed for saving every position of this distance is found.
+The size of the entire lookup table will then be \cite{rokicki09}: \\
 $moves[0] := 1$ \\
 $moves[1] := 10$ \\
 $moves[2] := 67$ \\
@@ -22,7 +24,5 @@ $moves[15] := 3608731814$ \\
 $moves[16] := 224058996$ \\
 $moves[17] := 1575608$ \\
 $moves[18] := 1352$ \\
-\\ \\
-$size := \sum_{i=0}^{18} 4 \cdot i \cdot moves[i] = 1059719204004$
-\\ \\
-$\frac{size}{2^{10^3}} = 986.9404174$
+\[ size := \sum_{i=0}^{18} 4 \cdot i \cdot moves[i] = 1059719204004\]
+\[ \frac{size}{2^{10^3}} = 986.9404174 \]
