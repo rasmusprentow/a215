@@ -10,7 +10,7 @@ An $A$ move can be defined using 4 bits.
 The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
 To calculate the size of a lookup table containing the move sequence is just a matter of multiplying the size of one move with the number of moves in a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB \ref{chap:maple}, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
+The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB \ref{chap:sizeOfLookup}, which exceeds the average memory on todays computer \cite{averageRAM} \cite{maxRAM2}.
 
 Instead of the lookup table our solver will have to try every move sequence inside \m{H} and find the one with the shortest length. A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.  As in the flowchart $b$ is a move sequence variable, which takes the scrambled cube into \m{H}. $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a shorter move sequence is found.
 
