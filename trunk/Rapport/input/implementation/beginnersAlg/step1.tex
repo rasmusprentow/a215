@@ -10,11 +10,11 @@ This algorithm is named \vr{algorithm 1}. When the edge \cpiece{} is in the corr
 If the edge \cpiece{} in question is not in its correct position, the program needs to know where the edge is positioned.
 The way this is done is by checking which layer the \cubie{} is in.
 Depending on which layer it is in, different actions will be taken:
-\begin{itemize}
+\begin{enumerate}
 	\item If the edge \cpiece{} in question is in the first layer it is moved to the opposite layer.
 	\item If the edge \cpiece{} is positioned in the second layer an algorithm is performed which moves the edge \cpiece{} to the white layer, which is the opposite of the layer in which we make the cross. This algorithm is called \vr{algorithm 2} (see code snippet \ref{src:middleMove}). The algorithm takes a \cubicle{} as input and performs a specific move sequence accordingly. The move sequences in the different cases are generally the same, but since we only view the \rubik{} from one angle, we have to move different faces in the move sequence accordingly to the cubicle which is input. e.g. if the cubicle is in the front and right faces the move sequence is performed as it originally is. However when the cubicle is in the right and back faces, every move will rotate 90 degrees, so that an \m{F} move becomes a \m{R} move etc.
 	\item If the edge \cubie{} is in the last layer, no action is performed, since this is where we want it to be for now.
-\end{itemize}
+\end{enumerate}
 
 \begin{comment}
 If the edge \cpiece{} in question is not in its correct position, the program needs to know where the edge is positioned. 

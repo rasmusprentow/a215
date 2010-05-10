@@ -4,13 +4,14 @@ This is not an option for this step.
 Here several \cpiece{}s will be placed at a time. 
 
 This step will make the top face cross. 
-Positioning the edge \cpiece{}s correctly not be done before the next step. 
+Positioning the edge \cpiece{}s correctly will not be done before the next step. 
 
 This step is performed by checking each case of possible orientations for the edge \cpiece{}s in the top layer. 
-There are three primary settings the top layer edge \cpiece{} can be in. See figure \ref{fig:cross}. 
+There are three primary settings the top layer edge \cpiece{} can be in. See figure \ref{fig:cross} in subsection \ref{sub:step4} where this step is described generally.
+The three cases which the last layer can be within if the cross is not already present.
 \begin{enumerate}
 \item The white \facelet{}s of the top layer form an L-shape.
 \item They form a row.
 \item Only the center \facelet{} is visible. 
 \end{enumerate}
-It is \textit{algorithm 8} that needs to be performed no matter the case. In case one the algorithm is applied twice, case two the algorithm is applied three times, case three the algorithm is applied once.
+It is \vr{algorithm 8} that needs to be performed no matter the case. In case one the algorithm is applied twice, case two the algorithm is applied three times, case three the algorithm is applied once.
