@@ -1,11 +1,11 @@
 \section{Step 5 -- Completing the Last Layer Cross}
 In the theoretical description of the beginner's algorithm step five is the implementation's step five, six and seven. 
-In this step the edges of the last layer cross will be positioned correctly. Their orientation will not be changed, since they are already oriented correctly. See subsection \ref{sub:step5}.
+In this step the edges of the last layer cross will be positioned correctly. Their orientation will not be changed, since they are already orientated correctly. See subsection \ref{sub:step5}.
 
-The four \cpiece{}s in the white layer cross can only be in the four \cubicle{}. This leaves us with essentially two cases. Either all \cpiece{}s are placed correctly or two are placed correctly. This requires twisting the up face until one of these cases will appear.
+The four \cpiece{}s in the white layer cross can only be in the four \cubicle{}s of the white \face{}. This leaves us with essentially two cases. Either all \cpiece{}s are placed correctly or two are placed correctly. This requires twisting the up face until one of these cases will appear.
 
 The program only needs to respond to the case where two \cpiece{}s are placed correctly. 
-If the the two correctly positioned edges are positioned directly across each other \textit{algorithm 9} is performed.
-The correctly positioned edge \cpiece{}s are now on two faces next to each other. This is either reached by \textit{algorithm 9} or they were already positioned this way.
-The program checks which two edge \cpiece{}s are positioned correctly and performs \textit{algorithm 9} accordingly. 
+If the the two correctly positioned edges are positioned directly across each other \vr{algorithm 9} is performed, this will result in two correctly positioned edge \cubie{}s next to each other.
+
+The program checks which two edge \cpiece{}s are positioned correctly and performs \vr{algorithm 9} accordingly. 
 The edges are now positioned and oriented correctly and the program moves on to the next step.
