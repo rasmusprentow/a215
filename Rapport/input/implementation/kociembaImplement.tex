@@ -13,14 +13,24 @@ This size is again multiplied with the number of positions which needs this leng
 The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB (see appendix \ref{chap:sizeOfLookup}), which exceeds the average memory on today's computer \cite{averageRAM} \cite{maxRAM2}.
 Instead of the lookup table our solver will have to try every move sequence inside \m{H} in order to find the shortest one, which solves the \rubik{}.
 
-A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.  As in the flowchart $b$ is a move sequence variable, which takes the scrambled cube into \m{H}. $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a shorter move sequence is found.
+A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
+The method starts with the \rubik{} in the position it has to be solved from.
+It starts by testing if the \rubik{} is solved, if this is the case it will return.
+If the \rubik{} is not solved the method will test if the \rubik{} is inside \m{H}, if this is the case it will call the method solveFromH.
+The method solveFromH is build up using the same flow chart except the three boxes with a marked egde.
+
+
+\begin{comment}
+As in the flowchart $b$ is a move sequence variable, which takes the scrambled cube into \m{H}. $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a shorter move sequence is found.
+\end{comment}
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width = \textwidth, trim = 0mm 110mm 50mm 0mm, clip]{input/pics/kociembaFlow}
+%		\includegraphics[width = \textwidth, trim = 0mm 110mm 50mm 0mm, clip]{input/pics/kociembaFlow}
 	\caption{\myCaption{A flow chart of our implementation of Kociemba's optimal solver.}}
 	\label{fig:kociembaFlow}
 \end{figure}
+
 
 	\input{input/implementation/kociembaImplement/incMoveSequence}
 	\input{input/implementation/kociembaImplement/methodSolve}
