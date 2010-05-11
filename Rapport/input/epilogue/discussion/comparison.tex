@@ -1,8 +1,9 @@
 \section{Kociemba compared to the Beginners}
 The two algorithms implemented in this application differs a lot from each other when looking at efficiency. 
 Kociemba is twist-wise efficient but time-wise inefficient while this is opposite, to some extend, for Beginners algorithm. 
+
 Kociemba is the twist-wise optimal solver; it uses less than 22 moves for any positions. 
-But time-wise Kociemba's algorithm is extremely inefficient, in our application, it will take approximately XXXX years to solve a \cube{} 16 \twist{} away from the solved state. 
-With 22 moves away it will use XXX years. 
-Beginners algorithm on the other hand, event though not build for any efficiency, uses less than a second, on a 2,5 GHz Duo Core, to solve 1000 cubes, which probably is sufficient for most application. 
+The time-wise efficiency for Kociemba's algorithm is not impressive. It is rather inefficient. On a 2,5 GHz Duo Core, it uses in a worst-case scenario 150,000 years to solve a \cube{} 16 \twist{} away from the solved state. With 22 moves away it will use $9.4\cdot{}10^{11}$ years. See appendix \ref{app:kociemba} for detailed calculations.   
+
+Beginners algorithm on the other hand, event though not build for any efficiency, uses less than a second to solve 1000 cubes, which probably is sufficient for most application. 
 Twist-wise it is way lesser efficient since it uses an average of 151 moves to solve any cube; where a human speed cuber uses around 60 moves in average \cite{larsPetrus97} \cite{cubeFreak}.
