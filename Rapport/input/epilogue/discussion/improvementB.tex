@@ -1,5 +1,3 @@
-
-
 \subsection{Beginner's Algorithm}
 In order to understand this part it is necessary to have read the general description of the beginner's algorithm\ref{sec:beginner} and the description of our implementation of it\ref{chap:beginnerImplement}. 
 
@@ -16,7 +14,7 @@ In the first step \ref{sub:step1} choosing the right face to be the face of the 
 In the second step \ref{sub:step2}, where the corners needs to be positioned in the first layer, there are generally two ways to improve the algorithm.
 The first way to improve the twist sequence in this part is to choose the most efficient order of positioning the corners.
 Finding out which order is the most efficient one may seem to require a large amount of analysis, but since only four corners needs to be positioned a simulation can be used with advantage. %%%NOTE: oversat til dansk: "`en simulation kan med fordel anvendes"'
-There are generally $4! = 4 * 3 * 2 * 1 = 24$ possible orders the corners can be positioned in, which makes the process of computing the shortest twist sequence a rather simple task. %Klart nok? %%hvordan skal det matematik skrives??
+There are generally $4! = 4 * 3 * 2 * 1 = 24$ possible orders the corners can be positioned in, which makes the process of computing the shortest twist sequence a rather simple task. %Klart nok?
 The other way to improve this step is to eliminate the repetition of an algorithm. The algorithm used for rotating a corner \cpiece{} in our implementation only rotates it in one direction, which means that it will have to be applied twice instead of once half the time, if an algorithm for rotating it the other way was implemented.
 
 In the third step \ref{sub:step3}, where the edge \cpiece{}s are positioned in the second layer, there is only one way to improve it; choosing the most efficient order to position the edge \cpiece{}s. Since there are four edge \cpiece{}s that need to be positioned, the logic used in improving the second step can be applied in the third step.
@@ -25,7 +23,7 @@ In the fourth step \ref{sub:step4}, where the last layer cross is attained, ther
 %%Hvis nogen kan komme i tanke om forbedringer til orientationen af LLcross, saa skriv det for guds skyld!
 
 
-The fifth and final step of the beginner's algorithm\ref{sub:step5} was divided into two methods in our implementation, which will be discussed separately.
+The fifth and final step of the beginner's algorithm\ref{sub:step5} was divided into two methods in our implementation.
 
 
 The first method of the final step, which positioned the remaining four corners correctly, only used a single algorithm. This algorithm rotated three corner \cpiece{}s' positions counterclockwise. Half the time the corner \cpiece{}s' positions needs to be rotated clockwise, which means that this algorithm is used twice. Its reverse can be used to rotate the corner \cpiece{}s' positions clockwise, which will in those cases when needed will reduce the solving twist sequence by eight.
