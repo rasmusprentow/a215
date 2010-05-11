@@ -1,8 +1,34 @@
-
 \subsection{Kociemba's Algorithm}
+When we look at improving our implementation of kociemba's algorithm some different things can be done.
+	
+When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
+This means that the application will allways work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
+To improve this the \rubik{} could be turned around shifting the \face{}s in the application.
+This means that instead of testing if the primary \face{} \cubie{}s are orientated correct it would test if the secondary \face{} \cubie{}s are orientated correct. 
+The same idea also applies to the tertiary \face{}.
+	
+To decrease the search time when solving a \rubik{}, every know position of the \rubik{} could be saved in a lookup table.
+When a shortest path to that position is found it could be saved.
+This would shorthen the time to solve the \rubik{} if the position is already know.
+If this is combined with the previous improvement suggestion it could make the search time to get into \m{H} shorter.
+Turning of the \face{}s only apply outside \m{H} since it would have a negative effect inside \m{H}. 
+	 
+The program is built up around one \cube{} object.
+As a result of this the computer is only able to use one CPU core to work on that \cube{}.
+With some modifications it could be posible make a copy of this \cube{} object.
+This will make it posible to work on more than one \cube{} object with the same starting position.
+It would be posible to make the application multithreaded in alot of ways.
+When the application is working outside \m{H} it is working with \vr{S} moves.
+Here it is posible to make a new thread for every depth the method searches in.
+In the same way it is posible to make a new thread for every search depth inside \m{H}.
+
+
+
+\begin{comment}
 Write about the following improvements:
 
-When the cube is solved to H it is possible to look at it from other angels. Secondary as primary and tertiary as primary.
+
 Both the move into H and in H could be saved in a lookup table to increase the speed.
 Cloning the cube, to make the program multithreaded.
 Running the program on a x64 bit processer has a lot of influence on the program. 
+\end{comment}
