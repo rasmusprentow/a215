@@ -1,7 +1,7 @@
 
 
 \subsection{Beginner's Algorithm} %%% REFERERANCER ER ENDNU IKKE SAT IND!!
-In order to understand this part it is necessary to have read the general description of the beginner's algorithm\ref{} and the description of our implementation of it\ref{}. 
+In order to understand this part it is necessary to have read the general description of the beginner's algorithm\ref{sec:beginner} and the description of our implementation of it\ref{chap:beginnerImplement}. 
 
 When describing the improvement of the beginner's algorithm, only improvements are described step by step. 
 A twist sequence which leads to the next step may be the most efficient for doing just that, but can potentially cause the entire twist sequence from the scrambled state to the solved state to be longer. 
@@ -11,23 +11,23 @@ Additionally the algorithm has to still be the beginner's algorithm, which means
 
 The beginner's algorithm is as mentioned before a very twist-wise inefficient solving algorithm. 
 There are however quite a few areas in which the algorithm can be improved.
-In the first step \ref{} choosing the right face to be the face of the first layer will decrease the number of twists needed to complete the first step, since a different part of the cross is assembled on the different faces.
+In the first step \ref{sub:step1} choosing the right face to be the face of the first layer will decrease the number of twists needed to complete the first step, since a different part of the cross is assembled on the different faces.
 
-In the second step \ref{}, where the corners needs to be positioned in the first layer, there are generally two ways to improve the algorithm.
+In the second step \ref{sub:step2}, where the corners needs to be positioned in the first layer, there are generally two ways to improve the algorithm.
 The first way to improve the twist sequence in this part is to choose the most efficient order of positioning the corners.
 Finding out which order is the most efficient one may seem to require a large amount of analysis, but since only four corners need to be positioned a simulation can be used with advantage. %%%NOTE: oversat til dansk: "`en simulation kan med fordel anvendes"'
 There are generally 4! = 4 * 3 * 2 * 1 = 24 possible orders the corners can be positioned in, which makes the process of computing the shortest twist sequence a rather simple task. %Klart nok? %%hvordan skal det matematik skrives??
 The other way to improve this step is to eliminate the repetition of an algorithm. The algorithm used for rotating a corner \cpiece{} in our implementation only rotates it in one direction, which means that it will have to be applied twice instead of once half the time, if an algorithm for rotating it the other way was implemented.
 
-In the third step \ref{}, where the edge \cpiece{}s are positioned in the second layer, there is only one way to improve it; choosing the most efficient order to position the edge \cpiece{}s. Since there are four edge \cpiece{}s that need to be positioned, the logic used in improving the second step can be applied in the third step.
+In the third step \ref{sub:step3}, where the edge \cpiece{}s are positioned in the second layer, there is only one way to improve it; choosing the most efficient order to position the edge \cpiece{}s. Since there are four edge \cpiece{}s that need to be positioned, the logic used in improving the second step can be applied in the third step.
 
-In the fourth step \ref{}, where the last layer cross is attained, there is only room for little improvement, if the algorithm should still be the beginner's. As mentioned in \ref{}, there are three possible settings of the unsolved cross. In the position known as the opposite L, the reverse of the algorithm used in this step will skip the next setting and directly give the solved cross. This can potentially reduce the solving algorithm by six twists.
+In the fourth step \ref{sub:step4}, where the last layer cross is attained, there is only room for little improvement, if the algorithm should still be the beginner's. As mentioned in \ref{sub:step4}, there are three possible settings of the unsolved cross. In the position known as the opposite L, the reverse of the algorithm used in this step will skip the next setting and directly give the solved cross. This can potentially reduce the solving algorithm by six twists.
 %%Hvis nogen kan komme i tanke om forbedringer til orientationen af LLcross, saa skriv det for guds skyld!
 
 
-The fifth and final step of the beginner's algorithm was divided into two methods in our implementation, which will be discussed separately.
+The fifth and final step of the beginner's algorithm\ref{sub:step5} was divided into two methods in our implementation, which will be discussed separately.
 
 
 The first method of the final step, which positioned the remaining four corners correctly, only used a single algorithm. This algorithm rotated three corner \cpiece{}s' positions counterclockwise. Half the time the corner \cpiece{}s' positions need to be rotated clockwise, which means that this algorithm is used twice. Its reverse can be used to rotate the corner \cpiece{}s' positions clockwise, which will in those cases when needed will reduce the solving twist sequence by eight.
 
-When using the quarter turn metric the second method of the final step cannot be improved when staying true to our description of the beginner's algorithm\ref{}.
+When using the quarter turn metric the second method of the final step cannot be improved when staying true to our description of the beginner's algorithm\ref{sec:beginner}.
