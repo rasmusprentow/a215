@@ -2,10 +2,10 @@
 In order to calculate the time used to solve a \rubik{} using Kociemba's optimal solver, we have gathered data from our application in form of time stamps when ever the solver has finished a search depth.
 
 The data was gathered on a 2.5 GHz Intel Duo Core processor (P9500) with 4 GB RAM running on Linux-Ubuntu v. 10.04.
+The data gathered with these specifications are shown in table \ref{tab:timeData}.
 
 \begin{table}[hb]
 \centering
-The data on the test are:
 	\begin{tabular}{|l|l|}
 	\hline
 	Search depth&Time to finish[ms]\\
@@ -33,7 +33,21 @@ The data on the test are:
 	\label{tab:timeData}
 \end{table}
 
-What we are interrested in is to approximate the time it would take to solve any \rubik{}.
-Since the upper bound has been proven to be 22 twists, we will approximate the time it would take to finish the search depth 22.
+To make the approximation we assume that the time will evolve exponentially based on figure \ref{fig:timeFunction}.
 
-To make the approximation we assume that the time will evolve exponentially based on figure ???. The figure shows the last four data points since the first five are inaccurate due to small amount time which means that other processes might have interferred with the computation time.
+\begin{figure}[tbh]
+	\centering
+		\includegraphics[scale=0.5]{input/pics/timeFunction}
+	\caption{\myCaption{The approximation of the time needed to finish the search depth. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
+	\label{fig:timeFunction}
+\end{figure}
+
+The figure shows the last four data points since the first five are inaccurate due to small amount time which means that other processes might have interferred with the computation time.
+
+As figure \ref{fig:timeFunction} shows the function for calculating the time needed to finish the search depth $x$ is:
+\[
+f(x)=0.0035413937 \cdot 13.575029^x
+\]
+The $R^2$ is close to 1 and this tell us that the approximation is relativly good. Especialy for calculating this; where the precision is not essential.
+
+We are interrested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09}
