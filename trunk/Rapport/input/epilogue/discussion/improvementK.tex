@@ -21,14 +21,5 @@ It would be posible to make the application multithreaded in alot of ways.
 When the application is working outside \m{H} it is working with \vr{S} moves.
 Here it is posible to make a new thread for every depth the method searches in.
 In the same way it is posible to make a new thread for every search depth inside \m{H}.
-
-
-
-\begin{comment}
-Write about the following improvements:
-
-
-Both the move into H and in H could be saved in a lookup table to increase the speed.
-Cloning the cube, to make the program multithreaded.
-Running the program on a x64 bit processer has a lot of influence on the program. 
-\end{comment}
+But there are still more ways to improve the algorithm with multithreading.
+The last way we will mention is when searching in general the moves in \vr{S} and \vr{A} could be divide and a new thread could be made for these new groups of moves.
