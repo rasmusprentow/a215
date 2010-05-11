@@ -1,0 +1,9 @@
+\section{Incrementing a Move Sequence}
+\label{sec:incMoveSequence}
+Our implementation of the Kociemba's optimal solver will be incrementing move sequences.
+This means that the move sequence will be changed to the next in a given set.
+
+E.g. if the move sequence which is about to be incremented is \m{F R'} and the set which is being incremented in is \m{S}, then incrementing it will change the last move \m{R'} to the next \m{R2} -- hence the new move sequence \m{F R2}.
+This is very similar to incrementing an integer on paper; the last digit will become the next number in the decimal system until the last digit is 9. When this happens the second last digit is increased by one and the last digit is set to be the first number in the decimal system: 0.
+
+So when our move sequence \m{F R2} is being incremented \m{R2} will become \m{U}, since \m{R2} is the last move in the set of moves \m{S}. \m{F} will then be increased to \m{F'}, this gives the new move sequence \m{F' U}.
