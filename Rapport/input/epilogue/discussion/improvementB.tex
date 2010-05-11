@@ -15,7 +15,7 @@ In the first step \ref{sub:step1} choosing the right face to be the face of the 
 
 In the second step \ref{sub:step2}, where the corners needs to be positioned in the first layer, there are generally two ways to improve the algorithm.
 The first way to improve the twist sequence in this part is to choose the most efficient order of positioning the corners.
-Finding out which order is the most efficient one may seem to require a large amount of analysis, but since only four corners need to be positioned a simulation can be used with advantage. %%%NOTE: oversat til dansk: "`en simulation kan med fordel anvendes"'
+Finding out which order is the most efficient one may seem to require a large amount of analysis, but since only four corners needs to be positioned a simulation can be used with advantage. %%%NOTE: oversat til dansk: "`en simulation kan med fordel anvendes"'
 There are generally 4! = 4 * 3 * 2 * 1 = 24 possible orders the corners can be positioned in, which makes the process of computing the shortest twist sequence a rather simple task. %Klart nok? %%hvordan skal det matematik skrives??
 The other way to improve this step is to eliminate the repetition of an algorithm. The algorithm used for rotating a corner \cpiece{} in our implementation only rotates it in one direction, which means that it will have to be applied twice instead of once half the time, if an algorithm for rotating it the other way was implemented.
 
