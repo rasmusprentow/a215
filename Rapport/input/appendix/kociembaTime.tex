@@ -1,0 +1,39 @@
+\chapter{Computation Time for Kociamba's Optimal Solver}
+In order to calculate the time used to solve a \rubik{} using Kociemba's optimal solver, we have gathered data from our application in form of time stamps when ever the solver has finished a search depth.
+
+The data was gathered on a 2.5 GHz Intel Duo Core processor (P9500) with 4 GB RAM running on Linux-Ubuntu v. 10.04.
+
+\begin{table}[hb]
+\centering
+The data on the test are:
+	\begin{tabular}{|l|l|}
+	\hline
+	Search depth&Time to finish[ms]\\
+	\hline
+	0&2\\
+	\hline
+	1&4\\
+	\hline
+	2&14\\
+	\hline
+	3&74\\
+	\hline
+	4&432\\
+	\hline
+	5&1775\\
+	\hline
+	6&19921\\
+	\hline
+	7&289744\\
+	\hline
+	8&4339435\\
+	\hline
+	\end{tabular}
+\caption{\myCaption{Data for computation time of Kociemba's optimal solver}}
+	\label{tab:timeData}
+\end{table}
+
+What we are interrested in is to approximate the time it would take to solve any \rubik{}.
+Since the upper bound has been proven to be 22 twists, we will approximate the time it would take to finish the search depth 22.
+
+To make the approximation we assume that the time will evolve exponentially based on figure ???. The figure shows the last four data points since the first five are inaccurate due to small amount time which means that other processes might have interferred with the computation time.
