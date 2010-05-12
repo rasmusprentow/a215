@@ -2,7 +2,16 @@
 When we look at improving our implementation of Kociemba's optimal solver some different things can be done.
 	
 %When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
-In the first phase of our implementation of Kociemba's optimal solver we check after every tested move sequence if the \cube{} is in primary \m{H}. The primary \m{H} is 
+In the first phase of our implementation of Kociemba's optimal solver we check after every tested move sequence if the \cube{} is in \m{H}.
+This \m{H} is with respect to the primary \face{}s (see sub section \ref{sub:theSubgroupH}), but it is also possible for the \rubik{} to be inside \m{H} with respect to the secondary \face{}s or tertiary \face{}s, see figure \ref{}.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.75]{input/pics/kocieambe2.pdf}
+	\caption{\myCaption{The lines going from $a$ to a point in $H$ is the move sequence denoted $b$. The lines from points in $H$ to the point $e$ is the move sequence denoted $c$ . The numbers beside the lines are the number of moves. Note that the moves in $c$ is decreasing as the numbers of moves in $b$ is increasing. The line that goes directly from $a$ to $e$ is the shortest move sequence possible. }}
+	\label{fig:kociemba2}
+\end{figure}
+
 This means that the application will always work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
 To improve this the \rubik{} could be turned around shifting the \face{}s in the application.
 This means that instead of testing if the primary \face{} \cubie{}s are orientated correct it would test if the secondary \face{} \cubie{}s are orientated correct. 
