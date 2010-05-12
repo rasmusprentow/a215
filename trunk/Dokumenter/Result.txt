@@ -1,0 +1,52 @@
+Behold the Cube
+Scrambling:  B B' B' F2 D2 D2 L' L' B' L R' B L2 D2 L2 B U2 R' R2 B2 B2 D U D L2 B2 U' U2 R' F2 R B' D2 U2 D2 U2 R' F' U2 F U B2 R' F B D' U D2 U U2
+Solving with Kociemba's improved algorithm, please wait.
+Try solving with depth: 0. Time spend: 0 milliseconds
+Try solving with depth: 1. Time spend: 0 milliseconds
+Try solving with depth: 2. Time spend: 0 milliseconds
+Try solving with depth: 3. Time spend: 0 milliseconds
+Try solving with depth: 4. Time spend: 47 milliseconds
+Try solving with depth: 5. Time spend: 281 milliseconds
+Try solving with depth: 6. Time spend: 1045 milliseconds
+Try solving with depth: 7. Time spend: 10920 milliseconds
+Try solving with depth: 8. Time spend: 157451 milliseconds
+Try solving with depth: 9. Time spend: 2358584 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 31 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 203 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 421 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2153 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 15787 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 123506 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 973348 milliseconds
+Solving in H, with depth: 12. Time spend inside H: 7687740 milliseconds
+
+
+Behold the Cube
+Scrambling:  D' U' L2 U2 R R2 R' L' R2 L U' D2 R2 D' F' U' R B D' B F B2 U2 L2 D L' D D' R B B R2 R2 U2 D R2 L' F2 D' U' F2 D2 B R' R2 U2 F F B B2
+Solving with Kociemba's improved algorithm, please wait.
+Try solving with depth: 0. Time spend: 0 milliseconds
+Try solving with depth: 1. Time spend: 0 milliseconds
+Try solving with depth: 2. Time spend: 16 milliseconds
+Try solving with depth: 3. Time spend: 31 milliseconds
+Try solving with depth: 4. Time spend: 78 milliseconds
+Try solving with depth: 5. Time spend: 296 milliseconds
+Try solving with depth: 6. Time spend: 983 milliseconds
+Try solving with depth: 7. Time spend: 10873 milliseconds
+Try solving with depth: 8. Time spend: 158637 milliseconds
+Try solving with depth: 9. Time spend: 2361704 milliseconds
+Try solving with depth: 10. Time spend: 35447427 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 47 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 203 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 422 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2153 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 15866 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 124083 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 977873 milliseconds
