@@ -51,9 +51,9 @@ After the loop has run a new method is called, \vr{isSameFace}, this method test
 If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move.
 When the \rubik{} has been permuted it will return and the method will end.
 
-The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}). 
+The method increments the move, it runs through the enumset \m{S} (see code snippet \ref{src:enumset}, enumset \m{S}). 
 When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}. See section \ref{sec:incMoveSequence}.
-When the exception is caught the last move in the move sequence will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
+When the exception is caught the last move in the move sequence will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \m{notA}), which is the first move in the enumset.
 When this happens the method will call it self on the move prior to the current. This will result in every move sequence it run through. 
 
 
@@ -67,17 +67,17 @@ private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 \end{lstlisting}
 
 All the code in code snippet \ref{src:kociemba2}  is executed if it is at the last move in this move sequence.
-If it is another move in the sequence, the method will start increasing the current move with an \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
-This is done the same way as in code snippet \ref{src:kociemba2}, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
+If it is another move in the sequence, the method will start increasing the current move with an \m{S} move (see code snippet \ref{src:enumset}, enumset \m{S}).
+This is done the same way as in code snippet \ref{src:kociemba2}, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \m{S}.
 
 Then the method tests if two moves are on the same \face{}, just as it did in code snippet \ref{src:kociemba2}.
 It will now test if the current move and the prior move is on the same face.
 This is done with a \textbf{for} loop that counts every step from \vr{i} to the \vr{length} of the move sequence.
 
 %We have been able to reuse the same code snippet
-When the method gets to the end of the enumset \vr{S}, it will set the move to the first move in \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
+When the method gets to the end of the enumset \m{S}, it will set the move to the first move in \m{S} (see code snippet \ref{src:enumset}, enumset \m{S}).
 This is done with the same code as before, except this time it sets the move to \m{U}.
 
 There is a similar method named \vr{increaseWithA} that uses a very similar code, this is called from the \vr{solveFromH} method.
-The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
+The difference is that it increments with moves from \m{A} (see code snippet \ref{src:enumset}, enumset \m{A}).
 %It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} contains this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).

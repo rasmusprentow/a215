@@ -60,6 +60,7 @@ After the code snippet \ref{src:kociemba} the method will permute the \rubik{} b
 When it has been permuted back the method \vr{increaseWithSNotEndingWithA} will be called. 
 See section \ref{sec:increaseWithSNotEndingWithA}. 
 The new increased move sequence will now be executed and the part displayed in code snippet \ref{src:kociemba} will be executed again. 
+
 When the method \vr{increaseWithSNotEndingWithA} has been through every move sequence of the length \vr{d} it will throw an exception of the type  \vr{UnableToIncreaseMoveSequenceException}. 
 The \vr{solve} method will catch this exception and increment \vr{d}. When \vr{d} is incremented to \vr{l} the method will return the array \vr{result} which contains the shortest move sequence to the given \rubik{}.  
 \begin{comment}
