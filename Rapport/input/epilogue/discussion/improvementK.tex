@@ -1,8 +1,9 @@
 \subsection{Kociemba's Optimal Solver}
-When we look at improving our implementation of kociemba's algorithm some different things can be done.
+When we look at improving our implementation of Kociemba's optimal solver some different things can be done.
 	
-When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
-This means that the application will allways work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
+%When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
+In the first phase of our implementation of Kociemba's optimal solver we check after every tested move sequence if the \cube{} is in primary \m{H}. The primary \m{H} is 
+This means that the application will always work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
 To improve this the \rubik{} could be turned around shifting the \face{}s in the application.
 This means that instead of testing if the primary \face{} \cubie{}s are orientated correct it would test if the secondary \face{} \cubie{}s are orientated correct. 
 The same idea also applies to the tertiary \face{}.
@@ -15,11 +16,11 @@ Turning of the \face{}s only apply outside \m{H} since it would have a negative 
 	 
 The program is built up around one \cube{} object.
 As a result of this the computer is only able to use one CPU core to work on that \cube{}.
-With some modifications it could be posible make a copy of this \cube{} object.
-This will make it posible to work on more than one \cube{} object with the same starting position.
-It would be posible to make the application multithreaded in alot of ways.
-When the application is working outside \m{H} it is working with \vr{S} moves.
-Here it is posible to make a new thread for every depth the method searches in.
-In the same way it is posible to make a new thread for every search depth inside \m{H}.
+With some modifications it could be possible make a copy of this \cube{} object.
+This will make it possible to work on more than one \cube{} object with the same starting position.
+It would be possible to make the application multithreaded in alot of ways.
+When the application is working outside \m{H} it is working with \m{S} moves.
+Here it is possible to make a new thread for every depth the method searches in.
+In the same way it is possible to make a new thread for every search depth inside \m{H}.
 But there are still more ways to improve the algorithm with multithreading.
-The last way we will mention is when searching in general the moves in \vr{S} and \vr{A} could be divide and a new thread could be made for these new groups of moves.
+The last way we will mention is when searching in general the moves in \m{S} and \m{A} could be divide and a new thread could be made for these new groups of moves.
