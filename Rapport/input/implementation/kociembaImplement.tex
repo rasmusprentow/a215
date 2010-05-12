@@ -18,8 +18,13 @@ The method starts with the \rubik{} in the position it has to be solved from.
 It starts by testing if the \rubik{} is solved, if this is the case it will return.
 If the \rubik{} is not solved the method will test if the \rubik{} is inside \m{H}, if this is the case it will call the method solveFromH.
 The method solveFromH is build up using the same flow chart except the three boxes with a marked egde.
-The first difference is that it create a move sequence of only \vr{A} moves instead of moves from \vr{S}.
+The differenceses is described short here.
 
+\begin{enumerate}
+	\item It creates a move sequence of only \vr{A} moves instead of moves from \vr{S}.
+	\item It test if the cube is solved instead of testing if it is in \m{H}.
+	\item 
+\end{enumerate} 
 
 \begin{comment}
 As in the flowchart $b$ is a move sequence variable, which takes the scrambled cube into \m{H}. $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a shorter move sequence is found.
