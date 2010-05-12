@@ -1,10 +1,10 @@
 \section{The Solving Method}
-																										\label{sec:kSolve}
-The method named \vr{solve} (see code snippet \ref{src:kociemba} for a key point) acts like a main routine for the solving mechanism of Kociemba's optimal solver. By calling this method kociemba's optimal solver will be applied to the \rubik{}. 
+\label{sec:kSolve}
+The method named \vr{solve} (see code snippet \ref{src:kociemba} for a key point) acts like a main routine for the solving mechanism of Kociemba's optimal solver. By calling this method Kociemba's optimal solver will be applied to the \rubik{}. 
 
 The solver's approach to solving the \rubik{} is trying every move sequence not tried so far. If the cube is inside \m{H} it will start using only \m{A} moves. Every time a shorter move sequence is found it is saved. 
 
-\begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the solve method of kociemba's optimal solver}, label=src:kociemba]
+\begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the solve method of Kociemba's optimal solver}, label=src:kociemba]
 try {
 	c = solveFromH(l - d);
 	if (d + c.length < l) {
@@ -27,27 +27,37 @@ try {
 } catch (InvalidCubeException e) {}
 \end{lstlisting}
 
-It start with initializing five variables; 
+The \vr{solve} method starts with initializing five variables; 
 \begin{itemize}
 \item The array \vr{result} which will contain the final move sequence.
 \item The integer \vr{d} which determines the search depth. 
 \item The integer \vr{l} which determines the length of the current solution. 
-\item The array \vr{b} which will contain the move sequence until the \rubik{} enters \m{H}.
+\item The array \vr{b} which will contain the move sequence until the \rubik{} enters \m{H}. This is initialized with the length zero; an empty move sequence. 
 \item The array \vr{c} which will be the move sequence after the \rubik{} has entered \m{H}.
 \end{itemize}
 
-The \vr{solve} method starts by calling the \vr{solveFromH}, which solves the cube, when the cube is in \m{H}. If the cube is not in \m{H}  the exception \vr{InvalidCubeException} will be thrown. When this exception is caught it forces the \vr{solve} method to skip to the next part of the algorithm.  
-If the new move sequence (\vr{b+c}) is shorter than the currently shortest move sequence (\vr{result}) the new one will be saved in \vr{result} and \vr{l} is set to be the length of the new move sequnce.
+After the initialization the \vr{solve} method calls the \vr{solveFromH}, which solves the cube if the cube is in \m{H}. 
+
 When the cube has been solved from \m{H} it test if the length of the new solution is better than the old solution this will be saved as the new solution. 
+This can be seen in code snippet \ref{src:kociemba}.
+
+If the cube is not in \m{H}  the exception \vr{InvalidCubeException} will be thrown.
+ When this exception is caught it forces the \vr{solve} method to skip to the next part of the algorithm. 
+ 
+%If the new move sequence (\vr{b+c}) is shorter than the currently shortest move sequence (\vr{result}) the new one will be saved in \vr{result} and \vr{l} is set to be the length of the new move sequnce.
 \begin{comment}
- method to test if the cube is in \m{H}. The method \vr{solveFromH} is called with a parameter, which determines how deep it will search.
+ method to test if the cube is in \m{H}. 
+ The method \vr{solveFromH} is called with a parameter, which determines how deep it will search.
 
 If the \rubik{} is in \m{H} then \vr{solveFromH} will start solving it with \m{A} moves. If the \rubik{} is not inside \m{H} the \vr{solveFromH} will throw an exception called \vr{InvalidCubeException}. 
 
 When the InvalidCubeException is caught by it cause 
 
 \end{comment}
-After the code snippet \ref{src:kociemba} the method will permute the \rubik{} back with the inverse of the last move. When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called. See section \ref{sec:increaseWithSNotEndingWithA}.
+
+After the code snippet \ref{src:kociemba} the method will permute the \rubik{} back with the inverse of the last move. In first run this is redundant since the 
+
+When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called. See section \ref{sec:increaseWithSNotEndingWithA}.
 
 When the method \vr{increaseWithSNotEndingWithA} has been through every move sequence of the length \vr{d} it will throw an exception of the type  
 \vr{UnableToIncreaseMoveSequenceException}. The \vr{solve} method will catch this exception and increments \vr{d}. When \vr{d} is incremented to \vr{l} the method will return the array \vr{result} which contains the shortest move sequence to the given \rubik{}.  
