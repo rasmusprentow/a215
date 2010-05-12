@@ -23,6 +23,20 @@ Solving in H, with depth: 9. Time spend inside H: 15787 milliseconds
 Solving in H, with depth: 10. Time spend inside H: 123506 milliseconds
 Solving in H, with depth: 11. Time spend inside H: 973348 milliseconds
 Solving in H, with depth: 12. Time spend inside H: 7687740 milliseconds
+The solutions of the length 21. The solution is:
+U  R2  D'  L'  F'  L'  D2  B'  L  B2  D2  R2  U'  R2  B2  U  F2  R2  U  L2  D  
+Time spend: 55159 seconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 62 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 374 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2902 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 22932 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 181023 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 1430164 milliseconds
 
 
 Behold the Cube
