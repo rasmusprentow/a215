@@ -1,16 +1,17 @@
 \section{The Move Incrementing Methods}
 \label{sec:increaseWithSNotEndingWithA}
-When the method is called it takes two parameters, a move sequence of the type MoveButtons(ref) and an integer, \vr{i}, telling where in the move sequence the move should be incremented. The move sequence contains the so far executed moves.
+When the method, named \vr{increaseWithSNotEndingWithA}, is called it takes two parameters, a move sequence of the type MoveButtons (see subsection \ref{sub:moves}) and an integer, \vr{i}, telling where in the move sequence the move should be incremented. The move sequence parameter are the moves which is the current move sequence which the \cube{} has been permuted by.
 
-The method named \vr{increaseWithSNotEndingWithA} increments a move sequence. This means it will find the next move in the list of all moves.
-
-
+The method increments a move sequence. This means it will find the next move in the list of all moves. See section \ref{sec:incMoveSequence}.
 
 %As the method initializes it creates two variables of the type integer, \vr{length} and \vr{i}.
 %The variable \vr{length} is set equal to the length of the move sequence, so every time the length of the move sequence is needed the variable \vr{length} will be used.
 %The variable \vr{i} is used to keep track of where in the move sequence a move is changed and it is set equal to the input integer parameter. 
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the incrementing method of kociemba's optimal solver}, label=src:kociemba2]
+.
+.
+.
 if (i == length - 1) {
 	try {
 		do {
@@ -38,21 +39,21 @@ if (i == length - 1) {
 		increaseWithSNotEndingWithA(moveSequence, i);
 		return;
 	}
-}
+} else { ...
 \end{lstlisting}
 
 The last move performed on the cube can never be an \m{A} move since \m{H} is a closed group (see section \ref{sec:subgroup}). The part of the code that increments the last move is shown in code snippet \ref{src:kociemba2}.
 At first a \textbf{do-while} loop is executed. 
 %If it is not working with the last another code snippet is executed and is very similar to this snippet. 
-Inside this loop; the parameter \vr{moveSequence} will be updated with a move from \m{S} as long as the new move is a move from \m{A}. This ensure that the move is not ending in \m{A}.
+Inside this loop; the parameter \vr{moveSequence} will be updated with a move from \m{S} as long as the new move is a move from \m{A}. This ensure that the move is not an \m{A} move.
 
 After the loop has run a new method is called, \vr{isSameFace}, this method tests if the new move is the same as the move before this.
 If they are the same (see section \ref{sec:groupDefinition}), then the method will call itself with the last move as a parameter else it will permute the cube with the current move.
 When the \rubik{} has been permuted it will return and the method will end.
 
-The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}).
-When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}, this exception is caught in a \textbf{try-catch}.
-When the exception is caught the last place in the move sequence array will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
+The method increments the move, it runs through the enumset \vr{S} (see code snippet \ref{src:enumset}, enumset \vr{S}). 
+When \m{R2} is reached the next increment will throw an \vr{ArrayIndexOutOfBoundsException}. See section \ref{sec:incMoveSequence}.
+When the exception is caught the last move in the move sequence will be set equal to the move \m{F}(see code snippet \ref{src:enumset}, enumset \vr{notA}), which is the first move in the enumset.
 When this happens the method will call it self on the move prior to the current. This will result in every move sequence it run through. 
 
 
@@ -65,9 +66,9 @@ private EnumSet<MoveButtons> A = EnumSet.of(U, UP ,U2, D, DP, D2, F2, B2, L2, R2
 private EnumSet<MoveButtons> notA = EnumSet.of(F, FP, B, BP, L, LP, R, RP);
 \end{lstlisting}
 
-All this code is executed if and only if the first condition (\vr{i==length-1}) is true.
-If it is false, then the method will start increasing the current move with an \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
-This is done the same way as above, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
+All the code in code snippet \ref{src:kociemba2}  is executed if it is at the last move in this move sequence.
+If it is another move in the sequence, the method will start increasing the current move with an \vr{S} move (see code snippet \ref{src:enumset}, enumset \vr{S}).
+This is done the same way as in code snippet \ref{src:kociemba2}, except there is no \textbf{do-while} loop around it since we are interested in all the moves in \vr{S}.
 
 Then the method tests if two moves are on the same \face{}, just as it did in code snippet \ref{src:kociemba2}.
 It will now test if the current move and the prior move is on the same face.
@@ -79,4 +80,4 @@ This is done with the same code as before, except this time it sets the move to 
 
 There is a similar method named \vr{increaseWithA} that uses a very similar code, this is called from the \vr{solveFromH} method.
 The difference is that it increments with moves from \vr{A} (see code snippet \ref{src:enumset}, enumset \vr{A}).
-It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} contains this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).
+%It uses a \textbf{do-while} to increase the move \vr{moveSequence[i]} and then increase it again if \vr{A} contains this move just as code snippet \ref{src:kociemba} did with \vr{notA} (see code snippet \ref{src:enumset}).

@@ -5,6 +5,9 @@ The method named \vr{solve} (see code snippet \ref{src:kociemba} for a key point
 The solver's approach to solving the \rubik{} is trying every move sequence not tried so far. If the cube is inside \m{H} it will start using only \m{A} moves. Every time a shorter move sequence is found it is saved. 
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the solve method of Kociemba's optimal solver}, label=src:kociemba]
+.
+.
+.
 try {
 	c = solveFromH(l - d);
 	if (d + c.length < l) {
@@ -25,6 +28,7 @@ try {
 		output.addTextln("Time spend: " + ((curTime - startTime)/1000) + " seconds");
 	}
 } catch (InvalidCubeException e) {}
+...
 \end{lstlisting}
 
 The \vr{solve} method starts with initializing five variables; 
