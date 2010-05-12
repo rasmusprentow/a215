@@ -1,13 +1,9 @@
 \subsection{Magic Cube}
 \label{sub:mcube}
 
-
-
 %\begin{figure}[h]	\centering		\includegraphics[scale=0.8]{input/pics/presentMagicCube2}	\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}	\end{figure}
 
-
-
-\begin{figure}[b]
+\begin{figure}[hbt]
 	\centering
 		\subfloat[\myCaption{Top layer.}]{
 		
@@ -43,16 +39,16 @@
 
 
 
-Both a \msquare{} and a \mcube{} have a magic constant, which can be the sum of each row, column and pillar. See figure \ref{fig:presentMagicCube}.
- However this is where the similarity ends. There are also similarities between the \mcube{} and the \rubik{} which will be elaborated on later. 
+Both a \msquare{} and a \mcube{} have a magic constant, which is the sum of each row, column and pillar. See figure \ref{fig:presentMagicCube}.
+However this is where the similarity ends. There are also similarities between the \mcube{} and the \rubik{} which will be elaborated on later. 
 
 We have shown how to calculate the magic constant in a \msquare{}.
-In a  \mcube{} there is not a big difference in the formula to calculate the magic constant.
+In a \mcube{} there is not a big difference in the formula to calculate the magic constant.
 \begin{equation}
 	M(n)=\frac{n \cdot (n^3+1)}{2}
 \end{equation}
 As shown in the formula the only difference is the power of $n$ that is changed from 2 to 3.
-See appendix \ref{sec:proofOfMagicConstant} for an explanation.
+%See appendix \ref{sec:proofOfMagicConstant} for an explanation.
 
 To create a  \mcube{}, there are some parts that need to be explained.
 All these basics are shown on figure \ref{fig:cubeparts}.

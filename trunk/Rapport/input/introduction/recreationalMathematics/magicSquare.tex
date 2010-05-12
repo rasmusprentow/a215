@@ -1,6 +1,6 @@
 \subsection{Magic Square}
 \label{sec:magicSquare}
-A \msquare{} is a square which is divided into a number of sub squares. The number of sub squares in any row or column is referred to as the ``order'' of the \msquare{}. In each sub square there is a positive integer. In order for the \msquare{}, to be ``magic'', the sum of any row, column or diagonal must be the same, this sum is referred to as the magic constant. See table \ref{tab:magicSquareOrder3} below.
+A \msquare{} is a square which is divided into a number of sub squares. The number of sub squares in any row or column is referred to as the ``order'' of the \msquare{}. In each sub square there is a positive integer. In order for the \msquare{}, to be ``magic'', the sum of any row, column, and diagonal must be the same, this sum is referred to as the magic constant. See table \ref{tab:magicSquareOrder3} below.
 
 \renewcommand{\arraystretch}{1.3}
 \begin{table}[h]
@@ -20,17 +20,18 @@ A \msquare{} is a square which is divided into a number of sub squares. The numb
 	\label{tab:magicSquareOrder3}
 \end{table}
 
-The \msquare{}\cite{aiden06} hails from ancient China. It was said that the people near the river Lo made offerings. Every time they made an offering a tortoise emerged from the river. On the back of the tortoise there was said to be a \msquare{}.
+The \msquare{} \cite{aiden06} hails from ancient China. It was said that the people near the river Lo made offerings. Every time they made an offering a tortoise emerged from the river. On the back of the tortoise there was said to be a \msquare{}.
 
-The \msquare{} from this tale was of the order 3. This is not the only order in which a \msquare{} can be created; it is possible to make an ``$n$'' order \msquare{}. Generally a \msquare{} of the order $n$ contains the numbers from 1 to $n^2$. It has been proven that it is not possible to make a second order \msquare{}. Since simply trying all possible squares with the numbers 1, 2, 3 and 4 inside results no combination that gives the same sum on each row, column and diagonal.
+The \msquare{} from this tale was of the order 3. This is not the only order in which a \msquare{} can be created; it is possible to make an ``$n$'' order \msquare{}. Generally a \msquare{} of the order $n$ contains the numbers from 1 to $n^2$. It has been proven that it is not possible to make a second order \msquare{} since simply trying all possible squares with the numbers 1, 2, 3 and 4 inside results in no combination that gives the same sum on each row, column, and diagonal.
 
-In order to solve the \msquare{}, it is needed to know the magic constant -- the constant which every row, column and diagonal adds up to for the given order $n$. This constant can be computed with the formula in \ref{align:magicConstant}.
+In order to solve the \msquare{}, it is needed to know the magic constant -- the constant which every row, column and diagonal adds up to for the given order $n$. This constant can be computed with formula \ref{align:magicConstant}.
 
 \begin{align}
 \label{align:magicConstant}
 	M(n) = \frac{n \cdot (n^2+1)}{2}
 \end{align}
 
+\begin{comment}
 The proof of this formula is quite straightforward. As table \ref{tab:magicSquareOrder3} illustrates, a \msquare{} of the order 3 contains the numbers from 1 to 9.
 
 The sum of the numbers of a row in a \msquare{} is equal to the magic constant. If the magic constant is multiplied by the order $n$ it would be equal to the sum of all the integers, since each number only occurs once in a \msquare{}.
@@ -49,7 +50,7 @@ The equation \ref{proof:magicConstant1} can be rewritten into the equation \ref{
 \end{align}
 
 The equation \ref{proof:magicConstant3} shows the function which gives the magic constant for a \msquare{} of the order $n$.
-
+\end{comment}
 %Variations of the \msquare{} exist. For example the numbers which can be inserted into the sub squares, could exceed $n^2$. This would change the magic constant. A \msquare with the integers 1 to $n^2$ within its sub squares is called a ``Normal \msquare''.
 
 A \mcube{} is created from squares put on top of each other so they make up a cube form. 
