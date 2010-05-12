@@ -2,7 +2,7 @@
 \label{chap:kociembaImplement}
 \myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}
 The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing differs from the original at one point:
-We are interested in the shortest move sequence to solve a scrambled cube, whereas the original Kociemba optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
+We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
 
 Because of this we have chosen not to have a lookup table since it would have to contain 20 billion move sequences, which is impossible on today's computers. Considering that the lookup table only contains the length, it would have a size of 4 GB \cite{cubeExplorer}. A table containing the move sequences would have to be much larger.
 
