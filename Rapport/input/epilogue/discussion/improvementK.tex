@@ -1,25 +1,31 @@
 \subsection{Kociemba's Optimal Solver}
 When we look at improving our implementation of Kociemba's optimal solver some different things can be done.
 	
-%When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
-In the first phase of our implementation of Kociemba's optimal solver we check after every tested move sequence if the \cube{} is in \m{H}.
-This \m{H} is with respect to the primary \face{}s (see sub section \ref{sub:theSubgroupH}), but it is also possible for the \rubik{} to be inside \m{H} with respect to the secondary \face{}s or tertiary \face{}s, see figure \ref{}.
+In the first phase of our implementation of Kociemba's optimal solver it checks after every tested move sequence if the \cube{} is in \m{H}.
+This \m{H} is with respect to the primary \face{}s (see subsection \ref{sub:theSubgroupH}), but it is also possible for the \rubik{} to be inside \m{H} with respect to the secondary or tertiary \face{}s, see figure \ref{fig:secondaryH}.
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
-	\includegraphics[scale=0.75]{input/pics/kocieambe2.pdf}
-	\caption{\myCaption{The lines going from $a$ to a point in $H$ is the move sequence denoted $b$. The lines from points in $H$ to the point $e$ is the move sequence denoted $c$ . The numbers beside the lines are the number of moves. Note that the moves in $c$ is decreasing as the numbers of moves in $b$ is increasing. The line that goes directly from $a$ to $e$ is the shortest move sequence possible. }}
-	\label{fig:kociemba2}
+	\includegraphics[scale=0.75]{input/pics/secondaryH.pdf}
+	\caption{\myCaption{A scrambled Rubik's Cube which is inside secondary \m{H}, but not primary.}}
+	\label{fig:secondaryH}
 \end{figure}
 
+As with primary \m{H}, the secondary \m{H} must meet the specifications:
+Every secondary \facelet{} must be on the secondary \face{}s, and the edges not in a secondary \face{} must be orientated correctly.
+These specifications are seen to be met in figure \ref{fig:secondaryH}.
+
+\begin{comment}
+When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
 This means that the application will always work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
 To improve this the \rubik{} could be turned around shifting the \face{}s in the application.
 This means that instead of testing if the primary \face{} \cubie{}s are orientated correct it would test if the secondary \face{} \cubie{}s are orientated correct. 
 The same idea also applies to the tertiary \face{}.
+\end{comment}
 	
-To decrease the search time when solving a \rubik{}, every know position of the \rubik{} could be saved in a lookup table.
+To decrease the search time when solving a \rubik{}, every know position of the \rubik{} could be saved in a look up table.
 When a shortest path to that position is found it could be saved.
-This would shorthen the time to solve the \rubik{} if the position is already know.
+This would shorten the time to solve the \rubik{} if the position is already know.
 If this is combined with the previous improvement suggestion it could make the search time to get into \m{H} shorter.
 Turning of the \face{}s only apply outside \m{H} since it would have a negative effect inside \m{H}. 
 	 
