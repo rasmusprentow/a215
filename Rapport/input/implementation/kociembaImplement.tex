@@ -21,10 +21,15 @@ The method solveFromH is build up using the same flow chart except the three box
 The differenceses is described short here.
 
 \begin{enumerate}
-	\item It creates a move sequence of only \vr{A} moves instead of moves from \vr{S}.
+	\item It creates a move sequence consisting of \vr{A} moves instead of \vr{S} moves.
 	\item It test if the cube is solved instead of testing if it is in \m{H}.
-	\item 
+	\item It increments the move sequence with an \m{A} move.
 \end{enumerate} 
+
+If the \rubik{} is not in \m{H}, then a move sequence will be initialized with a predefined length.
+The move sequence will be made so two moves after each other are not on the same face (see section \ref{sec:groupDefinition}) and not ending with an \m{A} move.
+A  
+
 
 \begin{comment}
 As in the flowchart $b$ is a move sequence variable, which takes the scrambled cube into \m{H}. $d$ is the depth, i.e. the number of moves in $b$, $c$ is the move sequence which solves the cube when it gets inside \m{H}, and $e$ is the depth which the \m{H} solver is searching. $result$ is the shortest move sequence found to solve the cube, this is updated every time a shorter move sequence is found.
