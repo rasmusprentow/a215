@@ -1,13 +1,14 @@
 \chapter{Digitalizing the Cube}
-\myTop{In order to implement solving algorithms on a \rubik{} the cube itself must first be digitalized and a visual interface must be created in order to see the result of an algorithm. In this chapter that process is described.}
+\myTop{In order to implement solving algorithms to use on a \rubik{} the cube itself must first be digitalized. An interface must be created in order to see the result of the algorithms. In this chapter that process is described.}
 A \rubik{} is a rather simple three-dimensional structure, but implementing this structure into a computer system and getting it depicted on a two-dimensional screen is not a simple task.
-The \rubik{} is built up by 26 moving \cpiece{}s held together by each other.  This type of structure is not straight forward to implement in a desktop application, so a way to handle these \cpiece{}s is needed.
+The \rubik{} is built up by 26 moving \cpiece{}s held together by each other.
+This type of structure is not straight forward to implement in a desktop application, so a way to handle these \cpiece{}s is needed.
 
-%If the \rubik{} is depicted in the computer in a two-dimensional space, its depiction will be far from the original \rubik{} structure.
-A simple way to handle the \rubik{} in the program is a two-dimensional depiction and  just simply move the \facelet{}s around.
+A simple way to handle the \rubik{} in the program is a two-dimensional depiction and then to move the \facelet{}s around.
 The analogue to this on a real \rubik{} would be to take the colored stickers off and move them to their new position rather than actually move the \cubie{}s when twisting the \rubik{}.
-This approach would be far from reality and would make the implementation of solving algorithms, such as Kociemba's optimal solver and the beginner's algorithm more complicated, since they need to know the position of the \cpiece{}s, and not just the \facelet{}s in order to determine the next step. A more object-oriented approach than to move the sticker would give a more useful structure for solving the problem. How this is done will be explained in the following section.
-%Dividing the \rubik{} into its sub structures. 
+This approach would be far from reality and would make the implementation of solving algorithms, such as Kociemba's optimal solver and the beginner's algorithm more complicated, since they need to know the position of the \cpiece{}s, and not just the \facelet{}s in order to determine the next step. 
+A more object-oriented approach than to move the stickers would give a more useful structure for solving the problem.
+How this is done will be explained in the following section.
 
 	\input{input/implementation/fittingCubeComputer/classInteraction}
 	\input{input/implementation/fittingCubeComputer/enumTypesJohn}

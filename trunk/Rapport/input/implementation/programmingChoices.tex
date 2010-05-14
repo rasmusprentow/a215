@@ -1,26 +1,28 @@
 \chapter{Choices Prior to Implementation}
 \label{cha:choicesPriorToImplementation}
-\myTop{This chapter, along with the rest of this part, will be dedicated to the last question of our problem statement -- how we will test the different solving algorithms described in chapter \ref{chap:solvingStrategies}.}
-%The choices regarding programming our application of the \rubik{} prior to actually implementing it is presented in this chapter.
-%This chapter is important to understanding the choices which will be made later as well as the actual source code of our application.
-
-To test Kociemba's optimal solver and beginner's algorithm we will create an application which has a digitalized \rubik{} which the user can permute and scramble.
+%\myTop{This chapter, along with the rest of this part, will be dedicated to the last question of our problem statement -- how we will test the different solving algorithms described in chapter \ref{cha:solvingAlgorithms}.}
+\myTop{This chapter presents our approach to test the two algorithms from chapter \ref{cha:solvingAlgorithms}. Furthermore the choices prior to the implementation will be described.}
+We want to test the two algorithms from chapter \ref{cha:solvingAlgorithms}.
+This can be done in two ways: Making the tests by hand or implementing the algorithms in an application, which can perform the tests.
+To test Kociemba's optimal solver and beginner's algorithm we will create an application that has a digitalized \rubik{}, which the user can permute and scramble.
 In this application the algorithms will be implemented for testing.
 
-Before we started implementing our application we have to make some choices, namely: Programming language, version control, and how much GUI we wanted.
-These choices and the dilemmas we have encountered are presented here.
+
+Before we start implementing our application we have to make some choices, namely: Programming language, version control, and which User Interface (UI) we want.
+These choices and the dilemmas, which we encountered are presented here.
 
 \begin{itemize}
-	\item The first thing we discussed was which language we wanted to write our application in.
-We decided that the most important thing was that everyone had a knowledge of the language prior to the implementation phase.
-This led us to choose Java as our programming language since every member of the group have been following a course in this language.
+	\item The first issue we will discuss is, which language we want to write our application in.
+The most important issue regarding the programming language is that all the members of the group have a knowledge of the language prior to the implementation phase.
+This leads us to choose Java as our programming language since we all have been following a course in this language.
 
-	\item Secondly we had to choose a way to share our source code, since we wanted to work in smaller subgroups and then collect the work when we completed a task.
-For this we chose to use subversion(SVN) because we have all been using this program whilst working on the report and therefore knew how to use it.
+	\item Secondly we have to choose a way to share our source code, since we want to work in smaller subgroups and then collect the work when we complete a task.
+For this we choose to use subversion (SVN) because we have all been using this protocol while working on the report and therefore know how to use it.
 
-	\item Another thing we had to consider was how to represent the \rubik{} in a User Interface (UI). The choice was between Graphical User Interface (GUI) and Textual User Interface (TUI). We chose a GUI because it would be easier to see how the \rubik{} permutes in our application.  
-	\item The last thing we had to decide was how much time we wanted to spend on the GUI since we do not consider it an important part of our project according to our problem limitations \ref{sec:problemLimitations}.
-We chose to make a simple GUI with the \rubik{} in the middle, buttons to right, and a console in the bottom.
+	\item We have to consider how to represent the \rubik{} in a UI. The choice is between Graphical User Interface (GUI) and Textual User Interface (TUI). We choose a GUI because it will be easier to see how the \rubik{} permutes in our application.
+	  
+	\item Finally we have to decide how much time we want to spend on the GUI since we do not consider it as an important part of our project according to our problem limitations (see section \ref{sec:problemLimitations}).
+We choose to make a simple GUI with the \rubik{} to the left, buttons to right, and a console in the bottom.
 The documentation of the creation of the GUI is omitted.
 \end{itemize}
-\myTail{This chapter has presented the choices which we have made before we started our actual implementation and how we want to test the Kociemba's optimal solver and beginner's algorithm.}
+\myTail{This chapter has presented the choices which we made before we started our actual implementation and which approach we took to test Kociemba's optimal solver and the beginner's algorithm.}
