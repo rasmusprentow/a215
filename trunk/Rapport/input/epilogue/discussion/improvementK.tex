@@ -1,41 +1,32 @@
 \subsection{Kociemba's Optimal Solver}
-When we look at improving our implementation of Kociemba's optimal solver some different things can be done.
+When we look at improving our implementation of Kociemba's optimal solver different improvements can be applied.
 	
-In the first phase of our implementation of Kociemba's optimal solver it checks after every tested move sequence if the \cube{} is in \m{H}.
+In the first phase of our implementation of Kociemba's optimal solver it checks if the \cube{} is in \m{H} after every tested move sequence.
 This \m{H} is with respect to the primary \face{}s (see subsection \ref{sub:theSubgroupH}), but it is also possible for the \rubik{} to be inside \m{H} with respect to the secondary or tertiary \face{}s, see figure \ref{fig:secondaryH}.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[scale=0.75]{input/pics/secondaryH.pdf}
-	\caption{\myCaption{A scrambled Rubik's Cube which is inside secondary \m{H}, but not primary.}}
+	\caption{\myCaption{A scrambled Rubik's Cube which is inside secondary \m{H}, but not in primary \m{H}.}}
 	\label{fig:secondaryH}
 \end{figure}
 
-As with primary \m{H}, the secondary \m{H} must meet the specifications:
+As with positions in primary \m{H}, the positions in secondary \m{H} must meet the following specifications:
 Every secondary \facelet{} must be on the secondary \face{}s, and the edges not in a secondary \face{} must be orientated correctly.
 These specifications are seen to be met in figure \ref{fig:secondaryH}.
 
-\begin{comment}
-When the \rubik{} is solved from an arbitrary position into H it is not possible to look at it from other angels. 
-This means that the application will always work with the \face{}s turning the same way (see subsection \ref{sub:cubeFaces}).
-To improve this the \rubik{} could be turned around shifting the \face{}s in the application.
-This means that instead of testing if the primary \face{} \cubie{}s are orientated correct it would test if the secondary \face{} \cubie{}s are orientated correct. 
-The same idea also applies to the tertiary \face{}.
-\end{comment}
 	
-To decrease the search time when solving a \rubik{}, every know position of the \rubik{} could be saved in a look up table.
-When a shortest path to that position is found it could be saved.
-This would shorten the time to solve the \rubik{} if the position is already know.
-If this is combined with the previous improvement suggestion it could make the search time to get into \m{H} shorter.
-Turning of the \face{}s only apply outside \m{H} since it would have a negative effect inside \m{H}. 
-	 
+When a shortest path to a position is found it could be saved in a lookup table.
+If Kociemba's optimal solver gets to a known position it can find the shortests path in the lookup table.
+If this is combined with the previous improvement it could make the search time to get into \m{H} shorter.
+ 
 The program is built up around one \cube{} object.
-As a result of this the computer is only able to use one CPU core to work on that \cube{}.
-With some modifications it could be possible make a copy of this \cube{} object.
-This will make it possible to work on more than one \cube{} object with the same starting position.
-It would be possible to make the application multithreaded in alot of ways.
+As a result of this the computer is only able to use one CPU core to work on the \cube{}.
+It would be possible to make the application multithreaded in several ways.
+With some modifications it could be possible to make a copy of this \cube{} object.
+This would make it possible to work on more than one \cube{} object with the same starting position at a time.
 When the application is working outside \m{H} it is working with \m{S} moves.
 Here it is possible to make a new thread for every depth the method searches in.
 In the same way it is possible to make a new thread for every search depth inside \m{H}.
 But there are still more ways to improve the algorithm with multithreading.
-The last way we will mention is when searching in general the moves in \m{S} and \m{A} could be divide and a new thread could be made for these new groups of moves.
+The last way we will mention is when searching in general the moves in \m{S} and \m{A} could be divided into groups and a new thread could be made for these new groups of moves.
