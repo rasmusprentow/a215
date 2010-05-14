@@ -1,9 +1,9 @@
-\section{Kociemba Compared to the Beginners}
+\section{Comparing the Implemented Algorithms}
 The two algorithms implemented in our application differs a lot from each other when looking at efficiency. 
-Kociemba is twist-wise efficient but time-wise inefficient while this is opposite, to some extend, for Beginners algorithm. 
+Our implementation of Kociemba's optimal solver is twist-wise efficient but time-wise inefficient while this is opposite, to some extend, for the beginner's algorithm. 
 
-Kociemba is the twist-wise optimal solver; it uses less than 22 moves for any positions. 
-The time-wise efficiency for Kociemba's optimal solver is not impressive. It is rather inefficient. On a 2,5 GHz Duo Core, it uses in a worst-case scenario approximately 28 million years to solve a \cube{} 18 \twist{}\footnote{Most positions can be solved in 18 \twist{}s \cite{kociemba09}} away from the solved state. With 22 moves away it will use $9.4\cdot{}10^{11}$ years. See appendix \ref{app:kociembaTime} for detailed calculations.   
+Our implementation of Kociemba's optimal solver is the twist-wise optimal solver; it uses the least amount of \twist{}s to solve any position.
+The time-wise efficiency for Kociemba's optimal solver is not impressive. It is rather inefficient. On a 2,5 GHz Duo Core, it uses in a worst-case scenario approximately 28 million years to solve a \cube{} 18 \twist{}s\footnote{Most positions can be solved in 18 \twist{}s \cite{kociemba09}} away from the solved state. 22 \twist{}s away from the solved state it will use $9.4\cdot{}10^{11}$ years. See section \ref{app:kociembaTime} for detailed calculations.   
 
-Beginners algorithm on the other hand, event though not build for any efficiency, uses less than a second to solve 1000 cubes, which probably is sufficient for most applications. 
-Twist-wise it is way less efficient since it uses an average of 151 moves to solve any cube (see section \ref{sec:beginnersStat}); where a human speed cuber uses around 60 moves in average \cite{larsPetrus97} \cite{cubeFreak}.
+Our implementation of the beginner's algorithm is not designed for twist-wise or time-wise efficiency. It uses less than a second to solve 1000 cubes. 
+Twist-wise it is way less efficient since it uses an average of 151 moves to solve any cube (see section \ref{sec:beginnersStat}); where a human speed cuber uses around 60 \twist{}s in average \cite{larsPetrus97} \cite{cubeFreak}.
