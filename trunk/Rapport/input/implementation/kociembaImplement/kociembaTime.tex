@@ -1,37 +1,42 @@
-\chapter{Computation Time for Kociamba's Optimal Solver}
+\section{Statistics for Kociamba's Optimal Solver}
 \label{app:kociembaTime}
 \myTop{In order to determine the time efficiency of  Kociemba's optimal solver, we have computed a test.}
 In order to calculate the time used to solve a \rubik{} using Kociemba's optimal solver, we have gathered data from our application in form of time stamps when ever the solver has finished a search depth.
 
-The data was gathered on a 2.5 GHz Intel Duo Core processor (P9500) with 4 GB RAM running on Linux-Ubuntu v. 10.04.
+%The data was gathered on a 2.5 GHz Intel Duo Core processor (P9500) with 4 GB RAM running on Linux-Ubuntu v. 10.04.
+The data was gathered on a 2.5 GHz AMD Quad Core processor (905e) with 4 GB DDR-3 RAM running on Windows 7 64bits.
 The data gathered with these specifications are shown in table \ref{tab:timeData}.
 
 \begin{table}[hb]
 \centering
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|l|l|l|}
 	\hline
-	Search depth&Time to finish[ms]\\
+	Search depth&First run [ms]&Second run [ms]\\
 	\hline
-	0&2\\
+	0&2&\\
 	\hline
-	1&4\\
+	1&4&\\
 	\hline
-	2&14\\
+	2&14&\\
 	\hline
-	3&74\\
+	3&74&\\
 	\hline
-	4&432\\
+	4&432&\\
 	\hline
-	5&1775\\
+	5&1775&\\
 	\hline
-	6&19921\\
+	6&19921&\\
 	\hline
-	7&289744\\
+	7&289744&\\
 	\hline
-	8&4339435\\
+	8&4339435&\\
+	\hline
+	9&xxx&xxx\\
+	\hline
+	10&xxx&xxx\\
 	\hline
 	\end{tabular}
-\caption{\myCaption{Data for computation time of Kociemba's optimal solver}}
+\caption{\myCaption{Data for computation time of the depth of Kociemba's optimal solver}}
 	\label{tab:timeData}
 \end{table}
 
@@ -50,9 +55,9 @@ As figure \ref{fig:timeFunction} shows the function for calculating the time nee
 \[
 f(x)=0.0035413937 \cdot 13.575029^{x} ms
 \]
-The $R^2$ is close to 1 and this tell us that the approximation is relativly good. Especialy for calculating this; where the precision is not essential.
+The $R^2$ is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation on how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
 
-We are interrested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09} we will estimate the time to compute this:
+We are interested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09} we will estimate the time to compute this:
 \[
 f(18) = 0.0035413937 \cdot 13.575029^{18} \approx 8.6798 \cdot 10^{17} ms \approx 27523465 years
 \]
