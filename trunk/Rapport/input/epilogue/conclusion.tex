@@ -8,20 +8,25 @@ After gathering sufficient information we formulated a problem statement. Our pr
 
 The current upper and lower bounds are respectively 22 and 20. 
 This means that it is possible to solve a \rubik{} in any position in no more than 22 moves, and that the \rubik{} position that requires the most twists to solve, needs 20 twists.
-The upper bound of 22 has been found by dividing the positions of the \rubik{} into cosets. A set solver was able to test if an entire set of positions needed 22 twists or less to solve the \rubik{}. The result showed that no \rubik{} position needed more than 22 twists to solve.
+The upper bound of 22 has been found by dividing the positions of the \rubik{} into cosets. A set solver was able to test if an entire set of positions needs 22 twists or less to solve the \rubik{}. The result showed that no \rubik{} position needs more than 22 twists to solve.
 
 A specific \rubik{} position, known as superflip, has a solution, which is a sequence of 20 twists.
 The lower bound was proven by testing all sequences of twists with a length shorter than 20, and finding that none of these solved this position.
 
+The efficiency of a solving algorithm has to be tested in a controlled environment with as little human interference as possible. 
+That is why an application, where a user can scramble but only the application performs the solving algorithms, is a good choice when running a test.
+After we implemented the algorithms, we tested their efficiencies separately.
+Our implementation of the beginner's algorithm was run 100,000 times, and the average length of the twist sequence that solved the \rubik{} was found to be 151 as well as the time spent on solving them which were XXXXXX. See section \ref{sec:beginnersStat}. 
+Our implementation of Kociemba's optimal solver was run over a period of 48 hours. By this we estimated the time it would take to find an optimal solution of a \rubik{}, which were XXXX years. See section \ref{app:kociembaTime}.
+
+
+
+
+\begin{comment}
 There are many algorithms, which can solve the \rubik{}. 
 There are generally two types of algorithms; algorithms for human solving and algorithms for computer solving. 
 A requirement for the human algorithms is that one should be able to remember it, which limits the effectiveness. 
 The computer algorithms are generally based upon systematic trial and error, which is why they are not effective to use as a human solver.
 The human algorithms are time-wise efficient both for a human and a computer solver, but are not twist-wise efficient.
 The computer algorithms require a lot of time, but give a twist-wise efficient result.
-
-The efficiency of a solving algorithm has to be tested in a controlled environment with as little human interference as possible. 
-That is why an application, where a user can scramble but only the application performs the solving algorithms, is a good choice when running a test.
-After we implemented the algorithms, we tested their efficiencies seperately.
-Our implementation of the beginner's algorithm was run 100,000 times, and the average length of the twist sequence that solved the \rubik{} was found aswell as the time spent on solving them. 
-Our implementation of Kociemba's optimal solver was run over a period of 48 hours. By this we estimated the time it would take to find an optimal solution of a \rubik{}.
+\end{comment}
