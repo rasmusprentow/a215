@@ -1,0 +1,58 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.3.0.384
+MinVersion = 2.5
+OS = Windows XP 5.1 Service Pack 3
+
+[Axes]
+xMin = -1.05464317236161
+xMax = 10.4766895725634
+xTickUnit = 1
+xGridUnit = 1
+xShowGrid = 1
+xAxisCross = 1
+yMin = 0.342357598915681
+yMax = 1495146612.44226
+yTickUnit = 10
+yGridUnit = 10
+yLogScl = 1
+yShowGrid = 1
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+
+[PointSeries1]
+FillColor = clRed
+LineColor = clBlue
+Size = 5
+Style = 0
+LabelPosition = 1
+Points = 0,0;0,0;1,0;1,16;2,0;2,31;3,47;3,78;4,281;4,296;5,1045;5,983;6,10920;6,10873;7,157451;7,158637;8,2358584;8,2361704;9,35447427;
+Visible = 0
+LegendText = All
+
+[PointSeries2]
+FillColor = clRed
+LineColor = clBlue
+Size = 5
+Style = 0
+LabelPosition = 1
+Points = 5,1045;5,983;6,10920;6,10873;7,157451;7,158637;8,2358584;8,2361704;9,35447427;
+LegendText = 5 and forth
+
+[Func1]
+FuncType = 0
+y = 0.0018372421*13.731997^x
+LegendText = f(x)=0.0018372421*13.731997^x; R²=0.9884
+Color = clRed
+
+[Data]
+TextLabelCount = 0
+FuncCount = 1
+PointSeriesCount = 2
+ShadeCount = 0
+RelationCount = 0
+OleObjectCount = 0
+
