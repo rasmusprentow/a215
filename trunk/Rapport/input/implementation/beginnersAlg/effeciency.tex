@@ -1,10 +1,28 @@
-\section{Statistic for the Beginners Algorithm}
+\section{Statistics for Beginner's Algorithm}
 \label{sec:beginnersStat}
-The twist-wise efficiency is not a primary concern in this implementation, but how twist-efficient or rather how twist-inefficient it is. 
+In order to get the average length of a solution of Beginner's algorithm we must determine how many moves of scrambling must be applied in order to find the worst case scenario. 
+By computing the average for different amount of scrambles the graph quickly becomes steady at around 40 scrambles (10.000 cubes is tested). See figure \ref{fig:beginnersScramble}. To be sure that we get a good result we go by 50 scrambles.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{input/pics/beginnersScramble.pdf}
+	\caption{\myCaption{The graph shows the amount of moves needed to solve a cube with x scrambles. The lines are for showing only and do not represent the average between the dots.}}
+	\label{fig:beginnersScramble}
+\end{figure}
 
-First it is necessary to determine how many moves of scrambling must be applied in order to find the worst case scenario. By computing the average for different amount of scrambles the graph quickly becomes steady at around 50 scrambles. Applying more scramble moves will not give a higher average. 
+Now that the number of scrambles is determined the average can be found.
+By scrambling 1.000.000 cubes and solve them with the beginner's algorithm we get an average of 151 moves. 
+see section \ref{fig:beginnersSolve}. 
+Which is the average of beginner's algorithm. 
+The maximum value found is 224 moves and minimum is 70 moves. The time were XXXX minutes. It was tested on DANS PC. 
 
-By scrambling 100.000 cubes and solve them with the beginners algorithm we found an average of 151 moves. With a max of 224 moves and a minimum of 70 moves. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{input/pics/beginnersSolve.pdf}
+	\caption{\myCaption{The graph shows the amount of moves needed to solve a cube with 50 scrambles. x is the amount of test. The lines are for showing only and do not represent the average between the dots.}}
+	\label{fig:beginnersSolve}
+\end{figure}
 
 A peculiar note is that with one twist, the algorithm needs an average of 131 moves with a maximum of 155 and a minimum 94 moves to solve it again.
-This illustrates the twist-wise ineffiency of this algorithm very well.
+This illustrates the twist-wise inefficiency of this algorithm very well.
+
+
