@@ -37,6 +37,132 @@ Solving in H, with depth: 8. Time spend inside H: 2902 milliseconds
 Solving in H, with depth: 9. Time spend inside H: 22932 milliseconds
 Solving in H, with depth: 10. Time spend inside H: 181023 milliseconds
 Solving in H, with depth: 11. Time spend inside H: 1430164 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 31 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 327 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2605 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20514 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 161647 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 1276534 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 47 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 328 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2605 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20420 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 161336 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 1275302 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 47 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 328 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2590 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20530 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 162162 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 1280793 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 47 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 328 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2605 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20592 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 162740 milliseconds
+Solving in H, with depth: 11. Time spend inside H: 1284881 milliseconds
+Try solving with depth: 10. Time spend: 146572164 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 6 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 44 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 335 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2644 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20844 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163944 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 6 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 43 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 335 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2632 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20781 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 164164 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 7 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 45 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 335 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2630 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20733 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163719 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 7 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 44 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 336 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2634 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20765 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163860 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 7 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 45 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 335 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2623 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20724 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163708 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 6 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 43 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 333 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2628 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20758 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163886 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 8 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 47 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 338 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2635 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20748 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163702 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 7 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 44 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 336 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2633 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 20747 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 163904 milliseconds
+
 
 
 Behold the Cube
@@ -64,3 +190,16 @@ Solving in H, with depth: 8. Time spend inside H: 2153 milliseconds
 Solving in H, with depth: 9. Time spend inside H: 15866 milliseconds
 Solving in H, with depth: 10. Time spend inside H: 124083 milliseconds
 Solving in H, with depth: 11. Time spend inside H: 977873 milliseconds
+Solving in H, with depth: 12. Time spend inside H: 7894160 milliseconds
+Solving in H, with depth: 13. Time spend inside H: 83980919 milliseconds
+
+Behold the Cube
+Calculating statistics for Beginners Algorithm:
+Scrambles: 1 Runs: 1000 in average 132 moves. 
+Max: 155 min: 94
+Calculating statistics for Beginners Algorithm:
+Scrambles: 1 Runs: 1000 in average 130 moves. 
+Max: 155 min: 94
+Calculating statistics for Beginners Algorithm:
+Scrambles: 1 Runs: 1000 in average 133 moves. 
+Max: 155 min: 94
