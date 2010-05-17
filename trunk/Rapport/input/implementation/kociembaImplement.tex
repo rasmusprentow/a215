@@ -1,32 +1,31 @@
 \chapter{Kociemba's Optimal Solver}
 \label{chap:kociembaImplement}
-\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}
-The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing differs from the original at one point:
-We are interested in the shortest move sequence to solve a scrambled cube, where as the original Kociemba optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
+\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing differs from the original at one point:
+We are interested in the shortest move sequence to solve a scrambled cube, whereas the original Kociemba's optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
 
-Because of this we have chosen not to have a lookup table since it would have to contain 20 billion move sequences, which is impossible on today's computers. Considering that the lookup table only contains the length, it would have a size of 4 GB \cite{cubeExplorer}. A table containing the move sequences would have to be much larger.
+Because of this we have chosen not to have a lookup table since it would have to contain 20 billion move sequences, which is impossible on today's computers. Considering that the lookup table, that only contains the length, would have a size of 4 GB \cite{cubeExplorer}. A table containing the move sequences would have to be much larger.
 
 An $A$ move can be defined using 4 bits.
 The 4 bits gives $2^4=16$ different spaces and there are 10 $A$ moves, which mean they will fit.
 To calculate the size of a lookup table containing the move sequence is just a matter of multiplying the size of one move with the number of moves in a sequence, e.g. a move sequence of the length 14 would have the size: $4 \cdot 14 = 56$ bits.
 This size is again multiplied with the number of positions which needs this length for solving.
-The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB (see appendix \ref{chap:sizeOfLookup}), which exceeds the average memory on today's computer \cite{averageRAM} \cite{maxRAM2}.
-Instead of the lookup table our solver will have to try every move sequence inside \m{H} in order to find the shortest one, which solves the \rubik{}.
+The size of a lookup table containing every move sequences to solve the \rubik{} inside \m{H} would be: $987$ GB (see appendix \ref{chap:sizeOfLookup}), which by far exceeds the average memory on today's computer \cite{averageRAM} \cite{maxRAM2}.
+Instead of the lookup table our solver will have to try every move sequence inside \m{H} in order to find the shortest one that solves the \rubik{}.
 
 A flowchart of our implementation is shown in figure \ref{fig:kociembaFlow}.
-The method starts out with the \rubik{} in the position it has to be solved from.
+The solving method starts out with the \rubik{} in the position it has to be solved from.
 It begins by testing if the \rubik{} is solved, if this is the case the method will return.
 If the \rubik{} is not solved the method will test if the \rubik{} is in \m{H}, if this is the case it will call the method \vr{solveFromH}.
 The method \vr{solveFromH} is built up using the same flow chart except the three boxes with a marked edge.
-The differenceses is described shortly here.
+The differences are described here.
 
 \begin{enumerate}
 	\item It creates a move sequence consisting of \m{A} moves instead of \m{S} moves.
 	\item It tests if the cube is solved instead of testing if it is in \m{H}.
-	\item It increments the move sequence with an \m{A} move.
+	\item It increments the move sequence with an \m{A} move (see next section for a description of move incremention).
 \end{enumerate} 
 
-If the \rubik{} is not in \m{H}, then a move sequence will be initialized with a predefined length.
+If the \rubik{} is not in \m{H}, then a move sequence will be initialized with a predefined length of one in the first run.
 The move sequence will be made so two moves after each other are not on the same face (see section \ref{sec:groupDefinition}) and not ending with an \m{A} move.
 For instance an initialized move sequence of the length five would consist of the following moves: \m{U D U D F}.
 
@@ -34,7 +33,6 @@ Now the \rubik{} is permuted with the initialized move sequence.
 A new test is performed to check if \rubik{} is in \m{H}.
 If it is in \m{H} \vr{solveFromH} will be called as it was before.
 If the \rubik{} is not in \m{H} the method will permute the inverse of the last move performed.
-It then tests if all the moves in \m{A} have been used on the last move of the move sequence.
 If the last move cannot be incremented then it will try to increment the second last move ect.
 When a move has been incremented the \rubik{} will be permuted with this new move sequence.
 The test will then run again and a new move will be incremented untill the \rubik{} is in \m{H}.
