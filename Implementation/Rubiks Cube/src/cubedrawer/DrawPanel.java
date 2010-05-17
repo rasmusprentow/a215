@@ -822,23 +822,27 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void statistic(){
-		int base = 1000, scrambles  = 1, total = 0, max = 0, min = 0;
+		int base = 1000000, scrambles  = 5, total = 0, max = 0, min = 0;
 
 		console.addTextln("Calculating statistics for Beginners Algorithm:");
-		for(int m = 1; m < 2; m++){
+		//for(int m = 1; m < 102; m = m + 5){
+		long startTime, totalTime = 0;
+			int m = 50;
 			total = 0; max = 0; min = Integer.MAX_VALUE;
 			for(int i = 0; i < base; i++){
 				for(int j = 0; j < m; j++){
 					int moveNum = (int)(Math.random()*18);
 					Cube.permute(cube, (MoveButtons)moves.toArray()[moveNum]);
 				}
+				startTime = System.currentTimeMillis();
 				int size = MoveTools.eliminateAll(beginners.solve()).size();
+				totalTime += (System.currentTimeMillis() - startTime);
 				if(size > max){				max = size;		}		if(size < min){				min = size;			}
 				total += size;
 
 			}
-			console.addTextln("Scrambles: " + m + " Runs: " + base + " in average " + total/base + " moves. \nMax: " + max + " min: " + min);
-		}
+			console.addTextln("Scrambles: " + m + " Runs: " + base + " in average " + total/base + " moves. \nMax: " + max + " min: " + min + " Time " + totalTime);
+		//}
 
 	}
 
