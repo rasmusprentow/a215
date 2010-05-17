@@ -41,34 +41,26 @@ The \vr{solve} method starts with initializing five variables;
 \end{itemize}
 
 After the initialization the \vr{solve} method calls the \vr{solveFromH}, which solves the cube if the cube is in \m{H}. 
-When the cube has been solved from \m{H} it test if the length of the new solution is better than the old solution this will be saved as the new solution. 
+When the cube has been solved from \m{H} it tests if the length of the new solution is shorter than the old solution. 
+This will be saved as the new solution. 
 This can be seen in code snippet \ref{src:kociemba}.
-If the cube is not in \m{H}  the exception \vr{InvalidCubeException} will be thrown.
+If the cube is not in \m{H}  the exception of the class \vr{InvalidCubeException} will be thrown.
 When this exception is caught it forces the \vr{solve} method to skip to the next part of the algorithm. 
 %If the new move sequence (\vr{b+c}) is shorter than the currently shortest move sequence (\vr{result}) the new one will be saved in \vr{result} and \vr{l} is set to be the length of the new move sequnce.
-\begin{comment}
- method to test if the cube is in \m{H}. 
- The method \vr{solveFromH} is called with a parameter, which determines how deep it will search.
 
-If the \rubik{} is in \m{H} then \vr{solveFromH} will start solving it with \m{A} moves. If the \rubik{} is not inside \m{H} the \vr{solveFromH} will throw an exception called \vr{InvalidCubeException}. 
-
-When the InvalidCubeException is caught by it cause 
-
-\end{comment}
-
-After the code snippet \ref{src:kociemba} the method will permute the \rubik{} back with the inverse of the last move. In first run this is redundant since the move sequence, \vr{b}, is empty. 
+After the code in the code snippet \ref{src:kociemba} has been run, the method will permute the \rubik{} back with the inverse of the last move. In first run this is redundant since the move sequence, \vr{b}, is empty. 
 When it has been permuted back the method \vr{increaseWithSNotEndingWithA} will be called. 
 See section \ref{sec:increaseWithSNotEndingWithA}. 
-The new increased move sequence will now be executed and the part displayed in code snippet \ref{src:kociemba} will be executed again. 
+The new increased move sequence will now be applied and the part displayed in code snippet \ref{src:kociemba} will be executed again. 
 
-When the method \vr{increaseWithSNotEndingWithA} has been through every move sequence of the length \vr{d} it will throw an exception of the type  \vr{UnableToIncreaseMoveSequenceException}. 
-The \vr{solve} method will catch this exception and increment \vr{d}. When \vr{d} is incremented to \vr{l} the method will return the array \vr{result} which contains the shortest move sequence to the given \rubik{}.  
+When the method \vr{increaseWithSNotEndingWithA} has been through every move sequence of the length \vr{d}, it will throw an exception of the type  \vr{UnableToIncreaseMoveSequenceException}. 
+The \vr{solve} method will catch this exception and increment \vr{d}. When \vr{d} is incremented to \vr{l} the method will return the array \vr{result}, which contains the shortest move sequence to solve the given \rubik{} position.  
 \begin{comment}
 Thereafter it tests if \vr{d + c.length} > \vr{l}. 
 If that is true, \vr{l} will be set equal to the sum of \vr{d + c.length} and the \vr{result} array will be initialized with the size \vr{l}. 
 In the \vr{result} array the move sequence \vr{b} and the move sequence \vr{c} is added and the console will print the current \vr{result} and the time it took in seconds.
 
-After the method has tested if \vr{d + c.length < l} the method will permute the \rubik{} back with the inverse of the last move. When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called. See section \ref{sec:increaseWithSNotEndingWithA}.
+After the method has tested if \vr{d + c.length < l} the method will permute the \rubik{} back with the inverse of the last move. When it has been permuted the method \vr{increaseWithSNotEndingWithA} will be called which increments the move sequence \vr{b}. See section \ref{sec:increaseWithSNotEndingWithA}.
 
 When the method \vr{increaseWithSNotEndingWithA} throws an exception of the type \vr{UnableToIncreaseMoveSequenceException} the method increments \vr{d}. 
 When \vr{d} is incremented to \vr{l} the method will return the \vr{result} array.
