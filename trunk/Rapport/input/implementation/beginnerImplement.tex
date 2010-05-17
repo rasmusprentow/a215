@@ -1,32 +1,30 @@
 \chapter{Beginner's Algorithm}\label{chap:beginnerImplement}
-\myTop{In this chapter the process of implementing the beginner's algorithm, which was described in the theory part, will be presented. This implementation will not be as effective as the beginner's algorithm is capable of being. The reason for this is that we only want our implementation to solve the \rubik{}, and the number of twists in this algorithm is of low priority.}
+\myTop{In this chapter the process of implementing the beginner's algorithm, which is described in section \ref{sec:beginner}, will be presented. This implementation will not be as effective as the beginner's algorithm is capable of since it is a proof of concept.}
 This chapter is divided into the different steps used in the beginner's algorithm.
 Each step is using different algorithms which all are generally structured in the same way. 
 
 For the sake of simplicity the first layer (down face) in our implementation will always be the same face. We have chosen that face to be the yellow face, the green is the front face, and the red is the right face. This will make the implementation process easier, but the solution will require more twists since it is unlikely that the yellow face is the optimal choice as the first layer face for every solve.
 
-\section{Algorithms}
 The implementation uses several algorithms which all are named algorithm X, where X is an integer. There are 11 of these and they are all a set of twists that it performs.
 
 Most of them contains a \textbf{switch-case} statement which is dependent on some input specified for each algorithm. In all cases this is based on the point of view. Normally a human will simply rotate the whole \cube{} and perform the same algorithm, but we found it easier simply to define the algorithms from the different locations.
 
-\emph{Point of view kan godt blive lidt udpenslet}
-\section{The steps}
-In the following the implementation of the steps of the beginners algorithm will be described.
-The steps is based on the steps described in section \ref{sec:beginner}. With exception of the implementation step five, six, and seven which are the theory step five. 
+\section{The Steps}
+In the following the implementation of the steps of the beginner's algorithm will be described.
+The steps are based on the steps described in section \ref{sec:beginner}. 
 \subsection{Step 1 -- Getting the Cross}
 \input{input/implementation/beginnersAlg/step1}
 \subsection{Step 2 -- Completing the First Layer}
 \input{input/implementation/beginnersAlg/step2}
 \subsection{Step 3 -- Solving the Second Layer}
 \input{input/implementation/beginnersAlg/step3}
-\subsection{Step 4 --  Getting the Last Layer Cross}
+\subsection{Step 4a --  Getting the Last Layer Cross}
 \input{input/implementation/beginnersAlg/step4}
-\subsection{Step 5 -- Completing the Last Layer Cross}
+\subsection{Step 4b -- Completing the Last Layer Cross}
 \input{input/implementation/beginnersAlg/step5}
-\subsection{Step 6 -- Positioning the Last Layer Corners}
+\subsection{Step 5a -- Positioning the Last Layer Corners}
 \input{input/implementation/beginnersAlg/step6}
-\subsection{Step 7 -- Completing the Last Layer}
+\subsection{Step 5b -- Completing the Last Layer}
 \input{input/implementation/beginnersAlg/step7}
 
 \section{Twist Reduction}
