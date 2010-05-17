@@ -4,30 +4,20 @@
 \begin{figure}[h]
 	\centering
 		\includegraphics[scale=0.5]{input/pics/twistOfUpFace}
-	\caption{\myCaption{A twist of a face will not only inflict the twisted face but also its adjacent faces. }}
+	\caption{\myCaption{A twist of a face will not only affect the twisted face but also its adjacent faces. }}
 	\label{fig:twistOfUpFace}
 \end{figure}
 
-In this structure moving a \face{} will move the \cpiece{}s from one \cubicle{} to another. See figure \ref{fig:twistOfUpFace}. By performing a \twist{} the \face{}s adjacent to the twisted \face{} are also affected. 
-For example when \twist{}ing the up face of a \rubik{} the \cubie{}s adjacent to the up face in R, L, B, and F faces will be permuted.
+A \face{} will move the \cpiece{}s from one \cubicle{} to another. See figure \ref{fig:twistOfUpFace}. By performing a \twist{} the \face{}s adjacent to the twisted \face{} are also affected. 
+E.g. when \twist{}ing the up face of a \rubik{} the \cubie{}s adjacent to the up face in R, L, B, and F faces will be permuted.
 
-However the problem of this structure is that it requires variables to determine how the \cubie{}s are oriented. 
+However the problem is that it requires variables to determine how the \cubie{}s are orientated. 
 In order to draw a \rubik{} on the screen there are two things which are needed; the position of each \cubie{} and the orientation of each \cubie{}. This section will deal with the orientation of a \cubie{}.
 
 The way to define an edge \cubie{} differs from the way to define a corner \cubie{}, which is why these to are dealt with separately.
 
-In order to define the orientation of a \cubie{} it is needed to define different types of \face{}s, namely three types; primary, secondary, and tertiary. On a \rubik{} there is two \face{}s of each type. Each face of the same type is placed opposite to the other of the type. e.g. the white and yellow \face{}s could be primary because they are opposite to each other, blue and green could then be secondary, and red and orange would then be tertiary. See figure \ref{fig:cubeFaces} for an illustration of this example.
-
-\begin{figure}[!hbt]
-	\centering
-		\includegraphics[width = 0.5\textwidth]{input/pics/cubeFaces}
-	\caption{\myCaption{In this figure the two primary faces are labeled ``P'', the secondary faces ``S'', and the tertiary faces ``T''.}}
-	\label{fig:cubeFaces}
-\end{figure}
-
-
 \subsection{Corner Cubie}
-A corner \cubie{} in a given \cubicle{} can ``sit'' in this \cubicle{} in one of three ways. See figure \ref{fig:orientation} for the three different orientations of the white/blue/red corner \cubie{}.
+A corner \cubie{} in a given \cubicle{} can be orientated in this \cubicle{} in one of three ways. See figure \ref{fig:orientation} for the three different orientations of the white/blue/red corner \cubie{}.
 Since each corner \cubie{} has one of each \facelet{} type -- one primary, one secondary, and one tertiary -- the orientation can be defined from where one of these \facelet{}s are positioned.
 These different orientations can thereby be defined with an integer between 0 and 2.
 0 if the primary \facelet{} of the \cubie{} is on the primary \face{}, 1 if the primary \facelet{} is on the secondary \face{}, and 2 if the primary \facelet{} is on the tertiary \face{}.
