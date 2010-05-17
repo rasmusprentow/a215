@@ -1,13 +1,12 @@
 \section{The Move Incrementing Methods}
 \label{sec:increaseWithSNotEndingWithA}
-The move incrementing methods is a vital part of Kociemba's optimal solver. It ensures that every posible and optimal move sequence is tested in the method solve.
+The move incrementing methods are vital parts of Kociemba's optimal solver. 
+It ensures that every possible move sequence is tested.
+The methods increments a move sequence. This means it will find the next move in the list of all moves. See section \ref{sec:incMoveSequence}.
 
-DETTE SKAL DIE I STEDET
 
-When the method, named \vr{increaseWithSNotEndingWithA}, is called it takes two parameters, a move sequence of the type MoveButtons (see subsection \ref{sub:moves}) and an integer, \vr{i}, telling where in the move sequence the move should be incremented. The move sequence parameter are the moves which is the current move sequence which the \cube{} has been permuted by.
-
-The method increments a move sequence. This means it will find the next move in the list of all moves. See section \ref{sec:incMoveSequence}.
-HERTIL...
+When the method, named \vr{increaseWithSNotEndingWithA}, is called it takes two parameters, a move sequence of the type MoveButtons (see subsection \ref{sub:moves}) and an integer, \vr{i}, telling where in the move sequence the move should be incremented. 
+The move sequence parameter are the moves, which is the current move sequence which the \cube{} has been permuted by.
 
 \begin{lstlisting}[style=sourceCode, caption=\myCaption{Key point in the incrementing method of kociemba's optimal solver}, label=src:kociemba2]
 .
