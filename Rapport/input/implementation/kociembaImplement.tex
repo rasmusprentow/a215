@@ -1,6 +1,9 @@
 \chapter{Kociemba's Optimal Solver}
 \label{chap:kociembaImplement}
-\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter. The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.}The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing differs from the original at one point:
+\myTop{The actual implementation of Kociemba's optimal solver will be covered in this chapter.
+The reader will be presented with general description of how we have chosen to implement Kociemba's optimal solver along with a detailed explanation of key points of the source code.
+Statistics about our implementation of Kociemba's optimal solver will be presented to make a comparison with beginner's algorithm in our discussion.}
+The basics of Kociemba's optimal solver have been covered in section \ref{sec:kociemba}. The algorithm which we are implementing differs from the original at one point:
 We are interested in the shortest move sequence to solve a scrambled cube, whereas the original Kociemba's optimal solver only finds the shortest length, not the actual sequence of moves \cite{rokicki09}.
 
 Because of this we have chosen not to have a lookup table since it would have to contain 20 billion move sequences, which is impossible on today's computers. Considering that the lookup table, that only contains the length, would have a size of 4 GB \cite{cubeExplorer}. A table containing the move sequences would have to be much larger.
@@ -50,4 +53,5 @@ In the example from before the new move sequence would be: \m{U D U D U F}.
 	\input{input/implementation/kociembaImplement/methodSolve}
 	\input{input/implementation/kociembaImplement/methodIncreaseWithSNotEndingWithA}
 	\input{input/implementation/kociembaImplement/kociembaTime}
-\myTail{This chapter has shown how we have implemented Kociemba's optimal solver, with descriptions of key points of the source code.}
+\myTail{This chapter has shown how we have implemented Kociemba's optimal solver, with descriptions of key points of the source code.
+Time-wise statistics about our implementation of Kociemba's optimal solver is presented.}
