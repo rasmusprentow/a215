@@ -1,6 +1,7 @@
 \section{Statistics for Kociamba's Optimal Solver}
 \label{app:kociembaTime}
-We will estimate how much time this solver will use to find an optimal solution 
+We will estimate how much time this solver will use to find an optimal solution to an average \rubik{}.
+The solver is an optimal solver and will always find an optimal solution (see section \ref{sec:kociemba}), which is why we will not gather statistics for its twist-wise efficiency.
 
 In order to calculate the time used to solve a \rubik{} using Kociemba's optimal solver, we have gathered data from our application in form of time stamps when ever the solver has finished a search depth.
 
@@ -59,7 +60,7 @@ As figure \ref{fig:timeFunction} shows the function for approximating the time n
 \[
 f(x)=0.0018372421 \cdot 13.731997^{x} ms
 \]
-The $R^2$ is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation of how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
+The $R^2$ value is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation of how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
 
 We are interested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09} we will estimate the time to compute this:
 \[
