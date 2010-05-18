@@ -3,46 +3,10 @@
 
 %\begin{figure}[h]	\centering		\includegraphics[scale=0.8]{input/pics/presentMagicCube2}	\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}	\end{figure}
 
-\begin{figure}[hbt]
-	\centering
-		\subfloat[\myCaption{Top layer.}]{
-		
-		\begin{tabular}{|c|c|c|}
-			\hline
-			7&11&24 \\ \hline
-			23&9&10 \\ \hline
-			12&22&8 \\ \hline
-		\end{tabular}
-		}
-		\hspace{0.02\textwidth}
-		\subfloat[\myCaption{Middle layer.}]{
-		\begin{tabular}{|c|c|c|}
-			\hline
-			15&25&2 \\ \hline
-			1&14&27 \\ \hline
-			26&3&13 \\ \hline
-		\end{tabular}
+Both a \msquare{} and a \mcube{} have a magic constant, which is the sum of each row, column, and pillar.
+However this is where the similarity ends. 
 
-		}
-		\hspace{0.02\textwidth}
-		\subfloat[\myCaption{Buttom layer.}]{ 
-		\begin{tabular}{|c|c|c|}
-			\hline
-			20&6&16 \\ \hline
-			18&19&5 \\ \hline
-			4&17&21 \\ \hline
-		\end{tabular}
-		}
-		\caption{\myCaption{This is a magic cube split up into 3 magic squares.}}
-		\label{fig:presentMagicCube}
-\end{figure}
-
-
-
-Both a \msquare{} and a \mcube{} have a magic constant, which is the sum of each row, column and pillar. See figure \ref{fig:presentMagicCube}.
-However this is where the similarity ends. There are also similarities between the \mcube{} and the \rubik{} which will be elaborated on later. 
-
-We have shown how to calculate the magic constant in a \msquare{}.
+It has been shown how to calculate the magic constant in a \msquare{}.
 In a \mcube{} there is not a big difference in the formula to calculate the magic constant.
 \begin{equation}
 	M(n)=\frac{n \cdot (n^3+1)}{2}
@@ -51,7 +15,7 @@ As shown in the formula the only difference is the power of $n$ that is changed 
 %See appendix \ref{sec:proofOfMagicConstant} for an explanation.
 
 To create a  \mcube{}, there are some parts that need to be explained.
-All these basics are shown on figure \ref{fig:cubeparts}.
+These parts can be seen on figure \ref{fig:cubeparts}.
 
 \begin{figure}[htb]
 	\centering
@@ -60,21 +24,24 @@ All these basics are shown on figure \ref{fig:cubeparts}.
 	\label{fig:cubeparts}
 \end{figure}
 
-Because of all these different parts there are a lot of different ways to define  \mcube{}s.
-The simplest of them all is a simple  \mcube{}. The only requirements to make such a cube is the following:
+Because of all these different parts there are a lot of different ways to define the \mcube{}s.
+The simplest of them is called a simple \mcube{}. The only requirements to make such a cube is the following:
 \begin{itemize}
-	\item All 9 rows, columns and pillars must be equal to the magic constant.
-	\item All 4 triagonals must also equal the magic constant.
+	\item All 9 rows, columns, and pillars must be equal to the magic constant.
+	\item All 4 triagonals must also be equal to the magic constant.
 \end{itemize}
 
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.4]{input/pics/rubiksCube}
-	\caption{\myCaption{This is a Rubik's Cube.}}
+	\caption{\myCaption{A Rubik's Cube.}}
 	\label{fig:rubiksCube}
 \end{figure}
 
-When looking at the \rubik{} it is easy to see that it looks a lot like the \mcube{}. 
-There are two differences. 
+The \rubik{} has quite a few similarities with the \mcube{}. If all the integers in the \mcube{} was replaced with the small cubes of the \rubik{} called \cpiece{}s, a \rubik{} would emerge.
+There are three differences. 
 The first is that the \mcube{} consists of numbers whereas the \rubik{} has colors, which are different on each \face{}.
-The other difference is that the \mcube{} has a number in the center where the \rubik{} center is invisible and out of importancy. This \mcube{} should not be confused with the later presented \mcube{} made by \erno{}.
+The other difference is that the \mcube{} has a number in the center where the \rubik{} center is invisible and not of importance. 
+The last difference is that when permuting the \rubik{}, it is necessary to move several \cpiece{}s as opposed to the \mcube{} where integers can be changed individually. See figure \ref{fig:rubiksCube}.
+
+This \mcube{} should not be confused with the later presented \mcube{} made by \erno{}.
