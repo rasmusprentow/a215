@@ -35,7 +35,7 @@ First in the set solver two variables are initialized. The first one \m{f} is a 
 Next the \textbf{while} loop is run. It will run until $d$ is returned, which is when all positions in \m{H} has been found.
 
 $m$ is the maximum number of \m{S} moves performed from the position $a$. When $d$ is equal to $m$ only \m{A} moves are performed.
-If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}.%%%Er det godt nok nu, Alex? Nej det er lort som altid
+If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}. %%%Er det godt nok nu, Alex? Nej det er lort som altid
 For the sake of efficiency move sequences that give the exact same position more than once are not used. If a move sequence contained F F', that part would  of the move sequence would be unnecessary. 
 
 If \m{f} is equal to \m{H} all positions in \m{H} have been found, $d$ is returned and the algorithm has finished. 
