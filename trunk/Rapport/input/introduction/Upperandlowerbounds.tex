@@ -1,20 +1,26 @@
 \chapter{The Upper and Lower Bounds}
-\myTop{In this chapter we will describe the upper and lower bound of the \rubik{}.}
+\myTop{In this chapter we will describe the progress of the upper and lower bound of the \rubik{}.}
 
 The lower bound is the number of twists required to solve the \rubik{} in the position which requires the most twists to solve.
 The upper bound is the lowest number of twists proven to solve a \rubik{} in any position.
-Both bounds can be seen on figure \ref{fig:upperLowerBound}.
-As the figure shows, the upper bound closes in on the lower bound.
-The graph show that the two lines will converge at some point.
+The different bounds through the history can be seen on figure \ref{fig:upperLowerBound}
+%Both bounds can be seen on figure \ref{fig:upperLowerBound}.
+As the figure shows, the upper bound closes in on the lower bound and at some point the two bounds will merge to one at some point.
+%As the figure shows, the upper bound closes in on the lower bound.
+%The graph show that the two lines will converge at some point.
 
 Proofs of the upper bound have been published several times, and it has been lowered each time.
+The first to find \textit{God's algorithm} was Thistlethwaite. Thistlethwaite's algorithm was proven to be able to solve an arbitrary \rubik{} in 52 twists or less \cite{jaapthistle}.
+
+\begin{comment}
 A major breakthrough was when Thistlethwaite's algorithm was proven to be able to solve an arbitrary \rubik{} in 52 twists or less \cite{jaapthistle}.
 Since then a lot of progress has been made in the field.
 This section describes this progression.
+\end{comment}
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[scale = 0.7]{input/pics/bounds2.pdf}
+		\includegraphics[scale = 0.7]{input/pics/bounds.pdf}
 	\caption{\myCaption{The current upper and lower bound. The x-axis depicts time and y-axis moves.}}
 	\label{fig:upperLowerBound}
 \end{figure}
