@@ -58,13 +58,13 @@ The figure shows the last five data points since the first five are inaccurate d
 
 As figure \ref{fig:timeFunction} shows the function for approximating the time needed to finish the search depth $x$ is:
 \[
-f(x)=0.0018372421 \cdot 13.731997^{x} ms
+f(x)=0.0018372421 \cdot 13.731997^{x} \text{ ms}
 \]
 The $R^2$ value is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation of how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
 
 We are interested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09} we will estimate the time to compute this:
 \[
-f(18) = 0.0018372421 \cdot 13.731997^{18} \approx 5.5383 \cdot 10^{17} ms \approx 17600000 years
+f(18) = 0.0018372421 \cdot 13.731997^{18} \text{ ms} \approx 5.5383 \cdot 10^{17} \text{ ms} \approx 17600000 \text{ years}
 \]
 
 After this time our implementation will have solved an average scrambled \rubik{} with the optimal solution.
@@ -127,10 +127,10 @@ As with the first phase we assume that an exponential function will make the bes
 Figure \ref{fig:timeFunction2} shows that an exponential function seem to fit quite well due to the relatively high $R^2$ value.
 The function to approximate the time need to finish the search depth is seen to be:
 \[
-f(x) = 0.003438036 \cdot 7.1431204^{x} ms
+f(x) = 0.003438036 \cdot 7.1431204^{x} \text{ ms}
 \]
 Any \rubik{} that is inside \m{H} can be solve with 18 \m{A} moves.
 The time to finish depth 18 will approximately be:
 \[
-f(18) = 0.003438036 \cdot 7.1431204^{18} \approx 8.0592 \cdot 10^{12} ms \approx 256 years
+f(18) = 0.003438036 \cdot 7.1431204^{18} \text{ ms} \approx 8.0592 \cdot 10^{12} \text{ ms} \approx 256 \text{ years}
 \]
