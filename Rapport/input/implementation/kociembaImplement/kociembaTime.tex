@@ -1,10 +1,12 @@
 \section{Statistics for Kociamba's Optimal Solver}
 \label{app:kociembaTime}
+We will estimate how much time this solver will use to find an optimal solution 
+
 In order to calculate the time used to solve a \rubik{} using Kociemba's optimal solver, we have gathered data from our application in form of time stamps when ever the solver has finished a search depth.
 
 %The data was gathered on a 2.5 GHz Intel Duo Core processor (P9500) with 4 GB RAM running on Linux-Ubuntu v. 10.04.
-The data was gathered on a 2.5 GHz AMD Quad Core processor (905e) with 4 GB DDR-3 RAM running on Windows 7 64 bits.
-The data was gathered in to runs with these specifications and the results are shown in table \ref{tab:timeData} and \ref{tab:timeData2}.
+The data was gathered on a computer operated by Windows 7 64 bits running on a 2.5 GHz AMD Quad Core processor (905e) with 4 GB DDR-3 RAM.
+The data was gathered in to runs with these specifications and the results are shown in their raw form in appendix \ref{chap:kociembaResults}.
 
 \subsection{First Phase}
 Two runs were made in the first phase -- were the solver searches in \m{S}.
@@ -13,7 +15,9 @@ The results are shown in table \ref{tab:timeData} and plotted in a coordinate sy
 \centering
 	\begin{tabular}{|l|l|l|}
 	\hline
-	Depth&1st run [ms]&2nd run [ms]\\
+	Depth& \multicolumn{2}{|c|}{Time to finish [ms]}\\
+	\hline
+	--&1st run&2nd run\\
 	\hline
 	0&0&0\\
 	\hline
@@ -36,7 +40,7 @@ The results are shown in table \ref{tab:timeData} and plotted in a coordinate sy
 	9&--&35447427\\
 	\hline
 	\end{tabular}
-\caption{\myCaption{Data for computation time to finish a depth in \m{S} of Kociemba's optimal solver, phase one}}
+\caption{\myCaption{Data for computation time to finish a depth in \m{S} moves of Kociemba's optimal solver -- phase one}}
 	\label{tab:timeData}
 \end{table}
 
@@ -45,7 +49,7 @@ To make the approximation we assume that the time will evolve exponentially base
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.5]{input/pics/timeFunction}
-	\caption{\myCaption{The approximation of the time needed to finish the search depth in \m{S}. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
+	\caption{\myCaption{The approximation of the time needed to finish the search depth in \m{S} moves. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
 	\label{fig:timeFunction}
 \end{figure}
 
@@ -67,16 +71,18 @@ However the solver will get into \m{H} a long time before this.
 As Michael Reid proved in 1995 \cite{knowledgerush2} it takes a maximum of 12 \twist{}s for Kociemba's optimal solver to enter \m{H}, therefore we have chosen to look at the time it takes for the solver to search inside \m{H} in the second phase.
 
 \subsection{Second Phase}
-During our test our solver entered \m{H} many times.
-We have chosen to look at the first five runs and make an average from this data.
+During our test our solver entered \m{H} many times, all the results are found in appendix \ref{chap:kociembaResults}.
+We have chosen to look at the first five times the solver entered \m{H} and make an average from this data.
 The reason for the average is that the program which we use to generate the tendency line cannot generate an exponential tendency line from all the data points due to their complexity.
+
+The five runs are shown in table \ref{tab:timeData2}.
 \begin{table}[htb]
 \centering
 	\begin{tabular}{|l|l|l|l|l|l|l|}
 	\hline
 	Depth& \multicolumn{6}{|c|}{Time to finish [ms]}\\
 	\hline
-	--&1st run&2nd run&3rd run&4th run&5th run&Average\\
+	--&1st time&2nd time&3rd time&4th time&5th time&Average\\
 	\hline
 	0&0&0&0&0&0&0\\
 	\hline
@@ -105,17 +111,25 @@ The reason for the average is that the program which we use to generate the tend
 	12&--&--&83980919&--&--&83980919\\
 	\hline
 	\end{tabular}
-\caption{\myCaption{Data for computation time to finish a depth in \m{A} of Kociemba's optimal solver, phase two}}
+\caption{\myCaption{Data for computation time to finish a depth in \m{A} moves of Kociemba's optimal solver in \m{A} moves -- phase two}}
 	\label{tab:timeData2}
 \end{table}
 
+As with the first phase we assume that an exponential function will make the best approximation to calculate the time spend to finish a given search depth.
 
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.5]{input/pics/timeFunction2}
-	\caption{\myCaption{The approximation of the time needed to finish the search depth. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
+	\caption{\myCaption{The approximation of the time needed to finish the search depth in \m{A} moves. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
 	\label{fig:timeFunction2}
 \end{figure}
+Figure \ref{fig:timeFunction2} shows that an exponential function seem to fit quite well due to the relatively high $R^2$ value.
+The function to approximate the time need to finish the search depth is seen to be:
 \[
-f(x) = 0.003438036 \cdot 7.1431204^{x}
+f(x) = 0.003438036 \cdot 7.1431204^{x} ms
+\]
+Any \rubik{} that is inside \m{H} can be solve with 18 \m{A} moves.
+The time to finish depth 18 will approximately be:
+\[
+f(18) = 0.003438036 \cdot 7.1431204^{18} \approx 8.0592 \cdot 10^{12} ms \approx 256 years
 \]
