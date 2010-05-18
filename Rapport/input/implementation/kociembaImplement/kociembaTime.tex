@@ -8,7 +8,7 @@ The data was gathered in to runs with these specifications and the results are s
 
 \subsection{First Phase}
 
-\begin{table}[hb]
+\begin{table}[htb]
 \centering
 	\begin{tabular}{|l|l|l|}
 	\hline
@@ -67,35 +67,40 @@ As Michael Reid proved in 1995 it \cite{knowledgerush2} takes maximum 12 \twist{
 
 \subsection{Second Phase}
 
-\begin{table}[hb]
+
+\begin{table}[htb]
 \centering
-	\begin{tabular}{|l|l|l|l|}
+	\begin{tabular}{|l|l|l|l|l|l|l|}
 	\hline
-	Search depth&First run [ms]&Second run [ms]&Third run [ms]\\
+	Depth& \multicolumn{6}{|c|}{Time to finish [ms]}\\
 	\hline
-	0&0&0&0\\
+	--&1st run&2nd run&3rd run&4th run&5th run&Average\\
 	\hline
-	1&0&0&0\\
+	0&0&0&0&0&0&0\\
 	\hline
-	2&0&0&0\\
+	1&0&0&0&0&0&0\\
 	\hline
-	3&0&0&0\\
+	2&0&0&0&0&0&0\\
 	\hline
-	4&31&0&47\\
+	3&0&0&0&0&0&0\\
 	\hline
-	5&203&62&203\\
+	4&31&0&47&0&0&15.6\\
 	\hline
-	6&421&374&422\\
+	5&203&62&203&31&47&109.2\\
 	\hline
-	7&2153&2902&2153\\
+	6&421&374&422&327&328&374.4\\
 	\hline
-	8&15787&22932&15866\\
+	7&2153&2902&2153&2605&2605&2483.6\\
 	\hline
-	9&123506&181023&124083\\
+	8&15787&22932&15866&20514&20420&19103.8\\
 	\hline
-	10&973348&1430164&977873\\
+	9&123506&181023&124083&161647&161336&150319\\
 	\hline
-	11&7687740&--&--\\
+	10&973348&1430164&977873&1276534&1275302&1186644.2\\
+	\hline
+	11&7687740&--&7894160&--&--&7790950\\
+	\hline
+	12&--&--&83980919&--&--&83980919\\
 	\hline
 	\end{tabular}
 \caption{\myCaption{Data for computation time to finish a depth in \m{A} of Kociemba's optimal solver, phase two}}
@@ -106,5 +111,8 @@ As Michael Reid proved in 1995 it \cite{knowledgerush2} takes maximum 12 \twist{
 	\centering
 		\includegraphics[scale=0.5]{input/pics/timeFunction2}
 	\caption{\myCaption{The approximation of the time needed to finish the search depth. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
-	\label{fig:timeFunction}
+	\label{fig:timeFunction2}
 \end{figure}
+\[
+f(x) = 0.003438036 \cdot 7.1431204^{x}
+\]
