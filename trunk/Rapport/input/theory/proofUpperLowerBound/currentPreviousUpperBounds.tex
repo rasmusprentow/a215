@@ -1,5 +1,5 @@
 \section{The Current and Previous Upper Bounds}
-The progression of finding the current and previous upper bounds have 
+The progression of finding and proving the current and previous upper bounds have been a slow process.
 %This is a slow moving field, but some events have occurred in the field the last couple of years.%% DAN DAN DAN DAN giv kilder pl0x
 The reason why it is a slow process to prove the upper bound, is that there is a vast amount of different positions a \rubik{} can be in. Even with todays computer power there is simply to much data to process. This have inspired a small group of people to dedicate a lot of time to create and improve algorithms to solve arbitrary \rubik{}s.
 %the effect that a small group of people dedicate a lot of time to create and improve algorithms to solve arbitrary \rubik{}s. 
@@ -12,6 +12,9 @@ The set solver created by Thomas Rockicki, which was described in the previous s
 
 The set solver has a special way of testing the \rubik{}s. It does not solve them to the unit position $e$, instead it finds a move sequence for a subgroup of the \rubik{} this way it can solve approximately 19.5 billion cubes at a time and not just one. The reason for this is that if you relabel an arbitrary cube, that given cube can be unlabeled to approximately 19.5 billion different cube positions. Recall that there are approximately 19.5 billion positions in the set \m{H} and all these positions are equal to $e$ when relabeled. The same logic applies to any other given position.
 \end{comment}
+
+Proofs of the upper bound has been published several times, and it has been lowered each time.
+The first to find \textit{God's algorithm} was Thistlethwaite. Thistlethwaite's algorithm was proven to be able to solve an arbitrary \rubik{} in 52 twists or less \cite{jaapthistle}.
 
 The progression greatly accelerated when that set solver proved the first upper bound of 25 moves. This was done on home computers from October 2007 to March 2008. They only needed to solve 6000 sets, but after this they got contacted by John Welborn from Sony Pictures Imageworks and he offered a lot of idle computers from a computer farm to help on the project. 
 
