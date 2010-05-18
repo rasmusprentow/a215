@@ -35,7 +35,7 @@ First in the set solver two variables are initialized. The first one \m{f} is a 
 Next the \textbf{while} loop is run. It will run until $d$ is returned, which is when all positions in \m{H} has been found.
 
 $m$ is the maximum number of \m{S} moves performed from the position $a$. When $d$ is equal to $m$ only \m{A} moves are performed.
-If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}. %%%Er det godt nok nu, Alex? Nej det er lort som altid
+If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}. 
 For the sake of efficiency move sequences that give the exact same position more than once are not used. If a move sequence contained F F', that part would  of the move sequence would be unnecessary. 
 
 If \m{f} is equal to \m{H} all positions in \m{H} have been found, $d$ is returned and the algorithm has finished. 
@@ -43,6 +43,6 @@ If this is not the case, $d$ is incremented by one.
 The different \m{A} moves are performed on all the current \m{H} positions in \m{f} and the new \m{H} positions are saved in \m{f}.
 If \m{f} contains all positions in \m{H}, $d$ is returned -- if not the while loop continues.
 
-%Nyt afsnit nu?
+
 
 When the algorithm has finished all the different possible \m{H} positions should be saved, if the maximum distance $m$ is set sufficiently high. The theoretically highest number of twists needed to transform any scrambled cube into \m{H} is 12, but more positions are found in the for loop if $m$ is set higher. This is because the set solver both performs \m{A} moves on a cube in \m{H}, which gives more \m{H} positions. The set solver also performs moves that transforms a cube in \m{H} to a cube not in \m{H} and then back again by using \m{S} moves.
