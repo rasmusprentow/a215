@@ -7,12 +7,13 @@ The data was gathered on a 2.5 GHz AMD Quad Core processor (905e) with 4 GB DDR-
 The data was gathered in to runs with these specifications and the results are shown in table \ref{tab:timeData} and \ref{tab:timeData2}.
 
 \subsection{First Phase}
-
+Two runs were made in the first phase -- were the solver searches in \m{S}.
+The results are shown in table \ref{tab:timeData} and plotted in a coordinate system in figure \ref{fig:timeFunction} along with an approximation using an exponential function.
 \begin{table}[htb]
 \centering
 	\begin{tabular}{|l|l|l|}
 	\hline
-	Search depth&First run [ms]&Second run [ms]\\
+	Depth&1st run [ms]&2nd run [ms]\\
 	\hline
 	0&0&0\\
 	\hline
@@ -44,17 +45,17 @@ To make the approximation we assume that the time will evolve exponentially base
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.5]{input/pics/timeFunction}
-	\caption{\myCaption{The approximation of the time needed to finish the search depth. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
+	\caption{\myCaption{The approximation of the time needed to finish the search depth in \m{S}. It is displayed on a logarithmic y-axis to show that an exponential function seem to fit.}}
 	\label{fig:timeFunction}
 \end{figure}
 
-The figure shows the last four data points since the first five are inaccurate due to small amount time which means that other processes might have interfered with the computation time.
+The figure shows the last five data points since the first five are inaccurate due to small amount time which means that other processes might have interfered with the computation time.
 
-As figure \ref{fig:timeFunction} shows the function for calculating the time needed to finish the search depth $x$ is:
+As figure \ref{fig:timeFunction} shows the function for approximating the time needed to finish the search depth $x$ is:
 \[
 f(x)=0.0018372421 \cdot 13.731997^{x} ms
 \]
-The $R^2$ is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation on how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
+The $R^2$ is close to 1 and this tell us that the approximation is relatively good. The $R^2$ value is a way to express how well a set of data fits onto a specific approximation -- the closer to 1, the better. We are only interested in a rough approximation of how long the solver needs to use to solve a \rubik{}, therefore our $R^2$ value is very acceptable.
 
 We are interested in approximating the time that it would take to solve a \rubik{}. Since the average \rubik{} needs 18 moves to solve \cite{kociemba09} we will estimate the time to compute this:
 \[
@@ -63,11 +64,12 @@ f(18) = 0.0018372421 \cdot 13.731997^{18} \approx 5.5383 \cdot 10^{17} ms \appro
 
 After this time our implementation will have solved an average scrambled \rubik{} with the optimal solution.
 However the solver will get into \m{H} a long time before this.
-As Michael Reid proved in 1995 it \cite{knowledgerush2} takes maximum 12 \twist{}s for Kociemba's optimal solver to enter \m{H}, therefore we have chosen to look at the time it takes for the solver to search inside \m{H} in the second phase.
+As Michael Reid proved in 1995 \cite{knowledgerush2} it takes a maximum of 12 \twist{}s for Kociemba's optimal solver to enter \m{H}, therefore we have chosen to look at the time it takes for the solver to search inside \m{H} in the second phase.
 
 \subsection{Second Phase}
-
-
+During our test our solver entered \m{H} many times.
+We have chosen to look at the first five runs and make an average from this data.
+The reason for the average is that the program which we use to generate the tendency line cannot generate an exponential tendency line from all the data points due to their complexity.
 \begin{table}[htb]
 \centering
 	\begin{tabular}{|l|l|l|l|l|l|l|}
@@ -106,6 +108,7 @@ As Michael Reid proved in 1995 it \cite{knowledgerush2} takes maximum 12 \twist{
 \caption{\myCaption{Data for computation time to finish a depth in \m{A} of Kociemba's optimal solver, phase two}}
 	\label{tab:timeData2}
 \end{table}
+
 
 \begin{figure}[htb]
 	\centering
