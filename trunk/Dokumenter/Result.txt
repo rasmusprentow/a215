@@ -37,6 +37,8 @@ Solving in H, with depth: 8. Time spend inside H: 2902 milliseconds
 Solving in H, with depth: 9. Time spend inside H: 22932 milliseconds
 Solving in H, with depth: 10. Time spend inside H: 181023 milliseconds
 Solving in H, with depth: 11. Time spend inside H: 1430164 milliseconds
+
+
 Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
 Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
 Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
@@ -48,6 +50,8 @@ Solving in H, with depth: 8. Time spend inside H: 2605 milliseconds
 Solving in H, with depth: 9. Time spend inside H: 20514 milliseconds
 Solving in H, with depth: 10. Time spend inside H: 161647 milliseconds
 Solving in H, with depth: 11. Time spend inside H: 1276534 milliseconds
+
+
 Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
 Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
 Solving in H, with depth: 3. Time spend inside H: 0 milliseconds
