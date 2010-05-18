@@ -822,12 +822,12 @@ public class DrawPanel extends JPanel {
 	}
 
 	private void statistic(){
-		int base = 1000000, scrambles  = 5, total = 0, max = 0, min = 0;
+		int base = 10000, scrambles  = 1, total = 0, max = 0, min = 0;
 
 		console.addTextln("Calculating statistics for Beginners Algorithm:");
-		//for(int m = 1; m < 102; m = m + 5){
+		for(int m = 1; m < 102; m = m + 5){
 		long startTime, totalTime = 0;
-			int m = 50;
+			//int m = 50;
 			total = 0; max = 0; min = Integer.MAX_VALUE;
 			for(int i = 0; i < base; i++){
 				for(int j = 0; j < m; j++){
@@ -842,7 +842,7 @@ public class DrawPanel extends JPanel {
 
 			}
 			console.addTextln("Scrambles: " + m + " Runs: " + base + " in average " + total/base + " moves. \nMax: " + max + " min: " + min + " Time " + totalTime);
-		//}
+		}
 
 	}
 
