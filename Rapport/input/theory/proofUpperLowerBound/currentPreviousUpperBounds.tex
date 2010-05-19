@@ -4,37 +4,35 @@ The progression of finding and proving the current and previous upper bounds has
 
 
 
-Proofs of the upper bound has been published several times, and it has been lowered each time.
-A major breakthrough was when Thistlethwaite's algorithm was proven to be able to solve an arbitrary \rubik{} in 52 twists or less. His algorithm where based on group theory where it goes through four subgroups. \cite{jaapthistle}.
+Proofs of the upper bound has been published several times. 
+A major breakthrough was when Thistlethwaite's algorithm was proven to be able to solve an arbitrary \rubik{} in 52 twists or less. His algorithm was based on group theory where it goes through four subgroups \cite{jaapthistle}.
 This upper bound existed in over 10 years and the next upper bound was found in 1992 by Hans Kloosterman, which reduced the upper bound to 42 moves \cite[p. 44]{rokickipdf}. 
 He modified Thistlethwaite's algorithm and found some shortcuts to reduce the moves by replacing one subgroup with a different subgroup and removing a move between the third and fourth subgroup.
 
 In May 1992, Michael Reid reduced the upper bound to 39 moves by using a three subgroup algorithm and a thorough analysis of the subgroups \cite[p. 52]{rokickipdf}.
 
-One day after Michael Reid, Dik T. Winter reduced the upper bound to 37 moves. The way he did it was analyzing a subgroup of Kociemba's algorithm and combined this with Kloosterman's algorithm \cite[p. 53]{rokickipdf}.
+One day after Michael Reid lowered the bound, Dik T. Winter reduced the upper bound to 37 moves. He did it by analyzing a subgroup of Kociemba's algorithm and combining this with Kloosterman's algorithm \cite[p. 53]{rokickipdf}.
 
-In January 1995 Michael Reid took the lead in lowering the upper bound. By parts of Kociemba's algorithm he lowered it from 37 to 29 moves \cite[p. 55]{rokickipdf}.
+In January 1995 Michael Reid took the lead in lowering the upper bound. By using parts of Kociemba's algorithm he lowered it from 37 to 29 moves \cite[p. 55]{rokickipdf}.
 
-In December 2005 Silviu Radu reduced the upper bound to 28 moves by extending Michael Reids work and again in April 2006 he lowered it to 27 moves \cite[p. 58]{rokickipdf}.
+In December 2005 Silviu Radu reduced the upper bound to 28 moves by extending Michael Reids work and again in April 2006, he lowered it to 27 moves \cite[p. 58]{rokickipdf}.
 
-In August 2007 the upper bound was lowered to 26 by Kunkle and Cooperman. \cite[p. 63]{rokickipdf}.
+In August 2007 the upper bound was lowered to 26 by Kunkle and Cooperman \cite[p. 63]{rokickipdf}.
 
-In 2008 Tomas Rokicki and Silviu Radu lowered the upper bound on the following dates using their set solver, which is described in chapter \ref{sec:setSolver} \cite[p. 66]{rokickipdf}:
+In 2008 Tomas Rokicki and Silviu Radu lowered the upper bound in the following months using their set solver, which is described in chapter \ref{sec:setSolver} \cite[p. 66]{rokickipdf}:
 \begin{itemize}
-\item March 2008: lowered the bound to 25 moves by using only home PCs.
-\item April 2008: lowered the bound to 23 moves by using idle time on the Sony Pictures Imageworks computer farm.
-\item August 2008: Using more idle time on the computer farm to lower the bound to 22 moves.
+\item March: lowered the bound to 25 moves by using only home PCs.
+\item April: lowered the bound to 23 moves by using idle time on the Sony Pictures Imageworks computer farm.
+\item August: Using more idle time on the computer farm to lower the bound to 22 moves.
 \end{itemize}
 
 To prove the current upper bound they needed to compute 1,265,326 different sets. 
-At the moment they have not proven that the upper bound is 21, but the computer farm is currently working on it, and they expect that it is possible to lower the upper bound to 20. 
+At the moment they have not proven that the upper bound is 21, but the computer farm is currently working on it. They expect that it is possible to lower the upper bound to 20. 
 This means that an arbitrary \rubik{} could be solved in just 20 moves.
 
 
 \begin{comment}
 The progression greatly accelerated when that set solver proved the first upper bound of 25 moves. This was done on home computers from October 2007 to March 2008. They only needed to solve 6000 sets, but after this they got contacted by John Welborn from Sony Pictures Imageworks and he offered a lot of idle computers from a computer farm to help on the project. 
-\end{comment}
-\begin{comment}
 
 The set solver created by Thomas Rockicki, which was described in the previous section will now be further described.
 

@@ -1,16 +1,18 @@
-\chapter{Set Solver}
+\chapter{Rokicki's Set Solver}
 \label{sec:setSolver}
-\myTop{The set solver was used to prove the current upper bound and therefore it is a vital part of this project. }
-The algorithm used to prove the current upper bound is known as a set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube but a whole set of cubes at the time as the name suggests. This means that it solves approximately 19.5 billion cubes at a time.
+\myTop{The set solver was used to prove the current upper bound and therefore it is a vital part of this project.}
+Tomas Rokicki has proved several upper bounds and got a Ph.D. in computer science in 1993 \cite{rokicki09}. 
+
+The algorithm used to prove the current upper bound (see section \ref{sec:bounds}) is known as Rokicki's set solver and uses Kociemba's algorithm. The set solver is a viable method for proving the upper bound because it does not solve every single cube, but a whole set of cubes at a time, as the name suggests. This means that it solves approximately 19.5 billion cubes at a time.
 The set solver does this by finding all the move sequences of a relabeled cube of the distance $d$ that transforms the cube into \m{H}. 
-The algorithm set solver is described in pseudo code below in algorithm \ref{alg:setSolver}.
+The set solver algorithm is described in pseudo code below in algorithm \ref{alg:setSolver}.
 \begin{algorithm}[!h]                     
 \caption{Set Solver \cite{rokicki09}}          
 \label{alg:setSolver}        
 \begin{algorithmic}[1]
 \STATE {$f=\oslash$}
 \STATE {$d=0$}
-\WHILE {true} 
+\LOOP
 		\IF {$d \leq m$}
 			\FOR {$b \in S^d$}
 				\IF {$r(ab) = r(e)$}
@@ -26,24 +28,29 @@ The algorithm set solver is described in pseudo code below in algorithm \ref{alg
 	\IF {$f = H$}
 		\STATE {return $d$}
 	\ENDIF
-\ENDWHILE
+\ENDLOOP
 \end{algorithmic}
 \end{algorithm}
 
-First in the set solver two variables are initialized. The first one \m{f} is a set that can hold all the positions of \m{H} is set to an empty set. The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in \m{H}. This distance $d$ is initially set to $0$.
+The set solver starts by initializing two variables \m{f} and $d$. 
+\m{f} is a set that can hold all the positions of \m{H}. 
+\m{f} is set to an empty set. 
+The second variable is the distance $d$, which is the distance from a scrambled position $a$ to a position in \m{H}. 
+This distance $d$ is initially set to zero.
 
 Next the \textbf{while} loop is run. It will run until $d$ is returned, which is when all positions in \m{H} has been found.
 
 $m$ is the maximum number of \m{S} moves performed from the position $a$. When $d$ is equal to $m$ only \m{A} moves are performed.
 If $d$ is lower than or equal to $m$ a for loop will be run. This loop performs all possible move sequences of the the length $d$, and adds the position $ab$ to \m{f} if it is a position in \m{H}. 
-For the sake of efficiency move sequences that give the exact same position more than once are not used. If a move sequence contained F F', that part would  of the move sequence would be unnecessary. 
+For the sake of efficiency move sequences that give the exact same position more than once are not used. If a move sequence contained \m{F F'}, that part would  of the move sequence would be unnecessary. 
 
-If \m{f} is equal to \m{H} all positions in \m{H} have been found, $d$ is returned and the algorithm has finished. 
+If \m{f} is equal to \m{H} all positions in \m{H} have been found. $d$  will then be returned and the algorithm has finished. 
 If this is not the case, $d$ is incremented by one. 
 The different \m{A} moves are performed on all the current \m{H} positions in \m{f} and the new \m{H} positions are saved in \m{f}.
 If \m{f} contains all positions in \m{H}, $d$ is returned -- if not the while loop continues.
 
-
-
-When the algorithm has finished all the different possible \m{H} positions should be saved, if the maximum distance $m$ is set sufficiently high. The theoretically highest number of twists needed to transform any scrambled cube into \m{H} is 12, but more positions are found in the for loop if $m$ is set higher. This is because the set solver both performs \m{A} moves on a cube in \m{H}, which gives more \m{H} positions. The set solver also performs moves that transforms a cube in \m{H} to a cube not in \m{H} and then back again by using \m{S} moves.
+When the algorithm has finished all the different possible \m{H} positions are saved, if the maximum distance $m$ is set sufficiently high. 
+The theoretically highest number of twists needed to transform any scrambled cube into \m{H} is 12. %, but more positions are found in the for loop if $m$ is set higher than 12. 
+%This is because the set solver both performs \m{A} moves on a \cube{} in \m{H}, which gives more \m{H} positions. 
+The set solver also performs moves that transforms a \cube{} in \m{H} to a \cube{} not in \m{H} and then back again by using \m{S} moves. This is done because more positions are found inside \m{H} when using \m{S} moves than when only using \m{A} moves \cite{rokicki09}.
 \myTail{In this chapter the set solver used to prove the current upper bound is described. }
