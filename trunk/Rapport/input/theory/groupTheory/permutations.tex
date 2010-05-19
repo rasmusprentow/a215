@@ -1,17 +1,29 @@
 \section{Permutations}
 \label{sec:permutations}
-To calculate how many positions the cube can be placed in, we have to look at the general cube terminology in section \ref{sec:generalNotation}.
-As stated in the general cube terminology there are 8 corner \cpiece{}s. The first corner \cpiece{} can be placed in 8 positions, the next corner \cpiece{} can be placed in one of the 7 remaining positions. %, since we already use 1, and so on.% 
+%To calculate how many positions the cube can be placed in, we have to look at the general cube terminology in section \ref{sec:generalNotation}
+In this section the number of permutations of the \rubik{} will be calculated \cite{rokicki09}. 
+The first corner \cpiece{} can be placed in one of eight \cubicle{}s, the next corner \cpiece{} can be placed in one of the seven remaining \cubicle{}s. %, since we already use 1, and so on.% 
 This means that the corner \cpiece{}s can be placed in $8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=8!$ positions. 
 %Now the 8 corner \cpiece{}s are placed at the right position. 
-This does not mean they have the right orientation since a corner \cpiece{} has 3 different colors and therefore 3 different orientations. This means there are $3^8$ orientations of the 8 corner \cpiece{}s, which yields $8!\cdot3^8$ corner permutations. 
+This does not mean they have the correct orientation since a corner \cpiece{} has three different \facelet{}s and therefore three different possible orientations. 
+This means there are $3^8$ orientations of the eight corner \cpiece{}s, which yields $8!\cdot3^8$ corner permutations. 
 
-As stated in the terminology there are 12 edge \cpiece{}s. These edge \cpiece{}s can be positioned in 12 different positions and every edge \cpiece{} can be oriented in 2 different ways. This yields $2^{12}$ different orientations and $12!$ different positions of the edge \cpiece{}s. This gives us $2^{12}\cdot12!$ different edge permutations. All of these corner and edge permutations adds up to a total of  $3^8\cdot2^{12}\cdot12!\cdot8!=519,024,039,293,878,272,000$ permutations.
 
-There are however some limitations to a \rubik{} that was originally assembled correctly. 
-Only seven out of the eight corner \cpiece{}s can be oriented independently. 
+The 12 edge \cpiece{}s can be placed in 12 different \cubicle{}s and every edge \cpiece{} can be orientated in two different ways. 
+This yields $2^{12}$ different orientations and $12!$ different positions of the edge \cpiece{}s. 
+This gives us $2^{12}\cdot12!$ different edge permutations. 
+
+All of these corner and edge permutations adds up to a total of 
+\begin{equation*}
+3^8\cdot2^{12}\cdot12!\cdot8!=519,024,039,293,878,272,000 \approx 5.2\cdot10^{20} \text{ permutations.}
+\end{equation*}
+There are however some limitations to a correctly assembled \rubik{}. 
+Only seven out of the eight corner \cpiece{}s can be orientated independently. 
 The last corner \cpiece{}'s orientation is directly dependent on the other corner \cpiece{}s. 
-The same logic applies to the edge \cpiece{}s, which means that only 11 edge \cpiece{}s can be oriented independently.
+The same logic applies to the edge \cpiece{}s, which means that only 11 edge \cpiece{}s can be orientated independently.
 Furthermore the orientation of the edge \cpiece{}s is also dependent on the orientation of the corners, which halves the number of possible permutations.
-The true possible permutations of a legitimate \rubik{} is therefore:
-$3^7\cdot2^{10}\cdot12!\cdot8!=43,252,003,274,489,856,000$.
+
+The legitimate \rubik{} has 
+\begin{equation*}
+3^7\cdot2^{10}\cdot12!\cdot8!=43,252,003,274,489,856,000\approx 4.3\cdot10^{19} \text{ permutations.}
+\end{equation*}
