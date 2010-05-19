@@ -1,22 +1,26 @@
 \section{Definition of the Rubik's Cube Group}
 \label{sec:groupDefinition}
 To understand how the \rubik{} can be described as a group, it is necessary to understand what a group is.
-In group theory the group is written as $(Set, Operator)$ where the set are the elements the group consists of and the operator is the operation that is performed between the elements. When looking at the \rubik{} as a group the set will be a move or a move sequence that is applied to the \rubik{}. The operator in the \rubik{} group will be astrix ($*$) because the \rubik{}s movements are not commutative. The moves are not commutative because it matters in which order they are applied to the \rubik{} \cite[p. 157]{Rubik87}.
+In group theory a group is written as $(Set, Operator)$ where the set is the elements the group consists of and the operator is the operation that is performed between the elements.
+ When looking at the \rubik{} as a group the set will be a move or a move sequence that is applied to the \rubik{}. The group is denoted $(\m{G},*)$.
+The operator in the \rubik{} group will be asterisk ($*$) because the movements of the \rubik{} are not commutative. 
+ The moves are not commutative because it matters in which order they are applied to the \rubik{} \cite[p. 157]{Rubik87}.
 
 To prove that the \rubik{} is a group there are four points it must fulfill:
 \begin {enumerate}
-\item When two elements are combined with an operation then the new element these create must also be a part of the group. For instance a move \m{M$_1$} and a move \m{M$_2$} then \m{M$_1$} * \m{M$_2$} will form a new move or move sequence which also is a part of the group.
+\item When two elements are combined with an operation the new element these create must also be a part of the group. 
+For instance a move \m{M$_1$} and a move \m{M$_2$} then \m{M$_1$}$*$\m{M$_2$} will form a new move or move sequence which is also a part of the group.
 
-\item $e$ is an empty move (which does not change the configuration of the \rubik{}), if the move \m{M}$* e$ is performed. This means that only the move \m{M} is performed (the move $e$ could be a $360^o$ twist of a face), which means that \m{M}$*e=$ \m{M}.
+\item $e$ is an empty move, which does not change the configuration of the \rubik{}. If the move \m{M}$* e$ is performed, only the move \m{M} is performed (the move $e$ could be a 360 degrees twist of a face), which means that \m{M}$*e=$ \m{M}. The empty move $e$ should not be confused with the solved state $e$. 
 
-\item If \m{M} is a move then there is a reverse move, which is called \m{M'}. Therefore \m{M}$*$\m{M'} $= e$, which means every element in the group has a reverse move. This holds for the \rubik{} since every move has a reverse, e.g. \m{R} has \m{R'}, and a move sequence can be reversed by first inverting the order and the reverting each move in the sequence.
+\item If \m{M} is a move then there is a reverse move, which is called \m{M'}. Therefore \m{M}$*$\m{M'} $= e$, which means every element in the group has a reverse move. This holds for the \rubik{} since every move has a reverse, e.g. \m{R} has \m{R'}, and a move sequence can be reversed by first inverting the order and then reverting each move in the sequence. 
 
-\item The operation must be associative meaning that the parentheses can be reordered without affecting the result. A move sequence can be defined as the orientation and position it puts each \cpiece{} in. If $c$ is a positioned \cubie{}, \m{M}($c$) will be the \cubicle{} which $c$ ends in after the move is applied. For instance the move \m{R} will move the $ur$ \cubie{} to the $br$ cubicle, so therefore \m{R}$(ur)=br$. If a move sequence is applied, then the operation will look like this \m{B'}$($\m{R}$(ur))=db$.\\
+\item The operation must be associative meaning that the parentheses can be reordered without affecting the result. A move sequence can be defined as the orientation and position it puts each \cpiece{} in. If $c$ is a positioned \cubie{}, \m{M}($c$) will be the \cubicle{} which $c$ ends in after the move is applied. For instance the move \m{R} will move the $up$-$right$ \cubie{} to the $back$-$right$ cubicle, so therefore \m{R}$(up$-$right)=back$-$right$. If a move sequence is applied, then the operation will look like this \m{B'}$($\m{R}$(up$-$right))=down$-$back$.\\
 $*$ is associative because (\m{M}$_1*$\m{M}$_2)*$\m{M}$_3$ = \m{M}$_1 *$(\m{M}$_2 *$\m{M}$_3$) for any moves \m{M$_1$}, \m{M$_2$} and \m{M}$_3$. (\m{M}$_1 *$\m{M}$_2$)$*$\m{M}$_3$ and \m{M}$_1 *$(\m{M}$_2 *$\m{M}$_3$) does the same operation to every \cubie{}. This is the same as saying [(\m{M}$_1 *$\m{M}$_2 )*$\m{M}$_3$]$(c)=$ [\m{M}$_1 *$(\m{M}$_2 *$\m{M}$_3$)]$(c)=$ \m{M}$_3$(\m{M}$_2$(\m{M}$_1 (c)$)) for any \cubie{} $c$.
 \end {enumerate}
 
-As an extension to the first point some moves will form a new move rather than a move sequence, e.g. \m{R}$*$\m{R} $=$ \m{R2}. This goes for any move sequence only containing moves of the same \face{}.
-
 In fact it is possible to define the \rubik{} only using the following set of moves:
 (\m{U D F B L R}) since every other move and move sequence can be made out of these six moves.
-This is called the Singmaster notation\cite[p. 7]{Joyner02}, but to make shorter move sequences two of such \twist{}s will be denoted with the letter of the move appended by \m{2}, three of such \twist{}s will be denoted with the letter of the move appended by a prime (\m{'}) as stated in section \ref{sec:moveNotation}.
+This is called the Singmaster notation \cite[p. 7]{Joyner02}. To make shorter move sequences two of such \twist{}s will be denoted with the letter of the move appended by \m{2}, three of such \twist{}s will be denoted with the letter of the move appended by a prime (\m{'}) as stated in section \ref{sec:moveNotation}.
+
+As an extension to the first point some moves will form a new move rather than a move sequence, e.g. \m{R}$*$\m{R} $=$ \m{R2}. This goes for any move sequence only containing moves of the same \face{}.
