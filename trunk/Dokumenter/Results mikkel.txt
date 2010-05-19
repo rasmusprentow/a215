@@ -1,0 +1,34 @@
+Solving with Kociemba's improved algorithm, please wait.
+Try solving with depth: 0. Time spend: 0 milliseconds
+Try solving with depth: 1. Time spend: 0 milliseconds
+Try solving with depth: 2. Time spend: 5 milliseconds
+Try solving with depth: 3. Time spend: 11 milliseconds
+Try solving with depth: 4. Time spend: 55 milliseconds
+Try solving with depth: 5. Time spend: 299 milliseconds
+Try solving with depth: 6. Time spend: 1082 milliseconds
+Try solving with depth: 7. Time spend: 11879 milliseconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 2 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 3 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 8 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 45 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 236 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 473 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 2239 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 15803 milliseconds
+Solving in H, with depth: 10. Time spend inside H: 124675 milliseconds
+The solutions of the length 17. The solution is:
+F'  D  L  U  D  F  B  F2  U2  R2  B2  L2  D2  F2  D2  F2  R2  
+Time spend: 702 seconds
+Solving in H, with depth: 1. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 2. Time spend inside H: 0 milliseconds
+Solving in H, with depth: 3. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 4. Time spend inside H: 1 milliseconds
+Solving in H, with depth: 5. Time spend inside H: 5 milliseconds
+Solving in H, with depth: 6. Time spend inside H: 33 milliseconds
+Solving in H, with depth: 7. Time spend inside H: 249 milliseconds
+Solving in H, with depth: 8. Time spend inside H: 1999 milliseconds
+Solving in H, with depth: 9. Time spend inside H: 15584 milliseconds
+The solutions of the length 16. The solution is:
+F'  D  L  U  D  F  B'  U2  R2  F2  L2  D2  B2  D2  F2  R2  
+Time spend: 747 seconds
