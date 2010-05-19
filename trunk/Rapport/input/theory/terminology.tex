@@ -2,28 +2,28 @@
 \myTop{In order to fully understand the theoretical part of this report it is necessary to know the used terminology.}
 % When adding a new entry, make sure to use the same syntax as the previous entries.
 % Make sure to insert new entries at the right place, alphabetically
-\section{General cube terminology}
+\section{General Cube Terminology}
 \label{sec:generalNotation}
 \begin{itemize}
+\item \myTermHigh{Center}Center \cpiece{}s have one \facet{} and are placed at the center of each face and are immovable unless the cube is turned. 
 \item \myTermHigh{Cuber}The self reference for people who are devoted to the community of the \rubik{}. 
-\item \myTermHigh{Face}A face is an entire side of the cube. A \rubik{} has 6 faces.
-\item \myTermHigh{\facet{c}}The small stickers on the cube. Each face has 9 \facet{}s.
-\item \myTermHigh{\cpiece{c}} The \rubik{} consists of 26 \cpiece{}s.
-\item \myTermHigh{\cubicle{c}} A static frame that the \cpiece{} can be placed in.
-\item \myTermHigh{Corner}Corner \cpiece{}s have 3 \facet{}s and are placed at the corners. The \rubik{} has 8 corners. 
-\item \myTermHigh{Edge}Edge \cpiece{}s have 2 \facet{}s and are placed at the edges of each face. The \rubik{} has 12 edges.
-\item \myTermHigh{Center}Center \cpiece{} have 1 \facet{} and are placed at the center of each face and are immovable unless the cube is turned. 
-\item \myTermHigh{Turn}A turn of the cube is equal to rotating the whole cube 90 degrees -- changing view angle.
-\item \myTermHigh{Twist/move}A rotation of a face.%Twisting means the rotation of a side of the cube. Often denoted as R' for exampel. This yields twist the right side counter-clockwise.
-\item \myTermHigh{Move sequence}The same as a sequence of \twist{}s.
-\item \myTermHigh{Half-turn metric}In this metric of notation half-turn(M2) is allowed. 
-\item \myTermHigh{Quarter-turn metric}In this metric half-turn is not allowed.
-\end{itemize}
-The half-turn metric will be used in this report. 
+\item \myTermHigh{\cubicle{c}}An imaginary static frame that the \cpiece{}s can be placed in.
+\item \myTermHigh{\cpiece{c}}The \cpiece{} is a small piece of the \cube{}, which has one, two, or three \facelet{}s. The \rubik{} consists of 26 \cpiece{}s.
+\item \myTermHigh{Corner}Corner \cpiece{}s have three \facet{}s and are placed at the corners. The \rubik{} has eight corners. 
+\item \myTermHigh{Edge}Edge \cpiece{}s have two \facet{}s and are placed at the edges of each face. The \rubik{} has 12 edges.
+\item \myTermHigh{Face}A face is an entire side of the cube. The \rubik{} has six faces.
+\item \myTermHigh{\facet{c}}The small stickers on the cube. Each face has nine \facet{}s.
 
-\section{Movement notation terminology}
+\item \myTermHigh{Move sequence}The same as a sequence of \twist{}s.
+
+\item \myTermHigh{Turn}A turn of the cube is equal to rotating the whole cube 90 degrees i..e. changing the view angle.
+\item \myTermHigh{Twist/move}A rotation of a face.%Twisting means the rotation of a side of the cube. Often denoted as R' for exampel. This yields twist the right side counter-clockwise.
+
+\end{itemize}
+
+\section{Movement Notation Terminology}
 \label{sec:moveNotation}
-A \cube{} consists of 6 faces and the notations of these are the following.
+A \cube{} consists of six faces and the notations of these are the following.
 \begin{itemize}
 \item \myTermHigh{Front face -- F}This face faces the cuber.
 \item \myTermHigh{Left face -- L}This face faces the left hand side of the cuber.
@@ -32,46 +32,36 @@ A \cube{} consists of 6 faces and the notations of these are the following.
 \item \myTermHigh{Down face -- D}This face faces down.
 \item \myTermHigh{Back face -- B}This face faces away from the cuber.
 \item \myTermHigh{General move -- M}Can be any of the above faces.
+\item \myTermHigh{Half-twist metric}In this metric of notation half-twists (\m{M2}) are allowed. This metric will be used in this report.
+\item \myTermHigh{Quarter-twist metric}In this metric half-twists are not allowed.
 \end{itemize} 
 
 A face can be twisted in two directions -- clockwise and counterclockwise. When twisting a face the direction is determined as if you were facing the face.
 A twist in the clockwise direction has the same name as the face. i.e. a clockwise turn of the right face is notated \m{R} and pronounced ``right''.
-A counterclockwise twist of the right face is notated R' and pronounced ``right prime''. This goes for all the faces.
-A 180 degree \twist{} of a face is denoted \m{M2}. 
-Beside the normal face \twist{} there are middle \twist{}s. These are denoted \m{Mm Mm' Mm2} e.g. \m{Rm2} is a \twist{} of the middle section looking from the \m{R} face. This \twist{} is equal to the two \twist{} \m{R2 L2}.  
+A counterclockwise twist of the right face is notated \m{R'} and pronounced ``right prime''. This goes for all the faces.
+A 180 degree \twist{} of a face is denoted \m{M2} e.g. \m{R2} will \twist{} the right face 180 degrees, known as a half-twist.  
+Beside the normal face \twist{}s there are middle \twist{}s. These are denoted \m{Mm Mm' Mm2} e.g. \m{Rm2} is a \twist{} of the middle slice looking from the \m{R} face. This \twist{} is equal to the two \twist{}s \m{R2 L2}. Middle \twist{}s will not be used unless stated.   
 
 A turn of the cube can be done in six directions. Clockwise and counterclockwise around each of the three axes.
 
-\section{Algorithm terminology}
+\section{Algorithm Terminology}
 \begin{itemize}
-\item \myTermHigh{$S$}The 18 standard \twist{}s.
+\item \myTermHigh{$e$}The solved state of the \rubik{} (unit cube).
+\item \myTermHigh{\m{S}}The 18 standard \twist{}s of the half-twist metric: \m{U U' U2 D D' D2 F F' F2 B B' B2 R R' R2 L L' L2}.
 \item \myTermHigh{$s$}A specific position of the \rubik{}.
-\item \myTermHigh{$|s|$}The number of \twist{}s of a move sequence that transform $e$ into $s$.
-\item \myTermHigh{$H$}The set of positions which obey the following:
+%\item \myTermHigh{$|s|$}The number of \twist{}s of a move sequence that transforms $e$ into $s$.
+\item \myTermHigh{\m{H}}The set of positions which follows these rules:
 \begin{itemize}
-	\item Every \cpiece{} is correctly orientated (see section \ref{sec:orientation}.
+	\item Every \cpiece{} is correctly orientated (see section \ref{sec:orientation}).
 	\item Every edge \cpiece{} not containing either an up \facelet{} or a down \facelet{} is positioned in the middle layer.
 \end{itemize}
-\item \myTermHigh{$A$}Set containing the following \twist{}s: \m{U U' U2 F2 R2 B2 L2 D D' D2}.
-\item \myTermHigh{$G$}All positions which can be obtained without disassembling the \rubik{}. 
+\item \myTermHigh{\m{A}}A set of \twist{}s containing the following \twist{}s: \m{U U' U2 F2 R2 B2 L2 D D' D2}.
+\item \myTermHigh{\m{G}}All positions which can be obtained without disassembling the \rubik{}. 
 \item \myTermHigh{$r(s)$}The relabeling of the position $s$.
-\item \myTermHigh{$u(r(s))$}The unlabeling of the relabeled position $s$. $u(r(s))=s$.
-\item \myTermHigh{$S^{n}$}Set of move sequences consisting every possible sequence of max $n$ moves in $S$.
-\item \myTermHigh{$S^*$}Every combination of \twist{}s in $S$.
-\item \myTermHigh{$d(s)$}Distance, the shortest $|s|$.
-\item \myTermHigh{$R$}set of $r(G)$.
-\item \myTermHigh{$M$}48 color permutation turn and mirror.
-\item \myTermHigh{$e$}The solved state of the \rubik{}(unit cube).
+%\item \myTermHigh{$u(r(s))$}The unlabeling of the relabeled position $s$. $u(r(s))=s$.
+\item \myTermHigh{\m{S$^{n}$}}Set of move sequences consisting of every possible sequence of maximum $n$ moves in \m{S}.
+\item \myTermHigh{\m{S$^*$}}Every combination of \twist{}s in \m{S}.
 \end{itemize}
+Note that positions can be considered as the shortest move sequence that transforms the \cube{} from $e$ to the given position $s$.
 
-\subsection{Kociemba}
-Here are the terms which are specifically used section \ref{sec:kociemba}. Note that positions can be considered as the shortest move sequence that transform it into $e$.
-\begin{itemize}
-\item \myTermHigh{$a$}A position in $G$.
-\item \myTermHigh{$b$}Path from $a$ to a position in $H$ using move sequences in $S*$.
-\item \myTermHigh{$c$}Path from $b$ to $e$ using move sequences in $A*$.
-\item \myTermHigh{$ab$}Combination of the to move sequences $a$ and $b$, in that order.
-\item \myTermHigh{$d$}Distance for phase 1.
-\item \myTermHigh{$d2$}Table lookup for the distance from $ab$ to $e$.
-\end{itemize}
-\myTail{This chapter gives the reader the basic terms used in this report.}
+\myTail{This chapter gives some basic terms used in this report.}

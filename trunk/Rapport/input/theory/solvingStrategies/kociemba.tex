@@ -1,5 +1,13 @@
 \section{Kociemba's Optimal Solver}
 \label{sec:kociemba}
+\begin{itemize}
+\item \myTermHigh{$a$}A position in \m{G}.
+\item \myTermHigh{$b$}Path from $a$ to a position in \m{H} using move sequences in \m{S$^{*}$}.
+\item \myTermHigh{$c$}Path from $b$ to $e$ using move sequences in \m{A$^{*}$}.
+\item \myTermHigh{$ab$}Combination of the two move sequences $a$ and $b$, in that order.
+\item \myTermHigh{$d$}Distance for phase 1 .
+\item \myTermHigh{$d2$}Table lookup for the distance from $ab$ to $e$.
+\end{itemize}
 Kociemba's optimal solver is an algorithm created with the purpose of finding the twist-wise optimal solution to any scrambled \rubik{}\cite{kociemba09} \cite{cubelovers92}. It has been developed by Herbert Kociemba who has studied physics and mathematics at Technische Universit\"{a}t Darmstadt\cite{TUD} (1974-1979) and is currently teaching at a gymnasium. His interest in the \rubik{} started in the 1980 and he implemented his first algorithm -- Kociemba's Two Phase algorithm -- in 1990. See appendix  \ref{chap:emailCorrespondence} for the e-mail correspondence with Herbert Kociemba.
 
 The Kociemba's optimal solver consists of two phases and is based on Kociemba's Two Phase algorithm. The first phase is based on a principle called relabeling, which will be defined at first. 
