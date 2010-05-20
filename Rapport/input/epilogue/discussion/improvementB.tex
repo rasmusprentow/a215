@@ -1,11 +1,12 @@
-\subsection{Beginner's Algorithm}
-When describing the improvement of the beginner's algorithm, the improvements are described step by step. 
+\section{Improving Beginner's Algorithm}
+The improvement of beginner's algorithm are described step by step. 
+
 A twist sequence which leads to the next step may be the most efficient for doing just that, but can potentially cause the entire twist sequence from the scrambled state to the solved state to be longer. 
 i.e. a long partial twist sequence may lead to a shorter overall twist sequence. In order to utilize this a lot of analysis is necessary, which is nearly impossible for a person to perform and would take a large amount of time to implement.
-Additionally the algorithm still has to be the beginner's algorithm, which means that the steps used in the beginner's algorithm are also implemented and not just swapped for more efficient ones, which would defeat the purpose of implementing the beginner's algorithm.
+Additionally the algorithm still has to be beginner's algorithm, which means that the steps used in beginner's algorithm are also implemented and not just swapped for more efficient ones, which would defeat the purpose of implementing beginner's algorithm.
 
 
-The beginner's algorithm is as mentioned before a very twist-wise inefficient solving algorithm. 
+Beginner's algorithm is as mentioned before a very twist-wise inefficient solving algorithm. 
 There are however quite a few areas in which the implementation can be improved.
 In the first step (see subsection \ref{sub:step1}) choosing the correct face to be the face of the first layer will decrease the number of twists needed to complete the first step, since a different part of the cross is assembled on the different faces.
 
@@ -19,13 +20,13 @@ If an algorithm for rotating a corner \cpiece{} the other direction were impleme
 
 In the third step (see subsection \ref{sub:step3}), where the edge \cpiece{}s are positioned in the second layer, there is only one way to improve it; choosing the most efficient order to position the edge \cpiece{}s. Since there are four edge \cpiece{}s that need to be positioned, the logic used in improving the second step can be applied in the third step.
 
-In the fourth step (see subsection \ref{sub:step4}), where the last layer cross is fully attained, there is only room for little improvement, if the algorithm should still be the beginner's algorithm.
+In the fourth step (see subsection \ref{sub:step4}), where the last layer cross is fully attained, there is only room for little improvement, if the algorithm should still be beginner's algorithm.
 As mentioned in (see subsection \ref{sub:step4}), there are three possible settings of the unsolved cross.
 In the position known as the opposite L, the reverse of the algorithm used in this step will skip the next setting and directly give the solved cross.
 This can potentially reduce the solving algorithm by six twists.
 
 
-The fifth and final step of the beginner's algorithm (see subsection \ref{sub:step5}) is divided into two methods in our implementation.
+The fifth and final step of beginner's algorithm (see subsection \ref{sub:step5}) is divided into two methods in our implementation.
 
 
 The first method of the final step, which positioned the remaining four corners correctly, only uses a single algorithm.
@@ -33,4 +34,4 @@ This algorithm rotates three corner \cpiece{}s' positions counterclockwise.
 Half the time the corner \cpiece{}s' positions needs to be rotated clockwise, which means that this algorithm is used twice.
 Its reverse can be used to rotate the corner \cpiece{}s' positions clockwise, which will in those cases when needed reduce the solving twist sequence by eight.
 
-When using the half turn metric the second method of the final step cannot be improved while staying true to our description of the beginner's algorithm (see section \ref{sec:beginner}).
+When using the half turn metric the second method of the final step cannot be improved while staying true to our description of beginner's algorithm (see section \ref{sec:beginner}).
