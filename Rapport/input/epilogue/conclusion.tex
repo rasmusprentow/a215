@@ -14,18 +14,19 @@ The lower bound was proven by testing all sequences of twists on the superflip p
 
 
 In order to compare the two implementations several tests must be run in a controlled environment with as little human interference as possible. 
+Therefore an application, which is the only one to perform the solving algorithms is a good choice.
 
 From our tests we can conclude that our implementation of beginner's algorithm is a time-wise more efficient algorithm than our implementation of Kociemba's optimal solver. 
-Our implementation of beginner's algorithm is $1.2\cdot10^{18}$ times faster than our implementation of Kociemba's optimal solver on average. 
+Our implementation of beginner's algorithm is in average approximately $1.2\cdot10^{18}$ times faster than our implementation of Kociemba's optimal solver. 
 
-In average our implementation of beginner's algorithm uses 151 twist to solve a \cube{} while our implementation of Kociamba's optimal solver always solves a \cube{} with an optimal solution which is known to be no more than 22. 
+In average our implementation of beginner's algorithm uses 151 twists to solve a \cube{} while our implementation of Kociamba's optimal solver always solves a \cube{} with an optimal solution which is known to be no more than 22. 
 By this we conclude that our implementation of Kociemba's optimal solver is twist-wise more efficient than our implementation of beginner's algorithm. 
 
 
 
 
 \begin{comment}
-That is why an application, where a user can scramble but only the application performs the solving algorithms, is a good choice when running a test.
+
 After we implemented the algorithms, we tested their efficiencies separately.
 Our implementation of the beginner's algorithm was run 100,000 times, and the average length of the twist sequence that solved the \rubik{} was found to be 151 as well as the time spent on solving them which were XXXXXX. See section \ref{sec:beginnersStat}. 
 Our implementation of Kociemba's optimal solver was run over a period of 48 hours. By this we estimated the time it would take to find an optimal solution of a \rubik{}, which were XXXX years. See section \ref{app:kociembaTime}.
