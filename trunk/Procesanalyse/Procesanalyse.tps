@@ -14,7 +14,7 @@ Flags=2
 ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
-MaxPos.x=-4
+MaxPos.x=-8
 MaxPos.y=-30
 NormalPos.left=0
 NormalPos.top=0
@@ -24,11 +24,11 @@ Class=CLatexEdit
 Document=Procesanalyse.tex
 
 [Frame0_Row0]
-cyCur=371
+cyCur=387
 cyMin=10
 
 [Frame0_Col0]
-cxCur=751
+cxCur=1373
 cxMin=10
 
 [Frame0_View0,0]
