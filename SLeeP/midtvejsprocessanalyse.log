@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.2.19)  6 APR 2010 13:51
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.4.13)  25 MAY 2010 09:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -9,10 +9,12 @@ Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
 abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
 h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
-rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
-lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
-ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
+greek, greek, hungarian, icelandic, assamese, bengali, guajrati, hindi, assames
+e, malayalam, marathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, 
+irish, italian, kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, 
+bokmal, nynorsk, polish, portuguese, romanian, russian, sanskrit, serbian, slov
+ak, slovenian, spanish, swedish, turkish, turkmen, ukenglish, ukrainian, uppers
+orbian, welsh, loaded.
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
@@ -46,8 +48,9 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
 
+Chapter 1.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
 (/usr/local/texlive/2009/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -56,23 +59,23 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [1
 
 
-{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 (./midtvejsprocessanalyse.aux) ) 
 Here is how much of TeX's memory you used:
- 245 strings out of 493848
- 2891 string characters out of 3149207
- 49936 words of memory out of 3000000
- 3601 multiletter control sequences out of 15000+200000
- 4851 words of font info for 18 fonts, out of 3000000 for 9000
+ 248 strings out of 493774
+ 2921 string characters out of 3145355
+ 51043 words of memory out of 3000000
+ 3615 multiletter control sequences out of 15000+200000
+ 5158 words of font info for 19 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 23i,4n,19p,155b,145s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 23i,4n,19p,330b,145s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2009/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb>
-Output written on midtvejsprocessanalyse.pdf (1 page, 36824 bytes).
+Output written on midtvejsprocessanalyse.pdf (2 pages, 43073 bytes).
 PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
+ 21 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
