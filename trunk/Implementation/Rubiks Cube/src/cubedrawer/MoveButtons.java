@@ -15,13 +15,17 @@ public enum MoveButtons {
 			} else if(this == SCRAMBLE) {
 				return "<html><center>Scramble</center></html>";
 			} else if(this == YOU_KNOW){
-				return "<html><center>Dance!!</center></html>";
+				return "<html><center>Dance</center></html>";
 			} else if(this == KOCIEMBA) {
-				return "<html><center>EPIC<br>Kociemba</center></html>";
+				return "<html><center>Kociemba's<br>solver</center></html>";
 			} else if(this == TOGGLEVIEW){
 				return "<html><center>Toggle<br>view</center></html>";
 			} else if(this == BEGINNERSLOW){
-				return "<html><center>Beginners<br>Extra</center></html>"; 
+				return "<html><center>Beginners<br>Extra</center></html>";
+			} else if(this == BEGINNERS) {
+				return "<html><center>Beginner's<br>algorithm</center></html>";
+			} else if(this == STATISTIC) {
+				return "<html><center>Statistics</center></html>";
 			} else {
 				return (old.substring(0, 1)) + (old.substring(1)).toLowerCase();
 			}
