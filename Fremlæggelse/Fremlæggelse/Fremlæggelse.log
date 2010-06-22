@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.6.22)  22 JUN 2010 10:51
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.6.22)  22 JUN 2010 12:38
 entering extended mode
 **C:/Documents*and*Settings/aba/My*Documents/2.*sem/P2/Fremlæggelse/Fremlæggels
 e/Fremlæggelse.tex
@@ -748,25 +748,21 @@ Package babel Warning: No hyphenation patterns were loaded for
 Package babel Info: Making " an active character on input line 82.
 ))
 ("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.aux"
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/frontpage.aux")
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/introduktion.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+e\Fremlæggelse.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -822,7 +818,7 @@ driver: pdftex
 \MPnumerator=\count156
 \everyMPtoPDFconversion=\toks41
 )
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 14.
  ("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -831,8 +827,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 13.
-LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
 
 ("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
 e\Fremlæggelse.out")
@@ -841,47 +837,47 @@ e\Fremlæggelse.out")
 \@outlinefile=\write4
 \AtBeginShipoutBox=\box53
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 14.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 14.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 14.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 13.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 13.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 14.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 14.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 14.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 13.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 13.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 14.
 
 ("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
 tensions\translator\dicts\translator-basic-dictionary\translator-basic-dictiona
@@ -924,7 +920,6 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1{C:/Documents and Settings/aba/Local Settings/Application Data/MiKTeX/2.8/pdf
 tex/config/pdftex.map}
 
-
 ])
 ("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
 e\input/introduktion.tex"
@@ -939,46 +934,149 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [2
 
-
-
 ]
-<input/pics/rubiks-cube.jpg, id=94, 351.3125pt x 351.3125pt>
+<input/pics/rubiks-cube.jpg, id=123, 351.3125pt x 351.3125pt>
 File: input/pics/rubiks-cube.jpg Graphic file (type jpg)
 
 <use input/pics/rubiks-cube.jpg> [3
 
  <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
 e/input/pics/rubiks-cube.jpg>])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/problemStatement.tex" [4
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/program.tex"
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\Fremlæggelse.toc") [5
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/group.tex" [6
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/bounds.tex" [7
+
+]
+<input/pics/Rokiki1.pdf, id=361, 430.60875pt x 277.035pt>
+File: input/pics/Rokiki1.pdf Graphic file (type pdf)
+
+<use input/pics/Rokiki1.pdf> [8
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/Rokiki1.pdf>]
+<input/pics/Rokiki2.pdf, id=433, 430.60875pt x 277.035pt>
+File: input/pics/Rokiki2.pdf Graphic file (type pdf)
+
+<use input/pics/Rokiki2.pdf> [9
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/Rokiki2.pdf>]
+<input/pics/Rokiki3.pdf, id=501, 430.60875pt x 278.03876pt>
+File: input/pics/Rokiki3.pdf Graphic file (type pdf)
+
+<use input/pics/Rokiki3.pdf> [10
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/Rokiki3.pdf>]
+<input/pics/superflip.pdf, id=569, 239.89626pt x 265.99374pt>
+File: input/pics/superflip.pdf Graphic file (type pdf)
+
+<use input/pics/superflip.pdf> [11
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/superflip.pdf>]
+<input/pics/bounds2.pdf, id=731, 630.355pt x 455.7025pt>
+File: input/pics/bounds2.pdf Graphic file (type pdf)
+
+<use input/pics/bounds2.pdf> [12
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/bounds2.pdf>])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/beginner.tex" [13
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/kociemba.tex" [14
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/demo.tex" [15
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/results.tex"
+<input/pics/beginnersScramble.pdf, id=921, 349.305pt x 205.76875pt>
+File: input/pics/beginnersScramble.pdf Graphic file (type pdf)
+
+<use input/pics/beginnersScramble.pdf> [16
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/beginnersScramble.pdf>]
+File: input/pics/beginnersScramble.pdf Graphic file (type pdf)
+
+<use input/pics/beginnersScramble.pdf> [17
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/conc.tex"
+File: input/pics/bounds2.pdf Graphic file (type pdf)
+ <use input/pics/bounds2.pdf> [18
+
+] [19
+
+])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/process.tex"
+<input/pics/Billede0075.jpg, id=1115, 2569.6pt x 1927.2pt>
+File: input/pics/Billede0075.jpg Graphic file (type jpg)
+
+<use input/pics/Billede0075.jpg> [20
+
+ <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
+e/input/pics/Billede0075.jpg>])
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\input/ops.tex"
+("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
+e\Fremlæggelse.toc") [21
+
+])
 \tf@nav=\write5
 \tf@toc=\write6
 \tf@snm=\write7
 
 ("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.aux"
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/frontpage.aux")
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/introduktion.aux"))
+e\Fremlæggelse.aux")
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 13265 strings out of 495285
- 247556 string characters out of 3180346
- 317058 words of memory out of 3000000
- 16058 multiletter control sequences out of 15000+200000
- 9955 words of font info for 37 fonts, out of 3000000 for 9000
+ 13526 strings out of 495285
+ 253369 string characters out of 3180346
+ 323058 words of memory out of 3000000
+ 16221 multiletter control sequences out of 15000+200000
+ 13925 words of font info for 52 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 48i,15n,66p,511b,564s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pr
-ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Fi
-les/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTe
-X 2.8/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Fremlæggelse.pdf (3 pages, 91119 bytes).
+ 48i,15n,65p,511b,566s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fil
+es/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.8/fo
+nts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1
+/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/a
+msfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:
+/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on Fremlæggelse.pdf (21 pages, 1939682 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1269 PDF objects out of 1440 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
