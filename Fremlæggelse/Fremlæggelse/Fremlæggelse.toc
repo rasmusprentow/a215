@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Forside}{1}{0}{1}
+\beamer@endinputifotherversion {3.08pt}
+\select@language {danish}
+\beamer@sectionintoc {2}{Introduktion}{2}{0}{2}
+\beamer@subsectionintoc {2}{1}{Ern\"{o} Rubik}{2}{0}{2}
+\beamer@subsectionintoc {2}{2}{Rubik's Terningen}{3}{0}{2}
