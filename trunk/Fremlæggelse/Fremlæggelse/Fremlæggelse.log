@@ -1,33 +1,33 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.6.22)  22 JUN 2010 12:38
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.5.5)  22 JUN 2010 12:46
 entering extended mode
-**C:/Documents*and*Settings/aba/My*Documents/2.*sem/P2/Fremlæggelse/Fremlæggels
-e/Fremlæggelse.tex
+**D:/Aalborg*universitet*(Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/Fremlæggels
+e.tex
 
-("C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/Fremlæggelse.tex"
-LaTeX2e <2005/12/01>
+("D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/Fremlæggels
+e.tex"
+LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamer.cls"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasercs.sty"
-Package: beamerbasercs 2010/05/01 (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamer.c
+ls
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+sercs.sty
+Package: beamerbasercs 2007/01/28 (rcs-revision 1.4)
 )
-Document Class: beamer 2010/06/06 development version 3.08 A class for typesett
-ing presentations (rcs-revision bff0a9294b45)
+Document Class: beamer 2007/03/11 cvs version 3.07 A class for typesetting pres
+entations (rcs-revision 1.70)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasemodes.sty"
-Package: beamerbasemodes 2010/05/01 (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+semodes.sty
+Package: beamerbasemodes 2007/01/28 (rcs-revision 1.22)
 \beamer@tempbox=\box26
 \beamer@tempcount=\count79
 \c@beamerpauses=\count80
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasedecode.sty"
-Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+sedecode.sty
+Package: beamerbasedecode 2007/01/28 (rcs-revision 1.20)
 \beamer@slideinframe=\count81
 \beamer@minimum=\count82
 )
@@ -77,47 +77,19 @@ Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
 \beamer@sectionadjust=\count100
 \beamer@tocsectionnumber=\count101
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseoptions.sty"
-Package: beamerbaseoptions 2010/04/27 (rcs-revision 982469101dd6)
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seoptions.sty
+Package: beamerbaseoptions 2007/01/28 (rcs-revision 1.8)
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
-\beamer@paperwidth=\skip42
-\beamer@paperheight=\skip43
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\geometry\geometry.sty"
-Package: geometry 2008/12/21 v4.2 Page Geometry
-
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
-)
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
-Package ifvtex Info: VTeX not detected.
-)
-\Gm@cnth=\count102
-\Gm@cntv=\count103
-\c@Gm@tempcnt=\count104
-\Gm@bindingoffset=\dimen119
-\Gm@wd@mp=\dimen120
-\Gm@odd@mp=\dimen121
-\Gm@even@mp=\dimen122
-\Gm@dimlist=\toks15
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\size11.clo"
-File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\pgf\basic
-layer\pgfcore.sty" ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.st
-y"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\pgf\basiclayer\pgfco
+re.sty ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
- ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
-Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -125,79 +97,79 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 ("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 90.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
-\Gread@gobject=\count105
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count102
 ))
-\Gin@req@height=\dimen123
-\Gin@req@width=\dimen124
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\pgf\syste
-mlayer\pgfsys.sty"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\pgf\utili
-ties\pgfrcs.sty"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\uti
-lities\pgfutil-common.tex"
-\pgfutil@everybye=\toks16
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\pgf\systemlayer\pgfs
+ys.sty
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\pgf\utilities\pgfrcs
+.sty
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\utilities\pgfu
+til-common.tex
+\pgfutil@everybye=\toks15
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\uti
-lities\pgfutil-latex.def")
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\uti
-lities\pgfrcs.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\utilities\pgfu
+til-latex.def)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\utilities\pgfr
+cs.code.tex
 Package: pgfrcs 2008/02/20 v2.00 (rcs-revision 1.21)
 ))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgfsys.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+fsys.code.tex
 Package: pgfsys 2008/02/07 v2.00 (rcs-revision 1.31)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\uti
-lities\pgfkeys.code.tex"
-\pgfkeys@pathtoks=\toks17
-\pgfkeys@temptoks=\toks18
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\utilities\pgfk
+eys.code.tex
+\pgfkeys@pathtoks=\toks16
+\pgfkeys@temptoks=\toks17
 )
-\pgf@x=\dimen125
-\pgf@y=\dimen126
-\pgf@xa=\dimen127
-\pgf@ya=\dimen128
-\pgf@xb=\dimen129
-\pgf@yb=\dimen130
-\pgf@xc=\dimen131
-\pgf@yc=\dimen132
-\c@pgf@counta=\count106
-\c@pgf@countb=\count107
-\c@pgf@countc=\count108
-\c@pgf@countd=\count109
+\pgf@x=\dimen121
+\pgf@y=\dimen122
+\pgf@xa=\dimen123
+\pgf@ya=\dimen124
+\pgf@xb=\dimen125
+\pgf@yb=\dimen126
+\pgf@xc=\dimen127
+\pgf@yc=\dimen128
+\c@pgf@counta=\count103
+\c@pgf@countb=\count104
+\c@pgf@countc=\count105
+\c@pgf@countd=\count106
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgf.cfg"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+f.cfg
 File: pgf.cfg 2008/01/13  (rcs-revision 1.6)
 )
 Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 885.
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgfsys-pdftex.def"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+fsys-pdftex.def
 File: pgfsys-pdftex.def 2007/12/20  (rcs-revision 1.20)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgfsys-common-pdf.def"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+fsys-common-pdf.def
 File: pgfsys-common-pdf.def 2007/12/17  (rcs-revision 1.8)
 )))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgfsyssoftpath.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+fsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/01/23  (rcs-revision 1.6)
-\pgfsyssoftpath@smallbuffer@items=\count110
-\pgfsyssoftpath@bigbuffer@items=\count111
+\pgfsyssoftpath@smallbuffer@items=\count107
+\pgfsyssoftpath@bigbuffer@items=\count108
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\sys
-temlayer\pgfsysprotocol.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\systemlayer\pg
+fsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\xcolor\xc
-olor.sty"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
- ("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -211,399 +183,440 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcore.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+core.code.tex
 Package: pgfcore 2008/01/15 v2.00 (rcs-revision 1.6)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmath.code.tex"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathcalc.code.tex"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathutil.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmath.c
+ode.tex
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathca
+lc.code.tex
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathut
+il.code.tex
 \pgfmath@box=\box34
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathparser.code.tex"
-\pgfmath@stack=\toks19
-\c@pgfmath@parsecounta=\count112
-\c@pgfmath@parsecountb=\count113
-\c@pgfmath@parsecountc=\count114
-\pgfmath@parsex=\dimen133
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathpa
+rser.code.tex
+\pgfmath@stack=\toks18
+\c@pgfmath@parsecounta=\count109
+\c@pgfmath@parsecountb=\count110
+\c@pgfmath@parsecountc=\count111
+\pgfmath@parsex=\dimen129
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathoperations.code.tex"
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathtrig.code.tex")
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathrnd.code.tex"))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\mat
-h\pgfmathbase.code.tex")))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorepoints.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathop
+erations.code.tex
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathtr
+ig.code.tex)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathrn
+d.code.tex))
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\math\pgfmathba
+se.code.tex)))
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corepoints.code.tex
 File: pgfcorepoints.code.tex 2008/02/03  (rcs-revision 1.13)
-\pgf@picminx=\dimen134
-\pgf@picmaxx=\dimen135
-\pgf@picminy=\dimen136
-\pgf@picmaxy=\dimen137
-\pgf@pathminx=\dimen138
-\pgf@pathmaxx=\dimen139
-\pgf@pathminy=\dimen140
-\pgf@pathmaxy=\dimen141
-\pgf@xx=\dimen142
-\pgf@xy=\dimen143
-\pgf@yx=\dimen144
-\pgf@yy=\dimen145
-\pgf@zx=\dimen146
-\pgf@zy=\dimen147
+\pgf@picminx=\dimen130
+\pgf@picmaxx=\dimen131
+\pgf@picminy=\dimen132
+\pgf@picmaxy=\dimen133
+\pgf@pathminx=\dimen134
+\pgf@pathmaxx=\dimen135
+\pgf@pathminy=\dimen136
+\pgf@pathmaxy=\dimen137
+\pgf@xx=\dimen138
+\pgf@xy=\dimen139
+\pgf@yx=\dimen140
+\pgf@yy=\dimen141
+\pgf@zx=\dimen142
+\pgf@zy=\dimen143
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorepathconstruct.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2008/02/13  (rcs-revision 1.14)
-\pgf@path@lastx=\dimen148
-\pgf@path@lasty=\dimen149
+\pgf@path@lastx=\dimen144
+\pgf@path@lasty=\dimen145
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorepathusage.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/01/23  (rcs-revision 1.11)
-\pgf@shorten@end@additional=\dimen150
-\pgf@shorten@start@additional=\dimen151
+\pgf@shorten@end@additional=\dimen146
+\pgf@shorten@start@additional=\dimen147
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorescopes.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corescopes.code.tex
 File: pgfcorescopes.code.tex 2008/01/15  (rcs-revision 1.26)
 \pgfpic=\box35
 \pgf@hbox=\box36
 \pgf@layerbox@main=\box37
-\pgf@picture@serial@count=\count115
+\pgf@picture@serial@count=\count112
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoregraphicstate.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2007/12/12  (rcs-revision 1.8)
-\pgflinewidth=\dimen152
+\pgflinewidth=\dimen148
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoretransformations.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coretransformations.code.tex
 File: pgfcoretransformations.code.tex 2008/02/04  (rcs-revision 1.10)
-\pgf@pt@x=\dimen153
-\pgf@pt@y=\dimen154
-\pgf@pt@temp=\dimen155
+\pgf@pt@x=\dimen149
+\pgf@pt@y=\dimen150
+\pgf@pt@temp=\dimen151
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorequick.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corequick.code.tex
 File: pgfcorequick.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoreobjects.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorepathprocessing.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2008/01/23  (rcs-revision 1.7)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorearrows.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corearrows.code.tex
 File: pgfcorearrows.code.tex 2007/06/07  (rcs-revision 1.8)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoreshade.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coreshade.code.tex
 File: pgfcoreshade.code.tex 2007/12/10  (rcs-revision 1.9)
-\pgf@max=\dimen156
-\pgf@sys@shading@range@num=\count116
+\pgf@max=\dimen152
+\pgf@sys@shading@range@num=\count113
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoreimage.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coreimage.code.tex
 File: pgfcoreimage.code.tex 2008/01/15  (rcs-revision 1.1)
 \pgfexternal@startupbox=\box38
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorelayers.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corelayers.code.tex
 File: pgfcorelayers.code.tex 2008/01/15  (rcs-revision 1.1)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcoretransparency.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+coretransparency.code.tex
 File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\generic\pgf\bas
-iclayer\pgfcorepatterns.code.tex"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\generic\pgf\basiclayer\pgf
+corepatterns.code.tex
 File: pgfcorepatterns.code.tex 2008/01/15  (rcs-revision 1.1)
 )))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\pgf\basic
-layer\pgfbaseimage.sty"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\pgf\basiclayer\pgfba
+seimage.sty
 
 Package pgf Warning: This package is obsolete and no longer needed on input lin
 e 13.
 
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\pgf\utili
-ties\xxcolor.sty"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\pgf\utilities\xxcolo
+r.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count117
-\XC@countmixins=\count118
-) ("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2009/09/23 v6.78v Hypertext links for LaTeX
- ("C:\Program Files\MiKTeX 2.8\tex\latex\ifxetex\ifxetex.sty"
-Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
-)
-("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\hycolor.sty"
-Package: hycolor 2008/09/08 v1.4 Code for color options of hyperref/bookmark (H
-O)
+\XC@nummixins=\count114
+\XC@countmixins=\count115
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\xcolor-patch.sty"
-Package: xcolor-patch 2008/09/08 xcolor patch
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-\@linkdim=\dimen157
-\Hy@linkcounter=\count119
-\Hy@pagecounter=\count120
+("C:\Program Files\MiKTeX 2.8\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/03/13 v5.3 Page Geometry
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2009/09/23 v6.78v Hyperref: PDFDocEncoding definition (HO)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2010/01/28 v2.1 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
 )
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count116
+\Gm@cntv=\count117
+\c@Gm@tempcnt=\count118
+\Gm@bindingoffset=\dimen153
+\Gm@wd@mp=\dimen154
+\Gm@odd@mp=\dimen155
+\Gm@even@mp=\dimen156
+\Gm@layoutwidth=\dimen157
+\Gm@layoutheight=\dimen158
+\Gm@layouthoffset=\dimen159
+\Gm@layoutvoffset=\dimen160
+\Gm@dimlist=\toks20
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2010/04/17 v6.80x Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2010/04/16 v1.6 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
 
 ("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
+))
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\pdfescape.sty"
+Package: pdfescape 2010/03/01 v1.9 Provides hex, PDF name and string conversion
+s (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
+
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\ifxetex\ifxetex.sty"
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\hycolor.sty"
+Package: hycolor 2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\xcolor-patch.sty"
+Package: xcolor-patch 2009/12/12 xcolor patch
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\letltxmacro.sty"
+Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
+)
+\@linkdim=\dimen161
+\Hy@linkcounter=\count119
+\Hy@pagecounter=\count120
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2010/04/17 v6.80x Hyperref: PDFDocEncoding definition (HO)
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\intcalc.sty"
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
-
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
-t (HO)
-))
-Package hyperref Info: Option `bookmarks' set `true' on input line 2864.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 2864.
-Package hyperref Info: Option `implicit' set `false' on input line 2864.
-Package hyperref Info: Hyper figures OFF on input line 2975.
-Package hyperref Info: Link nesting OFF on input line 2980.
-Package hyperref Info: Hyper index ON on input line 2983.
-Package hyperref Info: Plain pages OFF on input line 2990.
-Package hyperref Info: Backreferencing OFF on input line 2995.
+Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 3528.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 3528.
+Package hyperref Info: Option `implicit' set `false' on input line 3528.
+Package hyperref Info: Hyper figures OFF on input line 3609.
+Package hyperref Info: Link nesting OFF on input line 3614.
+Package hyperref Info: Hyper index ON on input line 3617.
+Package hyperref Info: Plain pages OFF on input line 3624.
+Package hyperref Info: Backreferencing OFF on input line 3629.
 
 Implicit mode OFF; no redefinition of LaTeX internals
-Package hyperref Info: Bookmarks ON on input line 3191.
-("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
+Package hyperref Info: Bookmarks ON on input line 3825.
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 3428.
+LaTeX Info: Redefining \url on input line 4110.
 
 ("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\bitset.sty"
 Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\intcalc.sty"
-Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
-)
 ("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\bigintcalc.sty"
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
-
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
- (HO)
-
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
-)
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-)))
+))
 \Fld@menulength=\count121
-\Field@Width=\dimen158
-\Fld@charsize=\dimen159
-\Field@toks=\toks20
-Package hyperref Info: Hyper figures OFF on input line 4346.
-Package hyperref Info: Link nesting OFF on input line 4351.
-Package hyperref Info: Hyper index ON on input line 4354.
-Package hyperref Info: backreferencing OFF on input line 4361.
-Package hyperref Info: Link coloring OFF on input line 4366.
-Package hyperref Info: Link coloring with OCG OFF on input line 4371.
-Package hyperref Info: PDF/A mode OFF on input line 4376.
+\Field@Width=\dimen162
+\Fld@charsize=\dimen163
+\Field@toks=\toks21
+Package hyperref Info: Hyper figures OFF on input line 5088.
+Package hyperref Info: Link nesting OFF on input line 5093.
+Package hyperref Info: Hyper index ON on input line 5096.
+Package hyperref Info: backreferencing OFF on input line 5103.
+Package hyperref Info: Link coloring OFF on input line 5108.
+Package hyperref Info: Link coloring with OCG OFF on input line 5113.
+Package hyperref Info: PDF/A mode OFF on input line 5118.
+LaTeX Info: Redefining \ref on input line 5158.
+LaTeX Info: Redefining \pageref on input line 5162.
 
 ("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\atbegshi.sty"
-Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count122
+
+Package hyperref Warning: Option `pdfpagelabels' is turned off
+(hyperref)                because \thepage is undefined.
 
 Hyperref stopped early
 )
-*hyperref using default driver hpdftex*
+* hyperref using default driver hpdftex *
 ("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2009/09/23 v6.78v Hyperref driver for pdfTeX
-\Fld@listcount=\count123
+File: hpdftex.def 2010/04/17 v6.80x Hyperref driver for pdfTeX
+\Fld@listcount=\count122
+\c@bookmark@seq@number=\count123
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\atveryend.sty"
+Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
+Package atveryend Info: \enddocument detected (standard).
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaserequires.sty"
-Package: beamerbaserequires 2010/05/01  (rcs-revision efa082c6111d)
-
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasecompatibility.sty"
-Package: beamerbasecompatibility 2010/05/01  (rcs-revision efa082c6111d)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\uniquecounter.sty"
+Package: uniquecounter 2009/12/18 v1.1 Provides unlimited unique counter (HO)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasefont.sty"
-Package: beamerbasefont 2010/05/10  (rcs-revision cd36e8a33c6b)
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2009/06/22 v3.00
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\@emptytoks=\toks21
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetranslator.sty"
-Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
-
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\translator.sty"
-Package: translator 2010/06/11 ver 1.09
-
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\translator-language-mappings.tex")))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasemisc.sty"
-Package: beamerbasemisc 2010/06/06  (rcs-revision bff0a9294b45)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+71.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetwoscreens.sty"
-Package: beamerbasetwoscreens 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+secompatibility.sty
+Package: beamerbasecompatibility 2007/01/28  (rcs-revision 1.63)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseoverlay.sty"
-Package: beamerbaseoverlay 2010/05/07  (rcs-revision 5584dad462a9)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+sefont.sty
+Package: beamerbasefont 2007/01/28  (rcs-revision 1.16)
+)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+semisc.sty
+Package: beamerbasemisc 2007/01/28  (rcs-revision 1.24)
+)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+setwoscreens.sty
+Package: beamerbasetwoscreens 2007/01/28  (rcs-revision 1.7)
+)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seoverlay.sty
+Package: beamerbaseoverlay 2007/01/28  (rcs-revision 1.50)
 \beamer@argscount=\count124
-\beamer@lastskipcover=\skip44
+\beamer@lastskipcover=\skip42
 \beamer@trivlistdepth=\count125
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetitle.sty"
-Package: beamerbasetitle 2010/06/12  (rcs-revision 717e481ca47a)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+setitle.sty
+Package: beamerbasetitle 2007/01/28  (rcs-revision 1.25)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasesection.sty"
-Package: beamerbasesection 2010/06/12  (rcs-revision 717e481ca47a)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+sesection.sty
+Package: beamerbasesection 2007/01/28  (rcs-revision 1.21)
 \c@lecture=\count126
 \c@part=\count127
 \c@section=\count128
 \c@subsection=\count129
 \c@subsubsection=\count130
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseframe.sty"
-Package: beamerbaseframe 2010/06/06  (rcs-revision bff0a9294b45)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seframe.sty
+Package: beamerbaseframe 2007/01/28  (rcs-revision 1.60)
 \beamer@framebox=\box39
 \beamer@frametitlebox=\box40
 \beamer@zoombox=\box41
 \beamer@zoomcount=\count131
 \beamer@zoomframecount=\count132
-\beamer@frametextheight=\dimen160
+\beamer@frametextheight=\dimen164
 \c@subsectionslide=\count133
-\beamer@frametopskip=\skip45
-\beamer@framebottomskip=\skip46
-\beamer@frametopskipautobreak=\skip47
-\beamer@framebottomskipautobreak=\skip48
+\beamer@frametopskip=\skip43
+\beamer@framebottomskip=\skip44
+\beamer@frametopskipautobreak=\skip45
+\beamer@framebottomskipautobreak=\skip46
 \beamer@envbody=\toks22
 \c@framenumber=\count134
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseverbatim.sty"
-Package: beamerbaseverbatim 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+severbatim.sty
+Package: beamerbaseverbatim 2007/01/28  (rcs-revision 1.8)
 \beamer@verbatimfileout=\write3
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseframesize.sty"
-Package: beamerbaseframesize 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seframesize.sty
+Package: beamerbaseframesize 2007/01/28  (rcs-revision 1.18)
 \beamer@splitbox=\box42
 \beamer@autobreakcount=\count135
-\beamer@autobreaklastheight=\dimen161
+\beamer@autobreaklastheight=\dimen165
 \beamer@frametitletoks=\toks23
 \beamer@framesubtitletoks=\toks24
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseframecomponents.sty"
-Package: beamerbaseframecomponents 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seframecomponents.sty
+Package: beamerbaseframecomponents 2007/01/28  (rcs-revision 1.41)
 \beamer@footins=\box43
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasecolor.sty"
-Package: beamerbasecolor 2010/06/06  (rcs-revision d1a9b48be06d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+secolor.sty
+Package: beamerbasecolor 2007/01/28  (rcs-revision 1.42)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasenotes.sty"
-Package: beamerbasenotes 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+senotes.sty
+Package: beamerbasenotes 2007/01/28  (rcs-revision 1.23)
 \beamer@frameboxcopy=\box44
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetoc.sty"
-Package: beamerbasetoc 2010/06/11  (rcs-revision 242ecaa6783b)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+setoc.sty
+Package: beamerbasetoc 2007/01/28  (rcs-revision 1.21)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetemplates.sty"
-Package: beamerbasetemplates 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+setemplates.sty
+Package: beamerbasetemplates 2007/01/28  (rcs-revision 1.51)
 \beamer@sbttoks=\toks25
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseauxtemplates.sty"
-Package: beamerbaseauxtemplates 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seauxtemplates.sty
+Package: beamerbaseauxtemplates 2007/01/28  (rcs-revision 1.28)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaseboxes.sty"
-Package: beamerbaseboxes 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+seboxes.sty
+Package: beamerbaseboxes 2007/03/11  (rcs-revision 1.32)
 \bmb@box=\box45
 \bmb@colorbox=\box46
 \bmb@boxshadow=\box47
 \bmb@boxshadowball=\box48
 \bmb@boxshadowballlarge=\box49
-\bmb@temp=\dimen162
-\bmb@dima=\dimen163
-\bmb@dimb=\dimen164
-\bmb@prevheight=\dimen165
+\bmb@temp=\dimen166
+\bmb@dima=\dimen167
+\bmb@dimb=\dimen168
+\bmb@prevheight=\dimen169
 )
-\beamer@blockheadheight=\dimen166
+\beamer@blockheadheight=\dimen170
 ))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbaselocalstructure.sty"
-Package: beamerbaselocalstructure 2010/06/01  (rcs-revision 81f9e33f7cc2)
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\tools\enumerate.sty"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+selocalstructure.sty
+Package: beamerbaselocalstructure 2007/01/28  (rcs-revision 1.53)
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks26
 )
 \c@figure=\count136
 \c@table=\count137
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasenavigation.sty"
-Package: beamerbasenavigation 2010/05/01  (rcs-revision efa082c6111d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+senavigation.sty
+Package: beamerbasenavigation 2007/01/28  (rcs-revision 1.36)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasetheorems.sty"
-Package: beamerbasetheorems 2010/06/06  (rcs-revision 7e7cc5e53e9d)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+setheorems.sty
+Package: beamerbasetheorems 2007/01/28  (rcs-revision 1.10)
 
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\translator\base\tran
+slator.sty
+Package: translator 2007/03/11 ver 1.00
+
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\translator\base\tran
+slator-language-mappings.tex))
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
@@ -612,11 +625,11 @@ Package: amstext 2000/06/29 v2.01
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks27
-\ex@=\dimen167
+\ex@=\dimen171
 ))
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen168
+\pmbraise@=\dimen172
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -633,7 +646,7 @@ LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box50
 \strutbox@=\box51
-\big@size=\dimen169
+\big@size=\dimen173
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count143
@@ -646,15 +659,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count148
 \maxfields@=\count149
 \andhelp@=\toks29
-\eqnshift@=\dimen170
-\alignsep@=\dimen171
-\tagshift@=\dimen172
-\tagwidth@=\dimen173
-\totwidth@=\dimen174
-\lineht@=\dimen175
+\eqnshift@=\dimen174
+\alignsep@=\dimen175
+\tagshift@=\dimen176
+\tagwidth@=\dimen177
+\totwidth@=\dimen178
+\lineht@=\dimen179
 \@envbody=\toks30
-\multlinegap=\skip52
-\multlinetaggap=\skip53
+\multlinegap=\skip50
+\multlinetaggap=\skip51
 \mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
@@ -666,60 +679,60 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headfont=\toks34
 \thm@notefont=\toks35
 \thm@headpunct=\toks36
-\thm@preskip=\skip54
-\thm@postskip=\skip55
-\thm@headsep=\skip56
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
 \dth@everypar=\toks37
 )
 \c@theorem=\count150
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ba
-se\beamerbasethemes.sty"
-Package: beamerbasethemes 2010/05/01  (rcs-revision efa082c6111d)
-))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\theme\beamerthemedefault.sty"
-Package: beamerthemedefault 2010/04/23  (rcs-revision 25f85d59db1e)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\base\beamerba
+sethemes.sty
+Package: beamerbasethemes 2007/01/28  (rcs-revision 1.10)
+)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\theme\
+beamerthemedefault.sty
+Package: beamerthemedefault 2007/01/28  (rcs-revision 1.7)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\font\beamerfontthemedefault.sty"
-Package: beamerfontthemedefault 2010/06/12  (rcs-revision 717e481ca47a)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\font\b
+eamerfontthemedefault.sty
+Package: beamerfontthemedefault 2007/01/28  (rcs-revision 1.13)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\color\beamercolorthemedefault.sty"
-Package: beamercolorthemedefault 2010/06/12  (rcs-revision 717e481ca47a)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\color\
+beamercolorthemedefault.sty
+Package: beamercolorthemedefault 2007/01/28  (rcs-revision 1.28)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\inner\beamerinnerthemedefault.sty"
-Package: beamerinnerthemedefault 2010/06/12  (rcs-revision 717e481ca47a)
-\beamer@dima=\dimen176
-\beamer@dimb=\dimen177
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\inner\
+beamerinnerthemedefault.sty
+Package: beamerinnerthemedefault 2007/01/28  (rcs-revision 1.20)
+\beamer@dima=\dimen180
+\beamer@dimb=\dimen181
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\outer\beamerouterthemedefault.sty"
-Package: beamerouterthemedefault 2010/04/23  (rcs-revision 25f85d59db1e)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\outer\
+beamerouterthemedefault.sty
+Package: beamerouterthemedefault 2007/01/28  (rcs-revision 1.14)
 )))
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\theme\beamerthemeMarburg.sty"
-Package: beamerthemeMarburg 2010/04/23  (rcs-revision 25f85d59db1e)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\theme\
+beamerthemeMarburg.sty
+Package: beamerthemeMarburg 2007/01/28  (rcs-revision 1.11)
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\color\beamercolorthemewhale.sty"
-Package: beamercolorthemewhale 2010/04/23  (rcs-revision 25f85d59db1e)
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\color\
+beamercolorthemewhale.sty
+Package: beamercolorthemewhale 2007/01/28  (rcs-revision 1.4)
 )
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\th
-emes\outer\beamerouterthemesidebar.sty"
-Package: beamerouterthemesidebar 2010/04/27  (rcs-revision 982469101dd6)
-\beamer@sidebarwidth=\dimen178
-\beamer@headheight=\dimen179
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\beamer\themes\outer\
+beamerouterthemesidebar.sty
+Package: beamerouterthemesidebar 2007/01/28  (rcs-revision 1.9)
+\beamer@sidebarwidth=\dimen182
+\beamer@headheight=\dimen183
 ))
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\inputenc.sty"
-Package: inputenc 2006/05/05 v1.1b Input encoding file
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks38
 \inpenc@posthook=\toks39
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\latin1.def"
-File: latin1.def 2006/05/05 v1.1b Input encoding file
+File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
 ("C:\Program Files\MiKTeX 2.8\tex\generic\babel\babel.sty"
 Package: babel 2008/07/06 v3.8l The Babel package
@@ -727,8 +740,9 @@ Package: babel 2008/07/06 v3.8l The Babel package
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
 )
 ("C:\Program Files\MiKTeX 2.8\tex\generic\babel\Danish.ldf"
 Language: danish 2009/09/19 v1.3r Danish support from the babel system
@@ -737,7 +751,7 @@ Language: danish 2009/09/19 v1.3r Danish support from the babel system
 File: babel.def 2008/07/06 v3.8l Babel common definitions
 LaTeX Info: Redefining \textlatin on input line 82.
 \babel@savecnt=\count151
-\U@D=\dimen180
+\U@D=\dimen184
 )
 
 Package babel Warning: No hyphenation patterns were loaded for
@@ -747,8 +761,7 @@ Package babel Warning: No hyphenation patterns were loaded for
 \l@danish = a dialect from \language0
 Package babel Info: Making " an active character on input line 82.
 ))
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.aux")
+No file Fremlæggelse.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
@@ -763,79 +776,73 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
-
-*geometry auto-detecting driver*
-*geometry detected driver: pdftex*
--------------------- Geometry parameters
-paper: user defined
-landscape: --
-twocolumn: --
-twoside: --
-asymmetric: --
-h-parts: 14.22636pt, 278.83713pt, 71.13187pt
-v-parts: 0.0pt, 273.14662pt, 0.0pt
-hmarginratio: --
-vmarginratio: --
-lines: --
-heightrounded: --
-bindingoffset: 0.0pt
-truedimen: --
-includehead: true
-includefoot: true
-includemp: --
-driver: pdftex
--------------------- Page layout dimensions and switches
-\paperwidth  364.19536pt
-\paperheight 273.14662pt
-\textwidth  278.83713pt
-\textheight 244.6939pt
-\oddsidemargin  -58.04362pt
-\evensidemargin -58.04362pt
-\topmargin  -72.26999pt
-\headheight 14.22636pt
-\headsep    0.0pt
-\footskip   14.22636pt
-\marginparwidth 4.0pt
-\marginparsep   10.0pt
-\columnsep  10.0pt
-\skip\footins  10.0pt plus 4.0pt minus 2.0pt
-\hoffset 0.0pt
-\voffset 0.0pt
-\mag 1000
-
-(1in=72.27pt, 1cm=28.45pt)
------------------------
 ("C:\Program Files\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count152
-\scratchdimen=\dimen181
+\scratchdimen=\dimen185
 \scratchbox=\box52
 \nofMPsegments=\count153
 \nofMParguments=\count154
 \everyMPshowfont=\toks40
 \MPscratchCnt=\count155
-\MPscratchDim=\dimen182
+\MPscratchDim=\dimen186
 \MPnumerator=\count156
 \everyMPtoPDFconversion=\toks41
 )
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: 364.19536pt, 273.14662pt (class default)
+* layout: 364.19536pt, 273.14662pt
+* switch(es): includehead includefoot 
+* h-part:(L,W,R)=(14.22636pt, 278.83713pt, 71.13187pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=278.83713pt
+* \textheight=244.6939pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box53
 Package hyperref Info: Link coloring OFF on input line 14.
- ("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
-Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
+Package: nameref 2010/04/17 v2.39 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\refcount.sty"
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
 \c@section@level=\count157
 )
 LaTeX Info: Redefining \ref on input line 14.
 LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
 
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.out")
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.out")
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.out")
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.out")
 \@outlinefile=\write4
-\AtBeginShipoutBox=\box53
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 14.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -879,53 +886,25 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 14.
 
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-basic-dictionary\translator-basic-dictiona
-ry-English.dict"
-Dictionary: translator-basic-dictionary, Language: English 
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-bibliography-dictionary\translator-bibliog
-raphy-dictionary-English.dict"
-Dictionary: translator-bibliography-dictionary, Language: English 
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-environment-dictionary\translator-environm
-ent-dictionary-English.dict"
-Dictionary: translator-environment-dictionary, Language: English 
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-months-dictionary\translator-months-dictio
-nary-English.dict"
-Dictionary: translator-months-dictionary, Language: English 
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-numbers-dictionary\translator-numbers-dict
-ionary-English.dict"
-Dictionary: translator-numbers-dictionary, Language: English 
-)
-("C:\Documents and Settings\aba\Application Data\MiKTeX\2.8\tex\latex\beamer\ex
-tensions\translator\dicts\translator-theorem-dictionary\translator-theorem-dict
-ionary-English.dict"
+(C:\Users\Christoffer\AppData\Roaming\MiKTeX\2.8\tex\latex\translator\dicts\the
+orem\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.nav")
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/frontpage.tex"
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.nav")
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/front
+page.tex"
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 4.
 
-[1{C:/Documents and Settings/aba/Local Settings/Application Data/MiKTeX/2.8/pdf
-tex/config/pdftex.map}
+[1{C:/Users/Christoffer/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/introduktion.tex"
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/intro
+duktion.tex"
 LaTeX Font Info:    Try loading font information for U+msa on input line 10.
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 10.
@@ -935,134 +914,140 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [2
 
 ]
-<input/pics/rubiks-cube.jpg, id=123, 351.3125pt x 351.3125pt>
+<input/pics/rubiks-cube.jpg, id=72, 351.3125pt x 351.3125pt>
 File: input/pics/rubiks-cube.jpg Graphic file (type jpg)
 
 <use input/pics/rubiks-cube.jpg> [3
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/rubiks-cube.jpg>])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/problemStatement.tex" [4
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+rubiks-cube.jpg>])
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/probl
+emStatement.tex" [4
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/program.tex"
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.toc") [5
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/progr
+am.tex"
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.toc") [5
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/group.tex" [6
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/group
+.tex" [6
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/bounds.tex" [7
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/bound
+s.tex" [7
 
-]
-<input/pics/Rokiki1.pdf, id=361, 430.60875pt x 277.035pt>
+] <input/pics/Rokiki1.pdf, id=215, 430.60875pt x 277.035pt>
 File: input/pics/Rokiki1.pdf Graphic file (type pdf)
 
 <use input/pics/Rokiki1.pdf> [8
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/Rokiki1.pdf>]
-<input/pics/Rokiki2.pdf, id=433, 430.60875pt x 277.035pt>
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+Rokiki1.pdf>]
+<input/pics/Rokiki2.pdf, id=268, 430.60875pt x 277.035pt>
 File: input/pics/Rokiki2.pdf Graphic file (type pdf)
 
 <use input/pics/Rokiki2.pdf> [9
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/Rokiki2.pdf>]
-<input/pics/Rokiki3.pdf, id=501, 430.60875pt x 278.03876pt>
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+Rokiki2.pdf>]
+<input/pics/Rokiki3.pdf, id=319, 430.60875pt x 278.03876pt>
 File: input/pics/Rokiki3.pdf Graphic file (type pdf)
 
 <use input/pics/Rokiki3.pdf> [10
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/Rokiki3.pdf>]
-<input/pics/superflip.pdf, id=569, 239.89626pt x 265.99374pt>
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+Rokiki3.pdf>]
+<input/pics/superflip.pdf, id=370, 239.89626pt x 265.99374pt>
 File: input/pics/superflip.pdf Graphic file (type pdf)
 
 <use input/pics/superflip.pdf> [11
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/superflip.pdf>]
-<input/pics/bounds2.pdf, id=731, 630.355pt x 455.7025pt>
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+superflip.pdf>]
+<input/pics/bounds2.pdf, id=515, 630.355pt x 455.7025pt>
 File: input/pics/bounds2.pdf Graphic file (type pdf)
 
 <use input/pics/bounds2.pdf> [12
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/bounds2.pdf>])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/beginner.tex" [13
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+bounds2.pdf>])
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/begin
+ner.tex" [13
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/kociemba.tex" [14
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/kocie
+mba.tex" [14
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/demo.tex" [15
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/demo.
+tex" [15
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/results.tex"
-<input/pics/beginnersScramble.pdf, id=921, 349.305pt x 205.76875pt>
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/resul
+ts.tex" <input/pics/beginnersScramble.pdf, id=637, 349.305pt x 205.76875pt>
 File: input/pics/beginnersScramble.pdf Graphic file (type pdf)
 
 <use input/pics/beginnersScramble.pdf> [16
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/beginnersScramble.pdf>]
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+beginnersScramble.pdf>]
 File: input/pics/beginnersScramble.pdf Graphic file (type pdf)
 
 <use input/pics/beginnersScramble.pdf> [17
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/conc.tex"
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/conc.
+tex"
 File: input/pics/bounds2.pdf Graphic file (type pdf)
  <use input/pics/bounds2.pdf> [18
 
 ] [19
 
 ])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/process.tex"
-<input/pics/Billede0075.jpg, id=1115, 2569.6pt x 1927.2pt>
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/proce
+ss.tex" <input/pics/Billede0075.jpg, id=761, 2569.6pt x 1927.2pt>
 File: input/pics/Billede0075.jpg Graphic file (type jpg)
 
 <use input/pics/Billede0075.jpg> [20
 
- <C:/Documents and Settings/aba/My Documents/2. sem/P2/Fremlæggelse/Fremlæggels
-e/input/pics/Billede0075.jpg>])
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\input/ops.tex"
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.toc") [21
+ <D:/Aalborg universitet (Basis)/P2/A215a/Fremlæggelse/Fremlæggelse/input/pics/
+Billede0075.jpg>])
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\input/ops.t
+ex"
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.toc") [21
 
 ])
 \tf@nav=\write5
 \tf@toc=\write6
 \tf@snm=\write7
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 30.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 30.
 
-("C:\Documents and Settings\aba\My Documents\2. sem\P2\Fremlæggelse\Fremlæggels
-e\Fremlæggelse.aux")
+("D:\Aalborg universitet (Basis)\P2\A215a\Fremlæggelse\Fremlæggelse\Fremlæggels
+e.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 30.
+Package rerunfilecheck Info: File `Fremlæggelse.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 13526 strings out of 495285
- 253369 string characters out of 3180346
- 323058 words of memory out of 3000000
- 16221 multiletter control sequences out of 15000+200000
+ 13578 strings out of 495285
+ 248660 string characters out of 3180377
+ 324816 words of memory out of 3000000
+ 16282 multiletter control sequences out of 15000+200000
  13925 words of font info for 52 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 48i,15n,65p,511b,566s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,59p,498b,566s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
 ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fil
 es/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTe
@@ -1074,9 +1059,9 @@ msfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts
 7.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:
 /Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Pr
 ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on Fremlæggelse.pdf (21 pages, 1939682 bytes).
+Output written on Fremlæggelse.pdf (21 pages, 1854063 bytes).
 PDF statistics:
- 1269 PDF objects out of 1440 (max. 8388607)
+ 871 PDF objects out of 1000 (max. 8388607)
  68 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
