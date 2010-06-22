@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {danish}
+\beamer@sectionintoc {1}{Aalborg Universitet}{1}{0}{1}
+\beamer@sectionintoc {2}{basis \r ar}{2}{0}{2}
+\beamer@subsectionintoc {2}{1}{rus tur}{3}{0}{2}
+\beamer@sectionintoc {3}{andet \r ar}{4}{0}{3}
+\beamer@sectionintoc {4}{trejde \r ar}{5}{0}{4}
