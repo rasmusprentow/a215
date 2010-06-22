@@ -1,4 +1,4 @@
-\beamer@endinputifotherversion {3.08pt}
+\beamer@endinputifotherversion {3.07pt}
 \select@language {danish}
 \beamer@sectionintoc {2}{Introduktion}{2}{0}{1}
 \beamer@subsectionintoc {2}{1}{Ern\"{o} Rubik}{2}{0}{1}
